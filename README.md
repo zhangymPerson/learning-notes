@@ -6,3 +6,7 @@ Mainly used to record Java, DBMS, HDFS... related learning notes
 - 修改记录
 
 - 测试上传
+
+- 测试修改
+
+- git使用
