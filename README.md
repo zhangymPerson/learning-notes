@@ -10,3 +10,5 @@ Mainly used to record Java, DBMS, HDFS... related learning notes
 - 测试修改
 
 - git使用
+
+- 阿里云服务器提交测试
