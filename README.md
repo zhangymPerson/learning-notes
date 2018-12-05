@@ -3,12 +3,11 @@ Mainly used to record Java, DBMS, HDFS... related learning notes
 ---
 - 记录日常开发用到的技术问题和开发解决方案
 
-- 修改记录
+- 数据库相关技术笔记
 
-- 测试上传
+- 各种编程语言的学习使用笔记
 
-- 测试修改
+- 各种编程相关的开发工具的使用笔记
 
-- git使用
 
-- 阿里云服务器提交测试
+
