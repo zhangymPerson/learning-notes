@@ -17,7 +17,6 @@ Master_Log_File|mysql-bin.000*** |显示当前I<br>O线程当前正在读取的�
 Read_Master_Log_Pos|一串数字|显示当前同步到主服务器上二进制日志的偏移量，I<br>O线程已经读取的位置，单位是字节，上述的示例显示当前同步到mysql-bin.010362的555176471偏移量位置，即已经同步了mysql-bin.010362这个二进制日志中529MB（555176471<br>1024<br>1024）的内容。|
 Relay_Log_File|mysql-slave-relay-bin.000762|显示Slave的SQL线程当前正在读取和执行的中继日志文件的名称|
 Relay_Log_Pos||显示在当前的中继日志中，Slave的SQL线程已读取和执行的中继日志的偏移量。
-|
 Relay_Master_Log_File|mysql-bin.000***|显示Slave中继日志同步到Master的二进制日志文件|
 Slave_IO_Running|Yes|显示I<br>O线程是否被启动并成功地连接到主服务器上，成功为Yes，否则为No。
 Slave_SQL_Running|Yes|显示SQL线程是否被启动，启动为Yes，否则为No。|
