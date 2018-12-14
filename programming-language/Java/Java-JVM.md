@@ -19,3 +19,59 @@
 - JVM
 
     JVM(JavaVirtualMachine，Java虚拟机)是JRE的一部分。它是一个虚构出来的计算机，是通过在实际的计算机上仿真模拟各种计算机功能来实现的。JVM有自己完善的硬件架构，如处理器、堆栈、寄存器等，还具有相应的指令系统。Java语言最重要的特点就是跨平台运行。使用JVM就是为了支持与操作系统无关，实现跨平台。
+
+## jdk相关的命令工具行
+
+### jps 虚拟机进程状况工具
+
+- 类似linux的ps命令 JVM process Status
+
+    jps时Java性能分析的首要工具，确认Java进程的进程id
+
+    jps -l 输出主类的全名
+
+    jps -v 输出虚拟机启动时的参数
+
+### jstat 虚拟机统计信息监视工具
+
+- 命令格式
+
+    jstat [-命令选项] [vmid] [间隔时间/毫秒] [查询次数]
+
+        option： 参数选项
+
+            -t： 可以在打印的列加上Timestamp列，用于显示系统运行的时间
+
+            -h： 可以在周期性数据数据的时候，可以在指定输出多少行以后输出一次表头
+
+            vmid： Virtual Machine ID（ 进程的 pid）
+
+            interval： 执行每次的间隔时间，单位为毫秒
+
+            count： 用于指定输出多少次记录，缺省则会一直打印
+
+            -class                 显示ClassLoad的相关信息；
+            -compiler           显示JIT编译的相关信息；
+            -gc                     显示和gc相关的堆信息；
+            -gccapacity 　　  显示各个代的容量以及使用情况；
+            -gcmetacapacity 显示metaspace的大小
+            -gcnew               显示新生代信息；
+            -gcnewcapacity  显示新生代大小和使用情况；
+            -gcold                 显示老年代和永久代的信息；
+            -gcoldcapacity    显示老年代的大小；
+            -gcutil　　           显示垃圾收集信息；
+            -gccause             显示垃圾回收的相关信息（通-gcutil）,同时显示最后一次或当前正在发生的垃圾回收的诱因；
+            -printcompilation 输出JIT编译的方法信息；
+
+
+
+### jinfo java配置信息工具
+
+
+### jmap Java内存映像工具
+
+### jhat 虚拟机堆转储快照分析工具
+
+### jstack Java堆栈跟踪工具
+
+### hsdic jit生成代码反汇编
