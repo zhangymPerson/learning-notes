@@ -44,3 +44,14 @@
 
     **注意，变量名和等号之间不能有空格**
 
+- shell命令成功与否的判断
+
+```sh
+
+if [ $? -eq 0 ]; then
+    echo "success"
+else
+    echo "fail"
+fi
+
+```
