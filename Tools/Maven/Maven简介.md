@@ -16,6 +16,25 @@
 
 ### Maven 
 
+
+
+
+
+
+
+
+
+- 项目构成
+
+默认约定
+
+默认源码：${basedir}/src/main/java
+资源文件:${basedir}/src/main/resources
+测试代码：${basedir}/src/main/test
+编译文件存放在:${basedir}/target
+JAR文件存放在:${basedir}/target
+
+
 - 管理项目依赖
 
     maven中的坐标，maven通过坐标确定项目组件位置；
@@ -31,9 +50,6 @@
     packaging:定义maven的打包方式
 
     classfier:用来帮助定义构建输出的一些附属组件
-
-
-
     
     eg:
     ```xml
