@@ -93,7 +93,8 @@ MYSQL的权限如何分布，就是针对表可以设置什么权限，针对列
 
     ```sql
     #查看当前用户的授权情况
-    mysql> show grants;+---------------------------------------------------------------------+
+    mysql> show grants;
+    +---------------------------------------------------------------------+
     | Grants for root@localhost                                           |
     +---------------------------------------------------------------------+
     | GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION |
@@ -122,5 +123,32 @@ MYSQL的权限如何分布，就是针对表可以设置什么权限，针对列
     
     #TODO 下一步研究
     测试发现库表名要与创建时保持一致
+
+    ```
+- 创建用户
+
+    #mysql8.0新特性
+    create user 'name'@'ip' identified by 'password';
+
+    grant all privileges on *.* to 'boyi'@'%' with grant option;
+
+- 修改用户名密码
+
+    ALTER USER "root"@"localhost" IDENTIFIED  BY "你的新密码";
+
+- MySQL 8.0 客户端连接问题解决
+
+    ```sh
+    # 修改root的加密规则
+    ALTER USER 'root'@'localhost' IDENTIFIED BY 'yourpassword' PASSWORD EXPIRE NEVER; 
+
+    # 修改root的密码
+    ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'yourpassword';
+
+    # 修改普通用户的密码
+    ALTER USER 'myuser'@'%' IDENTIFIED WITH mysql_native_password BY 'yourpassword'; 
+
+    #刷新权限
+    FLUSH PRIVILEGES;
 
     ```
