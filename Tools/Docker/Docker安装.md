@@ -50,3 +50,8 @@
 - 启动一个ubuntu
 
     docker run -it ubuntu bash
+
+- docker镜像启动查看
+
+    docker ps
+
