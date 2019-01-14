@@ -70,3 +70,5 @@
 
         Body部分的格式是固定的，必须写成This reverts commit hash.，其中的hash是被撤销 commit 的 SHA 标识符。
 
+npm install -g commitizen
+
