@@ -69,6 +69,19 @@
 
 
         Body部分的格式是固定的，必须写成This reverts commit hash.，其中的hash是被撤销 commit 的 SHA 标识符。
+- 插件
 
-npm install -g commitizen
+    安装 npm
+
+    安装插件
+
+    npm install -g commitizen
+
+    使用插件
+
+    cd到.git所在目录
+
+    commitizen init cz-conventional-changelog --save --save-exact
+
+    用git cz命令来取代git commit
 
