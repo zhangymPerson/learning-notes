@@ -47,4 +47,9 @@
 
     #按照偏移量来查询日志
     mysqlbinlog --no-defaults --start-position=471 --stop-position=875 --database=ops /var/lib/mysql/mysql-bin.000003
+
+
+    # 查看日志文件  根据日志偏移量
+    mysqlbinlog --no-defaults –v –v --base64-output=decode-rows /usr/local/mysql/data/master-bin.000010 | grep –A '10' 920578920
+
     ```
