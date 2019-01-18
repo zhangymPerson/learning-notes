@@ -94,7 +94,7 @@
 - eg
 
     ```sh
-    pt-table-checksum --nocheck-replication-filters --no-check-binlog-format --replicate=huanqiu.checksums --databases=huanqiu --tables=haha h=192.168.1.101,u=root,p=123456,P=3306
+    pt-table-checksum --nocheck-replication-filters --no-check-binlog-format --replicate=huanqiu.checksums --databases=huanqiu --tables=haha h=,u=root,p=123456,P=3306
 
     ```
 
