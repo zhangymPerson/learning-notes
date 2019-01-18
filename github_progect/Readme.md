@@ -78,4 +78,4 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
 
 - [python算法学习](https://github.com/OmkarPathak/pygorithm)
 
-- [python自动化运维](https://github.com/yorkoliu/pyauto)
+- [《python自动化运维：技术与最佳实践》附带示例及案例源码](https://github.com/yorkoliu/pyauto)
