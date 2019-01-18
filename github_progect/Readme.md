@@ -77,3 +77,5 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
 ## python 语言
 
 - [python算法学习](https://github.com/OmkarPathak/pygorithm)
+
+- [python自动化运维](https://github.com/yorkoliu/pyauto)
