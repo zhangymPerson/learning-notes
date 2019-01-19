@@ -117,4 +117,7 @@ select TABLE_NAME,GROUP_CONCAT(`COLUMN_NAME`) from information_schema.COLUMNS wh
 select TABLE_NAME,GROUP_CONCAT(`COLUMN_NAME`),GROUP_CONCAT(`column_comment`) from information_schema.COLUMNS where table_schema = '库名' GROUP BY TABLE_NAME;
 
 
+# 跳过一个事务；
+SET GLOBAL SQL_SLAVE_SKIP_COUNTER = 1  
+
 ```
