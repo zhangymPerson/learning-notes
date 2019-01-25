@@ -10,7 +10,7 @@
 
 ## git 相关命令
 
-[git命令](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/git%E5%91%BD%E4%BB%A4.png)
+![git命令](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/git%E5%91%BD%E4%BB%A4.png)
 
 
 ## git与svn对比
