@@ -9,6 +9,13 @@
 - [深度学习500问](https://github.com/scutan90/DeepLearning-500-questions)
 
 - [Java优秀工具类合集](https://github.com/oblac/jodd)
+
+## 大数据相关的项目
+
+- [大数据项目链接和介绍-各个项目的官网的链接](https://github.com/onurakpolat/awesome-bigdata)
+
+- [Hadoop 权威指南的书籍配套代码](https://github.com/tomwhite/hadoop-book)
+
 ## shell相关
 
 - [纯bash实现脚本集合](https://github.com/dylanaraps/pure-bash-bible)
