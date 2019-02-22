@@ -11,7 +11,25 @@
 ## NameNode和DataNode
 
 
+- namenode
+
+    namenode是主节点，是
+
+- datanode
+
+
 ### hdfs 原理
 
+- 上传文件
+
+
+
+
+- 下载文件
+
+- 查看文件
+
+
+### mapreduce原理
 
 
