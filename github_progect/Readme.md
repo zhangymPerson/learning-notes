@@ -73,6 +73,14 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
 
 - [设计模式](https://github.com/iluwatar/java-design-patterns)
 
+
+
+
+- [中科大计算机教程](https://github.com/mbinary/USTC-CS-Courses-Resource)
+
+
+
+
 ## 区块链介绍
 
 - [区块链(BlockChain)技术开发相关资料](https://github.com/chaozh/awesome-blockchain-cn)
