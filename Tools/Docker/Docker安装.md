@@ -55,3 +55,8 @@
 
         docker ps
 
+- docker 查看镜像
+
+        docker images
+
+

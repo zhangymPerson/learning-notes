@@ -8,6 +8,13 @@
 
 - [深度学习500问](https://github.com/scutan90/DeepLearning-500-questions)
 
+- [Java优秀工具类合集](https://github.com/oblac/jodd)
+
+## 大数据相关的项目
+
+- [大数据项目链接和介绍-各个项目的官网的链接](https://github.com/onurakpolat/awesome-bigdata)
+
+- [Hadoop 权威指南的书籍配套代码](https://github.com/tomwhite/hadoop-book)
 
 ## shell相关
 
@@ -65,6 +72,14 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
 - [系统设计模式](https://github.com/binhnguyennus/awesome-scalability)
 
 - [设计模式](https://github.com/iluwatar/java-design-patterns)
+
+
+
+
+- [中科大计算机教程](https://github.com/mbinary/USTC-CS-Courses-Resource)
+
+
+
 
 ## 区块链介绍
 
