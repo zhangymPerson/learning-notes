@@ -10,6 +10,11 @@
 
 - [Java优秀工具类合集](https://github.com/oblac/jodd)
 
+
+- [Spring Boot基础教程代码](https://github.com/dyc87112/SpringBoot-Learning)
+
+- [Spring Boot基础教程](http://blog.didispace.com/Spring-Boot%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/)
+
 ## 大数据相关的项目
 
 - [大数据项目链接和介绍-各个项目的官网的链接](https://github.com/onurakpolat/awesome-bigdata)
@@ -75,6 +80,7 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
 
 
 
+- [各种程序员资料导航](https://github.com/stanzhai/be-a-professional-programmer)
 
 - [中科大计算机教程](https://github.com/mbinary/USTC-CS-Courses-Resource)
 
