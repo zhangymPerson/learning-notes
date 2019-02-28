@@ -22,6 +22,8 @@
 
 ## jdk相关的命令工具行
 
+- [JVM性能调优监控工具jps、jstack、jmap、jhat、jstat、hprof使用详解](https://my.oschina.net/feichexia/blog/196575)
+
 ### jps 虚拟机进程状况工具
 
 - 类似linux的ps命令 JVM process Status
