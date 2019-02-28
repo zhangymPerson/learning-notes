@@ -1,5 +1,10 @@
 # zookeeper 相关笔记
 
+
+- 简介
+
+    [zookeeper-百度百科](https://baike.baidu.com/item/zookeeper/4836397)
+
 - 单机和分布式的问题
 
     - 单机 问题
