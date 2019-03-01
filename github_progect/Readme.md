@@ -100,3 +100,10 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
 - [python算法学习](https://github.com/OmkarPathak/pygorithm)
 
 - [《python自动化运维：技术与最佳实践》附带示例及案例源码](https://github.com/yorkoliu/pyauto)
+
+
+## 其他
+
+- [网络 - 渗透攻击](https://github.com/Micropoor/Micro8)
+
+- [这是一个关于如何提高Nginx的性能，安全性等内容的快速参考指南](https://github.com/trimstray/nginx-quick-reference)
