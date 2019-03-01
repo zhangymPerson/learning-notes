@@ -55,3 +55,15 @@ else
 fi
 
 ```
+
+
+- shell 在Ubuntu下报错 function: not found
+
+    解决方案:
+
+    ubuntu的dash兼容性不好导致，而编译常用的是bash。
+    
+    所以大家可以直接将ubuntu的编辑器(shell)操作进行更改。命令如下：
+        
+        sudo dpkg-reconfigure dash
+    运行后 选择no。
