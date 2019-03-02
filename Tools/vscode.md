@@ -9,6 +9,7 @@
     Git History  git  日志查看插件 - 右键文件 选择git history 即可
 
     
+- [vscode-快捷键说明文档](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 
 - 常用快捷键
 
