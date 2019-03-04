@@ -25,7 +25,7 @@ Mainly used to record Java, DBMS, HDFS... related learning notes
 
 
 
-## [github_progect（优秀github项目）](https://github.com/zhangymPerson/learning-notes/tree/master/DBMS)
+## [github_progect（优秀github项目）](https://github.com/zhangymPerson/learning-notes/tree/master/github_progect)
 
 
 ## [Internet(网络)](https://github.com/zhangymPerson/learning-notes/tree/master/Internet)
