@@ -1,8 +1,10 @@
 # 安装
 
-[docker中文社区](http://www.docker.org.cn/)
+- [docker中文社区](http://www.docker.org.cn/)
 
-[docker-菜鸟教程](http://www.runoob.com/docker/docker-tutorial.html)
+- [docker-菜鸟教程](http://www.runoob.com/docker/docker-tutorial.html)
+
+- [docker-中文文档](http://www.dockerinfo.net/document)
 ## 安装步骤
 
 ### 检查
@@ -30,6 +32,7 @@
         sudo yum -y install docker-ce
 
 - 启动 Docker 后台服务
+**Docker安装后必须启动，不然很多命令没法使用**
 
         sudo systemctl start docker
 
@@ -41,11 +44,11 @@
     
         #添加以下内容
 
-        ```json
+        
         {
             "registry-mirrors": ["http://hub-mirror.c.163.com"]
         }
-        ```
+        
 
 - 启动一个ubuntu
 
