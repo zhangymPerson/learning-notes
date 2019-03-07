@@ -15,6 +15,7 @@
 
 - [Spring Boot基础教程](http://blog.didispace.com/Spring-Boot%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/)
 
+- [Java多线程使用DEMO](https://github.com/zhaoshiling1017/ThreadProject)
 ## 大数据相关的项目
 
 - [大数据项目链接和介绍-各个项目的官网的链接](https://github.com/onurakpolat/awesome-bigdata)
