@@ -13,6 +13,8 @@
 
 - [Spring Boot基础教程代码](https://github.com/dyc87112/SpringBoot-Learning)
 
+-[spring boot 实践学习案例](https://github.com/JeffLi1993/springboot-learning-example)
+
 - [Spring Boot基础教程](http://blog.didispace.com/Spring-Boot%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/)
 
 - [Java多线程使用DEMO](https://github.com/zhaoshiling1017/ThreadProject)
