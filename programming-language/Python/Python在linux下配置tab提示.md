@@ -1,14 +1,6 @@
 # 配置python-shell中的tab自动补全
 
 
-
-
-- 简单的方法
-
-    直接import tab
-
-每次都直接生效的办法
-
 - 编写脚本
 
     vim tab.py
@@ -50,3 +42,16 @@
     python 
 
     tab即可生效
+
+
+- 简单的方法
+
+    import sys
+
+    print sys.path
+
+    将tab.py作为模块放入 上面命令查找的路径下
+
+    下次启动直接
+
+    直接import tab
