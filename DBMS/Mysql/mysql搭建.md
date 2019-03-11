@@ -1,5 +1,21 @@
 # MySQL 主从搭建
 
+
+
+# yum 安装MySQL 
+
+- [mysql官网](https://www.mysql.com/)
+
+- 下载Mysql的yum源
+
+- 修改yum配置文件
+
+- 用yum安装mysql
+
+- 查看配置文件 修改配置文件
+
+
+
 ## 先分别搭建好单独的主从数据库
 
 - 关闭防火墙
