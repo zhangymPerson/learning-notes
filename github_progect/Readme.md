@@ -1,5 +1,10 @@
 # 优秀的github项目
 
+- [github項目查看历史记录](https://github.com/pomber/git-history)
+
+    必须打开的是文件，打开项目则是演示页面
+    使用方法:直接将项目中的github.com 替换成 github.githistory.xyz 即可展示当前文件的历史提交记录图
+
 ## Java 类
 
 - [JavaGuide](https://github.com/Snailclimb/JavaGuide) 
@@ -13,7 +18,7 @@
 
 - [Spring Boot基础教程代码](https://github.com/dyc87112/SpringBoot-Learning)
 
--[spring boot 实践学习案例](https://github.com/JeffLi1993/springboot-learning-example)
+- [spring boot 实践学习案例](https://github.com/JeffLi1993/springboot-learning-example)
 
 - [Spring Boot基础教程](http://blog.didispace.com/Spring-Boot%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/)
 
