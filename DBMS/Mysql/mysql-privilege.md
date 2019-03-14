@@ -125,17 +125,28 @@ MYSQL的权限如何分布，就是针对表可以设置什么权限，针对列
     测试发现库表名要与创建时保持一致
 
     ```
+
+
+
+
+- mysql8.0中的版本
+
 - 创建用户
 
+    ```sh
     #mysql8.0新特性
     create user 'name'@'ip' identified by 'password';
 
     grant all privileges on *.* to 'boyi'@'%' with grant option;
 
+    ```
+
 - 修改用户名密码
 
+    ```
     ALTER USER "root"@"localhost" IDENTIFIED  BY "你的新密码";
 
+    ```
 - MySQL 8.0 客户端连接问题解决
 
     ```sh
