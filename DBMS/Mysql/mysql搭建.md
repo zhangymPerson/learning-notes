@@ -26,6 +26,28 @@
 
     使用yum源搭建
 
+- 获取yum源
+
+    [官网下载 rpm文件地址](https://dev.mysql.com/downloads/repo/yum/)
+  
+    #下载
+    wget ***
+    #安装到 yum源 配置  如果修改版本可以到 /etc/yum.repos.d/mysql*.repo 可以修改yum源的mysql的版本 
+    rpm -ivh **.rpm
+    #查看msyql
+    rpm -qa |grep mysql
+    #安装mysql
+    yum install -y mysql-server
+
+    # 启动mysql
+    systemctl start mysqld
+
+    #查看启动日志(默认位置)
+    tailf -n100 /var/log/mysqld.log
+    查看密码
+    
+
+
 ## 主库上配置好二进制日志
 
 
