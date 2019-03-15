@@ -15,6 +15,7 @@
 
 - [Java优秀工具类合集](https://github.com/oblac/jodd)
 
+- [Think in Java 思维导图](https://github.com/LjyYano/Thinking_in_Java_MindMapping) 
 
 - [Spring Boot基础教程代码](https://github.com/dyc87112/SpringBoot-Learning)
 
