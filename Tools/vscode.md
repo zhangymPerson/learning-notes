@@ -47,4 +47,6 @@
     - “bounded”（在视区与“editor.wordWrapColumn”两者的较小者处折行）。
     "editor.wordWrap": "off",
 
+- 配置VS code显示方式 (空格和table的显示方式)
 
+    editor.renderWhitespace : all
