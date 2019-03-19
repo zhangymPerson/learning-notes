@@ -120,4 +120,9 @@ select TABLE_NAME,GROUP_CONCAT(`COLUMN_NAME`),GROUP_CONCAT(`column_comment`) fro
 # 跳过一个事务；
 SET GLOBAL SQL_SLAVE_SKIP_COUNTER = 1  
 
+
+# mysql创建数据库语句
+
+CREATE DATABASE IF NOT EXISTS dbname DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
+
 ```
