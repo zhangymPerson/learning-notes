@@ -65,5 +65,10 @@
 
     ![Java集合部分图集](https://img-blog.csdn.net/20160124221843905)
 
+- String 变量
 
+
+- HashMap 说明  
+
+    
 
