@@ -3,6 +3,34 @@
 
     在计算机科学中，Shell俗称壳（用来区别于核），是指“为使用者提供操作界面”的软件（命令解析器）。它类似于DOS下的command.com和后来的cmd.exe。它接收用户命令，然后调用相应的应用程序。   - 百度百科
 
+
+- shell 类型
+    ```sh
+    #可以在这个文件中修改用户登陆后的默认的shell
+    #查看用户的shell权限
+    cat /etc/passwd
+    ```
+
+
+- shell中的关系
+
+    shell中父子关系
+    
+    父shell ---创建子shell---> 子shell
+
+
+    ```sh
+    # 命令
+    # PPID这一列即为父进程的ID
+    ps -f  
+
+    # 查看父子进程关系
+    ps --forest
+    ```
+
+    **shell中添加分号可直接一行中执行多个命令** 
+
+
 - Linux 上的shell
 
     建议:学会使用vim 等 linux上的编辑器
