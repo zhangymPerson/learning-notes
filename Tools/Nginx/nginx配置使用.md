@@ -11,7 +11,7 @@
 - 配置文件解析
 
 
-    [配置文件结构说明]()
+    ![配置文件结构说明](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/nginx%E7%9A%84%E9%85%8D%E7%BD%AE%E5%9D%97%E8%AF%B4%E6%98%8E.png)
 
     ```conf
     #运行用户

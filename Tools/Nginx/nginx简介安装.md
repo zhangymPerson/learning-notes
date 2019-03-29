@@ -37,12 +37,22 @@
     #测试配置文件  查看配置文件位置
     nginx -t
 
+    #指定配置文件
+    nginx -c /usr/local/nginx/conf/nginx.conf
+
+    # 重新载入配置文件
+    /usr/local/webserver/nginx/sbin/nginx -s reload
+
+    #重启 Nginx
+    /usr/local/webserver/nginx/sbin/nginx -s reopen
 
     #启动
     systemctl start nginx
+
     # 查找nginx
     which nginx
     $ /usr/sbin/nginx 
+    
     #直接运行
     /usr/sbin/nginx
 
