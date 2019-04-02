@@ -8,5 +8,10 @@
 
     打开setting 查找 File | Settings | Editor | File and Code Templates 位置下， 修改响应的参数即可
 
+- idea maven 项目读取不到配置文件 application.properties
 
-
+    ```java
+    //todo 未解决
+    BUG:
+    No active profile set, falling back to default profiles: default
+    ```
