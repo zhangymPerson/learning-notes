@@ -1,4 +1,22 @@
-### 编程常用单词
+### 编程常用单词 （programming-english）
+
+## 软件版本(software-version )
+
+Snapshot: 版本代表不稳定、尚处于开发中的版本 
+Alpha: 内部版本 
+Beta: 测试版 
+Demo: 演示版 
+Enhance: 增强版 
+Free: 自由版 
+Full Version: 完整版，即正式版 
+LTS: 长期维护版本 
+Release: 发行版 
+RC: 即将作为正式版发布 
+Standard: 标准版 
+Ultimate: 旗舰版 
+Upgrade: 升级版 
+
+
 
 ## A
 
