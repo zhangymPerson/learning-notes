@@ -124,3 +124,26 @@
 	//在项目路径下(pom.xml文件所在位置)
 	mvn dependency:tree。该命令会打印一个当前项目的依赖树。
 	```
+
+- springboot项目热部署 (不重启自动加载)
+
+	添加maven得jar包支持
+	```
+    <!-- springboot工具 修改代码后不需重启即生效 -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>springloaded</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+        <!-- 这个需要为 true 热部署才有效 -->
+        <optional>true</optional>
+    </dependency>
+	```
+	
+	idea 设置
+
+	- “File” -> “Settings” -> “Build,Execution,Deplyment” -> “Compiler”，选中打勾 “Build project automatically” 。
+
+	- 组合键：“Shift+Ctrl+Alt+/” ，选择 “Registry” ，选中打勾 “compiler.automake.allow.when.app.running”
