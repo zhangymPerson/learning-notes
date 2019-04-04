@@ -147,3 +147,27 @@
 	- “File” -> “Settings” -> “Build,Execution,Deplyment” -> “Compiler”，选中打勾 “Build project automatically” 。
 
 	- 组合键：“Shift+Ctrl+Alt+/” ，选择 “Registry” ，选中打勾 “compiler.automake.allow.when.app.running”
+
+- springboot 多配置文件选择
+
+	```
+	# 定义多个配置文件
+	# 配置文件说明
+	application.properties      默认配置文件
+	application-dev.properties  开发环境配置
+	application-test.properties 测试环境配置
+	application-prod.properties 生产环境配置
+	```
+- 主配置文件
+
+	```properties
+    
+	#application.properties
+     
+    添加配置
+    #后面添加要选择得配置文件
+    #spring.profiles.active=default
+    #spring.profiles.active=dev
+    #spring.profiles.active=test
+    spring.profiles.active=prod
+	```
