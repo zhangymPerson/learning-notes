@@ -8,8 +8,35 @@
 
     vim nginx.conf
     ```
-- 配置文件解析
+- 常见问题
 
+    **代理找不到页面 需要查看代理页面的路径**
+
+    **代理找不到静态资源  可以直接配置到静态资源所在的位置**
+
+    **找不到静态资源    可以将报404的路径配置到nginx location{}中**
+
+    如 http://host:port/path/*.css 等资源报错 404
+
+    配置如下
+
+    ```xml
+    #找不到资源的路径 浏览器F12可查看相关内容
+    location /path {
+        proxy_pass http://代理ip:port;
+    }
+    ```
+
+    多个路径的配置方法
+    ```xml
+    # 配置格式前必须加上 ~ 多个路径用 | 隔开
+    # 后面配置要代理的路由
+    location ~ /(stylesheets|javascripts|api|img)/ {
+        proxy_pass http://ip:port;
+    }
+    ```
+
+- 配置文件解析
 
     ![配置文件结构说明](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/nginx%E7%9A%84%E9%85%8D%E7%BD%AE%E5%9D%97%E8%AF%B4%E6%98%8E.png)
 
