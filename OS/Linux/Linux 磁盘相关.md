@@ -210,3 +210,16 @@
     ```
     [扩容数据盘_Linux](https://help.aliyun.com/document_detail/25452.html)
 
+
+
+- **df 和 du 不一致**的时候(磁盘大小不一致)
+
+
+    安装lsof 命令
+
+    ```sh
+    lsof --help
+    #查看所有被占用的文件 但是已经执行删除命令的文件
+    lsof |grep deleted 
+
+    ```
