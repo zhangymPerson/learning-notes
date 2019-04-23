@@ -15,3 +15,7 @@
     BUG:
     No active profile set, falling back to default profiles: default
     ```
+   
+- compiler
+
+    Java Compiler 下的版本选择和当前的jdk版本一致
