@@ -20,6 +20,9 @@
     
     在众多分布式技术中，消息传递相较文件传递与远程过程调用（RPC）而言，似乎更胜一筹，因为它具有更好的平台无关性，并能够很好地支持并发与异步调用。对于Web Service与RESTful而言，则可以看做是消息传递技术的一种衍生或封装。
 
+![message-queue-picture](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/message-queue.png)
+
+
 - 重要作用
 
     - 解耦
