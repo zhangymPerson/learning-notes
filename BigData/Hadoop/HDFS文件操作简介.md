@@ -91,7 +91,7 @@
     fs.defaultFS://localhost/;
     dfs.replication:n;//根据需要进行设置，数据块的备份数；
 
-    [hadoop相关的命令]()
+    [hadoop相关的命令](https://github.com/zhangymPerson/learning-notes/blob/master/BigData/Hadoop/hadoop-command.md)
 
 
 ### hdfs 原理
