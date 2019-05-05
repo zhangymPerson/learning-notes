@@ -13,6 +13,9 @@
 ![git命令](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/git%E5%91%BD%E4%BB%A4.png)
 
 
+
+- [git使用教程](https://github.com/firstcontributions/first-contributions/blob/master/README.md)
+
 ## git与svn对比
 
 
