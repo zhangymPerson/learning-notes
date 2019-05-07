@@ -7,6 +7,20 @@
 - [修改Intellij IDEA模板注解@author变量user内容](https://jingyan.baidu.com/article/0202781138ab5e1bcc9ce531.html)
 
     打开setting 查找 File | Settings | Editor | File and Code Templates 位置下， 修改响应的参数即可
+    模板如下
+    ```sh
+    /**
+    * @classname ${NAME}
+    * @descriptionclass 
+    * 1.类的作用
+    * 2.其他说明
+    * @createdate ${DATE} ${TIME}
+    * @author <a href="mailto:you-email@163.com">${USER}</a>
+    * @version 1.0
+    * @since 1.0
+    */
+    ```
+
 
 - idea maven 项目读取不到配置文件 application.properties
 
