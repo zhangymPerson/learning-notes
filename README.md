@@ -4,8 +4,9 @@
 
 - 技术交流
 
-    邮箱:[zhangyanmingjiayou@163.com](zhangyanmingjiayou@163.com)
-    
+    邮箱:[zhangyanmingjiayou@163.com](mailto://zhangyanmingjiayou@163.com)
+
+    微信好友:
     ![微信号-好友](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/wechat-info.png)
 
 
