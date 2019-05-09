@@ -48,6 +48,8 @@
 
 - [纯bash实现脚本集合](https://github.com/dylanaraps/pure-bash-bible)
 
+- [Linux 的shell命令详解和查询 开源项目](https://github.com/jaywcjlove/linux-command)
+
 
 ## 前端
 
