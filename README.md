@@ -1,6 +1,14 @@
 # learning-notes
 ![我是人间惆怅客,知君何事泪纵横](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/biji.png)
 
+
+- 技术交流
+
+    邮箱:[zhangyanmingjiayou@163.com](zhangyanmingjiayou@163.com)
+    
+    ![微信号-好友](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/wechat-info.png)
+
+
 # [项目目录](https://github.com/zhangymPerson/learning-notes)
 
 ## [BigData （大数据）](https://github.com/zhangymPerson/learning-notes/tree/master/BigData)
@@ -43,7 +51,6 @@ Mainly used to record Java, DBMS, HDFS... related learning notes
 
 ![支付宝-收款](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/alipay-info.png)
 
-![微信号-好友](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/wechat-info.png)
 
 
 
