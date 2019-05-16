@@ -44,6 +44,7 @@
 |[APIZZA](https://apizza.net)|https://apizza.net|api测试工具 
 |[ProcessOn](https://www.processon.com/)|https://www.processon.com/||
 |[时间戳(Unix timestamp)](https://tool.lu/timestamp/)|https://tool.lu/timestamp/|转换工具 - 在线工具
+|[Linux命令查询](https://www.linuxcool.com/)|https://www.linuxcool.com/|
 
 ### 翻译
 
