@@ -38,6 +38,9 @@
 - [Java多线程使用DEMO](https://github.com/zhaoshiling1017/ThreadProject)
 - [《Java多线程编程实战指南（核心篇）》的配套源码](https://github.com/Viscent/javamtia)
 
+- [Java设计模式](https://github.com/quanke/design-pattern-java)
+
+- [Java编程思想-github版](https://github.com/quanke/think-in-java)
 ## 大数据相关的项目
 
 - [大数据项目链接和介绍-各个项目的官网的链接](https://github.com/onurakpolat/awesome-bigdata)
