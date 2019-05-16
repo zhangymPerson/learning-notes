@@ -20,6 +20,7 @@
 |[IBM developerWorks 中国 : IBM developerWorks : 技术主题](https://www.ibm.com/developerworks/cn/topics/)|https://www.ibm.com/developerworks/cn/topics/|IBM的技术分享|
 |[仓库服务](https://maven.aliyun.com/mvn/search)|https://maven.aliyun.com/mvn/search|阿里云maven配置搜索
 |[在线API文档](http://tool.oschina.net/apidocs)|http://tool.oschina.net/apidocs|常见开发语言的api文档集合
+|[开源中国的浏览器插件](https://github.com/jaywcjlove/oscnews)|https://github.com/jaywcjlove/oscnews|开发人员必备的神奇插件
 
 ### 学习教程
 |网站|网址|简介|
