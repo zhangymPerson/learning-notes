@@ -47,4 +47,4 @@
 
 - idea 激活
 
-    ![idea激活文章和教程](https://blog.csdn.net/shengshengshiwo/article/details/79599761)
+    [idea激活文章和教程](https://blog.csdn.net/shengshengshiwo/article/details/79599761)
