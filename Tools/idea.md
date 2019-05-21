@@ -44,3 +44,7 @@
 - idea查看单个类的方式
 
     ![idea查看单个类的继承关系](https://github.com/zhangymPerson/springboot-learing/blob/master/picture/idea%E6%9F%A5%E7%9C%8B%E7%B1%BB%E7%9A%84%E7%BB%93%E6%9E%84%E5%85%B3%E7%B3%BB.jpg)
+
+- idea 激活
+
+    ![idea激活文章和教程](https://blog.csdn.net/shengshengshiwo/article/details/79599761)

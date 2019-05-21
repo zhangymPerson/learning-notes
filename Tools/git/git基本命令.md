@@ -63,3 +63,9 @@ git branch --set-upstream <本地支分支名> <远程仓库名，默认origin>/
 //以下为先有本地库，再建立远程库操作所用的命令
 git remote add origin <URL地址> 本地库与远征库关联
 git push -u origin master 关联后，使用命令第一次推送master分支的所有内容，   -u参数为推送当前分支所有内容
+
+- 配置git的邮箱
+git config --global user.email "you@example.com"
+
+- 配置git的用户名
+git config --global user.name "Your Name"
