@@ -48,3 +48,9 @@
 - idea 激活
 
     [idea激活文章和教程](https://blog.csdn.net/shengshengshiwo/article/details/79599761)
+
+- idea 修改文件字体
+
+    file - setting - Editor - Font - 修改相关参数
+
+
