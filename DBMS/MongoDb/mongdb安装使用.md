@@ -90,6 +90,17 @@
     #keyFile=/path/to/keyfile
     ```
 
+- mongodb将开启远程授权
+
+    ```xml
+    #可以访问的地址. 127.0.0.1表示自己访问,  
+    #0.0.0.0 表示所有人都能访问
+    bind_ip = 0.0.0.0
+    auth=true
+    ```
+
+
+
 - mongodb 的启动和关闭
 
     ```
