@@ -41,12 +41,12 @@
 文件  -> 首选项 -> 设置 -> 编辑器- > 找到控制折行方式。
     
     可以选择： 
-    - “off” （禁用折行），
-    - “on” （视区折行）， 
-    - “wordWrapColumn”（在“editor.wordWrapColumn”处折行）
-    - “bounded”（在视区与“editor.wordWrapColumn”两者的较小者处折行）。
+    - "off" （禁用折行），
+    - "on" （视区折行）， 
+    - "wordWrapColumn"（在"editor.wordWrapColumn"处折行）
+    - "bounded"（在视区与"editor.wordWrapColumn"两者的较小者处折行）。
     "editor.wordWrap": "off",
 
-- 配置VS code显示方式 (空格和table的显示方式)
+-  配置VS code显示方式 (空格和table的显示方式)
 
     editor.renderWhitespace : all
