@@ -53,6 +53,43 @@
     
 ```
 
+
+
+- maven项目中单独指定maven仓库的配置
+
+```xml
+
+    <!--仓库-->
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>http://central.maven.org/maven2/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <!--阿里云仓库地址-->
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+```
+
+
+
+
+
+
+
+
+
 - 错误配置分析(pom配置)
 
 ```xml
