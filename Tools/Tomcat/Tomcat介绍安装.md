@@ -35,3 +35,14 @@
     #查看日志
     tailf catalina.out
     ```
+
+
+## 问题解决
+
+- windows下一闪而过 
+
+    在 bin目录下的 startup.bat文件未添加以下内容进行调试
+
+        pause
+
+    解决问题后去掉即可
