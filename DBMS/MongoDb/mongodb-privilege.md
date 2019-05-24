@@ -2,19 +2,7 @@
 
 - 注意 先创建用户和相关权限 J后开启权限登陆模式 (auth=true)
 
-### mongodb的模型
 
-|数据库概念|mysql|mongodb|
-|-|-|-|
-|数据库 database| database|database |
-|表|表（table）|集合（collection）
-|行|行（row）|文档对象（document）
-
-一个mongod实例中允许创建多个数据库。
-
-一个数据库中允许创建多个集合（集合相当于关系型数据库的表）。
-
-一个集合则是由若干个文档构成（文档相当于关系型数据库的行，是MongoDB中数据的基本单元）。
 
 ### mongodb默认的库
         
