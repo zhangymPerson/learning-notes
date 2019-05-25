@@ -129,6 +129,8 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
 
 - [《python自动化运维：技术与最佳实践》附带示例及案例源码](https://github.com/yorkoliu/pyauto)
 
+- [Python - 100天从新手到大师](https://github.com/jackfrued/Python-100-Days)
+
 
 ## 其他
 
