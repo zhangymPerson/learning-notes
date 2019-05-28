@@ -53,4 +53,8 @@
 
     file - setting - Editor - Font - 修改相关参数
 
+- idea 全文查找字符
+
+    菜单栏 edit -> find -> find in path  
+
 
