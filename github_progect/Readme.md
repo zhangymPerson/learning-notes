@@ -196,6 +196,10 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
 
     https://github.com/mbinary/USTC-CS-Courses-Resource
 
+- [对开发人员有用的定律、理论、原则和模式](https://github.com/nusr/hacker-laws-zh)
+
+    https://github.com/nusr/hacker-laws-zh
+
 
 
 ## 区块链介绍
