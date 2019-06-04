@@ -29,17 +29,8 @@
 |[在线API文档](http://tool.oschina.net/apidocs)|http://tool.oschina.net/apidocs|常见开发语言的api文档集合
 |[开源中国的浏览器插件](https://github.com/jaywcjlove/oscnews)|https://github.com/jaywcjlove/oscnews|开发人员必备的神奇插件
 
-### 学习教程
-|网站|网址|简介|
-|-|-|-|
-|[百度文库](https://wenku.baidu.com/)|https://wenku.baidu.com/|文档查询| 
-|[网易公开课](https://open.163.com/)|https://open.163.com/|网易出品的优质公开课课程| 
 
-### 常用
-|网站|网址|简介|
-|-|-|-|
-|优酷 
-|网易云音乐 
+
 
 ### 工具
 |网站|网址|简介|
@@ -50,7 +41,8 @@
 |[在线工具 - 程序员的工具箱](https://tool.lu/)|https://tool.lu/|
 |[OfficePLUS](http://www.officeplus.cn/Template/Home.shtml)|http://www.officeplus.cn/Template/Home.shtml| 微软Office官方在线模板网站!
 |[APIZZA](https://apizza.net)|https://apizza.net|api测试工具 
-|[ProcessOn](https://www.processon.com/)|https://www.processon.com/||
+|[ProcessOn在线绘图工具](https://www.processon.com/)|https://www.processon.com/||
+|[在线绘制图工具](https://www.draw.io/)|https://www.draw.io/||
 |[时间戳(Unix timestamp)](https://tool.lu/timestamp/)|https://tool.lu/timestamp/|转换工具 - 在线工具
 |[Linux命令查询](https://www.linuxcool.com/)|https://www.linuxcool.com/|
 
@@ -68,6 +60,7 @@
 |-|-|-|
 |[w3school](http://www.w3school.com.cn/index.html)|http://www.w3school.com.cn/index.html|在线教程 
 |[菜鸟教程](https://www.runoob.com/)|https://www.runoob.com/|学的不仅是技术，更是梦想！ 
+|[在线API查询工具](http://tool.oschina.net/apidocs)|http://tool.oschina.net/apidocs|开源中国的工具
 
 ### 开源字体
 |网站|网址|简介|
@@ -87,3 +80,14 @@
 |[微信调试工具](http://mp.weixin.qq.com/debug/)|http://mp.weixin.qq.com/debug/|
 
 
+### 学习教程
+|网站|网址|简介|
+|-|-|-|
+|[百度文库](https://wenku.baidu.com/)|https://wenku.baidu.com/|文档查询| 
+|[网易公开课](https://open.163.com/)|https://open.163.com/|网易出品的优质公开课课程| 
+
+### 常用
+|网站|网址|简介|
+|-|-|-|
+|优酷 
+|网易云音乐 

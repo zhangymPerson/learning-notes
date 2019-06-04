@@ -101,4 +101,7 @@ ctrl + v
     m,n m y  m到n之间的内容复制到y行之后
     m,n d    m到n行之间的内容删除
 
+#vim全选
+ggvG
+
 ```

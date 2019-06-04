@@ -57,4 +57,8 @@
 
     菜单栏 edit -> find -> find in path  
 
+- idea 标签栏多行设置
 
+    setting - Editor - General - Editor tabs 
+        
+        反向勾选掉show tabs in single row

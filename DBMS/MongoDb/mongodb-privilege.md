@@ -1,6 +1,6 @@
 ### mongodb的权限
 
-- 注意 先创建用户和相关权限 J后开启权限登陆模式 (auth=true)
+- 注意 先创建用户和相关权限 后开启权限登陆模式 (auth=true)
 
 
 
@@ -35,23 +35,42 @@
     #创建超级管理员
     db.createUser({user:'root',pwd:'pwd',roles:[{ role: "root", db: "admin" }]})
 
+
+    #创建单个库的用户 读写权限 如测试库
+    db.createUser({user:"test",pwd:"test",roles:[{role:"readWrite",db:"test"}]})
+
+    #查看单个库下的用户
+    use dbname
+    show users
+
+    #查看所有用户
+    use admin
+    db.system.users.find().pretty()
+
+    #修改密码
+    use dbname
+    db.changeUserPassword('username','newpassword');  
+
     #用户登陆
+    ```
+    **用户只能在用户所在数据库登录，管理员需要通过admin认证后才能管理其他数据库**
+
+    先进入admin库登陆在转到别的库，不然提示没有权限
 
 - 创建语法的说明
 
-定义：
+    定义：
 
-创建一个数据库新用户用db.createUser()方法，如果用户存在则返回一个用户重复错误。
+    创建一个数据库新用户用db.createUser()方法，如果用户存在则返回一个用户重复错误。
 
 
-语法：
+    语法：
 
-    ```sh
-    db.createUser(user, writeConcern)
-    user这个文档创建关于用户的身份认证和访问信息；
-    writeConcern这个文档描述保证MongoDB提供写操作的成功报告。
-    ```
-user文档，定义了用户的以下形式：
+        db.createUser(user, writeConcern)
+        user这个文档创建关于用户的身份认证和访问信息；
+        writeConcern这个文档描述保证MongoDB提供写操作的成功报告。
+        
+- user文档，定义了用户的以下形式：
 
     ```json
     { user: "<name>",
