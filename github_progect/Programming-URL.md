@@ -45,6 +45,7 @@
 |[在线绘制图工具](https://www.draw.io/)|https://www.draw.io/||
 |[时间戳(Unix timestamp)](https://tool.lu/timestamp/)|https://tool.lu/timestamp/|转换工具 - 在线工具
 |[Linux命令查询](https://www.linuxcool.com/)|https://www.linuxcool.com/|
+|[百度脑图-在线思维导图](http://naotu.baidu.com/)|http://naotu.baidu.com/|百度脑图
 
 ### 翻译
 
