@@ -222,11 +222,7 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
 
 - [《python自动化运维：技术与最佳实践》附带示例及案例源码](https://github.com/yorkoliu/pyauto)
 
-<<<<<<< HEAD
-- [Python - 100天从新手到大师](https://github.com/jackfrued/Python-100-Days)
-=======
     https://github.com/yorkoliu/pyauto
->>>>>>> 8d090a42db61a6fa9ab5ca245f034442834a1175
 
 
 ## 其他
