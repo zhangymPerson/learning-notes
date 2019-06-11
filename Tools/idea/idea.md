@@ -62,3 +62,7 @@
     setting - Editor - General - Editor tabs 
         
         反向勾选掉show tabs in single row
+       
+- idea 显示方法说明
+
+    ctrl+q
