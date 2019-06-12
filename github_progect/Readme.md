@@ -85,7 +85,9 @@
 
     https://github.com/quanke/think-in-java
 
-- [Java 优秀工具类](https://github.com/looly/hutool)
+- [Java 优秀工具类 hutool](https://github.com/looly/hutool)
+
+- [Java资源大全](https://github.com/EhsanTang/awesome-java-cn)
 
 ## 大数据相关的项目
 
