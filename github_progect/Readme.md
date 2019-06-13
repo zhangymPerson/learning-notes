@@ -231,6 +231,11 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
     https://github.com/yorkoliu/pyauto
 
 
+- [100天学会Python](https://github.com/jackfrued/Python-100-Days)
+
+    https://github.com/jackfrued/Python-100-Days
+
+
 ## 其他
 
 - [网络 - 渗透攻击](https://github.com/Micropoor/Micro8)
