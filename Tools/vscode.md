@@ -1,6 +1,6 @@
 # vscode 笔记
 
-- 汉化插件
+- 插件
 
     Chinese (Simplified) Language Pack for Visual Studio Code
 
@@ -8,7 +8,24 @@
 
     Git History  git  日志查看插件 - 右键文件 选择git history 即可
 
+    vscode-icons
+
+    这个也是vscode官方提供的插件，作用是给vscode编辑的文件增加图标。这里再推荐一个相同功能的插件**vscode-icons-mac**，文件图标变成Mac风格，相当美观。
+
+     vim插件     
+     
+     amVim 插件
+
+     括号插件 Bracket Pair Colorizer  
+     
+     这个插件的作用是给代码中的括号增加颜色，同一对括号是相同的颜色，尤其是在括号中还包着括号的时候，看起来更加的清晰。
+
+     路径自动补全 Path Intellisense  
+     
+     这个插件的作用是当代码中读入文件名或者文件路径时，提供文件名或者文件路径的自动补全
     
+    Beautify 代码美化
+
 - [vscode-快捷键说明文档](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 
 - 常用快捷键
