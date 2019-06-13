@@ -136,6 +136,8 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
     https://github.com/firstcontributions/first-contributions
 
 
+- [git使用技巧相关](https://github.com/jackfrued/git-tips)
+
 ## 算法
 
 - [
