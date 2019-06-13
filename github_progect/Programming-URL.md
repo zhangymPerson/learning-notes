@@ -13,6 +13,8 @@
 |[github](https://github.com/)|https://github.com/|程序员必备网站|
 |[阿里云github仓库](https://code.aliyun.com/explore)|https://code.aliyun.com/explore|
 |[码云的github仓库](https://gitee.com/)|https://gitee.com/|
+|[好的github项目](https://github.com/zhangymPerson/learning-notes/blob/master/github_progect/Readme.md)|https://github.com/zhangymPerson/learning-notes/blob/master/github_progect/Readme.md|
+
 
 ### 开发相关
 |网站|网址|简介|
@@ -28,7 +30,7 @@
 |[仓库服务](https://maven.aliyun.com/mvn/search)|https://maven.aliyun.com/mvn/search|阿里云maven配置搜索
 |[在线API文档](http://tool.oschina.net/apidocs)|http://tool.oschina.net/apidocs|常见开发语言的api文档集合
 |[开源中国的浏览器插件](https://github.com/jaywcjlove/oscnews)|https://github.com/jaywcjlove/oscnews|开发人员必备的神奇插件
-
+|[算法-leetcode](https://leetcode-cn.com/)|https://leetcode-cn.com/|
 
 
 
