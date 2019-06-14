@@ -67,3 +67,29 @@
 -  配置VS code显示方式 (空格和table的显示方式)
 
     editor.renderWhitespace : all
+
+
+
+
+###  vscode的远程连接方式
+
+- 插件下载
+
+    Remote Development
+
+    Visual Studio Code Remote 允许开发者将容器，远程计算机，或 Windows Subsystem for Linux (WSL) 作为完整的开发环境。
+
+
+- 配置相关参数
+    
+    ~\.ssh\config
+    ```
+    Host Person
+        HostName host
+        User     root
+    ````
+
+    配置文件后，将ssh的公钥复制到要连接的服务器中
+
+    然后连接
+
