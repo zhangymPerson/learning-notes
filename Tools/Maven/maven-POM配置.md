@@ -81,7 +81,22 @@
     </repositories>
 
 ```
+- maven构建时资源不全部加载的问题
 
+```xml
+<!--maven构建加载资源配置-->
+<build>
+    <resources>
+        <resource>
+            <directory>src/main/resources</directory>
+            <includes>
+                <!--包含文件夹以及子文件夹下所有资源-->
+                <include>**/*.*</include>
+            </includes>
+        </resource>
+    </resources>
+</build>
+```
 
 
 
