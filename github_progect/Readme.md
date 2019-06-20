@@ -109,7 +109,9 @@
 
     https://github.com/jaywcjlove/linux-command
 
+- [命令行的艺术](https://github.com/jlevy/the-art-of-command-line)
 
+    https://github.com/jlevy/the-art-of-command-line
 ## 前端
 
 - [ 一个包含超过480个精心制作的开源图标集合](https://github.com/akveo/eva-icons)
