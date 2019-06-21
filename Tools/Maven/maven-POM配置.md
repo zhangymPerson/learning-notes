@@ -120,11 +120,75 @@
 ```
 
 
+- maven jar项目指定启动的类和主方法
 
+```xml
+            <!--使用插件 问题时不能自动打包所需的maven依赖包-->
+           <plugin>  
+                <groupId>org.apache.maven.plugins</groupId>  
+                <artifactId>maven-jar-plugin</artifactId>  
+                <version>2.4</version>  
+                <configuration>  
+                    <archive>
+                        <manifest>  
+                            <addClasspath>true</addClasspath>  
+                            <classpathPrefix>lib/</classpathPrefix>  
+                            <mainClass>packname.classname</mainClass>  
+                        </manifest>  
+                    </archive>
+                </configuration>  
+            </plugin> 
+```
 
+- maven 将依赖包一起打包
 
+```xml
 
+            <plugin>
+                <artifactId> maven-assembly-plugin </artifactId>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>启动的主类全路径名称</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+```
 
+- maven 不能clean
+
+    有文件被占用，可以关掉启动程序的客户端或者 terminate ,然后重新执行即可
+
+- maven 确定jdk版本和项目编码的配置
+
+```xml
+            <!--idea 编译Java 版本需要不停修改可以添加下面的配置固定jdk编译版本-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <!--jdk版本-->
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <!-- 项目编码-->
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+```
 
 - 错误配置分析(pom配置)
 
