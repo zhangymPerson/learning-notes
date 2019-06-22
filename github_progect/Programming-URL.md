@@ -16,6 +16,13 @@
 |[好的github项目](https://github.com/zhangymPerson/learning-notes/blob/master/github_progect/Readme.md)|https://github.com/zhangymPerson/learning-notes/blob/master/github_progect/Readme.md|
 
 
+### maven仓库查询
+
+|网站|网址|简介|
+|-|-|-|
+|[仓库服务](https://maven.aliyun.com/mvn/search)|https://maven.aliyun.com/mvn/search|阿里云maven配置搜索
+|[官方仓库服务](https://mvnrepository.com/)|https://mvnrepository.com/|maven官方仓库查询
+
 ### 开发相关
 |网站|网址|简介|
 |-|-|-|
@@ -27,7 +34,6 @@
 |[Linux公社](https://www.linuxidc.com/)|https://www.linuxidc.com/|Linux系统门户网站
 |[润乾报表](http://www.raqsoft.com.cn/)|http://www.raqsoft.com.cn/|报表软件-企业级报表软件-报表产品-JAVA报表-报表系统-润乾报表官网
 |[IBM developerWorks 中国 : IBM developerWorks : 技术主题](https://www.ibm.com/developerworks/cn/topics/)|https://www.ibm.com/developerworks/cn/topics/|IBM的技术分享|
-|[仓库服务](https://maven.aliyun.com/mvn/search)|https://maven.aliyun.com/mvn/search|阿里云maven配置搜索
 |[在线API文档](http://tool.oschina.net/apidocs)|http://tool.oschina.net/apidocs|常见开发语言的api文档集合
 |[开源中国的浏览器插件](https://github.com/jaywcjlove/oscnews)|https://github.com/jaywcjlove/oscnews|开发人员必备的神奇插件
 |[算法-leetcode](https://leetcode-cn.com/)|https://leetcode-cn.com/|
@@ -50,7 +56,7 @@
 |[百度脑图-在线思维导图](http://naotu.baidu.com/)|http://naotu.baidu.com/|百度脑图
 
 
-# 测试常用网站
+### 测试常用网站
 |网站|网址|简介|
 |-|-|-|
 |[本地80端口](http://127.01.0.1)|http://127.0.0.1|本地80测试端口
@@ -95,9 +101,18 @@
 |-|-|-|
 |[百度文库](https://wenku.baidu.com/)|https://wenku.baidu.com/|文档查询| 
 |[网易公开课](https://open.163.com/)|https://open.163.com/|网易出品的优质公开课课程| 
+|[w3school教程](http://www.w3school.com.cn/index.html)|http://www.w3school.com.cn/index.html|w3school教程
+|[菜鸟教程](https://www.runoob.com/)|https://www.runoob.com/|菜鸟教程
 
 ### 常用
 |网站|网址|简介|
 |-|-|-|
-|优酷 
-|网易云音乐 
+|[优酷](https://www.youku.com/)|https://www.youku.com/|
+|[网易云音乐](https://music.163.com/)|https://music.163.com/|
+|[喜马拉雅](https://www.ximalaya.com/)|https://www.ximalaya.com/| 喜马拉雅官网
+
+### 图片网站
+|网站|网址|简介|
+|-|-|-|
+|[花瓣网](https://huaban.com/)|https://huaban.com/|花瓣网
+|[站酷网](https://www.zcool.com.cn/)|https://www.zcool.com.cn/|
