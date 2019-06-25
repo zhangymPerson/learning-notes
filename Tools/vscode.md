@@ -69,6 +69,12 @@
     editor.renderWhitespace : all
 
 
+- 配置阿里普惠体 
+
+    Alibaba Sans
+
+    Alibaba Sans, 'Courier New', monospace
+
 
 
 ###  vscode的远程连接方式
