@@ -66,3 +66,11 @@
 - idea 显示方法说明
 
     ctrl+q
+
+
+- idea 修改默认的shell 为powershell 不用windows的cmd
+
+    打开setting 然后找到Tools - Terminal - Shell path  
+
+        cmd.exe 改成
+        powershell.exe
