@@ -30,6 +30,47 @@
 编译文件存放在:${basedir}/target
 JAR文件存放在:${basedir}/target
 
+- maven项目结构
+
+├─springboot-log                        #项目名称
+│  ├─src                                            #源码位置
+│  │  ├─main                                  #项目源码编写
+│  │  │  ├─java                               # java 代码存放位置
+│  │  │  │  └─cn
+│  │  │  │      └─danao
+│  │  │  │          ├─annotation
+│  │  │  │          ├─aop
+│  │  │  │          ├─controller
+│  │  │  │          ├─exception
+│  │  │  │          └─util
+│  │  │  └─resources                     #项目使用的配置文件位置
+│  │  └─test                                     #测试的java代码位置
+│  │      ├─cn
+│  │      │  └─danao
+│  │      │      └─test
+│  │      │          └─base
+│  │      └─resources                     #测试配置位置
+│  └─target								     # mvn clean 清理该文件夹 mvn install / mvn package 生成该文件夹
+│      ├─classes                              #编译好的二进制文件所在位置
+│      │  └─cn
+│      │      └─danao
+│      │          ├─annotation
+│      │          ├─aop
+│      │          ├─controller
+│      │          ├─exception
+│      │          └─util
+│      ├─generated-sources
+│      │  └─annotations
+│      ├─maven-archiver
+│      ├─maven-status
+│      │  └─maven-compiler-plugin
+│      │      └─compile
+│      │          └─default-compile
+│      ├─springbootlog-1.0-SNAPSHOT.jar  #编译生成的jar包
+│      └─test-classes
+
+
+
 
 - 管理项目依赖
 
