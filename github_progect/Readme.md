@@ -68,6 +68,8 @@
 
     http://blog.didispace.com/Spring-Boot%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/
 
+- [Spring boot教程](https://github.com/itinypocket/spring-boot-study)
+
 
 - [Java多线程使用DEMO](https://github.com/zhaoshiling1017/ThreadProject)
 
