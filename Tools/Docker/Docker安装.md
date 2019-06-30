@@ -62,4 +62,9 @@
 
         docker images
 
+- docker启动报错，在不好排错的情况下 
+
+    可以更新系统的依赖库执行一下以下命令
+        
+        yum update
 
