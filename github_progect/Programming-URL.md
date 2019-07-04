@@ -14,7 +14,7 @@
 |[阿里云github仓库](https://code.aliyun.com/explore)|https://code.aliyun.com/explore|
 |[码云的github仓库](https://gitee.com/)|https://gitee.com/|
 |[好的github项目](https://github.com/zhangymPerson/learning-notes/blob/master/github_progect/Readme.md)|https://github.com/zhangymPerson/learning-notes/blob/master/github_progect/Readme.md|
-|[个人maven仓库](https://github.com/zhangymPerson?tab=repositories)|https://github.com/zhangymPerson?tab=repositories|个人maven仓库
+|[个人github仓库](https://github.com/zhangymPerson?tab=repositories)|https://github.com/zhangymPerson?tab=repositories|个人maven仓库
 
 ### maven仓库查询
 
