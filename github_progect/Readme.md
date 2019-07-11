@@ -24,8 +24,15 @@
 
     https://github.com/tencent
 
+## 文档撰写
 
+- [中文文档撰写规范](https://github.com/ruanyf/document-style-guide)
 
+    https://github.com/ruanyf/document-style-guide
+
+- [高效 Java 第三版](https://github.com/sjsdfg/effective-java-3rd-chinese/)
+
+    https://github.com/sjsdfg/effective-java-3rd-chinese/
 ## Java 类
 
 - [JavaGuide](https://github.com/Snailclimb/JavaGuide) 
