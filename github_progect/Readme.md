@@ -35,6 +35,10 @@
     https://github.com/sjsdfg/effective-java-3rd-chinese/
 ## Java 类
 
+- [Java开发书籍推荐](https://github.com/sorenduan/awesome-java-books)
+
+    https://github.com/sorenduan/awesome-java-books
+
 - [JavaGuide](https://github.com/Snailclimb/JavaGuide) 
 
     https://github.com/Snailclimb/JavaGuide
