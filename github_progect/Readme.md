@@ -250,7 +250,9 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
 
     https://github.com/jackfrued/Python-100-Days
 
+- [微软官方的python教程](https://docs.microsoft.com/zh-cn/windows/python/)
 
+    https://docs.microsoft.com/zh-cn/windows/python/
 ## 其他
 
 - [网络 - 渗透攻击](https://github.com/Micropoor/Micro8)
