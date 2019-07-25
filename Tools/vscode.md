@@ -50,6 +50,14 @@
     打开控制台
         ctrl+shift+p或者 F1 
 
+
+    打开文件所在文件夹 资源管理器
+
+        右键 - reveal in explorer
+
+        shift + alt + R
+
+
 ```
 
 - 自动换行
