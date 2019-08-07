@@ -10,6 +10,13 @@
 .project
 .settings/
  
+# eclipse and vscode
+*.prefs
+*.factorypath
+*.json
+
+
+
 # Intellij
 .idea/
 *.iml
