@@ -72,5 +72,36 @@
 
     打开setting 然后找到Tools - Terminal - Shell path  
 
-        cmd.exe 改成
-        powershell.exe
+    cmd.exe 改成 powershell.exe
+       
+- idea显示类注解/方法注解
+
+    搜索栏中输入Show quick documentation on mouse move 就搜索出来了
+
+    或是在setting -> Editor -> General -> Other中都可以看到
+
+- idea 显示占用内存  开启后显示位置在软件的右下角
+
+    File-->Settings-->Apperance-->Window Options-->Show Memory indicator
+
+- Ctrl+鼠标滚轴修改字体大小
+
+    IDEA也支持向浏览器那样按住Ctrl+鼠标滚轴来改变编辑区的字体的大小，设置的开关在：File-->Settings-->Editor-->General
+
+    Change font size (Zoom) with Ctrl + Mouse Wheel
+
+- git/svn 提交人显示
+
+    在行号位置  点击右键 - 选择 annotate
+
+- 查看文件的本地历史记录
+
+    鼠标选中文件，然后右键，在弹出的列表中选择Local History然后就可以看到文件的本地修改记录，即使没有版本控制工具也可以看到这些记录。
+
+- idea 配置默认maven
+
+    IDEA不像Eclipse那样可以在一个窗口中打开多个项目;
+    
+    IDEA每次打开一个新的项目都需要开一个新的窗口或者覆盖掉当前窗口，所以在打开多个项目的时候就需要开多个窗口，但是如果不设置好默认设置，每次打开一个新的窗口就要重新设置。例如：每次打开新的项目的时候maven的本地仓库地址都要重新设置。
+    
+    通过设置Other Settings就可以解决这类问题。File-->Other Settings-->Preferences for New Projects。然后在左上角的搜索框中搜maven，就能看到如下图所示配置了。
