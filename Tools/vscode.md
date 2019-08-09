@@ -113,3 +113,5 @@
 
     然后连接
 
+    vscode有多个服务器需要远程连接的时候，可以直接查看[ssh笔记](https://github.com/zhangymPerson/learning-notes/tree/master/Tools/OpenSSH)中的多服务器配置 配置多个服务器
+

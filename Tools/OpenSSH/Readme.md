@@ -43,3 +43,24 @@
     IdentityFile C:\Users\Administrator\.ssh\id_rsa
     #ps:HostName 是域名   
     ```
+
+- .ssh/config文件是ssh的配置文件
+
+    可以配置多个服务器
+
+    ```conf
+    #别名 home是服务器别名   可以直接 使用 ssh home连接
+    Host home
+        #如果服务器有域名，使用域名，没有域名则使用具体地址 如:127.0.0.1
+        HostName github.com
+        #用户名
+        User apollo
+        #端口号 没有默认是 22
+        Port 4567
+    #配置其他服务器，可以配置多个服务器
+    Host work
+        HostName gitee.com
+        User apollo
+
+    #其他复杂配置可以百度
+    ```
