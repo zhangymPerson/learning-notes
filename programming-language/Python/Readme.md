@@ -22,6 +22,12 @@
 
 - 安装
 
+
+    需要先安装编译依赖的工具包
+
+        yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel
+
+
     ```
     #可以填写参数 编译配置
     ./configure
