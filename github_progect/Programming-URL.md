@@ -96,6 +96,7 @@
 |网站|网址|简介|
 |-|-|-|
 |[微信调试工具](http://mp.weixin.qq.com/debug/)|http://mp.weixin.qq.com/debug/|
+|[微信开放平台](https://open.weixin.qq.com/)|https://open.weixin.qq.com/|微信开放平台
 
 
 ### 学习教程
