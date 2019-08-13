@@ -70,4 +70,8 @@
 
     - 配置git的用户名
     git config --global user.name "Your Name"
+   
+
+   - 多个远程仓库强制拉去合并 gitee 为远程仓库别名 master为指定分支  允许强制拉去不相干的仓库到本地仓库 
+   git pull gitee master --allow-unrelated-histories
     
