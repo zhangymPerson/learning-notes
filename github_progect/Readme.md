@@ -266,3 +266,10 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
 - [多语言多工具入门教程项目](https://github.com/adambard/learnxinyminutes-docs)
 
     https://github.com/adambard/learnxinyminutes-docs
+
+### 开源字体
+
+- [开源字体](https://github.com/chrissimpkins/codeface)
+
+     https://github.com/adambard/learnxinyminutes-docs
+    
