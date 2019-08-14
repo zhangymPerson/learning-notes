@@ -267,6 +267,9 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
 
     https://github.com/adambard/learnxinyminutes-docs
 
+- [最全中华古诗词数据库](https://github.com/chinese-poetry/chinese-poetry)
+
+    https://github.com/chinese-poetry/chinese-poetry
 ### 开源字体
 
 - [开源字体](https://github.com/chrissimpkins/codeface)
