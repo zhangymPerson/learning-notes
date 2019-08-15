@@ -11,3 +11,5 @@
 - [gradle-教程-w3cschool](https://www.w3cschool.cn/gradle/)
 
 - [gradle-中文文档](https://github.com/msdx/gradledoc)
+
+- [gradle实战github地址](https://github.com/bmuschko/gradle-in-action-source)

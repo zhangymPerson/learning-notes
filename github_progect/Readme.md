@@ -270,6 +270,10 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
 - [最全中华古诗词数据库](https://github.com/chinese-poetry/chinese-poetry)
 
     https://github.com/chinese-poetry/chinese-poetry
+    
+- [gradle实战github地址](https://github.com/bmuschko/gradle-in-action-source)
+
+    https://github.com/bmuschko/gradle-in-action-source
 ### 开源字体
 
 - [开源字体](https://github.com/chrissimpkins/codeface)
