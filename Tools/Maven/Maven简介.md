@@ -103,3 +103,25 @@ JAR文件存放在:${basedir}/target
 
     远程仓库:
 ## 作用
+
+## maven 各个阶段的依赖关系
+
+### maven各个阶段的依赖关系 - 生命周期 maven构建的关键生命周期
+
+- clean 清理上次构建
+
+- validate 验证项目定义的正确性
+
+- compile 编译源代码
+
+- test 测试源代码
+
+- package 打包 jar 和 war
+
+- integration-test  运行集成测试
+
+- verify 对组装的工作进行校验检查
+
+- install 安装工件到本地仓库
+
+- deploy 部署到远程仓库
