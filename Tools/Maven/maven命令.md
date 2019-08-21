@@ -165,3 +165,10 @@
     #打印整个依赖树 :
     mvn dependency:tree
     ```
+
+- maven 部署到本地仓库
+
+    windows下需要 -D 添加 [ ' ] Linux下不需要
+    ```shell
+    mvn install:install-file -D'file=D:\person\github\base-java-utils\baseutil\baseprint\target\baseprint-1.0-SNAPSHOT.jar' -D'groupId=cn.danao' -D'artifactId=baseutil' -D'version=1.0-SNAPSHOT' -D'packaging=jar'
+    ```
