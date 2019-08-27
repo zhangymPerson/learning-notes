@@ -38,3 +38,12 @@
 
 - pip 学习
 
+- python api查看 自带api查看工具命令
+
+    ```shell
+    #不是固定端口
+     python -m pydoc -p 0
+
+    #指定端口号启动
+     python –m pydoc –p 1234
+    ```
