@@ -105,3 +105,29 @@
     IDEA每次打开一个新的项目都需要开一个新的窗口或者覆盖掉当前窗口，所以在打开多个项目的时候就需要开多个窗口，但是如果不设置好默认设置，每次打开一个新的窗口就要重新设置。例如：每次打开新的项目的时候maven的本地仓库地址都要重新设置。
     
     通过设置Other Settings就可以解决这类问题。File-->Other Settings-->Preferences for New Projects。然后在左上角的搜索框中搜maven，就能看到如下图所示配置了。
+
+- idea无法从控制台输入的问题 
+    
+    例如:
+    ```java
+    @Test
+    public void testScanner() {
+        Scanner scanner = new Scanner(System.in);
+        String arg = "";
+        System.out.println("请输入：");
+        if (scanner.hasNext()) {
+            /**
+                * 使用netLine 读到下一行为止 如果使用next 则读到 空格为止
+                */
+            arg = scanner.nextLine();
+        }
+        System.out.println("输入值为:" + arg);
+    }
+    ```
+
+    解决办法： 在 启动 idea.exe位置 找到idea.exe.vmoptions和idea64.exe.vmoptions这两个文件
+
+    添加 
+    ```conf
+    -Deditable.java.test.console=true
+    ```
