@@ -8,6 +8,8 @@
 
     Git History  git  日志查看插件 - 右键文件 选择git history 即可
 
+    **Git File History**  git 文件修改历史查看便捷神器插件 直观查看git对文件的修改历史
+
     vscode-icons
 
     这个也是vscode官方提供的插件，作用是给vscode编辑的文件增加图标。这里再推荐一个相同功能的插件**vscode-icons-mac**，文件图标变成Mac风格，相当美观。
