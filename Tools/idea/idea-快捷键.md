@@ -7,6 +7,12 @@
 
     ctrl + shift + F12
 
+- 重启项目
+
+- 停止项目
+
+    ctrl + F2
+
 - 快速运行程序
 
     shift + F10
