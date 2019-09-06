@@ -80,3 +80,16 @@
 - python基础语法图示
 
 ![基础语法图](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E.png)
+
+- python多个字符输出
+
+```py
+#非空判断和 %s 的输出 多个%s 使用 %(a,b,c)
+l = [None, False, 0, 0.0, 0, '', (), [], {}]
+
+for strs in l:
+    if strs:
+        print("%s is true"%str(strs))
+    else:
+        print("%s %s %s is false"%(str(strs),str(strs),str(strs)))
+```
