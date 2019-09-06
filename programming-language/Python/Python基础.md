@@ -83,13 +83,42 @@
 
 - python多个字符输出
 
-```py
-#非空判断和 %s 的输出 多个%s 使用 %(a,b,c)
-l = [None, False, 0, 0.0, 0, '', (), [], {}]
+    ```py
+    #非空判断和 %s 的输出 多个%s 使用 %(a,b,c)
+    l = [None, False, 0, 0.0, 0, '', (), [], {}]
 
-for strs in l:
-    if strs:
-        print("%s is true"%str(strs))
-    else:
-        print("%s %s %s is false"%(str(strs),str(strs),str(strs)))
-```
+    for strs in l:
+        if strs:
+            print("%s is true"%str(strs))
+        else:
+            print("%s %s %s is false"%(str(strs),str(strs),str(strs)))
+    ```
+
+- python 简单日志引入
+
+    ```py
+    import logging
+    LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"    # 日志格式化输出
+    DATE_FORMAT = "%m/%d/%Y %H:%M:%S %p"                        # 日期格式
+    fp = logging.FileHandler('info.log', encoding='utf-8')   #配置日志输出文件和编码格式
+    fs = logging.StreamHandler()
+    logging.basicConfig(level=logging.DEBUG, format=LOG_FORMAT, datefmt=DATE_FORMAT, handlers=[fp, fs])    # 调用
+    logging.debug('这是个debug级别的信息')#输出时被过滤掉了
+    logging.info('这是个info级别的信息')#输出时被过滤掉了
+    logging.warning('这是个warning级别的信息')
+    logging.error('这是个error级别的信息')
+    logging.critical('这是个critical级别的信息')
+    ```
+
+- python 主函数
+
+    ```py
+
+    def main():
+        logging.info("start ...")
+        #coding
+        logging.info("end ...")
+
+    if __name__ == '__main__':
+        main()
+    ```
