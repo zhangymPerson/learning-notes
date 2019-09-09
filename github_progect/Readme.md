@@ -77,6 +77,10 @@
 - [spring boot 实践学习案例](https://github.com/JeffLi1993/springboot-learning-example)
 
     https://github.com/JeffLi1993/springboot-learning-example
+   
+- [springboot demo](https://github.com/xkcoding/spring-boot-demo)
+
+    https://github.com/xkcoding/spring-boot-demo
 
 - [Spring Boot基础教程](http://blog.didispace.com/Spring-Boot%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B/)
 
@@ -105,6 +109,10 @@
 
 - [Java资源大全](https://github.com/EhsanTang/awesome-java-cn)
 
+
+- [Java登陆demo-多个网站](https://github.com/justauth/JustAuth)
+
+    https://github.com/justauth/JustAuth
 ## 大数据相关的项目
 
 - [大数据项目链接和介绍-各个项目的官网的链接](https://github.com/onurakpolat/awesome-bigdata)
@@ -238,6 +246,10 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
 
     https://github.com/enocom/gopher-reading-list
 
+- [go学习测试项目](https://github.com/quii/learn-go-with-tests)
+
+    https://github.com/quii/learn-go-with-tests
+
 ## python 语言
 
 - [python算法学习](https://github.com/OmkarPathak/pygorithm)
@@ -275,6 +287,12 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
     https://github.com/chinese-poetry/chinese-poetry
     
 - [gradle实战github地址](https://github.com/bmuschko/gradle-in-action-source)
+
+    https://github.com/bmuschko/gradle-in-action-source
+
+- [正则表达式的学习项目](https://github.com/ziishaned/learn-regex)
+
+    https://github.com/ziishaned/learn-regex
 
     https://github.com/bmuschko/gradle-in-action-source
 ### 开源字体
