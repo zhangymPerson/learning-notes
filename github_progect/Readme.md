@@ -66,6 +66,9 @@
 
     https://github.com/dyc87112/SpringBoot-Learning
 
+- [springboot插件](https://github.com/geekidea/spring-boot-plus)
+
+    https://github.com/geekidea/spring-boot-plus
 
 - [springcloud - 教程](https://github.com/forezp/SpringCloudLearning)
 
