@@ -1,5 +1,10 @@
 # 配置python-shell中的tab自动补全
 
+- python自带提示得命令补全  可以安装 ipython  
+
+    pip install ipython
+
+- 需要安装 readline rlcompleter atexit 等模块
 
 - 编写脚本
 
