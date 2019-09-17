@@ -154,31 +154,25 @@
 
 ## git使用
 
-- [
-Git飞行规则](https://github.com/k88hudson/git-flight-rules)
+- [Git飞行规则](https://github.com/k88hudson/git-flight-rules)
 
 - [git使用](https://github.com/firstcontributions/first-contributions)
 
     https://github.com/firstcontributions/first-contributions
 
-
 - [git使用技巧相关](https://github.com/jackfrued/git-tips)
 
 ## 算法
 
-- [
-算法/深度学习/NLP面试笔记](https://github.com/imhuay/Algorithm_Interview_Notes-Chinese)
+- [算法/深度学习/NLP面试笔记](https://github.com/imhuay/Algorithm_Interview_Notes-Chinese)
 
     https://github.com/imhuay/Algorithm_Interview_Notes-Chinese
-
 
 ## vscode 
 
 - [VS code插件推荐](https://github.com/viatsko/awesome-vscode)
 
     https://github.com/viatsko/awesome-vscode
-
-
 
 # 学习面试
 - [系统设计](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md)
@@ -193,11 +187,9 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
 
     https://github.com/CyC2018/CS-Notes
 
-
 - [各种环境的构建技术集合，包含了很多自己动手的实践方法](https://github.com/danistefanovic/build-your-own-x)
 
     https://github.com/danistefanovic/build-your-own-x
-
 
 - [设计模式](https://github.com/DovAmir/awesome-design-patterns)
 
@@ -205,9 +197,7 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
 
 - [后端架构师技术图谱](https://github.com/xingshaocheng/architect-awesome)
 
-
     https://github.com/xingshaocheng/architect-awesome
-
 
 - [系统设计模式](https://github.com/binhnguyennus/awesome-scalability)
 
@@ -217,14 +207,11 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
 
     https://github.com/iluwatar/java-design-patterns
 
-
-
 - [各种程序员资料导航](https://github.com/stanzhai/be-a-professional-programmer)
 
     https://github.com/stanzhai/be-a-professional-programmer
 
 - [中科大计算机教程](https://github.com/mbinary/USTC-CS-Courses-Resource)
-
 
     https://github.com/mbinary/USTC-CS-Courses-Resource
 
@@ -294,7 +281,6 @@ Git飞行规则](https://github.com/k88hudson/git-flight-rules)
 
     https://github.com/ziishaned/learn-regex
 
-    https://github.com/bmuschko/gradle-in-action-source
 ### 开源字体
 
 - [开源字体](https://github.com/chrissimpkins/codeface)
