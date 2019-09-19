@@ -24,6 +24,9 @@
 
     https://github.com/tencent
 
+- [伯乐在线-github-各种语言的资源和工具](https://github.com/jobbole)
+
+    https://github.com/jobbole
 ## 文档撰写
 
 - [中文文档撰写规范](https://github.com/ruanyf/document-style-guide)
