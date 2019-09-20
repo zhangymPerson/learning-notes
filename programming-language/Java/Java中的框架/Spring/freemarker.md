@@ -65,11 +65,24 @@ if 判断
 ```
 <#list keyList as key>
     ${key}
+    <#--获取list的下标 使用 key_index即可,下标是从0开始的-->
+    <#if key_index = 0>
+        ${key}
+    <#else >
+        ${key?substring(2,4)}
+    </#if>
         <#--keyList在key之后是否还有元素判断-->
          <#if key_has_next>
             xxx
         </#if>
 </#list>
+```
+
+- freemarker字符截取
+
+```
+<#--截取第2-4位的字符-->
+${key?substring(2,4)}
 ```
 
 
