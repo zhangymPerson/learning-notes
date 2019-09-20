@@ -117,3 +117,10 @@
 
     vscode有多个服务器需要远程连接的时候，可以直接查看[ssh笔记](https://github.com/zhangymPerson/learning-notes/tree/master/Tools/OpenSSH)中的多服务器配置 配置多个服务器
 
+
+- vscode字体配置
+
+    微软开源字体
+    ```
+    "Cascadia Code",Consolas, 'Courier New', monospace
+    ```
