@@ -8,7 +8,9 @@
 
     Git History  git  日志查看插件 - 右键文件 选择git history 即可
 
-    **Git File History**  git 文件修改历史查看便捷神器插件 直观查看git对文件的修改历史
+    **Git File History**  git 文件修改历史查看便捷神器插件 直观查看git对文件的修改历史 使用方式 ctrl + shift + p 然后输入命令 Git File History 可以动态查看文件git提交记录
+
+    **Git History Diff** git 文件查看插件，会在鼠标所在行显示修改历史
 
     vscode-icons
 
@@ -17,6 +19,8 @@
      vim插件     
      
      amVim 插件
+
+     Vim 原生支持的vim插件，
 
      括号插件 Bracket Pair Colorizer  
      
