@@ -23,7 +23,7 @@ value=${(map.name)!"map为null或者name为null"
 是
 <#else >
 否
-<#if>
+</#if>
 
 <#--注释: 判断key是否为null -->
 <#if key??>
