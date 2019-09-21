@@ -84,7 +84,7 @@
 |网站|网址|简介|
 |-|-|-|
 |阿里巴巴普惠体|https://alibabafont.taobao.com/wow/alibabafont/act/alifont|
-
+|[微软开源的编程字体](https://github.com/microsoft/cascadia-code)|https://github.com/microsoft/cascadia-code|
 
 ###  springboot项目
 
