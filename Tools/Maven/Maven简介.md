@@ -108,6 +108,8 @@ JAR文件存放在:${basedir}/target
 
 ### maven各个阶段的依赖关系 - 生命周期 maven构建的关键生命周期
 
+![maven仓库结构图](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/maven%E4%BB%93%E5%BA%93%E5%9B%BE.png)
+
 - clean 清理上次构建
 
 - validate 验证项目定义的正确性
