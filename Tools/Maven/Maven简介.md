@@ -32,6 +32,7 @@ JAR文件存放在:${basedir}/target
 
 - maven项目结构
 
+```
 ├─springboot-log                        #项目名称
 │  ├─src                                            #源码位置
 │  │  ├─main                                  #项目源码编写
@@ -69,7 +70,7 @@ JAR文件存放在:${basedir}/target
 │      ├─springbootlog-1.0-SNAPSHOT.jar  #编译生成的jar包
 │      └─test-classes
 
-
+```
 
 
 - 管理项目依赖
