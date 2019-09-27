@@ -131,3 +131,39 @@
     ```conf
     -Deditable.java.test.console=true
     ```
+
+- idea的修改内存的方法
+
+    首先，我们需要找到 idea.vmoptions 文件的位置，这个不同的平台，估计名称可能有些差别
+
+    ```
+    -Xms128m
+    -Xmx384m
+    -XX:ReservedCodeCacheSize=240m
+    -XX:+UseConcMarkSweepGC
+    -XX:SoftRefLRUPolicyMSPerMB=50
+    -ea
+    -Dsun.io.useCanonCaches=false
+    -Djava.net.preferIPv4Stack=true
+    -Djdk.http.auth.tunneling.disabledSchemes=""
+    -XX:+HeapDumpOnOutOfMemoryError
+    -XX:-OmitStackTraceInFastThrow
+    -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2018.2.5\bin\JetbrainsCrack-3.1-release-enc.jar
+    -Deditable.java.test.console=true
+    ```
+    - Xms128m,最小内存
+    - Xmx750m,最大内存
+    - 预留代码缓存的大小
+    - UseConcMarkSweepGC,设置年老代为并发收集
+
+    在idea上直接修改的方式：
+
+    help->Edite Custom Vm Options
+    打开配置文件修改相应的参数
+
+    ```
+    -Xms1024m
+    -Xmx2048m
+    -XX:ReservedCodeCacheSize=1024m
+    ```
+    修改完重启idea,即可完成相应的修改;
