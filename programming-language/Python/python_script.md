@@ -66,3 +66,17 @@
         main()
 
     ```
+
+- 生成uuid
+
+    ```py
+    import uuid
+
+
+    def gen_uuid():
+        """
+        生成uuid
+        :return:
+        """
+        return ''.join(str(uuid.uuid4()).split('-'))
+    ```
