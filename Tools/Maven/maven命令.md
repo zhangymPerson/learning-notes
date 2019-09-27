@@ -169,6 +169,14 @@
 - maven 部署到本地仓库
 
     windows下需要 -D 添加 [ ' ] Linux下不需要
-    ```shell
+    ```sh
     mvn install:install-file -D'file=D:\person\github\base-java-utils\baseutil\baseprint\target\baseprint-1.0-SNAPSHOT.jar' -D'groupId=cn.danao' -D'artifactId=baseutil' -D'version=1.0-SNAPSHOT' -D'packaging=jar'
+    
+    #发布jar到本地仓库 其中jar需要先编译 jar的包内容需指定
+    mvn install:install-file -Dfile=<Jar包的地址> 
+                     -DgroupId=<Jar包的GroupId> 
+                     -DartifactId=<Jar包的引用名称> 
+                     -Dversion=<Jar包的版本> 
+                     -Dpackaging=<Jar的打包方式>
+    
     ```
