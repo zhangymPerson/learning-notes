@@ -5,6 +5,10 @@
     **windows下必须加引号**
      mvn clean package -D'maven.test.skip=true'
 
+- idea 跳过maven测试
+
+    打开idea的右侧栏 maven projects 选中 mvn 构建过程 点击小闪电图标 跳过测试过程
+    Toggle ‘Skip Tests’ Mode
 
 - maven 项目多模块打包时报错，找不到子模块问题
 
