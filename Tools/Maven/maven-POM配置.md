@@ -194,6 +194,80 @@
             </plugin>
 ```
 
+- mvn 发布到本地仓库的配置
+
+    **注意事项：**
+    
+    **1.配置在子pom中，packaging类型为pom的一般是父项目的pom.xml文件**
+    
+    配置文件中的含义：
+        
+        project.basedir=pom.xml文件所在文件夹的位置
+        
+        project.build.directory = ${project.basedir}/target
+
+        其他的可以在idea中根据 pom.xml 文件点击进去查看
+
+    ```xml
+    <!--配置在子pom.xml中，packaging 类型不为 pom 类型的pom.xml中-->
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-install-plugin</artifactId>
+        <version>2.4</version>
+        <executions>
+            <execution>
+                <id>install-find-repo</id>
+                <goals>
+                    <goal>install-file</goal>
+                </goals>
+                <phase>install</phase>
+                <configuration>
+                    <file>
+                        ${project.build.directory}/${project.build.finalName}.jar
+                    </file>
+                    <sources>${project.build.directory}/${project.build.finalName}-sources.jar</sources>
+                    <groupId>${project.groupId}</groupId>
+                    <artifactId>${project.artifactId}</artifactId>
+                    <version>${project.version}</version>
+                    <packaging>jar</packaging>
+                </configuration>
+            </execution>
+        </executions>
+    </plugin>
+    <!--打包源码的jar配置  在有源码的位置配置，不要配置在父pom.xml中-->
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+            <execution>
+                <id>attach-sources</id>
+                <goals>
+                    <goal>jar</goal>
+                </goals>
+            </execution>
+        </executions>
+    </plugin>
+    ```
+
+- maven打包源码
+
+    插件:maven-source-plugin
+    ```xml
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+                <execution>
+                    <id>attach-sources</id>
+                    <goals>
+                        <goal>jar</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    ```
+
+
 - maven中jar包引入的scope范围
 
     maven的哲学在上次技术分享的时候也提到了：约定大于配置，所以在maven中，很多内容都有默认值，scope的默认值是compile，那么scope还能有哪些选项呢？
