@@ -168,6 +168,15 @@
 
 - maven 部署到本地仓库
 
+
+    **mvn install 和 mvn install:install-file区别**
+
+    mvn install 将当前mvn项目打包发布到本地仓库 mvn install 如果需要配置参数可以看
+
+    [Maven/maven-POM配置.md](https://github.com/zhangymPerson/learning-notes/blob/master/Tools/Maven/maven-POM%E9%85%8D%E7%BD%AE.md)
+
+    mvn install:install-file 是将第三方和网上下载得jar包发布到本地仓库，便于本地mvn项目使用
+
     windows下需要 -D 添加 [ ' ] Linux下不需要
     ```sh
     mvn install:install-file -D'file=D:\person\github\base-java-utils\baseutil\baseprint\target\baseprint-1.0-SNAPSHOT.jar' -D'groupId=cn.danao' -D'artifactId=baseutil' -D'version=1.0-SNAPSHOT' -D'packaging=jar'
