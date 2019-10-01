@@ -166,6 +166,12 @@
     mvn dependency:tree
     ```
 
+- mvn 中配置有很多变量时，在不确定变量或者那些配置生效时，可以使用一下命令打印实际的pom.xml内容进行分析
+
+    ```
+    mvn help:effective-pom
+    ```
+
 - maven 部署到本地仓库
 
     windows下需要 -D 添加 [ ' ] Linux下不需要
