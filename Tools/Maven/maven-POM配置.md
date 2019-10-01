@@ -1,5 +1,16 @@
 # pom 文件配置说明介绍
 
+
+- maven中配置编码格式为utf-8 
+
+    pom.xml中添加以下配置
+    ```xml
+    <properties>
+        <!--添加编码格式为utf-8-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    ```
+
 - 配置demo
 
 ```xml
