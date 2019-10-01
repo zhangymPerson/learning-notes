@@ -167,3 +167,19 @@
     -XX:ReservedCodeCacheSize=1024m
     ```
     修改完重启idea,即可完成相应的修改;
+   
+- idea 查看静态html页面的端口 
+
+
+    默认是：63342
+
+    修改配置方式：
+
+    File ->setting ->  Debugger -> port 
+
+    默认访问路径
+
+        ```py
+        #访问路径为项目名 + 静态文件所在的项目下全路径名
+        http:localhost:63342/${project_name}/***/**.html
+        ```

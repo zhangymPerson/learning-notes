@@ -266,7 +266,27 @@
             </executions>
         </plugin>
     ```
+- maven 打包生成文档插件
 
+    ```xml
+    <!-- 文档 插件 -->
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.7</version>
+        <executions>
+            <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                    <goal>jar</goal>
+                </goals>
+                <configuration>
+                    <additionalparam>-Xdoclint:none</additionalparam>
+                </configuration>
+            </execution>
+        </executions>
+    </plugin>
+    ```
 
 - maven中jar包引入的scope范围
 
