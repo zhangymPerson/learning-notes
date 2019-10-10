@@ -284,6 +284,10 @@
 
     https://github.com/ziishaned/learn-regex
 
+- [互联网上的免费书籍](https://github.com/ruanyf/free-books)
+
+    https://github.com/ruanyf/free-books
+
 ### 开源字体
 
 - [开源字体](https://github.com/chrissimpkins/codeface)
