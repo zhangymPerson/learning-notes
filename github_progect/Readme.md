@@ -288,6 +288,9 @@
 
     https://github.com/ruanyf/free-books
 
+- [GitHub中文排行榜](https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts)
+
+    https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts
 ### 开源字体
 
 - [开源字体](https://github.com/chrissimpkins/codeface)
