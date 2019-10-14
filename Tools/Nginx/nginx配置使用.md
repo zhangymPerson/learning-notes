@@ -149,6 +149,20 @@
     }
     ```
 
+- nginx配置服务端口指向另一个端口
+
+
+    监听8080 指向8888端口的服务;
+    ```conf
+    server{
+        listen 8080;
+        location / {
+            proxy_pass http://127.0.0.1:8888;
+            proxy_redirect default;
+        }
+    }
+    ```
+
 
 
     - nginx默认配置文件
