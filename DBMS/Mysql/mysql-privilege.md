@@ -136,16 +136,24 @@ MYSQL的权限如何分布，就是针对表可以设置什么权限，针对列
     ```sh
     #mysql8.0新特性
     create user 'name'@'ip' identified by 'password';
-
+    #授权远程登陆；
     grant all privileges on *.* to 'boyi'@'%' with grant option;
 
     ```
+- 远程授权
 
+    mysql8.0以前的版本可以使用grant在授权的时候隐式的创建用户，8.0以后已经不支持，所以必须先创建用户，然后再授权，命令如下：
+    ```sql
+    mysql> CREATE USER 'root'@'%' IDENTIFIED BY 'yourpassword';
+    Query OK, 0 rows affected (0.04 sec)
+
+    mysql> grant all privileges on *.* to 'root'@'%';
+    Query OK, 0 rows affected (0.03 sec)
+    ```
 - 修改用户名密码
 
     ```
     ALTER USER "root"@"localhost" IDENTIFIED  BY "你的新密码";
-
     ```
 - MySQL 8.0 客户端连接问题解决
 
@@ -153,8 +161,16 @@ MYSQL的权限如何分布，就是针对表可以设置什么权限，针对列
     # 修改root的加密规则
     ALTER USER 'root'@'localhost' IDENTIFIED BY 'yourpassword' PASSWORD EXPIRE NEVER; 
 
+    #修改root需查看root的账户权限
+
+    use mysql;
+    
+    select user,host from user;
+
     # 修改root的密码
     ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'yourpassword';
+    #或者
+    ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'yourpassword';
 
     # 修改普通用户的密码
     ALTER USER 'myuser'@'%' IDENTIFIED WITH mysql_native_password BY 'yourpassword'; 
