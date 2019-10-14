@@ -1,5 +1,21 @@
 # docker 常用命令
 
+- 查询某个镜像文件
+
+  ```sh
+  docker search ***
+  ```
+  查询网址:
+    
+    [https://hub.docker.com/](https://hub.docker.com/)
+- 常用仓库命令
+
+|操作|命令|说明
+|-|-|-|
+|检索|docker search |关键字如：docker search redis|经常会去docker hub上检索镜像的详细信息
+|拉取|docker pull 镜像名:tag|:tag是可选的，tag表示标签，通常是软件的版本号，默认是 latest(即最新版)
+|列表|docker images|查看所有本地镜像
+|删除|docker rmi image-id|删除指定的本地镜像
 ```sh
 > docker --help
 Usage:	docker [OPTIONS] COMMAND
