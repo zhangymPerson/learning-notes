@@ -45,8 +45,14 @@
     Dockerfile文件内容 可自行修改
 
     ```dockerfile
+    #基础镜像文件 
     FROM frolvlad/alpine-oraclejdk8:slim
     VOLUME /tmp
     ADD springbootlearingone-1.0-SNAPSHOT.jar app.jar
-    ENTRYPOINT ["java","-jar","/app.jar"]
+    ENTRYPOINT ["java","-jar","app.jar"]
     ```
+
+    在实践中，基础镜像可以根据实际情况自己调整 通过一下命令查找基础镜像
+
+        docker search ***
+    其他内容含义见[Dockerfile_note.md](Dockerfile_note.md)
