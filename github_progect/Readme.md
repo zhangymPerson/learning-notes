@@ -116,6 +116,10 @@
 - [Java登陆demo-多个网站](https://github.com/justauth/JustAuth)
 
     https://github.com/justauth/JustAuth
+
+- [OAuth 2.0授权框架简体中文翻译](https://github.com/jeansfish/RFC6749.zh-cn)
+
+    https://github.com/jeansfish/RFC6749.zh-cn
 ## 大数据相关的项目
 
 - [大数据项目链接和介绍-各个项目的官网的链接](https://github.com/onurakpolat/awesome-bigdata)
