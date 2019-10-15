@@ -13,3 +13,5 @@
 - [gradle-中文文档](https://github.com/msdx/gradledoc)
 
 - [gradle实战github地址](https://github.com/bmuschko/gradle-in-action-source)
+
+- [Gradle User Guide 中文版](https://github.com/DONGChuan/GradleUserGuide)
