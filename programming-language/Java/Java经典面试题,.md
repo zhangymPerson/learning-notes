@@ -70,9 +70,9 @@
 
 - HashMap 说明  
 
-    ![Hashmap 说明](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/HashMap-analysis.png)
+    ![Hashmap 说明](../../Picture/HashMap-analysis.png)
 
-    ![HashMap put方法解析](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/hashmap-put-method.png)
+    ![HashMap put方法解析](../../Picture/hashmap-put-method.png)
 
 
     

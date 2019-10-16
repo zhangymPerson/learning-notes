@@ -79,7 +79,7 @@
     ```
 - python基础语法图示
 
-![基础语法图](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E.png)
+![基础语法图](../../Picture/Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E8%AF%B4%E6%98%8E.png)
 
 - python多个字符输出
 

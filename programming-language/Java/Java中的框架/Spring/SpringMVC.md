@@ -10,7 +10,7 @@
 
 - 如下图所示
 
-![MVC结构图](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/MVC.png)
+![MVC结构图](../../../../Picture/MVC.png)
 
 ## Spring 中mvc
 

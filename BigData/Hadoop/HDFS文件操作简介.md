@@ -102,4 +102,4 @@
 
 - 查看文件
 
-    ![hdfs文件读取api](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/HDFS%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E8%BF%87%E7%A8%8B.png)
+    ![hdfs文件读取api](../../Picture/HDFS%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96%E8%BF%87%E7%A8%8B.png)

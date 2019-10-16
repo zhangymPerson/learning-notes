@@ -1,5 +1,5 @@
 # learning-notes
-![我是人间惆怅客,知君何事泪纵横](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/biji.png)
+![我是人间惆怅客,知君何事泪纵横](./Picture/biji.png)
 
 
 - 技术交流
@@ -7,7 +7,7 @@
     邮箱:[zhangyanmingjiayou@163.com](mailto://zhangyanmingjiayou@163.com)
 
     微信好友:
-    ![微信号-好友](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/wechat-info.png)
+    ![微信号-好友](./Picture/wechat-info.png)
 
 
 # [项目目录](https://github.com/zhangymPerson/learning-notes)
@@ -50,7 +50,7 @@ Mainly used to record Java, DBMS, HDFS... related learning notes
 
 - 各种编程相关的开发工具的使用笔记
 
-![支付宝-收款](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/alipay-info.png)
+![支付宝-收款](./Picture/alipay-info.png)
 
 
 [LICENSE](LICENSE)

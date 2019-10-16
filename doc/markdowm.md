@@ -58,13 +58,13 @@
     ```md
     欢迎来到[github项目-learning-notes-首页](https://github.com/zhangymPerson/learning-notes)
 
-    ![微信好友](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/wechat-info.png)
+    ![微信好友](../Picture/wechat-info.png)
     ```
 - 效果
 
     欢迎来到[github项目-learning-notes-首页](https://github.com/zhangymPerson/learning-notes)
 
-    ![微信好友](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/wechat-info.png)
+    ![微信好友](../Picture/wechat-info.png)
 - 参考式
 
     ```md

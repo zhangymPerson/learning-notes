@@ -1,7 +1,7 @@
 # idea-整合svn
 
 - svn参数说明
-![svn按钮说明](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/idea-svn.png)
+![svn按钮说明](../../Picture/idea-svn.png)
 
 - 代码提交
 

@@ -103,7 +103,7 @@
 
 ## 仓库概念
 
-![maven仓库结构图](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/maven%E4%BB%93%E5%BA%93%E5%9B%BE.png)
+![maven仓库结构图](../../Picture/maven%E4%BB%93%E5%BA%93%E5%9B%BE.png)
     
 - 本地仓库配置
 
