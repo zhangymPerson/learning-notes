@@ -53,7 +53,7 @@ Mainly used to record Java, DBMS, HDFS... related learning notes
 ![支付宝-收款](https://github.com/zhangymPerson/learning-notes/blob/master/Picture/alipay-info.png)
 
 
-
+[LICENSE](LICENSE)
 
 
 
