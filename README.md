@@ -10,33 +10,33 @@
     ![微信号-好友](./Picture/wechat-info.png)
 
 
-# [项目目录](https://github.com/zhangymPerson/learning-notes)
+# 项目目录
 
-## [BigData （大数据）](https://github.com/zhangymPerson/learning-notes/tree/master/BigData)
+## [BigData （大数据）](./BigData/README.md)
 
-## [Data_Structures-Algorithm (数据结构和算法)](https://github.com/zhangymPerson/learning-notes/tree/master/Data_Structures-Algorithm)
-
-
-## [DBMS（数据库管理系统）](https://github.com/zhangymPerson/learning-notes/tree/master/DBMS)
+## [Data_Structures-Algorithm (数据结构和算法)](./Data_Structures-Algorithm/README.md)
 
 
-
-## [github_progect（优秀github项目）](https://github.com/zhangymPerson/learning-notes/tree/master/github_progect)
-
-
-## [Internet(网络)](https://github.com/zhangymPerson/learning-notes/tree/master/Internet)
+## [DBMS（数据库管理系统）](./DBMS/README.md)
 
 
-## [Interview（面试相关）](https://github.com/zhangymPerson/learning-notes/tree/master/Interview)
+
+## [github_progect（优秀github项目）](./github_progect/README.md)
 
 
-## [OS (操作系统)](https://github.com/zhangymPerson/learning-notes/tree/master/OS)
+## [Internet(网络)](./Internet/README.md)
 
-## [Picture(配图)](https://github.com/zhangymPerson/learning-notes/tree/master/Picture)
 
-## [programming-language（编程语言）](https://github.com/zhangymPerson/learning-notes/tree/master/programming-language)
+## [Interview（面试相关）](./Interview/README.md)
 
-## [Tools(常用编程工具)](https://github.com/zhangymPerson/learning-notes/tree/master/Tools)
+
+## [OS (操作系统)](./OS/README.md)
+
+## [Picture(配图)](./Picture/README.md)
+
+## [programming-language（编程语言）](./programming-language/README.md)
+
+## [Tools(常用编程工具)](./Tools/README.md)
 
 
 Mainly used to record Java, DBMS, HDFS... related learning notes

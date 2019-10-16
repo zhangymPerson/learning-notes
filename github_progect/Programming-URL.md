@@ -13,7 +13,7 @@
 |[github](https://github.com/)|https://github.com/|程序员必备网站|
 |[阿里云github仓库](https://code.aliyun.com/explore)|https://code.aliyun.com/explore|
 |[码云的github仓库](https://gitee.com/)|https://gitee.com/|
-|[好的github项目](https://github.com/zhangymPerson/learning-notes/blob/master/github_progect/Readme.md)|https://github.com/zhangymPerson/learning-notes/blob/master/github_progect/Readme.md|
+|[好的github项目](https://github.com/zhangymPerson/learning-notes/blob/master/github_progect/README.md)|https://github.com/zhangymPerson/learning-notes/blob/master/github_progect/README.md|
 |[个人github仓库](https://github.com/zhangymPerson?tab=repositories)|https://github.com/zhangymPerson?tab=repositories|个人maven仓库
 |[hellogithub](https://hellogithub.com/)|https://hellogithub.com/|优秀github项目查询
 ### maven仓库查询

@@ -1,4 +1,4 @@
-# github中readme.md文件的写法
+# github中README.md文件的写法
     
 -   项目简介：用一两句话简单描述该项目所实现的业务功能；
     
