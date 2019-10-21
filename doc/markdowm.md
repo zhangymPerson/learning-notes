@@ -55,6 +55,10 @@
 
 - 超链接
 
+
+    Go [Home][home].
+
+    [home]: https://example.org
     ```md
     欢迎来到[github项目-learning-notes-首页](https://github.com/zhangymPerson/learning-notes)
 

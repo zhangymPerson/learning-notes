@@ -1,0 +1,219 @@
+= Hello, AsciiDoc!
+Doc Writer doc@example.com
+
+An introduction to http://asciidoc.org[AsciiDoc].
+
+== First Section
+
+- item 1
+- item 2
+
+官方demo
+
+---
+
+= 标题
+
+== 二级标题
+
+=== 三级标题
+
+==== 四级标题
+
+===== 五级标题
+
+====== 六级标题
+
+======= 七级标题 最多六级
+
+==== 文档地址
+
+TIP: https://asciidoctor.org/docs/user-manual/[官方文档连接].
+
+==== 添加图片
+	
+image:../Picture/biji.png[Logo]
+
+[source,ruby]
+puts "Hello, World!"
+
+==== 代码输入
+[source ,java] 
+public static void main(String[] args){
+    System.out.print("a");
+}
+
+==== 字体样式修改
+
+*加粗*
+
+_斜体_
+
+
+等宽字体
+`monospace phrase` & ``char``acter``s``
+
+标记字体（黄色背景）
+
+Werewolves are allergic to #cassia cinnamon#.
+
+字体缩小
+
+Did the werewolves read the [.small]##small print##?
+
+字体扩大
+
+[.big]##O##nce upon an infinite loop.
+
+
+
+删除线
+
+We need [.line-through]#ten# make that twenty VMs.
+
+下划线
+
+Where did all the [.underline]#cores# run off to?
+
+上标
+
+^super^script phrase
+
+下标
+
+~sub~script phrase
+
+智能引号
+
+如果不希望应用智能引号，可以使用 （\）进行转义。
+"`double curved quotes`"
+
+'`single curved quotes`'
+
+Olaf's desk was a mess.
+
+All of the werewolves`' desks were a mess.
+
+Olaf had been with the company since the `'60s.
+“double curved quotes”
+
+‘single curved quotes’
+
+Olaf’s desk was a mess.
+
+All of the werewolves’ desks were a mess.
+
+Olaf had been with the company since the ’60s.
+
+文本替换
+
+.文本替换
+|===
+|符号|显示|说明
+|(C)|©|版权
+|(TM)|™|商标
+|(R)|®|注册商标
+|…​|...|省略号
+|->	|→|右箭头
+|<-	|←|左箭头
+|=>	|⇒|右双箭头
+|<=	|⇐|左双箭头
+|&#x278a;|➊|数字
+|--|—|破折号（只能在两个字符之间使用）
+|===
+
+
+
+
+==== 代码添加
+
+[source,python]   
+    ----
+    # -*- coding: UTF-8 -*-
+    # Filename : helloworld.py
+    # author by : www.runoob.com
+    # 该实例输出 Hello World!
+    print('Hello World!')
+    ----
+
+==== 超链接
+    
+https://gitee.com/ZhangYanMingGood/learning-notes[我的笔记的gitee地址]
+
+==== 多级列表
+
+* apples
+* oranges
+** temple
+*** navel
+**** 测试
+* bananas
+
+
+==== 有序的列表
+
+. first
+. second
+. third
+
+
+==== 划线 分割
+
+'''
+
+
+==== 文本块	
+.Lightweight Markup
+****
+Writing languages that let you type less and express more.
+****
+
+==== 列表
+.Grocery list
+* Milk
+* Eggs
+** test
+* Bread
+
+TIP: You can add line numbers to source listings by adding the word `numbered` in the attribute list after the language name.
+
+:home: https://example.org
+
+Go {home}[Home].
+
+
+[.path]_Gemfile_
+
+
+____
+Quoted text.
+
+Another paragraph in quote.
+____
+
+	
+Indented (by 1 or more spaces)
+ 
+ $ gem install asciidoctor
+
+Delimited
+....
+$ gem install asciidoctor
+....
+
+
+==== 添加符号
+
+The `'90s popularized a new form of music known as "`grunge`" rock.
+Its influence extended well beyond music.
+
+==== 引入文档
+include::other.adoc[]
+
+
+==== 引入别的文档内容
+[source]
+include::file_name.txt[lines=5..8]
+
+[source,id="file_name_all"]
+include::file_name.txt[]

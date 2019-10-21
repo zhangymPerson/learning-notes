@@ -1,0 +1,141 @@
+= My Document's 
+Title Doc Writer <doc.writer@asciidoctor.org> 
+v1.0, 2019-10-21 
+:toc:
+:imagesdir: ../Picture/
+:homepage: https://asciidoctor.org 
+My document provides...
+
+> 头部文档指定相关内容 如 图片文件夹和主页地址等 头部可选但是必须在文档的顶部。
+
+image:biji.png[log]
+
+{homepage}[主页]
+
+
+
+测试内容
+
+- test
+
+
+
+测试内容 
+
+
+.Lightweight Markup
+****
+Writing languages that let you type less and express more.
+****
+
+.test
+****
+测试文本块的输入和展示
+****
+
+.标签说明
+|===
+|标签|说明
+|NOTE	
+|注释
+
+|TIP	
+|提示
+
+|WARNING	
+|警告
+
+|IMPORTANT	
+|重要
+
+|CAUTION	
+|注意
+|===
+
+使用方式： 标签名: 内容
+
+WARNING: 此处是警告说明
+
+
+==== 表格 第一行必须在一行内，后面的可以不再一行内，
+
+.Table Title
+|===
+|Name of Column 1 |Name of Column 2 |Name of Column 3
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+|Cell in column 3, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|===
+
+==== 表格 2代表列数
+
+[%header,cols=2*] 
+|===
+|Name of Column 1
+|Name of Column 2
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|===
+
+==== 指定表格宽度占比
+
+[cols="1,1,4", options="header"] 
+.Applications
+|===
+|Name
+|Category
+|Description
+
+|Firefox
+|Browser
+|Mozilla Firefox is an open-source web browser.
+It's designed for standards compliance,
+performance, portability.
+
+|Arquillian
+|Testing
+|An innovative and highly extensible testing platform.
+Empowers developers to easily create real, automated tests.
+|===
+
+==== CSV 格式的表
+
+[%header,format=csv]
+|===
+Artist,Track,Genre
+Baauer,Harlem Shake,Hip Hop
+The Lumineers,Ho Hey,Folk Rock
+|===
+
+=== 特殊表格
+[cols="e,m,^,>s", width="25%"]
+|===
+|1 >s|2 |3 |4
+|5 2.2+^.^|6 .3+<.>m|7
+^|8
+|9 2+>|10
+|===
+
+==== 锚点和跳转
+
+锚点：[[A88]]
+
+链接：<<A88,chapter titles>>
+
+
+==== 电子邮件和 IRC
+
+devel@discuss.arquillian.org
+
+mailto:devel@discuss.arquillian.org[Discuss Arquillian]
+
+mailto:devel-join@discuss.arquillian.org[Subscribe, Subscribe me, I want to join!]
