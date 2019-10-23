@@ -54,3 +54,7 @@
 - 请求模拟
 
     [mockito](https://github.com/mockito/mockito)
+
+- 微软浏览器
+
+    [微软浏览器新内核版本](https://www.microsoftedgeinsider.com/zh-cn/)
