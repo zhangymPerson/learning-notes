@@ -70,3 +70,21 @@
         mavenCentral()
     }
     ```
+
+- gradle版本切换
+
+    找到项目中的文件
+    
+    gradle-wrapper.properties
+
+    修改成指定版本
+
+    distributionUrl
+
+    ```properties
+    distributionBase=GRADLE_USER_HOME
+    distributionPath=wrapper/dists
+    distributionUrl=https\://services.gradle.org/distributions/gradle-4.10.3-all.zip
+    zipStoreBase=GRADLE_USER_HOME
+    zipStorePath=wrapper/dists
+    ```
