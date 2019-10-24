@@ -57,7 +57,8 @@
 
 - 环境变量配置
 
-
+    **环境变量中不要放到路径中带空格的文件夹下 如 Program Files 文件夹**
+    
     增加ANDROID_HOME环境变量，路径为sdk安装目录，本电脑对应路径D:\android-sdk-windows；
     
     然后在path环境变量中增加路径：;%ANDROID_HOME%\platform-tools;%ANDROID_HOME%\tools; 
@@ -97,3 +98,21 @@
     #全选y
     ```
     将 生成的 licenses目录下的文件复制到 Android_Home中的licenses文件夹中
+
+
+## Android sdk 目录文件说明
+
+|文件名|文件简介|详细说明
+|-|-|-|
+|add-ons|Google API 。|比如GoogleMaps
+|build-tools|各版本SDK编译工具。|
+|extras|扩展开发包 如高版本的API在低版本中开发使用。|
+|docs|离线开发者文档|Android SDK API参考文档|
+|licenses|许可文件
+|platform-tools|各版本SDK通用工具。|比如adb、和aapt、aidl、dx等文件，Android 1 2 3版本提示，这里和platforms目录中tools文件夹有些重复，主要是从Android 2.3开始这些工具被划分为通用了。
+|platforms|各版本SDK。根据API Level划分的SDK版本|
+|sources|各版本SDK源码。|
+|system-images|存放的是CPG架构：arm、mips、intel
+|temp|临时夹|一般在SDK更新安装时用到
+|samples|各版本API使用样例。Android SDK自带的默认示例工程|强烈推荐初学者运行学习。|
+|tools|各版本SDK自带工具。包|含了重要的工具，比如DDMS用于启动Android调试工具

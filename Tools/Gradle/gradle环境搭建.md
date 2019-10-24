@@ -29,3 +29,16 @@
     设置本地仓库目录
 
     GRADLE_USER_HOME=
+
+- 修改Gradle版本 
+
+    在项目的gradle目录下
+
+    wrapper目录下
+
+    gradle-wrapper.properties 配置文件中
+
+    修改 distributionUrl 参数路径 指定使用的gradle
+    ```properties
+    distributionUrl=https\://services.gradle.org/distributions/gradle-5.4.1-all.zip
+    ```
