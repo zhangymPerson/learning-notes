@@ -21,3 +21,16 @@
     #来列出该项目的所有任务。
     gradle tasks 
     ```
+
+- 初始化项目
+
+    ```sh
+    gradle init
+
+    #选择版本
+    Select type of project to generate:
+    1: basic
+    2: application
+    3: library
+    4: Gradle plugin
+    ```

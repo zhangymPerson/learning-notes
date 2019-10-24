@@ -42,3 +42,11 @@
     ```properties
     distributionUrl=https\://services.gradle.org/distributions/gradle-5.4.1-all.zip
     ```
+
+    gradle 配置使用本地的zip包
+
+    提前下载好zip包文件 然后指向即可
+
+    ```properties
+    distributionUrl=file\:/D:/zidingyipath/.gradle/wrapper/dists/gradle-2.10-all/a4w5fzrkeut1ox71xslb49gst/gradle-2.10-all.zip
+    ```
