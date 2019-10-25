@@ -18,6 +18,9 @@
 
     [官网](http://www.typescriptlang.org/)
 
+
+    [ts中文文档](https://www.tslang.cn/samples/index.html)
+
     下载命令
     需要先安装nodejs
     ```sh

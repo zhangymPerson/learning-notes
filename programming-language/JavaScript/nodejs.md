@@ -6,6 +6,9 @@
 
 - [安装教程](http://www.runoob.com/nodejs/nodejs-install-setup.html)
 
+
+- [淘宝的nodejs镜像网站](https://npm.taobao.org/)
+
 - 查看版本
 
     ```sh
@@ -74,3 +77,10 @@
     可以直接在命令行里使用。
 
 - 全局安装 配置的位置 需要 **配置环境变量到Path中** 才能在任何位置使用命令
+
+
+- 安装淘宝的镜像
+
+    ```sh
+    $ npm install -g cnpm --registry=https://registry.npm.taobao.org
+    ```
