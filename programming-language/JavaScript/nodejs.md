@@ -39,8 +39,19 @@
 
 - npm 安装的全局安装目录查看
 
-    ```node
+
+    **全局安装需要配置全局位置，否则会认为命令执行的位置为全局安装目录**
+    
+    ```sh
+    #查看全局安装位置
     npm config ls
+    #查看所有默认的配置
+    npm config ls -l
+    #配置全局安装目录 并将改目录配置到环境变量下面 否则 npm install -g *** 安装后不能全局使用
+    #path为全局安装目录所在位置
+    npm config set prefix "path"
+    #举例
+    npm config set prefix "C:\Users\Administrator\AppData\Roaming\npm"
     ```
 - 全局安装和本地安装区别
 
