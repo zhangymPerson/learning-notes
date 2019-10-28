@@ -1,0 +1,91 @@
+= asciidoc文档导出方案
+
+=== mvn插件导出
+
+- https://asciidoctor.cn/docs/asciidoc-syntax-quick-reference/[AsciiDoc 语法快速参考]
+
+- https://github.com/asciidoctor/asciidoctor-maven-examples[mvn插件官网地址]
+
+- https://github.com/asciidoctor/asciidoctor-maven-plugin/blob/master/README_zh-CN.adoc[插件使用中文说明]
+
+- mvn项目的pom配置
+    
+[source,xml]
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <asciidoctorj.version>1.5.6</asciidoctorj.version>
+        <asciidoctorj.diagram.version>1.5.4.1</asciidoctorj.diagram.version>
+        <jruby.version>1.7.26</jruby.version>
+    </properties>
+    <build>
+        <!-- 默认命令，配置后可以直接使用mvn编译 -->
+        <defaultGoal>process-resources</defaultGoal>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <targetPath>${project.build.directory}/bookss</targetPath>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.asciidoctor</groupId>
+                <artifactId>asciidoctor-maven-plugin</artifactId>
+                <version>1.5.5</version>
+                <executions>
+                    <execution>
+                        <id>output-html</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                        <configuration>
+                            <backend>html5</backend>
+                            <sourceHighlighter>prettify</sourceHighlighter>
+                            <attributes>
+                                <toc>left</toc>
+                                <icons>font</icons>
+                                <sectanchors>true</sectanchors>
+                                <!-- set the idprefix to blank -->
+                                <idprefix/>
+                            </attributes>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <!-- Comment this section to use the default jruby artifact provided by the plugin -->
+                    <dependency>
+                        <groupId>org.jruby</groupId>
+                        <artifactId>jruby-complete</artifactId>
+                        <version>${jruby.version}</version>
+                    </dependency>
+                    <!-- Comment this section to use the default AsciidoctorJ artifact provided by the plugin -->
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj</artifactId>
+                        <version>${asciidoctorj.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj-diagram</artifactId>
+                        <version>${asciidoctorj.diagram.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <!--导出文件指定的位置-->
+                    <outputDirectory>${project.build.directory}/exportAdoc</outputDirectory>
+                    <!--要导出的文件位置-->
+                    <sourceDirectory>${project.basedir}/src/main/asciidoc</sourceDirectory>
+                    <sourceDocumentName>a.adoc</sourceDocumentName>
+                    <imagesDir>./</imagesDir>
+                    <preserveDirectories>false</preserveDirectories>
+                    <requires>
+                        <require>asciidoctor-diagram</require>
+                    </requires>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
