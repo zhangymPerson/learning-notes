@@ -60,9 +60,9 @@
     ```gradle
     uploadArchives {
         repositories {
-        flatDir {
-            dirs 'repos'
-        }
+            flatDir {
+                dirs 'repos'
+            }
         }
     }
     ```
@@ -85,7 +85,7 @@
         apply plugin: 'eclipse-wtp'
 
         repositories {
-        mavenCentral()
+            mavenCentral()
         }
 
         dependencies {

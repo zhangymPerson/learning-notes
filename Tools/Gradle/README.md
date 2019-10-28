@@ -15,3 +15,5 @@
 - [gradle实战github地址](https://github.com/bmuschko/gradle-in-action-source)
 
 - [Gradle User Guide 中文版](https://github.com/DONGChuan/GradleUserGuide)
+
+- [Gradle多版本官方下载地址](https://services.gradle.org/distributions/)

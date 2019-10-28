@@ -138,3 +138,18 @@ gradle中的build.gradle文件类似maven中的pom.xml文件
 - 执行阶段
 
 
+## gradle版本介绍
+
+### gradle的3种版本
+
+- gradle-xx-all.zip是完整版，包含了各种二进制文件，源代码文件，和离线的文档。
+
+    例如：https://services.gradle.org/distributions/gradle-*.*-all.zip
+
+- gradle-xx-bin.zip是二进制版，只包含了二进制文件（可执行文件），没有文档和源代码。
+
+    例如：https://services.gradle.org/distributions/gradle-*.*-bin.zip
+
+- gradle-xx-src.zip是源码版，只包含了Gradle源代码，不能用来编译你的工程。
+
+    例如：https://services.gradle.org/distributions/gradle-*.*-src.zip
