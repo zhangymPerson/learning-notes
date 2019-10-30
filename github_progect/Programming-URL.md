@@ -16,8 +16,9 @@
 |[好的github项目](https://github.com/zhangymPerson/learning-notes/blob/master/github_progect/README.md)|https://github.com/zhangymPerson/learning-notes/blob/master/github_progect/README.md|
 |[个人github仓库](https://github.com/zhangymPerson?tab=repositories)|https://github.com/zhangymPerson?tab=repositories|个人maven仓库
 |[hellogithub](https://hellogithub.com/)|https://hellogithub.com/|优秀github项目查询
-### maven仓库查询
+|[GitLogs ](https://www.gitlogs.com/ )|https://www.gitlogs.com/ |GitHub网站的内容搜索引擎
 
+### maven仓库查询
 |网站|网址|简介|
 |-|-|-|
 |[仓库服务](https://maven.aliyun.com/mvn/search)|https://maven.aliyun.com/mvn/search|阿里云maven配置搜索
@@ -38,8 +39,6 @@
 |[开源中国的浏览器插件](https://github.com/jaywcjlove/oscnews)|https://github.com/jaywcjlove/oscnews|开发人员必备的神奇插件
 |[算法-leetcode](https://leetcode-cn.com/)|https://leetcode-cn.com/|
 
-
-
 ### 工具
 |网站|网址|简介|
 |-|-|-|
@@ -55,7 +54,8 @@
 |[Linux命令查询](https://www.linuxcool.com/)|https://www.linuxcool.com/|
 |[百度脑图-在线思维导图](http://naotu.baidu.com/)|http://naotu.baidu.com/|百度脑图
 |[代码导出图片网站](https://carbon.now.sh)|https://carbon.now.sh
-
+|[工具网站](https://www.toolnb.com/)|https://www.toolnb.com/|
+|[asciiflow](http://asciiflow.com/)|http://asciiflow.com/|纯文本流程图表
 
 ### 测试常用网站
 |网站|网址|简介|
@@ -65,13 +65,11 @@
 |[本地8080-swagger网站](http://127.0.0.1:8080/swagger-ui.html)|http://127.0.0.1:8080/swagger-ui.html|
 
 ### 翻译
-
 |网站|网址|简介|
 |-|-|-|
 |[百度翻译](https://fanyi.baidu.com/)|https://fanyi.baidu.com/| 
 |[谷歌翻译](https://translate.google.cn/)|https://translate.google.cn/||
 |[必应翻译](http://cn.bing.com/translator/)|http://cn.bing.com/translator/|
-
 
 ### 技术资料查询
 |网站|网址|简介|
@@ -87,7 +85,6 @@
 |[微软开源的编程字体](https://github.com/microsoft/cascadia-code)|https://github.com/microsoft/cascadia-code|
 
 ###  springboot项目
-
 |网站|网址|简介|
 |-|-|-|
 |[springboot-project](https://github.com/zhangymPerson/springboot-learing)|https://github.com/zhangymPerson/springboot-learing|
@@ -97,7 +94,6 @@
 |-|-|-|
 |[微信调试工具](http://mp.weixin.qq.com/debug/)|http://mp.weixin.qq.com/debug/|
 |[微信开放平台](https://open.weixin.qq.com/)|https://open.weixin.qq.com/|微信开放平台
-
 
 ### 学习教程
 |网站|网址|简介|
@@ -113,9 +109,16 @@
 |[优酷](https://www.youku.com/)|https://www.youku.com/|
 |[网易云音乐](https://music.163.com/)|https://music.163.com/|
 |[喜马拉雅](https://www.ximalaya.com/)|https://www.ximalaya.com/| 喜马拉雅官网
+|[狗带tv](http://www.goudaitv.com/)|http://www.goudaitv.com/|各种免费视频资源
 
 ### 图片网站
 |网站|网址|简介|
 |-|-|-|
 |[花瓣网](https://huaban.com/)|https://huaban.com/|花瓣网
 |[站酷网](https://www.zcool.com.cn/)|https://www.zcool.com.cn/|
+
+### 网盘搜索
+|网站|网址|简介|
+|-|-|-|
+|[小白盘-网盘搜索引擎](https://www.xiaobaipan.com/)|https://www.xiaobaipan.com/|
+|[网盘搜索](https://www.fastsoso.cn/)|https://www.fastsoso.cn/|
