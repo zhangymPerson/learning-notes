@@ -30,6 +30,66 @@
 
     GRADLE_USER_HOME=
 
+- **重点注意**
+
+    > GRADLE_HOME=安装目录 GRADLE_USER_HOME=本地仓库目录 的区别  GRADLE_HOME/bin 下指定的是可以执行的gradle的目录 ，而 GRADLE_USER_HOME 是 gradle的各种缓存文件和仓库文件的位置 还有 其他版本的 gradle 的下载包存放位置
+
+
+- GRADLE_USER_HOME目录说明
+
+    |目录	|描述
+    |-|-
+    |caches	|gradle缓存目录
+    |daemon	|daemon日志目录
+    |native	|gradle平台相关目录
+    |wrapper|gradle-wrapper下载目录
+
+    > wrapper 中存放每一个项目自定义配置的 $project_path/gradle/wrapper/gradle-wrapper.properties文件中的 distributionUrl=https\://services.gradle.org/distributions/gradle-\*.\*.\*-all.zip 其中\*.\*.\*代表gradle的版本
+
+    > caches/modules-2/files-2.1存放着gradle项目中从maven仓库下载到本地jar包
+
+- 修改gradle使用本地maven仓库
+
+    需要在gradle的配置中添加 在项目最外层的build.gradle中修改添加
+    ```gradle
+    buildscript {
+        
+        repositories {
+            //此处添加 mavenLocal()则会从本地的maven仓库中拉去相关的jar
+            mavenLocal()
+            google()
+            jcenter()
+        }
+        dependencies {
+            classpath 'com.android.tools.build:gradle:3.1.0'
+            
+
+            // NOTE: Do not place your application dependencies here; they belong
+            // in the individual module build.gradle files
+        }
+    }
+
+    allprojects {
+        repositories {
+            //此处也需添加
+            mavenLocal()
+            google()
+            jcenter()
+        }
+    }
+
+    task clean(type: Delete) {
+        delete rootProject.buildDir
+    }
+
+    ```
+
+    > mavenLocal()仓库的默认路径是：/home/user/.m2/repository(这是Linux系统下的，windows系统类似。
+
+    > mavenLocal()配置maven的本地仓库后，gradle默认会按以下顺序去查找本地的仓库：USER_HOME/.m2/settings.xml >> M2_HOME/conf/settings.xml >> USER_HOME/.m2/repository。
+    
+    > 我的本地仓库放置在D:\maven_repository，而且在USER_HOME/.m2/目录下并没有放置配置文件，只有在maven的安装目录下有conf/settings.xml文件。所以才出现设置不管用的情况。
+
 - 修改Gradle版本 
 
     在项目的gradle目录下
