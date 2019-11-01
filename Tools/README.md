@@ -16,6 +16,9 @@
 
 - 浏览器插件使用方法
 
+
+    [谷歌优秀浏览器插件-github地址](https://github.com/zhaoolee/ChromeAppHeroes)
+
     下载 浏览器插件文件  .crx文件
 
     修改文件后缀为zip,新建同名文件夹,将该zip文件放到文件夹下并解压
