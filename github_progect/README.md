@@ -177,6 +177,9 @@
 
     https://github.com/imhuay/Algorithm_Interview_Notes-Chinese
 
+- [Java实现的算法](https://github.com/TheAlgorithms/Java)
+
+    https://github.com/TheAlgorithms/Java
 ## vscode 
 
 - [VS code插件推荐](https://github.com/viatsko/awesome-vscode)
