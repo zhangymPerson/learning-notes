@@ -84,3 +84,19 @@
     ```sh
     $ npm install -g cnpm --registry=https://registry.npm.taobao.org
     ```
+
+### node js 全局库配置
+
+- 查看全局安装库的位置
+
+    ```sh
+    npm config ls
+
+    #查看 prefix 即为全局安装的包的位置
+    ```
+
+- 配置全局包的环境变量
+
+    NODE_PATH=为prefix目录下/node_modules/
+
+- 这样 js可以直接使用相关库中的js文件
