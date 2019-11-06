@@ -267,6 +267,10 @@
 - [微软官方的python教程](https://docs.microsoft.com/zh-cn/windows/python/)
 
     https://docs.microsoft.com/zh-cn/windows/python/
+
+- [Python脚本合集](https://github.com/geekcomputers/Python)
+
+    https://github.com/geekcomputers/Python
 ## 其他
 
 - [网络 - 渗透攻击](https://github.com/Micropoor/Micro8)
