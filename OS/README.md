@@ -3,11 +3,11 @@
 
 - [返回总目录](../README.md#项目目录)
 
-## [目录](https://github.com/zhangymPerson/learning-notes/tree/master/OS)
+## [目录](./README.md)
 
-- [Linux](https://github.com/zhangymPerson/learning-notes/tree/master/OS/Linux)
+- [Linux](./Linux/README.md)
 
 
-- [Windows](https://github.com/zhangymPerson/learning-notes/tree/master/OS/Windows)
+- [Windows](./Windows/README.md)
 
 
