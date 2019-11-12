@@ -231,7 +231,9 @@
 
     https://github.com/nusr/hacker-laws-zh
 
+- [面试宝典-英文(多语言)](https://github.com/MaximAbramchuck/awesome-interview-questions)
 
+    https://github.com/MaximAbramchuck/awesome-interview-questions
 
 ## 区块链介绍
 
