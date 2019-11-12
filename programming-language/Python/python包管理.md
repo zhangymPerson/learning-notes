@@ -47,3 +47,14 @@
     #指定端口号启动
      python –m pydoc –p 1234
     ```
+
+- 安装问题 
+
+    连接超时
+
+    socket.timeout: The read operation timed out
+
+    ```python
+    #指定超时时长
+    pip install *** --default-timeout=1000
+    ```
