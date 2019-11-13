@@ -77,7 +77,11 @@
 |[w3school](http://www.w3school.com.cn/index.html)|http://www.w3school.com.cn/index.html|在线教程 
 |[菜鸟教程](https://www.runoob.com/)|https://www.runoob.com/|学的不仅是技术，更是梦想！ 
 |[在线API查询工具](http://tool.oschina.net/apidocs)|http://tool.oschina.net/apidocs|开源中国的工具
-
+|[api查询](http://overapi.com/)|http://overapi.com/|
+|[综合性的在线API列表](https://devdocs.io/)|https://devdocs.io/|
+|[英文-语言答题练习](https://www.codewars.com/)|https://www.codewars.com/|
+|[正则表达式可视化网站](https://regexper.com/)|https://regexper.com/|
+|[视频学习的最佳网站](https://www.coursera.org/)|https://www.coursera.org/|
 ### 开源字体
 |网站|网址|简介|
 |-|-|-|

@@ -306,6 +306,14 @@
 - [GitHub中文排行榜](https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts)
 
     https://github.com/kon9chunkit/GitHub-Chinese-Top-Charts
+
+- [免费的编程中文书籍索引](https://github.com/justjavac/free-programming-books-zh_CN)
+
+    https://github.com/justjavac/free-programming-books-zh_CN
+
+    https://github.com/vhf/free-programming-books
+
+    https://github.com/vhf/free-programming-books/blob/master/free-programming-books-zh.md
 ### 开源字体
 
 - [开源字体](https://github.com/chrissimpkins/codeface)
