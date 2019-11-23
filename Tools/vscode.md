@@ -1,85 +1,77 @@
 # vscode 笔记
 
-- 插件
+## 插件
 
-    Chinese (Simplified) Language Pack for Visual Studio Code
+- Chinese (Simplified) Language Pack for Visual Studio Code
 
-    CodeBing 查询插件 - 使用方式 alt + shift + f 或者控制台输入 Bing 
+- CodeBing 查询插件 - 使用方式 alt + shift + f 或者控制台输入 Bing 
 
-    Git History  git  日志查看插件 - 右键文件 选择git history 即可
+- Git History  git  日志查看插件 - 右键文件 选择git history 即可
 
-    **Git File History**  git 文件修改历史查看便捷神器插件 直观查看git对文件的修改历史 使用方式 ctrl + shift + p 然后输入命令 Git File History 可以动态查看文件git提交记录
+- **Git File History**  git 文件修改历史查看便捷神器插件 直观查看git对文件的修改历史 使用方式 ctrl + shift + p 然后输入命令 Git File History 可以动态查看文件git提交记录
 
-    **Git History Diff** git 文件查看插件，会在鼠标所在行显示修改历史
+- **Git History Diff** git 文件查看插件，会在鼠标所在行显示修改历史
 
-    vscode-icons
+- vscode-icons
 
     这个也是vscode官方提供的插件，作用是给vscode编辑的文件增加图标。这里再推荐一个相同功能的插件**vscode-icons-mac**，文件图标变成Mac风格，相当美观。
 
-     vim插件     
+- vim插件     
      
-     amVim 插件
+- amVim 插件
 
      Vim 原生支持的vim插件，
 
-     括号插件 Bracket Pair Colorizer  
+- 括号插件 Bracket Pair Colorizer  
      
      这个插件的作用是给代码中的括号增加颜色，同一对括号是相同的颜色，尤其是在括号中还包着括号的时候，看起来更加的清晰。
 
-     路径自动补全 Path Intellisense  
+- 路径自动补全 Path Intellisense  
      
      这个插件的作用是当代码中读入文件名或者文件路径时，提供文件名或者文件路径的自动补全
     
-    Beautify 代码美化
+- Beautify 代码美化
 
 - [vscode-快捷键说明文档](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 
-- 常用快捷键
+## 快捷键
 
+- 常用的
+    ```sh
+    #vscode折叠代码快捷键
+    ctrl+k,ctrl+0 (数字0)
 
-```
-    vscode折叠代码快捷键
+    #展开所有代码的快捷键
+    ctrl+k,ctrl+j
 
-        ctrl+k,ctrl+0 (数字0)
+    #隐藏资源管理器(即文件目录列表)  
+    ctrl + b
 
-    展开所有代码的快捷键
+    #快速打开终端和调试窗口  
+    ctrl + ` (Esc键下面那个键)
 
-        ctrl+k,ctrl+j
+    #选中多行  
+    #按住Alt键点击左键 多选  或者 Alt+Shift键 鼠标左键上下移动多选
 
-    隐藏资源管理器(即文件目录列表)  
-        ctrl + b
+    #快速查询 替换
+    ctrl + f / ctrl + h  (可以进行正则查询替换)
 
-    快速打开终端和调试窗口  
-        ctrl + ` (Esc键下面那个键)
+    #查看搜索打开目录下的所有的文件
+    ctrl+p
 
-    选中多行  
-        按住Alt键点击左键 多选  或者 Alt+Shift键 鼠标左键上下移动多选
+    #打开控制台
+    ctrl+shift+p或者 F1 
 
-    快速查询 替换
-        ctrl + f / ctrl + h  (可以进行正则查询替换)
+    #打开文件所在文件夹 资源管理器
+    #右键 - reveal in explorer
+    shift + alt + R
+    ```
 
-    查看搜索打开目录下的所有的文件
-        ctrl+p
-
-
-    打开控制台
-        ctrl+shift+p或者 F1 
-
-
-    打开文件所在文件夹 资源管理器
-
-        右键 - reveal in explorer
-
-        shift + alt + R
-
-
-```
-
+## 其他配置
 - 自动换行
 
-
-文件  -> 首选项 -> 设置 -> 编辑器- > 找到控制折行方式。
-    
+    文件  -> 首选项 -> 设置 -> 编辑器- > 找到控制折行方式。
+        
     可以选择： 
     - "off" （禁用折行），
     - "on" （视区折行）， 
@@ -100,7 +92,7 @@
 
 
 
-###  vscode的远程连接方式
+##  vscode的远程连接方式
 
 - 插件下载
 
@@ -130,6 +122,7 @@
 
     vscode有多个服务器需要远程连接的时候，可以直接查看[ssh笔记](https://github.com/zhangymPerson/learning-notes/tree/master/Tools/OpenSSH)中的多服务器配置 配置多个服务器
 
+## 使用问题记录
 
 - vscode字体配置
 
@@ -137,3 +130,15 @@
     ```
     "Cascadia Code",Consolas, 'Courier New', monospace
     ```
+
+- vscode 打开git日志乱码 中文文件名乱码
+
+    windows系统下问题
+
+    git status 中文转义致乱码的 解决方案
+    
+    在 Git Bash 提示符下输入：
+    ```sh
+    git config --global core.quotepath false
+    ```
+    core.quotepath 设为 false 的话，就不会对 0x80 以上的字符进行quote。中文显示正常。
