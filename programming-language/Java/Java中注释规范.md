@@ -49,13 +49,13 @@
 
     ```java
     /**
-    * 该类的作用是:
-    * 1.****************
-    * 2.****************
-    * 3.****************
+    * 该类的作用是:<br/>
+    * 1.****************<br/>
+    * 2.****************<br/>
+    * 3.****************<br/>
+    * email zhangyanmingjiayou@163.com<br/>
+    * date 2019-02-12 <br/>
     * @author zhangym
-    * @email zhangyanmingjiayou@163.com
-    * @date 2019-02-12
     * @version 1.0
     * @since 1.0
     */
@@ -102,3 +102,17 @@
 
 ### 常量
 
+
+- idea 中配置类注释模板
+
+    setting -> editor -> File and Code Templates - File - Class中添加
+
+    ```java
+    /**
+    * date ${DATE} ${TIME} <br/>
+    * descriptionclass <br/>
+    * @author danao
+    * @version 1.0
+    * @since 1.0
+    */
+    ```

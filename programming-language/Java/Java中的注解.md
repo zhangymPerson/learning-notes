@@ -41,14 +41,14 @@
 
 ```java
 /**
- * @author danao
- * @version 1.0
  * @classname Self
  * @descriptionclass
  * 1.自定义注解
  * @Target(ElementType.METHOD)指明了我们的注解是作用在方法上的
  * @Retention(RetentionPolicy.RUNTIME)表示注解在程序运行时期也会存在，即注解信息也会加载到虚拟机VM中，所以可以通过反射来获取注解的相关信息：
  * RUNTIME表示注解在运行时能被获取到
+ * @author danao
+ * @version 1.0
  * @since 1.0
  */
 @Retention(RetentionPolicy.RUNTIME)
