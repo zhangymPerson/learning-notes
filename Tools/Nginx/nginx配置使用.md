@@ -36,10 +36,73 @@
     }
     ```
 
-- 配置文件解析
+## nginx 配置 关键字说明 root / alias
 
+- root
+
+    location和root组合相当于 在 root 指定目录下 进行 location 匹配，location所匹配内容必须保证在root指定目录的子目录，否则配置无效，
+
+    而且location只能向下匹配，不能匹配location指定目录上一级目录中的内容。
+    
+    eg:
+    ```conf
+    {
+        listen 80;
+        server_name loaction; 
+        location /root { 
+            alias /data/root;
+        }
+    }
+    ```
+
+    以上配置匹配的是 在 /data/root/root/ 目录及其子目录下 匹配文件
+
+- alias
+
+    location与alias组合，需要保证location匹配目录与alias指定目录级别相同，否则配置无效，
+
+    location和root组合相同的是，location所匹配内容也只能向下匹配。
+    
+    eg:
+    ```conf
+    {
+        listen 80;
+        server_name location; 
+        location /root { 
+            alias /data/alias;
+        }
+    }
+    ```
+    以上配置是在 /data/alias/ 目录及其子目录下 匹配文件
+
+    > 相同点 ：都只能向下匹配
+
+    > 不同点 查找`**.filetype`文件  root 指定的位置是在 `${root}/location/*下 匹配 **.filetype` 而 alias匹配的是 `${alias}/* 下**.filetype` 文件 
+
+## 显示文件夹目录
+
+- 配置说明
+
+    ```conf
+      {
+        listen 80;
+        server_name location; 
+        location /root { 
+            root /data/;  //指定实际目录绝对路径 root 匹配 /data/root/下文件
+            autoindex on;  //开启目录浏览功能；  
+            autoindex_exact_size off; //关闭详细文件大小统计，让文件大小显示MB，GB单位，默认为b；   
+            autoindex_localtime on; //开启以服务器本地时区显示文件修改日期！   
+        }
+    }  
+    ```
+
+
+## 配置文件解析
+
+- 图片说明
     ![配置文件结构说明](../../Picture/nginx%E7%9A%84%E9%85%8D%E7%BD%AE%E5%9D%97%E8%AF%B4%E6%98%8E.png)
 
+- 配置demo
     ```conf
     #运行用户
     user www-data;  
