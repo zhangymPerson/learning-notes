@@ -24,3 +24,22 @@
     clean up: 清除所有
 
     Update copyright:更新版权
+
+
+- idea菜单栏中没有svn按钮的解决办法 上传下载的按钮找不到的解决办法
+
+    - 打开菜单栏顶部的VSC(version control system)按钮 版本控制系统
+
+    - 点击 Enable Version Control Integration 
+
+    - 选择版本控制工具 选择Subversion/git ...
+
+- idea 底部的svn查看条的查看设置
+
+    解决方案
+
+    - 网上很多介绍 说使用 快捷键 alt+9 可以调试出来，尝试无反应 (先执行)
+
+    - views-->tool window ----> 会发现 version controller 显示为灰色，点击无反应
+
+
