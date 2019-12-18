@@ -13,6 +13,12 @@
 |package.json|包描述文件及开发者信息
 
 
+## 初始化一个nodejs项目
+
+- 命令
+
+    `node init`
+
 ## nodejs project git过滤
 
 - .gitignore 文件配置
