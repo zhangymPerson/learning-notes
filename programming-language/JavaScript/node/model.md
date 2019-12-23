@@ -120,7 +120,13 @@
         filenameC
     }
     ```
+- 查看module状态
 
+    ```js
+    //打印依赖模块状态
+    console.log(module.path);
+    console.log('module info:', module);
+    ```
 ## 加载模块规则
 
 > JS中，一个模块加载另一个模块有两套规范：CommonJS规范和AMD规范。

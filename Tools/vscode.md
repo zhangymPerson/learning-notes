@@ -142,3 +142,39 @@
     git config --global core.quotepath false
     ```
     core.quotepath 设为 false 的话，就不会对 0x80 以上的字符进行quote。中文显示正常。
+
+- vscode  安装nodejs代码联想工具
+
+    `npm install -g typings`
+    `typings --version`
+    常用命令
+    ```sh
+    # 安装Typings的命令行代码. 
+    npm install typings --global
+
+    # 搜索对应模块的typings定义. 
+    typings search tape
+
+    # 根据名称寻找一个可获得的typings定义. 
+    typings search --name react
+
+    # 如果你用一个独立包的模块: 
+    # 或者并不是安装全局模块
+    # 比如并不是在命令行通过输入npm install -g typings这种方式安装的. 
+    typings install debug --save
+
+    # 如果是通过script标记
+    # 或者是子环境的一部分
+    # 或者全局typings命令不可用的时候： 
+    typings install dt~mocha --global --save
+
+    # 从其他版本处安装typings定义(比如env或者npm). 
+    typings install env~atom --global --save
+    typings install npm~bluebird --save
+
+    # 安装 node提示
+    typings install dt~node --global --save
+
+    # 使用该文件`typings/index.d.ts` (在`tsconfig.json`文件使用或者用 `///` 定义). 
+    cat typings/index.d.ts
+    ```
