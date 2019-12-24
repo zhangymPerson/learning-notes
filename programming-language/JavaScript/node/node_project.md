@@ -17,7 +17,7 @@
 
 - 命令
 
-    `node init`
+    `npm init`
 
 ## nodejs project git过滤
 
