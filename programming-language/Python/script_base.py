@@ -17,6 +17,9 @@ def run():
     自定义的实现逻辑和代码
     :return:
     """
+    #自定义输入
+    text = input("要输入的内容是：")
+    logging.info("你输入的内容是[%s]"%(text))
     logging.info("自定义实现")
 
 
