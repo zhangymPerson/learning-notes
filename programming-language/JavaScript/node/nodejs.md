@@ -102,3 +102,16 @@
     NODE_PATH=为prefix目录下/node_modules/
 
 - 这样 js可以直接使用相关库中的js文件
+
+
+- nodejs包管理器 npm 查看代理
+
+    
+    ```sh
+    #置空
+    npm config set proxy null
+    npm config set https-proxy null
+    #查看代理
+    npm config get proxy
+    npm config get https-proxy
+    ```
