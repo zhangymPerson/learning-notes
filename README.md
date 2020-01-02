@@ -1,14 +1,8 @@
 # learning-notes
-![我是人间惆怅客,知君何事泪纵横](./Picture/biji.png)
 
+>个人工作开发中的技术笔记，主要使用语言是Java，工作主要是大数据后台产品的开发，欢迎大家阅读交流。
 
-- 技术交流
-
-    邮箱:[zhangyanmingjiayou@163.com](mailto://zhangyanmingjiayou@163.com)
-
-    微信好友:
-    ![微信号-好友](./Picture/wechat-info.png)
-
+![我是人间惆怅客,知君何事泪纵横](./Picture/background.png)
 
 # 项目目录
 
@@ -50,7 +44,16 @@ Mainly used to record Java, DBMS, HDFS... related learning notes
 
 - 各种编程相关的开发工具的使用笔记
 
-![支付宝-收款](./Picture/alipay-info.png)
+- 技术交流
+
+    邮箱:[zhangyanmingjiayou@163.com](mailto://zhangyanmingjiayou@163.com)
+
+    微信好友:
+    ![微信号-好友](./Picture/wechat-info.png)
+
+- 请喝咖啡
+
+    ![支付宝-收款](./Picture/alipay-info.png)
 
 
 [LICENSE](LICENSE)
