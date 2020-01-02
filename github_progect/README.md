@@ -132,6 +132,10 @@
 
     https://github.com/tomwhite/hadoop-book
 
+- [大数据入门指南 ](https://github.com/heibaiying/BigData-Notes)
+
+    https://github.com/heibaiying/BigData-Notes
+
 ## shell相关
 
 - [纯bash实现脚本集合](https://github.com/dylanaraps/pure-bash-bible)
