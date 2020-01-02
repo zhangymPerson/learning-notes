@@ -183,3 +183,14 @@
         #访问路径为项目名 + 静态文件所在的项目下全路径名
         http:localhost:63342/${project_name}/***/**.html
         ```
+
+- Intellij IDEA中默认所有 scope 为 provided 的依赖不会被加入到 classpath
+
+    报错：Caused by: java.lang.ClassNotFoundException: javax.servlet.ServletContext
+
+    解决办法：
+    
+    菜单栏 -> Run -> Edit Configurations
+
+    Run/Debug Configurations -> Application -> Configuration -> 勾选：include dependencies with "Provided" scope 
+
