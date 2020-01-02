@@ -194,3 +194,6 @@
 
     Run/Debug Configurations -> Application -> Configuration -> 勾选：include dependencies with "Provided" scope 
 
+- idea 配置项目启动一次 实例化一次， 多次 run 为 restart
+
+    找到项目配置位置 Run/Debug Configurations  勾选     Single instance only 实例化一次
