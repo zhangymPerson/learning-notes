@@ -38,9 +38,9 @@
     # ************************************************
     #second user(monster@qq.com)
     Host gitee
-    HostName gitee.com
-    PreferredAuthentications publickey
-    IdentityFile C:\Users\Administrator\.ssh\id_rsa
+        HostName gitee.com
+        PreferredAuthentications publickey
+        IdentityFile C:\Users\Administrator\.ssh\id_rsa
     #ps:HostName 是域名   
     ```
 
@@ -63,4 +63,15 @@
         User apollo
 
     #其他复杂配置可以百度
+    ```
+
+- ssh 连接命令
+
+    ```sh
+    #不指定端口默认是22
+    #远程连接 linux
+    ssh -p 2222 dev@127.0.0.1 
+
+    # windows  中xshell
+    ssh dev@127.0.0.1:2222
     ```
