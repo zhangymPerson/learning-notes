@@ -324,5 +324,16 @@
 
     https://github.com/chrissimpkins/codeface
 
-    
-    
+### 开源软件
+
+- [Windows上优质&精选的最佳应用程序及工具列表](https://github.com/Awesome-Windows/Awesome) 
+
+    https://github.com/Awesome-Windows/Awesome
+
+    [中文地址](https://github.com/Awesome-Windows/Awesome/blob/master/README-cn.md)
+
+- [Linux上优质&精选的最佳应用程序及工具列表](https://github.com/luong-komorebi/Awesome-Linux-Software/blob/master/README_zh-CN.md)
+
+    https://github.com/luong-komorebi/Awesome-Linux-Software
+
+    [中文地址](https://github.com/luong-komorebi/Awesome-Linux-Software/blob/master/README_zh-CN.md)
