@@ -4,6 +4,7 @@
 
 >GOROOT是安装目录，GOPATH是我们的工作空间, 用来存放包的目录
 
+
 ## GOROOT
 
 - GOROOT就是go的安装路径
@@ -26,6 +27,14 @@
 
     可自定义位置
 
+- **注意：GOPATH和GOROOT不能设置成一样的，否则会报错**
+
+    `$GOPATH must not be set to $GOROOT`
+
+    个人项目依赖包不应该和go的标准库放一起
+    Because /usr/local/go/src already contains the code for the standard library, and you should keep your own code separate from that.
+
+    I know, other development tools would have no problem with that, but Go is a little more strict in some ways. It's probably the same philosophy that lies behind flagging unused variables or imports as errors - avoiding problems which may seem small at first, but can lead to bigger headaches in the future.
 ## 查看命令
 
 - `go env`
