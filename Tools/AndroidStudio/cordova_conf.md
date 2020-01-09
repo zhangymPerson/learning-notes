@@ -1,23 +1,45 @@
 # cordova配置
 
-## 配置文件位置
+## 配置文件
 
-    在项目的根目录下  config.xml
+- 在项目的根目录下  `config.xml`
+
+- config.xml 中的配置 最终在 android项目中的配置文件  `AndroidManifest.xml` (`${projectname}/platforms/android/app/src/main/`目录下) 体现  
+
 ## 配置文件内容
-
 
 - 配置app进入后的首页内容
 
+
+    - 静态页面
 
     默认是项目根目录下的 www 文件夹内 h5页面的 index.html文件 可修改其他页面
     ```xml
     <content src="index.html" />  
     ```
 
+    - 远程页面 当成普通网页请求
+
+    配置 指定的入口页面 如下
     ```xml
-    <content src="http://192.168.8.21:8787/" />
+    <content src="http://www.baidu.com" />
     ```
 
+    **注意：配置静态页面，则请求服务会有跨域问题，配置远程页面地址,默认会打开本地浏览器**
+
+- 配置允许webview访问页面
+
+    **否则app会拉动本地的浏览器(手机自带浏览器打开)显示内容。**
+
+    ```xml
+    <allow-navigation href="http://*/*" />  
+    <allow-navigation href="https://*/*" />  
+    <allow-navigation href="data:*" />  
+
+    <access origin="*" />  
+    <access origin="http://*/*" />  
+    <access origin="https://*/*" />  
+    ```
 - 不能http访问 需配置
 
     ```xml
