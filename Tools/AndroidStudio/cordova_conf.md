@@ -55,3 +55,34 @@
     <allow-intent href="https://*/*" />
     ```
     同一级别
+
+- 配置说明
+
+    ```xml
+    <widget id="com.example.hello" version="0.0.1"> 
+        <name>HelloWorld</name> 
+        <description> 
+            A sample Apache Cordova application that responds to the deviceready event.  
+        </description> 
+        <author email="dev@callback.apache.org" href="http://cordova.io"> 
+            Apache Cordova Team  
+        </author> 
+        <content src="index.html" /> 
+        <access origin="*" /> 
+    </widget> 
+    ```
+
+    widget：id填写app所有人的域名，version填写app的版本号
+    
+    name：app名称
+    
+    description：app描述，会在app stroe里显示
+    
+    author：app作者相关信息，会在app stroe里显示
+    
+    content：指定app开始指向页面
+    
+    access：指定app可进行通信的域名，*为所有
+    
+    preference：偏好设置，可针对不同平台进行个性化设置。
+

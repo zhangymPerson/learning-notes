@@ -9,6 +9,27 @@
     ```
     这将会为你的cordova应用创造必须的目录。默认情况下，cordova create命令生成基于web的应用程序的骨骼，项目的主页是 www/index.html 文件
 
+    cordova create hello com.example.hello HelloWorld
+
+    
+    让我们来一起剖析下 cordova create 到底做了些什么？根据官方描述该命令支持四个参数：
+    
+        path：也就是项目的目录名称
+    
+        ID：项目的ID，用于写入config.xml的widget中，通常格式为 com.example.hello
+    
+        name：应用程序的显示名称
+    
+        options：项目的可选配置项
+        
+        --template：可执行项目的模版文件
+    
+        --copy-from 指定src
+    
+        --link-to 可将一个前端资源目录链接到项目的www目录下而不是一个副本
+
+
+
 - 项目结构
 
     ```
@@ -76,4 +97,57 @@
     你可以在每次构建中选择限制平台范围 - 这个例子中是'ios':
     ```sh
     $ cordova build ios
+    ```
+
+- 修改默认gradle版本
+
+
+
+    **版本和 js中的最好一致，否则各种 gradle报错**
+
+
+    全局搜索 CORDOVA_ANDROID_GRADLE_DISTRIBUTION_URL 或者 https\\://services.gradle.org/distributions/
+
+    ProjectBuilder.js 中 修改   
+    
+    `var distributionUrl = process.env['CORDOVA_ANDROID_GRADLE_DISTRIBUTION_URL'] || 'https\\://services.gradle.org/distributions/gradle-4.10.3-all.zip';`
+
+    改成本地gradle的zip 如 `file:///D:/gradle/wrapper/dists/gradle-4.8-all/1vgl5bsedxcrmqdzhckahjx4j/gradle-4.8-all.zip`
+
+
+- 修改gradle的仓库地址  阿里云和本地maven
+
+    打开项目的gradle的 `build.gradle` 文件  全局搜索文件
+
+    添加
+
+    ```gradle
+    buildscript {
+        repositories {
+            //添加阿里云的地址
+            maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+            maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+            //maven仓库
+            mavenCentral()
+            mavenLocal()
+        }
+
+        dependencies {
+            // NOTE: Do not place your application dependencies here; they belong
+            // in the individual module build.gradle files
+
+            classpath 'com.android.tools.build:gradle:3.3.0'
+        }
+    }
+
+    allprojects {
+        repositories {
+            //此处也添加
+            maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+            maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+            mavenCentral()
+            mavenLocal()
+        }
+
+    }
     ```
