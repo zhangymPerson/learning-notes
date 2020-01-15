@@ -79,6 +79,43 @@
 
     > 不同点 查找`**.filetype`文件  root 指定的位置是在 `${root}/location/*下 匹配 **.filetype` 而 alias匹配的是 `${alias}/* 下**.filetype` 文件 
 
+
+- 配置端口转发时 添加路由地址的配置
+
+    假设请求 http://127.0.0.1:4000 下的 test 接口
+
+    第一种配置
+    ```conf
+    location /git {
+        proxy_pass http://127.0.0.1:4000;
+        proxy_redirect default;
+    }
+    ```
+
+    >请求的位置是 http://127.0.0.1:4000/**git/test**
+
+    第二种配置
+    ```conf
+    location /git {
+        proxy_pass http://127.0.0.1:4000/;
+        proxy_redirect default;
+    }
+    ```
+
+    >请求的位置是 http://127.0.0.1:4000/**test**
+
+    两种去掉去掉请求前缀配置的方式
+
+    - `proxy_pass`后面加根路径 '/' 可以去掉配置的请求路由前缀
+
+    - 在`location{}`配置中添加
+        
+        `rewrite ^/git/(.*)$ /$1 break;`
+        
+        配置
+
+    **区别： 配置转发路由时，如果末尾使用'/'结尾，则不添加 location 后面的参数，否则添加**
+
 ## 显示文件夹目录
 
 - 配置说明
