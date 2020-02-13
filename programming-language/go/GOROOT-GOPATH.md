@@ -98,3 +98,51 @@
     
     $GOMAXPROCS 用于设置应用程序可使用的处理器个数与核数，详见第 14.1.3 节。
  
+ ### go语言工作空间的理解
+
+- 工作空间
+
+    go 工具为公共代码仓库中维护的开源代码而设计。 无论你会不会公布代码，该模型设置工作环境的方法都是相同的。
+
+    Go代码必须放在工作空间内。它其实就是一个目录，其中包含三个子目录：
+
+    - src 目录包含Go的源文件，它们被组织成包（每个目录都对应一个包），
+    - pkg 目录包含包对象，
+    - bin 目录包含可执行命令。
+
+    go 工具用于构建源码包，并将其生成的二进制文件安装到 pkg 和 bin 目录中。
+
+    src 子目录通常包会含多种版本控制的代码仓库（例如Git或Mercurial）， 以此来跟踪一个或多个源码包的开发。
+
+    以下例子展现了实践中工作空间的概念：
+    ```
+    bin/
+        streak                         # 可执行命令
+        todo                           # 可执行命令
+    pkg/
+        linux_amd64/
+            code.google.com/p/goauth2/
+                oauth.a                # 包对象
+            github.com/nf/todo/
+                task.a                 # 包对象
+    src/
+        code.google.com/p/goauth2/
+            .hg/                       # mercurial 代码库元数据
+            oauth/
+                oauth.go               # 包源码
+                oauth_test.go          # 测试源码
+        github.com/nf/
+            streak/
+            .git/                      # git 代码库元数据
+                oauth.go               # 命令源码
+                streak.go              # 命令源码
+            todo/
+            .git/                      # git 代码库元数据
+                task/
+                    task.go            # 包源码
+                todo.go                # 命令源码
+    ```
+
+    此工作空间包含三个代码库（goauth2、streak 和 todo），两个命令（streak 和 todo） 以及两个库（oauth 和 task）。
+
+    命令和库从不同的源码包编译而来。稍后我们会对讨论它的特性。
