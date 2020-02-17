@@ -15,51 +15,51 @@
 
 ```xml
 
-    <!-- 项目创建组织的标识符，一般是域名的倒写 -->
-    <groupId>com.janson.app</groupId>
+<!-- 项目创建组织的标识符，一般是域名的倒写 -->
+<groupId>com.janson.app</groupId>
 
-    <!-- 定义了项目在所属组织的标识符下的唯一标识，一个组织下可以有多个项目 -->
-    <artifactId>jansonTest</artifactId>
+<!-- 定义了项目在所属组织的标识符下的唯一标识，一个组织下可以有多个项目 -->
+<artifactId>jansonTest</artifactId>
 
-    <!--  打包的方式，有jar、war、ear等 -->
-    <packaging>jar</packaging>
+<!--  打包的方式，有jar、war、ear等 -->
+<packaging>jar</packaging>
 
-    <!-- 当前项目的版本，SNAPSHOT，表示是快照版本，在开发中 -->
-    <version>1.0-SNAPSHOT</version>
+<!-- 当前项目的版本，SNAPSHOT，表示是快照版本，在开发中 -->
+<version>1.0-SNAPSHOT</version>
 
-    <!-- 项目的名称 -->
-    <name>jansonTest</name>
+<!-- 项目的名称 -->
+<name>jansonTest</name>
 
-    <!-- 项目的地址 -->
-    <url>http://maven.apache.org</url>
+<!-- 项目的地址 -->
+<url>http://maven.apache.org</url>
 
 
-    <!--自定义版本号-->
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- spring版本号 -->
-        <spring.version>4.3.7.RELEASE</spring.version>
-        <!-- mybatis版本号 -->
-        <mybatis.version>3.2.6</mybatis.version>
-        <!-- log4j日志文件管理包版本 -->
-        <slf4j.version>1.7.7</slf4j.version>
-    </properties>
-    <!-- 构建项目依赖的jar -->
-    <dependencies>
-        <dependency>
+<!--自定义版本号-->
+<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- spring版本号 -->
+    <spring.version>4.3.7.RELEASE</spring.version>
+    <!-- mybatis版本号 -->
+    <mybatis.version>3.2.6</mybatis.version>
+    <!-- log4j日志文件管理包版本 -->
+    <slf4j.version>1.7.7</slf4j.version>
+</properties>
+<!-- 构建项目依赖的jar -->
+<dependencies>
+    <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>3.8.1</version>
         <scope>test</scope>
-        </dependency>
-        <!-- spring核心包 -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <!--版本号变量调用方法-->
-            <version>${spring.version}</version>
-        </dependency>
-    </dependencies>
+    </dependency>
+    <!-- spring核心包 -->
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+        <!--版本号变量调用方法-->
+        <version>${spring.version}</version>
+    </dependency>
+</dependencies>
 
     
 ```
@@ -132,7 +132,7 @@
 
 
 - maven jar项目指定启动的类和主方法 maven 启动类的配置
-    
+  
     jar中没有主清单属性的时候
 
 
@@ -216,7 +216,7 @@
         project.basedir=pom.xml文件所在文件夹的位置
         
         project.build.directory = ${project.basedir}/target
-
+    
         其他的可以在idea中根据 pom.xml 文件点击进去查看
 
     ```xml
@@ -357,3 +357,69 @@
 [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/ProjectBuildingException
 [ERROR] [Help 2] http://cwiki.apache.org/confluence/display/MAVEN/UnresolvableModelException
 ```
+
+- maven依赖排查
+
+  使用插件
+
+  ```xml
+  <!-- dependency插件 -->
+  <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-dependency-plugin</artifactId>
+      <version>2.8</version>
+  </plugin>
+  ```
+
+  **注意：版本不能太低**
+
+  查看jar包依赖关系命令
+
+  ```sh
+  # 查看依赖关系
+  mvn dependency:tree
+  
+  # 简单地用dependency:tree往往并不能查看到所有的传递依赖。
+  # 查看全部的必须得加一个-Dverbose参数，才是最全的。
+  mvn dependency:tree -Dverbose
+  
+  # 查看单个包的引用关系 maven 中的<groupId>标签和<artifactId>标签中的值
+  # 如要查 
+  #     <dependency>
+  #           <groupId>com.belerweb</groupId>
+  #           <artifactId>pinyin4j</artifactId>
+  #           <version>2.5.0</version>
+  #       </dependency>
+  # -Dincludes=groupId  或者 -Dincludes=groupId:artifactId
+  mvn dependency:tree -Dverbose -Dincludes=com.belerweb:pinyin4j
+  ```
+
+  如果存在jar包冲突。则需要处理 排除掉冲突的jar包
+
+  配置方式如下
+
+  ```xml
+  <!--正常的导入mavenjar包-->
+  <dependency>
+      <groupId>org.springboot.framework</groupId>
+      <artifactId>test</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  
+  
+  <!--排除指定包的配置写法 其中 * 为你指定要排除的jar包-->
+  <dependency>
+      <groupId>org.springboot.framework</groupId>
+      <artifactId>test</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <exclusions>
+          <exclusion>
+              <groupId>*</groupId>
+              <artifactId>*</artifactId>
+          </exclusion>
+      </exclusions>
+  </dependency>
+  ```
+
+  
+
