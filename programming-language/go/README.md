@@ -87,3 +87,51 @@
 
     不能 import 没有用到的包 否则报错
     **如果你导入了一个包却没有使用它，则会在构建程序时引发错误，如 imported and not used: os，这正是遵循了 Go 的格言：“没有不必要的代码！“。**
+
+- go语言模块下载更新失败的问题(修改go语言的代理)
+
+    [Goproxy 中国说明](https://github.com/goproxy/goproxy.cn/blob/master/README.zh-CN.md)
+
+    推荐使用的两个, goproxy.cn 和 goproxy.io
+    https://goproxy.cn
+    https://goproxy.io
+
+- 设置代理方式
+
+    Go 1.13 及以上（推荐）
+
+    打开你的终端并执行：
+
+    `$ go env -w GOPROXY=https://goproxy.cn,direct`
+    
+    完成。
+
+    macOS 或 Linux
+    
+    打开你的终端并执行：
+
+    `$ export GOPROXY=https://goproxy.cn`
+
+    或者
+
+    `$ echo "export GOPROXY=https://goproxy.cn" >> ~/.profile && source ~/.profile`
+
+    完成。
+
+    Windows
+
+    打开你的 PowerShell 并执行：
+
+    `C:\> $env:GOPROXY = "https://goproxy.cn"`
+    
+    或者
+    ```
+    1. 打开“开始”并搜索“env”
+    2. 选择“编辑系统环境变量”
+    3. 点击“环境变量…”按钮
+    4. 在“<你的用户名> 的用户变量”章节下（上半部分）
+    5. 点击“新建…”按钮
+    6. 选择“变量名”输入框并输入“GOPROXY”
+    7. 选择“变量值”输入框并输入“https://goproxy.cn”
+    8. 点击“确定”按钮
+    ```

@@ -5,6 +5,10 @@
 - go mod
 
     不同于以往基于GOPATH和Vendor的构建方式，其主要是通过GOPATH/pkg/mod下的缓存包来对工程进行构建。
+    
+    **我们也推荐你在使用 Go 模块时将 GO111MODULE 设置为 on 而不是 auto。(注意：国内一些包需要代理才能下载使用，所以才设置此项)**
+
+    设置命令 `go env -w GO111MODULE=on`
 
     在Go 1.11中已经可以使用，同以往新添加的功能一样，
 
@@ -155,3 +159,12 @@
     ```
 
      点操作 / _操作 等操作
+
+
+- go显示所有import库信息 命令
+
+    `go list -m -json all`
+
+    - -json JSON格式显示
+    
+    - all 显示全部库
