@@ -130,3 +130,10 @@
     - **main 包是Go语言程序的入口包，一个Go语言程序必须有且仅有一个 main 包。**
     - **如果一个程序没有 main 包，那么编译时将会出错，无法生成可执行文件。**
 
+- main包下有多个文件时，执行 go run 和 go build 可能报错 找不到函数
+
+    linux下 执行 `go run *.go`
+
+    windows下 执行报错
+    
+    需要执行`go run ./` 等同于linux `go run *.go`
