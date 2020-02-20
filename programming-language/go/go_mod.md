@@ -1,6 +1,9 @@
 # GO的包管理
 
->Go Module是Go会在1.12中正式推出的包管理机制。
+> Go Module是Go会在1.12中正式推出的包管理机制。
+
+> go mod 的作用 类似于Java中的mvn和nodejs中npm 主要做项目中的包管理
+
 
 - go mod
 
