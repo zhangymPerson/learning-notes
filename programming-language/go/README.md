@@ -4,6 +4,10 @@
 
 - [Go语言圣经-源代码](https://github.com/adonovan/gopl.io/)
 
+- [Go中文api说明](https://go-zh.org/doc/)
+
+- [Go的中文api](https://studygolang.com/pkgdoc)
+
 - 下载
 
     安装包下载地址为：https://golang.org/dl/。
