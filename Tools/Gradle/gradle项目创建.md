@@ -88,3 +88,26 @@
     zipStoreBase=GRADLE_USER_HOME
     zipStorePath=wrapper/dists
     ```
+
+### gradle创建项目没有src目录的解决办法
+
+- 在bulid.gradle中添加如下任务
+
+    ```groovy
+    //创建src目录的脚本
+    task "create-dirs" {
+        //创建Java源文件目录
+        sourceSets*.java.srcDirs*.each {
+            it.mkdirs()
+        }
+        //创建kotlin源文件目录
+        sourceSets*.kotlin.srcDirs*.each {
+            it.mkdirs()
+        }
+        sourceSets*.resources.srcDirs*.each {
+            it.mkdirs()
+        }
+    }
+    ```
+
+    运行gradle 构建命令即可出现相关源码目录
