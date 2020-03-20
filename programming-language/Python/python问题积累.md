@@ -30,11 +30,3 @@
 
 import sqlite3没报错说明ok
 
---------------------- 
-作者：qin147896325 
-
-来源：CSDN 
-
-原文：https://blog.csdn.net/zd147896325/article/details/80092563 
-
-版权声明：本文为博主原创文章，转载请附上博文链接！
