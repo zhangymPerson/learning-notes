@@ -134,6 +134,32 @@
     ```
 
 
+## 配置nginx获取真实的IP
+
+- 配置说明
+
+    ```conf
+    server {
+        listen 80;
+        server_name _;
+        location / {
+            ..................
+            proxy_pass         http://127.0.0.1:8000/;
+            # $host 变量，Host 为变量名 
+            proxy_set_header   host             $host;
+            proxy_set_header   X-Real-IP        $remote_addr;						
+            proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+            
+        }
+    }
+
+    ```
+
+- 获取真实ip的代码
+
+    
+
+
 ## 配置文件解析
 
 - 图片说明
