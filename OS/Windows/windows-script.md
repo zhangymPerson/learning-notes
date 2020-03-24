@@ -35,3 +35,27 @@
     echo %value%
     pause
     ```
+
+- 启动nginx
+
+    ```bat
+    @echo off
+    ::自己本地nginx.exe文件路径
+    set nginx=D:\nginx.exe
+    echo "要启动的的是%nginx%"
+    start %nginx%
+    echo "启动nginx成功"
+    ```
+
+- 启动tomcat
+
+    ```bat
+    @echo off
+    ::tomcat启动脚本所在位置
+    set tomcat=D:\tomcat\bin\startup.bat
+    ::启动tomcat需要指定 CATALINA_HOME 位置在tomcat目录下不能包含 ; 或者 \ 结尾
+    set CATALINA_HOME=D:\tomcat
+    echo "要启动的是%tomcat%"
+    start %tomcat%
+    echo "%tomcat%启动成功"
+    ```
