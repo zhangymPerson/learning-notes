@@ -111,3 +111,25 @@
     start %tomcat%
     echo "%tomcat%启动成功"
     ```
+
+- 复制文件的脚本
+
+    copyfile.bat
+    
+    ```bat
+    @echo off
+    :: 拷贝文件脚本
+    set oldpath=d:\test\user\one
+    set oldfile=a.txt
+    set newpath=d:\test\user\two
+    set newfile=bb.txt
+
+    set old=%oldpath%\%oldfile%
+    set new=%newpath%\%newfile%
+
+    echo %old% 拷贝到 %new%
+    ::含有空格的路径要加引号
+    ::执行结果是命令1提示找不到指定的文件，命令2成功执行文件复制，
+    ::可能的原因是dos命令中斜杠\用于参数标志了，而且windows的标准路径应该使用的是反斜杠\来分割。
+    copy "%old%" "%new%"
+    ```
