@@ -36,15 +36,67 @@
     pause
     ```
 
-- 启动nginx
+
+- 进入其他目录下执行脚本
 
     ```bat
     @echo off
-    ::自己本地nginx.exe文件路径
-    set nginx=D:\nginx.exe
+    :: 测试在其他目录下执行脚本 启动bat脚本 或者 打开exe文件
+    cmd /k "cd /d D:/test &&start start.bat"
+    cmd /k "cd /d D:/test &&nginx.exe"
+    Pause
+    ```
+
+    **说明**
+
+    其中：
+    `D:/test`是目标路径 即exe文件所在路径或要执行的bat脚本所在位置
+    
+    `java -version`是要执行的命令 
+    
+    通过`&&`连接
+
+- 启动nginx
+
+    脚本文件 必须在nginx.exe所在目录
+
+    start.bat
+
+    ```bat
+    @echo off
+    :: 启动nginx
+    tskill nginx
+    nginx.exe -t
+    nginx.exe -v
+    start nginx.exe
+
+    echo "启动成功"
+    Pause
+    ```
+
+    stop.bat
+
+    ```bat
+    @echo off
+    :: 关闭nginx
+    nginx.exe -s stop
+    echo "关闭nginx成功"
+    Pause
+    ```
+
+    启动脚本 在其他目录下
+
+    nginx.bat
+
+    ```bat
+    @echo off
+    ::配置nginx.exe所在目录 且自定义有start.bat
+    set nginx=D:/soft/nginx
     echo "要启动的的是%nginx%"
-    start %nginx%
+    ::进入文件夹并且执行
+    cmd /k "cd /d %nginx%&& start.bat"
     echo "启动nginx成功"
+    Pause
     ```
 
 - 启动tomcat
