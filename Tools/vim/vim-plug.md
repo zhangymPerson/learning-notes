@@ -2,7 +2,9 @@
 
 ## 首先安装一个vim插件管理器
 
-- vim-plug安装
+- vim-plug安装 
+
+    >特别注意:vim-plug 将plug.vim拷贝到文件夹下之后，必须改 .vimrc文件配置 加入配置才能使用相关命令
 
     [github地址](https://github.com/junegunn/vim-plug)
 

@@ -1,5 +1,8 @@
 # vim 的使用
 
+- [vim中文使用文档-github](https://github.com/yianwillis/vimcdoc)
+
+
 ## 常用命令
 
 ```sh
