@@ -1,5 +1,13 @@
 ## windows下脚本编写
 
+**注意：**
+
+- windows下的脚本都是 用/a /b 等格式的，所以文件路径尽量用 \ 表示
+
+- windows下cmd命令的查看help的格式  `cmdname /?` 获取帮助 如： `cd /?` 在powershell中不行
+
+- powershell中查看帮助 `man copy` 或者 `get-help copy`
+
 - 最基本的
 
     ```bat
