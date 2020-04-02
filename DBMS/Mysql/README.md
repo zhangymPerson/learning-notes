@@ -1,0 +1,19 @@
+# mysql工作笔记
+
+## 目录
+- [Mysql-Explain.md](./Mysql-Explain.md)
+- [mysql-privilege.md](./mysql-privilege.md)
+- [mysql-zhucong-log.md](./mysql-zhucong-log.md)
+- [mysql-zhucong-status.md](./mysql-zhucong-status.md)
+- [mysql_主从表数据量校验.md](./mysql_主从表数据量校验.md)
+- [mysql_删表建表脚本.md](./mysql_删表建表脚本.md)
+- [Mysql_清理主从日志.md](./Mysql_清理主从日志.md)
+- [mysql主从工具pt-table使用.md](./mysql主从工具pt-table使用.md)
+- [mysql主从监控.md](./mysql主从监控.md)
+- [mysql优化.md](./mysql优化.md)
+- [mysql导入导出.md](./mysql导入导出.md)
+- [mysql常用的sql.md](./mysql常用的sql.md)
+- [mysql搭建.md](./mysql搭建.md)
+- [mysql数据量小的迁移脚本.md](./mysql数据量小的迁移脚本.md)
+- [mysql汇总笔记.md](./mysql汇总笔记.md)
+- [mysql物理文件.md](./mysql物理文件.md)
