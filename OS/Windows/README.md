@@ -1,6 +1,12 @@
 # Windows系统常用笔记
 ## 目录
-
+- [add-font.md](./add-font.md)
+- [alter-user-pw.md](./alter-user-pw.md)
+- [powershell.md](./powershell.md)
+- [powershell_script.md](./powershell_script.md)
+- [powershell_script_log.ps1](./powershell_script_log.ps1)
+- [windows-script.md](./windows-script.md)
+- [windows下常用快捷键](./windows下常用快捷键)
 ## 其他
 ## cmd 使用
 

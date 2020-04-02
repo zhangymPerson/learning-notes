@@ -1,5 +1,10 @@
 # Go语言学习笔记
 ## 目录
+- [code.md](./code.md)
+- [go-error.md](./go-error.md)
+- [GOROOT-GOPATH.md](./GOROOT-GOPATH.md)
+- [go_mod.md](./go_mod.md)
+- [go_oop.md](./go_oop.md)
 
 ## 其他
 - [《The Way to Go》中文译本，中文正式名《Go 入门指南》](https://github.com/unknwon/the-way-to-go_ZH_CN)
