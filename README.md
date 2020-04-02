@@ -1,7 +1,7 @@
 # learning-notes
 
+**[github电子书阅读地址](https://zhangymperson.github.io/learning-notes/)**
 >个人工作开发中的技术笔记，主要使用语言是Java，工作主要是大数据后台产品的开发，欢迎大家阅读交流。
-
 ![我是人间惆怅客,知君何事泪纵横](./Picture/background.png)
 
 # 项目目录
