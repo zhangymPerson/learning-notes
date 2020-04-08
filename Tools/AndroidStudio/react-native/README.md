@@ -16,6 +16,12 @@
 
     `yarn.cmd react-native start`
 
+- 启动项目
+
+    运行安卓
+    
+    `react-native run-android`
+
 
 - 添加微信的支持
 
