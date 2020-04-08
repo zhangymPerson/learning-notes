@@ -52,6 +52,10 @@
 
     https://github.com/Snailclimb/JavaGuide
 
+- [Java多线程开源笔记](https://github.com/RedSpider1/concurrent)
+
+    https://github.com/RedSpider1/concurrent
+
 - [Java成神之路](https://github.com/hollischuang/toBeTopJavaer)
 
     https://github.com/hollischuang/toBeTopJavaer
