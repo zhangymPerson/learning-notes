@@ -197,3 +197,10 @@
 - idea 配置项目启动一次 实例化一次， 多次 run 为 restart
 
     找到项目配置位置 Run/Debug Configurations  勾选     Single instance only 实例化一次
+
+- idea 修改jdk版本时，需要修改的几个位置
+
+    - 菜单栏中 file - Project structure - project -  project sdk 修改为 指定jdk安装目录
+    - 菜单栏中 file - Project structure - project -  project language level 修改为 指定的jdk版本
+    - 菜单栏中 file - Project structure - modules -  language level 修改为 指定的jdk版本
+    - 菜单栏中 file - settings - build,execution,deployment - compiler - Java Compiler - project bytecode version 修改为指定版本 

@@ -33,3 +33,13 @@
 - github网站
 
     [AJDK](https://github.com/alibaba/dragonwell8)
+
+- jdk升级
+
+    jdk1.5 添加范型的支持
+
+    jdk1.7 switch增强  范型增强 集合类增强 
+
+    jdk1.8 添加了函数式编程 增强了集合类 添加了Optional容器 新的日期api
+
+    jdk11 去掉了很多javaEE内容 增强了垃圾回收机制ZGC
