@@ -22,6 +22,10 @@
 
      Vim 原生支持的vim插件，
 
+     vscode-vim打开ctrl+c,ctrl+v 
+
+     需要关闭vim的ctrl功能，打开设置 搜索 vim:ctrl 关闭该选项，则ctrl+的vim命令全部失效
+
 - 括号插件 Bracket Pair Colorizer  
      
      这个插件的作用是给代码中的括号增加颜色，同一对括号是相同的颜色，尤其是在括号中还包着括号的时候，看起来更加的清晰。
