@@ -40,9 +40,42 @@
 - 创建配置文件 package.json 文件
 
     `cd mypackage`
-    `npm init` 输入相应的内容
+    
+    在当前目录下初始化项目 后面不跟任何内容
+
+    `npm init`
+
+    输入项目相关的信息
 
     自动生成 package.json文件
+
+
+    如下:
+    ```json
+    //package.json
+    {
+    "name": "jsproject",
+    "version": "1.0.0",
+    "description": "我的第一个node项目",
+    "main": "app.js",
+    "dependencies": {
+        "koa": "^2.0.0",
+        "koa-router": "^7.4.0",
+        "mysql": "^2.17.1"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node app.js"
+    },
+    "author": "wudi",
+    "license": "ISC"
+    }
+    ```
+- **注意**
+
+    1.在windows下， `script`中 `node .\\app.js` 不然报错找不到js文件
+    2.`dependencies`  里面是项目的依赖包和版本
 
 - package.json文件说明
 

@@ -63,8 +63,12 @@
     npm 的包安装分为本地安装（local）、全局安装（global）两种，
     命令行的差别只是有没有 -g 而已，比如
     ```shell
-    npm install express          # 本地安装
-    npm install express -g   # 全局安装
+    # 本地安装
+    npm install express          
+    # 全局安装
+    npm install express -g   
+    #卸载全局安装的软件命令
+    npm uninstall -g react-native-cli 
     ```
     区别:
 

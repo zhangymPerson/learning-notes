@@ -30,11 +30,34 @@
 
 import sqlite3没报错说明ok
 
---------------------- 
-作者：qin147896325 
+## python中不支持 ++ -- 运算
 
-来源：CSDN 
+- 原因
 
-原文：https://blog.csdn.net/zd147896325/article/details/80092563 
+    需要使用id() 函数
+    id() 函数返回对象的唯一标识符，标识符是一个整数。
+    CPython 中 id() 函数用于获取对象的内存地址。
+    
+    如下所示
+    
+    ```py
+    Python 3.6.8 (tags/v3.6.8:3c6b436a57, Dec 24 2018, 00:16:47) [MSC v.1916 64 bit (AMD64)] on win32
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> a = 5
+    >>> b = 5
+    >>> id(5)
+    1849852144
+    >>> id(a)
+    1849852144
+    >>> id(b)
+    1849852144
+    >>>
+    ```
 
-版权声明：本文为博主原创文章，转载请附上博文链接！
+    变量a,b事实上指向的是同一个内存空间。
+
+    python不支持n++这种写法。
+
+    因此，正确的自增操作应该 n = n + 1 或者 n += 1。
+
+    因为有重新赋值的过程 相当于 n 指向一个新的地址

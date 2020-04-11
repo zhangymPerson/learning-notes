@@ -1,6 +1,10 @@
 # 优秀的github项目
-
-
+## 目录
+- [github-project-readme.md](./github-project-readme.md)
+- [Programming-URL.md](./Programming-URL.md)
+- [优秀博客积累.md](./优秀博客积累.md)
+- [开发常用信息.md](./开发常用信息.md)
+## 其他
 - [返回总目录](../README.md#项目目录)
 
 - [github項目查看历史记录](https://github.com/pomber/git-history) https://github.com/pomber/git-history
@@ -47,6 +51,10 @@
 - [JavaGuide](https://github.com/Snailclimb/JavaGuide) 
 
     https://github.com/Snailclimb/JavaGuide
+
+- [Java多线程开源笔记](https://github.com/RedSpider1/concurrent)
+
+    https://github.com/RedSpider1/concurrent
 
 - [Java成神之路](https://github.com/hollischuang/toBeTopJavaer)
 
@@ -254,6 +262,10 @@
 - [go学习测试项目](https://github.com/quii/learn-go-with-tests)
 
     https://github.com/quii/learn-go-with-tests
+
+- [7天用Go动手写/从零实现系列](https://github.com/geektutu/7days-golang)
+
+    https://github.com/geektutu/7days-golang
 
 ## python 语言
 

@@ -1,5 +1,10 @@
 # MongDb
-
+## 目录
+- [mongdb安装使用.md](./mongdb安装使用.md)
+- [mongodb-privilege.md](./mongodb-privilege.md)
+- [mongodb-sql.md](./mongodb-sql.md)
+- [mongodb.md](./mongodb.md)
+## 其他
 - mongdb 的网站收集
 
     [官网](https://www.mongodb.com/)

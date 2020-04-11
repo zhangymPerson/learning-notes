@@ -1,22 +1,13 @@
 # 大数据相关的笔记
-
+## [目录](./README.md)
 - [返回总目录](../README.md#项目目录)
-
-## [大数据目录](https://github.com/zhangymPerson/learning-notes/tree/master/BigData)
-- [Hadoop](https://github.com/zhangymPerson/learning-notes/tree/master/BigData/Hadoop)
-
-- [Hbase](https://github.com/zhangymPerson/learning-notes/tree/master/BigData/Hbase)
-
-
-- [Hive](https://github.com/zhangymPerson/learning-notes/tree/master/BigData/Hive)
-
-- [Sqoop](https://github.com/zhangymPerson/learning-notes/tree/master/BigData/Sqoop)
-
-- [spark](https://github.com/zhangymPerson/learning-notes/tree/master/BigData/spark)
-
-- [zookeeper](https://github.com/zhangymPerson/learning-notes/tree/master/BigData/zookeeper)
-
-- [elasticsearch](https://github.com/zhangymPerson/learning-notes/tree/master/BigData/elasticsearch)
-
-
-
+- [Hadoop](./Hadoop/README.md)
+- [Hbase](./Hbase/README.md)
+- [Hive](./Hive/README.md)
+- [Sqoop](./Sqoop/README.md)
+- [spark](./spark/README.md)
+- [zookeeper](./zookeeper/README.md)
+- [elasticsearch](./elasticsearch/README.md)
+- [kettl](./kettl/README.md)
+- [kafka](./kafka/README.md)
+- [面试.md](./面试.md)

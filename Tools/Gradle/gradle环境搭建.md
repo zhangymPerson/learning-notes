@@ -166,3 +166,16 @@
         }
     }
     ```
+
+
+- gradle项目配置本地的jar包
+
+    在build.gradle目录下创建libs文件夹 (可以自定义名称)
+
+    在配置文件中引入该文件夹
+
+    ```gradle
+    dependencies {
+        implementation fileTree(dir: "libs", include: ["*.jar"])
+    }
+    ```
