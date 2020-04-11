@@ -186,3 +186,9 @@
     # 使用该文件`typings/index.d.ts` (在`tsconfig.json`文件使用或者用 `///` 定义). 
     cat typings/index.d.ts
     ```
+
+- vscode 中的函数进入退出快捷键
+
+    进入函数详情 ctrl + 鼠标左键
+
+    退回到点击位置  alt + < 右键
