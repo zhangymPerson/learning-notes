@@ -83,6 +83,7 @@
 |[在线API文档](http://tool.oschina.net/apidocs)|http://tool.oschina.net/apidocs|常见开发语言的api文档集合
 |[开源中国的浏览器插件](https://github.com/jaywcjlove/oscnews)|https://github.com/jaywcjlove/oscnews|开发人员必备的神奇插件
 |[算法-leetcode](https://leetcode-cn.com/)|https://leetcode-cn.com/|
+|[在线表格处理工具-支持大部分格式转换](https://tableconvert.com/)|https://tableconvert.com/|
 
 ### 工具
 
