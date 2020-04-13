@@ -143,7 +143,6 @@
 - [大数据入门指南 ](https://github.com/heibaiying/BigData-Notes)
 
     https://github.com/heibaiying/BigData-Notes
-
 ## shell相关
 
 - [纯bash实现脚本集合](https://github.com/dylanaraps/pure-bash-bible)
@@ -171,8 +170,6 @@
 - [精选的有用JavaScript代码段集合，开发者可以在30秒或更短的时间内理解这些代码段](https://github.com/30-seconds/30-seconds-of-code)
 
     https://github.com/30-seconds/30-seconds-of-code
-
-
 ## git使用
 
 - [Git飞行规则](https://github.com/k88hudson/git-flight-rules)
@@ -182,7 +179,6 @@
     https://github.com/firstcontributions/first-contributions
 
 - [git使用技巧相关](https://github.com/jackfrued/git-tips)
-
 ## 算法
 
 - [算法/深度学习/NLP面试笔记](https://github.com/imhuay/Algorithm_Interview_Notes-Chinese)
@@ -197,8 +193,8 @@
 - [VS code插件推荐](https://github.com/viatsko/awesome-vscode)
 
     https://github.com/viatsko/awesome-vscode
+## 学习面试
 
-# 学习面试
 - [系统设计](https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md)
 
     https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md
@@ -246,13 +242,11 @@
 - [面试宝典-英文(多语言)](https://github.com/MaximAbramchuck/awesome-interview-questions)
 
     https://github.com/MaximAbramchuck/awesome-interview-questions
-
 ## 区块链介绍
 
 - [区块链(BlockChain)技术开发相关资料](https://github.com/chaozh/awesome-blockchain-cn)
 
     https://github.com/chaozh/awesome-blockchain-cn
-
 ## GO语言
 
 - [go语言优秀文档](https://github.com/enocom/gopher-reading-list)
@@ -266,7 +260,6 @@
 - [7天用Go动手写/从零实现系列](https://github.com/geektutu/7days-golang)
 
     https://github.com/geektutu/7days-golang
-
 ## python 语言
 
 - [python算法学习](https://github.com/OmkarPathak/pygorithm)
@@ -289,6 +282,11 @@
 - [Python脚本合集](https://github.com/geekcomputers/Python)
 
     https://github.com/geekcomputers/Python
+## javascript/typescript/nodejs
+
+-[nodejs开发实践注意事项](https://github.com/goldbergyoni/nodebestpractices)
+
+    https://github.com/goldbergyoni/nodebestpractices
 ## 其他
 
 - [网络 - 渗透攻击](https://github.com/Micropoor/Micro8)
@@ -330,13 +328,12 @@
     https://github.com/vhf/free-programming-books
 
     https://github.com/vhf/free-programming-books/blob/master/free-programming-books-zh.md
-### 开源字体
+## 开源字体
 
 - [开源字体](https://github.com/chrissimpkins/codeface)
 
     https://github.com/chrissimpkins/codeface
-
-### 开源软件
+## 开源软件
 
 - [Windows上优质&精选的最佳应用程序及工具列表](https://github.com/Awesome-Windows/Awesome) 
 
