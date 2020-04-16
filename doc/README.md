@@ -12,5 +12,11 @@
 ## 其他
 - 说明 主要是网上收集整理的 和自己修改格式后整理的
 
+## 技术文档开发规范(主要是书写规范)
+
+- [中文文案排版](https://github.com/sparanoid/chinese-copywriting-guidelines)
+
+- [中文技术文档的写作规范](https://github.com/ruanyf/document-style-guide)
+
 
 
