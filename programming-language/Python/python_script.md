@@ -2,6 +2,9 @@
 
 ## logging使用
 
+**注意** python中的logging的参数字符需要为一个整的字符串，
+
+
 - python使用 logging 的脚本
 
     ```py

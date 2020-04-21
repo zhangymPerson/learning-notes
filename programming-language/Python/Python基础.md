@@ -122,3 +122,35 @@
     if __name__ == '__main__':
         main()
     ```
+
+### python 中的集合说明 (对比Java中list set map)
+
+## list 是可变的对象，元组 tuple 是不可变的对象！(对应java中的list)
+
+- 创建方式
+
+    ```py
+    #这是一个列表
+    a=[]
+    #增加 list.add(""); 
+    a.append("test")
+    #增删改查 查api
+
+    #这是一个元组
+    b=()
+    ``` 
+
+## 字典dict类似Java中的map和js中的json
+
+- 创建方式
+
+    ```py
+    #创建字典(map)
+    dict={}
+    #增加 其他查api
+    dict["key"]="value"
+    # 读取 key不存在报错
+    v1 = dict["key"] 
+    # key不存在不报错，显示None
+    v2 = dict.get("key")
+    ```
