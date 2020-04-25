@@ -1,0 +1,15 @@
+package rules
+
+import cn.danao.work.bean.Person;
+
+function void print(String str){
+    System.out.println(str);
+}
+
+//简单规则文件
+rule "demo"
+    when
+        $p : Person( name == "Bob" )
+    then        
+        print($p.getName())
+end
