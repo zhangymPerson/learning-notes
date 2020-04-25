@@ -214,3 +214,21 @@
     file -> settings -> editor -> vim -> vim emulation
 
     配置ctrl+c/ctrl+v handler 由vim改为IDE
+
+- idea中文乱码的解决办法
+
+    设置文件格式
+
+    settings -> Eidtor -> File Encodings 里面设置字体编码格式， 全部位置 都设置 UTF-8
+
+    配置idea启动项配置 
+
+    在安装目录 `~\JetBrains\IdeaIC***` 下 
+    
+    或者在编辑器内直接打开 
+    
+    方式 菜单栏 help -> `Edit Custom VM Options` 和 `Edit Custom Properties` 
+    
+    在 `idea64.exe.vmoptions` 和 `idea.properties`(文件不存在则手动创建) 配置文件中添加如下配置
+
+    `-Dfile.encoding=UTF-8` (主要解决控制台输出乱码的问题)
