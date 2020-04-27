@@ -328,6 +328,13 @@
     https://github.com/vhf/free-programming-books
 
     https://github.com/vhf/free-programming-books/blob/master/free-programming-books-zh.md
+
+- [免费的编程学习资料](https://github.com/EbookFoundation/free-programming-books)
+
+    https://github.com/EbookFoundation/free-programming-books
+
+    https://github.com/EbookFoundation/free-programming-books/blob/master/free-programming-books-zh.md  (中文的学习资料)
+
 ## 开源字体
 
 - [开源字体](https://github.com/chrissimpkins/codeface)
