@@ -154,3 +154,30 @@
     echo 脚本执行完成
     pause  
     ```
+
+- 函数的写法
+
+    ```bat
+    rem 函数的调用
+    call:func
+    pause
+    rem 函数的定义 :funcname 结尾用 goto:eof
+    :func
+    echo this is a bat func
+    goto:eof
+    ```
+
+    带参数的
+
+    ```bat
+    @echo off
+    call :add 11 12
+    echo %n%
+    rem 需要加 goto :eof 否则函数会在执行一遍，也可以使用 exit
+    goto :eof
+    :add
+    set /a n=%1+%2
+    goto :eof
+    ```
+
+    **用%1-%9表示第一到第九个答参数,在执行完过程后加上goto :eof跳到文件尾可以返回到call的下一条语句，避免执行到文件结束才返回**
