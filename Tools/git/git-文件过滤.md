@@ -1,5 +1,12 @@
 # git的配置文件
 
+- [git过滤配置文件-github官方项目](https://github.com/github/gitignore)
+
+    https://github.com/github/gitignore
+
+- [github的过滤文件查询网站，输入关键字直接查询](https://www.gitignore.io/)
+
+    https://www.gitignore.io/
 - 配置文件 .gitignore
 
     配置方式说明
