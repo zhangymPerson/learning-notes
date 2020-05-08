@@ -10,12 +10,23 @@
     模板如下
     ```sh
     /**
-    * @classname ${NAME}
-    * @descriptionclass 
+    * @class name ${NAME}
+    * @description class 
     * 1.类的作用
     * 2.其他说明
-    * @createdate ${DATE} ${TIME}
+    * @create date ${DATE} ${TIME}
     * @author <a href="mailto:you-email@163.com">${USER}</a>
+    * @version 1.0
+    * @since 1.0
+    */
+    ```
+
+    ```
+    /**
+    * date ${DATE} ${TIME} <br/>
+    * description class <br/>
+    *
+    * @author ${USER} 
     * @version 1.0
     * @since 1.0
     */
