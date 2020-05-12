@@ -93,7 +93,10 @@
 
 - idea 显示占用内存  开启后显示位置在软件的右下角
 
-    File-->Settings-->Apperance-->Window Options-->Show Memory indicator
+    File-->Settings-->Appearance-->Window Options-->Show Memory indicator
+
+    idea2020.1版本设置方式
+    菜单栏 view -> Appearance -> status bar widgets -> memory indicator
 
 - Ctrl+鼠标滚轴修改字体大小
 
