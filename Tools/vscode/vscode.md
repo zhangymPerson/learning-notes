@@ -192,3 +192,11 @@
     进入函数详情 ctrl + 鼠标左键
 
     退回到点击位置  alt + < 右键
+
+- vscode中制作流程图的插件 - Draw.io Integration
+
+    [Draw.io](https://app.diagrams.net/)
+
+    vscode 中安装插件之后，可以在本地进行相关图形的绘制
+
+    如 [draw-png.drawio](./draw-png.drawio)
