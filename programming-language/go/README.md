@@ -113,6 +113,10 @@
 
     Go 1.13 及以上（推荐）
 
+    七牛云代理 - https://goproxy.cn/
+
+    阿里云的代理源 - GOPROXY=https://mirrors.aliyun.com/goproxy/
+
     打开你的终端并执行：
 
     `$ go env -w GOPROXY=https://goproxy.cn,direct`
