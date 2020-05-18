@@ -74,6 +74,13 @@
 
     ![HashMap put方法解析](../../Picture/hashmap-put-method.png)
 
+    HashMap 扩容 有两个因素：
+
+        Capacity：HashMap当前长度。
+        LoadFactor：负载因子，默认值0.75f。
+
+    
+
 
     
 
