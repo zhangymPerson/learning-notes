@@ -32,6 +32,26 @@
 
     连接方式，打开 `powershell` ，输入 `wsl` 即可进行当前子系统 即可当初普通的 linux 系统直接使用
 
+- 修改代理源
+
+    不修改代理源，下载会比较慢
+
+    修改阿里云的代理源
+
+    修改方式 
+
+    ```sh
+    #备份配置文件
+    cd /etc/apt/
+    sudo cp sources.list sources.list.bak
+    #修改源 改成阿里云的源
+    vim sources.list
+    :%s/security.ubuntu/mirrors.aliyun/g
+    :%s/archive.ubuntu/mirrors.aliyun/g
+    #更新
+    sudo apt update
+    ```
+
 ## 卸载
 
 - 如何卸载
