@@ -15,6 +15,8 @@
 
 - [Go的中文api](https://studygolang.com/pkgdoc)
 
+- [开源学习资料](https://github.com/yangwenmai/learning-golang)
+
 - 下载
 
     安装包下载地址为：https://golang.org/dl/。
