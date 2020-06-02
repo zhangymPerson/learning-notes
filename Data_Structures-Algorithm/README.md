@@ -10,3 +10,5 @@
     - 大话数据结构
 - 网站
     [leetcode-中国](https://leetcode-cn.com/ )
+
+    **[开源算法库-多语言](https://github.com/TheAlgorithms)**
