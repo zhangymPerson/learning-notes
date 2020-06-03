@@ -1,5 +1,8 @@
 # emacs简单使用
 
+
+- **[emacs国内社区](https://emacs-china.org/)**
+
 ## 常用体验
 
 - 打开退出
