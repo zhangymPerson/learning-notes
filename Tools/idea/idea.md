@@ -246,3 +246,17 @@
     在 `idea64.exe.vmoptions` 和 `idea.properties`(文件不存在则手动创建) 配置文件中添加如下配置
 
     `-Dfile.encoding=UTF-8` (主要解决控制台输出乱码的问题)
+
+- idea 断点调试 - 跳过断点问题 
+
+    **提示信息 `Skipped breakpoint *** because it happened inside debugger evaluation`**
+
+    解决办法
+
+    打开 `idea` 配置 `Settings`
+    
+    去掉 这行 `Enable 'toString()' object view`
+
+    不行 就去掉 `Enable alternative view for Collections classes`
+
+    `idea` 默认在用户调试之前先执行 `toString` 方法，然后回显数据，也就是“预知”功能。但有时候会影响判断，但可以设置那些类中 `toString` 方法是是可以做“预知”。
