@@ -260,3 +260,7 @@
     不行 就去掉 `Enable alternative view for Collections classes`
 
     `idea` 默认在用户调试之前先执行 `toString` 方法，然后回显数据，也就是“预知”功能。但有时候会影响判断，但可以设置那些类中 `toString` 方法是是可以做“预知”。
+
+- idea 代码缩略图的插件 idea 代码查看插件
+
+    File->Settings->Plugins->MarketPlace->搜索CodeGlance并安装
