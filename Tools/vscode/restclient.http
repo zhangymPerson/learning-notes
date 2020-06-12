@@ -8,9 +8,9 @@ GET http://127.0.0.1:8080/med/server/token
 
 ###
 # post - json 
-POST http://127.0.0.1:8080/med/auth/login/checkverifycode
+POST http://127.0.0.1:8080/phone/checkout
 Content-Type: application/json
 {
-    "verifycode": "0000",
-    "phone_num": "18235140879"
+    "verifycode": "8848",
+    "phone_num": "13788488848"
 }
