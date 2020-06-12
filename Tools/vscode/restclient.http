@@ -1,0 +1,16 @@
+GET http://127.0.0.1:8080/server/state
+
+### 
+# 分割符号
+
+GET http://127.0.0.1:8080/med/server/token
+###
+
+###
+# post - json 
+POST http://127.0.0.1:8080/med/auth/login/checkverifycode
+Content-Type: application/json
+{
+    "verifycode": "0000",
+    "phone_num": "18235140879"
+}

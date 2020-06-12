@@ -46,6 +46,11 @@
 
   如 [draw-png.drawio](./draw-png.drawio)
 
+- [REST Client](https://github.com/Huachao/vscode-restclient)
+
+  测试 api.的插件通过文件来发现和测试
+  [测试文件](./restclient.http)
+
 ## 快捷键
 
 - 常用的
@@ -128,6 +133,7 @@
   配置文件后，将 ssh 的公钥复制到要连接的服务器中
 
   **注意**
+
   - Host 是指别名，你给服务器起的名称
   - HostName 是你的服务器地址 如果 hosts 文件中有别名，可以用别名，没有则必须使用 ip 地址
   - User 用户名 即你的 ssh 连接指定的用户
@@ -202,5 +208,3 @@
   进入函数详情 ctrl + 鼠标左键
 
   退回到点击位置 alt + < 右键
-
-
