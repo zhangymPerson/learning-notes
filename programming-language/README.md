@@ -24,3 +24,7 @@
 - **注意**
 
     代码还是要多写多实践才好
+
+- 线上多语言学习demo
+
+    [https://learnxinyminutes.com/](https://learnxinyminutes.com/)
