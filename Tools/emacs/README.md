@@ -6,6 +6,16 @@
 
   [github](https://github.com/emacs-china/Spacemacs-rocks)
 
+## 配置文件说明
+
+Windows 下 Emacs 就按如下方式来查找配置文件：
+
+- 如果设置了 HOME 环境变量，那么就用它的值作为 home 目录~
+- 如果存在注册表键值 HKCU\SOFTWARE\GNU\Emacs\HOME，就用它的值作为 home 目录~
+- 如果存在注册表键值 HKLM\SOFTWARE\GNU\Emacs\HOME，就用它的值作为 home 目录~（和 2 的区别是，2 只是针对当前用户的注册表路径，3 则是针对所有用户）
+- 如果存在 C:\.emacs，就用 C:\作为 home 目录~
+- 如果以上都不存在的话，就使用<system root>\Users\<user name>\AppData\Roaming 作为 home 目录~（对于 XP 和较早 windows 用户，需要到 Documents and Settings 目录下去找）
+
 ## 常用体验
 
 - 打开退出
@@ -54,7 +64,7 @@
 
 - 显示行号
 
-  Alt + x linum-mode
+  `Alt + x linum-mode`
 
 - 获取帮助
 
@@ -104,3 +114,26 @@
   ;; 开启全局 Company 补全
   (global-company-mode 1)
   ```
+
+- 窗口操作说明
+
+  | 按键      | 命令                                | 作用                           |
+  | --------- | ----------------------------------- | ------------------------------ |
+  | C-x 2     | split-window-vertically             | 垂直拆分窗口                   |
+  | C-x 3     | split-window-horizontally           | 水平拆分窗口                   |
+  | C-x o     | other-window                        | 选择下一个窗口                 |
+  | C-M-v     | scroll-other-window                 | 滚动下一个窗口                 |
+  | C-x 4 b   | switch-to-buffer-other-window       | 在另一个窗口打开缓冲           |
+  | C-x 4 C-o | display-buffer                      | 在另一个窗口打开缓冲，但不选中 |
+  | C-x 4 f   | find-file-other-window              | 在另一个窗口打开文件           |
+  | C-x 4 d   | dired-other-window                  | 在另一个窗口打开文件夹         |
+  | C-x 4 m   | mail-other-window                   | 在另一个窗口写邮件             |
+  | C-x 4 r   | find-file-read-only-other-window    | 在另一个窗口以只读方式打开文件 |
+  | C-x 0     | delete-window                       | 关闭当前窗口                   |
+  | C-x 1     | delete-other-windows                | 关闭其它窗口                   |
+  | C-x 4 0   | kill-buffer-and-window              | 关闭当前窗口和缓冲             |
+  | C-x ^     | enlarge-window                      | 增高当前窗口                   |
+  | C-x {     | shrink-window-horizontally          | 将当前窗口变窄                 |
+  | C-x }     | enlarge-window-horizontally         | 将当前窗口变宽                 |
+  | C-x -     | shrink-window-if-larger-than-buffer | 如果窗口比缓冲大就缩小         |
+  | C-x +     | balance-windows                     | 所有窗口一样高                 |
