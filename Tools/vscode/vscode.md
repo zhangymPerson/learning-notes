@@ -48,6 +48,7 @@
 
 - [REST Client](https://github.com/Huachao/vscode-restclient)
 
+  http测试工具插件
   测试 api.的插件通过文件来发现和测试
   [测试文件](./restclient.http)
 

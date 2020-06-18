@@ -1,3 +1,6 @@
+### vscode下测试http常用请求的方式
+### 注释
+### http测试工具
 GET http://127.0.0.1:8080/server/state
 
 ### 
@@ -13,4 +16,30 @@ Content-Type: application/json
 {
     "verifycode": "8848",
     "phone_num": "13788488848"
+}
+
+
+## 定义变量
+@hostname = 127.0.0.1
+@port = 8080
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+@createdAt = {{$datetime iso8601}}
+@modifiedBy = {{$processEnv USERNAME}}
+
+###
+
+@name = hello
+
+GET http://{{host}}/authors/{{name}} 
+
+###
+
+PATCH https://{{host}}/authors/{{name}} HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "content": "foo bar",
+    "created_at": "{{createdAt}}",
+    "modified_by": "{{modifiedBy}}"
 }
