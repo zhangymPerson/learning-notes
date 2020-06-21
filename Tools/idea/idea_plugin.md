@@ -34,3 +34,13 @@
   安装完成后需要配置,在配置 setting 中查找
 
   **Annotation Processors** -> **Enable annotation processing** 是否勾选 为勾选需要勾选
+
+### 查看 controller 中 RequestMapping 的插件 Request mapper
+
+- 插件地址
+
+  https://plugins.jetbrains.com/plugin/9567-request-mapper
+
+- 插件安装后使用快捷键为
+
+  `ctrl + shift + \`
