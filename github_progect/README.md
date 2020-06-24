@@ -299,9 +299,9 @@
 
 ## javascript/typescript/nodejs
 
--[nodejs 开发实践注意事项](https://github.com/goldbergyoni/nodebestpractices)
+- [nodejs 开发实践注意事项](https://github.com/goldbergyoni/nodebestpractices)
 
-    https://github.com/goldbergyoni/nodebestpractices
+  https://github.com/goldbergyoni/nodebestpractices
 
 ## 其他
 
