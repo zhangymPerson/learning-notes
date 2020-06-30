@@ -37,7 +37,9 @@
 
 ### 查看 controller 中 RequestMapping 的插件 Request mapper
 
-- 插件地址
+- idea插件地址 
+
+  快速查看项目中后台路由 如 "/boot/hello/word"
 
   https://plugins.jetbrains.com/plugin/9567-request-mapper
 
