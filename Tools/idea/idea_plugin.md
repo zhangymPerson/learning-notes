@@ -10,6 +10,12 @@
 
 - 配置
 
+  ideavim 的快速打开配置文件
+
+  在 idea 软件打开后，右下角有一个 vim 的图标，点击后，选择 `Open ~/.ideavimrc`
+
+  即可在 idea 中打开 vim 的相关配置并进行相关的设置
+
   用户目录下添加配置文件
   C:\Users\Administrator
 
@@ -21,6 +27,19 @@
 
   ```sh
   echo a > .ideavimrc
+  ```
+
+  ```vim
+  imap <C-e> <END>
+  imap <C-a> <HOME>
+  imap ll <Right>
+  imap hh <Left>
+  " 显示当前的模式
+  set showmode
+  " 共享系统粘贴板
+  set clipboard=unnamed
+  " 高亮显示查询结果
+  set hlsearch
   ```
 
 ### lombok plug 安装
@@ -37,7 +56,7 @@
 
 ### 查看 controller 中 RequestMapping 的插件 Request mapper
 
-- idea插件地址 
+- idea 插件地址
 
   快速查看项目中后台路由 如 "/boot/hello/word"
 

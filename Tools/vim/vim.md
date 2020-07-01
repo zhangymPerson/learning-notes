@@ -2,7 +2,7 @@
 
 ## 常用命令
 
-- [vim中文使用文档-github](https://github.com/yianwillis/vimcdoc)
+- [vim 中文使用文档-github](https://github.com/yianwillis/vimcdoc)
 
 ```sh
 #打开文件
@@ -77,7 +77,7 @@ vim操作多行的方法
 
 vim 文件
 #进入行模式
-ctrl + v 
+ctrl + v
 # 上下移动图标
  h j k l 或者 上下左右键盘
 
@@ -121,17 +121,17 @@ ggvG
 
 ```
 
-## vim 安装到windows 在cmd下用vim命令启动
+## vim 安装到 windows 在 cmd 下用 vim 命令启动
 
-- 安装gvim
+- 安装 gvim
 
-- 将gvim启动位置配置到环境变量下
+- 将 gvim 启动位置配置到环境变量下
 
 - 修改部分配置 乱码问题
 
-.vimrc（在win中是_vimrc）
+.vimrc（在 win 中是\_vimrc）
 
-windows下是在gvim启动文件夹位置的上一层
+windows 下是在 gvim 启动文件夹位置的上一层
 
 ```vim
 "设置文件的代码形式 utf8
@@ -147,7 +147,6 @@ source $VIMRUNTIME/menu.vim
 "vim提示信息乱码的解决
 language messages zh_CN.utf-8
 ```
-
 
 ```vim
 "colorscheme evening	"配色方案
@@ -176,19 +175,19 @@ set nobackup 		"设置不生成备份文件
 "set go=				"不要图形按钮
 set guioptions-=T           " 隐藏工具栏
 "set guioptions-=m           " 隐藏菜单栏
- 
+
 "===========================
 "查找/替换相关的设置
 "===========================
 set hlsearch "高亮显示查找结果
 set incsearch "增量查找
- 
+
 "===========================
 "状态栏的设置
 "===========================
 set statusline=[%F]%y%r%m%*%=[Line:%l/%L,Column:%c][%p%%] "显示文件名：总行数，总的字符数
 set ruler "在编辑过程中，在右下角显示光标位置的状态行
- 
+
 "===========================
 "代码设置
 "===========================
@@ -203,8 +202,8 @@ set ai! "设置自动缩进
 set cursorline	"启用光标行
 set guicursor+=a:blinkon0 "设置光标不闪烁
 set fdm=indent "
- 
- 
+
+
 "插件管理
 set rtp+=$VIM\vimfiles\bundle\Vundle.vim\
 call vundle#begin()
@@ -215,7 +214,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
 Plugin 'eshion/vim-sync'
 call vundle#end()
- 
+
 " 关闭NERDTree快捷键
 map <leader>t :NERDTreeToggle<CR>
 " 显示行号
@@ -233,3 +232,11 @@ let NERDTreeIgnore=['\.pyc','\~$','\.swp']
 let NERDTreeShowBookmarks=1
 
 ```
+
+- vim 中的查询
+
+  在 vim 和 vim 插件中均可使用。按 `F3` 可以打开搜索框
+
+- vim 中取消高亮
+
+  `:noh`
