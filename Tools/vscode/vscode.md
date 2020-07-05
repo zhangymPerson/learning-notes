@@ -48,7 +48,7 @@
 
 - [REST Client](https://github.com/Huachao/vscode-restclient)
 
-  http测试工具插件
+  http 测试工具插件
   测试 api.的插件通过文件来发现和测试
   [测试文件](./restclient.http)
 
@@ -209,3 +209,7 @@
   进入函数详情 ctrl + 鼠标左键
 
   退回到点击位置 alt + < 右键
+
+- vscode tab 键空格不为 4 个的修改方式
+
+  点击 vscode 右下角 Spaces:n 或者 空格:n (n 为数字) 修改成你需要的长度
