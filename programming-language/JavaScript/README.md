@@ -4,7 +4,7 @@
 ## 其他
 - [js教程](http://www.w3school.com.cn/js/index.asp)
 
-- [github教程](https://github.com/javascript-tutorial/zh.javascript.info)
+- [github - javascript教程](https://github.com/javascript-tutorial/zh.javascript.info)
 
 - nodejs和js区别
 
