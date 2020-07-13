@@ -26,6 +26,10 @@
 
   快捷键使用方式
   ![vimium插件快捷键](../Picture/vimium-key.png)
+  
+  问题：chrome下的vimium使用时，有时候会聚集到编辑框里，这时vimium的设定键位会失效 
+  
+  解决：按两下 `F6` 即可解决
 
 - 浏览器插件使用方法
 
