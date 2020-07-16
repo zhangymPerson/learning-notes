@@ -6,10 +6,10 @@
 
 - 常用检出命令：
 
-  `svn co http://路径(目录或文件的全路径)　[本地目录全路径] --username 用户名 --password 密码`
-  `svn co svn://路径(目录或文件的全路径)　[本地目录全路径] --username 用户名 --password 密码`
-  `svn checkout http://路径(目录或文件的全路径)　[本地目录全路径] --username 　用户名`
-  `svn checkout svn://路径(目录或文件的全路径)　[本地目录全路径] --username 　用户名`
+  `svn co http://路径(目录或文件的全路径) [本地目录全路径] --username 用户名 --password 密码`
+  `svn co svn://路径(目录或文件的全路径) [本地目录全路径] --username 用户名 --password 密码`
+  `svn checkout http://路径(目录或文件的全路径) [本地目录全路径] --username 用户名`
+  `svn checkout svn://路径(目录或文件的全路径) [本地目录全路径] --username 用户名`
 
   **检出命令说明**
 
@@ -21,10 +21,10 @@
 
 - 检出指定具体版本：
 
-  `svn co http://路径(目录或文件的全路径)　[本地目录全路径][--revision] --username 用户名 --password 密码`
-  `svn checkout svn://路径(目录或文件的全路径)　[本地目录全路径][--revision] --username 　用户名`
-  `svn co [--revision] http://路径(目录或文件的全路径)　[本地目录全路径] --username 用户名 --password 密码`
-  `svn checkout [--revision] svn://路径(目录或文件的全路径)　[本地目录全路径] --username 　用户名`
+  `svn co http://路径(目录或文件的全路径) [本地目录全路径][--revision] --username 用户名 --password 密码`
+  `svn checkout svn://路径(目录或文件的全路径) [本地目录全路径][--revision] --username 用户名`
+  `svn co [--revision] http://路径(目录或文件的全路径) [本地目录全路径] --username 用户名 --password 密码`
+  `svn checkout [--revision] svn://路径(目录或文件的全路径) [本地目录全路径] --username 用户名`
   举例如下：
   `svn checkout http://baidu.com/svn/trunk/ username -r version`
   `svn checkout -r version http://baidu.com/svn/trunk/ username`
@@ -41,15 +41,15 @@
 
 - 往版本库中添加新的文件
 
-  `svn add filename`
+  `svn add filename`
 
   例如：
-  
-  `svn add test.cpp`
+
+  `svn add test.cpp`
 
 - 查看日志
 
-  `svn log path`
+  `svn log path`
 
 - 更新当前目录以及子目录下的所有文件到最新版本
 

@@ -1,121 +1,119 @@
-# git的配置文件
+# git 的配置文件
 
-- [git过滤配置文件-github官方项目](https://github.com/github/gitignore)
+- [git 过滤配置文件-github 官方项目](https://github.com/github/gitignore)
 
-    https://github.com/github/gitignore
+  https://github.com/github/gitignore
 
-- [github的过滤文件查询网站，输入关键字直接查询](https://www.gitignore.io/)
+- [github 的过滤文件查询网站，输入关键字直接查询](https://www.gitignore.io/)
 
-    https://www.gitignore.io/
+  https://www.gitignore.io/
+
 - 配置文件 .gitignore
 
-    配置方式说明
+  配置方式说明
 
-    ```
-    # 以'#'开始的行，被视为注释.
+  ```
+  # 以'#'开始的行，被视为注释.
 
-    # 忽略掉所有文件名是 foo.txt的文件.
+  # 忽略掉所有文件名是 foo.txt的文件.
 
-    foo.txt
+  foo.txt
 
-    # 忽略所有生成的 html文件,
+  # 忽略所有生成的 html文件,
 
-    *.html
+  *.html
 
-    # foo.html是手工维护的，所以例外.
+  # foo.html是手工维护的，所以例外.
 
-    !foo.html
+  !foo.html
 
-    # 忽略所有.o和 .a文件.
+  # 忽略所有.o和 .a文件.
 
-    *.[oa]
-    配置语法：
-    以斜杠“/”开头表示目录；
-    以星号“*”通配多个字符；
-    以问号“?”通配单个字符
-    以方括号“[]”包含单个字符的匹配列表；
-    以叹号“!”表示不忽略(跟踪)匹配到的文件或目录；
-    ```
+  *.[oa]
+  配置语法：
+  以斜杠“/”开头表示目录；
+  以星号“*”通配多个字符；
+  以问号“?”通配单个字符
+  以方括号“[]”包含单个字符的匹配列表；
+  以叹号“!”表示不忽略(跟踪)匹配到的文件或目录；
+  ```
 
+* demo 1
 
+  ```gitignore
 
-- demo 1
+  # Eclipse
+  .classpath
+  .project
+  .settings/
 
-    ```gitignore
+  # eclipse and vscode
+  *.prefs
+  *.factorypath
+  *.json
 
-    # Eclipse
-    .classpath
-    .project
-    .settings/
-    
-    # eclipse and vscode
-    *.prefs
-    *.factorypath
-    *.json
+  # Intellij
 
+  .idea/
+  _.iml
+  _.iws
 
+  # Mac
+  .DS_Store
 
-    # Intellij
-    .idea/
-    *.iml
-    *.iws
-    
-    # Mac
-    .DS_Store
-    
-    # Maven
-    log/
-    target/
-    pom.xml.tag
-    pom.xml.releaseBackup
-    pom.xml.versionsBackup
-    pom.xml.next
-    release.properties
-    dependency-reduced-pom.xml
-    buildNumber.properties
+  # Maven
+  log/
+  target/
+  pom.xml.tag
+  pom.xml.releaseBackup
+  pom.xml.versionsBackup
+  pom.xml.next
+  release.properties
+  dependency-reduced-pom.xml
+  buildNumber.properties
+  ```
 
-    ```
 - demo 2
-    ```
-    # Created by .ignore support plugin (hsz.mobi)
-    ### Maven template
-    target/
-    pom.xml.tag
-    pom.xml.releaseBackup
-    pom.xml.versionsBackup
-    pom.xml.next
-    release.properties
-    dependency-reduced-pom.xml
-    buildNumber.properties
-    .mvn/timing.properties
 
-    .idea/
+  ```
+  # Created by .ignore support plugin (hsz.mobi)
+  ### Maven template
+  target/
+  pom.xml.tag
+  pom.xml.releaseBackup
+  pom.xml.versionsBackup
+  pom.xml.next
+  release.properties
+  dependency-reduced-pom.xml
+  buildNumber.properties
+  .mvn/timing.properties
 
-    ## File-based project format:
-    *.iws
-    *.iml
-    *.ipr
+  .idea/
 
-    ## Plugin-specific files:
+  ## File-based project format:
+  *.iws
+  *.iml
+  *.ipr
 
-    # IntelliJ
-    /out/
+  ## Plugin-specific files:
 
-    # mpeltonen/sbt-idea plugin
-    .idea_modules/
+  # IntelliJ
+  /out/
 
-    # JIRA plugin
-    atlassian-ide-plugin.xml
+  # mpeltonen/sbt-idea plugin
+  .idea_modules/
 
-    # Crashlytics plugin (for Android Studio and IntelliJ)
-    com_crashlytics_export_strings.xml
-    crashlytics.properties
-    crashlytics-build.properties
-    fabric.properties
-    ```
+  # JIRA plugin
+  atlassian-ide-plugin.xml
 
+  # Crashlytics plugin (for Android Studio and IntelliJ)
+  com_crashlytics_export_strings.xml
+  crashlytics.properties
+  crashlytics-build.properties
+  fabric.properties
+  ```
 
-- 删除git中的需要过滤的文件
+* 删除 git 中的需要过滤的文件
 
 
     git删除
