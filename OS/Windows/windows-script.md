@@ -8,6 +8,10 @@
 
 - powershell 中查看帮助 `man copy` 或者 `get-help copy`
 
+- mvn.bat 这种脚本命名有问题和maven自带的命令冲突，不要起和软件自带的命令重名的脚本文件 
+
+  **脚本文件命名不要和系统自带的脚本文件命名一样，否则引发一些问题**
+
 - bat 脚本中的 `&` 和 `&&` 的区别
 
   **&** 之后的命令 **无论如何都会被执行**。
@@ -207,3 +211,16 @@
   ```
 
   双击 bat 脚本即可打开该文件夹
+
+- maven项目脚本
+
+  maven-script.bat 脚本文件在 pom.xml文件所在文件夹下
+  ```bat
+  @echo off
+  set jarName=***.jar
+  echo "test mvn compiler"
+  call mvn clean package
+  java -jar ./target/%jarName%
+  echo "run stop!"
+  pause
+  ```
