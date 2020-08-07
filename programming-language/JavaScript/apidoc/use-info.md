@@ -21,3 +21,14 @@
     vim apidoc.json
     ```
 
+- apidoc.json 配置项说明
+
+    name：项目名称
+
+    version：项目版本
+
+    description：项目介绍
+
+    title：浏览器显示的标题内容
+
+    url：接口前缀，比如http://www.niyueling.cn
