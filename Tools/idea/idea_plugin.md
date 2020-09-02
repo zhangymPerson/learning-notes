@@ -29,6 +29,8 @@
   echo a > .ideavimrc
   ```
 
+  **注意：修改vim配置要生效，需要重启idea**
+
   ```vim
   imap <C-e> <END>
   imap <C-a> <HOME>
@@ -40,6 +42,16 @@
   set clipboard=unnamed
   " 高亮显示查询结果
   set hlsearch
+  " 查询不分大小写 小写全匹配，有一个大写则按照大小写规则匹配
+  set ignorecase smartcase
+
+  " 下面的配置只能在idea系列中生效
+  " Leader默认的键盘位置是 \
+  nnoremap <Leader>r :action Replace<CR>
+  vnoremap <Leader>/ :action Find<CR>
+  vnoremap <Leader>./ :action FindInPath<CR>
+  nnoremap <Leader>/ :action Find<CR>
+  nnoremap <Leader>./ :action FindInPath<CR>
   ```
 
 ### lombok plug 安装
