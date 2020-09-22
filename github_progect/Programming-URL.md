@@ -161,6 +161,9 @@
 |-|-|-|
 |阿里巴巴普惠体|https://alibabafont.taobao.com/wow/alibabafont/act/alifont|
 |[微软开源的编程字体](https://github.com/microsoft/cascadia-code)|https://github.com/microsoft/cascadia-code|
+|[JetBrains Mono 开源的编程字体 官网](https://www.jetbrains.com/lp/mono/)
+|[JetBrains Mono 开源的编程字体 github地址](https://github.com/JetBrains/JetBrainsMono)
+
 
 ###  springboot项目
 

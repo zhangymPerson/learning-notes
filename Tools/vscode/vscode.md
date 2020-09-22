@@ -111,11 +111,17 @@
 
   editor.renderWhitespace : all
 
-* 配置阿里普惠体
+- 配置阿里普惠体
 
   Alibaba Sans
 
   Alibaba Sans, 'Courier New', monospace
+
+- 配置JetBrains Mono 字体
+
+  在 file - > preferences -> settings -> search "font family" ->
+
+  修改为 JetBrains Mono, 'Courier New', monospace
 
 ## vscode 的远程连接方式
 
@@ -125,7 +131,7 @@
 
   Visual Studio Code Remote 允许开发者将容器，远程计算机，或 Windows Subsystem for Linux (WSL) 作为完整的开发环境。
 
-* 配置相关参数
+- 配置相关参数
 
   ~\.ssh\config
 
@@ -154,7 +160,7 @@
   微软开源字体
 
   ```
-  "Cascadia Code",Consolas, 'Courier New', monospace
+  Cascadia Code, 'Courier New', monospace
   ```
 
 - vscode 打开 git 日志乱码 中文文件名乱码
