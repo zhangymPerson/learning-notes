@@ -224,3 +224,29 @@
   echo "run stop!"
   pause
   ```
+
+- windows下运行jar包的脚本 
+
+  **后台运行 jar包 可以使用`javaw -jar jarName.jar`命令**
+
+  ```bat
+  @echo off
+  set jarName=jarName.jar
+  set logName=log.log
+  start java -jar %jarName% > %logName%
+  exit
+  ```
+  ```bat
+  @echo off
+  set jarName=jarName.jar
+  set logName=log.log
+  start javaw -jar %jarName% > %logName%
+  exit
+  ```
+
+  **注意：测试脚本可以添加`pause`命令来查看执行情况**
+
+- 相同点：二者都是Java的虚拟机，用来执行Java程序
+- java.exe和javaw.exe的区别
+  - javaw.exe运行程序时不会输出控制台信息
+  - java.exe会显示在控制台中输出信息，关闭窗口则程序停止
