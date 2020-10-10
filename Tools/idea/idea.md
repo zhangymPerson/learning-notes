@@ -263,14 +263,6 @@
 
   `idea` 默认在用户调试之前先执行 `toString` 方法，然后回显数据，也就是“预知”功能。但有时候会影响判断，但可以设置那些类中 `toString` 方法是是可以做“预知”。
 
-- idea 代码缩略图的插件 idea 代码查看插件
-
-  File->Settings->Plugins->MarketPlace->搜索 CodeGlance 并安装
-
-  Ctrl+Shift+G 可以显示和隐藏
-
-  如果插件的 idea 缩略图看不见了，可以配置 ： 在 file -> settings -> search :codeglance -> 去掉 disable 选项
-
 * idea 配置单行注释格式化
 
   idea 默认的注释都是按行顶格注释,不显示在行首，需要配置，配置方式

@@ -1,4 +1,4 @@
-## idea-plug 笔记
+## idea-plug 笔记 (idea插件)
 
 ### vim 插件
 
@@ -77,3 +77,11 @@
 - 插件安装后使用快捷键为
 
   `ctrl + shift + \`
+
+- idea 代码缩略图的插件 idea 代码查看插件
+
+  File->Settings->Plugins->MarketPlace->搜索 CodeGlance 并安装
+
+  Ctrl+Shift+G 可以显示和隐藏
+
+  如果插件的 idea 缩略图看不见了，可以配置 ： 在 file -> settings -> search :codeglance -> 去掉 disable 选项
