@@ -55,6 +55,6 @@
 
   在实践中，基础镜像可以根据实际情况自己调整 通过一下命令查找基础镜像
 
-        docker search ***
+  `docker search ***`
 
   其他内容含义见[Dockerfile_note.md](Dockerfile_note.md)

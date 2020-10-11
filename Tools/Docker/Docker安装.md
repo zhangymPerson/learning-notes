@@ -12,59 +12,68 @@
 
 - 检查内核
 
-  uname -a
+  `uname -a`
 
 ### 安装
 
 - 安装必要工具
 
-  sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+  `sudo yum install -y yum-utils device-mapper-persistent-data lvm2`
 
 - 添加 yum 源 (阿里云)
 
-  sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+  `sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo`
 
 * 更新 yum 源
 
-  sudo yum makecache fast
+  `sudo yum makecache fast`
 
 * 安装 Docker-ce
 
-  sudo yum -y install docker-ce
+  `sudo yum -y install docker-ce`
 
 * 启动 Docker 后台服务
   **Docker 安装后必须启动，不然很多命令没法使用**
 
-  sudo systemctl start docker
+  `sudo systemctl start docker`
 
 * 配置 docker 镜像
 
-  mkdir /etc/docker/
-  vim /etc/docker/daemon.json（Linux）
-  添加以下内容
+  `mkdir /etc/docker/`
+  `vim /etc/docker/daemon.json（Linux）`
+
+  配置国内镜像地址
+
   ```json
   {
-  "registry-mirrors": ["http://hub-mirror.c.163.com"]
+    "registry-mirrors": ["http://hub-mirror.c.163.com"]
   }
+  ```
+
+  配置完加速地址要重启 docker
+
+  ```sh
+  sudo systemctl daemon-reload
+  sudo systemctl restart docker
   ```
 
 - 启动一个 ubuntu
 
-  docker run -it ubuntu bash
+  `docker run -it ubuntu bash`
 
 - docker 镜像启动查看
 
-  docker ps
+  `docker ps`
 
 - docker 查看镜像
 
-  docker images
+  `docker images`
 
 - docker 启动报错，在不好排错的情况下
 
   可以更新系统的依赖库执行一下以下命令
 
-  yum update
+  `yum update`
 
 - docker 运行报错 **connect to the Docker daemon at unix:///var/run/docker.sock. Is**
 
