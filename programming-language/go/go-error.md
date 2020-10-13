@@ -26,13 +26,12 @@
 
   **old 是要被替换的 package，new 就是用于替换的 package。**
 
-- 使用了go mod后，产生冲突导致无法提示 vscode go代码智能提示问题
+- 使用了 go mod 后，产生冲突导致无法提示 vscode go 代码智能提示问题
 
   经过多种资料和测试无效后，我看到了这么一句话：The "inferGopath" setting is disabled for this workspace because Go modules are being used.
 
-  原因：要使用go mod,便于下载各种依赖包，就会添加两个环境变量GOPROXY和GO111MODULE，这两个是为了下载到不能下的包，但是使用了他之后，就默认禁用了inferGopath这个属性（为什么我还不知道），这个属性开启才能启动智能提示，这里冲突了。
+  原因：要使用 go mod,便于下载各种依赖包，就会添加两个环境变量 GOPROXY 和 GO111MODULE，这两个是为了下载到不能下的包，但是使用了他之后，就默认禁用了 inferGopath 这个属性（为什么我还不知道），这个属性开启才能启动智能提示，这里冲突了。
 
   设置命令 `go env -w GO111MODULE=on`
 
-- 解决办法：将GO111MODULE环境变量改为off即可,代码的智能提示就有了。每次需要下载依赖包时，再把这个环境变量改为on，记得下完改回来，或者使用auto试试
-
+- 解决办法：将 GO111MODULE 环境变量改为 off 即可,代码的智能提示就有了。每次需要下载依赖包时，再把这个环境变量改为 on，记得下完改回来，或者使用 auto 试试

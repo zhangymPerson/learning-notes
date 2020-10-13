@@ -44,66 +44,66 @@
 
   函数可以返回多个值
 
+  **注意：错误语法格式**
 
-    **注意：错误语法格式**
-    ```go
-    func main()
-    {  // 错误，{ 不能在单独的行上
-        fmt.Println("Hello, World!")
-    }
-    ```
+  ```go
+  func main()
+  {  // 错误，{ 不能在单独的行上
+      fmt.Println("Hello, World!")
+  }
+  ```
 
 - 变量
 
+  声明变量的一般形式是使用 var 关键字：var identifier type
 
-    声明变量的一般形式是使用 var 关键字：var identifier type
+  示例：
 
-    示例：
-    ```go
-    var a int
-    var b bool
-    var str string
-    你也可以改写成这种形式：
+  ```go
+  var a int
+  var b bool
+  var str string
+  你也可以改写成这种形式：
 
-    //全局变量的声明一般这样写
-    var (
-        a int
-        b bool
-        str string
-    )
-    ```
+  //全局变量的声明一般这样写
+  var (
+      a int
+      b bool
+      str string
+  )
+  ```
 
-    := 的含义
+  := 的含义
 
-    ```go
-    // = 使用必须使用先var声明例如：
-    var a
-    a=100
-    //或
-    var b = 100
-    //或
-    var c int = 100
+  ```go
+  // = 使用必须使用先var声明例如：
+  var a
+  a=100
+  //或
+  var b = 100
+  //或
+  var c int = 100
 
-    // := 是声明并赋值，并且系统自动推断类型，不需要var关键字
-    d := 200
-    /*
-    定义三个变量，它们分别初始化为相应的值
-    vname1为v1，vname2为v2，vname3为v3
-    然后Go会根据其相应值的类型来帮你初始化它们
-    */
-    // var vname1, vname2, vname3 = v1, v2, v3
-    var number1, number2, number3 = 1, 2, 3
+  // := 是声明并赋值，并且系统自动推断类型，不需要var关键字
+  d := 200
+  /*
+  定义三个变量，它们分别初始化为相应的值
+  vname1为v1，vname2为v2，vname3为v3
+  然后Go会根据其相应值的类型来帮你初始化它们
+  */
+  // var vname1, vname2, vname3 = v1, v2, v3
+  var number1, number2, number3 = 1, 2, 3
 
-    /*
-    定义三个变量，它们分别初始化为相应的值
-    vname1为v1，vname2为v2，vname3为v3
-    编译器会根据初始化的值自动推导出相应的类型
-    */
-    // vname1, vname2, vname3 := v1, v2, v3
-    number1, number2, number3 := 1, 2, 3
-    ```
+  /*
+  定义三个变量，它们分别初始化为相应的值
+  vname1为v1，vname2为v2，vname3为v3
+  编译器会根据初始化的值自动推导出相应的类型
+  */
+  // vname1, vname2, vname3 := v1, v2, v3
+  number1, number2, number3 := 1, 2, 3
+  ```
 
-    **注意：不过它有一个限制，那就是它只能用在函数内部；在函数外部使用则会无法编译通过，所以一般用var方式来定义全局变量。**
+  **注意：不过它有一个限制，那就是它只能用在函数内部；在函数外部使用则会无法编译通过，所以一般用 var 方式来定义全局变量。**
 
 - 语句 & 表达式
 
@@ -150,4 +150,3 @@
   **值类型的特点是：变量直接存储值，内存通常在栈中分配**
 
   **引用类型的特点是：变量存储的是一个地址，这个地址对应的空间里才是真正存储的值，内存通常在堆中分配**
-

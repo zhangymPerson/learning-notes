@@ -59,15 +59,15 @@
   import "fmt"
   //启动函数
   func main() {
-      //这是我的第一个简单的程序 
+      //这是我的第一个简单的程序
       fmt.Println("Hello, World!")
   }
   ```
 
-  执行有两种方式 
-  
-  `go run helloword.go` 或 `go build helloword.go` 
-  
+  执行有两种方式
+
+  `go run helloword.go` 或 `go build helloword.go`
+
   生成 helloword 可执行文件 然后直接执行可执行文件 `helloword`
 
 - 文件扩展名与包（package）：
@@ -109,8 +109,7 @@
   不能 import 没有用到的包 否则报错
   **如果你导入了一个包却没有使用它，则会在构建程序时引发错误，如 imported and not used: os，这正是遵循了 Go 的格言：“没有不必要的代码！“。**
 
-
-### go语言的国内代理配置
+### go 语言的国内代理配置
 
 - go 语言模块下载更新失败的问题(修改 go 语言的代理)
 

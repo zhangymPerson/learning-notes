@@ -16,6 +16,6 @@
 
   在 vscode 中 找到 settings 配置位置 搜索 `Go:Test Tags` 修改此项，加入 `-v`
 
-- 镜像安装失败 则需要配置国内的源 
+- 镜像安装失败 则需要配置国内的源
 
-    配置方法 见 [README.md](./README.md#go语言的国内代理配置)
+  配置方法 见 [README.md](./README.md#go语言的国内代理配置)

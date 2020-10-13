@@ -30,15 +30,15 @@
 
 - 使用方式
 
+  **使用命令必须跟自己的项目名称 否则报错**
 
-    **使用命令必须跟自己的项目名称 否则报错**
-    ```
-    go mod init {项目名}
+  ```
+  go mod init {项目名}
 
-    例：
-    $ go mod init mod_demo
-    go: creating new go.mod: module mod_demo
-    ```
+  例：
+  $ go mod init mod_demo
+  go: creating new go.mod: module mod_demo
+  ```
 
 - 配置内容
 
@@ -137,29 +137,30 @@
 
 * 包导入有三种模式：正常模式、别名模式、简便模式
 
+  ```go
+  //官方包导入 GOROOT 路径下  Go语言的标准库，他其实是去GOROOT下去加载该模块
+  import(
+      "fmt"
+  )
 
-    ```go
-    //官方包导入 GOROOT 路径下  Go语言的标准库，他其实是去GOROOT下去加载该模块
-    import(
-        "fmt"
-    )
+  //相对路径
+  //当前文件同一目录的model目录，但是不建议这种方式import
+  import   "./model"
 
-    //相对路径
-    //当前文件同一目录的model目录，但是不建议这种方式import
-    import   "./model"
+  //绝对路径
+  //加载GOPATH/src/shorturl/model模块
+  import   "shorturl/model"
+  ```
 
-    //绝对路径
-    //加载GOPATH/src/shorturl/model模块
-    import   "shorturl/model"
-    ```
-    - 别名模式
-    ```go
-    import( f "fmt" )
-    //别名操作调用包函数时前缀变成了重命名的前缀，
-    //即f.Println(“hello world”)
-    ```
+  - 别名模式
 
-     点操作 / _操作 等操作
+  ```go
+  import( f "fmt" )
+  //别名操作调用包函数时前缀变成了重命名的前缀，
+  //即f.Println(“hello world”)
+  ```
+
+  点操作 / \_操作 等操作
 
 - go 显示所有 import 库信息 命令
 
