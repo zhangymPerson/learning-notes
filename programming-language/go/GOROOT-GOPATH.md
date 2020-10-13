@@ -144,3 +144,23 @@
   此工作空间包含三个代码库（goauth2、streak 和 todo），两个命令（streak 和 todo） 以及两个库（oauth 和 task）。
 
   命令和库从不同的源码包编译而来。稍后我们会对讨论它的特性。
+
+- linux 下 安装 go 配置环境变量
+
+  国内下载镜像地址:https://golang.google.cn/dl/
+
+  `wget https://golang.google.cn/dl/go1.15.2.linux-amd64.tar.gz`
+
+  解压到 /usr/local 下
+
+  配置环境变零 vim /etc/profile
+
+  编辑
+
+  ```profile
+  # go源码包
+  GOROOT=/usr/local/go
+  # 其他依赖包
+  GOPATH=/home/main/go
+  export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+  ```
