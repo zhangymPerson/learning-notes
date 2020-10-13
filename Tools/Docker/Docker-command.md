@@ -97,6 +97,22 @@
     wait        Block until one or more containers stop, then print their exit codes
   ```
 
+## docker 进入容器 修改配置文件
+
+- docker 中没有 vi vim 等编辑器时 需要复制文件/或者安装 vi/vim
+
+- 复制容器内文件到宿主机，修改后复制回去
+
+  docker 复制文件到宿主机 -> 修改相关内容 -> 从宿主机到容器
+
+  ```sh
+  # dockername 指容器名
+  # docker cp 容器名:要拷贝的文件在容器里面的路径 要拷贝到宿主机的相应路径
+  docker cp dockername:/data/test.log /home/main/log/
+  # docker cp 要拷贝到宿主机的相应路径 容器名:要拷贝的文件在容器里面的路径
+  docker cp /home/main/log/test.log dockername:/data/test.log
+  ```
+
 ## docker 查看仓库镜像版本
 
 - 网址上查询 (需要科学上网)
