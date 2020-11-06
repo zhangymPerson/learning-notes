@@ -6,6 +6,7 @@
 
 - [github 的过滤文件查询网站，输入关键字直接查询](https://www.gitignore.io/)
 
+  git过滤文件的
   https://www.gitignore.io/
 
 - 配置文件 .gitignore
