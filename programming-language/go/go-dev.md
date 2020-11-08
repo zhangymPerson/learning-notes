@@ -19,3 +19,9 @@
 - 镜像安装失败 则需要配置国内的源
 
   配置方法 见 [README.md](./README.md#go语言的国内代理配置)
+
+- go 配置语言服务器 - gopls 服务
+
+  https://github.com/golang/tools/tree/master/gopls
+
+  https://github.com/golang/tools/blob/master/gopls/doc/vscode.md vscode 配置 gopls 服务

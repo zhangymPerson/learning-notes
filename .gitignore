@@ -1,3 +1,4 @@
 *.log
 # gitbook命令生成的文件
 _book
+.vscode
