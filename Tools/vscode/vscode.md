@@ -20,14 +20,6 @@
 
 - vim 插件
 
-- amVim 插件
-
-  Vim 原生支持的 vim 插件，
-
-  vscode-vim 打开 ctrl+c,ctrl+v
-
-  需要关闭 vim 的 ctrl 功能，打开设置 搜索 vim:ctrl 关闭该选项，则 ctrl+的 vim 命令全部失效
-
 - 括号插件 Bracket Pair Colorizer
 
   这个插件的作用是给代码中的括号增加颜色，同一对括号是相同的颜色，尤其是在括号中还包着括号的时候，看起来更加的清晰。
@@ -55,6 +47,10 @@
 - vscode 自动代码提示补全插件工具
 
   TabNine 智能代码补全插件
+
+- vscode 错误信息在当前行显示的插件 error lens
+
+  [github - error lens](https://github.com/usernamehw/vscode-error-lens)
 
 ## 快捷键
 
