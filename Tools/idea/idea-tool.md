@@ -2,9 +2,11 @@
 
 - 菜单栏->「File」->「Settings」->「Tools」->「External Tools」->点击加号
 
-## idea 的字符串模板功能
+## idea 的字符串模板功能 json输入格式化 json格式化
 
 - 快捷键操作过程 创建 json 字符模板
+
+  **启用字符串模板功能,需要配置,在 settings -> editor -> intentions -> inject language or reference 打勾**
 
   输入代码`String str = "";`
 
@@ -34,4 +36,5 @@
 
   setting -> intentions -> 下各语言相关配置
 
-  setting -> 搜索 `inject` 选中相关的配置 不选则在字符串中按快捷键 alt + enter 无任何提示
+  setting -> 搜索 `inject` 选中相关的配置 不选则在字符串中按快捷键 alt + enter
+  无任何提示
