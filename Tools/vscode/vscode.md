@@ -34,7 +34,7 @@
 
   这个插件的作用是给代码中的括号增加颜色，同一对括号是相同的颜色，尤其是在括号中还包着括号的时候，看起来更加的清晰。
 
-- 路径自动补全 Path Intellisense 
+- 路径自动补全 Path Intellisense
 
   这个插件的作用是当代码中读入文件名或者文件路径时，提供文件名或者文件路径的自动补全
 
@@ -52,8 +52,7 @@
 
 - [REST Client](https://github.com/Huachao/vscode-restclient)
 
-  http 测试工具插件测试 api.的插件通过文件来发现和测试
-  [测试文件](./restclient.http)
+  http 测试工具插件测试 api.的插件通过文件来发现和测试 [测试文件](./restclient.http)
 
 - vscode 自动代码提示补全插件工具
 
@@ -111,8 +110,7 @@
   - "off" （禁用折行），
   - "on" （视区折行），
   - "wordWrapColumn"（在"editor.wordWrapColumn"处折行）
-  - "bounded"（在视区与"editor.wordWrapColumn"两者的较小者处折行）。
-    "editor.wordWrap": "off",
+  - "bounded"（在视区与"editor.wordWrapColumn"两者的较小者处折行）。 "editor.wordWrap": "off",
 
 - 配置 VS code 显示方式 (空格和 table 的显示方式)
 
@@ -136,8 +134,7 @@
 
   Remote Development
 
-  Visual Studio Code Remote 允许开发者将容器，远程计算机，或 Windows Subsystem
-  for Linux (WSL) 作为完整的开发环境。
+  Visual Studio Code Remote 允许开发者将容器，远程计算机，或 Windows Subsystem for Linux (WSL) 作为完整的开发环境。
 
 - 配置相关参数
 
@@ -154,15 +151,12 @@
   **注意**
 
   - Host 是指别名，你给服务器起的名称
-  - HostName 是你的服务器地址 如果 hosts 文件中有别名，可以用别名，没有则必须使
-    用 ip 地址
+  - HostName 是你的服务器地址 如果 hosts 文件中有别名，可以用别名，没有则必须使用 ip 地址
   - User 用户名 即你的 ssh 连接指定的用户
 
   然后连接
 
-  vscode 有多个服务器需要远程连接的时候，可以直接查
-  看[ssh 笔记](https://github.com/zhangymPerson/learning-notes/tree/master/Tools/OpenSSH)中
-  的多服务器配置 配置多个服务器
+  vscode 有多个服务器需要远程连接的时候，可以直接查看[ssh 笔记](https://github.com/zhangymPerson/learning-notes/tree/master/Tools/OpenSSH)中的多服务器配置 配置多个服务器
 
 ## 使用问题记录
 
@@ -186,8 +180,7 @@
   git config --global core.quotepath false
   ```
 
-  core.quotepath 设为 false 的话，就不会对 0x80 以上的字符进行 quote。中文显示正
-  常。
+  core.quotepath 设为 false 的话，就不会对 0x80 以上的字符进行 quote。中文显示正常。
 
 - vscode 安装 nodejs 代码联想工具
 
@@ -237,3 +230,7 @@
 - vscode 多行变一行
 
   按 F1 或者 ctrl+shift+p 输入 Join Lines 回车即可
+
+- vscode 格式化 markdown 使用 Prettier 插件时，换行的问题
+
+  配置 settings : prettier.printWidth 配置一个较大的数字。格式化完成后，恢复默认
