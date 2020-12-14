@@ -1,4 +1,4 @@
-## idea-plug 笔记 (idea插件)
+## idea-plug 笔记 (idea 插件)
 
 ### vim 插件
 
@@ -16,8 +16,7 @@
 
   即可在 idea 中打开 vim 的相关配置并进行相关的设置
 
-  用户目录下添加配置文件
-  C:\Users\Administrator
+  用户目录下添加配置文件 C:\Users\Administrator
 
   创建 .ideavimrc 文件
 
@@ -29,7 +28,7 @@
   echo a > .ideavimrc
   ```
 
-  **注意：修改vim配置要生效，需要重启idea**
+  **注意：修改 vim 配置要生效，需要重启 idea**
 
   ```vim
   imap <C-e> <END>
@@ -47,10 +46,13 @@
 
   " 下面的配置只能在idea系列中生效
   " Leader默认的键盘位置是 \
+  " 使用 \ r 相当于 idea ctrl + r
   nnoremap <Leader>r :action Replace<CR>
+  " 使用 \ / 相当于 idea ctrl + f
   vnoremap <Leader>/ :action Find<CR>
-  vnoremap <Leader>./ :action FindInPath<CR>
   nnoremap <Leader>/ :action Find<CR>
+  " 使用 \ . / 相当于 ctrl + shift + f
+  vnoremap <Leader>./ :action FindInPath<CR>
   nnoremap <Leader>./ :action FindInPath<CR>
   ```
 

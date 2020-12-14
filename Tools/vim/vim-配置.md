@@ -1,6 +1,6 @@
-
 - vim 配置文件中的说明
-```properties
+
+```vim
 "=========================================================================
 " DesCRiption: 适合自己使用的vimrc文件，for Linux/Windows, GUI/Console
 "
