@@ -18,17 +18,26 @@
 
   [时间桌面插件-momentum](https://momentumdash.com/)
 
+- gitee/github 支持代码结构查看插件
+
+  [gitako-插件](https://github.com/EnixCoda/Gitako)
+
+- 浏览器暗黑模式的插件
+
+  [darkreader-插件](https://github.com/darkreader/darkreader)
+
+  [darkreader-官网](https://darkreader.org/)
+
 - 浏览器 vim 插件(Vimium)
 
   谷歌浏览器 vim 插件
 
   浏览器的快捷键查看方式 `shift + /`
 
-  快捷键使用方式
-  ![vimium插件快捷键](../Picture/vimium-key.png)
-  
-  问题：chrome下的vimium使用时，有时候会聚集到编辑框里，这时vimium的设定键位会失效 
-  
+  快捷键使用方式 ![vimium插件快捷键](../Picture/vimium-key.png)
+
+  问题：chrome 下的 vimium 使用时，有时候会聚集到编辑框里，这时 vimium 的设定键位会失效
+
   解决：按两下 `F6` 即可解决
 
 - 浏览器插件使用方法
