@@ -62,6 +62,10 @@
 
   [github - error lens](https://github.com/usernamehw/vscode-error-lens)
 
+- [vscode-翻译插件 search-online](https://github.com/Wscats/search-online)
+
+  [中文使用说明](https://gitee.com/wscats/search-online/blob/master/README.CN.md)
+
 ## 快捷键
 
 - 常用的

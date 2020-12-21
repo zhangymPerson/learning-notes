@@ -90,7 +90,7 @@
 
 ### lombok plug 安装
 
-- idea 使用 lombak
+- idea 使用 lombok
 
   在插件中查找该插件并安装 lombok
 
@@ -99,6 +99,8 @@
   安装完成后需要配置,在配置 setting 中查找
 
   **Annotation Processors** -> **Enable annotation processing** 是否勾选 为勾选需要勾选
+
+  **Obtain processors from project classpath option is selected** 也需要选择
 
 ### 查看 controller 中 RequestMapping 的插件 Request mapper
 
