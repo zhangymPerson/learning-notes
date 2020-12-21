@@ -1,5 +1,37 @@
 ## idea-plug 笔记 (idea 插件)
 
+### maven 插件-Maven-Helper
+
+- 安装使用
+
+  插件中安装 maven-helper
+
+  然后选择 maven 项目的 pom.xml 文件
+
+  然后会看到文件下面有个 "Dependency Analyzer",点击这个 tab
+
+  切换到此试图即可进行相应操作：
+
+  - Conflicts（查看冲突）
+  - All Dependencies as List（列表形式查看所有依赖）
+  - All Dependencies as Tree（树形式查看所有依赖）
+
+  **冲突 jar 包的解决**
+
+  切换到 maven 依赖视图选择冲突选项，如果有冲突，在左下面区域会有红色显示。
+
+  解决冲突，右键单击红色区域，弹出菜单选择 Exclude 命令，对冲突进行排除。
+
+### IDEA 有一个插件可以自动生成时序图-SequenceDiagram
+
+- 使用
+
+  选中方法名（注意不要选类名），然后点击鼠标右键（显示可选项），选择 Sequence Diagram
+
+  根据弹出框，根据自己的情况，设置调用深度，点击 OK 就可以生成时序图了
+
+  查看生成的时序图
+
 ### vim 插件
 
 - 名称 ideaVim
@@ -80,10 +112,20 @@
 
   `ctrl + shift + \`
 
-- idea 代码缩略图的插件 idea 代码查看插件
+### idea 代码缩略图的插件 idea 代码查看插件
+
+- 安装使用
 
   File->Settings->Plugins->MarketPlace->搜索 CodeGlance 并安装
 
   Ctrl+Shift+G 可以显示和隐藏
 
   如果插件的 idea 缩略图看不见了，可以配置 ： 在 file -> settings -> search :codeglance -> 去掉 disable 选项
+
+### 字节码增强插件 jclasslib
+
+- 安装使用
+
+  File->Settings->Plugins->MarketPlace->搜索 jclasslib 并安装
+
+  代码编译后在菜单栏”View”中选择”Show Bytecode With jclasslib”，可以很直观地看到当前字节码文件的类信息、常量池、方法区等信息。
