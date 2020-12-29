@@ -102,6 +102,8 @@
 
   **Obtain processors from project classpath option is selected** 也需要选择
 
+  idea 升级如果引起 lombok 不生效,则可以去[idea-github](https://github.com/JetBrains/intellij-community) 和 [lombok-intellij-plugin-github](https://github.com/mplushnikov/lombok-intellij-plugin)查找解决方案
+
 ### 查看 controller 中 RequestMapping 的插件 Request mapper
 
 - idea 插件地址
@@ -131,3 +133,9 @@
   File->Settings->Plugins->MarketPlace->搜索 jclasslib 并安装
 
   代码编译后在菜单栏”View”中选择”Show Bytecode With jclasslib”，可以很直观地看到当前字节码文件的类信息、常量池、方法区等信息。
+
+### 正则测试插件 regex-tester
+
+- 安装使用
+
+  在插件中查找该插件并且安装。
