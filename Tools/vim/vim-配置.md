@@ -1,3 +1,21 @@
+# vim 中自定义配置
+
+> Vim 会在许多地方查找 vimrc 文件（参见 :h vimrc ）。
+
+- 在 UNIX 系统中，Vim 希望能找到路径为 ~/.vimrc 的文件。
+
+- 在 Windows 系统中，理想的文件路径为 $HOME/\_vimrc。
+
+  无论运行的是哪种系统，都可 以通过以下命令在 Vim 的内部打开该文件：
+
+  ➾ `:edit $MYVIMRC`
+
+  **$MYVIMRC** 是 Vim 的一个环境变量，它将被扩展为 vimrc 的文件路径。
+
+  在完成针对 vimrc 文件的改动后， 可以通过以下命令为当前的 Vim 会话加载新的配置选项。
+
+  ➾ `:source $MYVIMRC`
+
 - vim 配置文件中的说明
 
 ```vim
@@ -36,13 +54,13 @@ set backspace=indent,eol,start
 " 不设定在插入状态无法用退格键和 Delete 键删除回车符
 set cmdheight=1 " 设定命令行的行数为 1
 set laststatus=2 " 显示状态栏 (默认值为 1, 无法显示状态栏)
-set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\ 
+set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\
 " 设置在状态行显示的信息
 set foldenable " 开始折叠
 set foldmethod=syntax " 设置语法折叠
 set foldcolumn=0 " 设置折叠区域的宽度
 setlocal foldlevel=1 " 设置折叠层数为
-" set foldclose=all " 设置为自动关闭折叠 
+" set foldclose=all " 设置为自动关闭折叠
 " nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 " 用空格键来开关折叠
 
