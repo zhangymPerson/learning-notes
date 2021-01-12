@@ -25,3 +25,35 @@
   https://github.com/golang/tools/tree/master/gopls
 
   https://github.com/golang/tools/blob/master/gopls/doc/vscode.md vscode 配置 gopls 服务
+
+- 单个项目配置方式
+
+  在项目中的 .vscode 文件夹下 settings.json 下配置
+
+  ```json
+  {
+    "go.useLanguageServer": true,
+    "[go]": {
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+      },
+      // Optional: Disable snippets, as they conflict with completion ranking.
+      "editor.snippetSuggestions": "none"
+    },
+    "[go.mod]": {
+      "editor.formatOnSave": true,
+      "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+      }
+    },
+    "gopls": {
+      // Add parameter placeholders when completing a function.
+      "usePlaceholders": true,
+
+      // If true, enable additional analyses with staticcheck.
+      // Warning: This will significantly increase memory usage.
+      "staticcheck": false
+    }
+  }
+  ```
