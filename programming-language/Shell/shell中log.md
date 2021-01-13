@@ -1,10 +1,11 @@
-# shell中的日志
+# shell 中的日志
+
+[返回](./README.md)
 
 - 简单
 
 ```sh
-
-#!/bin/bash 
+#!/bin/bash
 #########################################
 #日志显示
 #########################################
@@ -30,13 +31,11 @@ echo [$date][$1]":脚本"$0"中:"$2 >> $filePath$fileName
 log INFO info-message
 log info-message
 log ERROR error-message
-log WARN warning-message   
+log WARN warning-message
 
 # 调用结果
 #[18-12-27 16:50-04][INFO]:脚本log.sh中:info-message
 #[18-12-27 16:50-04][INFO]:脚本log.sh中:info-message
 #[18-12-27 16:50-04][ERROR]:脚本log.sh中:error-message
 #[18-12-27 16:50-04][WARN]:脚本log.sh中:warning-message
-
-
 ```
