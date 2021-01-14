@@ -2,6 +2,8 @@
 
 ## 目录
 
+- [shell-tool shell 连接工具](./shell-tool/README.md)
+
 ## 其他
 
 - [返回总目录](../README.md#项目目录)
