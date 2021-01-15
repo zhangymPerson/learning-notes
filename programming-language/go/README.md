@@ -118,6 +118,8 @@
   推荐使用的两个, goproxy.cn 和 goproxy.io
   https://goproxy.cn
   https://goproxy.io
+  
+  GOPROXY=https://goproxy.io,direct,https://mirrors.aliyun.com/goproxy/,https://goproxy.cn,https://athens.azurefd.net,https://gonexus.dev 
 
 - 设置代理方式
 
