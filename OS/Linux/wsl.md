@@ -69,3 +69,11 @@
   maven 需要两套，配置文件不通，可以指向同一个本地仓库文件夹地址
 
   go 环境需要安装两套
+
+## 配置阿里云镜像源
+
+- ubuntu 系统
+
+  修改 `/etc/apt/sources.list` 文件
+
+  将文件中 所有的 ubuntu 网址 `archive.ubuntu.com` (不同版本不同网址) 修改为 `mirrors.aliyun.com`
