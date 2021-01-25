@@ -1,28 +1,30 @@
-#  Java中的注解
+# Java 中的注解
+
+- [返回](./README.md)
 
 ### 编写自定义注解需要的基础知识，
 
-- 编写自定义注解需要使用的Java元注解，有四种元注解：@Retention、@Inherited、@Documented、@Target
+- 编写自定义注解需要使用的 Java 元注解，有四种元注解：@Retention、@Inherited、@Documented、@Target
 
 - @Retention
 
-    注解的保留位置（枚举RetentionPolicy），RetentionPolicy可选值：
+  注解的保留位置（枚举 RetentionPolicy），RetentionPolicy 可选值：
 
-        SOURCE：注解仅存在于源码中，在class字节码文件中不包含
-        CLASS：默认的保留策略，注解在class字节码文件中存在，但运行时无法获得
-        RUNTIME：注解在class字节码文件中存在，在运行时可以通过反射获取到
+  - SOURCE：注解仅存在于源码中，在 class 字节码文件中不包含
+  - CLASS：默认的保留策略，注解在 class 字节码文件中存在，但运行时无法获得
+  - RUNTIME：注解在 class 字节码文件中存在，在运行时可以通过反射获取到
 
 - @Inherited
-  
-    声明子类可以继承此注解，如果一个类使用此注解，则该类的子类也继承此注解；
+
+  声明子类可以继承此注解，如果一个类使用此注解，则该类的子类也继承此注解；
 
 - @Documented
 
-    声明注解能够被javadoc等识别;
+  声明注解能够被 javadoc 等识别;
 
 - @Target
 
-    用来声明注解范围（枚举ElementType），ElementType可选值：
+  用来声明注解范围（枚举 ElementType），ElementType 可选值：
 
         TYPE：接口、类、枚举、注解
         FIELD：字段、枚举的常量
@@ -35,8 +37,8 @@
 
 - 注解的使用
 
-    注解通过反射来获取和使用
-   
+  注解通过反射来获取和使用
+
 - demo
 
 ```java
@@ -63,4 +65,3 @@ public @interface Self {
 
 }
 ```
-
