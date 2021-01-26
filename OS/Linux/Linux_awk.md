@@ -7,7 +7,11 @@
 
 - awk '代码' 文件名
 
-eg: `awk '{print $1}' 文件名 awk 'BEGIN{print "BEGIN"} {print $1} END{print "END"}' /etc/passwd`
+eg:
+
+```sh
+awk '{print $1}' 文件名 awk 'BEGIN{print "BEGIN"} {print $1} END{print "END"}' /etc/passwd
+```
 
 -F 参数：指定分隔符，可指定一个或多个
 

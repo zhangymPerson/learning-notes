@@ -1,5 +1,7 @@
 # Linux 服务器相关笔记
 
+- [返回](../README.md)
+
 ## 目录
 
 - [Linux 磁盘相关.md](./Linux磁盘相关.md)
@@ -17,3 +19,29 @@
 - [线程的概念.md](./线程的概念.md)
 
 ## 其他
+
+##　环境变量
+
+### 全局(所有用户)
+
+- 修改`/etc/profile`
+
+  ```sh
+  # 修改环境变量配置文件
+  vim /etc/profile
+  # 生效
+  source /etc/profile
+  ```
+
+### 单个用户的环境变量(用户目录)
+
+- 修改`~/.bash_profile`
+
+  ```sh
+  # 跳到指定用户
+  su username
+  # 修改单个用户的环境变量配置
+  vim ~/etc/.bash_profile
+  # 生效
+  source /etc/.bash_profile
+  ```

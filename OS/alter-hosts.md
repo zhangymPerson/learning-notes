@@ -1,10 +1,11 @@
-# 修改hosts 文件
+# 修改 hosts 文件
 
-- Windows下hosts文件位置
+- [返回](./README.md)
 
-    C:\Windows\System32\drivers\etc 目录下
+- Windows 下 hosts 文件位置
 
+  C:\Windows\System32\drivers\etc 目录下
 
-- linux下hosts文件
+- linux 下 hosts 文件
 
-    /etc/hosts
+  /etc/hosts
