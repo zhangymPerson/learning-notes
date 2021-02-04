@@ -79,3 +79,19 @@
   修改 `/etc/apt/sources.list` 文件
 
   将文件中 所有的 ubuntu 网址 `archive.ubuntu.com` (不同版本不同网址) 修改为 `mirrors.aliyun.com`
+
+## wsl 中的密码修改 root 用户
+
+- 当 wsl 里的 root 密码忘了时，修改 root 密码的方式：
+
+  以**管理员身份**打开 cmd 或 powershell：
+
+  ```shell
+  # 配置系统的默认启动用户为你要修改的用户 如 root
+  PS C:\> ubuntu config --default-user root
+  # 启动wsl
+  PS C:\> wsl
+  # 执行修改密码的命令
+  root@universe:/mnt/c# passwd
+  Enter new UNIX password:
+  ```
