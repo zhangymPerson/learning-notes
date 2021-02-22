@@ -29,3 +29,54 @@
   在视图下 选择 导航窗格
 
   或者 在 word 内的`告诉我您想要做什么`位置处直接搜索 **导航窗格**
+
+- 选中 word 中的所有表格
+
+  使用宏实现这一功能
+
+  快捷键 `alt+F8` 创建一个宏，命名为`alltable`
+
+  编写一下脚本
+
+  ```vb
+  Sub alltable()
+    Dim tempTable As Table
+
+        Application.ScreenUpdating = False
+
+    '判断文档是否被保护
+
+    If ActiveDocument.ProtectionType = wdAllowOnlyFormFields Then
+
+        MsgBox "文档已保护，此时不能选中多个表格！"
+
+        Exit Sub
+
+    End If
+
+    '删除所有可编辑的区域
+
+    ActiveDocument.DeleteAllEditableRanges wdEditorEveryone
+
+    '添加可编辑区域
+
+    For Each tempTable In ActiveDocument.Tables
+
+        tempTable.Range.Editors.Add wdEditorEveryone
+
+    Next
+
+    '选中所有可编辑区域
+
+    ActiveDocument.SelectAllEditableRanges wdEditorEveryone
+
+    '删除所有可编辑的区域
+
+    ActiveDocument.DeleteAllEditableRanges wdEditorEveryone
+
+    Application.ScreenUpdating = True
+
+  End Sub
+  ```
+
+  单击运行，返回文档即可看到已经选中的所有表格
