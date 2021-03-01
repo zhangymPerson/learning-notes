@@ -13,8 +13,9 @@
 
 - [github 項目查看历史记录](https://github.com/pomber/git-history) https://github.com/pomber/git-history
 
-  必须打开的是文件，打开项目则是演示页面
-  使用方法:直接将项目中的 github.com 替换成 github.githistory.xyz 即可展示当前文件的历史提交记录图
+  必须打开的是文件，打开项目则是演示页面使用方法:
+
+  直接将项目中的 github.com 替换成 github.githistory.xyz 即可展示当前文件的历史提交记录图
 
 ## 优秀的公司
 
@@ -23,9 +24,13 @@
   https://github.com/apache
 
 - [alibaba - github](https://github.com/alibaba)
+
   https://github.com/alibaba
+
 - [alipay - github](https://github.com/alipay)
+
   https://github.com/alipay
+
 - [baidu - github](https://github.com/baidu)
 
   https://github.com/baidu
@@ -118,8 +123,7 @@
 
 * [Java 设计模式](https://github.com/quanke/design-pattern-java)
 
-
-    https://github.com/quanke/design-pattern-java
+  https://github.com/quanke/design-pattern-java
 
 - [Java 编程思想-github 版](https://github.com/quanke/think-in-java)
 
@@ -368,6 +372,10 @@
 - [开源字体](https://github.com/chrissimpkins/codeface)
 
   https://github.com/chrissimpkins/codeface
+
+- [极简的编程字体介绍和展示网站](https://github.com/chriscoyier/coding-fonts)
+
+  https://github.com/chriscoyier/coding-fonts
 
 ## 开源软件
 
