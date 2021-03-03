@@ -4,7 +4,9 @@
 
   环境中需要提前安装好 java 环境
 
-        java -version
+  ```sh
+    java -version
+  ```
 
 - 官网下载
 
@@ -20,7 +22,9 @@
 
   测试命令
 
-        gradle -v
+  ```sh
+    gradle -v
+  ```
 
   查看安装是否成功，安装的版本号
 
@@ -51,10 +55,9 @@
 
   需要在 gradle 的配置中添加 在项目最外层的 build.gradle 中修改添加
 
-  ```gradle
+  ```groovy
   buildscript {
-
-      repositories {
+    repositories {
           //此处添加 mavenLocal()则会从本地的maven仓库中拉去相关的jar
           mavenLocal()
           google()
@@ -62,13 +65,10 @@
       }
       dependencies {
           classpath 'com.android.tools.build:gradle:3.1.0'
-
-
           // NOTE: Do not place your application dependencies here; they belong
           // in the individual module build.gradle files
       }
   }
-
   allprojects {
       repositories {
           //此处也需添加
@@ -78,9 +78,7 @@
       }
   }
 
-  task clean(type: Delete) {
-      delete rootProject.buildDir
-  }
+  task clean(type: Delete) { delete rootProject.buildDir }
 
   ```
 
@@ -104,7 +102,7 @@
   distributionUrl=https\://services.gradle.org/distributions/gradle-5.4.1-all.zip
   ```
 
-  gradle 配置使用本地的 zip 包
+- gradle 配置使用本地的 zip 包
 
   提前下载好 zip 包文件 然后指向即可
 
@@ -116,7 +114,7 @@
 
 - 单个项目的配置
 
-  ```gradle
+  ```groovy
   buildscript {
       repositories {
           maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
@@ -138,11 +136,42 @@
   }
   ```
 
+  ```groovy
+  allprojects {
+    repositories {
+        maven {
+            url "https://maven.aliyun.com/repository/public"
+        }
+        maven {
+            url "https://maven.aliyun.com/repository/jcenter"
+        }
+        maven {
+            url "https://maven.aliyun.com/repository/spring"
+        }
+        maven {
+            url "https://maven.aliyun.com/repository/spring-plugin"
+        }
+        maven {
+            url "https://maven.aliyun.com/repository/gradle-plugin"
+        }
+        maven {
+            url "https://maven.aliyun.com/repository/google"
+        }
+        maven {
+            url "https://maven.aliyun.com/repository/grails-core"
+        }
+        maven {
+            url "https://maven.aliyun.com/repository/apache-snapshots"
+        }
+    }
+  }
+  ```
+
 - 全局配置
 
   在\${USER_HOME}/.gradle/下创建 init.gradle 文件
 
-  ```gradle
+  ```groovy
   allprojects {
       repositories {
           def ALIYUN_REPOSITORY_URL = 'http://maven.aliyun.com/nexus/content/groups/public'
@@ -174,7 +203,7 @@
 
   在配置文件中引入该文件夹
 
-  ```gradle
+  ```groovy
   dependencies {
       implementation fileTree(dir: "libs", include: ["*.jar"])
   }
