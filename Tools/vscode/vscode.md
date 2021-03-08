@@ -58,6 +58,12 @@
 
   TabNine 智能代码补全插件
 
+  **Postfix Completion** (下称 Postfix) 是一种通过 . + 模板 Key 来对当前已经输出的表达式，添加和应用预设代码模板的编码增强能力。
+
+  idea 自带的代码自动补全相关功能 vscode 需要搜索查询相关插件
+
+  其核心要解决的问题是，将编码过程中一些通用的代码结构范式进行抽象和沉淀，并能在同类型的场景下，通过 . + 模板 Key 的方式进行唤醒和复用。
+
 - vscode 错误信息在当前行显示的插件 error lens
 
   [github - error lens](https://github.com/usernamehw/vscode-error-lens)
