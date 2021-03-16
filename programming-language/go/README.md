@@ -20,6 +20,7 @@
 
 - [开源学习资料](https://github.com/yangwenmai/learning-golang)
 
+- [微软开源的 GO 教程](https://docs.microsoft.com/zh-cn/learn/paths/go-first-steps/)
 - 下载
 
   安装包下载地址为：https://golang.org/dl/。
@@ -106,8 +107,7 @@
 
 - 注意事项
 
-  不能 import 没有用到的包 否则报错
-  **如果你导入了一个包却没有使用它，则会在构建程序时引发错误，如 imported and not used: os，这正是遵循了 Go 的格言：“没有不必要的代码！“。**
+  不能 import 没有用到的包 否则报错 **如果你导入了一个包却没有使用它，则会在构建程序时引发错误，如 imported and not used: os，这正是遵循了 Go 的格言：“没有不必要的代码！“。**
 
 ### go 语言的国内代理配置
 
@@ -115,11 +115,9 @@
 
   [Goproxy 中国说明](https://github.com/goproxy/goproxy.cn/blob/master/README.zh-CN.md)
 
-  推荐使用的两个, goproxy.cn 和 goproxy.io
-  https://goproxy.cn
-  https://goproxy.io
-  
-  GOPROXY=https://goproxy.io,direct,https://mirrors.aliyun.com/goproxy/,https://goproxy.cn,https://athens.azurefd.net,https://gonexus.dev 
+  推荐使用的两个, goproxy.cn 和 goproxy.io https://goproxy.cn https://goproxy.io
+
+  GOPROXY=https://goproxy.io,direct,https://mirrors.aliyun.com/goproxy/,https://goproxy.cn,https://athens.azurefd.net,https://gonexus.dev
 
 - 设置代理方式
 
