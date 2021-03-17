@@ -1,59 +1,72 @@
-# 不打开文件追加配置
+# linux 的常用命令
 
 - [返回](./README.md)
 
-```sh
-# 查看环境变量的命令
-printenv
+### sshpass 的使用
 
-# 文件类型 查看命令
-file filename
+- sshpass 主要是 使用 ssh 和 scp 时能直接使用密码进行执行命令
 
-# cat 使用行号
-cat -n filename
+  ```sh
+  # 可以把密码写在脚本中
+  sshpass -p password scp /home/test/test.txt user@127.0.0.1:/home/test/
+  ```
 
-# cat 不使用行号
-cat -b filename
+### 其他常用命令
 
-# less命令
-less filename
+- 开发常用命令
 
-# f 向后翻页
-# b 向前翻页
-# j 向下一行
-# k 向上一行
-# -N  + enter键 显示行数/不现实行数
+  ```sh
+  # 查看环境变量的命令
+  printenv
 
-# sort 命令
-# 默认按字母顺序排序
-# 默认数字是按开头的数字排序
-# 不指定数字的排序 1 11 11 2 21 22 ...
-sort filename
+  # 文件类型 查看命令
+  file filename
 
-#数字按大小排序，需要使用 -n
+  # cat 使用行号
+  cat -n filename
 
-# shell中命令别名
+  # cat 不使用行号
+  cat -b filename
 
-#查看命令别名
-alias -p
+  # less命令
+  less filename
 
-#自定义别名 不能有空格
-# 修改只在当前shell窗口中有效
-alias li='ls -li'
+  # f 向后翻页
+  # b 向前翻页
+  # j 向下一行
+  # k 向上一行
+  # -N  + enter键 显示行数/不现实行数
 
-#新建/覆盖 添加文件内容到文件中
-cat > test.log <<EOF
-192.168.0.103 master
-192.168.0.104 slave1
-192.168.0.106 slave3
-EOF
+  # sort 命令
+  # 默认按字母顺序排序
+  # 默认数字是按开头的数字排序
+  # 不指定数字的排序 1 11 11 2 21 22 ...
+  sort filename
 
-#追加信息到文件中
-cat >> test.log <<EOF
-asfsakfj
-asdfk;logassdfd
-;lksdjf
-asddfklj
+  #数字按大小排序，需要使用 -n
 
-EOF
-```
+  # shell中命令别名
+
+  #查看命令别名
+  alias -p
+
+  #自定义别名 不能有空格
+  # 修改只在当前shell窗口中有效
+  alias li='ls -li'
+
+  #新建/覆盖 添加文件内容到文件中
+  cat > test.log <<EOF
+  192.168.0.103 master
+  192.168.0.104 slave1
+  192.168.0.106 slave3
+  EOF
+
+  #追加信息到文件中
+  cat >> test.log <<EOF
+  asfsakfj
+  asdfk;logassdfd
+  ;lksdjf
+  asddfklj
+
+  EOF
+  ```
