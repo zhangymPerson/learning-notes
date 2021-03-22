@@ -28,8 +28,7 @@
 
   - gradle 文件夹:
 
-    gradle 文件中存在着 wrapper 文件夹，
-    在 wrapper 下存在以下两个文件
+    gradle 文件中存在着 wrapper 文件夹，在 wrapper 下存在以下两个文件
 
           gradle-wrapper.jar
 
@@ -152,3 +151,7 @@ gradle 中的 build.gradle 文件类似 maven 中的 pom.xml 文件
 - gradle-xx-src.zip 是源码版，只包含了 Gradle 源代码，不能用来编译你的工程。
 
   例如：https://services.gradle.org/distributions/gradle-*.*-src.zip
+
+- gradle 国内镜像地址
+
+  [腾讯镜像](https://mirrors.cloud.tencent.com/gradle/)
