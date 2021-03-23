@@ -128,7 +128,7 @@
   </dependencies>
   ```
 
-  log4j.properties
+- log4j.properties
 
   ```properties
   #日志配置
@@ -142,13 +142,30 @@
   #%d 输出日志时间点的日期或时间，默认格式为ISO8601，也可以在其后指定格式，比如：%d{yyy MMM dd HH:mm:ss,SSS}，输出类似：2002年10月18日 22：10：28，921
   #%l 输出日志事件的发生位置，包括类目名、发生的线程，以及在代码中的行数。举例：Testlog4.main(TestLog4.java:10)
   #%m 输出代码中指定的讯息，如log(message)中的message
-  log4j.appender.CONSOLE.Encoding=UTF-8
+  log4j.appender.consoles.Encoding=UTF-8
+  #输出等级
+  #log4j.appender.consoles.Threshold=DEBUG
   ##输出到控制台日志配置
   log4j.appender.consoles=org.apache.log4j.ConsoleAppender
   ##设置输出样式
   log4j.appender.consoles.layout=org.apache.log4j.PatternLayout
   ##日志打印样式
   log4j.appender.consoles.layout.ConversionPattern= [%p] [%-d{yyyy-MM-dd HH:mm:ss}] (%l):%m%n
+  ```
+
+- log4j.properties 配置说明 输入日志到文件
+
+  ```properties
+  # log4j.rootLogger=INFO,db语法为：
+  # log4j.rootLogger = [ level ] , appenderName1, appenderName2, …
+  # log4j.rootLogger = level 没有，如下所示:没有info,则无法写入文件
+  log4j.rootLogger=info,logfile
+  log4j.appender.logfile.Encoding=UTF-8
+  # 注意此处必须是 FileAppender
+  log4j.appender.logfile=org.apache.log4j.FileAppender
+  log4j.appender.logfile.File=d:/result.log
+  log4j.appender.logfile.layout=org.apache.log4j.PatternLayout
+  log4j.appender.logfile.layout.ConversionPattern=[%p] [%-d{yyyy-MM-dd HH:mm:ss}] (%l):%m%n
   ```
 
 * JCL+Log4J 组合使用模式：
