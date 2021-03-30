@@ -4,13 +4,11 @@
 
 ## 查询
 
-- 查询命令
-  `docker search elasticsearch`
+- 查询命令 `docker search elasticsearch`
 
 ## 拉取
 
-- 拉取镜像
-  `docker pull elasticsearch:latest`
+- 拉取镜像 `docker pull elasticsearch:latest`
 
 ## 配置-运行
 
