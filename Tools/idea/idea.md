@@ -33,7 +33,7 @@
   */
   ```
 
-* idea maven 项目读取不到配置文件 application.properties
+- idea maven 项目读取不到配置文件 application.properties
 
   ```java
   //todo 未解决
@@ -41,7 +41,7 @@
   No active profile set, falling back to default profiles: default
   ```
 
-* compiler
+- compiler
 
   Java Compiler 下的版本选择和当前的 jdk 版本一致
 
@@ -77,40 +77,40 @@
 
   ctrl+q
 
-* idea 修改默认的 shell 为 powershell 不用 windows 的 cmd
+- idea 修改默认的 shell 为 powershell 不用 windows 的 cmd
 
   打开 setting 然后找到 Tools - Terminal - Shell path
 
   cmd.exe 改成 powershell.exe
 
-* idea 显示类注解/方法注解
+- idea 显示类注解/方法注解
 
   搜索栏中输入 Show quick documentation on mouse move 就搜索出来了
 
   或是在 setting -> Editor -> General -> Other 中都可以看到
 
-* idea 显示占用内存 开启后显示位置在软件的右下角
+- idea 显示占用内存 开启后显示位置在软件的右下角
 
   File-->Settings-->Appearance-->Window Options-->Show Memory indicator
 
   idea2020.1 版本设置方式
   菜单栏 view -> Appearance -> status bar widgets -> memory indicator
 
-* Ctrl+鼠标滚轴修改字体大小
+- Ctrl+鼠标滚轴修改字体大小
 
   IDEA 也支持向浏览器那样按住 Ctrl+鼠标滚轴来改变编辑区的字体的大小，设置的开关在：File-->Settings-->Editor-->General
 
   Change font size (Zoom) with Ctrl + Mouse Wheel
 
-* git/svn 提交人显示
+- git/svn 提交人显示
 
   在行号位置 点击右键 - 选择 annotate
 
-* 查看文件的本地历史记录
+- 查看文件的本地历史记录
 
   鼠标选中文件，然后右键，在弹出的列表中选择 Local History 然后就可以看到文件的本地修改记录，即使没有版本控制工具也可以看到这些记录。
 
-* idea 配置默认 maven
+- idea 配置默认 maven
 
   IDEA 不像 Eclipse 那样可以在一个窗口中打开多个项目;
 
@@ -118,7 +118,7 @@
 
   通过设置 Other Settings 就可以解决这类问题。File-->Other Settings-->Preferences for New Projects。然后在左上角的搜索框中搜 maven，就能看到如下图所示配置了。
 
-* idea 无法从控制台输入的问题
+- idea 无法从控制台输入的问题
 
   例如:
 
@@ -146,7 +146,7 @@
   -Deditable.java.test.console=true
   ```
 
-* idea 的修改内存的方法
+- idea 的修改内存的方法
 
   首先，我们需要找到 idea.vmoptions 文件的位置，这个不同的平台，估计名称可能有些差别
 
@@ -184,7 +184,7 @@
 
   修改完重启 idea,即可完成相应的修改;
 
-* idea 查看静态 html 页面的端口
+- idea 查看静态 html 页面的端口
 
 
     默认是：63342
@@ -263,7 +263,7 @@
 
   `idea` 默认在用户调试之前先执行 `toString` 方法，然后回显数据，也就是“预知”功能。但有时候会影响判断，但可以设置那些类中 `toString` 方法是是可以做“预知”。
 
-* idea 配置单行注释格式化 Java/kotlin 注释靠边的问题 无空格的问题 注释格式
+- idea 配置单行注释格式化 Java/kotlin 注释靠边的问题 无空格的问题 注释格式
 
   idea 默认的注释都是按行顶格注释,不显示在行首，需要配置，配置方式
 
@@ -271,3 +271,9 @@
 
   同时需要在注释//和代码加添加一个空格
   选中 **add a space at comment start**
+
+- idea查看类继承关系 (社区版本无Diagrams 即 idea-uml 类图)
+
+  使用 Type Hierarchy 
+
+  使用方法，在类上右键 选择 `browse type hirearchy` 这个需要在项目视图中，在类文件中直接右键无此选项
