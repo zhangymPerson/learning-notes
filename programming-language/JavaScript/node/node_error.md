@@ -32,8 +32,7 @@
 
   Setting -> Languages&Frameworks -> Javascript -> libraries -> Add 添加 Node.js v\*\*\* Core Modules 项，
 
-  配置 webstrom 支持 node.js 语法检测及语法提示！ 支持 nodejs 等语法提示和补全
-  Setting -> Languages/Framework -> Node.js and NPM -> Coding assistance for Node.js
+  配置 webstrom 支持 node.js 语法检测及语法提示！ 支持 nodejs 等语法提示和补全 Setting -> Languages/Framework -> Node.js and NPM -> Coding assistance for Node.js
 
 - npm 报错 4084
 
