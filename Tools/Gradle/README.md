@@ -2,11 +2,18 @@
 
 ## 目录
 
-- [gradle_command(gradle的常用命令记录)](./gradle_command.md)
-- [gradle_java-gradle构建Java应用](./gradle_java.md)
-- [gradle概念](./gradle概念.md)
-- [gradle环境搭建](./gradle环境搭建.md)
-- [gradle项目创建](./gradle项目创建.md)
+- [返回](../README.md)
+
+- [gradle_command(gradle 的常用命令记录)](./gradle_command.md)
+
+- [gradle_java-gradle 构建 Java 应用](./gradle_java.md)
+
+- [gradle 概念](./gradle概念.md)
+
+- [gradle 环境搭建](./gradle环境搭建.md)
+
+- [gradle 项目创建](./gradle项目创建.md)
+
 - [gradle_wrapper](./gradle_wrapper.md)
 
 ## 其他

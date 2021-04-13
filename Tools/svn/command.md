@@ -1,5 +1,15 @@
 # 常用的命令
 
+- [返回](./README.md)
+
+- 查看远程仓库地址
+
+  `svn info` 即可查看远程仓库地址
+
+- 修改远程仓库位置
+
+  ` svn sw --relocate svn://ip:host/path/ http://newip:newhost/newPath/`
+
 - 检出项目
 
   svn checkout path(path 是服务器的目录)
@@ -7,8 +17,11 @@
 - 常用检出命令：
 
   `svn co http://路径(目录或文件的全路径) [本地目录全路径] --username 用户名 --password 密码`
+
   `svn co svn://路径(目录或文件的全路径) [本地目录全路径] --username 用户名 --password 密码`
+
   `svn checkout http://路径(目录或文件的全路径) [本地目录全路径] --username 用户名`
+
   `svn checkout svn://路径(目录或文件的全路径) [本地目录全路径] --username 用户名`
 
   **检出命令说明**
@@ -22,11 +35,17 @@
 - 检出指定具体版本：
 
   `svn co http://路径(目录或文件的全路径) [本地目录全路径][--revision] --username 用户名 --password 密码`
+
   `svn checkout svn://路径(目录或文件的全路径) [本地目录全路径][--revision] --username 用户名`
+
   `svn co [--revision] http://路径(目录或文件的全路径) [本地目录全路径] --username 用户名 --password 密码`
+
   `svn checkout [--revision] svn://路径(目录或文件的全路径) [本地目录全路径] --username 用户名`
-  举例如下：
+
+- 举例如下：
+
   `svn checkout http://baidu.com/svn/trunk/ username -r version`
+
   `svn checkout -r version http://baidu.com/svn/trunk/ username`
 
 - 检出不包括源文件夹根目录：
@@ -35,9 +54,7 @@
 
   我们可以在 svn 文件夹后面打个空格，在加个“.”就行了
 
-  `svn co http://baidu.com/svn/project/trunk/ /home/path`
-  改为:
-  `svn co http://baidu.com/svn/project/trunk/ . /home/path/`
+  `svn co http://baidu.com/svn/project/trunk/ /home/path` 改为: `svn co http://baidu.com/svn/project/trunk/ . /home/path/`
 
 - 往版本库中添加新的文件
 
@@ -53,5 +70,4 @@
 
 - 更新当前目录以及子目录下的所有文件到最新版本
 
-  `svn update`
-  `svn up`
+  `svn update` `svn up`
