@@ -1,5 +1,7 @@
 # vscode 笔记
 
+- [返回](./README.md)
+
 ## 插件
 
 - Chinese (Simplified) Language Pack for Visual Studio Code

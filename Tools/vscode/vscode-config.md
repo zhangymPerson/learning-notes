@@ -1,5 +1,7 @@
 # vscode 的配置文件说明
 
+-[返回](./README.md)
+
 > vscode 有三个配置文件 launch.json setting.json tasks.json
 
 - [官方文档](https://code.visualstudio.com/docs)
@@ -58,4 +60,39 @@
       "description": "test"
     }
   }
+  ```
+
+## 常用自定义配置
+
+- 字体配置
+
+  `"editor.fontFamily": "JetBrains Mono, 'Courier New', monospace",`
+
+## 插件的相关配置
+
+- vim 插件 自定义 vscode-vim 插件配置
+
+  Settings 中配置如下 过滤掉
+
+  ```json
+    "vim.handleKeys": {
+      "<C-a>": false,
+      "<C-f>": false,
+      "<C-n>": false,
+      "<C-d>": true
+    },
+    "vim.insertModeKeyBindings": [
+      {
+        "before": ["h", "h"],
+        "after": ["<Left>"]
+      },
+      {
+        "before": ["l", "l"],
+        "after": ["<Right>"]
+      },
+      {
+        "before": ["q", "q"],
+        "after": ["<Esc>"]
+      }
+    ],
   ```
