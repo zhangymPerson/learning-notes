@@ -1,33 +1,37 @@
 # springboot 配置文件说明
-＃SPRING CONFIG（ConfigFileApplicationListener）  
-spring.config.name =＃配置文件名（默认 为  'application' ）  
-spring.config.location =＃配置文件的位置  
- 
+
+- 配置介绍和说明
+
+```
+＃SPRING CONFIG（ConfigFileApplicationListener）
+spring.config.name =＃配置文件名（默认 为  'application' ）
+spring.config.location =＃配置文件的位置
+
 ＃ 多环境配置文件激活属性
-spring.profiles.active=dev					＃加载application-dev.properties配置文件内容 
+spring.profiles.active=dev					＃加载application-dev.properties配置文件内容
 application-dev.properties：					＃开发环境
 application-test.properties：					＃测试环境
 application-prod.properties：					＃生产环境
- 
- 
+
+
 ＃activemq
 spring.activemq.broker-url						＃指定ActiveMQ broker的URL，默认自动生成.
 spring.activemq.in-memory						＃是否是内存模式，默认为true.
 spring.activemq.password						＃指定broker的密码.
 spring.activemq.pooled							＃是否创建PooledConnectionFactory，而非ConnectionFactory，默认false
 spring.activemq.user							＃指定broker的用户.
- 
- 
+
+
 ＃aop
 spring.aop.auto									＃是否支持@EnableAspectJAutoProxy，默认为: true
 spring.aop.proxy-target-class					＃true为使用CGLIB代理，false为JDK代理，默认为false
- 
- 
+
+
 ＃application
 spring.application.admin.enabled				＃是否启用admin特性，默认为: false
 spring.application.admin.jmx-name				＃指定admin MBean的名称，默认为: org.springframework.boot:type=Admin,name=SpringApplication
- 
- 
+
+
 ＃artemis(HornetQ捐献给apache后的版本)
 spring.artemis.embedded.cluster-password		＃指定集群的密码，默认是启动时随机生成.
 spring.artemis.embedded.data-directory			＃指定Journal文件的目录.如果不开始持久化则不必要指定.
@@ -39,20 +43,20 @@ spring.artemis.embedded.topics					＃指定启动时创建的topic，多个的�
 spring.artemis.host								＃指定Artemis broker 的host. 默认: localhost
 spring.artemis.mode								＃指定Artemis 的部署模式, 默认为auto-detected(也可以为native or embedded).
 spring.artemis.port								＃指定Artemis broker 的端口，默认为: 61616
- 
- 
+
+
 ＃autoconfig
 spring.autoconfigure.exclude					＃配置要排除的Auto-configuration classes.
- 
- 
+
+
 ＃batch
 spring.batch.initializer.enabled				＃是否在必要时创建batch表，默认为true
 spring.batch.job.enabled						＃是否在启动时开启batch job，默认为true
 spring.batch.job.names							＃指定启动时要执行的job的名称，逗号分隔，默认所有job都会被执行
 spring.batch.schema								＃指定要初始化的sql语句路径，默认:classpath:org/springframework/batch/core/schema-@@platform@@.sql)
 spring.batch.table-prefix						＃指定批量处理的表的前缀.
- 
- 
+
+
 ＃cookie、session配置
 server.session.cookie.comment					＃指定session cookie的comment
 server.session.cookie.domain					＃指定session cookie的domain
@@ -64,9 +68,9 @@ server.session.cookie.secure					＃设定session cookie的“Secure” flag.
 server.session.persistent						＃重启时是否持久化session，默认false
 server.session.timeout							＃session的超时时间
 server.session.tracking-modes					＃设定Session的追踪模式(cookie, url, ssl).
- 
- 
-＃datasource 
+
+
+＃datasource
 spring.dao.exceptiontranslation.enabled			＃是否开启PersistenceExceptionTranslationPostProcessor，默认为true
 spring.datasource.abandon-when-percentage-full	＃设定超时被废弃的连接占到多少比例时要被关闭或上报
 spring.datasource.allow-pool-suspension			＃使用Hikari pool时，是否允许连接池暂停，默认为: false
@@ -151,8 +155,8 @@ spring.datasource.validation-timeout			＃设定连接校验的超时时间，�
 spring.datasource.validator-class-name			＃用来测试查询的validator全限定名.
 spring.datasource.xa.data-source-class-name		＃指定数据源的全限定名.
 spring.datasource.xa.properties					＃指定传递给XA data source的属性
- 
- 
+
+
 ＃data  springdata
 spring.data.elasticsearch.cluster-name			＃指定es集群名称，默认: elasticsearch
 spring.data.elasticsearch.cluster-nodes			＃指定es的集群，逗号分隔，不指定的话，则启动client node.
@@ -180,75 +184,75 @@ spring.data.rest.sort-param-name				＃指定排序使用的key，默认为: sor
 spring.data.solr.host							＃指定Solr host，如果有指定了zk的host的话，则忽略。默认为: http://127.0.0.1:8983/solr
 spring.data.solr.repositories.enabled			＃是否开启Solr repositories，默认为: true
 spring.data.solr.zk-host						＃指定zk的地址，格式为HOST:PORT.
- 
-＃----------------------------------------  
-＃DEVTOOLS属性  
-＃----------------------------------------  
-  
-＃DEVTOOLS（DevToolsProperties）  
-spring.devtools.livereload.enabled = true		＃启用livereload.com兼容的server。  
-spring.devtools.livereload.port = 35729			＃服务器端口。  
-spring.devtools.restart.additional-exclude =		＃应该从触发完全重新启动时排除的其他模式。  
-spring.devtools.restart.additional-paths =		＃额外的路径来观察变化。  
-spring.devtools.restart.enabled = true			＃启用自动重启。  
-spring.devtools.restart.exclude = META-INF /行家/ **，META-INF /资源/ **，资源/ **，静态/ **，公共/ **，模板/ **，** / * Test.class，** / * Tests.class，git.properties＃应该排除触发完全重启的模式。  
-spring.devtools.restart.poll-interval = 1000	＃polling 路径更改之间等待的时间（以毫秒为单位）。  
-spring.devtools.restart.quiet-period = 400		＃触发重新启动之前，没有任何类路径变化所需的静默时间（以毫秒为单位）。  
-spring.devtools.restart.trigger-file =			＃特定文件的名称，在更改时会触发重新启动检查。如果未指定任何类路径文件更改将触发重新启动。  
-  
-  
-＃DEVTOOLS   REMOTE DEVTOOLS（RemoteDevToolsProperties）  
-spring.devtools.remote.context-path =  			＃用于处理远程连接的上下文路径。  
-spring.devtools.remote.debug.enabled = true		＃启用远程调试支持。  
-spring.devtools.remote.debug.local-port = 8000	＃本地远程调试服务器端口。  
-spring.devtools.remote.proxy.host =				＃用于连接远程应用程序的代理主机。  
-spring.devtools.remote.proxy.port =				＃用于连接远程应用程序的代理端口。  
-spring.devtools.remote.restart.enabled = true	＃启用远程重启。  
-spring.devtools.remote.secret =					＃建立连接所需的共享密钥（需要启用远程支持）。  
-spring.devtools.remote.secret-header-name = X-AUTH-TOKEN  		＃用于传输共享密钥的HTTP头。  
- 
- 
-＃----------------------------------------  
-＃执行器属性  
-＃----------------------------------------  
-  
-＃ENDPOINTS（AbstractEndpoint子类）  
-endpoints.enabled = true						＃启用端点。  
-endpoints.sensitive =							＃默认的端点敏感设置。  
-endpoints.actuator.enabled = true				＃启用端点。  
-endpoints.actuator.path =						＃端点URL路径。  
-endpoints.actuator.sensitive = false			＃在端点上启用安全性。  
-endpoints.autoconfig.enabled =					＃启用端点。  
-endpoints.autoconfig.id =						＃端点标识符。  
-endpoints.autoconfig.sensitive =				＃标记端点是否暴露敏感信息。  
-endpoints.beans.enabled =						＃启用端点。  
-endpoints.beans.id =							＃端点标识符。  
-endpoints.beans.sensitive =						＃标记端点是否暴露敏感信息。  
-endpoints.configprops.enabled =					＃启用端点。  
-endpoints.configprops.id =						＃端点标识符。  
-endpoints.configprops.keys-to-sanitize			＃应该清理的密钥。键可以是属性以或正则表达式结束的简单字符串。  
-endpoints.configprops.sensitive =				＃标记端点是否公开敏感信息。  
-endpoints.docs.curies.enabled = false			＃启用居里代。  
-endpoints.docs.enabled = true					＃启用执行器文档终结点。  
-endpoints.docs.path = / docs					＃  
-endpoints.docs.sensitive = false				＃  
- 
-  
-＃终端CORS配置（EndpointCorsProperties）  
-endpoints.cors.allow-credentials =				＃设置是否支持凭据。未设置时，不支持凭证。  
-endpoints.cors.allowed-headers =				＃在请求中允许使用逗号分隔的标题列表。'*'允许所有标题。  
-endpoints.cors.allowed-methods = GET			＃逗号分隔的允许的方法列表。'*'允许所有的方法。  
-endpoints.cors.allowed-origins =				＃逗号分隔的起源列表允许。'*'允许所有的来源。未设置时，CORS支持被禁用。  
-endpoints.cors.exposed-headers =				＃包含在响应中的逗号分隔的标题列表。  
-endpoints.cors.max-age = 1800					＃以秒为单位，客户端可以缓存飞行前请求的响应。  
-  
-＃JMX ENDPOINT（EndpointMBeanExportProperties）  
-endpoints.jmx.domain =							＃JMX域名。如果设置，则用“spring.jmx.default-domain”的值初始化。  
-endpoints.jmx.enabled = true					＃启用所有端点的JMX导出。  
-endpoints.jmx.static-names =					＃附加到所有表示端点的MBean的ObjectName的静态属性。  
-endpoints.jmx.unique-names = false				＃确保ObjectNames在发生冲突时被修改。  
- 
- 
+
+＃----------------------------------------
+＃DEVTOOLS属性
+＃----------------------------------------
+
+＃DEVTOOLS（DevToolsProperties）
+spring.devtools.livereload.enabled = true		＃启用livereload.com兼容的server。
+spring.devtools.livereload.port = 35729			＃服务器端口。
+spring.devtools.restart.additional-exclude =		＃应该从触发完全重新启动时排除的其他模式。
+spring.devtools.restart.additional-paths =		＃额外的路径来观察变化。
+spring.devtools.restart.enabled = true			＃启用自动重启。
+spring.devtools.restart.exclude = META-INF /行家/ **，META-INF /资源/ **，资源/ **，静态/ **，公共/ **，模板/ **，** / * Test.class，** / * Tests.class，git.properties＃应该排除触发完全重启的模式。
+spring.devtools.restart.poll-interval = 1000	＃polling 路径更改之间等待的时间（以毫秒为单位）。
+spring.devtools.restart.quiet-period = 400		＃触发重新启动之前，没有任何类路径变化所需的静默时间（以毫秒为单位）。
+spring.devtools.restart.trigger-file =			＃特定文件的名称，在更改时会触发重新启动检查。如果未指定任何类路径文件更改将触发重新启动。
+
+
+＃DEVTOOLS   REMOTE DEVTOOLS（RemoteDevToolsProperties）
+spring.devtools.remote.context-path =  			＃用于处理远程连接的上下文路径。
+spring.devtools.remote.debug.enabled = true		＃启用远程调试支持。
+spring.devtools.remote.debug.local-port = 8000	＃本地远程调试服务器端口。
+spring.devtools.remote.proxy.host =				＃用于连接远程应用程序的代理主机。
+spring.devtools.remote.proxy.port =				＃用于连接远程应用程序的代理端口。
+spring.devtools.remote.restart.enabled = true	＃启用远程重启。
+spring.devtools.remote.secret =					＃建立连接所需的共享密钥（需要启用远程支持）。
+spring.devtools.remote.secret-header-name = X-AUTH-TOKEN  		＃用于传输共享密钥的HTTP头。
+
+
+＃----------------------------------------
+＃执行器属性
+＃----------------------------------------
+
+＃ENDPOINTS（AbstractEndpoint子类）
+endpoints.enabled = true						＃启用端点。
+endpoints.sensitive =							＃默认的端点敏感设置。
+endpoints.actuator.enabled = true				＃启用端点。
+endpoints.actuator.path =						＃端点URL路径。
+endpoints.actuator.sensitive = false			＃在端点上启用安全性。
+endpoints.autoconfig.enabled =					＃启用端点。
+endpoints.autoconfig.id =						＃端点标识符。
+endpoints.autoconfig.sensitive =				＃标记端点是否暴露敏感信息。
+endpoints.beans.enabled =						＃启用端点。
+endpoints.beans.id =							＃端点标识符。
+endpoints.beans.sensitive =						＃标记端点是否暴露敏感信息。
+endpoints.configprops.enabled =					＃启用端点。
+endpoints.configprops.id =						＃端点标识符。
+endpoints.configprops.keys-to-sanitize			＃应该清理的密钥。键可以是属性以或正则表达式结束的简单字符串。
+endpoints.configprops.sensitive =				＃标记端点是否公开敏感信息。
+endpoints.docs.curies.enabled = false			＃启用居里代。
+endpoints.docs.enabled = true					＃启用执行器文档终结点。
+endpoints.docs.path = / docs					＃
+endpoints.docs.sensitive = false				＃
+
+
+＃终端CORS配置（EndpointCorsProperties）
+endpoints.cors.allow-credentials =				＃设置是否支持凭据。未设置时，不支持凭证。
+endpoints.cors.allowed-headers =				＃在请求中允许使用逗号分隔的标题列表。'*'允许所有标题。
+endpoints.cors.allowed-methods = GET			＃逗号分隔的允许的方法列表。'*'允许所有的方法。
+endpoints.cors.allowed-origins =				＃逗号分隔的起源列表允许。'*'允许所有的来源。未设置时，CORS支持被禁用。
+endpoints.cors.exposed-headers =				＃包含在响应中的逗号分隔的标题列表。
+endpoints.cors.max-age = 1800					＃以秒为单位，客户端可以缓存飞行前请求的响应。
+
+＃JMX ENDPOINT（EndpointMBeanExportProperties）
+endpoints.jmx.domain =							＃JMX域名。如果设置，则用“spring.jmx.default-domain”的值初始化。
+endpoints.jmx.enabled = true					＃启用所有端点的JMX导出。
+endpoints.jmx.static-names =					＃附加到所有表示端点的MBean的ObjectName的静态属性。
+endpoints.jmx.unique-names = false				＃确保ObjectNames在发生冲突时被修改。
+
+
 ＃flyway
 flyway.baseline-description 					＃对执行迁移时基准版本的描述.
 flyway.baseline-on-migrate						＃当迁移时发现目标schema非空，而且带有没有元数据的表时，是否自动执行基准迁移，默认false.
@@ -275,29 +279,29 @@ flyway.target									＃迁移时使用的目标版本，默认为latest versio
 flyway.url										＃迁移时使用的JDBC URL，如果没有指定的话，将使用配置的主数据源
 flyway.user										＃迁移数据库的用户名
 flyway.validate-on-migrate						＃迁移时是否校验，默认为true.
- 
-＃FREEMARKER（FreeMarkerAutoConfiguration）  
+
+＃FREEMARKER（FreeMarkerAutoConfiguration）
 spring.freemarker.allowRequestOverride = false   			＃设置HttpServletRequest属性是否允许覆盖(隐藏)控制器生成的相同名称的模型属性。
-spring.freemarker.allowSessionOverride = false   			＃设置HttpSession属性是否允许覆盖(隐藏)控制器生成的相同名称的模型属性。	
+spring.freemarker.allowSessionOverride = false   			＃设置HttpSession属性是否允许覆盖(隐藏)控制器生成的相同名称的模型属性。
 spring.freemarker.cache = true  				 			＃使用模板缓存。
 spring.freemarker.charset=UTF-8 				 			＃ Template encoding.
-spring.freemarker.checkTemplateLocation = true   			＃检查模板位置是否存在spring.freemarker.check-template-location=true 
-spring.freemarker.contentType = text / html  	 			＃Content-Type  
+spring.freemarker.checkTemplateLocation = true   			＃检查模板位置是否存在spring.freemarker.check-template-location=true
+spring.freemarker.contentType = text / html  	 			＃Content-Type
 spring.freemarker.exposeRequestAttributes = false  			＃在与模板合并之前，设置是否应该将所有请求属性添加到模型中。spring.freemarker.expose-request-attributes=false
 spring.freemarker.exposeSessionAttributes = false  			＃在与模板合并之前，设置是否应该将所有HttpSession属性添加到模型中。spring.freemarker.expose-session-attributes=false
 spring.freemarker.exposeSpringMacroHelpers = false  		＃设定是否以springMacroRequestContext的形式暴露RequestContext给Spring’s macro library使用      spring.freemarker.expose-spring-macro-helpers=true
 spring.freemarker.prefer-file-system-access=true 			＃是否优先从文件系统加载template，以支持热加载，默认为true
 spring.freemarker.prefix =  								＃在构建URL时，前缀被预先指定以查看名称。
-spring.freemarker.requestContextAttribute =  				＃所有视图的RequestContext属性的名称.   freemarker.request-context-attribute= 
+spring.freemarker.requestContextAttribute =  				＃所有视图的RequestContext属性的名称.   freemarker.request-context-attribute=
 spring.freemarker.settings.* =  							＃Well-known FreeMarker keys which will be passed to FreeMarker's Configuration
-spring.freemarker.suffix = .ftl  							＃在构建URL时附加到视图名称后面的后缀		
-spring.freemarker.templateEncoding = UTF- 8  
-spring.freemarker.templateLoaderPath =classpath:/templates  ＃设定ftl文件路径 类路径：/模板/  
-spring.freemarker.viewNames =								＃可以解析的视图名称的白名单  
+spring.freemarker.suffix = .ftl  							＃在构建URL时附加到视图名称后面的后缀
+spring.freemarker.templateEncoding = UTF- 8
+spring.freemarker.templateLoaderPath =classpath:/templates  ＃设定ftl文件路径 类路径：/模板/
+spring.freemarker.viewNames =								＃可以解析的视图名称的白名单
 spring.mvc.static-path-pattern=/static/**  					＃设定静态文件路径，js,css等
-＃GIT信息  
-spring.git.properties =							＃生成的git信息属性文件的资源引用。  
-＃GROOVY模板（GroovyTemplateAutoConfiguration）  
+＃GIT信息
+spring.git.properties =							＃生成的git信息属性文件的资源引用。
+＃GROOVY模板（GroovyTemplateAutoConfiguration）
 spring.groovy.template.allow-request-override 				＃指定HttpServletRequest的属性是否可以覆盖controller的model的同名项
 spring.groovy.template.allow-session-override 				＃指定HttpSession的属性是否可以覆盖controller的model的同名项
 spring.groovy.template.cache  								＃是否开启模板缓存
@@ -328,7 +332,7 @@ spring.groovy.template.view-names 							＃指定要使用模板的视图名称
 ＃h2
 spring.h2.console.enabled						＃是否开启控制台，默认为false
 spring.h2.console.path							＃指定控制台路径，默认为: /h2-console
-＃hornetq	(HornetQProperties）  
+＃hornetq	(HornetQProperties）
 spring.hornetq.embedded.cluster-password		＃指定集群的密码，默认启动时随机生成.
 spring.hornetq.embedded.data-directory			＃指定Journal file 的目录. 如果不开启持久化则不必指定.
 spring.hornetq.embedded.enabled					＃是否开启内嵌模式，默认:true
@@ -434,52 +438,52 @@ spring.mobile.devicedelegatingviewresolver.normal-suffix	＃设定普通设备�
 spring.mobile.devicedelegatingviewresolver.tablet-prefix	＃设定平板设备视图前缀，默认:tablet/
 spring.mobile.devicedelegatingviewresolver.tablet-suffix	＃设定平板设备视图后缀.
 spring.mobile.sitepreference.enabled						＃是否启用SitePreferenceHandler，默认为: true
-＃MONGODB（Mongo性能）  
-spring.data.mongodb.host =						＃分贝主机  
-spring.data.mongodb.port = 27017  				＃连接端口（默认为  27107 ）  
-spring.data.mongodb.uri = 						＃连接URL  
+＃MONGODB（Mongo性能）
+spring.data.mongodb.host =						＃分贝主机
+spring.data.mongodb.port = 27017  				＃连接端口（默认为  27107 ）
+spring.data.mongodb.uri = 						＃连接URL
 spring.mongodb.embedded.features				＃指定要开启的特性，逗号分隔.
 spring.mongodb.embedded.version					＃指定要使用的版本，默认: 2.6.10
-＃MANAGEMENT HTTP SERVER（ManagementServerProperties）  
-management.add-application-context-header = true＃在每个响应中添加“X-Application-Context”HTTP标头。  
-management.address =							＃管理端点应该绑定的网络地址。  
-management.context-path =						＃管理端点上下文路径。例如`/执行器`  
-management.port =								＃管理端点HTTP端口。默认使用与应用程序相同的端口。  
+＃MANAGEMENT HTTP SERVER（ManagementServerProperties）
+management.add-application-context-header = true＃在每个响应中添加“X-Application-Context”HTTP标头。
+management.address =							＃管理端点应该绑定的网络地址。
+management.context-path =						＃管理端点上下文路径。例如`/执行器`
+management.port =								＃管理端点HTTP端口。默认使用与应用程序相同的端口。
 management.security.enabled = true				＃启用
-management.security.role = ADMIN				＃访问管理端点所需的角色。  
-management.security.sessions 					＃会话创建策略使用（always, never, if_required, stateless）。  
-  
-＃HEALTH INDICATORS健康指标（以前的健康状况*）  
-management.health.db.enabled = true				＃启用数据库运行状况检查。  
-management.health.defaults.enabled = true		＃启用默认健康指标。  
-management.health.diskspace.enabled = true		＃启用磁盘空间运行状况检查。  
-management.health.diskspace.path =				＃用于计算可用磁盘空间的路径。  
-management.health.diskspace.threshold = 0		＃应该可用的最小磁盘空间（以字节为单位）。  
-management.health.elasticsearch.enabled = true	＃启用elasticsearch运行状况检查。  
-management.health.elasticsearch.indices =		＃逗号分隔的索引名称。  
-management.health.elasticsearch.response-timeout = 100		＃等待群集响应的时间（以毫秒为单位）。  
-management.health.jms.enabled = true			＃启用JMS运行状况检查。  
-management.health.mail.enabled = true			＃启用邮件运行状况检查。  
-management.health.mongo.enabled = true			＃启用MongoDB运行状况检查。  
-management.health.rabbit.enabled = true			＃启用RabbitMQ健康检查。  
-management.health.redis.enabled = true			＃启用Redis运行状况检查。  
-management.health.solr.enabled = true			＃启用Solr运行状况检查。  
-management.health.status.order 					＃以逗号分隔的健康状态列表。  
-management.trace.include 						＃要包含在跟踪中的项目。  
-＃METRICS EXPORT（MetricExportProperties）  
-spring.metrics.export.aggregate.key-pattern =	＃告诉聚合器如何处理源存储库中的密钥的模式。  
-spring.metrics.export.aggregate.prefix =		＃全局存储库的前缀（如果处于活动状态）。  
-spring.metrics.export.delay-millis = 5000		＃输出滴答之间的延迟（以毫秒为单位）。度量标准按照计划导出到外部源。  
-spring.metrics.export.enabled = true			＃启用metric 标准导出的标志（假设MetricWriter可用）。  
-spring.metrics.export.excludes =				＃要排除的metric 标准名称的模式列表。包括后应用。  
-spring.metrics.export.includes =				＃要包含的metric 标准名称的模式列表。  
-spring.metrics.export.redis.key 				＃Redis存储库导出密钥（如果有效）。  
-spring.metrics.export.redis.prefix				＃如果处于活动状态，redis存储库的前缀。  
-spring.metrics.export.send-latest 				＃根据不导出不变的metric 值的标志关闭所有可用的优化。  
-spring.metrics.export.statsd.host =				＃接收导出metric 的statsd server的主机。  
-spring.metrics.export.statsd.port = 8125		＃接收导出metric的statsd server的端口。  
-spring.metrics.export.statsd.prefix =			＃统计导出metric的前缀。  
-spring.metrics.export.triggers。* =				＃每个MetricWriter bean名称的特定触发器属性。  
+management.security.role = ADMIN				＃访问管理端点所需的角色。
+management.security.sessions 					＃会话创建策略使用（always, never, if_required, stateless）。
+
+＃HEALTH INDICATORS健康指标（以前的健康状况*）
+management.health.db.enabled = true				＃启用数据库运行状况检查。
+management.health.defaults.enabled = true		＃启用默认健康指标。
+management.health.diskspace.enabled = true		＃启用磁盘空间运行状况检查。
+management.health.diskspace.path =				＃用于计算可用磁盘空间的路径。
+management.health.diskspace.threshold = 0		＃应该可用的最小磁盘空间（以字节为单位）。
+management.health.elasticsearch.enabled = true	＃启用elasticsearch运行状况检查。
+management.health.elasticsearch.indices =		＃逗号分隔的索引名称。
+management.health.elasticsearch.response-timeout = 100		＃等待群集响应的时间（以毫秒为单位）。
+management.health.jms.enabled = true			＃启用JMS运行状况检查。
+management.health.mail.enabled = true			＃启用邮件运行状况检查。
+management.health.mongo.enabled = true			＃启用MongoDB运行状况检查。
+management.health.rabbit.enabled = true			＃启用RabbitMQ健康检查。
+management.health.redis.enabled = true			＃启用Redis运行状况检查。
+management.health.solr.enabled = true			＃启用Solr运行状况检查。
+management.health.status.order 					＃以逗号分隔的健康状态列表。
+management.trace.include 						＃要包含在跟踪中的项目。
+＃METRICS EXPORT（MetricExportProperties）
+spring.metrics.export.aggregate.key-pattern =	＃告诉聚合器如何处理源存储库中的密钥的模式。
+spring.metrics.export.aggregate.prefix =		＃全局存储库的前缀（如果处于活动状态）。
+spring.metrics.export.delay-millis = 5000		＃输出滴答之间的延迟（以毫秒为单位）。度量标准按照计划导出到外部源。
+spring.metrics.export.enabled = true			＃启用metric 标准导出的标志（假设MetricWriter可用）。
+spring.metrics.export.excludes =				＃要排除的metric 标准名称的模式列表。包括后应用。
+spring.metrics.export.includes =				＃要包含的metric 标准名称的模式列表。
+spring.metrics.export.redis.key 				＃Redis存储库导出密钥（如果有效）。
+spring.metrics.export.redis.prefix				＃如果处于活动状态，redis存储库的前缀。
+spring.metrics.export.send-latest 				＃根据不导出不变的metric 值的标志关闭所有可用的优化。
+spring.metrics.export.statsd.host =				＃接收导出metric 的statsd server的主机。
+spring.metrics.export.statsd.port = 8125		＃接收导出metric的statsd server的端口。
+spring.metrics.export.statsd.prefix =			＃统计导出metric的前缀。
+spring.metrics.export.triggers。* =				＃每个MetricWriter bean名称的特定触发器属性。
 ＃multipart
 multipart.enabled								＃是否开启文件上传支持，默认为true
 multipart.file-size-threshold					＃设定文件写入磁盘的阈值，单位为MB或KB，默认为0
@@ -495,20 +499,20 @@ spring.mustache.enabled							＃是否开启mustcache的模板支持.
 spring.mustache.prefix							＃指定模板的前缀，默认: classpath:/templates/
 spring.mustache.suffix							＃指定模板的后缀，默认: .html
 spring.mustache.view-names						＃指定要使用模板的视图名.
-＃MVC（SPRING MVC相关的一些配置）  
-http.mappers.json-pretty-print = false  					＃打印JSON  
-http.mappers.json-sort-keys = false  						＃排序键  
-spring.mvc.locale =											＃设置固定语言环境，例如en_UK  
-spring.mvc.date-format =									＃设置固定的日期格式，例如dd / MM / yyyy  
+＃MVC（SPRING MVC相关的一些配置）
+http.mappers.json-pretty-print = false  					＃打印JSON
+http.mappers.json-sort-keys = false  						＃排序键
+spring.mvc.locale =											＃设置固定语言环境，例如en_UK
+spring.mvc.date-format =									＃设置固定的日期格式，例如dd / MM / yyyy
 spring.mvc.async.request-timeout	 						＃设定async请求的超时时间，以毫秒为单位，如果没有设置的话，以具体实现的超时时间为准，比如tomcat的servlet3的话是10秒.
 spring.mvc.favicon.enabled 									＃是否支持favicon.ico，默认为: true
 spring.mvc.ignore-default-model-on-redirect  				＃在重定向时是否忽略默认model的内容，默认为true
 spring.mvc.locale＃指定使用的Locale.
 spring.mvc.message-codes-resolver-format 					＃指定message codes的格式化策略(PREFIX_ERROR_CODE,POSTFIX_ERROR_CODE).
-spring.view.prefix =   										＃MVC视图前缀  
-spring.view.suffix =   										＃...和后缀  	
-spring.resources.cache-period =             				＃发送到浏览器的标题缓存超时  
-spring.resources.add-mappings = true         				＃如果 应该添加默认映射   
+spring.view.prefix =   										＃MVC视图前缀
+spring.view.suffix =   										＃...和后缀
+spring.resources.cache-period =             				＃发送到浏览器的标题缓存超时
+spring.resources.add-mappings = true         				＃如果 应该添加默认映射
 ＃liquibase
 liquibase.change-log							＃Change log 配置文件的路径，默认值为classpath:/db/changelog/db.changelog-master.yaml
 liquibase.check-change-log-location				＃是否坚持change log的位置是否存在，默认为true.
@@ -525,7 +529,7 @@ logging.file = myapp.log   					＃文件名称
 logging.config =							＃如果你即想完全掌控日志配置，但又不想用logback.xml作为Logback配置的名字，可以通过logging.config属性指定自定义的名字
 logging.level.root=INFO  					＃日志级别  从控制台打印出来的日志级别只有ERROR, WARN 还有INFO，如果你想要打印debug级别的日志，可以配置debug=true
 logging.level.org.springframework.web=DEBUG
-logging.level.org.hibernate=ERROR									
+logging.level.org.hibernate=ERROR
 ＃rabbitmq
 spring.rabbitmq.addresses						＃指定client连接到的server的地址，多个以逗号分隔.
 spring.rabbitmq.dynamic							＃是否创建AmqpAdmin bean. 默认为: true)
@@ -637,25 +641,25 @@ server.jsp-servlet.init-parameters.[param name]				＃设置JSP servlet 初始�
 server.jsp-servlet.registered				＃设定JSP servlet是否注册到内嵌的servlet容器，默认true
 server.port									＃设定http监听端口
 server.servlet-path							＃设定dispatcher servlet的监听路径，默认为: /
-＃SHELL      REMOTE SHELL  
-shell.auth = simple								＃认证类型。根据环境自动检测。  
-shell.auth.jaas.domain =my-domain				＃JAAS域。  
-shell.auth.key.path =							＃认证密钥的路径。这应该指向一个有效的“.pem”文件。  
-shell.auth.simple.user.name = user				＃登录用户。  
-shell.auth.simple.user.password =				＃登录密码。  
-shell.auth.spring.roles = ADMIN					＃用于登录到CRaSH控制台的所需角色的逗号分隔列表。  
-shell.command-path-patterns = classpath *：/ commands / **，classpath *：/ crash / commands / **＃用于查找命令的模式。  
-shell.command-refresh-interval = -1				＃扫描更改并在必要时更新命令（以秒为单位）。  
-shell.config-path-patterns = 					＃用于查找配置的模式。  
-shell.disabled-commands 						＃禁用命令的逗号分隔列表。  
-shell.disabled-plugins =						＃禁用逗号分隔的插件列表。根据环境，某些插件默认是禁用的。  
-shell.ssh.auth-timeout =						＃用户提示重新登录后的毫秒数。  
-shell.ssh.enabled = true						＃启用CRaSH SSH支持。  
-shell.ssh.idle-timeout =						＃关闭未使用的连接之后的毫秒数。  
-shell.ssh.key-path =							＃SSH服务器密钥的路径。  
-shell.ssh.port = 2000							＃SSH端口。  
-shell.telnet.enabled = false					＃启用CRaSH telnet支持。如果TelnetPlugin可用，则默认启用。  
-shell.telnet.port = 5000						＃Telnet端口。  
+＃SHELL      REMOTE SHELL
+shell.auth = simple								＃认证类型。根据环境自动检测。
+shell.auth.jaas.domain =my-domain				＃JAAS域。
+shell.auth.key.path =							＃认证密钥的路径。这应该指向一个有效的“.pem”文件。
+shell.auth.simple.user.name = user				＃登录用户。
+shell.auth.simple.user.password =				＃登录密码。
+shell.auth.spring.roles = ADMIN					＃用于登录到CRaSH控制台的所需角色的逗号分隔列表。
+shell.command-path-patterns = classpath *：/ commands / **，classpath *：/ crash / commands / **＃用于查找命令的模式。
+shell.command-refresh-interval = -1				＃扫描更改并在必要时更新命令（以秒为单位）。
+shell.config-path-patterns = 					＃用于查找配置的模式。
+shell.disabled-commands 						＃禁用命令的逗号分隔列表。
+shell.disabled-plugins =						＃禁用逗号分隔的插件列表。根据环境，某些插件默认是禁用的。
+shell.ssh.auth-timeout =						＃用户提示重新登录后的毫秒数。
+shell.ssh.enabled = true						＃启用CRaSH SSH支持。
+shell.ssh.idle-timeout =						＃关闭未使用的连接之后的毫秒数。
+shell.ssh.key-path =							＃SSH服务器密钥的路径。
+shell.ssh.port = 2000							＃SSH端口。
+shell.telnet.enabled = false					＃启用CRaSH telnet支持。如果TelnetPlugin可用，则默认启用。
+shell.telnet.port = 5000						＃Telnet端口。
 ＃social
 spring.social.auto-connection-views				＃是否开启连接状态的视图，默认为false
 spring.social.facebook.app-id					＃指定应用id
@@ -679,15 +683,15 @@ server.ssl.trust-store							＃持有SSL certificates的Trust store.
 server.ssl.trust-store-password					＃访问trust store的密码.
 server.ssl.trust-store-provider					＃设定trust store的提供者.
 server.ssl.trust-store-type						＃指定trust store的类型.
-＃tomcat服务器配置（ServerProperties）  
+＃tomcat服务器配置（ServerProperties）
 server.port = 8080   										＃端口
 server.address =  											＃该服务绑定IP地址，启动服务器时如本机不是该IP地址则抛出异常启动失败，只有特殊需求的情况下才配置
 server.session-timeout =									＃会话超时秒数  默认30
-server.context-path =   									＃上下文路径，默认为  '/'  
-server.servlet-path =										＃servlet路径，默认为  '/'  
-server.tomcat.access-log-pattern =							＃访问日志的日志模式  
-server.tomcat.access-log-enabled = false  					＃启用访问日志记录  
-server.tomcat.protocol-header = x -forwarded-proto 			＃ssl转发标头  
+server.context-path =   									＃上下文路径，默认为  '/'
+server.servlet-path =										＃servlet路径，默认为  '/'
+server.tomcat.access-log-pattern =							＃访问日志的日志模式
+server.tomcat.access-log-enabled = false  					＃启用访问日志记录
+server.tomcat.protocol-header = x -forwarded-proto 			＃ssl转发标头
 server.tomcat.accesslog.pattern								＃设定access logs的格式，默认: common
 server.tomcat.accesslog.prefix								＃设定Log 文件的前缀，默认: access_log
 server.tomcat.accesslog.suffix								＃设定Log 文件的后缀，默认: .log
@@ -703,13 +707,13 @@ server.tomcat.protocol-header								＃设定Header包含的协议，通常是 
 server.tomcat.protocol-header-https-value					＃设定使用SSL的header的值，默认https.
 server.tomcat.remote-ip-header								＃设定remote IP的header，如果remoteIpHeader有值，则设置为RemoteIpValve
 server.tomcat.uri-encoding									＃设定URI的解码字符集.
-＃THYMELEAF（Thymeleaf 模板）  
+＃THYMELEAF（Thymeleaf 模板）
 spring.thymeleaf.prefix =    								＃类路径：/模板/  检查模板位置
-spring.thymeleaf.suffix =  
+spring.thymeleaf.suffix =
 spring.thymeleaf.mode = HTML5  								＃模板的模式
-spring.thymeleaf.encoding = UTF- 8  
-spring.thymeleaf.content-type = text / html＃; charset = <编码>  
-spring.thymeleaf.cache = true  								＃这个开发配置为false，避免改了模板还要重启服务器 
+spring.thymeleaf.encoding = UTF- 8
+spring.thymeleaf.content-type = text / html＃; charset = <编码>
+spring.thymeleaf.cache = true  								＃这个开发配置为false，避免改了模板还要重启服务器
 ＃undertow
 server.undertow.access-log-dir					＃设定Undertow access log 的目录，默认: logs
 server.undertow.access-log-enabled				＃是否开启access log，默认: false
@@ -741,3 +745,4 @@ spring.velocity.resource-loader-path			＃设定模板路径，默认为: classp
 spring.velocity.suffix							＃设定velocity模板的后缀.
 spring.velocity.toolbox-config-location			＃设定Velocity Toolbox配置文件的路径，比如 /WEB-INF/toolbox.xml.
 spring.velocity.view-names						＃设定需要解析的视图名称.
+```

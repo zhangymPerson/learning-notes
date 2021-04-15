@@ -1,4 +1,4 @@
-# FreeMarker 
+# FreeMarker
 
 ### 文档说明和介绍
 
@@ -6,7 +6,7 @@
 
 [FreeMarker 中文手册](http://freemarker.foofun.cn/)
 
-### ftl文档中的基本使用
+### ftl 文档中的基本使用
 
 注释格式
 
@@ -14,7 +14,8 @@
 <#--注释: -->
 ```
 
-null判断
+null 判断
+
 ```
 <#--加上括号，感叹号解决对象导航为空的问题-->
 value=${(map.name)!"map为null或者name为null"
@@ -33,8 +34,8 @@ value=${(map.name)!"map为null或者name为null"
 </#if>
 ```
 
-
 if 判断
+
 ```
 <#if student_index % 2 == 0>
     xxxx
@@ -44,6 +45,7 @@ if 判断
 ```
 
 集合为空判断
+
 ```
 
 <#--注释: 判断集合是否存在且长度大于0-->
@@ -61,7 +63,8 @@ if 判断
  </#if>
 ```
 
-- 遍历list
+- 遍历 list
+
 ```
 <#list keyList as key>
     ${key}
@@ -78,15 +81,14 @@ if 判断
 </#list>
 ```
 
-- freemarker字符截取
+- freemarker 字符截取
 
 ```
 <#--截取第2-4位的字符-->
 ${key?substring(2,4)}
 ```
 
-
-### freemark读取方式
+### freemark 读取方式
 
 - 读取方式
 
@@ -98,7 +100,7 @@ import freemarker.template.Template;
 
 
     /**
-     * 
+     *
      * TODO
      * <br>
      * @author kangxu2 2016-11-23
@@ -112,22 +114,22 @@ import freemarker.template.Template;
         #配置类
         Configuration cfg = new Configuration();
         try {
-            #文件夹位置 
+            #文件夹位置
             cfg.setDirectoryForTemplateLoading(new File(templatePath));
             #编码格式 和文件
             Template template = cfg.getTemplate(fltFile,Constants.ENCODING);
             template.setEncoding(Constants.ENCODING);
-            StringWriter out = new StringWriter();  
-            template.process(datas, out);  
+            StringWriter out = new StringWriter();
+            template.process(datas, out);
             out.flush();
             out.close();
             return out.getBuffer().toString();
         } catch (Exception e) {
             e.printStackTrace();
-        } 
-        
+        }
+
         return null;
-        
+
     }
 
 ```
