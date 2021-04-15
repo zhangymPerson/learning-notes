@@ -1,5 +1,7 @@
 # markdown 文档编写
 
+- [返回](./README.md)
+
 ## 格式
 
 ### 基本语法
@@ -64,15 +66,15 @@
 
 - 超链接
 
+  Go [Home][home].
 
-    Go [Home][home].
+  [home]: https://example.org
 
-    [home]: https://example.org
-    ```md
-    欢迎来到[github项目-learning-notes-首页](https://github.com/zhangymPerson/learning-notes)
+  ```md
+  欢迎来到[github 项目-learning-notes-首页](https://github.com/zhangymPerson/learning-notes)
 
-    ![微信好友](../Picture/wechat-info.png)
-    ```
+  ![微信好友](../Picture/wechat-info.png)
+  ```
 
 - 效果
 
@@ -83,8 +85,7 @@
 - 参考式
 
   ```md
-  我经常去的几个网站[GitHub][1]、[知乎][2]以及[简书][3]
-  [简书][3]是一个不错的[写作社区][]。
+  我经常去的几个网站[GitHub][1]、[知乎][2]以及[简书][3] [简书][3]是一个不错的[写作社区][]。
 
   [1]: https://github.com "GitHub"
   [2]: https://www.zhihu.com "知乎"
@@ -94,19 +95,17 @@
 
 - 效果
 
-  我经常去的几个网站[GitHub][1]、[知乎][2]以及[简书][3]
-  [简书][3]是一个不错的[写作社区][]。
+  我经常去的几个网站[GitHub][1]、[知乎][2]以及[简书][3] [简书][3]是一个不错的[写作社区][]。
 
-  [1]:https://github.com "GitHub"
-  [2]:https://www.zhihu.com "知乎"
-  [3]:http://www.jianshu.com "简书"
-  [写作社区]:http://www.jianshu.com
+  [1]: https://github.com "GitHub"
+  [2]: https://www.zhihu.com "知乎"
+  [3]: http://www.jianshu.com "简书"
+  [写作社区]: http://www.jianshu.com
 
 - 自动连接
 
   ```md
-  <http://example.com/>
-  <zhangyanmingjiayou@163.com>
+  <http://example.com/> <zhangyanmingjiayou@163.com>
   ```
 
 - 效果
@@ -127,8 +126,7 @@
 
   **经过实际使用 标题中不能有 . 号，否则页面跳转失败**
 
-  语法描述：
-  在你准备跳转到的指定标题后插入锚点{#标记}，然后在文档的其它地方写上连接到锚点的链接。
+  语法描述：在你准备跳转到的指定标题后插入锚点{#标记}，然后在文档的其它地方写上连接到锚点的链接。
 
   ```md
   [跳转到本页面基本语法](#基本语法)
@@ -211,12 +209,7 @@
   | Leanote 超级账号 | 120 元/年 |
   ```
 
-- 效果
-  | 产品 | 价格 |
-  |------------------------|--------------------------:|
-  | Leanote 高级账号 | 60 元/年 |
-  | Leanote 超级账号 | 120 元/年 |
-  | Leanote 超级管理员账号 | 12000000000000000000 元/年 |
+- 效果 | 产品 | 价格 | |------------------------|--------------------------:| | Leanote 高级账号 | 60 元/年 | | Leanote 超级账号 | 120 元/年 | | Leanote 超级管理员账号 | 12000000000000000000 元/年 |
 
 - 分割线
 
@@ -249,11 +242,11 @@
   例如：
 
   ````md
-    ```java
-        public static void main(String[] args) {
-            System.out.println("Hello Word!");
-        }
-    ```
+  ```java
+      public static void main(String[] args) {
+          System.out.println("Hello Word!");
+      }
+  ```
   ````
 
 - 效果
@@ -266,26 +259,26 @@
 
 - todolist
 
+  ```
+  近期任务安排:
+  - [x] 整理Markdown手册
+  - [ ] 改善项目
+      - [x] 优化首页显示方式
+      - [x] 修复闪退问题
+      - [ ] 修复视频卡顿
+  - [ ] A3项目修复
+      - [x] 修复数值错误
+  ```
 
-    ```
-    近期任务安排:
-    - [x] 整理Markdown手册
-    - [ ] 改善项目
-        - [x] 优化首页显示方式
-        - [x] 修复闪退问题
-        - [ ] 修复视频卡顿
-    - [ ] A3项目修复
-        - [x] 修复数值错误
-    ```
+  近期任务安排:
 
-    近期任务安排:
-    - [x] 整理Markdown手册
-    - [ ] 改善项目
-        - [x] 优化首页显示方式
-        - [x] 修复闪退问题
-        - [ ] 修复视频卡顿
-    - [ ] A3项目修复
-        - [x] 修复数值错误
+  - [x] 整理 Markdown 手册
+  - [ ] 改善项目
+    - [x] 优化首页显示方式
+    - [x] 修复闪退问题
+    - [ ] 修复视频卡顿
+  - [ ] A3 项目修复
+    - [x] 修复数值错误
 
 - 支持 UML 中的部分图 过于复杂 不予记录
 

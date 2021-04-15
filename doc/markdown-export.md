@@ -1,10 +1,22 @@
 # markdown 导出工具
 
+- [返回](./README.md)
+
 ## vscode 自带预览/导出有插件
 
 ## typora 软件自带导出
 
 ## 带导航的工具
+
+## markdown 转 word 工具
+
+### 工具 markdown 转 word 插件 writage
+
+- [writage 官网](https://www.writage.com/)
+
+- 使用
+
+  官网直接下载安装,然后在 word 中打开原生 markdown 文件 ,然后另存为 word 文件即可
 
 ### i5ting_doc 导出 markdown 带目录导航
 
@@ -17,7 +29,7 @@
   cmd 执行
 
   `i5ting_toc -f sample.md -o`
-  
+
   或者
 
   `npx i5ting_toc -f sample.md -o`
