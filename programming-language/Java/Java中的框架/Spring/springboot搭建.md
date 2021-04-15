@@ -1,8 +1,10 @@
 # springboot 搭建过程
 
+- [返回](./README.md)
+
 - 官方 maven 搭建
 
-  - [网站](https://start.spring.io/)
+  [网站](https://start.spring.io/)
 
 - 基本的 pom.xml 文件
 
@@ -128,18 +130,18 @@
 
   添加 maven 得 jar 包支持
 
-  ```
-    <!-- springboot工具 修改代码后不需重启即生效 -->
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>springloaded</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-devtools</artifactId>
-        <!-- 这个需要为 true 热部署才有效 -->
-        <optional>true</optional>
-    </dependency>
+  ```xml
+  <!-- springboot工具 修改代码后不需重启即生效 -->
+  <dependency>
+  	<groupId>org.springframework</groupId>
+  	<artifactId>springloaded</artifactId>
+  </dependency>
+  <dependency>
+  	<groupId>org.springframework.boot</groupId>
+  	<artifactId>spring-boot-devtools</artifactId>
+  	<!-- 这个需要为 true 热部署才有效 -->
+  	<optional>true</optional>
+  </dependency>
   ```
 
   idea 设置
@@ -150,25 +152,24 @@
 
 - springboot 多配置文件选择
 
-  ```
-  # 定义多个配置文件
-  # 配置文件说明
-  application.properties      默认配置文件
-  application-dev.properties  开发环境配置
-  application-test.properties 测试环境配置
-  application-prod.properties 生产环境配置
-  ```
+  配置文件名称说明
+
+  application.properties -> 默认配置文件
+
+  application-dev.properties -> 开发环境配置
+
+  application-test.properties -> 测试环境配置
+
+  application-prod.properties -> 生产环境配置
 
 - 主配置文件
 
   ```properties
-
   #application.properties
-
-    添加配置
-    #后面添加要选择得配置文件
-    #spring.profiles.active=default
-    #spring.profiles.active=dev
-    #spring.profiles.active=test
-    spring.profiles.active=prod
+  # 添加配置
+  # 后面添加要选择得配置文件
+  #spring.profiles.active=default
+  #spring.profiles.active=dev
+  #spring.profiles.active=test
+  spring.profiles.active=prod
   ```
