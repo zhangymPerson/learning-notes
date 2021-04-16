@@ -4,17 +4,24 @@
 
 - [返回](../README.md)
 
+- [ssd 的配置说明](./ssh-config.md)
+
 ## 其他
 
 连接分为两种:基于口令和基于密钥的
 
 - 常用的 ssh 密钥生成
 
-  #生成密钥 ssh-keygen -t rsa -C "zhangyanmingjiayou@163.com" #查看密钥 cat ~/.ssh/id_rsa.pub
+  ```sh
+  #生成密钥
+  ssh-keygen -t rsa -C "zhangyanmingjiayou@163.com"
+  #查看密钥
+  cat ~/.ssh/id_rsa.pub
+  ```
 
-- 修改密钥文件位置后，需要在~/.ssh/config 文件下修改内容(SSH 密钥生成命令的文件不在指定位置时)
+- 修改密钥文件位置后，需要在 `~/.ssh/config` 文件下修改内容(SSH 密钥生成命令的文件不在指定位置时)
 
-  如果，不管你有什么理由，当你决定去用一个非默认的位置或文件名去存放你的 ssh key。你必须配置好你的 ssh 客户端以找到你的 ssh 私钥去连接 Code 服务器，对于 OpenSSH 客户端，这个通常是在~/.ssh/config 类似的位置配置的：
+  如果，不管你有什么理由，当你决定去用一个非默认的位置或文件名去存放你的 ssh key。你必须配置好你的 ssh 客户端以找到你的 ssh 私钥去连接 Code 服务器，对于 OpenSSH 客户端，这个通常是在 `~/.ssh/config` 类似的位置配置的：
 
   ```conf
   #
