@@ -1,5 +1,6 @@
 # Fetch API
 
+- [返回](./README.md)
 ## 简介
 
 - Fetch API 提供了一个获取资源的接口（包括跨域请求）。任何使用过 XMLHttpRequest 的人都能轻松上手，而且新的 API 提供了更强大和灵活的功能集。
@@ -75,3 +76,26 @@
   请求接口时，结合浏览器中 F12 -> network -> 选则 XHR -> 在单个请求上右键单击 copy -> copy as fetch
 
   然后创建 `script.js` 脚本,复制 fetch 请求代码,然后 `node script.js` 执行即可查看接口返回数据
+
+- script demo
+
+  **注意: fetch()调用后数据解析需要调用两次 `then()` 函数**
+
+  ```js
+  const fetch = require("node-fetch");
+  // 解析json
+  fetch("http://example.com/movies.json")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (myJson) {
+      console.log(myJson);
+    });
+  // 异常处理
+  fetch("http://example.com/movies.json").catch((error) => console.error(error));
+  //文本处理
+  fetch("http://http://example.com/movies.json")
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.log("error", error));
+  ```
