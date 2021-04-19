@@ -2,6 +2,8 @@
 
 ## 目录
 
+- [返回](../README.md)
+
 ## 其他
 
 - rust 程序语言设计
@@ -10,7 +12,7 @@
 
 - 开源书籍 Rust 程序设计语言
 
-  [github地址](https://github.com/KaiserY/trpl-zh-cn)
+  [github 地址](https://github.com/KaiserY/trpl-zh-cn)
 
   [在线浏览地址](https://kaisery.github.io/trpl-zh-cn/)
 

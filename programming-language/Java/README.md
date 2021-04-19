@@ -1,19 +1,29 @@
 # 此笔记主要记录 Java 开发中遇到的问题
 
-- [返回](../README.md)
-
 ## 目录
 
+- [返回](../README.md)
+
 - [Java-JVM.md](./Java-JVM.md)
+
 - [java-script.md](./java-script.md)
+
 - [javadoc.md](./javadoc.md)
+
 - [Java 中注释规范.md](./Java中注释规范.md)
+
 - [Java 中的注解.md](./Java中的注解.md)
+
 - [Java 中的线程.md](./Java中的线程.md)
+
 - [Java 中编写 jar 脚本.md](./Java中编写jar脚本.md)
+
 - [Java 多线程编程.md](./Java多线程编程.md)
+
 - [Java 经典面试题,.md](./Java经典面试题,.md)
+
 - [JDK.md](./JDK.md)
+
 - [volatile.md](./volatile.md)
 
 ## 其他
