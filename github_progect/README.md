@@ -2,14 +2,19 @@
 
 ## 目录
 
+- [返回](../README.md)
+
 - [github-project-readme.md](./github-project-readme.md)
+
 - [Programming-URL.md](./Programming-URL.md)
+
 - [优秀博客积累.md](./优秀博客积累.md)
+
 - [开发常用信息.md](./开发常用信息.md)
 
-## 其他
+- [github 参与须知.md](./github参与须知.md)
 
-- [返回总目录](../README.md#项目目录)
+## 其他
 
 - [github 項目查看历史记录](https://github.com/pomber/git-history) https://github.com/pomber/git-history
 
