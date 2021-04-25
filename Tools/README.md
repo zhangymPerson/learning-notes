@@ -139,3 +139,9 @@
 * 微软浏览器
 
   [微软浏览器新内核版本](https://www.microsoftedgeinsider.com/zh-cn/)
+
+- git 制作工具
+
+  [ScreenToGif](https://www.screentogif.com/)
+
+  [github](https://github.com/NickeManarin/ScreenToGif)
