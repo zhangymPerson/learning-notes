@@ -9,10 +9,20 @@ GET http://127.0.0.1:8080/server/state
 GET http://127.0.0.1:8080/med/server/token
 ###
 
+# 注释使用 # 号
+# 三个 # 号 隔离一个请求  ###
+# 表达式以请求方式开头 如 GET POST 等 有自动联想功能
+# 紧挨着是head部分
+# 重点:head 部分不能加 " 直接 key: value
+# body 和 head 部分之间必须隔开一行 不能放一起
+# 配置不通的环境变量 需要 在 项目的 .vscode/.settings.json 文件中进行相关的配置
+
 ###
 # post - json 
 POST http://127.0.0.1:8080/phone/checkout
 Content-Type: application/json
+
+#中间必须空一行
 {
     "verifycode": "8848",
     "phone_num": "13788488848"
