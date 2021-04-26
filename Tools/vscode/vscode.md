@@ -52,9 +52,31 @@
 
   如 [draw-png.drawio](./draw-png.drawio)
 
-- [REST Client](https://github.com/Huachao/vscode-restclient)
+- [REST Client](https://github.com/Huachao/vscode-restclient) 类 postman 的接口测试工具
 
   http 测试工具插件测试 api.的插件通过文件来发现和测试 [测试文件](./restclient.http)
+
+  配置多种测试环境的相关配置
+
+  在.http 文件目录下 创建项目的 .vscode/.settings.json 配置文件，然后 配置举例如下
+
+  ```json
+  {
+    "rest-client.environmentVariables": {
+      "local": {
+        "version": "v2",
+        "host": "127.0.0.1:8080",
+        "token": "token"
+      },
+      "prod": {
+        "host": "http://host:port",
+        "token": "token"
+      }
+    }
+  }
+  ```
+
+  通过 F1 输入 Rest Client switch enviroment 选择要生效的环境配置
 
 - vscode 自动代码提示补全插件工具
 
