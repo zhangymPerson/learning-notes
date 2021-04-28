@@ -41,6 +41,7 @@
 ## vscode 配置代码块
 
 - Snippets (代码)设置 代码联想配置 各个语言的都可以配置
+
 - [snippets 官方说明文档](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
 
   按 F1 -> 查询 snippets ->

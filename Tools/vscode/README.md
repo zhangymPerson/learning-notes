@@ -6,4 +6,6 @@
 
 - [vscode 配置说明](./vscode-config.md)
 
-- [vscode 使用和插件](./vscode.md)
+- [vscode 使用](./vscode.md)
+
+- [vscode 插件](./vscode-plugin.md)
