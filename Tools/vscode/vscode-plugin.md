@@ -56,6 +56,12 @@
 
 - [REST Client](https://github.com/Huachao/vscode-restclient) 类 postman 的接口测试工具
 
+  postman 和 浏览器的 F12 可以直接导出能运行的 http 文件格式内容
+
+  postman 选择 Code snippet 为 HTTP
+
+  浏览器 单击 network 处的请求,选择 Copy -> copy request headers (复制请求头)
+
   http 测试工具插件测试 api.的插件通过文件来发现和测试 [测试文件](./restclient.http)
 
   配置多种测试环境的相关配置
