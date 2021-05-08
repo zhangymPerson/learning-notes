@@ -1,5 +1,9 @@
 ## idea-plug 笔记 (idea 插件)
 
+## 目录
+
+- [返回](./README.md)
+
 ### maven 插件-Maven-Helper
 
 - 安装使用

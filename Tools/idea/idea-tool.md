@@ -1,8 +1,12 @@
 ## idea 添加 external tool 命令
 
+## 目录
+
+- [返回](./README.md)
+
 - 菜单栏->「File」->「Settings」->「Tools」->「External Tools」->点击加号
 
-## idea 的字符串模板功能 json输入格式化 json格式化
+## idea 的字符串模板功能 json 输入格式化 json 格式化
 
 - 快捷键操作过程 创建 json 字符模板
 
@@ -36,5 +40,4 @@
 
   setting -> intentions -> 下各语言相关配置
 
-  setting -> 搜索 `inject` 选中相关的配置 不选则在字符串中按快捷键 alt + enter
-  无任何提示
+  setting -> 搜索 `inject` 选中相关的配置 不选则在字符串中按快捷键 alt + enter 无任何提示

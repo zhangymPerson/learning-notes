@@ -1,5 +1,9 @@
 ## idea 的快捷键
 
+## 目录
+
+- [返回](./README.md)
+
 **快捷键可能有冲突，如果无效，先设置 idea 默认快捷键，然后修改其他软件的冲突快捷键**
 
 - 默认快捷键可能与别的软件有冲突
@@ -32,16 +36,12 @@
 
 - 查找方法或变量
 
-  Ctrl+Shift+Alt+N 查找类中的方法或变量
-  双击 SHIFT 在项目的所有目录查找文件
+  Ctrl+Shift+Alt+N 查找类中的方法或变量双击 SHIFT 在项目的所有目录查找文件
 
-- 查找文件
-  Ctrl+Shift+N
-- 定位行
-  CTRL+G
+- 查找文件 Ctrl+Shift+N
+- 定位行 CTRL+G
 
-- 在当前窗口查找文本
-  CTRL+F
+- 在当前窗口查找文本 CTRL+F
 
 - 上下移动代码
 
@@ -83,7 +83,7 @@
 
     Alt+Shift+F7，强制步入
 
-  - F 8
+  - F8
 
     F8，步过
 
@@ -119,7 +119,6 @@
 
   ctrl + tab
 
-- idea 快速定位错误 F2 
+- idea 快速定位错误 F2
 
-  F2 会跳到项目中的error和警告位置，需要配置以后才能只跳转错误位置 F2 跳转 跳过 警告信息，只跳转 错误位置
-  配置方式 打开setting editor -> code editing -> The 'Next Error' action .. 选择 The problem with the highest priority
+  F2 会跳到项目中的 error 和警告位置，需要配置以后才能只跳转错误位置 F2 跳转 跳过 警告信息，只跳转 错误位置配置方式 打开 setting editor -> code editing -> The 'Next Error' action .. 选择 The problem with the highest priority

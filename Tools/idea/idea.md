@@ -1,13 +1,16 @@
 # idea 使用
 
+## 目录
+
+- [返回](./README.md)
+
 - idea 添加插件
 
   file - settings - Plugins
 
 - [修改 Intellij IDEA 模板注解@author 变量 user 内容](https://jingyan.baidu.com/article/0202781138ab5e1bcc9ce531.html)
 
-  打开 setting 查找 File | Settings | Editor | File and Code Templates 位置下， 修改响应的参数即可
-  模板如下
+  打开 setting 查找 File | Settings | Editor | File and Code Templates 位置下， 修改响应的参数即可模板如下
 
   ```sh
   /**
@@ -93,8 +96,7 @@
 
   File-->Settings-->Appearance-->Window Options-->Show Memory indicator
 
-  idea2020.1 版本设置方式
-  菜单栏 view -> Appearance -> status bar widgets -> memory indicator
+  idea2020.1 版本设置方式菜单栏 view -> Appearance -> status bar widgets -> memory indicator
 
 - Ctrl+鼠标滚轴修改字体大小
 
@@ -173,8 +175,7 @@
 
   在 idea 上直接修改的方式：
 
-  help->Edite Custom Vm Options
-  打开配置文件修改相应的参数
+  help->Edite Custom Vm Options 打开配置文件修改相应的参数
 
   ```
   -Xms1024m
@@ -186,14 +187,13 @@
 
 - idea 查看静态 html 页面的端口
 
+  默认是：63342
 
-    默认是：63342
+  修改配置方式：
 
-    修改配置方式：
+  File ->setting -> Debugger -> port
 
-    File ->setting ->  Debugger -> port
-
-    默认访问路径
+  默认访问路径
 
         ```py
         #访问路径为项目名 + 静态文件所在的项目下全路径名
@@ -269,11 +269,16 @@
 
   File | Settings | Editor | Code Style | C/C++ | Code Generation | General -> **Line comment at first clolumn** / **Block comment at first column** 这两项不要选中
 
-  同时需要在注释//和代码加添加一个空格
-  选中 **add a space at comment start**
+  同时需要在注释//和代码加添加一个空格选中 **add a space at comment start**
 
-- idea查看类继承关系 (社区版本无Diagrams 即 idea-uml 类图)
+- idea 查看类继承关系 (社区版本无 Diagrams 即 idea-uml 类图)
 
-  使用 Type Hierarchy 
+  使用 Type Hierarchy
 
   使用方法，在类上右键 选择 `browse type hirearchy` 这个需要在项目视图中，在类文件中直接右键无此选项
+
+- idea 设置自定义的后缀表达式
+
+  打开 `settings` -> `editor` -> `general` -> `postfix completion`
+
+  例如：添加 .log 操作 key = log 表达式: `log.info("{}",$EXPR$)`
