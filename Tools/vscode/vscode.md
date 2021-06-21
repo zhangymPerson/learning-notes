@@ -174,3 +174,7 @@
 - vscode 格式化 markdown 使用 Prettier 插件时，换行的问题
 
   配置 settings : prettier.printWidth 配置一个较大的数字。格式化完成后，恢复默认
+
+- mac 下配置 vscode 快速打开
+
+  F1 -> 输入 code ->  选择Shell Command : Install 'code' command in PATH
