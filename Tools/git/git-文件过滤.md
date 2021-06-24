@@ -2,18 +2,19 @@
 
 - [git 过滤配置文件-github 官方项目](https://github.com/github/gitignore)
 
-  https://github.com/github/gitignore
+  `https://github.com/github/gitignore`
 
 - [github 的过滤文件查询网站，输入关键字直接查询](https://www.gitignore.io/)
 
-  git过滤文件的
-  https://www.gitignore.io/
+  git 过滤文件的
+  
+  `https://www.gitignore.io/`
 
 - 配置文件 .gitignore
 
   配置方式说明
 
-  ```
+  ```sh
   # 以'#'开始的行，被视为注释.
 
   # 忽略掉所有文件名是 foo.txt的文件.
@@ -39,7 +40,7 @@
   以叹号“!”表示不忽略(跟踪)匹配到的文件或目录；
   ```
 
-* demo 1
+- demo 1
 
   ```gitignore
 
@@ -76,7 +77,7 @@
 
 - demo 2
 
-  ```
+  ```sh
   # Created by .ignore support plugin (hsz.mobi)
   ### Maven template
   target/
@@ -114,21 +115,21 @@
   fabric.properties
   ```
 
-* 删除 git 中的需要过滤的文件
+- 删除 git 中的需要过滤的文件
 
+  git 删除
 
-    git删除
-    ```
-    $ git rm -h
+  ```sh
+  $ git rm -h
 
-        用法：git rm [<选项>] [--] <文件>...
+      用法：git rm [<选项>] [--] <文件>...
 
-    -n, --dry-run         演习
-    -q, --quiet           不列出删除的文件
-    --cached              只从索引区删除
-    -f, --force           忽略文件更新状态检查
-    -r                    允许递归删除
-    --ignore-unmatch      即使没有匹配，也以零状态退出
-    ```
+  -n, --dry-run         演习
+  -q, --quiet           不列出删除的文件
+  --cached              只从索引区删除
+  -f, --force           忽略文件更新状态检查
+  -r                    允许递归删除
+  --ignore-unmatch      即使没有匹配，也以零状态退出
+  ```
 
 - 删除 .idea

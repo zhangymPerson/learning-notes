@@ -10,11 +10,25 @@
 
   **git config --global user.name "Your Name"**
 
+- 配置单个项目的提交用户名和邮箱
+
+  `$ git config user.name "username"`
+
+  `$ git config user.email "username@xx.com"`
+
+  `$ git config --list`
+
+- 查看当前项目的提交用户名和邮箱
+
+  `git config --list`
+
+  查看当前配置, 在当前项目下面查看的配置是全局配置+当前仓库的配置, 使用的时候会**优先使用当前仓库的配置**
+
 - 如果使用 ssh 连接 还需配置 ssh 密钥
 
 - 任何操作都需要以 git 命令为开头
 
-## 本地操作：
+## 本地操作
 
 - git 常用命令
   **git init 初始化一个本地仓库 新建为 master 主分支**
@@ -71,7 +85,7 @@
   git branch --set-upstream <本地支分支名> <远程仓库名，默认 origin>/<远程支分支名> 将本地分支与远程指定的分支关联起来
 
   //以下为先有本地库，再建立远程库操作所用的命令
-  git remote add origin <URL 地址> 本地库与远征库关联
+  git remote add origin `<URL 地址>` 本地库与远征库关联
   git push -u origin master 关联后，使用命令第一次推送 master 分支的所有内容， -u 参数为推送当前分支所有内容
 
   - 多个远程仓库强制拉去合并 gitee 为远程仓库别名 master 为指定分支 允许强制拉去不相干的仓库到本地仓库
@@ -84,4 +98,4 @@
 
   github 上如果提交的分支中有内容没有在 master 分支下，则会在主页显示没有合并到 master 的分支，并推荐你合并到主分支下
 
-  ![](../../Picture/gitfenzhi.png)
+  ![示例图](../../Picture/gitfenzhi.png)
