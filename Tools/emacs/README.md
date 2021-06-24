@@ -114,7 +114,7 @@ Windows 下 Emacs 就按如下方式来查找配置文件：
 
   使用的下面的配置将 Company-mode 在全局模式下激活
 
-  ```
+  ```lisp
   ;; 开启全局 Company 补全
   (global-company-mode 1)
   ```
@@ -141,3 +141,12 @@ Windows 下 Emacs 就按如下方式来查找配置文件：
   | C-x }     | enlarge-window-horizontally         | 将当前窗口变宽                 |
   | C-x -     | shrink-window-if-larger-than-buffer | 如果窗口比缓冲大就缩小         |
   | C-x +     | balance-windows                     | 所有窗口一样高                 |
+
+- shell
+  
+  执行一个shell命令
+M-!
+在当前区域中执行shell命令
+M-|
+开启一个shell窗口
+M-x shell

@@ -32,4 +32,7 @@
   # 为了保持Mac/Win/Linux一致性
   # 使文件名大小写发生修改时，git可正常提交
   git config --global core.ignorecase false
+
+  #查看配置 查看用户名 查看git用户信息
+  git config --list
   ```

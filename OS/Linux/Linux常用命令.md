@@ -310,7 +310,7 @@
 | apt-get upgrade           | 更新已安装软件包       |
 | apt-get clean             | 清理缓存               |
 
-#### sshpass 的使用
+### sshpass 的使用
 
 - sshpass 主要是 使用 ssh 和 scp 时能直接使用密码进行执行命令
 
@@ -319,7 +319,7 @@
   sshpass -p password scp /home/test/test.txt user@127.0.0.1:/home/test/
   ```
 
-#### 其他常用命令
+### 其他常用命令
 
 - 开发常用命令
 

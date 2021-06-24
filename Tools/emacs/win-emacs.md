@@ -1,4 +1,4 @@
-## windows 下使用 Emacs
+### windows 下使用 Emacs
 
 #### 卡顿，中文字符
 
@@ -28,7 +28,8 @@
 
 - .emacs 是在主目录$HOME下；init.el是在主目录$HOME/.emacs.d/init.el。
 
-    即$HOME/.emacs等价于$HOME/.emacs.d/init.el;
+  即$HOME/.emacs等价于$HOME/.emacs.d/init.el;
+
 - init.el 相比.emacs，在目录安排上更舒服一些。
 - .emacs 比 init.el 优先级更高。
 
@@ -58,6 +59,7 @@
   ```
 
 - 窗口操作
+
   ```sh
   # 水平分割窗格
   Ctrl-x 2
@@ -74,7 +76,9 @@
   # 新窗口中打开文件
   Ctrl-x 5 f
   ```
+
 - 光标移动操作
+
   ```sh
   # 前进一个字符
   Ctrl-f
@@ -101,7 +105,9 @@
   # 文件尾
   Alt->
   ```
+
 - 编辑操作
+
   ```sh
   # 设置开始标记
   Ctrl-Space
@@ -120,12 +126,14 @@
   # 删除一行
   Ctrl-k
   ```
+
 - 搜索/替换操作
+
   ```sh
   # 向下搜索
-  Ctrl-s 
+  Ctrl-s
   # 向上搜索
-  Ctrl-r 
+  Ctrl-r
   # 替换
   #-space/y     替换当前匹配
   #-Del/n不要替换当前匹配
@@ -134,13 +142,16 @@
   #-!      替换所有匹配
   #-   ^     回到上一个匹配位置
   #-   return/q    退出替换
-  Alt-%        
+  Alt-%
   ```
+
 - 撤销操作（undo tree 模式的使用）
-  ```sh
-  Ctrl-x u         撤销操作进入undo-tree-visualizer-mode
-  p n 上下移动，
-  b f 在分支之前，左右切换
-  t   显示时间戳
-  q   退出
-  ```
+
+   ```sh
+   # 撤销操作进入undo-tree-visualizer-mode
+   Ctrl-x u         
+   p n 上下移动，
+   b f 在分支之前，左右切换
+   t   显示时间戳
+   q   退出
+   ```
