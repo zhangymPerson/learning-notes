@@ -1,4 +1,4 @@
-@[TOC](这里写自定义目录标题)
+# markdown 语法 demo
 
 - [返回](./README.md)
 
@@ -6,46 +6,48 @@
 
 你好！ 这是你第一次使用 **Markdown 编辑器** 所展示的欢迎页。如果你想学习如何使用 Markdown 编辑器, 可以仔细阅读这篇文章，了解一下 Markdown 的基本语法知识。
 
+## markdown 图片
+
+- 直接使用图片
+
+  ```markdown
+  ![注释](图片地址)
+  ```
+
+  eg:
+  ![demo](./../Picture/wechat-info.png)
+
+- 使用 img 标签
+
+  ```markdwon
+  <img src="./xxx.png" width = "300" height = "200" alt="图片名称" align=center />
+  ```
+
+  eg:
+
+  <img src="./../Picture/wechat-info.png" width = "300" height = "500" align = "left">
+
+- 居中
+
+  附：如果需要居中的话只要在外面包围 div 标签即可
+
+  ```markdwon
+  <div  align="center">
+  </div>
+  ```
+
 ## 新的改变
 
 我们对 Markdown 编辑器进行了一些功能拓展与语法支持，除了标准的 Markdown 编辑器功能，我们增加了如下几点新功能，帮助你用它写博客：
 
-1.  **全新的界面设计** ，将会带来全新的写作体验；
-2.  在创作中心设置你喜爱的代码高亮样式，Markdown **将代码片显示选择的高亮样式** 进行展示；
-3.  增加了 **图片拖拽** 功能，你可以将本地的图片直接拖拽到编辑区域直接展示；
-4.  全新的 **KaTeX 数学公式** 语法；
-5.  增加了支持**甘特图的 mermaid 语法[^1]** 功能；
-6.  增加了 **多屏幕编辑** Markdown 文章功能；
-7.  增加了 **焦点写作模式、预览模式、简洁写作模式、左右区域同步滚轮设置** 等功能，功能按钮位于编辑区域与预览区域中间；
-8.  增加了 **检查列表** 功能。 [^1]: [mermaid 语法说明](https://mermaidjs.github.io/)
-
-## 功能快捷键
-
-撤销：<kbd>Ctrl/Command</kbd> + <kbd>Z</kbd>
-
-重做：<kbd>Ctrl/Command</kbd> + <kbd>Y</kbd>
-
-加粗：<kbd>Ctrl/Command</kbd> + <kbd>B</kbd>
-
-斜体：<kbd>Ctrl/Command</kbd> + <kbd>I</kbd>
-
-标题：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd>
-
-无序列表：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>U</kbd>
-
-有序列表：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd>
-
-检查列表：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>C</kbd>
-
-插入代码：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd>
-
-插入链接：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd>
-
-插入图片：<kbd>Ctrl/Command</kbd> + <kbd>Shift</kbd> + <kbd>G</kbd>
-
-查找：<kbd>Ctrl/Command</kbd> + <kbd>F</kbd>
-
-替换：<kbd>Ctrl/Command</kbd> + <kbd>G</kbd>
+1. **全新的界面设计** ，将会带来全新的写作体验；
+2. 在创作中心设置你喜爱的代码高亮样式，Markdown **将代码片显示选择的高亮样式** 进行展示；
+3. 增加了 **图片拖拽** 功能，你可以将本地的图片直接拖拽到编辑区域直接展示；
+4. 全新的 **KaTeX 数学公式** 语法；
+5. 增加了支持**甘特图的 mermaid 语法[^1]** 功能；
+6. 增加了 **多屏幕编辑** Markdown 文章功能；
+7. 增加了 **焦点写作模式、预览模式、简洁写作模式、左右区域同步滚轮设置** 等功能，功能按钮位于编辑区域与预览区域中间；
+8. 增加了 **检查列表** 功能。 [^1]: [mermaid 语法说明](https://mermaidjs.github.io/)
 
 ## 合理的创建标题，有助于目录的生成
 
@@ -105,16 +107,35 @@ var foo = "bar";
 
 ## 创建一个表格
 
-一个简单的表格是这么创建的：项目 | Value -------- | ----- 电脑 | $1600 手机 | $12 导管 | $1
+一个简单的表格是这么创建的：
+
+| 项目 | Value |
+| ---- | ----- |
+| 电脑 | $1600 |
+| 手机 | $12   |
+| 导管 | $1    |
 
 ### 设定内容居中、居左、居右
 
-使用`:---------:`居中使用`:----------`居左使用`----------:`居右 | 第一列 | 第二列 | 第三列 | |:-----------:| -------------:|:-------------| | 第一列文本居中 | 第二列文本居右 | 第三列文本居左 |
+使用`:---------:`居中
+
+使用`:----------`居左
+
+使用`----------:`居右
+
+|     第一列     |         第二列 | 第三列         |
+| :------------: | -------------: | :------------- |
+| 第一列文本居中 | 第二列文本居右 | 第三列文本居左 |
 
 ### SmartyPants
 
-SmartyPants 将 ASCII 标点字符转换为“智能”印刷标点 HTML 实体。例如： | TYPE |ASCII |HTML  
-|----------------|-------------------------------|-----------------------------| |Single backticks|`'Isn't this fun?'` |'Isn't this fun?' | |Quotes |`"Isn't this fun?"` |"Isn't this fun?" | |Dashes |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
+SmartyPants 将 ASCII 标点字符转换为“智能”印刷标点 HTML 实体。例如：
+
+| TYPE             | ASCII                           | HTML                          |
+| ---------------- | ------------------------------- | ----------------------------- |
+| Single backticks | `'Isn't this fun?'`             | 'Isn't this fun?'             |
+| Quotes           | `"Isn't this fun?"`             | "Isn't this fun?"             |
+| Dashes           | `-- is en-dash, --- is em-dash` | -- is en-dash, --- is em-dash |
 
 ## 创建一个自定义列表
 
@@ -138,8 +159,10 @@ Markdown 将文本转换为 HTML。
 
 您可以使用渲染 LaTeX 数学表达式 [KaTeX](https://khan.github.io/KaTeX/):
 
+$$
 Gamma 公式展示 $\Gamma(n) = (n-1)!\quad\forall
 n\in\mathbb N$ 是通过欧拉积分
+$$
 
 $$
 \Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
