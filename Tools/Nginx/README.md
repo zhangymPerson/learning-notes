@@ -14,4 +14,6 @@
 
 - [官网](http://tengine.taobao.org/)
 
+- [nginx 入门到精通](http://tengine.taobao.org/book/index.html)
+
   nginx 中文文档 和 nginx 设计原理都在这个网站中涉猎

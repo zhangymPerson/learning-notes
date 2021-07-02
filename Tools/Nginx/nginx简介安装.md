@@ -58,3 +58,13 @@
   /usr/sbin/nginx
 
   ```
+
+## nginx 的模块
+
+nginx 模块一般被分成三大类：handler、filter 和 upstream。
+
+### handler
+
+### filter
+
+### upstream
