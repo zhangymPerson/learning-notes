@@ -79,3 +79,21 @@
   测试安装是否成功
 
   `vim file` 后 执行 `:NERDTreeToggle` 如果打开了目录说明安装成功
+
+- vim 替换 github
+
+  在 plug.vim 中搜索 github, 修改两条语句，即可成功下载 GitHub 资源。
+
+  ```vim
+  " 将该行
+  let fmt = get(g:, 'plug_url_format', 'https://git::@github.com/%s.git')
+
+  "  改为
+  let fmt = get(g:, 'plug_url_format', 'https://git::@hub.fastgit.org/%s.git')
+
+  " 将改行
+  \ '^https://git::@github\.com', 'https://github.com', '')
+
+  " 改为
+  \ '^https://git::@hub.fastgit\.org', 'https://hub.fastgit.org', '')
+  ```
