@@ -25,7 +25,7 @@
   */
   ```
 
-  ```
+  ```java
   /**
   * date ${DATE} ${TIME} <br/>
   * description class <br/>
@@ -152,7 +152,7 @@
 
   首先，我们需要找到 idea.vmoptions 文件的位置，这个不同的平台，估计名称可能有些差别
 
-  ```
+  ```conf
   -Xms128m
   -Xmx384m
   -XX:ReservedCodeCacheSize=240m
@@ -177,7 +177,7 @@
 
   help->Edite Custom Vm Options 打开配置文件修改相应的参数
 
-  ```
+  ```conf
   -Xms1024m
   -Xmx2048m
   -XX:ReservedCodeCacheSize=1024m
@@ -195,10 +195,10 @@
 
   默认访问路径
 
-        ```py
-        #访问路径为项目名 + 静态文件所在的项目下全路径名
-        http:localhost:63342/${project_name}/***/**.html
-        ```
+  ```py
+  #访问路径为项目名 + 静态文件所在的项目下全路径名
+  http:localhost:63342/${project_name}/***/**.html
+  ```
 
 - Intellij IDEA 中默认所有 scope 为 provided 的依赖不会被加入到 classpath
 

@@ -1,4 +1,4 @@
-## idea-plug 笔记 (idea 插件)
+# idea-plug 笔记 (idea 插件)
 
 ## 目录
 
@@ -20,7 +20,7 @@
   - All Dependencies as List（列表形式查看所有依赖）
   - All Dependencies as Tree（树形式查看所有依赖）
 
-  **冲突 jar 包的解决**
+  冲突 jar 包的解决
 
   切换到 maven 依赖视图选择冲突选项，如果有冲突，在左下面区域会有红色显示。
 
@@ -114,7 +114,7 @@
 
   快速查看项目中后台路由 如 "/boot/hello/word"
 
-  https://plugins.jetbrains.com/plugin/9567-request-mapper
+  <https://plugins.jetbrains.com/plugin/9567-request-mapper>
 
 - 插件安装后使用快捷键为
 

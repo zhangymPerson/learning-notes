@@ -1,4 +1,4 @@
-## idea 添加 external tool 命令
+# idea 添加 external tool 命令
 
 ## 目录
 
@@ -34,7 +34,7 @@
 
   选择 `un-inject language....` 那个选项就可以取消字符模板了
 
-* 涉及到的相关配置
+- 涉及到的相关配置
 
   setting -> keymap -> alt enter
 
