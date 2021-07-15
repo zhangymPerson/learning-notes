@@ -143,10 +143,24 @@ Windows 下 Emacs 就按如下方式来查找配置文件：
   | C-x +     | balance-windows                     | 所有窗口一样高                 |
 
 - shell
-  
-  执行一个shell命令
-M-!
-在当前区域中执行shell命令
-M-|
-开启一个shell窗口
-M-x shell
+
+  执行一个 shell 命令
+  M-!
+
+  **mac 中的 Meta 键可能是 Esc，需要在设置中 用 option 键替换 esc 键**
+
+  在当前区域中执行 shell 命令
+
+  M-|
+
+  开启一个 shell 窗口
+
+  M-x shell
+
+- shell 多开
+
+  每次打开 shell 的时候，shell 所在 buffer 的名字是 _shell_ ， 因此，每次你键入上面的命 令都会切换到这个 buffer；
+
+  你可以使用 M-x rename-buffer 来为这个 buffer 起个新名字。比如 shell-debug；
+
+  这样再使用 M-x shell 的时候就会新开一个 shell。以这种方式，你可以开任意 多个 shell。
