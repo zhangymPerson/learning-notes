@@ -40,6 +40,12 @@
 
 ## vscode 配置代码块
 
+### vscode 配置不同语言的关键字联想
+
+- 在 VScode 主界面 -> 点击左下角设置图标 -> 点击用户代码片段 -> 选择语言
+
+- file -> preference -> user snippet -> 各个语言的 snippet
+
 - Snippets (代码)设置 代码联想配置 各个语言的都可以配置
 
 - [snippets 官方说明文档](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
@@ -97,3 +103,7 @@
       }
     ],
   ```
+
+## vscode 配置标签页自动换行全部展示 一行展示不下自动换行展示
+
+- setting 搜索 wrap tabs 选中标签即可

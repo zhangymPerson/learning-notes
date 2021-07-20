@@ -52,10 +52,12 @@
   $this->dump($varname);
   ```
 
-
 ### var_export($obj,true)
 
 - 打印对象参数
+
+  当要查看一个对象中的变量时，使用。
+
 ### file_put_contents()
 
 - php 打印错误到指定文件的办法
