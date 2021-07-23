@@ -68,10 +68,22 @@
 
   eg:
 
+  静态资源配置参考：
+
+  配置在这个 <http://host:port/root/file.name> 请求下请求静态文件
+
+  假设 file.name 在 /data/alias/file.name 这个位置
+
+  则配置如下
+
   ```conf
-  {
+  server {
       listen 80;
       server_name location;
+      # 此处配置需要注意
+      # location 后面跟匹配的路由 alias后面跟资源所在目录
+      # 如果 配置的是 /root/ 则 alias 配置为 /data/alias/
+      # 如果 配置的是 /root  则 alias 配置为 /data/alias
       location /root {
           alias /data/alias;
       }
