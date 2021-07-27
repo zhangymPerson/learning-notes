@@ -1,14 +1,14 @@
-# python创建项目的方式
+# python 创建项目的方式
 
-- python的构建工具setup.py
+- python 的构建工具 setup.py
 
-    需要在 setup.py 文件中写明依赖的库和版本，
-    
-    然后到目标机器上使用python setup.py install安装。
+  需要在 setup.py 文件中写明依赖的库和版本，
 
-- setup.py中的参数
+  然后到目标机器上使用 python setup.py install 安装。
 
-    `setup` 函数常用的参数如下：
+- setup.py 中的参数
+
+  `setup` 函数常用的参数如下：
 
 | 参数                 | 说明                                                     |
 | :------------------- | :------------------------------------------------------- |

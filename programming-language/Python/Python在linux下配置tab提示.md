@@ -37,16 +37,17 @@
   在 vim ~/.bashrc 追加配置 #自定义的 tab.py 存放的位置
   export PYTHONSTARTUP=/usr/lib/python**/site**/
 
-* 生效
+- 生效
 
-  source ~/.bashrc
+  `source ~/.bashrc`
 
 - 重启 python shell
-  python
+
+  `python`
 
   tab 即可生效
 
-* 简单的方法
+- 简单的方法
 
   import sys
 
