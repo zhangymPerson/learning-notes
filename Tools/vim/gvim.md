@@ -1,4 +1,4 @@
-## windows 下安装 gvim
+# windows 下安装 gvim
 
 ## 下载安装
 
@@ -16,7 +16,7 @@
 
   配置文件所在位置
 
-  ```
+  ```sh
   系统 vimrc 文件: "$VIM\vimrc"
   用户 vimrc 文件: "$HOME\_vimrc"
   第二用户 vimrc 文件: "$HOME\vimfiles\vimrc"

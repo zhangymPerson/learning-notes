@@ -4,39 +4,43 @@
 
 ## 快捷键
 
-- 常用的
+- 常用的 vscode 快捷键
 
   ```sh
-  #vscode折叠代码快捷键
-  ctrl+k,ctrl+0 (数字0)
+  # vscode折叠代码快捷键
+  ctrl + k,ctrl + 0 (数字0)
 
-  #展开所有代码的快捷键
-  ctrl+k,ctrl+j
+  # 展开所有代码的快捷键
+  ctrl + k ,ctrl + j
 
-  #隐藏资源管理器(即文件目录列表)
+  # 隐藏资源管理器(即文件目录列表)
   ctrl + b
 
-  #快速打开终端和调试窗口
+  # 快速打开终端和调试窗口
   ctrl + ` (Esc键下面那个键)
+  ```
 
-  #选中多行
-  #按住Alt键点击左键 多选  或者 Alt+Shift键 鼠标左键上下移动多选
+  ```sh
+  # 选中多行
+  # 按住Alt键点击左键 多选  或者 Alt+Shift键 鼠标左键上下移动多选
 
-  #vscode 1.43.0版本中可以通过菜单栏 点击 - 选择 - 列选择模式 即可开启列选择模式
+  # vscode 1.43.0版本中可以通过菜单栏 点击 - 选择 - 列选择模式 即可开启列选择模式
 
-  #快速查询 替换
+  # 快速查询 替换
   ctrl + f / ctrl + h  (可以进行正则查询替换)
 
-  #查看搜索打开目录下的所有的文件
-  ctrl+p
+  # 查看搜索打开目录下的所有的文件
+  ctrl + p
 
-  #打开控制台
-  ctrl+shift+p或者 F1
+  # 查看某个文件中的变量和函数
+  ctrl + p 然后输入 @varname 或者 @methodname
 
-  #打开文件所在文件夹 资源管理器
-  #右键 - reveal in explorer
+  # 打开控制台
+  ctrl + shift + p 或者 F1
+
+  # 打开文件所在文件夹 资源管理器
+  # 右键 - reveal in explorer
   shift + alt + R
-
   ```
 
 ## 其他配置
@@ -104,7 +108,7 @@
 
   微软开源字体
 
-  ```
+  ```conf
   Cascadia Code, 'Courier New', monospace
   ```
 
@@ -177,4 +181,4 @@
 
 - mac 下配置 vscode 快速打开
 
-  F1 -> 输入 code ->  选择Shell Command : Install 'code' command in PATH
+  F1 -> 输入 code -> 选择 Shell Command : Install 'code' command in PATH

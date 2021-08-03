@@ -111,30 +111,30 @@ language messages zh_CN.utf-8
 ```
 
 ```vim
-"colorscheme evening	"配色方案
+"colorscheme evening "配色方案
 colorscheme desert
-set helplang=cn		"设置中文帮助
-set history=500		"保留历史记录
-set guifont=Monaco:h10	"设置字体为Monaco，大小10
-set tabstop=4		"设置tab的跳数
+set helplang=cn  "设置中文帮助
+set history=500 "保留历史记录
+set guifont=Monaco:h10 "设置字体为Monaco，大小10
+set tabstop=4 "设置tab的跳数
 set expandtab
-set backspace=2 	"设置退格键可用
-"set nu! 		"设置显示行号
-set wrap 		"设置自动换行
-"set nowrap 		"设置不自动换行
-set linebreak 		"整词换行，与自动换行搭配使用
-"set list 		"显示制表符
-set autochdir 		"自动设置当前目录为正在编辑的目录
-set hidden 		"自动隐藏没有保存的缓冲区，切换buffer时不给出保存当前buffer的提示
-set scrolloff=5 	"在光标接近底端或顶端时，自动下滚或上滚
-"Toggle Menu and Toolbar 	"隐藏菜单栏和工具栏
+set backspace=2 "设置退格键可用
+"set nu! "设置显示行号
+set wrap "设置自动换行
+"set nowrap "设置不自动换行
+set linebreak "整词换行，与自动换行搭配使用
+"set list "显示制表符
+set autochdir "自动设置当前目录为正在编辑的目录
+set hidden "自动隐藏没有保存的缓冲区，切换buffer时不给出保存当前buffer的提示
+set scrolloff=5 "在光标接近底端或顶端时，自动下滚或上滚
+"Toggle Menu and Toolbar "隐藏菜单栏和工具栏
 "set guioptions-=m
 "set guioptions-=T
-set showtabline=2 	"设置显是显示标签栏
-set autoread 		"设置当文件在外部被修改，自动更新该文件
-set mouse=a 		"设置在任何模式下鼠标都可用
-set nobackup 		"设置不生成备份文件
-"set go=				"不要图形按钮
+set showtabline=2 "设置显是显示标签栏
+set autoread "设置当文件在外部被修改，自动更新该文件
+set mouse=a "设置在任何模式下鼠标都可用
+set nobackup "设置不生成备份文件
+"set go="不要图形按钮
 set guioptions-=T           " 隐藏工具栏
 "set guioptions-=m           " 隐藏菜单栏
 
@@ -161,7 +161,7 @@ set smartindent "智能对齐
 set autoindent "设置自动对齐
 set ai! "设置自动缩进
 "set cursorcolumn "启用光标列
-set cursorline	"启用光标行
+set cursorline"启用光标行
 set guicursor+=a:blinkon0 "设置光标不闪烁
 set fdm=indent "
 
