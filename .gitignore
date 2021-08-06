@@ -2,3 +2,5 @@
 # gitbook命令生成的文件
 _book
 .vscode
+# vscode - plugin - local-history
+.history

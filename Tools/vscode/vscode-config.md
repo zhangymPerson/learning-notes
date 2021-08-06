@@ -24,7 +24,15 @@
 
   一种是 file - preferences - settings
 
-  打开 settings.json 文件的方式 ctrl + p --> search settings.json 即可打开 settings.json 文件
+  **打开 settings.json 文件的方式**
+
+  1.打开用户的 settings 文件
+
+  ctrl + p --> search settings.json 即可打开 settings.json 文件
+
+  2.打开全局的 settings 文件
+
+  ctrl+shift+p -> search -> open default settings 即可打开 settings.json 文件
 
   单个项目配置 vscode,在项目根目录下 创建 .vscode 文件夹 然后创建 settings.json 文件
 
@@ -107,3 +115,30 @@
 ## vscode 配置标签页自动换行全部展示 一行展示不下自动换行展示
 
 - setting 搜索 wrap tabs 选中标签即可
+
+- 将当前行代码高亮显示（更改光标所在行的背景色）
+
+  当我们把光标放在某一行时，这一行的背景色并没有发生变化。如果想高亮显示当前行的代码，需要设置两步：
+
+  （1）在设置项里搜索 editor.renderLineHighlight，将选项值设置为 all 或者 line。
+
+  （2）在设置项里增加如下内容：
+
+  ```json
+  "workbench.colorCustomizations": {
+    "editor.lineHighlightBackground": "#00000090",
+    "editor.lineHighlightBorder": "#ffffff30"
+  }
+  ```
+
+  复制代码上方代码，第一行代码的意思是：修改光标所在行的背景色（背景色设置为全黑，不透明度 90%）；第二行代码的意思是：修改光标所在行的边框色。
+
+## vscode 文件比较/比较文件更改
+
+- 比较两个文件差异
+
+  选中两个文件 右键 -> 将已选项进行比较 / compare selected
+
+- 插件支持 可以和剪切板中的数据比较
+
+  插件名:compareit

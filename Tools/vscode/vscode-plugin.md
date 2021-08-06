@@ -117,3 +117,11 @@
     - 在创建的空文件打开页 按 F1 输入 Paste JSON as Code 输入顶层的类名 即可生成对应语言的 bean 对象结构
 
   [在线地址](https://quicktype.io/)
+
+- local-history - 本地修改历史记录 防止修改被损坏
+
+  安装插件 Local History
+
+  注意 安装插件后，会在项目目录下生成 .history 文件夹
+
+  git 中需要过滤下此文件夹
