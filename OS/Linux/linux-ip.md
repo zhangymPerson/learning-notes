@@ -9,5 +9,8 @@
 curl ifconfig.me
 #其他方式
 curl cip.cc
-
 ```
+
+- 查看内网 ip
+
+  `hostname -i`

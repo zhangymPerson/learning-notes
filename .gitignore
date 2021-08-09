@@ -4,3 +4,5 @@ _book
 .vscode
 # vscode - plugin - local-history
 .history
+# mac
+.DS_Store
