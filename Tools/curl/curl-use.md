@@ -21,3 +21,7 @@
 - post 中的 json 请求
 
   `curl -H "Content-type: application/json" -X POST -d '{"username":"username","password":"password"}' https://baidu.com`
+
+- curl 下载 wget 下载失败或者报错时
+
+  `curl -O -L https://spacevim.org/cn/install.sh`

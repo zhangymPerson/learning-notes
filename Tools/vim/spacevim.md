@@ -25,3 +25,5 @@
   Windows 下最快捷的安装方法是下载安装脚本 install.cmd 并运行。
 
 - 注意事项 如果不能连接外网 github 需要使用代理地址
+
+  修改 install.sh 文件中的 github 地址 为 hub.fastgit.org 注意改动范围，别全部替换。

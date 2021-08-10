@@ -142,3 +142,9 @@
 - 插件支持 可以和剪切板中的数据比较
 
   插件名:compareit
+
+## vscode 代码提示失效
+
+- 修改提示相关的配置
+
+  打开 settings -> search -> `Suggest: Snippets Prevent Quick Suggestions`
