@@ -27,3 +27,21 @@
 - 注意事项 如果不能连接外网 github 需要使用代理地址
 
   修改 install.sh 文件中的 github 地址 为 hub.fastgit.org 注意改动范围，别全部替换。
+
+## 日常使用
+
+- 常用快捷键
+
+  \<F3> / SPC f t 切换文件树
+
+  SPC c l 注释/反注释当前行
+
+## 配置
+
+- 配置文件
+
+  如果要对 Vim 进行配置，则需要配置 ~/.SpaceVim/vimrc 这个文件进行配置
+
+  **注意:配置内容要在原内容前面 Vim 中的配置 set a=b 中 = 两边不能有空格**
+
+  如 `set timeoutlen=200`

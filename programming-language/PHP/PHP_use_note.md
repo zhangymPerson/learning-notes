@@ -2121,7 +2121,7 @@ implicit_flush         //作用同ob_implicit_flush，默认为Off。
 
 /* 网站并发 */
 测试工具：apache/bin/ab.exe
-//用法：cmd{%apache-bin%}>ab.exe -n 执行访问次数 -c 用户并发数量 URL地址
+# 用法：cmd{%apache-bin%}>ab.exe -n 执行访问次数 -c 用户并发数量 URL地址
 MPM(多路处理模块)：perfork(预处理模式), worker(工作者模式), winnt(Win系统)
 MPM配置：httpd-mpm.conf
 查看当前MPM模式：httpd –l    mpm_xxx.c中xxx表示当前模式类型
