@@ -34,7 +34,7 @@
 
 ## github 加速访问(github 访问不到的时候)
 
-- 将访问地址中 https://github.com/ 替换为 https://hub.fastgit.org/
+- 将访问地址中 <https://github.com/> 替换为 <https://hub.fastgit.org/>
 
 - [国内 gitee](https://gitee.com/)
 
@@ -43,3 +43,15 @@
 ## github 查询资源技巧
 
 - 查询各个语言/平台的支持库时，可以使用关键字 `awesome` 进行查询，得到相关资源的集合
+
+## github 代码浏览方式
+
+> github 中的项目默认打开查找文件不方便，可以通过以下两种方式改变浏览体验
+
+- github1s
+
+  将 github 项目中的连接 github.com 改为 github1s.com
+
+- github.dev
+
+  将 github 项目中的连接 github.com 改为 github.dev
