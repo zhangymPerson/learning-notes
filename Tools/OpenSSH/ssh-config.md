@@ -53,3 +53,15 @@
       HostName gitee.com
       User apollo
   ```
+
+## 错误处理
+
+- 常见错误 Bad owner or permissions on .ssh/config 的解决
+
+  ssh 对配置有权限要求 一般的解决方案是 对 报错文件的权限进行修改 如
+
+  `sudo chmod 600 ~/.ssh/config`
+
+  如果整个文件夹下的文件权限都不对 则
+
+  `sudo chmod 600 ~/.ssh/*`
