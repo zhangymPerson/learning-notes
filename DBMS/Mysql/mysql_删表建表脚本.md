@@ -25,7 +25,7 @@ showCreate(){
     db=$1
     table=$2
     sql='show create table '$db.$table
-    echo $sql  
+    echo $sql
     echo "drop table if exists "$db.$table";" >> $filepath$sqlfile
     echo `mysql -u$user -p$pw -e"${sql}"` ";" >  $filepath$db.$table".sql"
     awk '{$1 = "";$2="";$3="";$4="";print}' $filepath$db.$table".sql" | sed 's/\\n/ /g'  >> $filepath$sqlfile

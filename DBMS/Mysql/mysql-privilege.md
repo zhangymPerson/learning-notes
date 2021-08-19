@@ -1,70 +1,72 @@
-# mysql权限
+# mysql 权限
 
-- MySQL用户权限说明
+## MySQL 用户权限说明
 
-|权限|权限级别|权限说明
-|-|-|-|
-CREATE|数据库、表或索引|创建数据库、表或索引权限
-|DROP|数据库或表|删除数据库或表权限
-|GRANT OPTION|数据库、表或保存的程序|赋予权限选项
-|REFERENCES|数据库或表 
-|ALTER|表|更改表，比如添加字段、索引等
-|DELETE|表|删除数据权限
-|INDEX|表|索引权限
-|INSERT|表|插入权限
-|SELECT|表|查询权限
-|UPDATE|表|更新权限
-|CREATE VIEW|视图|创建视图权限
-|SHOW VIEW|视图|查看视图权限
-|ALTER ROUTINE|存储过程|更改存储过程权限
-|CREATE ROUTINE|存储过程|创建存储过程权限
-|EXECUTE|存储过程|执行存储过程权限
-|FILE|服务器主机上的文件访问|文件访问权限
-|CREATE TEMPORARY TABLES|服务器管理|创建临时表权限
-|LOCK TABLES|服务器管理|锁表权限
-|CREATE USER|服务器管理|创建用户权限
-|PROCESS|服务器管理|查看进程权限
-|RELOAD|服务器管理|执行flush-hosts, flush-logs, flush-privileges, flush-status,|flush-tables, flush-threads, refresh, reload等命令的权限
-|REPLICATION CLIENT|服务器管理|复制权限
-|REPLICATION SLAVE|服务器管理|复制权限
-|SHOW DATABASES|服务器管理|查看数据库权限
-|SHUTDOWN|服务器管理|关闭数据库权限
-|SUPER|服务器管理|执行kill线程权限
+- 如下图所示
 
-    
-MYSQL的权限如何分布，就是针对表可以设置什么权限，针对列可以设置什么权限等等，这个可以从官方文档中的一个表来说明：
+  | 权限                    | 权限级别               | 权限说明                                                                                                                |
+  | ----------------------- | ---------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+  | CREATE                  | 数据库、表或索引       | 创建数据库、表或索引权限                                                                                                |
+  | DROP                    | 数据库或表             | 删除数据库或表权限                                                                                                      |
+  | GRANT OPTION            | 数据库、表或保存的程序 | 赋予权限选项                                                                                                            |
+  | REFERENCES              | 数据库或表             |
+  | ALTER                   | 表                     | 更改表，比如添加字段、索引等                                                                                            |
+  | DELETE                  | 表                     | 删除数据权限                                                                                                            |
+  | INDEX                   | 表                     | 索引权限                                                                                                                |
+  | INSERT                  | 表                     | 插入权限                                                                                                                |
+  | SELECT                  | 表                     | 查询权限                                                                                                                |
+  | UPDATE                  | 表                     | 更新权限                                                                                                                |
+  | CREATE VIEW             | 视图                   | 创建视图权限                                                                                                            |
+  | SHOW VIEW               | 视图                   | 查看视图权限                                                                                                            |
+  | ALTER ROUTINE           | 存储过程               | 更改存储过程权限                                                                                                        |
+  | CREATE ROUTINE          | 存储过程               | 创建存储过程权限                                                                                                        |
+  | EXECUTE                 | 存储过程               | 执行存储过程权限                                                                                                        |
+  | FILE                    | 服务器主机上的文件访问 | 文件访问权限                                                                                                            |
+  | CREATE TEMPORARY TABLES | 服务器管理             | 创建临时表权限                                                                                                          |
+  | LOCK TABLES             | 服务器管理             | 锁表权限                                                                                                                |
+  | CREATE USER             | 服务器管理             | 创建用户权限                                                                                                            |
+  | PROCESS                 | 服务器管理             | 查看进程权限                                                                                                            |
+  | RELOAD                  | 服务器管理             | 执行 flush-hosts, flush-logs, flush-privileges, flush-status, flush-tables, flush-threads, refresh, reload 等命令的权限 |
+  | REPLICATION CLIENT      | 服务器管理             | 复制权限                                                                                                                |
+  | REPLICATION SLAVE       | 服务器管理             | 复制权限                                                                                                                |
+  | SHOW DATABASES          | 服务器管理             | 查看数据库权限                                                                                                          |
+  | SHUTDOWN                | 服务器管理             | 关闭数据库权限                                                                                                          |
+  | SUPER                   | 服务器管理             | 执行 kill 线程权限                                                                                                      |
 
-权限分布|可能的设置的权限
-|-|-|
-|表权限|'Select', 'Insert', 'Update', 'Delete', 'Create', 'Drop','Grant', 'References', 'Index', 'Alter'
-|列权限|'Select', 'Insert', 'Update', 'References'
-|过程权限|'Execute', 'Alter Routine', 'Grant'
+MYSQL 的权限如何分布，就是针对表可以设置什么权限，针对列可以设置什么权限等等，这个可以从官方文档中的一个表来说明：
 
-- MySQL权限经验原则：
+| 权限分布 | 可能的设置的权限                                                                                 |
+| -------- | ------------------------------------------------------------------------------------------------ |
+| 表权限   | 'Select', 'Insert', 'Update', 'Delete', 'Create', 'Drop','Grant', 'References', 'Index', 'Alter' |
+| 列权限   | 'Select', 'Insert', 'Update', 'References'                                                       |
+| 过程权限 | 'Execute', 'Alter Routine', 'Grant'                                                              |
 
-    权限控制主要是出于安全因素，因此需要遵循一下几个经验原则：
+- MySQL 权限经验原则：
 
-    1、只授予能满足需要的最小权限;
+  权限控制主要是出于安全因素，因此需要遵循一下几个经验原则：
 
-    2、创建用户的时候限制用户的登录主机，一般是限制成指定IP或者内网IP段。
+  1、只授予能满足需要的最小权限;
 
-    3、初始化数据库的时候删除没有密码的用户。安装完数据库的时候会自动创建一些用户，这些用户默认没有密码。
-    
-    4、为每个用户设置满足密码复杂度的密码。
-    
-    5、定期清理不需要的用户。回收权限或者删除用户。
+  2、创建用户的时候限制用户的登录主机，一般是限制成指定 IP 或者内网 IP 段。
 
-### 权限相关的sql
+  3、初始化数据库的时候删除没有密码的用户。安装完数据库的时候会自动创建一些用户，这些用户默认没有密码。
+
+  4、为每个用户设置满足密码复杂度的密码。
+
+  5、定期清理不需要的用户。回收权限或者删除用户。
+
+## 权限相关的 sql
 
 - 创建用户并且授权
 
-    ```sql
-    grant all privileges on *.* to username@'ip' identified by "password" with grant option;
-    #授权完成后，必须要刷新权限，否则创建用户 不生效
-    flush privileges;
-    ```
-    GRANT命令说明：
-    
+  ```sql
+  grant all privileges on *.* to username@'ip' identified by "password" with grant option;
+  #授权完成后，必须要刷新权限，否则创建用户 不生效
+  flush privileges;
+  ```
+
+  GRANT 命令说明：
+
         ALL PRIVILEGES 是表示所有权限，你也可以使用select、update等权限。
 
         ON 用来指定权限针对哪些库和表。
@@ -79,103 +81,106 @@ MYSQL的权限如何分布，就是针对表可以设置什么权限，针对列
 
         WITH GRANT OPTION 这个选项表示该用户可以将自己拥有的权限授权给别人。注意：经常有人在创建操作用户的时候不指定WITH GRANT OPTION选项导致后来该用户不能使用GRANT命令创建用户或者给其它用户授权。
 
-    **备注**：可以使用GRANT重复给用户添加权限，权限叠加，比如你先给用户添加一个select权限，然后又给用户添加一个insert权限，那么该用户就同时拥有了select和insert权限。
+  **备注**：可以使用 GRANT 重复给用户添加权限，权限叠加，比如你先给用户添加一个 select 权限，然后又给用户添加一个 insert 权限，那么该用户就同时拥有了 select 和 insert 权限。
 
-    多个库授权:
+  多个库授权:
 
-    ```sql
-    #授权db1库的权限
-    Grant all privilegs on db1.* to‘用户名’@‘ip地址’ 
-    #授权db2库的权限
-    Grant all privilegs on db2.* to‘用户名’@‘ip地址’
-    ```
+  ```sql
+  #授权db1库的权限
+  Grant all privilegs on db1.* to‘用户名’@‘ip地址’
+  #授权db2库的权限
+  Grant all privilegs on db2.* to‘用户名’@‘ip地址’
+  ```
+
 - 查看当前用户授权
 
-    ```sql
-    #查看当前用户的授权情况
-    mysql> show grants;
-    +---------------------------------------------------------------------+
-    | Grants for root@localhost                                           |
-    +---------------------------------------------------------------------+
-    | GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION |
-    | GRANT PROXY ON ''@'' TO 'root'@'localhost' WITH GRANT OPTION        |
-    +---------------------------------------------------------------------+
-    2 rows in set (0.00 sec)
+  ```sql
+  #查看当前用户的授权情况
+  mysql> show grants;
+  +---------------------------------------------------------------------+
+  | Grants for root@localhost                                           |
+  +---------------------------------------------------------------------+
+  | GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION |
+  | GRANT PROXY ON ''@'' TO 'root'@'localhost' WITH GRANT OPTION        |
+  +---------------------------------------------------------------------+
+  2 rows in set (0.00 sec)
 
-    #查看某个用户的权限
-    show grants for 'boyi'@'%';
-    +-------------------------------------------------------------+
-    | Grants for boyi@%                                           |
-    +-------------------------------------------------------------+
-    | GRANT ALL PRIVILEGES ON *.* TO 'boyi'@'%' WITH GRANT OPTION |
-    +-------------------------------------------------------------+
-    1 row in set (0.00 sec)
+  #查看某个用户的权限
+  show grants for 'boyi'@'%';
+  +-------------------------------------------------------------+
+  | Grants for boyi@%                                           |
+  +-------------------------------------------------------------+
+  | GRANT ALL PRIVILEGES ON *.* TO 'boyi'@'%' WITH GRANT OPTION |
+  +-------------------------------------------------------------+
+  1 row in set (0.00 sec)
 
-    ```
+  ```
+
 - 回收授权
 
-    ```sql
+  ```sql
 
-    #回收授权
-    revoke 权限名 on 库.表 from username@'ip';
-    #收回全部权限
-    revoke all privileges,grant option from 'username'@'ip';
-    
-    #TODO 下一步研究
-    测试发现库表名要与创建时保持一致
+  #回收授权
+  revoke 权限名 on 库.表 from username@'ip';
+  #收回全部权限
+  revoke all privileges,grant option from 'username'@'ip';
 
-    ```
+  #TODO 下一步研究
+  测试发现库表名要与创建时保持一致
 
+  ```
 
-
-
-- mysql8.0中的版本
+- mysql8.0 中的版本
 
 - 创建用户
 
-    ```sh
-    #mysql8.0新特性
-    create user 'name'@'ip' identified by 'password';
-    #授权远程登陆；
-    grant all privileges on *.* to 'boyi'@'%' with grant option;
+  ```sh
+  #mysql8.0新特性
+  create user 'name'@'ip' identified by 'password';
+  #授权远程登陆；
+  grant all privileges on *.* to 'boyi'@'%' with grant option;
 
-    ```
+  ```
+
 - 远程授权
 
-    mysql8.0以前的版本可以使用grant在授权的时候隐式的创建用户，8.0以后已经不支持，所以必须先创建用户，然后再授权，命令如下：
-    ```sql
-    mysql> CREATE USER 'root'@'%' IDENTIFIED BY 'yourpassword';
-    Query OK, 0 rows affected (0.04 sec)
+  mysql8.0 以前的版本可以使用 grant 在授权的时候隐式的创建用户，8.0 以后已经不支持，所以必须先创建用户，然后再授权，命令如下：
 
-    mysql> grant all privileges on *.* to 'root'@'%';
-    Query OK, 0 rows affected (0.03 sec)
-    ```
+  ```sql
+  mysql> CREATE USER 'root'@'%' IDENTIFIED BY 'yourpassword';
+  Query OK, 0 rows affected (0.04 sec)
+
+  mysql> grant all privileges on *.* to 'root'@'%';
+  Query OK, 0 rows affected (0.03 sec)
+  ```
+
 - 修改用户名密码
 
-    ```
-    ALTER USER "root"@"localhost" IDENTIFIED  BY "你的新密码";
-    ```
+  ```
+  ALTER USER "root"@"localhost" IDENTIFIED  BY "你的新密码";
+  ```
+
 - MySQL 8.0 客户端连接问题解决
 
-    ```sh
-    # 修改root的加密规则
-    ALTER USER 'root'@'localhost' IDENTIFIED BY 'yourpassword' PASSWORD EXPIRE NEVER; 
+  ```sh
+  # 修改root的加密规则
+  ALTER USER 'root'@'localhost' IDENTIFIED BY 'yourpassword' PASSWORD EXPIRE NEVER;
 
-    #修改root需查看root的账户权限
+  #修改root需查看root的账户权限
 
-    use mysql;
-    
-    select user,host from user;
+  use mysql;
 
-    # 修改root的密码
-    ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'yourpassword';
-    #或者
-    ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'yourpassword';
+  select user,host from user;
 
-    # 修改普通用户的密码
-    ALTER USER 'myuser'@'%' IDENTIFIED WITH mysql_native_password BY 'yourpassword'; 
+  # 修改root的密码
+  ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'yourpassword';
+  #或者
+  ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'yourpassword';
 
-    #刷新权限
-    FLUSH PRIVILEGES;
+  # 修改普通用户的密码
+  ALTER USER 'myuser'@'%' IDENTIFIED WITH mysql_native_password BY 'yourpassword';
 
-    ```
+  #刷新权限
+  FLUSH PRIVILEGES;
+
+  ```

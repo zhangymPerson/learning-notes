@@ -1,19 +1,15 @@
-# 常用的MySQL特殊作用的sql
+# 常用的 MySQL 特殊作用的 sql
 
 ```sql
-
 #查询物理文件位置
 show global variables like "%datadir%";
 
 - mysql 服务器状态变量
 
 #mysql各个参数随着时间的变化的值的变化
-
 mysqladmin -uroot -p  extended-status -ri60
 
-
 - 查看mysql参数
-
 
 # 查看数据库状态
 show status;
@@ -30,8 +26,6 @@ show variables like '%参数名%';
 mysql -u user -p password -e "show variables;" > my.conf
 
 - 查看MySQL服务进程情况
-
-
 
 #进程查看
 show processlist;
@@ -58,9 +52,6 @@ select host,user from mysql.user;
 select * from mysql.user where user='用户名'\G;
 
 drop user test;
-
-
-
 
 
 #查询制指定库中所有表的注释
@@ -118,11 +109,11 @@ select TABLE_NAME,GROUP_CONCAT(`COLUMN_NAME`),GROUP_CONCAT(`column_comment`) fro
 
 
 # 跳过一个事务；
-SET GLOBAL SQL_SLAVE_SKIP_COUNTER = 1  
+SET GLOBAL SQL_SLAVE_SKIP_COUNTER = 1
 
 
 # mysql创建数据库语句
-
 CREATE DATABASE IF NOT EXISTS dbname DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
-
+# 创建编码格式为utf8mb4
+create database databasesName default character set utf8mb4 collate utf8mb4_unicode_ci;
 ```

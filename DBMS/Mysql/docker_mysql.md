@@ -52,14 +52,14 @@
 
     ALTER USER 'root'@'%' IDENTIFIED BY 'password' PASSWORD EXPIRE NEVER;
     #更新用户密码
-  ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
-    
+    ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+
     ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY '123456';
     #刷新权限
     FLUSH PRIVILEGES;
     ```
 
-- 启动带**自定义配置文件和数据路径**的mysql服务
+- 启动带**自定义配置文件和数据路径**的 mysql 服务
 
   - 创建要自定义的文件夹
     `mkdir -p /opt/docker/mysql/3307`
@@ -92,4 +92,3 @@
   - -d 后台运行
   - --name 运行容器名称
   - -v 挂载宿主机的一个目录。冒号":" **前面的目录是宿主机目录**，**后面的目录是容器内目录**。
-
