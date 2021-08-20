@@ -125,3 +125,11 @@
   注意 安装插件后，会在项目目录下生成 .history 文件夹
 
   git 中需要过滤下此文件夹
+
+- Code Runner 代码直接执行插件
+
+  修改配置 Code Runner 方式
+
+  在 settings 中搜索 `code-runner.executorMap` 可以根据对应的语言修改其编译方式
+
+  如在 c++ 中指定编译的标准库为 c++11 可以在 g++ 命令下添加 `-std=c++11` 参数
