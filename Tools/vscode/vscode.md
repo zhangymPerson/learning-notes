@@ -182,3 +182,23 @@
 - mac 下配置 vscode 快速打开
 
   F1 -> 输入 code -> 选择 Shell Command : Install 'code' command in PATH
+
+- vscode 打开文件乱码
+
+  打开“settings”，在搜索框搜索“encoding”，勾选“Files: Auto Guess Encoding”，免得每次都要手动调整编码方式。
+
+- vscode 中的终端乱码问题 terminal 乱码
+
+  setting.json 里面增加
+
+  ```json
+  {
+    "terminal.integrated.env.linux": {
+      "LC_ALL": "zh_CN.UTF-8"
+    }
+  }
+  ```
+
+- vscode 终端输出行数配置
+
+  settings -> terminal.integrated.scrollback 将此数值 1000 根据自己需求改大
