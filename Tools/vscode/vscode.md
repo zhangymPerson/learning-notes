@@ -202,3 +202,13 @@
 - vscode 终端输出行数配置
 
   settings -> terminal.integrated.scrollback 将此数值 1000 根据自己需求改大
+
+- vscode 进程 kill-vscode 进程
+
+  查询某个关键字的进程号
+
+  ps aux|grep vscode|awk '{print $2}'
+
+  **下面的命令需要带 \` 符号**
+
+  kill -s 9 \`ps aux|grep vscode|awk '{print $2}'\`
