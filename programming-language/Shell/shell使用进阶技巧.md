@@ -4,6 +4,26 @@
 
 ## 脚本安全
 
+- 安全脚本 demo
+
+  ```sh
+  #!/bin/bash
+  set -u # 使用的变量必须提前定义过
+  set -e # 所有非0的返回状态都需要捕获
+  set -o pipefail # 管道间错误需要捕获
+  var="NotNull" # 如果此行注释掉，那么脚本将不会继续执行
+  echo "${var}"
+  # 错误需要捕获，否则不会继续执行
+  false || {
+  echo "Something false."
+  }
+  # 管道间遇到的第一个错误，被捕获
+  true | false | true || {
+  echo "Something false in the pipe."
+  }
+  echo "End"
+  ```
+
 - 脚本开始就需要定义
 
   ```sh
@@ -174,7 +194,8 @@
   ```
 
 - 替换操作(使用 globbing)
-  ```sh
+
+  ```shell
   f="path1/path2/file.ext"
   single_subst="${f/path?/x}"
   # = "x/path2/file.ext"
@@ -186,7 +207,9 @@
   second_dir="${arrray[1]}"
   # = path2
   ```
+
 - 删除头部或尾部(使用 globbing)
+
   ```sh
   f="path1/path2/file.ext"
   # 删除字符串头部
@@ -200,6 +223,7 @@
   root="${f%%/*}"
   # = "path1"
   ```
+
 - 内置变量
 
   | 变量 | 说明                                                |
