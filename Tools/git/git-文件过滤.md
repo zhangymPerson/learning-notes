@@ -7,43 +7,45 @@
 - [github 的过滤文件查询网站，输入关键字直接查询](https://www.gitignore.io/)
 
   git 过滤文件的
-  
+
   `https://www.gitignore.io/`
 
 - 配置文件 .gitignore
 
   配置方式说明
 
-  ```sh
+  ```conf
   # 以'#'开始的行，被视为注释.
 
   # 忽略掉所有文件名是 foo.txt的文件.
-
   foo.txt
-
   # 忽略所有生成的 html文件,
-
   *.html
-
   # foo.html是手工维护的，所以例外.
-
   !foo.html
-
   # 忽略所有.o和 .a文件.
-
   *.[oa]
-  配置语法：
-  以斜杠“/”开头表示目录；
-  以星号“*”通配多个字符；
-  以问号“?”通配单个字符
-  以方括号“[]”包含单个字符的匹配列表；
-  以叹号“!”表示不忽略(跟踪)匹配到的文件或目录；
+  # 配置语法：
+  # 以斜杠“/”开头表示目录；
+  # 以星号“*”通配多个字符；
+  # 以问号“?”通配单个字符
+  # 以方括号“[]”包含单个字符的匹配列表；
+  # 以叹号“!”表示不忽略(跟踪)匹配到的文件或目录；
+  ```
+
+  过滤 mac 和 vscode
+
+  ```conf
+  # mac and vscode - plug - Local History
+  */.DS_Store
+  .history
+  # vscode 目录
+  .vscode
   ```
 
 - demo 1
 
-  ```gitignore
-
+  ```conf
   # Eclipse
   .classpath
   .project
@@ -55,7 +57,6 @@
   *.json
 
   # Intellij
-
   .idea/
   _.iml
   _.iws
@@ -90,6 +91,7 @@
   buildNumber.properties
   .mvn/timing.properties
 
+  # idea
   .idea/
 
   ## File-based project format:
