@@ -12,4 +12,4 @@
 
 - [安卓中文官方开发文档](https://developer.android.google.cn/)
 
-  https://developer.android.google.cn/
+  <https://developer.android.google.cn/>
