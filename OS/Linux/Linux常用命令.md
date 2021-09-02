@@ -326,6 +326,7 @@
   ```sh
   ## 查看环境变量的命令
   printenv
+  set
 
   ## 文件类型 查看命令
   file filename

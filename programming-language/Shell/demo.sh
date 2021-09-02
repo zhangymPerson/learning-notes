@@ -10,6 +10,24 @@ set -e          # set -o errexit 有错误退出
 set -u          # set -o nounset
 set -o pipefail #管道执行过程中有错误退出
 
+# 获取当前脚本所在目录
+# 获取当前 shell 执行的相对目录  和 绝对目录
+# 如 sh demo.sh  sh命令所在文件 和 demo.sh所在位置的相对目录
+WD=$(dirname "$0")
+WD=$(
+    cd "$WD"
+    pwd
+)
+echo ${WD}
+
+# 创建一个环境变量文件 调用
+# source ${WD}/setup_env.sh
+# echo ${LOCAL_ARCH}
+
+# 获取脚本名称
+SHELL_NAME=$(basename "$0")
+echo ${SHELL_NAME}
+
 # 2. 环境变量
 #PATH=/home/abc/bin:$PATH
 #export PATH
