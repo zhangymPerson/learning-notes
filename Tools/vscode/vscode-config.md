@@ -148,3 +148,9 @@
 - 修改提示相关的配置
 
   打开 settings -> search -> `Suggest: Snippets Prevent Quick Suggestions`
+
+## vscode 配置大括号换行问题
+
+- 修改 settings
+
+  打开 settings -> search -> `format:braces` -> 选择对应的语言/插件 修改相关配置

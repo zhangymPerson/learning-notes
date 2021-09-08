@@ -1,22 +1,20 @@
-### 编程常用单词 （programming-english）
+# 编程常用单词 （programming-english）
 
 ## 软件版本(software-version )
 
-Snapshot: 版本代表不稳定、尚处于开发中的版本 
-Alpha: 内部版本 
-Beta: 测试版 
-Demo: 演示版 
-Enhance: 增强版 
-Free: 自由版 
-Full Version: 完整版，即正式版 
-LTS: 长期维护版本 
-Release: 发行版 
-RC: 即将作为正式版发布 
-Standard: 标准版 
-Ultimate: 旗舰版 
-Upgrade: 升级版 
-
-
+Snapshot: 版本代表不稳定、尚处于开发中的版本
+Alpha: 内部版本
+Beta: 测试版
+Demo: 演示版
+Enhance: 增强版
+Free: 自由版
+Full Version: 完整版，即正式版
+LTS: 长期维护版本
+Release: 发行版
+RC: 即将作为正式版发布
+Standard: 标准版
+Ultimate: 旗舰版
+Upgrade: 升级版
 
 ## A
 
@@ -32,7 +30,7 @@ access 存取、访问
 
 access function 访问函数
 
-access level访问级别
+access level 访问级别
 
 account 账户
 
@@ -52,7 +50,7 @@ address 地址
 
 address space 地址空间
 
-ADO(ActiveX Data Object)ActiveX数据对象
+ADO(ActiveX Data Object)ActiveX 数据对象
 
 advanced 高级的
 
@@ -66,7 +64,7 @@ align 排列、对齐
 
 allocate 分配、配置
 
-allocator分配器、配置器
+allocator 分配器、配置器
 
 angle bracket 尖括号
 
@@ -88,7 +86,7 @@ architecture 架构、体系结构
 
 archive file 归档文件、存档文件
 
-argument参数。
+argument 参数。
 
 array 数组
 
@@ -112,15 +110,13 @@ authentication service 验证服务
 
 authorization 授权
 
-
-
 ## B
 
 background 背景、后台(进程)
 
 backup 备份
 
-backup device备份设备
+backup device 备份设备
 
 backup file 备份文件
 
@@ -146,7 +142,7 @@ bitmap 位图
 
 block 块、区块、语句块
 
-boolean 布林值(真假值，true或false)
+boolean 布林值(真假值，true 或 false)
 
 border 边框
 
@@ -155,6 +151,8 @@ bounds checking 边界检查
 boxing 装箱、装箱转换
 
 brace (curly brace) 大括号、花括号
+
+braces 大括号
 
 bracket (square brakcet) 中括号、方括号
 
@@ -182,9 +180,7 @@ buttons 按钮
 
 by/through 通过
 
-byte 位元组(由8 bits组成)
-
-
+byte 位元组(由 8 bits 组成)
 
 ## C
 
@@ -222,7 +218,7 @@ check box 复选框
 
 check button 复选按钮
 
-CHECK constraints CHECK约束 (for database)
+CHECK constraints CHECK 约束 (for database)
 
 checkpoint 检查点 (for database)
 
@@ -302,7 +298,7 @@ compile time 编译期、编译时
 
 compiler 编译器
 
-component组件
+component 组件
 
 composite index 复合索引、组合索引 (for database)
 
@@ -312,7 +308,7 @@ composition 复合、组合
 
 concept 概念
 
-concrete具体的
+concrete 具体的
 
 concrete class 具体类
 
@@ -340,7 +336,7 @@ constructor (ctor) 构造函数、构造器
 
 container 容器
 
-containment包容
+containment 包容
 
 context 环境、上下文
 
@@ -370,8 +366,6 @@ cursor 游标 (for database)
 
 custom 定制、自定义
 
-
-
 ## D
 
 data 数据
@@ -392,7 +386,7 @@ data source 数据源 (for database)
 
 Data source name (DSN) 数据源名称(DSN) (for database)
 
-data structure数据结构
+data structure 数据结构
 
 Data Structures 基本数据结构
 
@@ -428,7 +422,7 @@ dataset 数据集 (for database)
 
 DBMS (database management system)数据库管理系统 (for database)
 
-DCOM (distributed COM)分布式COM
+DCOM (distributed COM)分布式 COM
 
 dead lock 死锁 (for database)
 
@@ -444,7 +438,7 @@ declaration 声明
 
 default 缺省、默认值
 
-DEFAULT constraint默认约束 (for database)
+DEFAULT constraint 默认约束 (for database)
 
 default database 默认数据库 (for database)
 
@@ -488,7 +482,7 @@ directory 目录
 
 disassembler 反汇编器
 
-DISCO (Discovery of Web Services)Web Services的查找
+DISCO (Discovery of Web Services)Web Services 的查找
 
 dispatch 调度、分派、派发
 
@@ -513,8 +507,6 @@ DTD (document type definition) 文档类型定义
 dump 转储
 
 dump file 转储文件
-
-
 
 ## E
 
@@ -582,8 +574,6 @@ export 导出
 
 expression 表达式
 
-
-
 ## F
 
 fat client 胖客户端
@@ -634,17 +624,15 @@ full specialization 完全特化
 
 function 函数
 
-function call operator (即operator ()) 函数调用操作符
+function call operator (即 operator ()) 函数调用操作符
 
 function object 函数对象
 
-function template函数模板
+function template 函数模板
 
 functionality 功能
 
 functor 仿函数
-
-
 
 ## G
 
@@ -654,7 +642,7 @@ generate 生成
 
 generic 泛化的、一般化的、通用的
 
-generic algorithm通用算法
+generic algorithm 通用算法
 
 genericity 泛型
 
@@ -674,10 +662,6 @@ GUI 图形界面
 
 GUID (Globally Unique Identifier) 全球唯一标识符
 
-
-
-
-
 ## H
 
 handle 句柄
@@ -694,7 +678,7 @@ hardware 硬件
 
 hash table 散列表、哈希表
 
-header file头文件
+header file 头文件
 
 heap 堆
 
@@ -716,11 +700,9 @@ HTML (HyperText Markup Language) 超文本标记语言
 
 HTTP (HyperText Transfer Protocol) 超文本传输协议
 
-HTTP pipeline HTTP管道
+HTTP pipeline HTTP 管道
 
 hyperlink 超链接
-
-
 
 ## I
 
@@ -734,7 +716,7 @@ IDL (Interface Definition Language) 接口定义语言
 
 idle time 空闲时间
 
-if and only if当且仅当
+if and only if 当且仅当
 
 IL (Intermediate Language) 中间语言、中介语言
 
@@ -754,7 +736,7 @@ implementation 实现、实现品
 
 implicit 隐式
 
-implicit transaction隐式事务 (for database)
+implicit transaction 隐式事务 (for database)
 
 import 导入
 
@@ -786,15 +768,15 @@ inner join 内联接 (for database)
 
 instance 实例
 
-instantiated 具现化、实体化(常应用于template)
+instantiated 具现化、实体化(常应用于 template)
 
-instantiation 具现体、具现化实体(常应用于template)
+instantiation 具现体、具现化实体(常应用于 template)
 
 integrate 集成、整合
 
 integrity 完整性、一致性
 
-integrity constraint完整性约束 (for database)
+integrity constraint 完整性约束 (for database)
 
 interacts 交互
 
@@ -816,29 +798,23 @@ item 项、条款、项目
 
 iterate 迭代
 
-iteration 迭代(回圈每次轮回称为一个iteration)
+iteration 迭代(回圈每次轮回称为一个 iteration)
 
 iterative 反复的、迭代的
 
 iterator 迭代器
 
-
-
 ## J
 
-JIT compilation JIT编译即时编译
+JIT compilation JIT 编译即时编译
 
 Job Scheduling 工程安排
-
-
 
 ## K
 
 key 键 (for database)
 
 key column 键列 (for database)
-
-
 
 ## L
 
@@ -882,7 +858,7 @@ log 日志
 
 login 登录
 
-login security mode登录安全模式 (for database)
+login security mode 登录安全模式 (for database)
 
 lookup table 查找表 (for database)
 
@@ -891,8 +867,6 @@ loop 循环
 loose coupling 松散耦合
 
 lvalue 左值
-
-
 
 ## M
 
@@ -920,11 +894,11 @@ Matching 匹配
 
 member 成员
 
-member access operator 成员取用运算子(有dot和arrow两种)
+member access operator 成员取用运算子(有 dot 和 arrow 两种)
 
 member function 成员函数
 
-member initialization list成员初始值列表
+member initialization list 成员初始值列表
 
 memory 内存
 
@@ -938,11 +912,11 @@ message based 基于消息的
 
 message loop 消息环
 
-message queuing消息队列
+message queuing 消息队列
 
 metadata 元数据
 
-metaprogramming元编程
+metaprogramming 元编程
 
 method 方法
 
@@ -962,7 +936,7 @@ modifier 修饰字、修饰符
 
 module 模块
 
-most derived class最底层的派生类
+most derived class 最底层的派生类
 
 mouse 鼠标
 
@@ -979,8 +953,6 @@ multiuser 多用户
 mutable 可变的
 
 mutex 互斥元、互斥体
-
-
 
 ## N
 
@@ -1006,8 +978,6 @@ network card 网卡
 
 Network Flow 网络流
 
-
-
 ## O
 
 object 对象
@@ -1018,9 +988,9 @@ object model 对象模型
 
 object oriented 面向对象的
 
-ODBC data source ODBC数据源 (for database)
+ODBC data source ODBC 数据源 (for database)
 
-ODBC driver ODBC驱动程序 (for database)
+ODBC driver ODBC 驱动程序 (for database)
 
 one-to-many relationship 一对多关系 (for database)
 
@@ -1036,13 +1006,11 @@ option 选项
 
 outer join 外联接 (for database)
 
-overflow 上限溢位(相对于underflow)
+overflow 上限溢位(相对于 underflow)
 
 overload 重载
 
 override 覆写、重载、重新定义
-
-
 
 ## P
 
@@ -1124,7 +1092,7 @@ program 程序
 
 programmer 程序员
 
-programming编程、程序设计
+programming 编程、程序设计
 
 progress bar 进度指示器
 
@@ -1134,9 +1102,7 @@ property 属性
 
 protocol 协议
 
-pseudo code伪码
-
-
+pseudo code 伪码
 
 ## Q
 
@@ -1147,8 +1113,6 @@ qualifier 修饰符
 quality 质量
 
 queue 队列
-
-
 
 ## R
 
@@ -1166,7 +1130,7 @@ raw 未经处理的
 
 re-direction 重定向
 
-readOnly只读
+readOnly 只读
 
 record 记录 (for database)
 
@@ -1236,8 +1200,6 @@ runtime 执行期、运行期、执行时、运行时
 
 rvalue 右值
 
-
-
 ## S
 
 Satisfiability 可满足性
@@ -1260,7 +1222,7 @@ scope 作用域、生存空间
 
 screen 屏幕
 
-scroll bar滚动条
+scroll bar 滚动条
 
 SDK (Software Development Kit)软件开发包
 
@@ -1272,7 +1234,7 @@ Searching 查找
 
 semantics 语义
 
-sequential container序列式容器
+sequential container 序列式容器
 
 serial 串行
 
@@ -1298,7 +1260,7 @@ signature 签名
 
 single-threaded 单线程
 
-slider滑块
+slider 滑块
 
 slot 槽
 
@@ -1336,7 +1298,7 @@ statement 语句、声明
 
 static cursor 静态游标 (for database)
 
-static SQL statements 静态SQL语句 (for database)
+static SQL statements 静态 SQL 语句 (for database)
 
 status bar 状态条
 
@@ -1350,7 +1312,7 @@ String Matching 模式匹配
 
 stub 存根
 
-subobject子对象
+subobject 子对象
 
 subquery 子查询 (for database)
 
@@ -1367,8 +1329,6 @@ syntax 语法
 system databases 系统数据库 (for database)
 
 system tables 系统表 (for database)
-
-
 
 ## T
 
@@ -1402,7 +1362,7 @@ thread 线程
 
 thread-safe 线程安全的
 
-throw 抛出、引发(常指发出一个exception)
+throw 抛出、引发(常指发出一个 exception)
 
 trace 跟踪
 
@@ -1418,8 +1378,6 @@ trigger 触发器 (for database)
 
 type 类型
 
-
-
 ## U
 
 UDDI(Universary Description, Discovery and Integration)统一描述、查询与集成
@@ -1432,13 +1390,13 @@ unary operator 一元操作符
 
 unboxing 拆箱、拆箱转换
 
-underflow 下限溢位(相对于overflow)
+underflow 下限溢位(相对于 overflow)
 
 Unicode 统一字符编码标准，采用双字节对字符进行编码
 
 Union query 联合查询 (for database)
 
-UNIQUE constraints UNIQUE约束 (for database)
+UNIQUE constraints UNIQUE 约束 (for database)
 
 unique index 唯一索引 (for database)
 
@@ -1456,15 +1414,13 @@ user 用户
 
 user interface 用户界面
 
-
-
 ## V
 
 value types 值类型
 
 variable 变量
 
-vector 向量(一种容器，有点类似array)
+vector 向量(一种容器，有点类似 array)
 
 vendor 厂商
 
@@ -1482,15 +1438,11 @@ virtual machine 虚拟机
 
 virtual memory 虚拟内存
 
-
-
-
-
 ## W
 
-Web Services web服务
+Web Services web 服务
 
-WHERE clause WHERE子句 (for database)
+WHERE clause WHERE 子句 (for database)
 
 wildcard characters 通配符字符 (for database)
 
@@ -1502,7 +1454,7 @@ window function 窗口函数
 
 window procedure 窗口过程
 
-Windows authentication Windows身份验证
+Windows authentication Windows 身份验证
 
 wizard 向导
 
@@ -1512,22 +1464,20 @@ write enable 写启用 (for database)
 
 write-only 只写
 
-WSDL (Web Service Description Language)Web Service描述语言
-
-
+WSDL (Web Service Description Language)Web Service 描述语言
 
 ## X
 
 XML (eXtensible Markup Language) 可扩展标记语言
 
-XML Message Interface (XMI) XML消息接口
+XML Message Interface (XMI) XML 消息接口
 
-XSD (XML Schema Definition) XML模式定义语言
+XSD (XML Schema Definition) XML 模式定义语言
 
 XSL (eXtensible Stylesheet Language) 可扩展样式表语言
 
 XSLT (eXtensible Stylesheet Language Transformation)可扩展样式表语言转换
 
-xxx based 基于xxx的
+xxx based 基于 xxx 的
 
-xxx oriented 面向xxx
+xxx oriented 面向 xxx
