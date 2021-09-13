@@ -13,7 +13,7 @@
 - 常用仓库命令
 
   | 操作 | 命令                   | 说明                                                                     |
-  | ---- | ---------------------- | ------------------------------------------------------------------------ |
+  | ---- | ---------------------- | ------------------------------------------------------------------------ | ---------------------------------------- |
   | 检索 | docker search          | 关键字如：docker search redis                                            | 经常会去 docker hub 上检索镜像的详细信息 |
   | 拉取 | docker pull 镜像名:tag | :tag 是可选的，tag 表示标签，通常是软件的版本号，默认是 latest(即最新版) |
   | 列表 | docker images          | 查看所有本地镜像                                                         |
@@ -21,7 +21,7 @@
 
   ```sh
   > docker --help
-  Usage:	docker [OPTIONS] COMMAND
+  Usage: docker [OPTIONS] COMMAND
 
   A self-sufficient runtime for containers
 
@@ -117,7 +117,7 @@
 
 - 网址上查询 (需要科学上网)
 
-  https://hub.docker.com/
+  <https://hub.docker.com/>
 
 - 命令
 

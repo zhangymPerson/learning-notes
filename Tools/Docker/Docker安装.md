@@ -14,8 +14,6 @@
 
   `uname -a`
 
-### 安装
-
 - 安装必要工具
 
   `sudo yum install -y yum-utils device-mapper-persistent-data lvm2`
@@ -24,22 +22,23 @@
 
   `sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo`
 
-* 更新 yum 源
+- 更新 yum 源
 
   `sudo yum makecache fast`
 
-* 安装 Docker-ce
+- 安装 Docker-ce
 
   `sudo yum -y install docker-ce`
 
-* 启动 Docker 后台服务
+- 启动 Docker 后台服务
   **Docker 安装后必须启动，不然很多命令没法使用**
 
   `sudo systemctl start docker`
 
-* 配置 docker 镜像
+- 配置 docker 镜像
 
   `mkdir /etc/docker/`
+
   `vim /etc/docker/daemon.json（Linux）`
 
   配置国内镜像地址
