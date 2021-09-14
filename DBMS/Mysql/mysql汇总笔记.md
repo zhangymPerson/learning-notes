@@ -12,7 +12,7 @@ mysql -h 地址 -P 端口 -u 用户名 -p 密码
 mysqld --skip-grant-tables
 -- 修改root密码
 密码加密函数password()
-update mysql.user set password=password('root');
+update mysql.user set password=password('root') where User='root';
 
 SHOW PROCESSLIST -- 显示哪些线程正在运行
 SHOW VARIABLES -- 

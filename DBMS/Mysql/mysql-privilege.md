@@ -2,6 +2,10 @@
 
 ## MySQL 用户权限说明
 
+- 注意
+
+  **mysql 不同版本 用户创建修改命令不同 5.6，5.7 8.0，各个版本的创建用户，修改权限等命令不一致**
+
 - 如下图所示
 
   | 权限                    | 权限级别               | 权限说明                                                                                                                |
@@ -156,8 +160,8 @@ MYSQL 的权限如何分布，就是针对表可以设置什么权限，针对�
 
 - 修改用户名密码
 
-  ```
-  ALTER USER "root"@"localhost" IDENTIFIED  BY "你的新密码";
+  ```sql
+  ALTER USER 'root'@'localhost' IDENTIFIED  BY "你的新密码";
   ```
 
 - MySQL 8.0 客户端连接问题解决
@@ -183,4 +187,18 @@ MYSQL 的权限如何分布，就是针对表可以设置什么权限，针对�
   #刷新权限
   FLUSH PRIVILEGES;
 
+  ```
+
+- mysql 免密登录配置
+
+  mysql 忘记密码的时候，可以修改配置文件，进行免密登录
+
+  先停止 mysql 服务，然后修改配置文件，重新启动 mysql 服务 即可生效 使用 mysql -uroot 修改密码，然后注释掉免密配置
+
+  修改 mysql 的配置文件 my.cnf
+
+  ```cnf
+  [mysqld]
+  # 配置免密登录
+  skip-grant-tables
   ```

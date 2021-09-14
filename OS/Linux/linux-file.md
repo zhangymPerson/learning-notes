@@ -33,3 +33,13 @@
   发送端
 
   `tar -czvf - file1 file2 dir1 dir2 | nc ip port`
+
+### python 服务的方式 文件传输下载
+
+- python 自带的 http 服务，在要下载的文件目录内
+
+  执行 `python -m SimpleHTTPServer port` port 可以自己指定
+
+  如 `python -m SimpleHTTPServer 8888`
+
+  然后请求 <http://host:port> 即可访问当前命令所在的文件夹并下载相关内容
