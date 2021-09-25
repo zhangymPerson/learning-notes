@@ -1,7 +1,6 @@
 # GOROOT GOPATH 理解
 
 > 不同于其他语言，go 中没有项目的说法，只有包, 其中有两个重要的路径，GOROOT 和 GOPATH
-
 > GOROOT 是安装目录，GOPATH 是我们的工作空间, 用来存放包的目录
 
 ## GOROOT
@@ -113,7 +112,7 @@
 
   以下例子展现了实践中工作空间的概念：
 
-  ```
+  ```sh
   bin/
       streak                         # 可执行命令
       todo                           # 可执行命令
@@ -147,7 +146,7 @@
 
 - linux 下 安装 go 配置环境变量
 
-  国内下载镜像地址:https://golang.google.cn/dl/
+  国内下载镜像地址:<https://golang.google.cn/dl/>
 
   `wget https://golang.google.cn/dl/go1.15.2.linux-amd64.tar.gz`
 

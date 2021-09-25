@@ -1,7 +1,6 @@
 # GO 的包管理
 
 > Go Module 是 Go 会在 1.12 中正式推出的包管理机制。
-
 > go mod 的作用 类似于 Java 中的 mvn 和 nodejs 中 npm 主要做项目中的包管理
 
 - go mod
@@ -32,7 +31,7 @@
 
   **使用命令必须跟自己的项目名称 否则报错**
 
-  ```
+  ```shell
   go mod init {项目名}
 
   例：
@@ -83,12 +82,12 @@
 
   go.mod 文件用//注释，而不用/\*\*/。文件的每行都有一条指令，由一个动作加上参数组成。例如：
 
-  ```
+  ```conf
   module my/thing
   require other/thing     v1.0.2
-  require new/thing 		v2.3.4
-  exclude old/thing 		v1.2.3
-  replace bad/thing 		v1.4.5 	=> good/thing v1.4.5
+  require new/thing    v2.3.4
+  exclude old/thing    v1.2.3
+  replace bad/thing    v1.4.5 => good/thing v1.4.5
   ```
 
 - 命令
@@ -135,7 +134,7 @@
 
   对于标准库，即便是修改了源代码，只要不重新编译 Go 源码，那么链接时使用的就还是已经编译好的\*.a 文件
 
-* 包导入有三种模式：正常模式、别名模式、简便模式
+- 包导入有三种模式：正常模式、别名模式、简便模式
 
   ```go
   //官方包导入 GOROOT 路径下  Go语言的标准库，他其实是去GOROOT下去加载该模块

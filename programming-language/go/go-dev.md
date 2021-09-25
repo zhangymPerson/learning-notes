@@ -1,4 +1,4 @@
-## go 的 vscode 开发
+# go 的 vscode 开发
 
 - 安装 go 插件
 
@@ -22,9 +22,9 @@
 
 - go 配置语言服务器 - gopls 服务
 
-  https://github.com/golang/tools/tree/master/gopls
+  <https://github.com/golang/tools/tree/master/gopls>
 
-  https://github.com/golang/tools/blob/master/gopls/doc/vscode.md vscode 配置 gopls 服务
+  <https://github.com/golang/tools/blob/master/gopls/doc/vscode.md> vscode 配置 gopls 服务
 
 - 单个项目配置方式
 

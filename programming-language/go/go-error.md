@@ -4,7 +4,7 @@
 
   执行 `go get -u -v github.com/Luxurioust/excelize` 命令报错如下
 
-  ```
+  ```sh
   module declares its path as: github.com/360EntSecGroup-Skylar/excelize
   but was required as: github.com/Luxurioust/excelize
   ```
