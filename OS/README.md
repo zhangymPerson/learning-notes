@@ -10,3 +10,7 @@
 - [计算机系统笔记.md](./计算机系统笔记.md)
 
 ## 其他
+
+- 查看操作系统的系统编码 python 脚本一行搞定
+
+  `python -c "import sys; print sys.stdout.encoding"`
