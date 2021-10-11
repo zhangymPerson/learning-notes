@@ -53,3 +53,24 @@ Content-Type: {{contentType}}
     "created_at": "{{createdAt}}",
     "modified_by": "{{modifiedBy}}"
 }
+
+### 
+# post content-type = multipart/form-data 
+# 注意 此处  boundary 分割字符串 postman 导出的 是错误的
+# 因为分割符在使用时 需要 添加 '--' 
+# 即 当 boundary=--a 时
+# 使用时 ----a
+
+POST https://api.example.com/user/upload
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="text"
+
+title
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="1.png"
+Content-Type: image/png
+
+< ./1.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
