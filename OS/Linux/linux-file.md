@@ -14,6 +14,18 @@
 
 ### nc 服务
 
+- nc 通信测试
+
+  服务器端 查看 ip `hostname -i`
+
+  然后启动 nc 服务 `nc -l 8889`
+
+  客户端 先 ping `ping 远程ip`
+
+  然后 nc 连接 `nc host port`
+
+  就建立起双端的沟通信号
+
 - 接收端
 
   `nc -l port > file`
