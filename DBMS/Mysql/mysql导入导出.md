@@ -20,6 +20,9 @@
   mysqldump -h$fromurl -u$fromuser -p$frompassword $fromdb $fromtable > $sqlfile
   #导入单表文件
   mysql -h$tourl -u$touser -p$topassword $todb < $sqlfile
+
+  #mysql 执行单个 sql 语句并导出
+  mysql -uroot -ppassword -e 'select * from mydb.user' > /home/user/mydb_user.txt
   ```
 
 ## mysql8.0 中错误
