@@ -20,7 +20,26 @@
 
 ## 其他
 
-##　环境变量
+## 环境变量配置
+
+### 环境变量生效问题
+
+- 问题 bashrc 新开终端不生效问题
+
+- 每次终端都需要 `source ~/.bashrc`
+
+- 解决
+
+  没有~/.bash_profile 文件就新建一个
+  
+  `vim ~/.bash_profile`
+
+  ```sh
+  # 加载.bashrc文件
+  if test -f .bashrc ; then
+      source .bashrc
+  fi
+  ```
 
 ### 全局(所有用户)
 
