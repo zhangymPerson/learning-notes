@@ -212,3 +212,7 @@
   **下面的命令需要带 \` 符号**
 
   kill -s 9 \`ps aux|grep vscode|awk '{print $2}'\`
+
+- vscode json 注释问题 注释飘红
+
+  打开 json 文件,在 vscode 的右下角，选择文件的语言模式 选择 json with comments , json 注释就不飘红了

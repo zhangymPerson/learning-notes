@@ -6,11 +6,11 @@
 
 - [安装教程](http://www.runoob.com/nodejs/nodejs-install-setup.html)
 
-* [淘宝的 nodejs 镜像网站](https://npm.taobao.org/)
+- [淘宝的 nodejs 镜像网站](https://npm.taobao.org/)
 
-* [nodejs 教程-github](https://github.com/tuture-dev/nodejs-roadmap)
+- [nodejs 教程-github](https://github.com/tuture-dev/nodejs-roadmap)
 
-* 查看版本
+- 查看版本
 
   ```sh
   node -v
@@ -20,9 +20,9 @@
   nodejs -v
   ```
 
-* 修改镜像地址为淘宝的地址
+- 修改镜像地址为淘宝的地址
 
-  [查看说明]https://npm.taobao.org/
+  [查看说明]<https://npm.taobao.org/>
 
   安装报错
 
@@ -49,7 +49,7 @@
   npm config ls
   #查看所有默认的配置
   npm config ls -l
-  #配置全局安装目录 并将改目录配置到环境变量下面 否则 npm install -g *** 安装后不能全局使用
+  #配置全局安装目录 并将改目录配置到环境变量下面 否则 npm install -g --- 安装后不能全局使用
   #path为全局安装目录所在位置
   npm config set prefix "path"
   #举例
@@ -81,13 +81,13 @@
 
 - 全局安装 配置的位置 需要 **配置环境变量到 Path 中** 才能在任何位置使用命令
 
-* 安装淘宝的镜像
+- 安装淘宝的镜像
 
   ```sh
   $ npm install -g cnpm --registry=https://registry.npm.taobao.org
   ```
 
-### node js 全局库配置
+## node js 全局库配置
 
 - 查看全局安装库的位置
 
@@ -103,7 +103,7 @@
 
 - 这样 js 可以直接使用相关库中的 js 文件
 
-* nodejs 包管理器 npm 查看代理
+- nodejs 包管理器 npm 查看代理
 
   ```sh
   #置空
