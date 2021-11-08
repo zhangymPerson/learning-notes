@@ -1,4 +1,4 @@
-### windows 下使用 Emacs
+# windows 下使用 Emacs
 
 #### 卡顿，中文字符
 
@@ -147,11 +147,11 @@
 
 - 撤销操作（undo tree 模式的使用）
 
-   ```sh
-   # 撤销操作进入undo-tree-visualizer-mode
-   Ctrl-x u         
-   p n 上下移动，
-   b f 在分支之前，左右切换
-   t   显示时间戳
-   q   退出
-   ```
+  ```sh
+  # 撤销操作进入undo-tree-visualizer-mode
+  Ctrl-x u
+  p n 上下移动，
+  b f 在分支之前，左右切换
+  t   显示时间戳
+  q   退出
+  ```

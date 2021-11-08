@@ -10,6 +10,13 @@ set -e          # set -o errexit 有错误退出
 set -u          # set -o nounset
 set -o pipefail #管道执行过程中有错误退出
 
+# 输出脚本中相关内容 到脚本文件名对应的log文件中
+# debug时，可以开启
+exec >>${0}.log
+now=$(date +"%Y-%m-%d %H:%M:%S")
+now=$(date +"%F %T")
+echo "script start" ${now}
+
 # 获取当前脚本所在目录
 # 获取当前 shell 执行的相对目录  和 绝对目录
 # 如 sh demo.sh  sh命令所在文件 和 demo.sh所在位置的相对目录
