@@ -34,6 +34,10 @@
 
   `nc ip port < file`
 
+- 快速生成文件传输通道 文件传输
+
+  `echo -e "客户端复制此命令\nfile为要上传的文件\nnc $(hostname -i) 8889 < file" && nc -l 8889 > file`
+
 - 多文件可配合压缩命令
 
 - 示例
