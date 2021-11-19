@@ -1,12 +1,14 @@
 # windows 下使用 Emacs
 
-#### 卡顿，中文字符
+## 使用问题
+
+### 卡顿，中文字符
 
 - 修改字体 - 在 `Options` 下配置 `Set Default Font` 设置为宋体
 
 - 修改完可能解决部分问题
 
-#### 生成配置文件
+### 生成配置文件
 
 - 利用 `emacs` 创建 `.emacs.d` 文件夹和 `.emacs` 文件
 - 启动 `emacs` ，用鼠标点击 `Options` 菜单，随便点击一两个选项，比方点击一下 `Active Region Highlighting` ，

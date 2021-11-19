@@ -20,6 +20,10 @@ Windows 下 Emacs 就按如下方式来查找配置文件：
 - 如果存在 C:\.emacs，就用 C:\作为 home 目录~
 - 如果以上都不存在的话，就使用<system root>\Users\<user name>\AppData\Roaming 作为 home 目录~（对于 XP 和较早 windows 用户，需要到 Documents and Settings 目录下去找）
 
+## 安装
+
+- 安装网址:<http://ftp.gnu.org/gnu/emacs/>
+
 ## 常用体验
 
 - 打开退出
