@@ -11,20 +11,20 @@
 #########################################
 echo $0" begining ..."
 
-#日志函数
-log()
-{
-#echo "参数个数:"$#
-#配置文件位置和文件名
-filePath=/root/
-fileName=test.log
-#日期格式 可修改
-date=`date +"%Y-%m-%d %H:%M-%S"`
-if [ $# -eq 1 ];then
-   echo [$date]"[INFO]:脚本"$0"中:"$1 >> $filePath$fileName
-   return
-fi
-echo [$date][$1]":脚本"$0"中:"$2 >> $filePath$fileName
+# 日志函数
+# 日志输出到文件
+log(){
+    #echo "参数个数:"$#
+    #配置文件位置和文件名
+    filePath=/root/
+    fileName=test.log
+    #日期格式 可修改
+    date=`date +"%Y-%m-%d %H:%M:%S"`
+    if [ $# -eq 1 ];then
+    echo [$date]"[INFO]:脚本"$0"中:"$1 >> $filePath$fileName
+    return
+    fi
+    echo [$date][$1]":脚本"$0"中:"$2 >> $filePath$fileName
 }
 
 #调用方式

@@ -12,7 +12,7 @@ set -o pipefail #管道执行过程中有错误退出
 
 # 输出脚本中相关内容 到脚本文件名对应的log文件中
 # debug时，可以开启
-exec >>${0}.log
+exec >> ${0}.log
 now=$(date +"%Y-%m-%d %H:%M:%S")
 now=$(date +"%F %T")
 echo "script start" ${now}
