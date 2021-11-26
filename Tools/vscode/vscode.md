@@ -2,6 +2,18 @@
 
 - [返回](./README.md)
 
+## vscode 检索 搜索 技巧
+
+- vscode 全局搜索 ctrl + shift +f
+
+- 搜索文件 ctrl + p
+
+- 在 ctrl + p 下
+
+  - 输入 '@' 当前文件内检索
+
+  - 输入 '#' 搜索项目的函数变量名等内容
+
 ## 快捷键
 
 - 常用的 vscode 快捷键
