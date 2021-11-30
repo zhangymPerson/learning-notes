@@ -115,7 +115,7 @@
   #处理参数对
   ARGS=`getopt -o hva:b:c:: --long help,version,arg1:,arg2:,arg3:: -n $0 -- "$@"`
 
-  #初步校验参数的合法性
+  # 初步校验参数的合法性
   if [ $? != 0 ]; then
       echo "Terminating..."
       exit 1

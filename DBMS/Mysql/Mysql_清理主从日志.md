@@ -1,3 +1,5 @@
+# 清理主从日志
+
 - 查看自动清理日志时间
 
   show variables like 'expire_logs_days';

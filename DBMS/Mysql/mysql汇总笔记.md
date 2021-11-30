@@ -1,4 +1,3 @@
-
 - [笔记来源](https://shockerli.net/post/1000-line-mysql-note/)
 
 ```sql
@@ -15,7 +14,7 @@ mysqld --skip-grant-tables
 update mysql.user set password=password('root') where User='root';
 
 SHOW PROCESSLIST -- 显示哪些线程正在运行
-SHOW VARIABLES -- 
+SHOW VARIABLES --
 
 /* 数据库操作 */ ------------------
 -- 查看当前数据库
@@ -50,7 +49,7 @@ SHOW VARIABLES --
         CHARSET = charset_name
         如果表没有设定，则使用数据库字符集
     -- 存储引擎
-        ENGINE = engine_name    
+        ENGINE = engine_name
         表在管理数据时采用的不同的数据结构，结构不同会导致处理方式、提供的特性操作等不同
         常见的引擎：InnoDB MyISAM Memory/Heap BDB Merge Example CSV MaxDB Archive
         不同的引擎在保存表的结构和数据时采用不同的方式
@@ -90,7 +89,7 @@ SHOW VARIABLES --
             ADD PRIMARY KEY(字段名)    -- 创建主键
             ADD UNIQUE [索引名] (字段名)-- 创建唯一索引
             ADD INDEX [索引名] (字段名)    -- 创建普通索引
-            ADD 
+            ADD
             DROP[ COLUMN] 字段名        -- 删除字段
             MODIFY[ COLUMN] 字段名 字段属性        -- 支持对字段属性进行修改，不能修改字段名(所有原有属性也需写上)
             CHANGE[ COLUMN] 原字段名 新字段名 字段属性        -- 支持对字段名修改
@@ -225,7 +224,7 @@ SET NAMES GBK;    -- 相当于完成以上三个设置
     timestamp    4字节    时间戳        19700101000000 到 2038-01-19 03:14:07
     time        3字节    时间            -838:59:59 到 838:59:59
     year        1字节    年份            1901 - 2155
-    
+
 datetime    “YYYY-MM-DD hh:mm:ss”
 timestamp    “YY-MM-DD hh:mm:ss”
             “YYYYMMDDhhmmss”
@@ -279,7 +278,7 @@ set(val1, val2, val3...)
     2) MySQL函数转换(无符号整型，UNSIGNED)
         INET_ATON('127.0.0.1') 将IP转为整型
         INET_NTOA(2130706433) 将整型转为IP
-        
+
 
 
 
@@ -297,7 +296,7 @@ set(val1, val2, val3...)
 
 2. unique 唯一索引（唯一约束）
     使得某字段的值也不能重复。
-    
+
 3. null 约束
     null不是数据类型，是列的一个属性。
     表示当前列是否可以为null，表示什么都没有。
@@ -305,7 +304,7 @@ set(val1, val2, val3...)
     not null, 不允许为空。
     insert into tab values (null, 'val');
         -- 此时表示将第一个字段的值设为null, 取决于该字段是否允许为null
-    
+
 4. default 默认值属性
     当前字段的默认值。
     insert into tab values (default, 'val');    -- 此时表示强制使用默认值。
@@ -388,7 +387,7 @@ c. where 子句
     -- 表达式由运算符和运算数组成。
         -- 运算数：变量（字段）、值、函数返回值
         -- 运算符：
-            =, <=>, <>, !=, <=, <, >=, >, !, &&, ||, 
+            =, <=>, <>, !=, <=, <, >=, >, !, &&, ||,
             in (not) null, (not) like, (not) in, (not) between and, is (not), and, or, not, xor
             is/is not 加上ture/false/unknown，检验某个值的真假
             <=>与<>功能相同，<=>可用于null比较
@@ -396,7 +395,7 @@ c. where 子句
 d. group by 子句, 分组子句
     group by 字段/别名 [排序方式]
     分组后会进行排序。升序：ASC，降序：DESC
-    
+
     以下[合计函数]需配合 group by 使用：
     count 返回不同的非NULL值数目    count(*)、count(字段)
     sum 求和
@@ -518,7 +517,7 @@ fields    控制字段格式
 lines    控制行格式
 默认：lines terminated by '\n'
     terminated by 'string'    -- 终止
-    
+
 /* insert */ ------------------
 select语句获得的数据可以用insert插入。
 
@@ -575,7 +574,7 @@ TRUNCATE [TABLE] tbl_name
 　　mysqldump -u用户名 -p密码 库名 表1 表2 表3 > 文件名(D:/a.sql)
 3. 导出所有表
 　　mysqldump -u用户名 -p密码 库名 > 文件名(D:/a.sql)
-4. 导出一个库 
+4. 导出一个库
 　　mysqldump -u用户名 -p密码 -B 库名 > 文件名(D:/a.sql)
 
 可以-w携带备份条件
@@ -602,7 +601,7 @@ CREATE [OR REPLACE] [ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}] VIEW view_name
     - column_list如果存在，则数目必须等于SELECT语句检索的列数
 
 -- 查看结构
-    SHOW CREATE VIEW view_name 
+    SHOW CREATE VIEW view_name
 
 -- 删除视图
     - 删除视图后，数据依然存在。
@@ -627,7 +626,7 @@ CREATE [OR REPLACE] [ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}] VIEW view_name
 
 
 /* 事务(transaction) */ ------------------
-事务是指逻辑上的一组操作，组成这组操作的各个单元，要不全成功要不全失败。 
+事务是指逻辑上的一组操作，组成这组操作的各个单元，要不全成功要不全失败。
     - 支持连续SQL的集体成功或集体撤销。
     - 事务是数据库在数据晚自习方面的一个功能。
     - 需要利用 InnoDB 或 BDB 存储引擎，对自动提交的特性支持完成。
@@ -754,8 +753,8 @@ end
 
 --// 局部变量 ----------
 -- 变量声明
-    declare var_name[,...] type [default value] 
-    这个语句被用来声明局部变量。要给变量提供一个默认值，请包含一个default子句。值可以被指定为一个表达式，不需要为一个常数。如果没有default子句，初始值为null。 
+    declare var_name[,...] type [default value]
+    这个语句被用来声明局部变量。要给变量提供一个默认值，请包含一个default子句。值可以被指定为一个表达式，不需要为一个常数。如果没有default子句，初始值为null。
 
 -- 赋值
     使用 set 和 select into 语句为变量赋值。
@@ -785,8 +784,8 @@ select into 可以将表中查询获得的数据赋给变量。
 
 --// 控制结构 ----------
 -- if语句
-if search_condition then 
-    statement_list    
+if search_condition then
+    statement_list
 [elseif search_condition then
     statement_list]
 ...

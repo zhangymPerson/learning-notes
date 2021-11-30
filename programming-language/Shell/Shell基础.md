@@ -79,13 +79,12 @@
 - shell 命令成功与否的判断
 
   ```sh
-
+  #  shell 执行成功 命令执行结果是否成功判断
   if [ $? -eq 0 ]; then
       echo "success"
   else
       echo "fail"
   fi
-
   ```
 
 - shell 在 Ubuntu 下报错 function: not found

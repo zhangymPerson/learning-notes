@@ -1,6 +1,7 @@
 # 物理文件简单分析
 
 - 查看物理文件位置
+
 ```sh
 #sql 中的datadir 为物理文件所在位置
 mysql> show global variables like '%dir%';
@@ -25,11 +26,12 @@ mysql> show global variables like '%dir%';
 +-----------------------------------------+----------------------------+
 15 rows in set (0.00 sec)
 ```
- - 物理文件简单分析
 
- ```conf
+- 物理文件简单分析
+
+```conf
 #事务日志文件,是确保事务的REDO和UNDO，主要是确保事务的前滚和后滚，不是用来恢复用
-ib_logfile0 
+ib_logfile0
 #事务日志文件,是确保事务的REDO和UNDO，不是用来恢复用
 ib_logfile1
 #临时表空间
@@ -52,8 +54,6 @@ ib_buffer_pool
 注：只有在正常关闭MySQL服务，或者pkill mysql时，会把热数据dump到内存。机器宕机或者pkill -9 mysql，是不会dump。
 ```
 
-
-
 - 数据库目录下的数据文件简介
 
 ```
@@ -62,12 +62,12 @@ db.opt存放这数据库编码等相关的配置信息
 还有很多数据库同名的数据库文件夹
 mysql两种常用存储引擎myisam和innodb
 myisam不支持事务；innodb支持事务，当前作为插件来安装
- 
+
 myisam的数据库的物理文件结构为：
 .frm文件：与表相关的元数据信息都存放在frm文件，包括表结构的定义信息等。各种存储引擎都需要frm文件，并且存放于数据库名目录下。
 .myd文件：myisam存储引擎专用，用于存储myisam表的数据
 .myi文件：myisam存储引擎专用，用于存储myisam表的索引相关信息
- 
+
 innodb的数据库的物理文件结构为：
 .frm文件
 .ibd文件和.ibdata文件：
