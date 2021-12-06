@@ -153,4 +153,6 @@
 
 - 修改 settings
 
+  php / c / C++ 大括号换行问题
+  
   打开 settings -> search -> `format:braces` -> 选择对应的语言/插件 修改相关配置
