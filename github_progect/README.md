@@ -154,7 +154,7 @@
 
 ## shell 相关
 
-- [纯 bash 实现脚本集合](https://github.com/dylanaraps/pure-bash-bible)
+- [纯 bash 实现脚本集合 shell 脚本 shell-demo](https://github.com/dylanaraps/pure-bash-bible)
 
   <https://github.com/dylanaraps/pure-bash-bible>
 
