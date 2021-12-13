@@ -1,0 +1,12 @@
+spring.application.name: ApplicationName
+server:
+  address:
+  # 服务器的HTTP端口，默认为8080
+  port: 80
+  # Value to use for the Server response header (if empty, no header is sent).
+  # 可以在response的头加东西, 默认没有
+  server-header:
+  servlet:
+    # ContentPath 可以没/
+    context-path: /
+  # tomcat相关
