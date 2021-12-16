@@ -23,10 +23,35 @@ class Task(object):
             return str1
         return str1 + str2
 
-    # 字符串去掉空格
+    # 字符串去掉空格 删除 去掉
+    def remove(self, str):
+        """
+        字符串去掉 \n '' '   '
+        """
+        # 只删除行末尾的“\n”：
+        newStr = str.strip()
+        # 去掉行尾的所有空白：
+        str.rstrip()
+        print("[%s] 去掉 \\n 后 [%s]" % (str, newStr))
 
     # 字符串为空判断
+
     # 字符串包含字符判断
+
+    def contain(self):
+        str = 'Hello word'
+        if 'H' in str:
+            print("[%s] 包含 [%s]" % (str, 'H'))
+
+    def replace(self):
+        """
+        字符串 替换
+        """
+        str = "hello word aa bb c"
+        # 新对象必须用新变量接
+        # 需要注意 replace 不会改变原 string 的内容。
+        newStr = str.replace("aa", "AAAA")
+        print(str, "=>", newStr)
 
 
 def splitTest():
@@ -35,6 +60,12 @@ def splitTest():
     """
     # 0、a,b为参数。从字符串指针为a的地方开始截取字符，到b的前一个位置（因为不包含b）
     str = "hello world"
+
+    # 字符串切割 分割
+    list = str.split(" ")
+    for key in list:
+        print(key)
+
     a = 0
     b = len(str)
     print(str[a: b])
@@ -105,17 +136,23 @@ def testTwo():
 
 def testOne():
     task = Task("")
-    res = task.join("a", "b")
-    a = task.join(None, "a")
-    b = task.join("a", None)
-    c = task.join(None, None)
-    d = task.join(1, 2)
-    print(res, a, b, c, d)
+    # res = task.join("a", "b")
+    # a = task.join(None, "a")
+    # b = task.join("a", None)
+    # c = task.join(None, None)
+    # d = task.join(1, 2)
+    # print(res, a, b, c, d)
+    arr = ["a", "中国", "你\n好", "bb\n",
+           "abcd\nefgij\nklmnopqrstuvwxyz", " ", "", "\n", "\t"]
+    for str in arr:
+        task.remove(str)
+    # task.contain()
+    # task.replace()
 
 
 def run():
     print("start ...")
-    # testOne()
+    testOne()
     # testTwo()
     # arr = ["a", "中国", "你好", "bb", "abcdefgijklmnopqrstuvwxyz", " ", "", "\n", "\t"]
     # 编解码测试
@@ -123,6 +160,7 @@ def run():
     #     encodeAndDecode(key)
     # strTolist()
     # splitTest()
+
     print("end ...")
 
 

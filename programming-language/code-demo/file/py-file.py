@@ -2,6 +2,10 @@
 
 
 import os
+import csv
+# 读取excel工具包
+# 安装方式 pip install openpyxl
+from openpyxl import load_workbook
 
 
 def writeToFile(msg, fileName):
@@ -24,18 +28,70 @@ def printFile(fileName):
             print(line)
 
 
+def readCsv(fileName):
+    """
+    读取 csv文件
+    """
+    print("read  csv %s" % fileName)
+    with open(fileName) as f:
+        res = csv.reader(f)
+        for row in res:
+            # print(type(key))
+            # key.split('\t')
+            colu = row[0].split("\t")
+            print(colu[0], colu[1])
+
+
+def readExcel(filenName):
+    """
+    读取excel文件
+    """
+    print("read excel %s" % filenName)
+    wb = load_workbook(filenName)
+    # 通过索引获取sheet
+    sheets = wb.worksheets
+    for sheet in sheets:
+        print(sheet)
+    sheet = wb['Sheet1']
+    # 读取sheet中的数
+    # 行
+    nrows = sheet.max_row
+    # 列
+    ncols = sheet.max_column
+    print(nrows, ncols)
+    # 获取某个单元格的值 行列都从 1 开始计数
+    value = sheet.cell(1, 1).value
+    print(value)
+
+
 def removeFile(fileName):
     os.remove(fileName)
 
 
-def run():
-    print("start ...")
+def testReadCsvAndExcel():
+    """
+    执行命令要在当前文件所在目录下
+    """
+    file = '/conf/t-csv.csv'
+    print(os.getcwd())
+    # readCsv(os.getcwd() + file)
+    excel = '/conf/t-excel.xlsx'
+    readExcel(os.getcwd() + excel)
+
+
+def testReadAndWrite():
     file = "test.log"
     writeToFile("test\n", fileName=file)
     writeToFile("test", fileName=file)
     writeToFile("test", fileName=file)
     printFile(fileName=file)
     removeFile(file)
+
+
+def run():
+    print("start ...")
+    # testReadAndWrite()
+    testReadCsvAndExcel()
     print("end ...")
 
 
