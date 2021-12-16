@@ -88,3 +88,26 @@
   # windows  中xshell
   ssh dev@127.0.0.1:2222
   ```
+
+## ssh / scp 报错解决方式
+
+- 错误1
+
+  ```sh
+  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+  @BILS SUGGESTS YOU RUN COMMAND 'clearknownhost' AND RETRY @
+  @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+  IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+  Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+  It is also possible that the RSA host key has just been changed.
+  The fingerprint for the RSA key sent by the remote host is
+  Please contact your system administrator.
+  Add correct host key in /home/work/.ssh/known_hosts to get rid of this message.
+  Offending key in /home/work/.ssh/known_hosts:12
+  RSA host key for 66danao.com has changed and you have requested strict checking.
+  Host key verification failed.
+  ```
+  解决方式 
+  删除旧的IP `vi ~/.ssh/known_hosts`
+  删除对应ip的相关rsa信息（本例可知删除12行信息即可）
