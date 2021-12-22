@@ -173,7 +173,7 @@
 | cp -a /tmp/dir1 .        | 复制⼀个⽬录⾄当前⽬录                                         |
 | ln -s file1 link1        | 创建指向⽂件/⽬录的软链接                                      |
 | ln file1 lnk1            | 创建指向⽂件/⽬录的物理链接                                    |
-| find / -name file1       | 从跟⽬录开始搜索⽂件/⽬录                                      |
+| find / -name file1       | 从跟⽬录开始搜索⽂件/⽬录 查找文件                                     |
 | find / -user user1       | 搜索⽤户 user1 的⽂件/⽬录                                     |
 | find /dir -name \*.bin   | 在⽬录/dir 中搜带有.bin 后缀的⽂件                             |
 | locate <关键词>          | 快速定位⽂件                                                   |
