@@ -53,6 +53,33 @@ class Task(object):
         newStr = str.replace("aa", "AAAA")
         print(str, "=>", newStr)
 
+    def getType(self, obj):
+        """
+        获取类型。类型判断
+        """
+        return self.typeof(obj)
+
+    def typeof(variate):
+        """
+        判断变量类型的函数
+        """
+        type = None
+        if isinstance(variate, int):
+            type = "int"
+        elif isinstance(variate, str):
+            type = "str"
+        elif isinstance(variate, float):
+            type = "float"
+        elif isinstance(variate, list):
+            type = "list"
+        elif isinstance(variate, tuple):
+            type = "tuple"
+        elif isinstance(variate, dict):
+            type = "dict"
+        elif isinstance(variate, set):
+            type = "set"
+        return type
+
 
 def splitTest():
     """

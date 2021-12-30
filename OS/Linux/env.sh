@@ -48,6 +48,9 @@ alias download-file='echo "浏览器打开 http://${HOSTNAME}:8889/" && python3 
 alias pwdftp='echo "ftp://${HOSTNAME}:${PWD}"'
 alias pwdscp='echo "${LOGNAME}@${HOSTNAME}:${PWD}"'
 
+# 查询当前目录下 文件中的某个字符
+alias fkey='findKey(){ find ./ -type file | xargs grep $1 ;}; findKey'
+
 echo "配置完成"
 # alias
 

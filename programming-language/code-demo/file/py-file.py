@@ -59,6 +59,10 @@ def readExcel(filenName):
     # 列
     ncols = sheet.max_column
     print(nrows, ncols)
+
+    # 打印行数 要从 1 到 max +1
+    for i in range(1, nrows + 1):
+        print("行数:", i)
     # 获取某个单元格的值 行列都从 1 开始计数
     value = sheet.cell(1, 1).value
     print(value)

@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+import json
+
+
 def mapMethod():
     # python中的 map 叫 字典
     map = {
@@ -7,6 +10,12 @@ def mapMethod():
         'alice': 3719,
         'jack': 7052,
     }
+
+    # map查询 get查询不存在不报错 返回 None
+    # map['key'] key不存在则报错
+    a = map.get('aaaa')
+    print(a)
+    # a = map['aaaa']
 
     # 增
     map['test'] = True
@@ -36,9 +45,41 @@ def mapMethod():
     print(dict2["a"]["c"])
 
 
+def toJson():
+    """
+    python json转化
+    """
+    dict = {
+        "key": "value",
+        "1": 1,
+        2: True,
+        2.1: False,
+        "a": None,
+        None: 0,
+        "中文": "乱码",
+    }
+
+    # 字典转换成json字符串
+    # map转json
+    cstr = json.dumps(dict)
+    print(cstr)
+
+    # 解决中文乱码问题
+    str = json.dumps(dict, ensure_ascii=False)
+    print(str)
+
+    # json转map
+    # json字符串转换成字典
+    map = json.loads(str)
+    print(map['2.1'])
+
+    return
+
+
 def run():
     print("start ...")
     mapMethod()
+    toJson()
     print("end ...")
 
 
