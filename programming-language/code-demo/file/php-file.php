@@ -21,7 +21,8 @@ class Task {
      */
     public function isExist($fileName) {
         if (file_exists($fileName)) {
-            print "[$fileName] exists" . PHP_EOL;
+            // 获取文件路径的
+            print realpath($fileName) . " is exists" . PHP_EOL;
             return true;
         } else {
             print "[$fileName] no exists" . PHP_EOL;
@@ -34,13 +35,14 @@ class Task {
      */
     public function readFile($fileName) {
         # code...
-        if (!$this->isExist($fileName)) {
+        if (!file_exists($fileName)) {
             return;
         }
         $file = fopen($fileName, "r");
+        $i = 0;
         while (!feof($file)) {
             $line_str = fgets($file);
-            echo $line_str . PHP_EOL;
+            echo $i++ . " = [" .  trim($line_str) . "]" . PHP_EOL;
         }
         fclose($file);
     }
@@ -49,7 +51,8 @@ class Task {
      * 写文件
      */
     public function writeFile($msg, $fileName) {
-        file_put_contents($fileName, $msg, FILE_APPEND);
+        // 按行写入
+        file_put_contents($fileName, $msg . PHP_EOL, FILE_APPEND);
     }
 
     /**
@@ -70,6 +73,9 @@ $task = new Task;
 $task->task();
 $fileName = "php.log";
 $task->writeFile("test,test", $fileName);
-$task->removeFile($fileName);
+$task->writeFile("one,test", $fileName);
+$task->writeFile("two,test", $fileName);
+$task->writeFile("three,test", $fileName);
+$task->writeFile("fore,test", $fileName);
 $task->readFile($fileName);
 // $task->removeFile($fileName);

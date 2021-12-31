@@ -2,6 +2,11 @@
 
 
 def setCurd():
+    # 新建set
+    keys = set()
+    keys.add("a")
+    print("set = ", keys)
+    
     # 会自动去重
     setOne = {1, 2, 'a', 'a', 'b', 'c', 'cc'}
     print(setOne)

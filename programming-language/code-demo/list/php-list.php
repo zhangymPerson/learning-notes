@@ -24,12 +24,18 @@ class Task {
         unset($list[1]);
         print_r($list);
 
-        // 判断是否存在
+        // 查 判断是否存在
         if (in_array(1, $list)) {
             echo "1 存在" . PHP_EOL;
         } else {
             echo "1 不存在" . PHP_EOL;
         }
+
+        // 反转
+        print_r($list);
+        $newList = array_reverse($list);
+
+        print_r($newList);
 
         echo "数组长度 = " . count($list) . PHP_EOL;
         echo "数组长度 = " . sizeof($list) . PHP_EOL;
