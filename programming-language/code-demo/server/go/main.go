@@ -10,6 +10,7 @@ import (
 	"os/exec"
 	"strconv"
 	"strings"
+	"time"
 )
 
 // 启动配置
@@ -109,7 +110,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 func upload(w http.ResponseWriter, r *http.Request) {
 	r.ParseMultipartForm(32 << 20)
 	errRes := GetError("非Post请求")
-	//判断是否是post请求
+	// 判断是否是post请求
 	if r.Method != "POST" {
 		fmt.Fprintln(w, errRes.ToJson())
 		return
@@ -120,7 +121,17 @@ func upload(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer file.Close()
-	f, err := os.OpenFile(handler.Filename, os.O_WRONLY|os.O_CREATE, 0666)
+	name := handler.Filename
+	var f *os.File
+	// 多次上传文件覆盖的问题
+	// 多次时，使用 时间戳 + _ 作为前缀 创建新文件保存
+	if _, err := os.Stat(name); os.IsNotExist(err) {
+		f, _ = os.OpenFile(name, os.O_WRONLY|os.O_CREATE, 0666)
+	} else {
+		log.Printf("文件[%v]已经存在", name)
+		name = strconv.FormatInt(time.Now().Unix(), 10) + "_" + name
+		f, _ = os.OpenFile(name, os.O_WRONLY|os.O_CREATE, 0666)
+	}
 	if err != nil {
 		log.Printf("保存文件[%v]失败", f.Name())
 		fmt.Println(err)
