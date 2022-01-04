@@ -11,6 +11,7 @@ func main() {
 	fmt.Println("start ...")
 	// test()
 	strFormat()
+	replace()
 	fmt.Println("end ...")
 }
 
@@ -65,6 +66,17 @@ func isEmpty(str string) bool {
 
 	trim := strings.Trim(str, " ")
 	return trim == ""
+}
+
+func replace() {
+	str := "this is  danao \ntest\n doc"
+	fmt.Println("-------- 原字符串 ----------")
+	fmt.Println(str)
+	// 去除空格
+	str = strings.Replace(str, " ", "", -1)
+	// 去除换行符
+	str = strings.Replace(str, "\n", "", -1)
+	fmt.Println(str)
 }
 
 // 字符串包含字符判断

@@ -7,7 +7,9 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"os/exec"
 	"strconv"
+	"strings"
 )
 
 // 启动配置
@@ -31,6 +33,18 @@ func getArgs() map[string]string {
 	return res
 }
 
+// getIp
+func getIp() string {
+	cmd := exec.Command("bash", "-c", "hostname -i")
+	b, err := cmd.Output()
+	if err != nil {
+		fmt.Println("获取ip错误，错误信息", err)
+		return "127.0.0.1"
+	}
+	return string(b)
+
+}
+
 // 启动一个指定端口的服务
 func startServer(port string) {
 	http.HandleFunc("/", index)
@@ -42,6 +56,8 @@ func startServer(port string) {
 		fmt.Println("获取主机名错误")
 	}
 	log.Printf("http://%v%v/", host, port)
+	ip := strings.Replace(getIp(), "\n", "", -1)
+	log.Printf("http://%v%v/", ip, port)
 	command := fmt.Sprintf(`curl --location --request POST '%v%v/upload' --form '%v=@"%v"'
 	`, host, port, fileKey, "/home/work/filename")
 	log.Printf("命令行工具\n%v", command)
