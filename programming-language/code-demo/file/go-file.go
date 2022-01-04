@@ -10,7 +10,7 @@ import (
 
 	"gopkg.in/yaml.v2"
 )
-
+// 文件读写脚本
 // =============================读取配置====================================
 // 读取json配置文件
 func getJsonConf(fileName string) map[string]interface{} {

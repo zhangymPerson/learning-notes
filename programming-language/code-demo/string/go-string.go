@@ -9,7 +9,8 @@ import (
 // go run go-string.go
 func main() {
 	fmt.Println("start ...")
-	test()
+	// test()
+	strFormat()
 	fmt.Println("end ...")
 }
 
@@ -37,6 +38,13 @@ func join(arg string, args ...string) string {
 		}
 	}
 	return arg
+}
+
+// 字符串拼接替换
+func strFormat() {
+	//字符串拼接
+	str := fmt.Sprintf("%s %s %s", "format", "string", "by fmt.Sprintf")
+	print(str)
 }
 
 // 字符串去掉空格
