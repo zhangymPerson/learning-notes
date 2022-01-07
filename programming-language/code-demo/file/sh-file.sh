@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # 脚本内容输出到文件
+# 脚本输出到文件
 # exec > $0".log"
 
 function readFile {

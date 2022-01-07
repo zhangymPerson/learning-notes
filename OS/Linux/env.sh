@@ -50,10 +50,18 @@ alias pwdscp='echo "${LOGNAME}@${HOSTNAME}:${PWD}"'
 alias pwdscp='echo "${LOGNAME}@$(hostname -i):${PWD}"'
 
 # 查询当前目录下 文件中的某个字符
-alias fword='findWord(){ find ./ -type f | xargs grep $1 ;}; findWord'
+alias fword='findWord(){ find ./ -type f | xargs grep -n "$1" --color=auto ;}; findWord'
+
+# grep递归查询
+alias fwordgrep='findWordGrep(){ grep "$1" . -r -n --color=auto ;}; findWordGrep'
 
 # 查询当前目录下 是否有某个文件
-alias  ffile='findFile(){ find ./ -type f -iname \*$1\* ;}; findFile'
+alias ffile='findFile(){ find ./ -type f -iname \*$1\* ;}; findFile'
+
+# 查询指定文件名的文件是否包含某个字段
+# 查询 shell 文件中包含 haed 内容的文件
+# fwordfile sh head
+alias fwordfile='findWordFromFile(){ find ./ -type f -iname \*$1\* | xargs grep -n --color=auto "$2" ;}; findWordFromFile'
 
 echo "配置完成"
 # alias
