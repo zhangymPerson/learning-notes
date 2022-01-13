@@ -1,18 +1,25 @@
 #!/usr/bin/env python3
 
+import json
+
 
 def setCurd():
     # 新建set
     keys = set()
     keys.add("a")
     print("set = ", keys)
-    
+
     # 会自动去重
     setOne = {1, 2, 'a', 'a', 'b', 'c', 'cc'}
     print(setOne)
+    # 转json
+    # json.dumps(setOne)
+    jsonStr = json.dumps(list(setOne))
+    print(jsonStr)
+
     # 新增
     setOne.add("aaaa")
-    print(setOne)
+    print("set转json 需要转换成 list ", setOne)
     # 删除
     setOne.pop()
 

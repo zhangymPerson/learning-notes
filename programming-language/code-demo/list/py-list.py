@@ -4,8 +4,28 @@ import copy
 
 def run():
     print("start ...")
-    test()
+    # test()
+    sort()
+    distinct()
     print("end ...")
+
+
+def sort():
+    intList = [13, 2, 3, 5, 44, 5, 56, 76, 76, 5454, 5464, 666, 5, 65, 655]
+    print(intList)
+    # 排序
+    intList.sort()
+    print(intList)
+
+
+def distinct():
+    intList = [1, 2, 2, 3, 2, 2, 2, 2, 343, 4,
+               43, 43, 4, 34, 43, 43, 43, 43, 4, 44]
+    # 去重
+    intSet = list(set(intList))
+    # 恢复原来顺序
+    intSet.sort(key=intList.index)
+    print(intSet)
 
 
 def test():

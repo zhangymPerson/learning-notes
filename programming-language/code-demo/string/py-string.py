@@ -2,6 +2,10 @@
 # -*- coding=utf-8 -*-
 
 # https://www.runoob.com/python3/python3-string.html
+
+import time  # 引入time模块
+
+
 class Task(object):
     """docstring for Task."""
 
@@ -119,7 +123,7 @@ def splitTest():
 
 def strTolist():
     """
-    字符串与列表，元组的互相转换。
+    字符串与列表，元组的互相。
     """
     # 字符串转换为列表
     var = '菜鸟教程'
@@ -161,6 +165,16 @@ def testTwo():
     print(res)
 
 
+# python 时间戳
+def timeTest():
+    ticks = time.time()
+    print("当前时间戳为:", ticks)
+    print("去掉小数点", int(ticks))
+    # 时间戳转换为时间元组
+    print(time.localtime(time.time()))
+    print(time.gmtime(time.time()))
+
+
 def testOne():
     task = Task("")
     # res = task.join("a", "b")
@@ -177,9 +191,18 @@ def testOne():
     # task.replace()
 
 
+def typeChange():
+    # 其他类型转字符串
+    num = str(1)
+    # 输出 <class 'str'>
+    print(type(num))
+
+
 def run():
     print("start ...")
-    testOne()
+    timeTest()
+    typeChange()
+    # testOne()
     # testTwo()
     # arr = ["a", "中国", "你好", "bb", "abcdefgijklmnopqrstuvwxyz", " ", "", "\n", "\t"]
     # 编解码测试
