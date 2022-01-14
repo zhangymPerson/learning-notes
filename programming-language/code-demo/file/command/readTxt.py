@@ -47,7 +47,7 @@ def analysisWords(words):
 def run():
     print("task")
     words = readFile(
-        fileName="/Users/zhangyanming02/person/github/learning-notes/programming-language/code-demo/file/conf/t-txt.txt")
+        fileName="/Users/work/person/github/learning-notes/programming-language/code-demo/file/conf/t-txt.txt")
     # 获取
     print("原文件 有[%s]行" % len(words))
     print(words)

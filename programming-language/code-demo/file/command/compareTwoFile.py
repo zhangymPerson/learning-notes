@@ -42,8 +42,8 @@ def compareTwoFile(one, two):
 
 def run():
     print("task")
-    one = "/Users/zhangyanming02/person/github/learning-notes/programming-language/code-demo/file/command/compare/one.txt"
-    two = "/Users/zhangyanming02/person/github/learning-notes/programming-language/code-demo/file/command/compare/two.txt"
+    one = "/Users/work/person/github/learning-notes/programming-language/code-demo/file/command/compare/one.txt"
+    two = "/Users/work/person/github/learning-notes/programming-language/code-demo/file/command/compare/two.txt"
     compareTwoFile(one, two)
 
 
