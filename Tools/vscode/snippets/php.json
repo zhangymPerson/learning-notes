@@ -1,17 +1,4 @@
 {
-    // Place your snippets for php here. Each snippet is defined under a snippet name and has a prefix, body and
-    // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
-    // same ids are connected.
-    // Example:
-    // "Print to console": {
-    // 	"prefix": "log",
-    // 	"body": [
-    // 		"console.log('$1');",
-    // 		"$2"
-    // 	],
-    // 	"description": "Log output to console"
-    // }
     "err_log": {
         "prefix": "err",
         "body": [
@@ -22,25 +9,25 @@
     "err_json": {
         "prefix": "errjson",
         "body": [
-            "error_log(\"$1\" . PHP_EOL . json_encode($2));"
+            "error_log(\"$1\". json_encode($2));"
         ],
         "description": "print log"
     },
     "define var": {
-        "prefix": "var",
+        "prefix": "var ",
         "body": [
             "$$1"
         ],
         "description": "print log"
     },
-    "test log": {
+    "记录当前执行的类和行信息": {
         "prefix": "testlog",
         "body": [
             "error_log(\"====执行到:\".__METHOD__.\":\".__LINE__.\"====\");"
         ],
         "description": "print log"
     },
-    "print": {
+    "记录执行日志到php-error文件中": {
         "prefix": "sout",
         "body": [
             "\\$params = array(\n    'key' => 'value',\n    '$1' => '$2',\n);",
@@ -48,11 +35,40 @@
         ],
         "description": "print log"
     },
-    "fileput": {
+    "换行输出变量": {
+        "prefix": "ech",
+        "body": [
+            "echo \\$$0 . PHP_EOL;"
+        ],
+        "description": "'echo' statement"
+    },
+    "输出到当前目录的debug文件": {
         "prefix": "fileput",
         "body": [
-            "file_put_contents(__DIR__.\"/debug.log\", date('Y-m-d h:i:s', time()) . \" result \\n\" . var_export($1,true) . \"\\n\", FILE_APPEND);"
+            "file_put_contents(__DIR__.\"/debug.log\", \" result \\n\" . var_export(\\$$1,true) . \"\\n\", FILE_APPEND);"
         ],
         "description": "print log"
+    },
+    "输出变量的json格式": {
+        "prefix": "echojson",
+        "body": [
+            "echo json_encode(\\$$1) . PHP_EOL;"
+        ],
+        "description": "echo"
+    },
+    "脚本文件头": {
+        "prefix": "header",
+        "body": [
+            "<?php",
+            "/**",
+            "@file : $TM_FILENAME",
+            "@desc : 脚本执行方式 [php $TM_FILENAME]",
+            "@date : $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            "@author : danao",
+            "@version : 1.0",
+            " */",
+            ""
+        ]
     }
+    // source : https://github.com/phiter/phpstorm-snippets-for-vscode/blob/master/snippets/snippets.json
 }

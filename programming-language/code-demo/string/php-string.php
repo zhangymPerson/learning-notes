@@ -29,6 +29,8 @@ class Task {
             $res = $this->trim($item);
             echo "[$item] => [$res]" . PHP_EOL;
         }
+
+        $this->split("aaa@@bbb@c@@@dd");
     }
 
     // 字符串拼接
@@ -40,7 +42,15 @@ class Task {
         return trim($str);
     }
     // 字符串为空判断
+    public function isEmpty(string $str) {
+    }
     // 字符串包含字符判断
+
+    // 字符串分割
+    public function split(string $str) {
+        $arr = explode('@@', $str);
+        echo json_encode($arr);
+    }
 }
 
 

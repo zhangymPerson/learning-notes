@@ -17,6 +17,16 @@ def writeToFile(msg, fileName):
         f.write(msg)
 
 
+def readAllFile(fileName):
+    """
+    读取整个文件
+    """
+    # 读
+    with open(file=fileName, mode='r', encoding='utf-8') as f:
+        content = f.read()
+        print(content)
+
+
 def printFile(fileName):
     """
     按行读文件
@@ -88,14 +98,15 @@ def testReadAndWrite():
     writeToFile("test\n", fileName=file)
     writeToFile("test", fileName=file)
     writeToFile("test", fileName=file)
-    printFile(fileName=file)
+    # printFile(fileName=file)
+    readAllFile(fileName=file)
     removeFile(file)
 
 
 def run():
     print("start ...")
-    # testReadAndWrite()
-    testReadCsvAndExcel()
+    testReadAndWrite()
+    # testReadCsvAndExcel()
     print("end ...")
 
 

@@ -28,6 +28,21 @@
         ],
         "description": "read file"
     },
+    "脚本文件头": {
+        "prefix": "header",
+        "body": [
+            "#!/usr/bin/env python3",
+            "# -*- encoding: utf-8 -*-",
+            "'''",
+            "@file : $TM_FILENAME",
+            "@desc : command [python3 $TM_FILENAME]\n        script info:$0",
+            "@date : $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+            "@author : danao",
+            "@version : 1.0",
+            "'''",
+            ""
+        ]
+    },
     // source : https://github.com/cstrap/python-snippets/blob/master/snippets/base.json
     "#!/usr/bin/env python": {
         "prefix": "env",
