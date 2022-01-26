@@ -14,7 +14,8 @@ class Task {
      */
     public function task() {
         echo "start ..." . PHP_EOL;
-        $this->test();
+        // $this->test();
+        $this->replace();
         echo "end ..." . PHP_EOL;
     }
 
@@ -33,20 +34,37 @@ class Task {
         $this->split("aaa@@bbb@c@@@dd");
     }
 
-    // 字符串拼接
+    /**
+     * 字符串替换
+     */
+    public function replace() {
+        // Hello word => Hello good
+        $str = str_replace("word", "good", "Hello word");
+        echo $str . PHP_EOL;
+    }
+
+    /**
+     * 字符串拼接
+     */
     public function join($str, $str1) {
         return $str . $str1;
     }
-    // 字符串去掉空格
+    /**
+     *  字符串去掉空格
+     */
     public function trim($str) {
         return trim($str);
     }
-    // 字符串为空判断
+    /**
+     *  字符串为空判断
+     */
     public function isEmpty(string $str) {
     }
     // 字符串包含字符判断
 
-    // 字符串分割
+    /**
+     * 字符串分割
+     */
     public function split(string $str) {
         $arr = explode('@@', $str);
         echo json_encode($arr);

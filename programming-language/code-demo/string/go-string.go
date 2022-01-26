@@ -10,6 +10,7 @@ import (
 func main() {
 	fmt.Println("start ...")
 	// test()
+	toByte()
 	strFormat()
 	replace()
 	fmt.Println("end ...")
@@ -80,3 +81,11 @@ func replace() {
 }
 
 // 字符串包含字符判断
+
+func toByte() {
+	// string与byte转化
+	str := "hello word"
+	bt := []byte(str)
+	strs := string(bt)
+	fmt.Println(str,bt,strs)
+}

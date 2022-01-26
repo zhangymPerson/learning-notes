@@ -3,9 +3,34 @@
 
 import os
 import csv
+import sys
+
 # 读取excel工具包
 # 安装方式 pip install openpyxl
 from openpyxl import load_workbook
+
+
+def getFilePath():
+    # 当前执行文件的路径，如 D：\aaa\bbb\ccc.py
+    filepath = os.path.abspath(__file__)
+    print(filepath)
+    # 当前执行文件的上级路径，如 D：\aaa\bbb
+    filepath = os.path.dirname(os.path.abspath(__file__))
+    print(filepath)
+    # 继续向上
+    filepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    print(filepath)
+    # 添加路径：
+    # sys.path.append
+    # print(filepath)
+    # 路径不存在则自动创建
+    path = filepath + "/a/a.txt"
+    print(path)
+    filepath = os.makedirs(path, exist_ok=True)
+    print(filepath)
+    # 路径组合
+    # os.path.join(path1, path2, path3)
+    print(filepath)
 
 
 def writeToFile(msg, fileName):
@@ -27,7 +52,7 @@ def readAllFile(fileName):
         print(content)
 
 
-def printFile(fileName):
+def readFile(fileName):
     """
     按行读文件
     """
@@ -98,15 +123,16 @@ def testReadAndWrite():
     writeToFile("test\n", fileName=file)
     writeToFile("test", fileName=file)
     writeToFile("test", fileName=file)
-    # printFile(fileName=file)
+    readFile(fileName=file)
     readAllFile(fileName=file)
     removeFile(file)
 
 
 def run():
     print("start ...")
-    testReadAndWrite()
+    # testReadAndWrite()
     # testReadCsvAndExcel()
+    getFilePath()
     print("end ...")
 
 
