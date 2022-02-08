@@ -28,6 +28,11 @@ nginx=/home/work/nginx
 java=/home/work/sdk/java
 
 # 自定义命令
+
+# 指定python执行的编码格式
+# python3 乱码问题 编码问题
+alias python3='PYTHONIOENCODING=utf-8 python3'
+
 # cd类的 cd- 开头
 alias cd-work='cd ${work}'
 alias cd-nginx='cd ${nginx}'
