@@ -22,6 +22,18 @@ const serverPort = 8889
 // 文件上传服务脚本
 // 搭建一个简单的文件服务脚本
 func main() {
+    // 指定服务时间，自动退出服务
+    secondNum := 10 * 60
+    //新建计时器，一秒后触发
+    timer := time.NewTimer(time.Second * time.Duration(secondNum))
+    //新开启一个线程来处理触发后的事件
+    go func() {
+        //等触发时的信号
+        <-timer.C
+        log.Printf("本次服务[%v]s,已经结束\n", secondNum)
+        os.Exit(0)
+    }()
+
     // 提供一个文件上传服务脚本，方便直接上传文件，不用走跳板代理
     fmt.Println("文件上传服务")
     args := getArgs()
@@ -65,15 +77,24 @@ func startServer(port string) {
     if pwd == "" {
         pwd = "/home/work"
     }
+    // 上传到当前文件夹下
     commandHost := fmt.Sprintf(`curl -XPOST -F '%s=@%s' %s:%s/upload`, fileKey, pwd, host, port)
     commandIp := fmt.Sprintf(`curl -XPOST -F '%s=@%s' %s:%s/upload`, fileKey, pwd, ip, port)
+    splitStr := "===================================================================================="
+    log.Println(splitStr)
     log.Printf("命令行工具 file 要上传文件的位置\n%v", commandHost)
     log.Printf("命令行工具 file 要上传文件的位置\n%v", commandIp)
-    // 指定目录
+    log.Println(splitStr)
+    // 指定目录上传命令
     commandPathHost := fmt.Sprintf(`curl -XPOST -F '%s=@%s' -F '%s=%s' %s:%s/upload/path`, fileKey, pwd, pathKey, pwd, host, port)
     commandPathIp := fmt.Sprintf(`curl -XPOST -F '%s=@%s' -F '%s=%s' %s:%s/upload/path`, fileKey, pwd, pathKey, pwd, ip, port)
     log.Printf("命令行工具 file 要上传文件的位置 path 上传到服务器的位置\n%v", commandPathHost)
     log.Printf("命令行工具 file 要上传文件的位置 path 上传到服务器的位置\n%v", commandPathIp)
+    log.Println(splitStr)
+    // 客户端别名命令
+    aliasStr := fmt.Sprintf("alias pushFile='pushFile(){curl -XPOST -F %s=@$1 -F %s=%s %s:%s/upload/path;};  pushFile'", fileKey, pathKey, pwd, host, port)
+    log.Printf("客户端起别名命令\n%v\n使用方式 [pushFile fileName] \n", aliasStr)
+    log.Println(splitStr)
     err1 := http.ListenAndServe(":"+port, nil)
     if err1 != nil {
         log.Fatalf("服务启动异常,异常信息:%v", err.Error())
@@ -180,27 +201,32 @@ func saveFile(path string, filename string, file multipart.File) string {
     }
     fmt.Printf("name = [%s]\n", name)
     var f *os.File
-    // 多次上传文件覆盖的问题
-    // 多次时，使用 时间戳 + _ 作为前缀 创建新文件保存
-    if _, err := os.Stat(name); os.IsNotExist(err) {
-        f, err = os.OpenFile(name, os.O_WRONLY|os.O_CREATE, 0666)
-        if err != nil {
-            log.Printf("请检查路径 [%s] 是否存在,错误信息:%s", path, err)
-            errInfo := GetError(fmt.Sprintf("无法创建 [%s] \n错误信息:%s", name, err))
-            return errInfo.ToJson()
-        }
-    } else {
+    // 文件存在时,则重命名 并备份
+    if _, err := os.Stat(name); !os.IsNotExist(err) {
         log.Printf("文件[%v]已经存在", name)
-        // 文件存在时,则重命名
+        oldFile, err := os.Open(name)
+        if err != nil {
+            log.Println("备份文件失败,失败信息", err.Error())
+        }
+        defer oldFile.Close()
         filename = strconv.FormatInt(time.Now().Unix(), 10) + "_" + filename
-        name = fmt.Sprintf("%s/%s", path, filename)
-        f, _ = os.OpenFile(name, os.O_WRONLY|os.O_CREATE, 0666)
+        backName := fmt.Sprintf("%s/%s", path, filename)
+        backFile, _ := os.OpenFile(backName, os.O_WRONLY|os.O_CREATE, 0666)
+        defer backFile.Close()
+        // 备份旧文件
+        io.Copy(backFile, oldFile)
+    }
+    f, err := os.OpenFile(name, os.O_WRONLY|os.O_CREATE, 0666)
+    if err != nil {
+        log.Printf("请检查路径 [%s] 是否存在,错误信息:%s", path, err)
+        errInfo := GetError(fmt.Sprintf("无法创建 [%s] \n错误信息:%s", name, err))
+        return errInfo.ToJson()
     }
     defer f.Close()
     _, err1 := io.Copy(f, file)
     if err1 != nil {
-        log.Println("保存异常，异常信息", err1)
-        errInfo := GetError(fmt.Sprintf("保存文件异常，异常信息:%s", err1))
+        log.Println("保存异常,异常信息", err1)
+        errInfo := GetError(fmt.Sprintf("保存文件异常,异常信息:%s", err1))
         return errInfo.ToJson()
     }
     log.Printf("保存文件[%v]到当前文件夹成功", f.Name())
