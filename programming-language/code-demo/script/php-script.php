@@ -15,17 +15,17 @@ class Task {
         echo $b . PHP_EOL;
     }
 
-/**
- * 获取用户输入
- * msg : 提示语
- */
-public function getInput($msg) {
-    fwrite(STDOUT, $msg . PHP_EOL);
-    // get input
-    $input = trim(fgets(STDIN));
-    echo "你输入的值为[$input]" . PHP_EOL;
-    return $input;
-}
+    /**
+     * 获取用户输入
+     * msg : 提示语
+     */
+    public function getInput($msg) {
+        fwrite(STDOUT, $msg . PHP_EOL);
+        // get input
+        $input = trim(fgets(STDIN));
+        echo "你输入的值为[$input]" . PHP_EOL;
+        return $input;
+    }
 }
 
 $task = new Task();
