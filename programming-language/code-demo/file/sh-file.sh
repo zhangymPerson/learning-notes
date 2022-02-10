@@ -10,7 +10,11 @@ function readFile {
         exit 1
     fi
     local name=$1
-    echo ${name}
+    echo "读取文件"${name}
+    # 按行读取文件
+    for key in $(cat ${name}); do
+        echo "读取到 [${key}]"
+    done
 }
 
 # 判断是否是文件
