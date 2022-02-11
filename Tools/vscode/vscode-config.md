@@ -156,3 +156,31 @@
   php / c / C++ 大括号换行问题
   
   打开 settings -> search -> `format:braces` -> 选择对应的语言/插件 修改相关配置
+
+## vscode 文件隐藏 搜索过滤
+
+- 配置 
+  
+  通过设置vscode的files.exclude选项，可以将工作区一些不必要的文件隐藏，这是我的配置
+  ```json
+  "files.exclude": {
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/._.DS_Store": true,
+      "**/.*.swp": true
+    },
+    "search.exclude": {
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/.COMAKE.*": true,
+      "**/node_modules": true 
+    },
+  ```
+  
+  注：file.exclude是过滤在左侧文件浏览器看到的文件， search.exclude是过滤按文件名搜索能搜索到的文件
+  
+  Command+P 可以在当前工作区中模糊查找文件
