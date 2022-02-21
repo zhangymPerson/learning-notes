@@ -1,30 +1,24 @@
 #include <iostream>
+#include <string>
 
-using namespace std;
+void testString()
+{
+    // 定义变量
+    std::string str = "Hello word test";
+    std::cout << str << std::endl;
+    printf("aaa\n");
+    // printf(str);
+
+    const char *a=str.c_str();
+    str = "bbbsss";
+    printf("%s\n",a);
+    printf("%s\n",str.c_str());
+}
 
 int main(int argc, char const *argv[])
 {
-    cout << "sss";
-    cout << "sss" << endl;
-    int i, j, k, f;
-    for (i = 1; i <= 4; i++)
-    {
-        for (j = 1; j <= 30; j++)
-            cout << " ";
-        for (k = 1; k <= 8 - 2 * i; k++)
-            cout << " ";
-        for (f = 1; f <= 2 * i; f++)
-            cout << '*';
-        cout << endl;
-    }
-    for (i = 1; i <= 3; i++)
-    {
-        for (j = 1; j <= 30; j++)
-            cout << " ";
-        for (f = 1; f <= 7 - 2 * i; f++)
-            cout << '*';
-        cout << endl;
-    }
-    system("ls");
+    // 执行系统命令
+    // system("ls");
+    testString();
     return 0;
 }
