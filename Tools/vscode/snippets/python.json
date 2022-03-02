@@ -43,6 +43,11 @@
             ""
         ]
     },
+    "写文件": {
+        "prefix": "exportFile",
+        "body": "with open('debug.log', 'a') as debug:\n    debug.write($0 + \"\\n\")",
+        "description": "脚本内容写入文件中"
+    },
     // source : https://github.com/cstrap/python-snippets/blob/master/snippets/base.json
     "#!/usr/bin/env python": {
         "prefix": "env",

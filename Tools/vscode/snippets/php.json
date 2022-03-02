@@ -42,8 +42,8 @@
         ],
         "description": "'echo' statement"
     },
-    "输出到当前目录的debug文件": {
-        "prefix": "fileput",
+    "输出内容到当前目录的debug文件": {
+        "prefix": "exportFile",
         "body": [
             "file_put_contents(__DIR__.\"/debug.log\", \" result \\n\" . var_export(\\$$1,true) . \"\\n\", FILE_APPEND);"
         ],

@@ -55,6 +55,7 @@ alias pwdscp='echo "${LOGNAME}@${HOSTNAME}:${PWD}"'
 alias pwdscp='echo "${LOGNAME}@$(hostname -i):${PWD}"'
 
 # 查询当前目录下 文件中的某个字符
+# ack 命令可替代 查找命令
 alias fword='findWord(){ find ./ -type f | xargs grep -n "$1" --color=auto ;}; findWord'
 
 # grep递归查询
