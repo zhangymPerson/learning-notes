@@ -1,5 +1,7 @@
 # mac 下的 shell 工具
 
+## 简介
+
 - 官网
 
   <https://iterm2.com/>
@@ -31,3 +33,26 @@
   到行首：ctrl + a
 
   到行尾：ctrl + e
+
+## 常用配置
+
+- 配置隐藏激活快捷键
+
+  Preferences > Keys > Hotkey > 勾上 Show/hide all windows with a system-wide hotkey
+
+- vim 下复制粘贴功能
+
+  Preferences > Profiles > Terminal > Enable mouse reporting.
+
+- vim 下能使用鼠标滚动
+
+  Preferences > Advanced > 搜索 mouse > 修改以下两处
+
+  scroll wheel down sends the specified text when in alternate screen mode => \j
+
+  scroll wheel up sends the specified text when in alternate screen mode = > \k
+
+- 透明度配置
+
+  左上角 iTerm2 > preferences > Profile > window 选项卡，拖动 Transparency 调整。
+  
