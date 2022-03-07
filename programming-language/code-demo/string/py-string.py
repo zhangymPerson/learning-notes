@@ -38,10 +38,7 @@ class Task(object):
         str.rstrip()
         print("[%s] 去掉 \\n 后 [%s]" % (str, newStr))
 
-    # 字符串为空判断
-
     # 字符串包含字符判断
-
     def contain(self):
         str = 'Hello word'
         if 'H' in str:

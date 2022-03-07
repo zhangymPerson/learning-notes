@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import time
+import sys
 
 
 class Task(object):
@@ -44,6 +45,8 @@ class Task(object):
         执行脚本任务
         """
         print("task start")
+        # python 命令脚本路径 
+        print("command python path is [%s]" % sys.path[0])
         print(self.now())
         arg = task.input("请输入参数")
 
