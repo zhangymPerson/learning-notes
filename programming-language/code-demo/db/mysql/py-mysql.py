@@ -35,6 +35,7 @@ def queryTest(db):
     results = db.fetchall()
     for row in results:
         print("row is %s" % (row))
+    # 取值 row.get('id')
 
 
 def getTable(db):
