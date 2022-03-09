@@ -1,74 +1,62 @@
 {
-    "err_log": {
-        "prefix": "err",
-        "body": [
-            "error_log(\"$1\". $2);"
-        ],
-        "description": "print log"
-    },
-    "err_json": {
-        "prefix": "errjson",
-        "body": [
-            "error_log(\"$1\". json_encode($2));"
-        ],
-        "description": "print log"
-    },
-    "define var": {
-        "prefix": "var ",
-        "body": [
-            "$$1"
-        ],
-        "description": "print log"
-    },
-    "记录当前执行的类和行信息": {
-        "prefix": "testlog",
-        "body": [
-            "error_log(\"====执行到:\".__METHOD__.\":\".__LINE__.\"====\");"
-        ],
-        "description": "print log"
-    },
-    "记录执行日志到php-error文件中": {
-        "prefix": "sout",
-        "body": [
-            "\\$params = array(\n    'key' => 'value',\n    '$1' => '$2',\n);",
-            "error_log(\"执行到:\".__METHOD__.\":\".__LINE__.\"\\n参数是:\".json_encode(\\$params));"
-        ],
-        "description": "print log"
-    },
-    "换行输出变量": {
-        "prefix": "ech",
-        "body": [
-            "echo \\$$0 . PHP_EOL;"
-        ],
-        "description": "'echo' statement"
-    },
-    "输出内容到当前目录的debug文件": {
-        "prefix": "exportFile",
-        "body": [
-            "file_put_contents(__DIR__.\"/debug.log\", \" result \\n\" . var_export(\\$$1,true) . \"\\n\", FILE_APPEND);"
-        ],
-        "description": "print log"
-    },
-    "输出变量的json格式": {
-        "prefix": "echojson",
-        "body": [
-            "echo json_encode(\\$$1) . PHP_EOL;"
-        ],
-        "description": "echo"
-    },
-    "脚本文件头": {
-        "prefix": "header",
-        "body": [
-            "<?php",
-            "/**",
-            "@file : $TM_FILENAME",
-            "@desc : 脚本执行方式 [php $TM_FILENAME]",
-            "@date : $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
-            "@author : danao",
-            "@version : 1.0",
-            " */",
-            ""
-        ]
-    }
-    // source : https://github.com/phiter/phpstorm-snippets-for-vscode/blob/master/snippets/snippets.json
+  "err_log": {
+    "prefix": "err",
+    "body": ["error_log(\"$1\". $2);"],
+    "description": "print log"
+  },
+  "err_json": {
+    "prefix": "errjson",
+    "body": ["error_log(\"$1\". json_encode($2));"],
+    "description": "print log"
+  },
+  "define var": {
+    "prefix": "var ",
+    "body": ["$$1"],
+    "description": "print log"
+  },
+  "记录当前执行的类和行信息": {
+    "prefix": "testlog",
+    "body": ["error_log(\"====执行到:\".__METHOD__.\":\".__LINE__.\"====\");"],
+    "description": "print log"
+  },
+  "记录执行日志到php-error文件中": {
+    "prefix": "sout",
+    "body": [
+      "\\$params = array(\n    'key' => 'value',\n    '$1' => '$2',\n);",
+      "error_log(\"执行到:\".__METHOD__.\":\".__LINE__.\"\\n参数是:\".json_encode(\\$params));"
+    ],
+    "description": "print log"
+  },
+  "换行输出变量": {
+    "prefix": "ech",
+    "body": ["echo \\$$0 . PHP_EOL;"],
+    "description": "'echo' statement"
+  },
+  "输出内容到当前目录的debug文件": {
+    "prefix": "exportFile",
+    "body": [
+      "file_put_contents(__DIR__.\"/debug.log\", \" result \\n\" . var_export(\\$$1,true) . \"\\n\", FILE_APPEND);"
+    ],
+    "description": "print log"
+  },
+  "输出变量的json格式": {
+    "prefix": "echojson",
+    "body": ["echo json_encode(\\$$1) . PHP_EOL;"],
+    "description": "echo"
+  },
+  "脚本文件头": {
+    "prefix": "header",
+    "body": [
+      "<?php",
+      "/**",
+      "@file : $TM_FILENAME",
+      "@desc : 脚本执行方式 [php $TM_FILENAME]",
+      "@date : $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+      "@author : danao",
+      "@version : 1.0",
+      " */",
+      ""
+    ]
+  }
+  // source : https://github.com/phiter/phpstorm-snippets-for-vscode/blob/master/snippets/snippets.json
 }

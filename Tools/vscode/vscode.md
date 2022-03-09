@@ -231,3 +231,9 @@
 - vscode json 注释问题 注释飘红
 
   打开 json 文件,在 vscode 的右下角，选择文件的语言模式 选择 json with comments , json 注释就不飘红了
+
+- vscode 配置文件默认模式 如 \*.json 为 jsonc
+
+  点击 vscode 右下角的文件模式类型，如 Markdown,c++,java,json 等，然后 Configure 'json' language
+
+  按 F1，在帮助菜单中输入 'Configure File Association for '

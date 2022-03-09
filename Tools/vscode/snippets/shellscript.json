@@ -1,386 +1,282 @@
 {
-    // source : https://github.com/L13/vscode-sh-snippets/blob/master/snippets/shell.json
-    "value": {
-        "prefix": "_",
-        "body": [
-            "\"\\${$0}\""
-        ],
-        "description": ""
-    },
-    "subshell": {
-        "prefix": "__",
-        "body": [
-            "\"\\$($0)\""
-        ],
-        "description": ""
-    },
-    "else": {
-        "prefix": "e",
-        "body": [
-            "else"
-        ],
-        "description": ""
-    },
-    "false": {
-        "prefix": "f",
-        "body": [
-            "false"
-        ],
-        "description": ""
-    },
-    "true": {
-        "prefix": "t",
-        "body": [
-            "true"
-        ],
-        "description": ""
-    },
-    "null": {
-        "prefix": "n",
-        "body": [
-            "null"
-        ],
-        "description": ""
-    },
-    "return": {
-        "prefix": "r",
-        "body": [
-            "return"
-        ],
-        "description": ""
-    },
-    "break": {
-        "prefix": "b",
-        "body": [
-            "break$0;"
-        ],
-        "description": ""
-    },
-    "continue": {
-        "prefix": "c",
-        "body": [
-            "continue$0;"
-        ],
-        "description": ""
-    },
-    "shift": {
-        "prefix": "s",
-        "body": [
-            "shift$0;"
-        ],
-        "description": ""
-    },
-    "alias": {
-        "prefix": "a1",
-        "body": [
-            "alias ${1:identifer}='${0:command}';"
-        ],
-        "description": ""
-    },
-    "echo": {
-        "prefix": "e1",
-        "body": [
-            "echo $0;"
-        ],
-        "description": ""
-    },
-    "export": {
-        "prefix": "e1",
-        "body": [
-            "export $0;"
-        ],
-        "description": ""
-    },
-    "source '.sh';": {
-        "prefix": "s1b",
-        "body": [
-            "source \"\\$(cd \"\\$(dirname \"\\${BASH_SOURCE[0]}\")\" && pwd)/$0.sh\";"
-        ],
-        "description": ""
-    },
-    "source '.zsh';": {
-        "prefix": "s1z",
-        "body": [
-            "source \"\\$(cd \"\\$(dirname \"\\${(%):-%x}\")\" && pwd)/$0.zsh\";"
-        ],
-        "description": ""
-    },
-    "declare": {
-        "prefix": "d1",
-        "body": [
-            "declare ${1:name}=$0;"
-        ],
-        "description": ""
-    },
-    "declare array": {
-        "prefix": "da1",
-        "body": [
-            "declare -a ${1:name}=($0);"
-        ],
-        "description": ""
-    },
-    "declare map": {
-        "prefix": "dA1",
-        "body": [
-            "declare -A ${1:name}=($0);"
-        ],
-        "description": ""
-    },
-    "declare boolean": {
-        "prefix": "db1",
-        "body": [
-            "declare ${1:name}=${0:false};"
-        ],
-        "description": ""
-    },
-    "declare number": {
-        "prefix": "di1",
-        "body": [
-            "declare -i ${1:name}=${0:0};"
-        ],
-        "description": ""
-    },
-    "declare nameref": {
-        "prefix": "dn1",
-        "body": [
-            "declare -n ${1:name}=$0;"
-        ],
-        "description": ""
-    },
-    "declare readonly": {
-        "prefix": "dr1",
-        "body": [
-            "declare -r ${1:name}=\"$0\";"
-        ],
-        "description": ""
-    },
-    "declare string": {
-        "prefix": "ds1",
-        "body": [
-            "declare ${1:name}=\"$0\";"
-        ],
-        "description": ""
-    },
-    "declare export": {
-        "prefix": "dx1",
-        "body": [
-            "declare -x ${1:name}=$0;"
-        ],
-        "description": ""
-    },
-    "if; then; fi": {
-        "prefix": "itf",
-        "body": [
-            "if $0; then",
-            "\t",
-            "fi"
-        ],
-        "description": ""
-    },
-    "elif; then;": {
-        "prefix": "et",
-        "body": [
-            "elif $0; then"
-        ],
-        "description": ""
-    },
-    "for in; do; done": {
-        "prefix": "fidd",
-        "body": [
-            "for $1 in $0; do",
-            "\t",
-            "done"
-        ],
-        "description": ""
-    },
-    "for (); do; done": {
-        "prefix": "fdd",
-        "body": [
-            "for ((i=1; i<$0; i++)); do",
-            "\t",
-            "done"
-        ],
-        "description": ""
-    },
-    "while; do; done": {
-        "prefix": "wdd",
-        "body": [
-            "while $0; do",
-            "\t",
-            "done"
-        ],
-        "description": ""
-    },
-    "until; do; done": {
-        "prefix": "udd",
-        "body": [
-            "until $0; do",
-            "\t",
-            "done"
-        ],
-        "description": ""
-    },
-    "case in; esac": {
-        "prefix": "cie",
-        "body": [
-            "case $0 in",
-            "\t",
-            "esac"
-        ],
-        "description": ""
-    },
-    ");;": {
-        "prefix": "_)",
-        "body": [
-            "$1)",
-            "\t$0",
-            "\t;;"
-        ],
-        "description": ""
-    },
-    "*);;": {
-        "prefix": "_*",
-        "body": [
-            "*)",
-            "\t$0",
-            "\t;;"
-        ],
-        "description": ""
-    },
-    "function {}": {
-        "prefix": "f_",
-        "body": [
-            "function ${1:name} {",
-            "\t",
-            "\t$0",
-            "\t",
-            "}"
-        ],
-        "description": ""
-    },
-    "name () {}": {
-        "prefix": "$_",
-        "body": [
-            "${1:name} () {",
-            "\t",
-            "\t$0",
-            "\t",
-            "}"
-        ],
-        "description": ""
-    },
-    "local": {
-        "prefix": "l1",
-        "body": [
-            "local ${1:name}=\\${${0:1}};"
-        ],
-        "description": ""
-    },
-    "local array": {
-        "prefix": "la1",
-        "body": [
-            "local -a ${1:name}=(\"\\${!${0:1}:+\\${!${0:1}}}\");"
-        ],
-        "description": ""
-    },
-    "local map": {
-        "prefix": "lA1",
-        "body": [
-            "local -A ${1:name}=(\"\\${!${0:1}:+\\${!${0:1}}}\");"
-        ],
-        "description": ""
-    },
-    "local boolean": {
-        "prefix": "lb1",
-        "body": [
-            "local ${1:name}=${0:false};"
-        ],
-        "description": ""
-    },
-    "local number": {
-        "prefix": "li1",
-        "body": [
-            "local -i ${1:name}=\\${${0:1}};"
-        ],
-        "description": ""
-    },
-    "local readonly": {
-        "prefix": "lr1",
-        "body": [
-            "local -r ${1:name}=\"\\${${0:1}}\";"
-        ],
-        "description": ""
-    },
-    "local string": {
-        "prefix": "ls1",
-        "body": [
-            "local ${1:name}=\"\\${${0:1}}\";"
-        ],
-        "description": ""
-    },
-    "bash-scope": {
-        "prefix": "$b",
-        "body": [
-            "#!/usr/bin/env bash",
-            "main () {",
-            "",
-            "set -o errexit;",
-            "set -o pipefail;",
-            "set -o nounset;",
-            "",
-            "local -r __dirname=\"$(cd \"$(dirname \"\\${BASH_SOURCE[0]}\")\" && pwd)\";",
-            "local -r __filename=\"\\${__dirname}/$(basename \"\\${BASH_SOURCE[0]}\")\";",
-            "",
-            "$0",
-            "",
-            "exit 0;};main \"$@\";"
-        ],
-        "description": ""
-    },
-    "zsh-scope": {
-        "prefix": "$z",
-        "body": [
-            "#!/usr/bin/env zsh",
-            "main () {",
-            "",
-            "set -o errexit;",
-            "set -o pipefail;",
-            "set -o nounset;",
-            "",
-            "local -r __dirname=\"$(cd \"$(dirname \"\\${(%):-%x}\")\" && pwd)\";",
-            "local -r __filename=\"\\${__dirname}/$(basename \"\\${(%):-%x}\")\";",
-            "",
-            "$0",
-            "",
-            "exit 0;};main \"$@\";"
-        ],
-        "description": ""
-    },
-    "sections": {
-        "prefix": "___",
-        "body": [
-            "# Imports ______________________________________________________________________",
-            "",
-            "$0",
-            "",
-            "# Variables ____________________________________________________________________",
-            "",
-            "",
-            "",
-            "# Functions ____________________________________________________________________",
-            "",
-            "",
-            "",
-            "# Options ______________________________________________________________________",
-            "",
-            "",
-            "",
-            "# Initialize ___________________________________________________________________",
-            "",
-            "",
-            "",
-            "# EOF - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
-        ],
-        "description": ""
-    }
+  // source : https://github.com/L13/vscode-sh-snippets/blob/master/snippets/shell.json
+  "value": {
+    "prefix": "_",
+    "body": ["\"\\${$0}\""],
+    "description": ""
+  },
+  "subshell": {
+    "prefix": "__",
+    "body": ["\"\\$($0)\""],
+    "description": ""
+  },
+  "else": {
+    "prefix": "e",
+    "body": ["else"],
+    "description": ""
+  },
+  "false": {
+    "prefix": "f",
+    "body": ["false"],
+    "description": ""
+  },
+  "true": {
+    "prefix": "t",
+    "body": ["true"],
+    "description": ""
+  },
+  "null": {
+    "prefix": "n",
+    "body": ["null"],
+    "description": ""
+  },
+  "return": {
+    "prefix": "r",
+    "body": ["return"],
+    "description": ""
+  },
+  "break": {
+    "prefix": "b",
+    "body": ["break$0;"],
+    "description": ""
+  },
+  "continue": {
+    "prefix": "c",
+    "body": ["continue$0;"],
+    "description": ""
+  },
+  "shift": {
+    "prefix": "s",
+    "body": ["shift$0;"],
+    "description": ""
+  },
+  "alias": {
+    "prefix": "a1",
+    "body": ["alias ${1:identifer}='${0:command}';"],
+    "description": ""
+  },
+  "echo": {
+    "prefix": "e1",
+    "body": ["echo $0;"],
+    "description": ""
+  },
+  "export": {
+    "prefix": "e1",
+    "body": ["export $0;"],
+    "description": ""
+  },
+  "source '.sh';": {
+    "prefix": "s1b",
+    "body": [
+      "source \"\\$(cd \"\\$(dirname \"\\${BASH_SOURCE[0]}\")\" && pwd)/$0.sh\";"
+    ],
+    "description": ""
+  },
+  "source '.zsh';": {
+    "prefix": "s1z",
+    "body": [
+      "source \"\\$(cd \"\\$(dirname \"\\${(%):-%x}\")\" && pwd)/$0.zsh\";"
+    ],
+    "description": ""
+  },
+  "declare": {
+    "prefix": "d1",
+    "body": ["declare ${1:name}=$0;"],
+    "description": ""
+  },
+  "declare array": {
+    "prefix": "da1",
+    "body": ["declare -a ${1:name}=($0);"],
+    "description": ""
+  },
+  "declare map": {
+    "prefix": "dA1",
+    "body": ["declare -A ${1:name}=($0);"],
+    "description": ""
+  },
+  "declare boolean": {
+    "prefix": "db1",
+    "body": ["declare ${1:name}=${0:false};"],
+    "description": ""
+  },
+  "declare number": {
+    "prefix": "di1",
+    "body": ["declare -i ${1:name}=${0:0};"],
+    "description": ""
+  },
+  "declare nameref": {
+    "prefix": "dn1",
+    "body": ["declare -n ${1:name}=$0;"],
+    "description": ""
+  },
+  "declare readonly": {
+    "prefix": "dr1",
+    "body": ["declare -r ${1:name}=\"$0\";"],
+    "description": ""
+  },
+  "declare string": {
+    "prefix": "ds1",
+    "body": ["declare ${1:name}=\"$0\";"],
+    "description": ""
+  },
+  "declare export": {
+    "prefix": "dx1",
+    "body": ["declare -x ${1:name}=$0;"],
+    "description": ""
+  },
+  "if; then; fi": {
+    "prefix": "itf",
+    "body": ["if $0; then", "\t", "fi"],
+    "description": ""
+  },
+  "elif; then;": {
+    "prefix": "et",
+    "body": ["elif $0; then"],
+    "description": ""
+  },
+  "for in; do; done": {
+    "prefix": "fidd",
+    "body": ["for $1 in $0; do", "\t", "done"],
+    "description": ""
+  },
+  "for (); do; done": {
+    "prefix": "fdd",
+    "body": ["for ((i=1; i<$0; i++)); do", "\t", "done"],
+    "description": ""
+  },
+  "while; do; done": {
+    "prefix": "wdd",
+    "body": ["while $0; do", "\t", "done"],
+    "description": ""
+  },
+  "until; do; done": {
+    "prefix": "udd",
+    "body": ["until $0; do", "\t", "done"],
+    "description": ""
+  },
+  "case in; esac": {
+    "prefix": "cie",
+    "body": ["case $0 in", "\t", "esac"],
+    "description": ""
+  },
+  ");;": {
+    "prefix": "_)",
+    "body": ["$1)", "\t$0", "\t;;"],
+    "description": ""
+  },
+  "*);;": {
+    "prefix": "_*",
+    "body": ["*)", "\t$0", "\t;;"],
+    "description": ""
+  },
+  "function {}": {
+    "prefix": "f_",
+    "body": ["function ${1:name} {", "\t", "\t$0", "\t", "}"],
+    "description": ""
+  },
+  "name () {}": {
+    "prefix": "$_",
+    "body": ["${1:name} () {", "\t", "\t$0", "\t", "}"],
+    "description": ""
+  },
+  "local": {
+    "prefix": "l1",
+    "body": ["local ${1:name}=\\${${0:1}};"],
+    "description": ""
+  },
+  "local array": {
+    "prefix": "la1",
+    "body": ["local -a ${1:name}=(\"\\${!${0:1}:+\\${!${0:1}}}\");"],
+    "description": ""
+  },
+  "local map": {
+    "prefix": "lA1",
+    "body": ["local -A ${1:name}=(\"\\${!${0:1}:+\\${!${0:1}}}\");"],
+    "description": ""
+  },
+  "local boolean": {
+    "prefix": "lb1",
+    "body": ["local ${1:name}=${0:false};"],
+    "description": ""
+  },
+  "local number": {
+    "prefix": "li1",
+    "body": ["local -i ${1:name}=\\${${0:1}};"],
+    "description": ""
+  },
+  "local readonly": {
+    "prefix": "lr1",
+    "body": ["local -r ${1:name}=\"\\${${0:1}}\";"],
+    "description": ""
+  },
+  "local string": {
+    "prefix": "ls1",
+    "body": ["local ${1:name}=\"\\${${0:1}}\";"],
+    "description": ""
+  },
+  "bash-scope": {
+    "prefix": "$b",
+    "body": [
+      "#!/usr/bin/env bash",
+      "main () {",
+      "",
+      "set -o errexit;",
+      "set -o pipefail;",
+      "set -o nounset;",
+      "",
+      "local -r __dirname=\"$(cd \"$(dirname \"\\${BASH_SOURCE[0]}\")\" && pwd)\";",
+      "local -r __filename=\"\\${__dirname}/$(basename \"\\${BASH_SOURCE[0]}\")\";",
+      "",
+      "$0",
+      "",
+      "exit 0;};main \"$@\";"
+    ],
+    "description": ""
+  },
+  "zsh-scope": {
+    "prefix": "$z",
+    "body": [
+      "#!/usr/bin/env zsh",
+      "main () {",
+      "",
+      "set -o errexit;",
+      "set -o pipefail;",
+      "set -o nounset;",
+      "",
+      "local -r __dirname=\"$(cd \"$(dirname \"\\${(%):-%x}\")\" && pwd)\";",
+      "local -r __filename=\"\\${__dirname}/$(basename \"\\${(%):-%x}\")\";",
+      "",
+      "$0",
+      "",
+      "exit 0;};main \"$@\";"
+    ],
+    "description": ""
+  },
+  "sections": {
+    "prefix": "___",
+    "body": [
+      "# Imports ______________________________________________________________________",
+      "",
+      "$0",
+      "",
+      "# Variables ____________________________________________________________________",
+      "",
+      "",
+      "",
+      "# Functions ____________________________________________________________________",
+      "",
+      "",
+      "",
+      "# Options ______________________________________________________________________",
+      "",
+      "",
+      "",
+      "# Initialize ___________________________________________________________________",
+      "",
+      "",
+      "",
+      "# EOF - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
+    ],
+    "description": ""
+  }
 }
