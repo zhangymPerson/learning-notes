@@ -31,7 +31,7 @@ def mapMethod():
     # 判断 key 是否存在
     key = 'bob'
     if key in map:
-        print(map[key])
+        print(str(map[key]))
     else:
         print(False)
 
@@ -66,7 +66,7 @@ def toJson():
 
     # 解决中文乱码问题
     str = json.dumps(dict, ensure_ascii=False)
-    print(str)
+    print(splitStr)
 
     # json转map
     # json字符串转换成字典
@@ -76,10 +76,43 @@ def toJson():
     return
 
 
+def getMap():
+    """
+    遍历map
+    """
+    map = {
+        'bob': 7387,
+        'alice': 3719,
+        'jack': 7052,
+    }
+    splitStr = "==========================="
+    # 方式一：
+    for key in map:
+        print(key+':'+str(map[key]))
+    print(splitStr)
+    # 方式二：
+    for key in map.keys():
+        print(key+':'+str(map[key]))
+    print(splitStr)
+    # 遍历 value
+    for value in map.values():
+       print(value)
+    print(splitStr)
+    # 方式三：
+    for key, value in map.items():
+        print(key+':'+str(value))
+    print(splitStr)
+    # 方式四：
+    for (key, value) in map.items():
+        print(key+':'+str(value))
+    print(splitStr)
+
+
 def run():
     print("start ...")
-    mapMethod()
-    toJson()
+    # mapMethod()
+    # toJson()
+    getMap()
     print("end ...")
 
 

@@ -24,35 +24,53 @@ class DB():
         self.conn.close()
 
 
-def queryTest(db):
+def getAllTableFromDb(db, dbName):
     """
-    查数据
+    查数据 获取当前库下的表
     """
     # 游标执行返回的是数量
-    count = db.execute("select * from EMPLOYEE")
-    print("count is %s" % (count))
+    db.execute("show tables;")
+    # 获取数据库名
+    print(dbName)
+    tables = []
     # 需要调用 fetchall() 函数获取结果
     results = db.fetchall()
     for row in results:
-        print("row is %s" % (row))
-    # 取值 row.get('id')
+        for table in row:
+            tables.append(row.get(table))
+    print("数据库[%s]中有[%s]张表,\n分别是%s" % (dbName, len(tables), tables))
+    return tables
 
 
-def getTable(db):
+def getCreateTableSql(db, dbname=None):
     """
-    获取表结构
+    获取指定库中的所有表的建表语句
     """
-    tableName = "EMPLOYEE"
-    sql = "show create table %s" % (tableName)
-    count = db.execute(sql)
-    print("count is %s" % (count))
-    # 需要调用 fetchall() 函数获取结果
-    results = db.fetchall()
-    for row in results:
-        print("row is %s" % (row))
+    tables = []
+    sql = "show tables;"
+    db.execute(sql)
+    for rows in db.fetchall():
+        for key in rows:
+            tables.append(rows.get(key))
+
+    print("数据库[%s]中有[%s]张表,\n分别是%s" % (dbname, len(tables), tables))
+
+    splitStr = "==============================================================="
+    for tableName in tables:
+        sql = "show create table %s" % (tableName)
+        db.execute(sql)
+        # 需要调用 fetchall() 函数获取结果
+        results = db.fetchall()
+        for row in results:
+            print(row.get('Table'))
+            print(row.get('Create Table'))
+            print(splitStr)
 
 
 if __name__ == '__main__':
-    with DB(host='127.0.0.1', user='root', passwd='123456', db='test') as db:
-        queryTest(db=db)
-        getTable(db=db)
+    dbName = "test"
+    with DB(host='127.0.0.1', user='root', passwd='123456', db=dbName) as db:
+        # 获取所有表名
+        getAllTableFromDb(db=db, dbName=dbName)
+        # 获取库中所有表的建表sql
+        getCreateTableSql(db=db, dbname=dbName)

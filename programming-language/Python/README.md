@@ -37,3 +37,8 @@
   #编译
   make && make install
   ```
+
+- python 查看 api 文档
+
+  说明 本地启动命令 -p 指定端口号
+  `python3 -m pydoc -p 1234`
