@@ -2,7 +2,7 @@
 
 - [返回](./README.md)
 
-# 欢迎使用 Markdown 编辑器
+## 欢迎使用 Markdown 编辑器
 
 你好！ 这是你第一次使用 **Markdown 编辑器** 所展示的欢迎页。如果你想学习如何使用 Markdown 编辑器, 可以仔细阅读这篇文章，了解一下 Markdown 的基本语法知识。
 
@@ -25,7 +25,7 @@
 
   eg:
 
-  <img src="./../Picture/wechat-info.png" width = "300" height = "500" align = "left">
+  <img src="./../Picture/wechat-info.png" width = "300" height = "500" align = "right">
 
 - 居中
 
@@ -75,11 +75,11 @@ H~2~O is 是液体。
 
 图片: ![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw)
 
-带尺寸的图片: ![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw =30x30)
+带尺寸的图片: ![Alt](<https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw> =30x30)
 
 居中的图片: ![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw#pic_center)
 
-居中并且带尺寸的图片: ![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw#pic_center =30x30)
+居中并且带尺寸的图片: ![Alt](<https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw#pic_center> =30x30)
 
 当然，我们为了让用户更加便捷，我们增加了图片拖拽功能。
 
