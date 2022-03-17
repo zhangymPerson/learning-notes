@@ -10,12 +10,12 @@
 
 ## 使用方式
 
-### 编译工具 protoc 
+### 编译工具 protoc
 
 - 需要先下载安装此工具
 
 - [下载地址](https://github.com/protocolbuffers/protobuf/releases/)
-  
+
   https://github.com/protocolbuffers/protobuf/releases/
 
 ### 编写 proto 文件
@@ -23,7 +23,7 @@
 - eg
 
   ```protobuf
-  
+
   syntax = "proto3";
   package tutorial;
 
@@ -69,6 +69,59 @@
   // Our address book file is just one of these.
   message AddressBook {
     repeated Person people = 1;
+  }
+  ```
+
+### 类型介绍
+
+- [官网介绍](https://developers.google.com/protocol-buffers/docs/proto3)
+
+#### message
+
+- message 消息
+
+  ```proto
+  syntax = "proto3";
+  //定义一个消息
+  message MessageName {
+      string string = 1;
+  }
+  ```
+
+#### server
+
+- server 服务
+
+  ```proto
+  message String{
+      string string = 1;
+  }
+
+  message Boolean{
+      bool bool = 1;
+  }
+
+  service StringService{
+      rpc IsEmpty(String) returns (Boolean);
+  }
+
+  ```
+
+#### rpc
+
+- rpc 定义一个服务
+
+  **rpc 接口的参数和返回值必须是 message 类型**
+
+- proto 封装好的基本类型
+
+  **protobuf 自己定义好了基本类型的封装 message：Int32Value、BoolValue 等**
+
+  ```proto
+  import "google/protobuf/wrappers.proto";
+
+  service UserSevice {
+      rpc getById(google.protobuf.Int32Value) returns (User);
   }
   ```
 

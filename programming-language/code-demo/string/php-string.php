@@ -1,76 +1,62 @@
 <?php
 
 /**
- * 字符串函数
- * https://www.runoob.com/php/php-ref-string.html
+ * 判断是否是空字符串
  */
-class Task {
-
-    public function __construct() {
+function isEmpty($str = null) {
+    if (isString($str)) {
+        return false;
     }
-
-    /**
-     * 测试任务
-     */
-    public function task() {
-        echo "start ..." . PHP_EOL;
-        // $this->test();
-        $this->replace();
-        echo "end ..." . PHP_EOL;
+    if (empty($str)) {
+        return true;
     }
+    return false;
+}
 
-    public function test() {
-        //拼接测试
-        $res =  $this->join("a", "b");
-        echo $res . PHP_EOL;
-        print($res . PHP_EOL);
-        //去掉空格
-        $arr = array("", "  ", "      ", "   aa c  d dd bb    ", " a b c ", "a b c", "aabbcc");
-        foreach ($arr as $item) {
-            $res = $this->trim($item);
-            echo "[$item] => [$res]" . PHP_EOL;
-        }
-
-        $this->split("aaa@@bbb@c@@@dd");
-    }
-
-    /**
-     * 字符串替换
-     */
-    public function replace() {
-        // Hello word => Hello good
-        $str = str_replace("word", "good", "Hello word");
-        echo $str . PHP_EOL;
-    }
-
-    /**
-     * 字符串拼接
-     */
-    public function join($str, $str1) {
-        return $str . $str1;
-    }
-    /**
-     *  字符串去掉空格
-     */
-    public function trim($str) {
-        return trim($str);
-    }
-    /**
-     *  字符串为空判断
-     */
-    public function isEmpty(string $str) {
-    }
-    // 字符串包含字符判断
-
-    /**
-     * 字符串分割
-     */
-    public function split(string $str) {
-        $arr = explode('@@', $str);
-        echo json_encode($arr);
+function testIsEmpty() {
+    $objs = array(null, 0, 1, 1.1, '', '  ', ' s ', array(), array(1, 2, "2"));
+    foreach ($objs as $item) {
+        $res =  isEmpty($item);
+        echo "===测试对象[$item] isEmpty is [$res]" . PHP_EOL;
+        echo "=================" . PHP_EOL;
     }
 }
 
+/**
+ * 判断一个变量是否是字符串
+ */
+function isString($obj = null) {
+    $type = getType($obj);
+    // echo $type;
+    return $type === 'string';
+}
 
-$task = new Task;
-$task->task();
+function testIsString() {
+    $objs = array(null, 0, 1, 1.1, '', '  ', ' s ', array(), array(1, 2, "2"));
+    foreach ($objs as $item) {
+        $res =  isString($item);
+        echo "===测试对象[$item] isString is [$res]" . PHP_EOL;
+        echo "=================" . PHP_EOL;
+    }
+}
+
+/**
+ * 去掉字符串空格
+ * php原生支持
+ */
+function trimStr($str) {
+    return trim($str);
+}
+
+function testTrim() {
+    // 测试对象
+    $objs = array(null, 0, -1, 1.1, false, "", "  ", "a b c ", " aa cc dd ");
+    foreach ($objs as $item) {
+        $nStr = trimStr($item);
+        echo "[$item] trim 后 [$nStr]" . PHP_EOL;
+    }
+}
+
+// testIsEmpty();
+// testIsString();
+testTrim();
