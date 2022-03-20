@@ -2,17 +2,28 @@
 
 ## 文件查找技巧
 
-### 文件树形化 
+### 文件编码格式查询
+
+- vim 中
+
+  `vim fileName`
+
+  `set fileencoding` 即可查看文件编码格式
+
+  `file name` 也可查看
+
+### 文件树形化
 
 - tree
 
-- ranger 像vim一样查看文件列表
+- ranger 像 vim 一样查看文件列表
 
 ### 文件检索方式
 
-- find 
+- find
 
   `find ./ -name '*list*'`
+
 ## 文件传输方式 服务器端文件上传方式
 
 ### scp 需要 ssh 支持
