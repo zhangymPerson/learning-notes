@@ -57,6 +57,19 @@ function testTrim() {
     }
 }
 
+/**
+ * split 字符串切割
+ */
+function split($pattern, $str) {
+    $arr = explode($pattern, $str);
+    echo  "[$str] 按照 [$pattern] 切割后 " . json_encode($arr) . PHP_EOL;
+}
+
+function testSplit() {
+    split("\t", "aa	bb	cc");
+    split(".", "1.3.3.3.3");
+}
 // testIsEmpty();
 // testIsString();
-testTrim();
+// testTrim();
+testSplit();
