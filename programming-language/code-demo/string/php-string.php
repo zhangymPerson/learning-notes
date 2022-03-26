@@ -72,4 +72,26 @@ function testSplit() {
 // testIsEmpty();
 // testIsString();
 // testTrim();
-testSplit();
+// testSplit();
+
+
+// date 处理
+
+// 时间戳和日期切换
+function dateChange() {
+    // 获取时间戳
+    $now = time();
+    echo $now . PHP_EOL;
+    // 时间戳转日期
+    $datetime = date('Y-m-d H:i:s', time());
+    echo $datetime . PHP_EOL;
+    // 日期转时间戳
+    $test = array('2022-01-01', $datetime,);
+    foreach ($test as $item) {
+        $time  = strtotime($item);
+        echo "[$item] is [$time]" . PHP_EOL;
+    }
+    error_log("[" . __CLASS__ . ":" . __METHOD__ . ":" . __LINE__ . "] ===> " . "[$test]");
+}
+
+dateChange();

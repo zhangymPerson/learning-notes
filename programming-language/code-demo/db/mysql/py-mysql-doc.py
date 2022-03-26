@@ -127,6 +127,19 @@ def getDocFromRow(tableName, rows):
     print(docTpl)
 
 
+def getInsertIntoSql(tableName, rows):
+    """
+    获取sql insert into 模板语句
+    """
+    columnNames = []
+    values = []
+    for row in rows:
+        columnNames.append(row.get('列名'))
+        values.append(row.get('数据类型'))
+    sql = "insert into %s (%s) values (%s)" % (tableName, columnNames, values)
+    print(sql)
+
+
 if __name__ == '__main__':
     dbName = "test"
     with DB(host='127.0.0.1', user='root', passwd='123456', db=dbName) as db:
@@ -138,3 +151,4 @@ if __name__ == '__main__':
         for table in tables:
             rows = getTableInfo(db, dbName, table)
             getDocFromRow(table, rows)
+            getInsertIntoSql(table, rows)

@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 
+import datetime
 import json
 
 
-def mapMethod():
+def crud():
     # python中的 map 叫 字典
     map = {
         'bob': 7387,
@@ -57,26 +58,28 @@ def toJson():
         "a": None,
         None: 0,
         "中文": "乱码",
+        "date": datetime.datetime(2021, 12, 17, 10, 27, 48)
     }
 
     # 字典转换成json字符串
+    # Object of type 'datetime' is not JSON serializable
     # map转json
-    cstr = json.dumps(dict)
+    cstr = json.dumps(dict, default=str)
     print(cstr)
 
     # 解决中文乱码问题
-    str = json.dumps(dict, ensure_ascii=False)
-    print(splitStr)
+    strs = json.dumps(dict, ensure_ascii=False, default=str)
+    print(strs)
 
     # json转map
     # json字符串转换成字典
-    map = json.loads(str)
+    map = json.loads(strs)
     print(map['2.1'])
 
     return
 
 
-def getMap():
+def loop():
     """
     遍历map
     """
@@ -96,7 +99,7 @@ def getMap():
     print(splitStr)
     # 遍历 value
     for value in map.values():
-       print(value)
+        print(value)
     print(splitStr)
     # 方式三：
     for key, value in map.items():
@@ -110,9 +113,9 @@ def getMap():
 
 def run():
     print("start ...")
-    # mapMethod()
-    # toJson()
-    getMap()
+    crud()
+    toJson()
+    loop()
     print("end ...")
 
 

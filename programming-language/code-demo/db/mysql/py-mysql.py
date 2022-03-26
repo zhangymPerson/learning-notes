@@ -1,6 +1,31 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+'''
+@file : py-mysql.py
+@desc : 脚本运行方式 [python3 py-mysql.py]
+        脚本说明: 数据库相关常用脚本
+@date : 2022-03-22 20:38:38
+@author : danao
+@version : 1.0
+'''
 
+# 需要安装
+# pip install pymssql
 import pymysql
+
+
+def isEmpty(obj):
+    """
+    判断字符串为空
+    None , '' ,'  ' 都是空字符串
+    """
+    if obj is None:
+        return True
+    if not isinstance(obj, str):
+        return False
+    if len(obj.strip()) == 0:
+        return True
+    return False
 
 
 class DB():
@@ -67,6 +92,19 @@ def getCreateTableSql(db, dbname=None):
             print(splitStr)
 
 
+def deleteTable(tableName):
+    """
+    delete
+    删除表
+    """
+    if not isEmpty(tableName):
+        # delete from tableName where id = 1
+        # 可以添加清理条件
+        sql = "delete from %s" % tableName
+        db.execute(sql)
+        print("清理表[%s]完成" % tableName)
+
+
 if __name__ == '__main__':
     dbName = "test"
     with DB(host='127.0.0.1', user='root', passwd='123456', db=dbName) as db:
@@ -74,3 +112,4 @@ if __name__ == '__main__':
         getAllTableFromDb(db=db, dbName=dbName)
         # 获取库中所有表的建表sql
         getCreateTableSql(db=db, dbname=dbName)
+        # deleteTable('user')

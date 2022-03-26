@@ -6,6 +6,26 @@
 import time  # 引入time模块
 
 
+def isEmpty(obj):
+    """
+    判断字符串为空
+    None , '' ,'  ' 都是空字符串
+    """
+    if obj is None:
+        return True
+    if not isinstance(obj, str):
+        return False
+    if len(obj.strip()) == 0:
+        return True
+    return False
+
+
+def testIsEmpty():
+    list = ['', '  ', None, time.time(), 1.2, True, 2, 0, '测试', ' a b']
+    for value in list:
+        print("[%s] isEmpty is [%s]" % (value, isEmpty(value)))
+
+
 class Task(object):
     """docstring for Task."""
 
@@ -197,17 +217,7 @@ def typeChange():
 
 def run():
     print("start ...")
-    timeTest()
-    typeChange()
-    # testOne()
-    # testTwo()
-    # arr = ["a", "中国", "你好", "bb", "abcdefgijklmnopqrstuvwxyz", " ", "", "\n", "\t"]
-    # 编解码测试
-    # for key in arr:
-    #     encodeAndDecode(key)
-    # strTolist()
-    # splitTest()
-
+    testIsEmpty()
     print("end ...")
 
 
