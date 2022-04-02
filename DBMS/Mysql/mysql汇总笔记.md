@@ -1,3 +1,5 @@
+# mysql 笔记
+
 - [笔记来源](https://shockerli.net/post/1000-line-mysql-note/)
 
 ```sql
@@ -575,7 +577,7 @@ TRUNCATE [TABLE] tbl_name
 3. 导出所有表
 　　mysqldump -u用户名 -p密码 库名 > 文件名(D:/a.sql)
 4. 导出一个库
-　　mysqldump -u用户名 -p密码 -B 库名 > 文件名(D:/a.sql)
+   mysqldump -u用户名 -p密码 -B 库名 > 文件名(D:/a.sql)
 
 可以-w携带备份条件
 

@@ -76,6 +76,13 @@ function testSplit() {
 
 
 // date 处理
+function now() {
+    // 设置为北京时间
+    date_default_timezone_set('PRC');
+    return date('Y-m-d H:i:s', time());
+}
+
+echo now();
 
 // 时间戳和日期切换
 function dateChange() {
@@ -94,4 +101,4 @@ function dateChange() {
     error_log("[" . __CLASS__ . ":" . __METHOD__ . ":" . __LINE__ . "] ===> " . "[$test]");
 }
 
-dateChange();
+// dateChange();

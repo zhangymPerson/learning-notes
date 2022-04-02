@@ -12,3 +12,4 @@
 | 字符串切割       | split    | string       | string   |      |
 | 字符串拼接       | join     | string...    | string   |      |
 | 字符串替换       | replace  | string...    | string   |      |
+| 获取当前时间     | now      |              | string   |      |

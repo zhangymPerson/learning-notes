@@ -71,6 +71,11 @@ def toJson():
     strs = json.dumps(dict, ensure_ascii=False, default=str)
     print(strs)
 
+    # 格式化输出json
+    # 格式化 json
+    strs = json.dumps(dict, ensure_ascii=False, default=str, indent=2)
+    print(strs)
+
     # json转map
     # json字符串转换成字典
     map = json.loads(strs)

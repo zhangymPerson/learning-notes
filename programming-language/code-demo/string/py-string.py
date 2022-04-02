@@ -26,6 +26,16 @@ def testIsEmpty():
         print("[%s] isEmpty is [%s]" % (value, isEmpty(value)))
 
 
+def now():
+    """
+    获取当前时间
+    """
+    return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+
+
+print(now())
+
+
 class Task(object):
     """docstring for Task."""
 
