@@ -8,9 +8,11 @@ LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"  # 日志格式化输�
 DATE_FORMAT = "%m/%d/%Y %H:%M:%S %p"  # 日期格式
 # 配置脚本日志记录文件，可取消
 fp = logging.FileHandler('script-run.txt', encoding='utf-8')
+# 配置日志输出到控制台
 fs = logging.StreamHandler()
+# 配置 logging 调用上面的两种日志记录方式
 logging.basicConfig(level=logging.DEBUG, format=LOG_FORMAT,
-                    datefmt=DATE_FORMAT, handlers=[fp, fs])  # 调用
+                    datefmt=DATE_FORMAT, handlers=[fs])
 
 
 def run():
