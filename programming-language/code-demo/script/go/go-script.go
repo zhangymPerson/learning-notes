@@ -10,6 +10,8 @@ func getArgs(info string) string {
     return res
 }
 
+// go 脚本的读写输入
+// go 单个脚本执行时 如果不创建 module 需要执行 go env -w GO111MODULE=auto
 func main() {
     fmt.Println("script start")
     info := getArgs("请输入")

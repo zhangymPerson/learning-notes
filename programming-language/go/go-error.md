@@ -35,3 +35,7 @@
   设置命令 `go env -w GO111MODULE=on`
 
 - 解决办法：将 GO111MODULE 环境变量改为 off 即可,代码的智能提示就有了。每次需要下载依赖包时，再把这个环境变量改为 on，记得下完改回来，或者使用 auto 试试
+
+- 'go.mod file not found in current directory or any parent directory'
+
+  执行 `go env -w GO111MODULE=auto` 单独脚本执行时需要修改
