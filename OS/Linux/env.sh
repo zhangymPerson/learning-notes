@@ -1,8 +1,7 @@
 #!/usr/bin
 # 给服务器设置环境变量
 # 使用 source 命令使当前环境生效
-# 配置自己开发的环境变量
-
+# 配置自己开发的环境变
 # 查看系统变量 set
 
 # 当前路径 ${PWD}
@@ -11,6 +10,33 @@
 # alias 不支持参数，function 才支持。
 # 以快速运行 "grep --help" 为例, 有了以下alias运行“h grep”就可以了：
 alias h='help_fun(){ $@ --help | head -n 5 ;}; help_fun '
+
+#### 终端 Bash 命令提示符样式 只能在 bash 下设置
+SCHEME1="\[\e[01;35m\]\u\[\e[01;31m\]\$\[\e[01;36m\][\W]\[\e[01;35m\] >>\[\e[00m\] "
+SCHEME2="\[\e[01;32m\]\u\[\e[01;31m\]\$\[\e[01;36m\][\W]\[\e[01;32m\] =>\[\e[00m\] "
+SCHEME3="\[\e[01;36m\][\[\e[01;35m\]\u\[\e[01;31m\]@\[\e[01;35m\]\h \[\e[01;36m\]\W]\[\e[01;35m\]\$\[\e[00m\] "
+SCHEME4="\[\e[01;36m\][\[\e[01;32m\]\u\[\e[01;31m\]@\[\e[01;32m\]\h \[\e[01;36m\]\W]\[\e[01;32m\]\$\[\e[00m\] "
+
+# 设置自定义的终端命令提示符样式
+export PS1=$SCHEME4
+
+# 让history在存储时忽略指定指令
+export HISTIGNORE="pwd:ls:ll:ls –ltr:history:h1:h2:h3"
+
+# 让 grep 彩色输出
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# 查看命令位置
+alias type="type -a"
+alias which="which -a"
+
+# 搜索历史命令
+alias hisg="history | grep"
+
+# 搜索进程
+alias psg="ps aux | grep -v grep | grep"
 
 # 查看文件前5行
 alias cat-file='aFun(){ cat $1 | head -n 5 ;}; aFun '
@@ -68,6 +94,56 @@ alias ffile='findFile(){ find ./ -type f -iname \*$1\* ;}; findFile'
 # 查询 shell 文件中包含 haed 内容的文件
 # fwordfile sh head
 alias fwordfile='findWordFromFile(){ find ./ -type f -iname \*$1\* | xargs grep -n --color=auto "$2" ;}; findWordFromFile'
+
+# 以树形结构递归地显示目录结构
+alias lsr="ls -R | grep :$ | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
+
+# 获取操作系统位数
+alias osbit="getconf LONG_BIT"
+
+#### Python 相关设置
+export PYTHONIOENCODING="UTF-8" # 标准流的编码
+export PYTHONUNBUFFERED=1       # 不缓冲标准流
+# export PYTHONOPTIMIZE=1    # 优化字节码
+
+alias greppy="find . -name '*.py' | xargs grep -n --color" # 在 Python 代码中查找
+alias ackpy="ack --python"
+alias pytest="py.test -xvvls"
+alias simplehttpserver="python -m SimpleHTTPServer" # 启动一个简单的 http 服务器
+# alias simplehttpserver="python -m http.server"  # python3
+
+# 进入目录并列出目录下的文件
+cdl() {
+    cd "$1"
+    ls
+}
+# 复杂的命令可以先自定义一个函数，然后起别名
+alias cdll='cdl'
+# 查看进程打开的文件描述符
+pfds() { ls -l /proc/$1/fd; }
+
+# 获取所有用户和组
+alias alluser="cut -d : -f 1 /etc/passwd | sort | xargs"
+alias allgroup="cut -d : -f 1 /etc/group | sort | xargs"
+alias bashusers="cat /etc/passwd | grep /bin/bash | cut -d : -f 1 | sort | xargs"
+alias loginusers="cat /etc/passwd | grep -v /sbin/nologin | cut -d : -f 1 | sort | xargs"
+
+# 获取占用CPU最高的前十个进程
+alias topcpu="ps aux | grep -v PID | sort -nrk +3 | head"
+#alias topcpu="ps -aux --sort -pcpu | head"
+
+# 获取占用内存最高的前十个进程
+alias topmem="ps aux | grep -v PID | sort -nrk +4 | head"
+#alias topmem="ps -aux --sort -pmem | head"
+
+# 监控进程 CPU，MEM 占用，Mac 不兼容
+alias watch-ps="watch -d -n1 'ps aux --sort -pmem,-pcpu | head -25'"
+
+# 监控最占用的 CPU 的进程，Mac 兼容
+alias watch-cpu="watch -n1 'ps aux | grep -v PID | sort -nrk +3 | head -25'"
+
+# 监控最占用的 MEM 的进程，Mac 兼容
+alias watch-mem="watch -d -n1 'ps aux | grep -v PID | sort -nrk +4 | head -25'"
 
 echo "配置完成"
 # alias
