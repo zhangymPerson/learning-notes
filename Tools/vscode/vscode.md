@@ -237,3 +237,17 @@
   点击 vscode 右下角的文件模式类型，如 Markdown,c++,java,json 等，然后 Configure 'json' language
 
   按 F1，在帮助菜单中输入 'Configure File Association for '
+
+- vscode tab 多了换行配置 标签页换行设置
+
+  打开 settings 搜索 `wrap tabs` 选中，则 tab 满了会自动换行
+
+- vscode 只有一个 tab 窗口
+
+  打开 setting 搜索 `show tab` 选中第一个 `show tabs`
+
+- vscode 单机预览，双击打开，预览文件倾斜显示，打开的文件正常显示
+
+  配置方式 打开 settings 文件 搜索 `enable preview`
+
+  把`Enable Preview和Enable Preview From Quick Open` 都勾选上，则可以单击预览文件
