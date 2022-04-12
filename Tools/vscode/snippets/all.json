@@ -1,44 +1,15 @@
+// 自定义常用的联想
 {
   // 自定义常用结构的代码联想
   // ==============================================================================================
   "self_header": {
     "prefix": "sheader",
-    "body": [
-      "#!/bin/env bash",
-      "",
-      "###########################################################",
-      "# @file : $TM_FILENAME",
-      "# @desc : 脚本执行方式 [bash $TM_FILENAME]",
-      "#         脚本说明:$0",
-      "# @date : $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
-      "# @auth : test",
-      "# @version : 1.0",
-      "###########################################################",
-      "",
-      "# set -o xtrace debug模式需开启",
-      "# set -x",
-      "",
-      "# set -o errexit 有错误退出",
-      "set -e",
-      "# set -o nounset",
-      "set -u",
-      "#管道执行过程中有错误退出",
-      "set -o pipefail",
-      "# 输出脚本中相关内容 到脚本文件名对应的log文件中",
-      "# debug时，可以开启",
-      "exec >>\\${0}.log"
-    ],
-    "description": "创建一个 header 注释"
+    "body": [""],
+    "description": "创建一个[main]函数"
   },
   "self_main": {
     "prefix": "smain",
-    "body": [
-      "main() {",
-      "    echo \"hello world\"",
-      "    exit 0",
-      "}",
-      "main \"$@\""
-    ],
+    "body": [""],
     "description": "创建一个[main]函数"
   },
   "self_array": {
@@ -63,7 +34,7 @@
   },
   "self_now": {
     "prefix": "snow",
-    "body": ["now=$(date +\"%F %T\")"],
+    "body": [""],
     "description": "获取当前时间"
   },
   "self_log": {
