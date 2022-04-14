@@ -84,11 +84,43 @@
 
 ## 数据库中单表信息
 
+### demo 表
+
+- 表名:demo
+
+- 字符集:utf-8
+
+- 引擎:InnoDB
+
+- 字段介绍
+  | 序号 | 字段名 | 数据类型  | 非空 | 键类型 | 默认值            | 注释     |
+  | ---- | ------ | --------- | ---- | ------ | ----------------- | -------- |
+  | 1    | id     | bigint    | NO   | PRI    | None              |          |
+  | 2    | name   | varchar   | YES  |        | None              | 姓名     |
+  | 3    | ctime  | timestamp | YES  |        | CURRENT_TIMESTAMP | 创建时间 |
+  | 4    | mtime  | timestamp | YES  |        | None              | 修改时间 |
+  | 5    | remark | varchar   | YES  |        | None              | 备注     |
+
+- 建表 sql
+
+  ```sql
+  CREATE TABLE `demo` (
+    `id` bigint NOT NULL AUTO_INCREMENT,
+    `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT '姓名',
+    `ctime` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+    `mtime` timestamp NULL DEFAULT NULL COMMENT '修改时间',
+    `remark` varchar(1024) DEFAULT NULL COMMENT '备注',
+    PRIMARY KEY (`id`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='demo 表'
+  ```
+
 ### user 表
 
 - 表名:user
-- 字符集:
-- 引擎:
+
+- 字符集:utf-8
+
+- 引擎:InnoDB
 
 - 字段介绍
 
