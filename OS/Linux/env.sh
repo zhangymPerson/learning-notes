@@ -88,7 +88,8 @@ alias fword='findWord(){ find ./ -type f | xargs grep -n "$1" --color=auto ;}; f
 alias fwordgrep='findWordGrep(){ grep "$1" . -r -n --color=auto ;}; findWordGrep'
 
 # 查询当前目录下 是否有某个文件
-alias ffile='findFile(){ find ./ -type f -iname \*$1\* ;}; findFile'
+# 2>/dev/null  不输出没权限查看的目录
+alias ffile='findFile(){ find ./ -type f -iname \*$1\* 2>/dev/null;}; findFile'
 
 # 查询指定文件名的文件是否包含某个字段
 # 查询 shell 文件中包含 haed 内容的文件
