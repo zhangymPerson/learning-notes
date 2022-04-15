@@ -73,7 +73,7 @@ alias mysql-test='mysql -h127.0.0.1 -uroot -p123456'
 alias nc-file='ncFunc(){ echo -e "客户端复制此命令 \nfile为要上传的文件 \nnc ${host} 8889 < $1" && nc -l 8889 > $1 ;}; ncFunc '
 
 # 文件下载服务
-alias download-file='echo "浏览器打开 http://${HOSTNAME}:8889/" && python3 -m http.server  8889'
+alias py_httpserver='echo "浏览器打开 http://${HOSTNAME}:8889/" && python3 -m http.server  8889'
 
 # scp / ftp 等其他服务
 alias pwdftp='echo "ftp://${HOSTNAME}:${PWD}"'
