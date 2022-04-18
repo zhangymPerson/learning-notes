@@ -1,83 +1,4 @@
 {
-  // 自定义常用结构的代码联想
-  // ==============================================================================================
-  "self_hearder": {
-    "prefix": "sheader",
-    "body": [
-      "#!/usr/bin/env python3",
-      "# -*- encoding: utf-8 -*-",
-      "'''",
-      "@file : $TM_FILENAME",
-      "@desc : 脚本运行方式 [python3 $TM_FILENAME]",
-      "        脚本说明:$0",
-      "@date : $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
-      "@auth : danao",
-      "@version : 1.0",
-      "'''",
-      ""
-    ]
-  },
-  "self_main": {
-    "prefix": "smain",
-    "body": [
-      "def main():",
-      "\tprint(\"hello world!\")",
-      "",
-      "if __name__ == \"__main__\":",
-      "\tmain()"
-    ],
-    "description": "创建一个[main]函数"
-  },
-  "self_array": {
-    "prefix": "sarr",
-    "body": ["arr = [$1]"],
-    "description": "创建一个[数组]结构"
-  },
-  "self_list": {
-    "prefix": "slist",
-    "body": ["list = [$1]"],
-    "description": "创建一个[list]结构"
-  },
-  "self_set": {
-    "prefix": "sset",
-    "body": ["set = set()", "set.add($1)"],
-    "description": "创建一个[set]结构"
-  },
-  "self_map": {
-    "prefix": "smap",
-    "body": ["map = {'key':'value',$1:$2}"],
-    "description": "创建一个[map]结构"
-  },
-  "self_date": {
-    "prefix": "snow",
-    "body": ["datetime.datetime.now(None).strftime('%Y-%m-%d %H:%M:%S')"],
-    "description": "创建一个[date]对象"
-  },
-  "self_log": {
-    "prefix": "slog",
-    "body": ["logging.info(\"$1=[%s]\" % ($2))"],
-    "description": "创建一个日志"
-  },
-  "self_print": {
-    "prefix": "sprint",
-    "body": ["print(\"$1=[%s]\" % ($2))"],
-    "description": "创建一个打印输出"
-  },
-  "self_object": {
-    "prefix": "sobject",
-    "body": [""],
-    "description": "创建一个[object]结构"
-  },
-  "self_tojson": {
-    "prefix": "tojson",
-    "body": ["json.dumps($1, ensure_ascii=False, default=str, indent=2)"],
-    "description": "obj 转 json ensure_ascii 中文编码问题 default 时间格式编码异常问题 indent 格式化输出 json"
-  },
-  "self_toobj": {
-    "prefix": "toobj",
-    "body": ["json.loads($1)"],
-    "description": "json 转 obj"
-  },
   // 单语言配置
   // ==============================================================================================
   "self_create_logging": {
@@ -142,7 +63,6 @@
     ],
     "description": "read file"
   },
-
   "写文件": {
     "prefix": "exportFile",
     "body": "with open('debug.log', 'a') as debug:\n    debug.write($0 + \"\\n\")",

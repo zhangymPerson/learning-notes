@@ -246,8 +246,20 @@
 
   打开 setting 搜索 `show tab` 选中第一个 `show tabs`
 
-- vscode 单机预览，双击打开，预览文件倾斜显示，打开的文件正常显示
+- vscode 单击预览，双击打开，预览文件倾斜显示，打开的文件正常显示 文件覆盖问题 标签覆盖问题
 
   配置方式 打开 settings 文件 搜索 `enable preview`
 
   把`Enable Preview和Enable Preview From Quick Open` 都勾选上，则可以单击预览文件
+
+- vscode 配置标尺辅助线
+
+  防止一行代码过长的问题
+
+  配置 `"editor.rulers": [80, 120]`
+
+- vscode 代码片段 snippets
+
+  单语言 代码片段配置 setting > 搜索 snippets > 单击要选择的语言进行配置
+
+  全局代码片段配置 setting > 搜索 snippets > 选则 > global \*\*\* 进行配置

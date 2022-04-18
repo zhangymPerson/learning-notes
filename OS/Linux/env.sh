@@ -69,8 +69,15 @@ alias tail-test='tail ${work}/log.log'
 # mysql mycli 命令的 mysql- 开头
 alias mysql-test='mysql -h127.0.0.1 -uroot -p123456'
 
+ncFunc() {
+    echo -e "客户端复制此命令"
+    echo -e "file为要上传的文件"
+    echo -e "$(hostname -i) 8889 < $1"
+    nc -l 8889 >$1
+}
+
 # 文件上传服务
-alias nc-file='ncFunc(){ echo -e "客户端复制此命令 \nfile为要上传的文件 \nnc ${host} 8889 < $1" && nc -l 8889 > $1 ;}; ncFunc '
+alias nc-file='ncFunc '
 
 # 文件下载服务
 alias py_httpserver='echo "浏览器打开 http://${HOSTNAME}:8889/" && python3 -m http.server  8889'

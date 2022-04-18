@@ -1,0 +1,350 @@
+{
+  // 全局
+  // ==============================================================================================
+  "获取当前目录": {
+    "prefix": "pwd",
+    "body": ["$TM_DIRECTORY"],
+    "description": "获取当前目录"
+  },
+  "获取当前文件名": {
+    "prefix": "filename",
+    "body": ["$TM_FILENAME"],
+    "description": "获取当前文件名"
+  },
+  // ==============================================================================================
+  // python
+  // ==============================================================================================
+  "self_python_header": {
+    "scope": "python",
+    "prefix": "sheader",
+    "body": [
+      "#!/usr/bin/env python3",
+      "# -*- encoding: utf-8 -*-",
+      "'''",
+      "@file : $TM_FILENAME",
+      "@desc : 脚本运行方式 [python3 $TM_FILENAME]",
+      "        脚本说明:$0",
+      "@date : $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+      "@auth : danao",
+      "@version : 1.0",
+      "'''",
+      ""
+    ],
+    "description": "创建一个[main]函数"
+  },
+  "self_python_main": {
+    "scope": "python",
+    "prefix": "smain",
+    "body": [
+      "def main():",
+      "\tprint(\"hello world!\")",
+      "",
+      "if __name__ == \"__main__\":",
+      "\tmain()"
+    ],
+    "description": "创建一个[main]函数"
+  },
+  "self_python_array": {
+    "scope": "python",
+    "prefix": "sarr",
+    "body": ["arr = [$1]"],
+    "description": "创建一个[数组]结构"
+  },
+  "self_python_list": {
+    "scope": "python",
+    "prefix": "slist",
+    "body": ["list = [$1]"],
+    "description": "创建一个[list]结构"
+  },
+  "self_python_set": {
+    "scope": "python",
+    "prefix": "sset",
+    "body": ["set = set()", "set.add($1)"],
+    "description": "创建一个[set]结构"
+  },
+  "self_python_map": {
+    "scope": "python",
+    "prefix": "smap",
+    "body": ["map = {'key':'value',$1:$2}"],
+    "description": "创建一个[map]结构"
+  },
+  "self_python_now": {
+    "scope": "python",
+    "prefix": "snow",
+    "body": ["datetime.datetime.now(None).strftime('%Y-%m-%d %H:%M:%S')"],
+    "description": "获取当前时间"
+  },
+  "self_python_log": {
+    "scope": "python",
+    "prefix": "slog",
+    "body": ["logging.info(\"$1=[%s]\" % ($2))"],
+    "description": "创建一个日志"
+  },
+  "self_python_print": {
+    "scope": "python",
+    "prefix": "sprint",
+    "body": ["print(\"$1=[%s]\" % ($2))"],
+    "description": "创建一个打印输出"
+  },
+  "self_python_object": {
+    "scope": "python",
+    "prefix": "sobject",
+    "body": [""],
+    "description": "创建一个[object]结构"
+  },
+  "self_python_tojson": {
+    "scope": "python",
+    "prefix": "tojson",
+    "body": ["json.dumps($1, ensure_ascii=False, default=str, indent=2)"],
+    "description": "obj 转 json"
+  },
+  "self_python_toobj": {
+    "scope": "python",
+    "prefix": "toobj",
+    "body": ["json.loads($1)"],
+    "description": "json 转 obj"
+  },
+  "self_python_class_note": {
+    "scope": "python",
+    "prefix": "//class",
+    "body": [
+      "\"\"\"${1:类一句话介绍}",
+
+      "类的作用是:",
+      "    ${2:类主要是处理}",
+      "    ",
+
+      "Attributes:",
+      "    ${3:params}: ${4:type}",
+      "\"\"\""
+    ],
+    "description": "类注释"
+  },
+  "self_python_method_note": {
+    "scope": "python",
+    "prefix": "//method",
+    "body": [
+      "\"\"\"${1:函数的作用是:} ",
+      "Args:",
+      "    ${2:params}:${3:type}",
+      "Returns:",
+      "    return ${4:res}",
+      "Raises:",
+      "    列出与接口有关的所有异常.",
+      "\"\"\""
+    ],
+    "description": "函数注释"
+  },
+  // ==============================================================================================
+  // php
+  // ==============================================================================================
+  "self_php_header": {
+    "scope": "php",
+    "prefix": "sheader",
+    "body": [
+      "/**",
+      " * @file : $TM_FILENAME",
+      " * @desc : 脚本执行方式 [php $TM_FILENAME]",
+      " *         脚本说明:$0",
+      " * @date : $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+      " * @auth : test",
+      " * @version : 1.0",
+      " */",
+      ""
+    ],
+    "description": "创建一个[main]函数"
+  },
+  "self_php_main": {
+    "scope": "php",
+    "prefix": "smain",
+    "body": [
+      "// main 函数",
+      "function main() {",
+      "\techo \"hello world!\" . PHP_EOL;",
+      "}",
+      "",
+      "main();"
+    ],
+    "description": "创建一个[main]函数"
+  },
+  "self_php_array": {
+    "scope": "php",
+    "prefix": "sarr",
+    "body": ["\\$arr = array();"],
+    "description": "创建一个[数组]结构"
+  },
+  "self_php_list": {
+    "scope": "php",
+    "prefix": "slist",
+    "body": ["\\$list = array();"],
+    "description": "创建一个[list]结构"
+  },
+  "self_php_set": {
+    "scope": "php",
+    "prefix": "sset",
+    "body": ["\\$set = array();"],
+    "description": "创建一个[set]结构"
+  },
+  "self_php_map": {
+    "scope": "php",
+    "prefix": "smap",
+    "body": ["\\$map = array();"],
+    "description": "创建一个[map]结构"
+  },
+  "self_php_now": {
+    "scope": "php",
+    "prefix": "snow",
+    "body": [""],
+    "description": "获取当前时间"
+  },
+  "self_php_log": {
+    "scope": "php",
+    "prefix": "slog",
+    "body": [
+      "error_log(\"[\" . __FILE__ . \" :\" . __CLASS__ . \":\" . __METHOD__ . \":\" . __LINE__ . \"] ===> \" . \"[\\$$1]\");"
+    ],
+    "description": "创建一个日志"
+  },
+  "self_php_print": {
+    "scope": "php",
+    "prefix": "sprint",
+    "body": ["echo \\$$1 . PHP_EOL;"],
+    "description": "创建一个打印输出"
+  },
+  "self_php_object": {
+    "scope": "php",
+    "prefix": "sobject",
+    "body": [""],
+    "description": "创建一个[object]结构"
+  },
+  "self_php_tojson": {
+    "scope": "php",
+    "prefix": "tojson",
+    "body": ["\\$json = json_encode($1);"],
+    "description": "obj 转 json"
+  },
+  "self_php_toobj": {
+    "scope": "php",
+    "prefix": "toobj",
+    "body": [""],
+    "description": "json 转 obj"
+  },
+  "self_php_class_note": {
+    "scope": "php",
+    "prefix": "//class",
+    "body": [""],
+    "description": "类注释"
+  },
+  "self_php_method_note": {
+    "scope": "php",
+    "prefix": "//method",
+    "body": [""],
+    "description": "函数注释"
+  },
+  // ==============================================================================================
+  // shellscrript
+  // ==============================================================================================
+  "self_shell_header": {
+    "scope": "shellscript",
+    "prefix": "sheader",
+    "body": [
+      "#!/bin/env bash",
+      "",
+      "###########################################################",
+      "# @file : $TM_FILENAME",
+      "# @desc : 脚本执行方式 [bash $TM_FILENAME]",
+      "#         脚本说明:$0",
+      "# @date : $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
+      "# @auth : test",
+      "# @version : 1.0",
+      "###########################################################",
+      "",
+      "# set -o xtrace debug模式需开启",
+      "# set -x",
+      "",
+      "# set -o errexit 有错误退出",
+      "set -e",
+      "# set -o nounset",
+      "set -u",
+      "#管道执行过程中有错误退出",
+      "set -o pipefail",
+      "# 输出脚本中相关内容 到脚本文件名对应的log文件中",
+      "# debug时 可以开启",
+      "# exec >>\\${0}.log"
+    ],
+    "description": "创建一个[main]函数"
+  },
+  "self_shell_main": {
+    "scope": "shellscript",
+    "prefix": "smain",
+    "body": [
+      "main() {",
+      "    echo \"hello world\"",
+      "    exit 0",
+      "}",
+      "main \"$@\""
+    ],
+    "description": "创建一个[main]函数"
+  },
+  "self_shell_array": {
+    "scope": "shellscript",
+    "prefix": "sarr",
+    "body": [""],
+    "description": "创建一个[数组]结构"
+  },
+  "self_shell_list": {
+    "scope": "shellscript",
+    "prefix": "slist",
+    "body": [""],
+    "description": "创建一个[list]结构"
+  },
+  "self_shell_set": {
+    "scope": "shellscript",
+    "prefix": "sset",
+    "body": [""],
+    "description": "创建一个[set]结构"
+  },
+  "self_shell_map": {
+    "scope": "shellscript",
+    "prefix": "smap",
+    "body": [""],
+    "description": "创建一个[map]结构"
+  },
+  "self_shell_now": {
+    "scope": "shellscript",
+    "prefix": "snow",
+    "body": ["now=$(date +\"%F %T\")"],
+    "description": "获取当前时间"
+  },
+  "self_shell_log": {
+    "scope": "shellscript",
+    "prefix": "slog",
+    "body": [""],
+    "description": "创建一个日志"
+  },
+  "self_shell_print": {
+    "scope": "shellscript",
+    "prefix": "sprint",
+    "body": [""],
+    "description": "创建一个打印输出"
+  },
+  "self_shell_object": {
+    "scope": "shellscript",
+    "prefix": "sobject",
+    "body": [""],
+    "description": "创建一个[object]结构"
+  },
+  "self_shell_tojson": {
+    "scope": "shellscript",
+    "prefix": "tojson",
+    "body": [""],
+    "description": "obj 转 json"
+  },
+  "self_shell_toobj": {
+    "scope": "shellscript",
+    "prefix": "toobj",
+    "body": [""],
+    "description": "json 转 obj"
+  }
+  // ==============================================================================================
+}
