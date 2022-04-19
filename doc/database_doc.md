@@ -93,13 +93,15 @@
 - 引擎:InnoDB
 
 - 字段介绍
-  | 序号 | 字段名 | 数据类型  | 非空 | 键类型 | 默认值            | 注释     |
-  | ---- | ------ | --------- | ---- | ------ | ----------------- | -------- |
-  | 1    | id     | bigint    | NO   | PRI    | None              |          |
-  | 2    | name   | varchar   | YES  |        | None              | 姓名     |
-  | 3    | ctime  | timestamp | YES  |        | CURRENT_TIMESTAMP | 创建时间 |
-  | 4    | mtime  | timestamp | YES  |        | None              | 修改时间 |
-  | 5    | remark | varchar   | YES  |        | None              | 备注     |
+
+  | 序号 | 字段名 | 数据类型  | 非空 | 键类型 | 默认值            | 注释                                      |
+  | ---- | ------ | --------- | ---- | ------ | ----------------- | ----------------------------------------- |
+  | 1    | id     | bigint    | NO   | PRI    | None              |                                           |
+  | 2    | name   | varchar   | YES  |        | None              | 姓名                                      |
+  | 3    | status | int       | YES  |        | None              | 数据状态，-1 为逻辑删除，0，>0 为可用状态 |
+  | 4    | ctime  | timestamp | YES  |        | CURRENT_TIMESTAMP | 创建时间                                  |
+  | 5    | mtime  | timestamp | YES  |        | None              | 修改时间                                  |
+  | 6    | remark | varchar   | YES  |        | None              | 备注                                      |
 
 - 建表 sql
 
@@ -107,11 +109,12 @@
   CREATE TABLE `demo` (
     `id` bigint NOT NULL AUTO_INCREMENT,
     `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL COMMENT '姓名',
+    `status` int DEFAULT NULL COMMENT '数据状态，-1为逻辑删除，0，>0 为可用状态',
     `ctime` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
     `mtime` timestamp NULL DEFAULT NULL COMMENT '修改时间',
     `remark` varchar(1024) DEFAULT NULL COMMENT '备注',
     PRIMARY KEY (`id`)
-  ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='demo 表'
+  ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='demo 表';
   ```
 
 ### user 表
