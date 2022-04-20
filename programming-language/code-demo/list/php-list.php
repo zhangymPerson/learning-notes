@@ -58,7 +58,8 @@ class Task {
         $arrJsonStr = "[\"测试\",\"query\",\"haha\",\"nihao\",\"Json\",\"好的\",\"\",\"12\",\"false\",\"1.0\",\"EOL\",\"\",\"\"]";
         echo $arrJsonStr . PHP_EOL;
         // josn 转 list
-        $arr = json_decode($arrJsonStr);
+        // json 不转 obj 需要第二参数为 true
+        $arr = json_decode($arrJsonStr, true);
         echo gettype($arr) . PHP_EOL;
         foreach ($arr as $item) {
             echo $item . PHP_EOL;
