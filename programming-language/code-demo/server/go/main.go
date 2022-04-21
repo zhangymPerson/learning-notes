@@ -1,6 +1,7 @@
 package main
 
 import (
+    "bytes"
     "encoding/json"
     "fmt"
     "io"
@@ -22,8 +23,8 @@ const serverPort = 8889
 // 文件上传服务脚本
 // 搭建一个简单的文件服务脚本
 func main() {
-    // 指定服务时间，自动退出服务
-    secondNum := 10 * 60
+    // 指定服务时间，自动退出服务 指定总秒数
+    secondNum := 3 * 60
     //新建计时器，一秒后触发
     timer := time.NewTimer(time.Second * time.Duration(secondNum))
     //新开启一个线程来处理触发后的事件
@@ -127,18 +128,23 @@ func index(w http.ResponseWriter, r *http.Request) {
     
     <body>
         <div class="container">
-            <form enctype="multipart/form-data" action="/upload/path" method="post">
+            <form enctype="multipart/form-data" action="/upload/path" method="post" target="submit">
                 <label for="formFileMultiple" class="form-label">简易文件上传服务</label>
                 <div class=" mb-3">
                     <input class="form-control" type="file" id="formFileMultiple" name="%v" multiple>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">保存的文件夹位置</span>
-                    <input type="text" class="form-control" name="%v" placeholder="%v" value="%v" aria-describedby="basic-addon1">
+                    <input type="text" class="form-control" name="%v" placeholder="%v" value="%v"
+                        aria-describedby="basic-addon1">
                 </div>
                 <button type="submit" class="btn btn-primary">提交文件</button>
                 <button type="reset" class="btn btn-primary">取消</button>
             </form>
+        </div>
+        <div class="container">
+            <iframe src="" frameborder="1" name="submit" height="100%%" width="100%%" >
+            </iframe>
         </div>
     </body>
     
@@ -230,7 +236,7 @@ func saveFile(path string, filename string, file multipart.File) string {
         return errInfo.ToJson()
     }
     log.Printf("保存文件[%v]到当前文件夹成功", f.Name())
-    msg := GetSuccessResult("保存成功")
+    msg := GetSuccessResult(fmt.Sprintf("保存文件[%v]到[%v]成功", filename, path))
     return msg.ToJson()
 }
 
@@ -243,25 +249,32 @@ type Result struct {
 
 //ToJson 错误返回json字符串
 func (r *Result) ToJson() string {
+    var jsonStr []byte
+    var err error
     if r != nil {
-        json, err := json.Marshal(r)
+        jsonStr, err = json.Marshal(r)
         if err != nil {
             log.Fatal("r对象转json异常", err.Error())
         }
-        return string(json)
     } else {
         errR := Result{
             Code:   500,
             Msg:    "r不能为null",
             Result: "fail",
         }
-        json, err := json.Marshal(errR)
+        jsonStr, err = json.Marshal(errR)
         if err != nil {
             log.Fatal("errR转json异常", err.Error())
             return "r is null and error not change json"
         }
-        return string(json)
     }
+    // 格式化 json
+    var out bytes.Buffer
+    err = json.Indent(&out, jsonStr, "", "  ")
+    if err != nil {
+        log.Fatalln(err)
+    }
+    return out.String()
 }
 
 // 成功返回信息
