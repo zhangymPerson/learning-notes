@@ -42,29 +42,26 @@ def getAllTableFromDb(db, dbName):
     return tables
 
 
-def getCreateTableSql(db, dbname=None):
+def getCreateTableSql(db, dbname=None, tableName=None):
+    """获取单个表的建表语句 
+    Args:
+        params:db 数据库连接对象
+               dbname 库名
+               tableName 表名 
+    Returns:
+        return res
+    Raises:
+        列出与接口有关的所有异常.
     """
-    获取指定库中的所有表的建表语句
-    """
-    tables = []
-    sql = "show tables;"
+    sql = "show create table %s" % (tableName)
     db.execute(sql)
-    for rows in db.fetchall():
-        for key in rows:
-            tables.append(rows.get(key))
-
-    print("数据库[%s]中有[%s]张表,\n分别是%s" % (dbname, len(tables), tables))
-
-    splitStr = "==============================================================="
-    for tableName in tables:
-        sql = "show create table %s" % (tableName)
-        db.execute(sql)
-        # 需要调用 fetchall() 函数获取结果
-        results = db.fetchall()
-        for row in results:
-            print(row.get('Table'))
-            print(row.get('Create Table'))
-            print(splitStr)
+    # 需要调用 fetchall() 函数获取结果
+    results = db.fetchall()
+    res = ""
+    for row in results:
+        print(row.get('Table'))
+        res = row.get('Create Table')
+    return res
 
 
 def getTableInfo(db, dbName, tableName):
@@ -111,6 +108,7 @@ ORDER BY
 def getDocFromRow(tableName, rows):
     """
     根据查询到的字段信息生成表的 markdown 文档
+    返回文档数据
     """
     docTpl = """
 - %s
@@ -124,7 +122,8 @@ def getDocFromRow(tableName, rows):
             '数据类型'), row.get('是否为空'), row.get('KEY'), row.get('默认值'), row.get('注释'))
         docTpl = docTpl + rowStr
         num = num + 1
-    print(docTpl)
+    # print(docTpl)
+    return docTpl
 
 
 def getInsertIntoSql(tableName, rows):
@@ -137,18 +136,55 @@ def getInsertIntoSql(tableName, rows):
         columnNames.append(row.get('列名'))
         values.append(row.get('数据类型'))
     sql = "insert into %s (%s) values (%s)" % (tableName, columnNames, values)
-    print(sql)
+    # print(sql)
+    return sql
+
+
+def allTable(db, dbName):
+    """
+    获取所有表的介绍和文档 
+    Args:
+        params: dbname 数据库名
+    Returns:
+        return res
+    Raises:
+        列出与接口有关的所有异常.
+    """
+    # 获取所有表名
+    tables = getAllTableFromDb(db=db, dbName=dbName)
+    # 获取表名创建文档
+    for tableName in tables:
+        getTable(db, dbName, tableName)
+
+
+def getTable(db, dbName, tableName):
+    """获取单个表信息 
+    Args:
+        params:db 数据库连接对象
+               dbName 数据库名
+               tableName 表名
+    Returns:
+        return res
+    Raises:
+        列出与接口有关的所有异常.
+    """
+    rows = getTableInfo(db, dbName, tableName)
+    doc = getDocFromRow(tableName, rows)
+    tableSql = getCreateTableSql(db, dbName, tableName)
+    insertSql = getInsertIntoSql(tableName, rows)
+    docTpl = """
+%s
+```sql
+%s
+```
+%s
+    """
+    print(docTpl % (doc, tableSql, insertSql))
 
 
 if __name__ == '__main__':
     dbName = "test"
+    tableName = "test"
     with DB(host='127.0.0.1', user='root', passwd='123456', db=dbName) as db:
-        # 获取库中所有表的建表sql
-        # getCreateTableSql(db=db, dbname=dbName)
-        # 获取所有表名
-        tables = getAllTableFromDb(db=db, dbName=dbName)
-        # 获取表名创建文档
-        for table in tables:
-            rows = getTableInfo(db, dbName, table)
-            getDocFromRow(table, rows)
-            getInsertIntoSql(table, rows)
+        # allTable(db, dbName)
+        getTable(db, dbName, tableName)
