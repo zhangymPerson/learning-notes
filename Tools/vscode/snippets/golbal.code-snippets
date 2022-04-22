@@ -221,7 +221,7 @@
     "scope": "php",
     "prefix": "tojson",
     "body": [
-      "\\$json = json_encode($1,JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);"
+      "\\$json = json_encode($1, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);"
     ],
     "description": "obj 转 json"
   },

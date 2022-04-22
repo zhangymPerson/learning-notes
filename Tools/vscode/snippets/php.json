@@ -20,7 +20,7 @@
     "prefix": "errjson",
     "body": [
       "error_log(\"[\" . date('Y-m-d h:i:s', time()) . __CLASS__ . \":\" . __METHOD__ . \":\" . __LINE__ . \"] ===> \" . \"json结果如下:\" . PHP_EOL",
-      "    . json_encode(\\$${1:params}, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));"
+      "    . json_encode(\\$${1:params}, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));"
     ],
     "description": "print log"
   },
@@ -37,7 +37,7 @@
       "\\$${1:params} = array(",
       "    '${2:key}' => \\$${2:key},",
       ");",
-      "error_log(\"[\" . date('Y-m-d h:i:s', time()) . __CLASS__ . \":\" . __METHOD__ . \":\" . __LINE__ . json_encode(\\$${1:params}, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));"
+      "error_log(\"[\" . date('Y-m-d h:i:s', time()) . __CLASS__ . \":\" . __METHOD__ . \":\" . __LINE__ . json_encode(\\$${1:params}, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));"
     ],
     "description": "print log"
   },
@@ -58,7 +58,7 @@
     "prefix": "jsondump",
     "body": [
       "file_put_contents(__DIR__ . \"/debug.log\", \"[\" . __CLASS__ . \":\" . __METHOD__ . \":\" . __LINE__ . \"]\" . PHP_EOL",
-      "    . json_encode(\\$${1:params}, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . PHP_EOL, FILE_APPEND);"
+      "    . json_encode(\\$${1:params}, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . PHP_EOL, FILE_APPEND);"
     ],
     "description": "print log"
   }
