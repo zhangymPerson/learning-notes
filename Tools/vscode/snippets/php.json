@@ -2,33 +2,42 @@
   // ==============================================================================================
   // 自定义常用
   // ==============================================================================================
+  "日志格式": {
+    "prefix": "logInfo",
+    "body": [
+      "\\$${1:logInfo} = date('Y-m-d h:i:s', time()) . \"[\" . __CLASS__ . \":\" . __METHOD__ . \":\" . __LINE__ . \"]\";"
+    ],
+    "description": ""
+  },
   "输出日志": {
     "prefix": "err",
     "body": [
-      "error_log(\"[\" . __CLASS__ . \":\" . __METHOD__ . \":\" . __LINE__ . \"] ===> \" . \"[\\$$1]\");"
+      "error_log(\"[\" . date('Y-m-d h:i:s', time()) . __CLASS__ . \":\" . __METHOD__ . \":\" . __LINE__ . \"] ===> \" . \"[\\$$1]\");"
     ],
     "description": "print log"
   },
-  "err_json": {
+  "json格式化输出日志": {
     "prefix": "errjson",
-    "body": ["error_log(\"$1\". json_encode($2));"],
-    "description": "print log"
-  },
-  "define var": {
-    "prefix": "var ",
-    "body": ["$$1"],
+    "body": [
+      "error_log(\"[\" . date('Y-m-d h:i:s', time()) . __CLASS__ . \":\" . __METHOD__ . \":\" . __LINE__ . \"] ===> \" . \"json结果如下:\" . PHP_EOL",
+      "    . json_encode(\\$${1:params}, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));"
+    ],
     "description": "print log"
   },
   "记录当前执行的类和行信息": {
     "prefix": "testlog",
-    "body": ["error_log(\"====执行到:\".__METHOD__.\":\".__LINE__.\"====\");"],
+    "body": [
+      "error_log(\"====执行到:\" . __METHOD__ . \":\" . __LINE__ . \"====\");"
+    ],
     "description": "print log"
   },
   "记录执行日志到php-error文件中": {
     "prefix": "sout",
     "body": [
-      "\\$params = array(\n    'key' => 'value',\n    '$1' => '$2',\n);",
-      "error_log(\"执行到:\".__METHOD__.\":\".__LINE__.\"\\n参数是:\".json_encode(\\$params));"
+      "\\$${1:params} = array(",
+      "    '${2:key}' => \\$${2:key},",
+      ");",
+      "error_log(\"[\" . date('Y-m-d h:i:s', time()) . __CLASS__ . \":\" . __METHOD__ . \":\" . __LINE__ . json_encode(\\$${1:params}, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));"
     ],
     "description": "print log"
   },
@@ -37,17 +46,21 @@
     "body": ["echo \\$$0 . PHP_EOL;"],
     "description": "'echo' statement"
   },
-  "输出内容到当前目录的debug文件": {
-    "prefix": "exportFile",
+  "var_dump到文件": {
+    "prefix": "vardump",
     "body": [
-      "file_put_contents(__DIR__.\"/debug.log\", \" result \\n\" . var_export(\\$$1,true) . \"\\n\", FILE_APPEND);"
+      "file_put_contents(__DIR__ . \"/debug.log\", \"[\" . __CLASS__ . \":\" . __METHOD__ . \":\" . __LINE__ . \"]\" . var_export(\\$${1:params}, true) . \"\\n\", FILE_APPEND);"
     ],
     "description": "print log"
   },
-  "输出变量的json格式": {
-    "prefix": "echojson",
-    "body": ["echo json_encode(\\$$1) . PHP_EOL;"],
-    "description": "echo"
+
+  "json格式输出到文件": {
+    "prefix": "jsondump",
+    "body": [
+      "file_put_contents(__DIR__ . \"/debug.log\", \"[\" . __CLASS__ . \":\" . __METHOD__ . \":\" . __LINE__ . \"]\" . PHP_EOL",
+      "    . json_encode(\\$${1:params}, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) . PHP_EOL, FILE_APPEND);"
+    ],
+    "description": "print log"
   }
   // ==============================================================================================
   // source : https://github.com/phiter/phpstorm-snippets-for-vscode/blob/master/snippets/snippets.json
