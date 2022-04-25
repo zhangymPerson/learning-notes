@@ -82,6 +82,24 @@ alias nc-file='ncFunc '
 # 文件下载服务
 alias py_httpserver='echo "浏览器打开 http://${HOSTNAME}:8889/" && python3 -m http.server  8889'
 
+# 文件传输 python3
+function scpfile {
+    host=$(hostname -i)
+    port=8889
+    echo "wget -N http://${host}:${port}/$1"
+    $(python3 -m http.server ${port})
+}
+alias scpfile=scpfile
+
+# 文件传输 python2
+function scpfile2 {
+    host=$(hostname -i)
+    port=8889
+    echo "wget -N http://${host}:${port}/$1"
+    $(python -m SimpleHTTPServer ${port})
+}
+alias scpfile2=scpfile2
+
 # scp / ftp 等其他服务
 alias pwdftp='echo "ftp://${HOSTNAME}:${PWD}"'
 alias pwdscp='echo "${LOGNAME}@${HOSTNAME}:${PWD}"'
