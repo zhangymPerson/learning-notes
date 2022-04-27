@@ -11,8 +11,10 @@
 
 
 import logging
-LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"  # 日志格式化输出
-DATE_FORMAT = "%m/%d/%Y %H:%M:%S %p"  # 日期格式
+# 日志格式化输出
+LOG_FORMAT = "%(asctime)s-[%(filename)s:%(lineno)d]-[%(levelname)s]:%(message)s"
+# 日期格式
+DATE_FORMAT = "%Y-%m-%d %H:%M:%S"
 # 配置脚本日志记录文件，可取消
 fp = logging.FileHandler('debug.log', encoding='utf-8')
 # 配置日志输出到控制台
@@ -24,3 +26,6 @@ logging.basicConfig(level=logging.DEBUG, format=LOG_FORMAT,
 
 def log(info):
     logging.info(info)
+
+
+# log("test")
