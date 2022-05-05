@@ -83,11 +83,21 @@ alias nc-file='ncFunc '
 alias py_httpserver='echo "浏览器打开 http://${HOSTNAME}:8889/" && python3 -m http.server  8889'
 
 # 文件传输 python3
+# 60s后关闭,防止忘记关闭
 function scpfile {
     host=$(hostname -i)
     port=8889
-    echo "wget -N http://${host}:${port}/$1"
-    $(python3 -m http.server ${port})
+    now=$(date +"%F %T")
+    num=60
+    echo "${now}=>服务启动,${num} 秒后结束"
+    for file in $(ls); do
+        echo "wget -N http://${host}:${port}/${file}"
+    done
+    $(
+        python3 -m http.server ${port} &
+        sleep ${num}
+        kill $! &
+    )
 }
 alias scpfile=scpfile
 
@@ -95,8 +105,13 @@ alias scpfile=scpfile
 function scpfile2 {
     host=$(hostname -i)
     port=8889
+    num=60
     echo "wget -N http://${host}:${port}/$1"
-    $(python -m SimpleHTTPServer ${port})
+    $(
+        python -m SimpleHTTPServer ${port} &
+        sleep ${num}
+        kill $! &
+    )
 }
 alias scpfile2=scpfile2
 
