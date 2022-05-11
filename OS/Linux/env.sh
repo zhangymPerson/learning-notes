@@ -18,7 +18,7 @@ SCHEME3="\[\e[01;36m\][\[\e[01;35m\]\u\[\e[01;31m\]@\[\e[01;35m\]\h \[\e[01;36m\
 SCHEME4="\[\e[01;36m\][\[\e[01;32m\]\u\[\e[01;31m\]@\[\e[01;32m\]\h \[\e[01;36m\]\W]\[\e[01;32m\]\$\[\e[00m\] "
 
 # 设置自定义的终端命令提示符样式
-export PS1=$SCHEME4
+# export PS1=$SCHEME4
 
 # 让history在存储时忽略指定指令
 export HISTIGNORE="pwd:ls:ll:ls –ltr:history:h1:h2:h3"

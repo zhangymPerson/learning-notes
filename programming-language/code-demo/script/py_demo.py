@@ -25,8 +25,24 @@ def getNow():
     return datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
 
+def getInput(info: str):
+    """
+    获取用户输入 
+    Args:
+        params:type
+    Returns:
+        return res
+    Raises:
+        列出与接口有关的所有异常.
+    """
+    info = info+"\n"
+    return input(info)
+
+
 def run():
     print("task start")
+    info = getInput("请输入文件名")
+    print(info)
 
 
 if __name__ == '__main__':
