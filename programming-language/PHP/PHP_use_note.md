@@ -2118,35 +2118,6 @@ implicit_flush         //作用同ob_implicit_flush，默认为Off。
 3)对输出的内容进行处理，例如进行gzip压缩，例如进行简繁转换，例如进行一些字符串替换。
 4)生成静态文件，其实就是捕捉整页的输出，然后存成文件。经常在生成HTML，或者整页缓存中使用。
 
-
-/* 网站并发 */
-测试工具：apache/bin/ab.exe
-# 用法：cmd{%apache-bin%}>ab.exe -n 执行访问次数 -c 用户并发数量 URL地址
-MPM(多路处理模块)：perfork(预处理模式), worker(工作者模式), winnt(Win系统)
-MPM配置：httpd-mpm.conf
-查看当前MPM模式：httpd –l    mpm_xxx.c中xxx表示当前模式类型
-httpd.conf配置(开启MPM)：#Include conf/extra/httpd-mpm.conf
-#参考配置
-#配置文件：extra/httpd-mpm.conf
-#mpm_winnt.c
-<IfModule mpm_winnt_module>
-    ThreadsPerChild      1000   #中型网站1500-5500合理
-    MaxRequestsPerChild  0
-</IfModule>
-#mpm_prefork.c
-<IfModule mpm_prefork_module>
-    StartServers    5       #预先启动
-    MinSpareServers 5
-    MaxSpareServers 10      #最大空闲进程
-    ServerLimit     1500    #用于修改apache编程参数
-    MaxClients      1000    #最大并发数
-    MaxRequestsPerChild 0   #一个进程对应的线程数，对worker更用
-</IfModule>
-#如果你的网站pv值上百万
-ServerLimit     2500   #用于修改apache编程参数
-MaxClients      2000   #最大并发数
-
-
 /* 静态化 */
 1. 页面URL长度不超过255字节
 2. meta信息尽量完整，keywords5个左右
