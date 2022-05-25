@@ -60,7 +60,28 @@ def readFile(fileName):
     with open(file=fileName, mode='r', encoding='utf-8') as f:
         lines = f.readlines()
         for line in lines:
+            # 去掉空字符
+            line = line.strip()
             print(line)
+
+
+def getFileWord(fileName):
+    """
+    获取一个文件的内容 
+    Args:
+        params:fileName 文件名
+    Returns:
+        return 按行分割的内容集合
+    Raises:
+        列出与接口有关的所有异常.
+    """
+    with open(fileName, 'r', encoding='utf-8') as f:
+        lines = f.readlines()
+        list = []
+        for line in lines:
+            print(line)
+            list.append(line.rstrip())
+        return list
 
 
 def readCsv(fileName):
