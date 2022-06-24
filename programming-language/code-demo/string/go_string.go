@@ -1,8 +1,13 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"log"
+	"reflect"
+	"strconv"
 	"strings"
+	"time"
 )
 
 // main
@@ -81,11 +86,72 @@ func replace() {
 }
 
 // 字符串包含字符判断
-
 func toByte() {
 	// string与byte转化
 	str := "hello word"
 	bt := []byte(str)
 	strs := string(bt)
-	fmt.Println(str,bt,strs)
+	fmt.Println(str, bt, strs)
+}
+
+// StringVal 各种类型转string
+func StringVal(value interface{}) string {
+	var key string
+	if value == nil {
+		return "NULL"
+	}
+	fmt.Printf("value: %+v\n", value)
+	fmt.Printf("type: %+v\n", reflect.TypeOf(value))
+	switch value.(type) {
+	case float64:
+		ft := value.(float64)
+		key = strconv.FormatFloat(ft, 'f', -1, 64)
+	case float32:
+		ft := value.(float32)
+		key = strconv.FormatFloat(float64(ft), 'f', -1, 64)
+	case int:
+		it := value.(int)
+		key = strconv.Itoa(it)
+	case uint:
+		it := value.(uint)
+		key = strconv.Itoa(int(it))
+	case int8:
+		it := value.(int8)
+		key = strconv.Itoa(int(it))
+	case uint8:
+		it := value.(uint8)
+		key = strconv.Itoa(int(it))
+	case int16:
+		it := value.(int16)
+		key = strconv.Itoa(int(it))
+	case uint16:
+		it := value.(uint16)
+		key = strconv.Itoa(int(it))
+	case int32:
+		it := value.(int32)
+		key = strconv.Itoa(int(it))
+	case uint32:
+		it := value.(uint32)
+		key = strconv.Itoa(int(it))
+	case int64:
+		it := value.(int64)
+		key = strconv.FormatInt(it, 10)
+	case uint64:
+		it := value.(uint64)
+		key = strconv.FormatUint(it, 10)
+	case string:
+		key = value.(string)
+	case []byte:
+		key = string(value.([]byte))
+	case time.Time:
+		key = value.(time.Time).Format("2006-01-02 15:04:05")
+	// 未知的type json兜底
+	default:
+		newValue, err := json.Marshal(value)
+		if err != nil {
+			log.Fatal("类型转json异常,异常信息如下:", err)
+		}
+		key = string(newValue)
+	}
+	return key
 }

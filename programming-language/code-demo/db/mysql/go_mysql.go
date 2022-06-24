@@ -2,6 +2,7 @@ package main
 
 import (
 	"database/sql"
+	"encoding/json"
 	"fmt"
 	"log"
 	"time"
@@ -55,28 +56,41 @@ func queryResultAsMap(db *sql.DB, tables []string) {
 		fmt.Println(sql)
 		rows, err := db.Query(sql)
 		if err != nil {
-			log.Println(err)
+			log.Fatal("异常,异常信息如下:", err)
 		}
-		cols, err := rows.Columns()
+		RowsToJson(rows)
+	}
+}
+
+// 数据库查询到的数据转成json打印
+func RowsToJson(rows *sql.Rows) {
+	// 查询列信息
+	columns, err := rows.Columns()
+	if err != nil {
+		log.Fatal("解析rows异常,异常信息如下:", err)
+	}
+	count := len(columns)
+	values := make([]interface{}, count)
+	scanArgs := make([]interface{}, count)
+	// rows.Scan 需要传入 对象的地址 的数组
+	// 所以不能直接传入values 需要用 scanArg转成 &values 的地址值
+	for i := range values {
+		scanArgs[i] = &values[i]
+	}
+	for rows.Next() {
+		// 将取到的值赋值到 values 中
+		err := rows.Scan(scanArgs...)
 		if err != nil {
-			log.Println(err)
+			log.Fatal("接收对象异常,异常信息如下:", err)
 		}
-		num := len(cols)
-		for rows.Next() {
-			data := make([]interface{}, num)
-			for n := range data {
-				var a interface{}
-				data[n] = a
-			}
-			err := rows.Scan(data...)
-			if err != nil {
-				log.Println(err)
-			}
-			for _, value := range data {
-				fmt.Printf("%v", value)
-			}
-			fmt.Println()
+		// 构建一个map
+		data := make(map[string]interface{}, count)
+		for k, v := range values {
+			// fmt.Printf("k: %+v =>", columns[k],v)
+			data[columns[k]] = v
 		}
+		jsonBytes, _ := json.MarshalIndent(data, "", "    ")
+		fmt.Printf("json格式化如下:\n%+v\n", string(jsonBytes))
 	}
 }
 
