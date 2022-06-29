@@ -1,0 +1,11 @@
+{
+	"create tables": {
+		"prefix": "table",
+		"body": [
+			"|${1:${TM_SELECTED_TEXT}}|${2:${TM_SELECTED_TEXT}}|${3:${TM_SELECTED_TEXT}}|",
+			"|---|---|---|",
+			"| $0|   |   |"
+		],
+		"description": "create tables"
+	}
+}
