@@ -8,15 +8,15 @@
 
 - markdown 代码片段配置需要在 settings.xml 中添加配置
 
-```json
- "[markdown]": {
-    "editor.formatOnSave": true,
-    "editor.renderWhitespace": "all",
-    "editor.quickSuggestions": {
-        "other": "on",
-        "comments": "off",
-        "strings": "off"
-    },
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-},
-```
+  ```json
+  "[markdown]": {
+      "editor.formatOnSave": true,
+      "editor.renderWhitespace": "all",
+      "editor.quickSuggestions": {
+          "other": "on",
+          "comments": "off",
+          "strings": "off"
+      },
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  ```
