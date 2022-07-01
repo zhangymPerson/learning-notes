@@ -1,5 +1,7 @@
 # docker 常用命令
 
+- [返回](./README.md)
+
 - 查询某个镜像文件
 
   ```sh
@@ -12,12 +14,13 @@
 
 - 常用仓库命令
 
-  | 操作 | 命令                   | 说明                                                                     |
-  | ---- | ---------------------- | ------------------------------------------------------------------------ | ---------------------------------------- |
-  | 检索 | docker search          | 关键字如：docker search redis                                            | 经常会去 docker hub 上检索镜像的详细信息 |
-  | 拉取 | docker pull 镜像名:tag | :tag 是可选的，tag 表示标签，通常是软件的版本号，默认是 latest(即最新版) |
-  | 列表 | docker images          | 查看所有本地镜像                                                         |
-  | 删除 | docker rmi image-id    | 删除指定的本地镜像                                                       |
+  | 操作   | 命令                                                  | 说明                                                                     |
+  | ------ | ----------------------------------------------------- | ------------------------------------------------------------------------ | ---------------------------------------- |
+  | 检索   | docker search                                         | 关键字如：docker search redis                                            | 经常会去 docker hub 上检索镜像的详细信息 |
+  | 拉取   | docker pull 镜像名:tag                                | :tag 是可选的，tag 表示标签，通常是软件的版本号，默认是 latest(即最新版) |
+  | 列表   | docker images                                         | 查看所有本地镜像                                                         |
+  | 删除   | docker rmi image-id                                   | 删除指定的本地镜像                                                       |
+  | 传文件 | docker cp /home/work/path containerid:/home/work/path | 传本地文件到 docker 容器内部                                             |
 
   ```sh
   > docker --help
@@ -131,113 +134,7 @@
   [
     { "layer": "", "name": "latest" },
     { "layer": "", "name": "5" },
-    { "layer": "", "name": "5.5" },
-    { "layer": "", "name": "5.5.40" },
-    { "layer": "", "name": "5.5.41" },
-    { "layer": "", "name": "5.5.42" },
-    { "layer": "", "name": "5.5.43" },
-    { "layer": "", "name": "5.5.44" },
-    { "layer": "", "name": "5.5.45" },
-    { "layer": "", "name": "5.5.46" },
-    { "layer": "", "name": "5.5.47" },
-    { "layer": "", "name": "5.5.48" },
-    { "layer": "", "name": "5.5.49" },
-    { "layer": "", "name": "5.5.50" },
-    { "layer": "", "name": "5.5.51" },
-    { "layer": "", "name": "5.5.52" },
-    { "layer": "", "name": "5.5.53" },
-    { "layer": "", "name": "5.5.54" },
-    { "layer": "", "name": "5.5.55" },
-    { "layer": "", "name": "5.5.56" },
-    { "layer": "", "name": "5.5.57" },
-    { "layer": "", "name": "5.5.58" },
-    { "layer": "", "name": "5.5.59" },
-    { "layer": "", "name": "5.5.60" },
-    { "layer": "", "name": "5.5.61" },
-    { "layer": "", "name": "5.5.62" },
-    { "layer": "", "name": "5.6" },
-    { "layer": "", "name": "5.6.17" },
-    { "layer": "", "name": "5.6.20" },
-    { "layer": "", "name": "5.6.21" },
-    { "layer": "", "name": "5.6.22" },
-    { "layer": "", "name": "5.6.23" },
-    { "layer": "", "name": "5.6.24" },
-    { "layer": "", "name": "5.6.25" },
-    { "layer": "", "name": "5.6.26" },
-    { "layer": "", "name": "5.6.27" },
-    { "layer": "", "name": "5.6.28" },
-    { "layer": "", "name": "5.6.29" },
-    { "layer": "", "name": "5.6.30" },
-    { "layer": "", "name": "5.6.31" },
-    { "layer": "", "name": "5.6.32" },
-    { "layer": "", "name": "5.6.33" },
-    { "layer": "", "name": "5.6.34" },
-    { "layer": "", "name": "5.6.35" },
-    { "layer": "", "name": "5.6.36" },
-    { "layer": "", "name": "5.6.37" },
-    { "layer": "", "name": "5.6.38" },
-    { "layer": "", "name": "5.6.39" },
-    { "layer": "", "name": "5.6.40" },
-    { "layer": "", "name": "5.6.41" },
-    { "layer": "", "name": "5.6.42" },
-    { "layer": "", "name": "5.6.43" },
-    { "layer": "", "name": "5.6.44" },
-    { "layer": "", "name": "5.6.45" },
-    { "layer": "", "name": "5.6.46" },
-    { "layer": "", "name": "5.6.47" },
-    { "layer": "", "name": "5.6.48" },
-    { "layer": "", "name": "5.6.49" },
-    { "layer": "", "name": "5.7" },
-    { "layer": "", "name": "5.7.10" },
-    { "layer": "", "name": "5.7.11" },
-    { "layer": "", "name": "5.7.12" },
-    { "layer": "", "name": "5.7.13" },
-    { "layer": "", "name": "5.7.14" },
-    { "layer": "", "name": "5.7.15" },
-    { "layer": "", "name": "5.7.16" },
-    { "layer": "", "name": "5.7.17" },
-    { "layer": "", "name": "5.7.18" },
-    { "layer": "", "name": "5.7.19" },
-    { "layer": "", "name": "5.7.20" },
-    { "layer": "", "name": "5.7.21" },
-    { "layer": "", "name": "5.7.22" },
-    { "layer": "", "name": "5.7.23" },
-    { "layer": "", "name": "5.7.24" },
-    { "layer": "", "name": "5.7.25" },
-    { "layer": "", "name": "5.7.26" },
-    { "layer": "", "name": "5.7.27" },
-    { "layer": "", "name": "5.7.28" },
-    { "layer": "", "name": "5.7.29" },
-    { "layer": "", "name": "5.7.30" },
-    { "layer": "", "name": "5.7.31" },
-    { "layer": "", "name": "5.7.4" },
-    { "layer": "", "name": "5.7.4-m14" },
-    { "layer": "", "name": "5.7.5" },
-    { "layer": "", "name": "5.7.5-m15" },
-    { "layer": "", "name": "5.7.6" },
-    { "layer": "", "name": "5.7.6-m16" },
-    { "layer": "", "name": "5.7.7" },
-    { "layer": "", "name": "5.7.7-rc" },
-    { "layer": "", "name": "5.7.8" },
-    { "layer": "", "name": "5.7.8-rc" },
-    { "layer": "", "name": "5.7.9" },
-    { "layer": "", "name": "8" },
-    { "layer": "", "name": "8.0" },
-    { "layer": "", "name": "8.0.0" },
-    { "layer": "", "name": "8.0.1" },
-    { "layer": "", "name": "8.0.11" },
-    { "layer": "", "name": "8.0.12" },
-    { "layer": "", "name": "8.0.13" },
-    { "layer": "", "name": "8.0.14" },
-    { "layer": "", "name": "8.0.15" },
-    { "layer": "", "name": "8.0.16" },
-    { "layer": "", "name": "8.0.17" },
-    { "layer": "", "name": "8.0.18" },
-    { "layer": "", "name": "8.0.19" },
-    { "layer": "", "name": "8.0.2" },
-    { "layer": "", "name": "8.0.20" },
-    { "layer": "", "name": "8.0.21" },
-    { "layer": "", "name": "8.0.3" },
+    ...
     { "layer": "", "name": "8.0.4" },
     { "layer": "", "name": "8.0.4-rc" }
   ]
