@@ -10,7 +10,7 @@
 ###########################################################
 
 # 服务名
-serverName=test
+serverName="test"
 # 探活周期 单位为 s
 cycle=3
 # 日志
@@ -35,10 +35,11 @@ function checkServer() {
     echo "${serverName} 探活监测开启"
     while true; do
         # 获取服务进程ID
-        procid=$(ps -ef | grep ${serverName} | grep -v grep | wc -l)
+        # pgrep 
+        pid=$(ps -ef | grep ${serverName} | grep -v grep | wc -l)
         #  如果进程ID不存在，则服务停止，打印必要日志，并重启服务
         time=$(date "+%Y-%m-%d %H:%M:%S")
-        if [ ${procid} -eq 0 ]; then
+        if [ "${pid}" -eq 0 ]; then
             echo "${time}:${serverName} is stop!"
             echo "${time}:restart the ${serverName}!"
             startServr
