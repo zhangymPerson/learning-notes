@@ -23,6 +23,8 @@
   PermitRootLogin yes
   #不允许空密码登录
   PermitEmptyPasswords no
+  # 不允许密码登录
+  PasswordAuthentication no
   ```
 
 ## 客户端配置

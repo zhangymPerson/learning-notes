@@ -6,6 +6,10 @@
 
 - [ssd 的配置说明](./ssh-config.md)
 
+- [SSL 简介.md](./SSL简介.md)
+
+- [sftp.md](./sftp.md)
+
 ## 其他
 
 连接分为两种:基于口令和基于密钥的
@@ -91,7 +95,7 @@
 
 ## ssh / scp 报错解决方式
 
-- 错误1
+- 错误 1
 
   ```sh
   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
@@ -108,6 +112,7 @@
   RSA host key for 66danao.com has changed and you have requested strict checking.
   Host key verification failed.
   ```
-  解决方式 
-  删除旧的IP `vi ~/.ssh/known_hosts`
-  删除对应ip的相关rsa信息（本例可知删除12行信息即可）
+
+  解决方式
+  删除旧的 IP `vi ~/.ssh/known_hosts`
+  删除对应 ip 的相关 rsa 信息（本例可知删除 12 行信息即可）

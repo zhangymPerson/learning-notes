@@ -36,8 +36,6 @@
 
 - [OpenSSH](./OpenSSH/README.md)
 
-- [OpenSSL](./OpenSSL/README.md)
-
 - [OpenVPN](./OpenVPN/README.md)
 
 - [postman](./postman/README.md)
