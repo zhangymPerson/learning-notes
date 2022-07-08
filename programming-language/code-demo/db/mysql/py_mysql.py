@@ -105,11 +105,61 @@ def deleteTable(tableName):
         print("清理表[%s]完成" % tableName)
 
 
+def truncateTable(db, tableName):
+    """
+    清空表 
+    Args:
+        params:tableName 表名
+    Returns:
+        return res
+    Raises:
+        列出与接口有关的所有异常.
+        有外键约束时，需要 SET FOREIGN_KEY_CHECKS=0; 之后执行后在 SET FOREIGN_KEY_CHECKS=1
+    """
+    if not isEmpty(tableName):
+        sql = "truncate table %s" % tableName
+        db.execute(sql)
+        print("清理表[%s]完成" % tableName)
+
+
+def changeForeignKeyCheck(db, status):
+    """修改外键状态 
+    解决有外键表不能 truncate 问题
+    Args:
+        params:status
+    Returns:
+        return res
+    Raises:
+        列出与接口有关的所有异常.
+    """
+    if status == 0 or status == 1:
+        checkSql = "SELECT @@FOREIGN_KEY_CHECKS;"
+        db.execute(checkSql)
+        # 需要调用 fetchall() 函数获取结果
+        results = db.fetchall()
+        for row in results:
+            print("修改前状态是%d" % row.get('@@FOREIGN_KEY_CHECKS'))
+        sql = "SET FOREIGN_KEY_CHECKS=%d;" % status
+        db.execute(sql)
+        db.execute(checkSql)
+        # 需要调用 fetchall() 函数获取结果
+        results = db.fetchall()
+        for row in results:
+            print("修改后状态是%d" % row.get('@@FOREIGN_KEY_CHECKS'))
+    else:
+        return
+
+
 if __name__ == '__main__':
     dbName = "test"
     with DB(host='127.0.0.1', user='root', passwd='123456', db=dbName) as db:
         # 获取所有表名
-        getAllTableFromDb(db=db, dbName=dbName)
+        tables = getAllTableFromDb(db=db, dbName=dbName)
+        # 修改外键状态
+        # changeForeignKeyCheck(db, 0)
+        # 批量清理表
+        # for tableName in tables:
+        #     truncateTable(db, tableName=tableName)
         # 获取库中所有表的建表sql
-        getCreateTableSql(db=db, dbname=dbName)
+        # getCreateTableSql(db=db, dbname=dbName)
         # deleteTable('user')
