@@ -257,9 +257,3 @@
   防止一行代码过长的问题
 
   配置 `"editor.rulers": [80, 120]`
-
-- vscode 代码片段 snippets
-
-  单语言 代码片段配置 setting > 搜索 snippets > 单击要选择的语言进行配置
-
-  全局代码片段配置 setting > 搜索 snippets > 选则 > global \*\*\* 进行配置
