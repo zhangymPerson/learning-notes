@@ -12,7 +12,7 @@
 
   打开 setting 查找 File | Settings | Editor | File and Code Templates 位置下， 修改响应的参数即可模板如下
 
-  ```sh
+  ```java
   /**
   * @class name ${NAME}
   * @description class
