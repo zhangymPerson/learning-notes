@@ -87,29 +87,19 @@
 
 - vim 插件 自定义 vscode-vim 插件配置
 
+  **vsode vim 插件使用 vimrc 配置 `vim.vimrc.enable:true`**
+
   Settings 中配置如下 过滤掉
 
   ```json
+  {
     "vim.handleKeys": {
       "<C-a>": false,
       "<C-f>": false,
       "<C-n>": false,
       "<C-d>": true
-    },
-    "vim.insertModeKeyBindings": [
-      {
-        "before": ["h", "h"],
-        "after": ["<Left>"]
-      },
-      {
-        "before": ["l", "l"],
-        "after": ["<Right>"]
-      },
-      {
-        "before": ["q", "q"],
-        "after": ["<Esc>"]
-      }
-    ],
+    }
+  }
   ```
 
 ## vscode 配置标签页自动换行全部展示 一行展示不下自动换行展示
@@ -154,14 +144,15 @@
 - 修改 settings
 
   php / c / C++ 大括号换行问题
-  
+
   打开 settings -> search -> `format:braces` -> 选择对应的语言/插件 修改相关配置
 
 ## vscode 文件隐藏 搜索过滤
 
-- 配置 
-  
-  通过设置vscode的files.exclude选项，可以将工作区一些不必要的文件隐藏，这是我的配置
+- 配置
+
+  通过设置 vscode 的 files.exclude 选项，可以将工作区一些不必要的文件隐藏，这是我的配置
+
   ```json
   "files.exclude": {
       "**/.svn": true,
@@ -177,10 +168,10 @@
       "**/CVS": true,
       "**/.DS_Store": true,
       "**/.COMAKE.*": true,
-      "**/node_modules": true 
+      "**/node_modules": true
     },
   ```
-  
-  注：file.exclude是过滤在左侧文件浏览器看到的文件， search.exclude是过滤按文件名搜索能搜索到的文件
-  
+
+  注：file.exclude 是过滤在左侧文件浏览器看到的文件， search.exclude 是过滤按文件名搜索能搜索到的文件
+
   Command+P 可以在当前工作区中模糊查找文件

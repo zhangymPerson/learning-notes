@@ -67,19 +67,6 @@
   **注意：修改 vim 配置要生效，需要重启 idea**
 
   ```vim
-  imap <C-e> <END>
-  imap <C-a> <HOME>
-  imap ll <Right>
-  imap hh <Left>
-  " 显示当前的模式
-  set showmode
-  " 共享系统粘贴板
-  set clipboard=unnamed
-  " 高亮显示查询结果
-  set hlsearch
-  " 查询不分大小写 小写全匹配，有一个大写则按照大小写规则匹配
-  set ignorecase smartcase
-
   " 下面的配置只能在idea系列中生效
   " Leader默认的键盘位置是 \
   " 使用 \ r 相当于 idea ctrl + r
