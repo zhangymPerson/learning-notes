@@ -41,16 +41,12 @@ alias psg="ps aux | grep -v grep | grep"
 # 查看文件前5行
 alias cat-file='aFun(){ cat $1 | head -n 5 ;}; aFun '
 
+# tailf
+alias tailf='tail -f -n 200'
+
 # 指定python执行的编码格式
 # python3 乱码问题 编码问题
 alias python3='PYTHONIOENCODING=utf-8 python3'
-
-# cd类的 cd- 开头
-alias cd-work='cd ${work}'
-alias cd-nginx='cd ${nginx}'
-
-# tail 类的 tail开头
-alias tail-test='tail ${work}/log.log'
 
 ncFunc() {
     echo -e "客户端复制此命令"
@@ -101,7 +97,7 @@ alias scpfile2=scpfile2
 # scp / ftp 等其他服务
 alias pwdftp='echo "ftp://${HOSTNAME}:${PWD}"'
 alias pwdscp='echo "${LOGNAME}@${HOSTNAME}:${PWD}"'
-alias pwdscp='echo "${LOGNAME}@$(hostname -i):${PWD}"'
+# alias pwdscp='echo "${LOGNAME}@$(hostname -i):${PWD}"'
 
 # 查询当前目录下 文件中的某个字符
 # ack 命令可替代 查找命令

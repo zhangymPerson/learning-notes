@@ -16,3 +16,5 @@ cp env.sh ~/.env.sh
 # 只执行一次
 # echo "source ~/.env.sh" >> ~/.bash_profile
 # echo "source ~/.dev.sh" >> ~/.bash_profile
+
+source ~/.bash_profile
