@@ -6,6 +6,8 @@ set encoding=utf-8
 set nu
 set cursorline
 set cursorcolumn
+" 设置不自动换行
+set nowrap
 " Vim 编辑器里默认是不启用鼠标的，通过此设置即可启动鼠标。
 set mouse=a
 set selection=exclusive
