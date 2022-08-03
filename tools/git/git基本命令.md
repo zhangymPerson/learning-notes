@@ -30,6 +30,10 @@
 
 ## 本地操作
 
+- 下图为常用的开发命令
+
+  ![git-command](../../Picture/git-command.jpg)
+
 - git 常用命令
 
   **git init 初始化一个本地仓库 新建为 master 主分支**
@@ -103,6 +107,7 @@
   git stash pop 恢复并删除暂存状态
 
   git stash apply <stash@{0}> 恢复指定的暂存状态
+
 
 ## 远征仓库操作
 

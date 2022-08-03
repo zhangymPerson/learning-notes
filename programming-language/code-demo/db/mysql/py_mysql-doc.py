@@ -1,10 +1,32 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
+# -*- encoding: utf-8 -*-
+"""
+@file : py_mysql-doc.py
+@desc : 脚本运行方式 [python3 py_mysql-doc.py -h]
+        脚本说明:获取数据库指定表的表结构文档
+@date : 2022-08-03 14:34:43
+@auth : danao
+@version : 1.0
+"""
+
+import argparse
+import json
+import traceback
 
 import pymysql
 
 
 class DB():
-    def __init__(self, host='localhost', port=3306, db='', user='root', passwd='root', charset='utf8'):
+    """
+    类的作用是:
+        连接数据库
+
+    Attributes:
+        params: type
+    """
+
+    def __init__(self, host='localhost', port=3306, db='',
+                 user='root', passwd='root', charset='utf8'):
         # 建立连接
         self.conn = pymysql.connect(
             host=host, port=port, db=db, user=user, passwd=passwd, charset=charset)
@@ -24,47 +46,51 @@ class DB():
         self.conn.close()
 
 
-def getAllTableFromDb(db, dbName):
+def getAllTableFromDb(db, db_name):
     """
     查数据 获取当前库下的表
     """
     # 游标执行返回的是数量
     db.execute("show tables;")
     # 获取数据库名
-    print(dbName)
+    print(db_name)
     tables = []
     # 需要调用 fetchall() 函数获取结果
     results = db.fetchall()
     for row in results:
         for table in row:
             tables.append(row.get(table))
-    print("数据库[%s]中有[%s]张表,\n分别是%s" % (dbName, len(tables), tables))
+    print("数据库[%s]中有[%s]张表,\n分别是%s" % (db_name, len(tables), tables))
     return tables
 
 
-def getCreateTableSql(db, dbname=None, tableName=None):
-    """获取单个表的建表语句 
+def getCreatetable_sql(db, table_name=None):
+    """获取单个表的建表语句
     Args:
         params:db 数据库连接对象
-               dbname 库名
-               tableName 表名 
+               db_name 库名
+               table_name 表名
     Returns:
         return res
     Raises:
         列出与接口有关的所有异常.
     """
-    sql = "show create table %s" % (tableName)
+    sql = "show create table %s" % (table_name)
     db.execute(sql)
     # 需要调用 fetchall() 函数获取结果
     results = db.fetchall()
     res = ""
+    createTableSql = ""
     for row in results:
         print(row.get('Table'))
-        res = row.get('Create Table')
+        createTableSql = row.get('Create Table')
+    strs = createTableSql.split("\n")
+    for line in strs:
+        res = res + "    %s\n" % (line)
     return res
 
 
-def getTableInfo(db, dbName, tableName):
+def getTableInfo(db, db_name, table_name):
     """
     获取单个表的所有字段信息
     """
@@ -94,7 +120,7 @@ ORDER BY
     ORDINAL_POSITION;
     """
 
-    sql = sqlStr % (dbName, tableName)
+    sql = sqlStr % (db_name, table_name)
     # print(sql)
     db.execute(sql)
     rows = db.fetchall()
@@ -105,28 +131,26 @@ ORDER BY
     return rows
 
 
-def getDocFromRow(tableName, rows):
+def getDocFromRow(rows):
     """
     根据查询到的字段信息生成表的 markdown 文档
     返回文档数据
     """
-    docTpl = """
-- %s
-
+    doc_tpl = """
     | 序号 | 字段名      | 数据类型            | 非空 | 键类型   | 默认值 | 注释                     |
     | ---- | ----------- | ------------------- | ---- | -------- | ------ | ------------------------ |
-""" % (tableName)
+"""
     num = 1
     for row in rows:
         rowStr = "    |%s|%s|%s|%s|%s|%s|%s|\n" % (num, row.get('列名'), row.get(
             '数据类型'), row.get('是否为空'), row.get('KEY'), row.get('默认值'), row.get('注释'))
-        docTpl = docTpl + rowStr
+        doc_tpl = doc_tpl + rowStr
         num = num + 1
-    # print(docTpl)
-    return docTpl
+    # print(doc_tpl)
+    return doc_tpl
 
 
-def getInsertIntoSql(tableName, rows):
+def getInsertIntoSql(table_name, rows):
     """
     获取sql insert into 模板语句
     """
@@ -135,56 +159,105 @@ def getInsertIntoSql(tableName, rows):
     for row in rows:
         columnNames.append(row.get('列名'))
         values.append(row.get('数据类型'))
-    sql = "insert into %s (%s) values (%s)" % (tableName, columnNames, values)
+    sql = "insert into %s (%s) values (%s)" % (table_name, columnNames, values)
     # print(sql)
     return sql
 
 
-def allTable(db, dbName):
+def allTable(db, db_name):
     """
-    获取所有表的介绍和文档 
+    获取所有表的介绍和文档
     Args:
-        params: dbname 数据库名
+        params: db_name 数据库名
     Returns:
         return res
     Raises:
         列出与接口有关的所有异常.
     """
     # 获取所有表名
-    tables = getAllTableFromDb(db=db, dbName=dbName)
+    tables = getAllTableFromDb(db=db, db_name=db_name)
     # 获取表名创建文档
-    for tableName in tables:
-        getTable(db, dbName, tableName)
+    for table_name in tables:
+        getTable(db, db_name, table_name)
 
 
-def getTable(db, dbName, tableName):
-    """获取单个表信息 
+def getTable(db, db_name, table_name):
+    """获取单个表信息
     Args:
         params:db 数据库连接对象
-               dbName 数据库名
-               tableName 表名
+               db_name 数据库名
+               table_name 表名
     Returns:
         return res
     Raises:
         列出与接口有关的所有异常.
     """
-    rows = getTableInfo(db, dbName, tableName)
-    doc = getDocFromRow(tableName, rows)
-    tableSql = getCreateTableSql(db, dbName, tableName)
-    insertSql = getInsertIntoSql(tableName, rows)
-    docTpl = """
+    rows = getTableInfo(db, db_name, table_name)
+    doc = getDocFromRow(rows)
+    table_sql = getCreatetable_sql(db, table_name)
+    insert_sql = getInsertIntoSql(table_name, rows)
+    doc_tpl = """
+# %s 表
+
+- %s 表-结构说明
+
 %s
-```sql
+
+- %s 表-建表语句
+
+    ```sql
 %s
-```
-%s
-    """
-    print(docTpl % (doc, tableSql, insertSql))
+    ```
+- %s 表插入一条测试数据
+
+    ```sql
+    %s
+    ```
+"""
+    print(doc_tpl % (table_name, table_name, doc,
+                     table_name, table_sql, table_name, insert_sql))
+
+
+def run(conf_dict: dict):
+    db_name = conf_dict.get('db_name')
+    table_name = conf_dict.get('table_name')
+    host = conf_dict.get("host")
+    port = conf_dict.get("port")
+    user = conf_dict.get("user")
+    password = conf_dict.get("password")
+    try:
+        with DB(host=host, port=port, user=user, passwd=password, db=db_name) as db:
+            if table_name == "test":
+                allTable(db=db, db_name=db_name)
+            else:
+                getTable(db, db_name, table_name)
+    except Exception as e:
+        print(e)
+        traceback.print_exc()
+
+
+def init_args():
+    argp = argparse.ArgumentParser(
+        description='获取mysql数据库表的一个说明文档', epilog='结束')
+    argp.add_argument("-ip", "--host", type=str, dest="host",
+                      default="127.0.0.1", help="host")
+    argp.add_argument("-P", "--port", type=int,
+                      default=3306, dest="port", help="port")
+    argp.add_argument("-u", "--user", type=str,
+                      default="root", dest="user", help="user")
+    argp.add_argument("-p", "--password", type=str,
+                      default="123456", dest="password", help="password")
+    argp.add_argument("-d", "--dbname", type=str,
+                      dest="db_name", default="test", help="dbname")
+    argp.add_argument("-t", "--table", type=str, default="test", dest="table_name",
+                      help="table_name")
+    parse_args = argp.parse_args()  # 返回一个命名空间,如果想要使用变量,可用args.attr
+
+    return parse_args.__dict__
 
 
 if __name__ == '__main__':
-    dbName = "test"
-    tableName = "test"
-    with DB(host='127.0.0.1', user='root', passwd='123456', db=dbName) as db:
-        # allTable(db, dbName)
-        getTable(db, dbName, tableName)
+    args = init_args()
+    jsons = json.dumps(args, ensure_ascii=False, default=str, indent=2)
+    print(jsons)
+    run(args)

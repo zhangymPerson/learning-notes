@@ -65,3 +65,7 @@
 ### amazon 亚马逊的 OpenJDK
 
 - [github 地址](https://github.com/corretto)
+
+### jdk 多版本
+
+- [多版本 JDK 发布](https://adoptium.net/zh-CN/)
