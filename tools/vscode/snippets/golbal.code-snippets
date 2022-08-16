@@ -606,7 +606,11 @@
 		"scope": "go",
 		"prefix": "tojson",
 		"body": [
-			"jsonBytes, _ ${2::}= json.MarshalIndent($1, \"\", \"    \")",
+			"// 字符串转格式化json 则 替换 str",
+			"res := make(map[string]interface{})",
+			"json.Unmarshal([]byte(str), &res)",
+			"// 对象转json格式化 则替换 res",
+			"jsonBytes, _ := json.MarshalIndent(res, \"\", \"    \")",
 			"log.Printf(\"json格式化如下:\\n%+v\\n\", string(jsonBytes))"
 		],
 		"description": "obj 转 json"

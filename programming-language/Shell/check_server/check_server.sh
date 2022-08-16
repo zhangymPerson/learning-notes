@@ -51,6 +51,27 @@ function checkServer() {
     done
 }
 
+
+#######################################
+# 函数的作用是: 停止一个服务
+# Globals:
+#   无全局参数说明
+# Arguments:
+#   需要传入一个要停止的服务名
+#   核心是 ps -ef | grep 'serverName' | grep -v grep | awk '{print $2}'
+# Returns:
+#   返回值为空
+#######################################
+function stopServer() {
+    pid=$(ps -ef | grep $1 | grep -v grep | awk '{print $2}')
+    if [ -z ${pid} ]; then
+        echo "$1 服务未运行!"
+    else
+        echo "$1 进程号 ${pid} 停止运行!"
+        $(kill -9 ${pid})
+    fi
+}
+
 main() {
     echo "script start!"
     checkServer

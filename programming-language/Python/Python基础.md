@@ -155,3 +155,9 @@
   # key不存在不报错，显示None
   v2 = dict.get("key")
   ```
+
+- python 类型系统
+
+  [文档说明](https://docs.python.org/zh-cn/3/library/stdtypes.html#)
+
+  
