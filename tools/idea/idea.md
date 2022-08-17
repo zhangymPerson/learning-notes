@@ -282,3 +282,7 @@
   打开 `settings` -> `editor` -> `general` -> `postfix completion`
 
   例如：添加 .log 操作 key = log 表达式: `log.info("{}",$EXPR$)`
+
+- idea 自定义代码片段
+
+  Preferences | Editor | Live Templates | 添加自定义代码片段 |
