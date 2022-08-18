@@ -46,10 +46,12 @@
   Host home
       # 如果服务器有域名，使用域名，没有域名则使用具体地址 如:127.0.0.1
       HostName github.com
-      #用户名
+      # 用户名 gitlab 或者 github 上配置的名称
       User apollo
-      #端口号 没有默认是 22
+      # 端口号 没有默认是 22
       Port 4567
+      # 配置私钥文件，此私钥文件与目标服务器配置的免密登录公钥要对应
+      IdentityFile ~/.ssh/work
   #配置其他服务器，可以配置多个服务器
   Host work
       HostName gitee.com

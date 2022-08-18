@@ -51,7 +51,7 @@ alias python3='PYTHONIOENCODING=utf-8 python3'
 ncFunc() {
     echo -e "客户端复制此命令"
     echo -e "file为要上传的文件"
-    echo -e "$(hostname -i) 8889 < $1"
+    echo -e "nc $(hostname -i) 8889 < $1"
     nc -l 8889 >$1
 }
 

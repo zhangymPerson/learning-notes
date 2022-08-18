@@ -19,6 +19,9 @@
   ```sh
   #生成密钥
   ssh-keygen -t rsa -C "zhangyanmingjiayou@163.com"
+  # 指定要生成的密钥文件名称  默认为加密方式名
+  # 生成后的位置在 ~/.ssh/ 目录下
+  Enter file in which to save the key (~/.ssh/id_ed25519):
   #查看密钥
   cat ~/.ssh/id_rsa.pub
   ```
@@ -36,7 +39,7 @@
   #域名 eg: github.com
       HostName my-git.company.com
       RSAAuthentication yes
-  #指定自定义生成的  [密钥文件]  位置  公钥配置在相应要连接的服务器上
+      #指定自定义生成的  [密钥文件]  位置  公钥配置在相应要连接的服务器上
       IdentityFile ~/my-ssh-key-directory/company-com-private-key-filename
   ```
 
