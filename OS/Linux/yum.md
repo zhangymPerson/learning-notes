@@ -1,6 +1,7 @@
 # yum 的概念和相关的操作
 
 - [返回](./README.md)
+
 - 什么是 yum
 
   Yum（全称 Yellow Dog Updater）是一个在 Fedora 和 RedHat 以及 CentOS 中的 Shell 前端软件包管理器。基于 RPM 包管理，能够从指定的服务器自动下载 RPM 包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包.

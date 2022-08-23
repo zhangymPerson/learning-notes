@@ -1,4 +1,4 @@
-# pgsql
+# PostgreSQL
 
 ## 基本说明
 

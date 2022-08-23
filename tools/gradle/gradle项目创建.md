@@ -2,8 +2,6 @@
 
 - 安装好 gradle
 
-  [博客教程](https://blog.csdn.net/shuai_wy/article/details/80394443)
-
   创建 gradle 项目
 
   file - new project - java - GroupId / ArtifacId - next -

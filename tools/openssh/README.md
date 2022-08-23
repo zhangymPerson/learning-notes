@@ -96,6 +96,23 @@
   ssh dev@127.0.0.1:2222
   ```
 
+- 指定密钥登录
+
+  ```sh
+  # 生成指定密钥 -t 指定加密方式
+  ssh-keygen -t ed25519 -C "邮箱名"
+  # 注意 输入指定的密钥文件名 默认和加密方式保持一致，在 ~/.ssh/ 目录下
+  Generating public/private ed25519 key pair.
+  Enter file in which to save the key (/home/user/.ssh/id_ed25519):'自己输入自己指定的密钥文件名,如:work'
+
+  # 将生成的指定的密钥对应的公钥文件内容复制到要免密登录的远程服务器的 ~/.ssh/authorized_keys 文件中
+  # 如: work.pub 文件内容  cat work.pub  然后复制
+
+
+  # 然后登录时指定私钥文件
+  ssh -i ~/.ssh/work work@127.0.0.1
+  ```
+
 ## ssh / scp 报错解决方式
 
 - 错误 1

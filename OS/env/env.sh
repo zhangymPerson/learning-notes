@@ -63,7 +63,7 @@ alias py_httpserver='echo "浏览器打开 http://${HOSTNAME}:8889/" && python3 
 
 # 文件传输 python3
 # 60s后关闭,防止忘记关闭
-function scpfile {
+function fileserver {
     host=$(hostname -i)
     port=8889
     now=$(date +"%F %T")
@@ -78,10 +78,10 @@ function scpfile {
         kill $! &
     )
 }
-alias scpfile=scpfile
+alias fileserver=fileserver
 
 # 文件传输 python2
-function scpfile2 {
+function fileserver2 {
     host=$(hostname -i)
     port=8889
     num=60
@@ -92,12 +92,12 @@ function scpfile2 {
         kill $! &
     )
 }
-alias scpfile2=scpfile2
+alias fileserver2=fileserver2
 
 # scp / ftp 等其他服务
 alias pwdftp='echo "ftp://${HOSTNAME}:${PWD}"'
 alias pwdscp='echo "${LOGNAME}@${HOSTNAME}:${PWD}"'
-# alias pwdscp='echo "${LOGNAME}@$(hostname -i):${PWD}"'
+alias pwdscp='echo "${LOGNAME}@$(hostname -i):${PWD}"'
 
 # 查询当前目录下 文件中的某个字符
 # ack 命令可替代 查找命令

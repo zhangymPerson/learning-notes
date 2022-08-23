@@ -35,7 +35,7 @@ SHELL_PATH=$(
     pwd
 )
 SHELL_NAME=${0}
-SHELL_INFO="脚本所在路径[${SHELL_PATH}],脚本名[${SHELL_NAME}]"
+SHELL_INFO="$(date '+%Y-%m-%d %H:%M:%S')[INFO][$0]:脚本所在路径[${SHELL_PATH}],脚本名[${SHELL_NAME}]"
 echo ${SHELL_INFO} >>$LOG_FILE && echo -e"\033[32m" ${SHELL_INFO} "\033[0m"
 #调试日志
 function log_debug() {
@@ -64,7 +64,7 @@ function log_always() {
 }
 
 # 测试
-# 其他包使用方式 source logUtil.sh
+# 其他包使用方式 source sh_log.sh
 # log_debug "this is debug log..."
 # log_info "this is info log..."
 # log_warn "this is warn log..."

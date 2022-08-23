@@ -450,7 +450,10 @@
 		"scope": "shellscript",
 		"prefix": "slog",
 		"body": [
-			""
+			"function log() {",
+			"    content=\"$(date '+%Y-%m-%d %H:%M:%S')[INFO][$0]:$@\"",
+			"    echo \\${content}",
+			"}"
 		],
 		"description": "创建一个日志"
 	},
