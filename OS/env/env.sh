@@ -28,6 +28,9 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+# sudo 命令 /root/.bashrc 文件不生效的问题
+alias sudo='sudo env PATH=$PATH'
+
 # 查看命令位置
 alias type="type -a"
 alias which="which -a"
@@ -167,6 +170,9 @@ alias watch-mem="watch -d -n1 'ps aux | grep -v PID | sort -nrk +4 | head -25'"
 
 # echo "配置完成"
 # alias
+
+#  查找命令别名
+alias aliasg='alias | grep'
 
 # 取消别名
 # unalias name
