@@ -107,7 +107,7 @@ alias pwdscp='echo "${LOGNAME}@$(hostname -i):${PWD}"'
 alias fword='findWord(){ find ./ -type f | xargs grep -n "$1" --color=auto ;}; findWord'
 
 # grep递归查询
-alias fwordgrep='findWordGrep(){ grep "$1" . -r -n --color=auto ;}; findWordGrep'
+alias fword='findWordGrep(){ grep "$1" . -r -n --color=auto ;}; findWordGrep'
 
 # 查询当前目录下 是否有某个文件
 # 2>/dev/null  不输出没权限查看的目录
@@ -128,12 +128,6 @@ alias osbit="getconf LONG_BIT"
 export PYTHONIOENCODING="UTF-8" # 标准流的编码
 export PYTHONUNBUFFERED=1       # 不缓冲标准流
 # export PYTHONOPTIMIZE=1    # 优化字节码
-
-alias greppy="find . -name '*.py' | xargs grep -n --color" # 在 Python 代码中查找
-alias ackpy="ack --python"
-alias pytest="py.test -xvvls"
-alias simplehttpserver="python -m SimpleHTTPServer" # 启动一个简单的 http 服务器
-# alias simplehttpserver="python -m http.server"  # python3
 
 # 进入目录并列出目录下的文件
 cdl() {
