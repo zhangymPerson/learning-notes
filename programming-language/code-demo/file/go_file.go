@@ -10,6 +10,7 @@ import (
 
 	"gopkg.in/yaml.v2"
 )
+
 // 文件读写脚本
 // =============================读取配置====================================
 // 读取json配置文件
@@ -73,13 +74,15 @@ func IsExist(filename string) bool {
 }
 
 // 读文件
-func ReadFile(fileName string) {
+func ReadFile(fileName string) (string, error) {
 	content, err := ioutil.ReadFile(fileName)
 	if err != nil {
 		log.Fatal(err.Error())
+		return "", err
 	}
 	// 字节转数组
-	fmt.Println(string(content))
+	// fmt.Println(string(content))
+	return string(content), nil
 }
 
 // 写文件

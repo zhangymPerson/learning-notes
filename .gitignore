@@ -2,6 +2,7 @@
 # gitbook命令生成的文件
 _book
 .vscode
+.idea
 # vscode - plugin - local-history
 .history
 # mac

@@ -6,7 +6,8 @@
 
 # 当前路径 ${PWD}
 # 当前登录用户 ${LOGNAME}
-
+# 更新自己
+alias updateenv='source ~/.env.sh'
 # alias 不支持参数，function 才支持。
 # 以快速运行 "grep --help" 为例, 有了以下alias运行“h grep”就可以了：
 alias h='help_fun(){ $@ --help | head -n 5 ;}; help_fun '
