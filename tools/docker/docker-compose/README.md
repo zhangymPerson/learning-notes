@@ -19,3 +19,19 @@
 - 启动
 
   `docker-compose up`
+
+- 后台启动
+
+  `docker-compose up -d`
+
+- 关闭
+
+  `docker-compose stop`
+
+- 关闭并删除
+
+  `docker-compose down`
+
+- 关闭并删除镜像信息
+
+  `docker-compose down -v`
