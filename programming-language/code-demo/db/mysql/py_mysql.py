@@ -14,7 +14,7 @@
 import pymysql
 
 
-def isEmpty(obj):
+def is_empty(obj):
     """
     判断字符串为空
     None , '' ,'  ' 都是空字符串
@@ -29,10 +29,17 @@ def isEmpty(obj):
 
 
 class DB():
-    def __init__(self, host='localhost', port=3306, db='', user='root', passwd='root', charset='utf8'):
+    """
+    类的作用是:
+        获取 mysql 连接
+    Attributes:
+        params: type
+    """
+
+    def __init__(self, host='localhost', port=3306, db_name='', user='root', passwd='root', charset='utf8'):
         # 建立连接
         self.conn = pymysql.connect(
-            host=host, port=port, db=db, user=user, passwd=passwd, charset=charset)
+            host=host, port=port, db=db_name, user=user, passwd=passwd, charset=charset)
         # 创建游标，操作设置为字典类型
         self.cur = self.conn.cursor(cursor=pymysql.cursors.DictCursor)
 
@@ -49,63 +56,63 @@ class DB():
         self.conn.close()
 
 
-def getAllTableFromDb(db, dbName):
+def get_all_table_from_db(db_conn, db_name):
     """
     查数据 获取当前库下的表
     """
     # 游标执行返回的是数量
-    db.execute("show tables;")
+    db_conn.execute("show tables;")
     # 获取数据库名
-    print(dbName)
+    print(db_name)
     tables = []
     # 需要调用 fetchall() 函数获取结果
-    results = db.fetchall()
+    results = db_conn.fetchall()
     for row in results:
         for table in row:
             tables.append(row.get(table))
-    print("数据库[%s]中有[%s]张表,\n分别是%s" % (dbName, len(tables), tables))
+    print("数据库[%s]中有[%s]张表,\n分别是%s" % (db_name, len(tables), tables))
     return tables
 
 
-def getCreateTableSql(db, dbname=None):
+def get_create_table_sql(db_conn, dbname=None):
     """
     获取指定库中的所有表的建表语句
     """
     tables = []
     sql = "show tables;"
-    db.execute(sql)
-    for rows in db.fetchall():
+    db_conn.execute(sql)
+    for rows in db_conn.fetchall():
         for key in rows:
             tables.append(rows.get(key))
 
     print("数据库[%s]中有[%s]张表,\n分别是%s" % (dbname, len(tables), tables))
 
-    splitStr = "==============================================================="
-    for tableName in tables:
-        sql = "show create table %s" % (tableName)
-        db.execute(sql)
+    split_str = "==============================================================="
+    for table_name in tables:
+        sql = "show create table %s" % table_name
+        db_conn.execute(sql)
         # 需要调用 fetchall() 函数获取结果
-        results = db.fetchall()
+        results = db_conn.fetchall()
         for row in results:
             print(row.get('Table'))
             print(row.get('Create Table'))
-            print(splitStr)
+            print(split_str)
 
 
-def deleteTable(tableName):
+def delete_table(table_name):
     """
     delete
     删除表
     """
-    if not isEmpty(tableName):
+    if not is_empty(table_name):
         # delete from tableName where id = 1
         # 可以添加清理条件
-        sql = "delete from %s" % tableName
+        sql = "delete from %s" % table_name
         db.execute(sql)
-        print("清理表[%s]完成" % tableName)
+        print("清理表[%s]完成" % table_name)
 
 
-def truncateTable(db, tableName):
+def truncate_table(db_conn, table_name):
     """
     清空表 
     Args:
@@ -116,13 +123,13 @@ def truncateTable(db, tableName):
         列出与接口有关的所有异常.
         有外键约束时，需要 SET FOREIGN_KEY_CHECKS=0; 之后执行后在 SET FOREIGN_KEY_CHECKS=1
     """
-    if not isEmpty(tableName):
-        sql = "truncate table %s" % tableName
-        db.execute(sql)
-        print("清理表[%s]完成" % tableName)
+    if not is_empty(table_name):
+        sql = "truncate table %s" % table_name
+        db_conn.execute(sql)
+        print("清理表[%s]完成" % table_name)
 
 
-def changeForeignKeyCheck(db, status):
+def change_foreignkey_check(db_conn, status):
     """修改外键状态 
     解决有外键表不能 truncate 问题
     Args:
@@ -133,17 +140,17 @@ def changeForeignKeyCheck(db, status):
         列出与接口有关的所有异常.
     """
     if status == 0 or status == 1:
-        checkSql = "SELECT @@FOREIGN_KEY_CHECKS;"
-        db.execute(checkSql)
+        check_sql = "SELECT @@FOREIGN_KEY_CHECKS;"
+        db_conn.execute(check_sql)
         # 需要调用 fetchall() 函数获取结果
-        results = db.fetchall()
+        results = db_conn.fetchall()
         for row in results:
             print("修改前状态是%d" % row.get('@@FOREIGN_KEY_CHECKS'))
         sql = "SET FOREIGN_KEY_CHECKS=%d;" % status
-        db.execute(sql)
-        db.execute(checkSql)
+        db_conn.execute(sql)
+        db_conn.execute(check_sql)
         # 需要调用 fetchall() 函数获取结果
-        results = db.fetchall()
+        results = db_conn.fetchall()
         for row in results:
             print("修改后状态是%d" % row.get('@@FOREIGN_KEY_CHECKS'))
     else:
@@ -151,10 +158,10 @@ def changeForeignKeyCheck(db, status):
 
 
 if __name__ == '__main__':
-    dbName = "test"
-    with DB(host='127.0.0.1', user='root', passwd='123456', db=dbName) as db:
+    db_name = "mysql"
+    with DB(host='127.0.0.1', user='root', passwd='123456', db_name=db_name) as db:
         # 获取所有表名
-        tables = getAllTableFromDb(db=db, dbName=dbName)
+        tables = get_all_table_from_db(db_conn=db, db_name=db_name)
         # 修改外键状态
         # changeForeignKeyCheck(db, 0)
         # 批量清理表

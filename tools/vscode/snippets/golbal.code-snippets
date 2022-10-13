@@ -126,7 +126,7 @@
 		"scope": "python",
 		"prefix": "sout",
 		"body": [
-			"print(\"$1=[%s]\" % ($2))"
+			"print(\"$1=[%s]\" % (str($1)))"
 		],
 		"description": "创建一个打印输出"
 	},

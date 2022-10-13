@@ -1,0 +1,15 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: pgsql
+    volumes:
+      - ./data/pg_data:/var/lib/postgresql/data
+      - ./configs/pedestal/:/pedestal/
+    restart: always
+    ports:
+      - "5432:5432"
