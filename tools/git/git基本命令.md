@@ -108,7 +108,6 @@
 
   git stash apply <stash@{0}> 恢复指定的暂存状态
 
-
 ## 远征仓库操作
 
 - 常用命令
@@ -147,3 +146,17 @@
   github 上如果提交的分支中有内容没有在 master 分支下，则会在主页显示没有合并到 master 的分支，并推荐你合并到主分支下
 
   ![示例图](../../Picture/gitfenzhi.png)
+
+## 不提交单个文件 / 忽略指定已提交文件的修改
+
+- 忽略命令 如 filename 文件
+
+  `git update-index --skip-worktree filename`
+
+- 查询忽略了那些文件
+
+  `git ls-files -v . | grep "^S"`
+
+- 恢复文件，显示文件修改
+
+  `git update-index --no-skip-worktree filename`
