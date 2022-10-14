@@ -57,6 +57,19 @@
 		],
 		"description": "创建一个[main]函数"
 	},
+	"self_python_logging": {
+		"scope": "python",
+		"prefix": "imlog",
+		"body": [
+			"import logging",
+			"# 配置日志",
+			"logging.basicConfig(level=logging.INFO,",
+			"                    format='[%(asctime)s-%(name)s-%(funcName)s-%(lineno)d-%(levelname)s]%(message)s',",
+			"                    datefmt='%Y-%m-%d %H:%M:%S')",
+			"logger = logging.getLogger(__name__)"
+		],
+		"description": "导入 logging 模块"
+	},
 	"self_python_main": {
 		"scope": "python",
 		"prefix": "smain",
@@ -118,7 +131,7 @@
 		"scope": "python",
 		"prefix": "slog",
 		"body": [
-			"logging.info(\"$1=[%s]\" % ($2))"
+			"logger.info(\"$1 = [%s]\" % (str($1)))"
 		],
 		"description": "创建一个日志"
 	},
@@ -126,7 +139,7 @@
 		"scope": "python",
 		"prefix": "sout",
 		"body": [
-			"print(\"$1=[%s]\" % (str($1)))"
+			"print(f\"$1 = [{$1}]\")"
 		],
 		"description": "创建一个打印输出"
 	},
@@ -142,7 +155,7 @@
 		"scope": "python",
 		"prefix": "tojson",
 		"body": [
-			"json.dumps($1, ensure_ascii=False, default=str, indent=2)"
+			"$1_json_str = json.dumps($1, ensure_ascii=False, default=str, indent=2)"
 		],
 		"description": "obj 转 json"
 	},
