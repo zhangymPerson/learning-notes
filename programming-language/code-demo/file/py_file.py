@@ -3,69 +3,73 @@
 
 import os
 import csv
-import sys
 
 # 读取excel工具包
 # 安装方式 pip install openpyxl
 from openpyxl import load_workbook
+import logging
+# 配置日志
+logging.basicConfig(level=logging.INFO,
+                    format='[%(asctime)s-%(name)s-%(funcName)s-%(lineno)d-%(levelname)s]%(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S')
+logger = logging.getLogger(__name__)
 
 
-def getFilePath():
+def get_file_path():
     # 当前执行文件的路径，如 D：\aaa\bbb\ccc.py
     filepath = os.path.abspath(__file__)
-    print(filepath)
+    logger.info("%s,%s,%s", filepath, "a", "a")
     # 当前执行文件的上级路径，如 D：\aaa\bbb
     filepath = os.path.dirname(os.path.abspath(__file__))
-    print(filepath)
+    logger.info(filepath)
     # 继续向上
     filepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    print(filepath)
+    logger.info(filepath)
     # 添加路径：
     # sys.path.append
-    # print(filepath)
+    # logger.info(filepath)
     # 路径不存在则自动创建
     path = filepath + "/a/a.txt"
-    print(path)
-    filepath = os.makedirs(path, exist_ok=True)
-    print(filepath)
+    logger.info(path)
+    os.makedirs(path, exist_ok=True)
     # 路径组合
     # os.path.join(path1, path2, path3)
-    print(filepath)
+    logger.info(filepath)
 
 
-def writeToFile(msg, fileName):
+def write_to_file(msg, file_name):
     """
     写文件
     """
     # 写 w 写 w+ 读写 会删除原有内容  a 追加
-    with open(file=fileName, mode='a', encoding='utf-8') as f:
+    with open(file=file_name, mode='a', encoding='utf-8') as f:
         f.write(msg)
 
 
-def readAllFile(fileName):
+def read_all_file(file_name):
     """
     读取整个文件
     """
     # 读
-    with open(file=fileName, mode='r', encoding='utf-8') as f:
+    with open(file=file_name, mode='r', encoding='utf-8') as f:
         content = f.read()
-        print(content)
+        logger.info(content)
 
 
-def readFile(fileName):
+def read_file(file_name):
     """
     按行读文件
     """
     # 读
-    with open(file=fileName, mode='r', encoding='utf-8') as f:
+    with open(file=file_name, mode='r', encoding='utf-8') as f:
         lines = f.readlines()
         for line in lines:
             # 去掉空字符
             line = line.strip()
-            print(line)
+            logger.info(line)
 
 
-def getFileWord(fileName):
+def get_file_word(file_name):
     """
     获取一个文件的内容 
     Args:
@@ -75,86 +79,97 @@ def getFileWord(fileName):
     Raises:
         列出与接口有关的所有异常.
     """
-    with open(fileName, 'r', encoding='utf-8') as f:
+    with open(file_name, 'r', encoding='utf-8') as f:
         lines = f.readlines()
         list = []
         for line in lines:
-            print(line)
+            logger.info(line)
             list.append(line.rstrip())
         return list
 
 
-def readCsv(fileName):
+def read_csv(file_name):
     """
     读取 csv文件
     """
-    print("read  csv %s" % fileName)
-    with open(fileName) as f:
+    logger.info("file_name = [%s]" % (str(file_name)))
+    with open(file_name) as f:
         res = csv.reader(f)
         for row in res:
-            # print(type(key))
+            # logger.info(type(key))
             # key.split('\t')
             colu = row[0].split("\t")
-            print(colu[0], colu[1])
+            logger.info(colu[0], colu[1])
 
 
-def readExcel(filenName):
+def read_excel(file_name):
     """
     读取excel文件
     """
-    print("read excel %s" % filenName)
-    wb = load_workbook(filenName)
+    logger.info("read excel %s", file_name)
+    wb = load_workbook(file_name)
     # 通过索引获取sheet
     sheets = wb.worksheets
     for sheet in sheets:
-        print(sheet)
+        logger.info(sheet)
     sheet = wb['Sheet1']
     # 读取sheet中的数
     # 行
     nrows = sheet.max_row
     # 列
     ncols = sheet.max_column
-    print(nrows, ncols)
+    logger.info(nrows, ncols)
 
     # 打印行数 要从 1 到 max +1
     for i in range(1, nrows + 1):
-        print("行数:", i)
+        logger.info("行数:%s" % i)
     # 获取某个单元格的值 行列都从 1 开始计数
     value = sheet.cell(1, 1).value
-    print(value)
+    logger.info(value)
 
 
-def removeFile(fileName):
-    os.remove(fileName)
+def remove_file(file_name):
+    """
+    删除文件
+    """
+    os.remove(file_name)
+    logger.info("删除文件 file_name = [%s]", file_name)
 
 
-def testReadCsvAndExcel():
+
+def test_read_csv_excel():
     """
     执行命令要在当前文件所在目录下
     """
     file = '/conf/t-csv.csv'
-    print(os.getcwd())
+    logger.info(os.getcwd())
     # readCsv(os.getcwd() + file)
     excel = '/conf/t-excel.xlsx'
-    readExcel(os.getcwd() + excel)
+    read_excel(os.getcwd() + excel)
 
 
-def testReadAndWrite():
+def test_read_write():
+    """
+    测试读写
+    """
     file = "test.log"
-    writeToFile("test\n", fileName=file)
-    writeToFile("test", fileName=file)
-    writeToFile("test", fileName=file)
-    readFile(fileName=file)
-    readAllFile(fileName=file)
-    removeFile(file)
+    write_to_file("test\n", file_name=file)
+    write_to_file("test", file_name=file)
+    write_to_file("test", file_name=file)
+    read_file(file_name=file)
+    read_all_file(file_name=file)
+    remove_file(file)
 
 
 def run():
-    print("start ...")
-    # testReadAndWrite()
+    """
+    测试
+    """
+    logger.info("start ...")
+    test_read_write()
     # testReadCsvAndExcel()
-    getFilePath()
-    print("end ...")
+    get_file_path()
+    logger.info("end ...")
 
 
 if __name__ == '__main__':

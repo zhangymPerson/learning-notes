@@ -131,7 +131,7 @@
 		"scope": "python",
 		"prefix": "slog",
 		"body": [
-			"logger.info(\"$1 = [%s]\" % (str($1)))"
+			"logger.info(\"$1 = [%s]\", $1)"
 		],
 		"description": "创建一个日志"
 	},
