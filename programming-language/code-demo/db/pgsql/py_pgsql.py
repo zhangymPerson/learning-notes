@@ -10,6 +10,7 @@
 """
 
 import psycopg2
+import psycopg2.extras
 
 
 class DB():
@@ -25,8 +26,8 @@ class DB():
         # 建立连接
         self.conn = psycopg2.connect(
             database=db_name, user=user, password=passwd, host=host, port=port)
-        # 创建游标，操作设置为字典类型
-        self.cur = self.conn.cursor()
+        # 创建游标，操作设置为字典类型 pgsql 的指定方式  其中 psycopg2.extras 需要单独 import
+        self.cur = self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
     def __enter__(self):
         # 返回游标
