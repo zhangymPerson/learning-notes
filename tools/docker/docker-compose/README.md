@@ -16,6 +16,12 @@
 
 - 编写 docker-compose.yml 文件
 
+- 检查 docker-compose 配置
+  
+  `docker-compose config`
+
+  可以在 docker-compose.yml 文件目录中配置 .env 文件夹 添加变量，然后在 docker_compose 文件中使用 `${}` 中引用
+
 - 启动
 
   `docker-compose up`
