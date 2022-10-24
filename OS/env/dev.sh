@@ -28,3 +28,7 @@ alias greppy="find . -name '*.py' | xargs grep -n --color"
 alias grepjava="find . -name '*.java' | xargs grep -n --color"
 alias grepphp="find . -name '*.php' | xargs grep -n --color"
 alias grepshell="find . -name '*.sh' | xargs grep -n --color"
+
+# git
+alias git_config="git config --list"
+alias git_alias="git config --list |grep alias"

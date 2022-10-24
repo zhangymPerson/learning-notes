@@ -86,6 +86,14 @@
 		],
 		"description": "创建一个[main]函数"
 	},
+	"self_python_var": {
+		"scope": "python",
+		"prefix": "svar",
+		"body": [
+			"${1:var_name} = ${2:\"\"}"
+		],
+		"description": "创建一个变量"
+	},
 	"self_python_array": {
 		"scope": "python",
 		"prefix": "sarr",

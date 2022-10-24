@@ -1,0 +1,29 @@
+[user]
+	name = username
+	email = username@gmail.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[core]
+	ignorecase = false
+[alias]
+	st = status
+	l = log --color --graph --decorate --pretty=oneline --abbrev-commit
+	la = log --color --graph --decorate --pretty=oneline --abbrev-commit --all
+	l0 = log --color --graph --decorate --pretty=oneline --abbrev-commit -U0
+	lb = log --color --graph --decorate --pretty=oneline --abbrev-commit --all --simplify-by-decoration
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset | %C(bold)%an' --abbrev-commit --date=relative
+	dl = log --date-order --color --graph --decorate --pretty=oneline --abbrev-commit
+	dla = log --date-order --color --graph --decorate --pretty=oneline --abbrev-commit --all
+	dlb = log --date-order --color --graph --decorate --pretty=oneline --abbrev-commit --all --simplify-by-decoration
+	dlg = log --date-order --color --graph --decorate
+	d = diff --color
+	dc = diff --color --cached
+	d0 = diff --color --unified=0
+	ci = commit --verbose
+	co = checkout
+	tr = checkout --track
+	s = status --short
+	last = log -1 HEAD

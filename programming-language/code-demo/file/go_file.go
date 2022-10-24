@@ -7,6 +7,8 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+	"path/filepath"
+	"runtime"
 
 	"gopkg.in/yaml.v2"
 )
@@ -121,6 +123,15 @@ func RemoveFile(fileName string) {
 	} else {
 		fmt.Printf("删除[%v]成功 \n", fileName)
 	}
+}
+
+// filePath go 现对路径 => 绝对路径
+func filePath(path string) (absPath string) {
+	absPath, err := filepath.Abs(path)
+	if err != nil {
+		log.Fatal(err.Error())
+	}
+	return absPath
 }
 
 // 文件读写 测试

@@ -1,5 +1,9 @@
 # git 相关的 config 命令
 
+- gitconfig 配置文件位置
+
+  `vim ~/.gitconfig`
+
 - 常用的 git config 命令
 
   ```sh
@@ -36,3 +40,12 @@
   #查看配置 查看用户名 查看git用户信息
   git config --list
   ```
+
+- git alias 配置 
+
+  这样设置以后，直接运行 `git ck` 就和 `git checkout` 有一样的效果~
+  `git config --global alias.ck checkout`
+
+- git alias 开源项目 
+  
+  [gitalias](https://github.com/GitAlias/gitalias)
