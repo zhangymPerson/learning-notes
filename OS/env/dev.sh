@@ -32,3 +32,10 @@ alias grepshell="find . -name '*.sh' | xargs grep -n --color"
 # git
 alias git_config="git config --list"
 alias git_alias="git config --list |grep alias"
+
+# kubectl
+alias kubectl_grep_pod="kubectl get pods | grep "
+alias kubectl_delete_pod="kubectl delete pod "
+alias kubectl_exec="kubectl exec -it"
+alias kubectl_restart_server="kubectl rollout restart"
+alias kubectl_log="kubectl logs -f "
