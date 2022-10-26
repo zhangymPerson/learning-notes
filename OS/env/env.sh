@@ -12,6 +12,11 @@ alias updateenv='source ~/.env.sh'
 # 以快速运行 "grep --help" 为例, 有了以下alias运行“h grep”就可以了：
 alias h='help_fun(){ $@ --help | head -n 5 ;}; help_fun '
 alias ll='ls -al'
+
+# Linux 下修改 .bashrc 或者 .profile , ls 日期格式展示修改
+export TIME_STYLE='+%Y-%m-%d %H:%M:%S'
+# mac 下 安装 brew install coreutils  使用 gls 命令代替 ls
+# alias ls="ls -l --time-style '+%Y-%m-%d %H:%M:%S'"
 #### 终端 Bash 命令提示符样式 只能在 bash 下设置
 SCHEME1="\[\e[01;35m\]\u\[\e[01;31m\]\$\[\e[01;36m\][\W]\[\e[01;35m\] >>\[\e[00m\] "
 SCHEME2="\[\e[01;32m\]\u\[\e[01;31m\]\$\[\e[01;36m\][\W]\[\e[01;32m\] =>\[\e[00m\] "
@@ -121,6 +126,14 @@ alias fwordfile='findWordFromFile(){ find ./ -type f -iname \*$1\* | xargs grep 
 
 # 以树形结构递归地显示目录结构
 alias lsr="ls -R | grep :$ | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
+
+# ls命令按文件大小排序
+alias ls_sort_size='ls -Slh'
+alias ls_sort_size_r='ls -Slrh'
+
+# ls按时间排序
+alias ls_sort_time='ls -lth'
+alias ls_sort_time_r='ls -lrth'
 
 # 获取操作系统位数
 alias osbit="getconf LONG_BIT"
