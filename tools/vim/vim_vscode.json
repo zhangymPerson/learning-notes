@@ -1,0 +1,19 @@
+{
+  "vim.vimrc.enable": true,
+  "vim.easymotion": true,
+  "vim.useSystemClipboard": true,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "t"],
+      "commands": ["workbench.action.terminal.focus"]
+    },
+    {
+      "before": ["d", "l"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["g", "b"],
+      "commands": ["workbench.action.navigateBack"]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+"" Source your .vimrc
+source ~/.vimrc
+
+" Find more examples here: https://jb.gg/share-ideavimrc
+""" IdeaVim actions
+nmap [[ <Action>(MethodUp)
+nmap ]] <Action>(MethodDown)
+nmap gb <Action>(Back)
+nmap gD <Action>(GotoTypeDeclaration)
+nmap gdd <Action>(GotoImplementation)
+nmap gf <Action>(Forward)
+nmap gl <Action>(QuickJavaDoc)
+nmap gL <Action>(QuickImplementations)
+nmap gy <Action>(ShowErrorDescription)
+nmap ]q <Action>(GotoNextElementUnderCaretUsage)
+nmap [q <Action>(GotoPrevElementUnderCaretUsage)
+nmap <Leader>re <Action>(RenameElement)
+
+set ideajoin

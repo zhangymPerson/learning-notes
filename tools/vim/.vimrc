@@ -46,5 +46,18 @@ imap ll <Right>
 imap hh <Left>
 imap jj <Down>
 imap kk <Up>
+" 设置 leader 键为空格
+let mapleader=" "
+
+" 设置 代码关键字联想
+" ab sout System.out.println("")
+
 " imap dd <backspace>
 " imap oo <enter>
+"  快捷插入
+" inoremap ( ()<ESC>i
+" inoremap [ []<ESC>i
+" inoremap { {}<ESC>i
+" inoremap < <><ESC>i
+" inoremap " ""<ESC>i
+" inoremap ' ''<ESC>i
