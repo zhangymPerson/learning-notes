@@ -170,3 +170,42 @@
   7. 选择“变量值”输入框并输入 “https://goproxy.cn”
   8. 点击“确定”按钮
   ```
+
+### go 语言的多版本
+
+#### 修改你的 go env 环境变量，如下：
+
+- Mac 下编译 Linux, Windows 平台的 64 位可执行程序：
+
+  `$ go env -w CGO_ENABLED=0 GOOS=linux GOARCH=amd64`
+  `$ go env -w CGO_ENABLED=0 GOOS=windows GOARCH=amd64`
+
+- Linux 下编译 Mac, Windows 平台的 64 位可执行程序：
+
+  `$ go env -w CGO_ENABLED=0 GOOS=darwin GOARCH=amd64`
+  `$ go env -w CGO_ENABLED=0 GOOS=windows GOARCH=amd64`
+
+- Windows 下编译 Mac, Linux 平台的 64 位可执行程序：
+
+  `$ go env -w CGO_ENABLED=0 GOOS=darwin3 GOARCH=amd64`
+  `$ go env -w CGO_ENABLED=0 GOOS=linux GOARCH=amd64`
+
+#### 构建时候执行各个平台
+
+- Mac 下编译 Linux, Windows 平台的 64 位可执行程序：
+
+  `CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build test.go`
+
+  `CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build test.go`
+
+- Linux 下编译 Mac, Windows 平台的 64 位可执行程序：
+
+  `CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build test.go`
+
+  `CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build test.go`
+
+- Windows 下编译 Mac, Linux 平台的 64 位可执行程序：
+
+  `SET CGO_ENABLED=0SET GOOS=darwin3 SET GOARCH=amd64 go build test.go`
+
+  `SET CGO_ENABLED=0 SET GOOS=linux SET GOARCH=amd64 go build test.go`
