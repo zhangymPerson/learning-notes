@@ -39,3 +39,6 @@ alias kubectl_delete_pod="kubectl delete pod "
 alias kubectl_exec="kubectl exec -it"
 alias kubectl_restart_server="kubectl rollout restart"
 alias kubectl_log="kubectl logs -f "
+
+# 配置常用的提示信息到 .user_info
+alias echo_info="cat ~/.user_info"
