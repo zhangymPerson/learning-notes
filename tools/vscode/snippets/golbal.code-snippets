@@ -482,7 +482,7 @@
 		"scope": "shellscript",
 		"prefix": "sout",
 		"body": [
-			""
+			"echo ${1:var_name}"
 		],
 		"description": "创建一个打印输出"
 	},
@@ -554,6 +554,14 @@
 		],
 		"description": "创建一个[main]函数"
 	},
+	"self_go_var": {
+		"scope": "go",
+		"prefix": "svar",
+		"body": [
+			"${1:var_name} := ${2:\"\"}"
+		],
+		"description": "创建一个变量"
+	},
 	"self_go_array": {
 		"scope": "go",
 		"prefix": "sarr",
@@ -598,7 +606,7 @@
 		"scope": "go",
 		"prefix": "slog",
 		"body": [
-			"log.Printf(\"$1 is [%+v]\\n\", $1)"
+			"log.Printf(\"${1:var_name} is [%+v]\\n\", ${1:var_name})"
 		],
 		"description": "创建一个日志"
 	},
@@ -614,7 +622,7 @@
 		"scope": "go",
 		"prefix": "sout",
 		"body": [
-			"log.Printf(\"$1 is [%+v]\\n\", $1)"
+			"fmt.Printf(\"${1:var_name} is [%+v]\\n\", ${1:var_name})"
 		],
 		"description": "创建一个打印输出"
 	},

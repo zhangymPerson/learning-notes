@@ -1,4 +1,5 @@
 {
+  "vim.leader": " ",
   "vim.vimrc.enable": true,
   "vim.easymotion": true,
   "vim.useSystemClipboard": true,
@@ -8,12 +9,20 @@
       "commands": ["workbench.action.terminal.focus"]
     },
     {
-      "before": ["d", "l"],
+      "before": ["<leader>", "r", "e"],
+      "commands": ["editor.action.rename"]
+    },
+    {
+      "before": ["g", "l"],
       "commands": ["editor.action.showHover"]
     },
     {
       "before": ["g", "b"],
       "commands": ["workbench.action.navigateBack"]
+    },
+    {
+      "before": ["g", "e"],
+      "commands": ["workbench.action.showErrorsWarnings"]
     }
   ]
 }
