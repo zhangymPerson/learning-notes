@@ -28,6 +28,14 @@ SCHEME4="\[\e[01;36m\][\[\e[01;32m\]\u\[\e[01;31m\]@\[\e[01;32m\]\h \[\e[01;36m\
 
 # 让history在存储时忽略指定指令
 export HISTIGNORE="pwd:ls:ll:ls –ltr:history:h1:h2:h3"
+# history 忽略重复命令
+export HISTCONTROL=ignoredups
+# 多个终端同时操作时，避免命令覆盖，采用追加方式
+# shopt -s histappend 
+# 设置历史命令记录数  
+export HISTSIZE=5000  
+# 记录历史文件大小 ~/.bash_history 中保存命令的记录总数.
+export HISTFILESIZE=5000
 
 # 让 grep 彩色输出
 alias grep='grep --color=auto'
