@@ -46,18 +46,42 @@ imap ll <Right>
 imap hh <Left>
 imap jj <Down>
 imap kk <Up>
+" imap dd <backspace>
+" imap oo <enter>
+"inoremap ( ()<ESC>i
+"inoremap [ []<ESC>i
+"inoremap { {}<ESC>i
+"inoremap < <><ESC>i
+"inoremap " ""<ESC>i
+"inoremap ' ''<ESC>i
+ab sout System.out.println("")
+set completeopt=preview,menu
 " 设置 leader 键为空格
 let mapleader=" "
 
-" 设置 代码关键字联想
-" ab sout System.out.println("")
+autocmd BufNewFile *.sh exec ":call SetShellTitle()"
+func SetShellTitle()
+	if expand("%:e") == 'sh'
+        call setline(1,"#!/bin/env bash")
+        call setline(2,"")
+        call setline(3,"###########################################################")
+        call setline(4,"# @file : ".expand("%"))
+        call setline(5,"# @desc : 脚本执行方式 [bash ".expand("%").expand("]"))
+        call setline(6,"#         脚本说明: ")
+        call setline(7,"# @date : ".strftime("%Y-%m-%d %h:%M:%S"))
+        call setline(8,"# @auth : test")
+        call setline(9,"# @version : 1.0")
+        call setline(10,"###########################################################")
+	endif
+endfunc
+autocmd BufNewFile * normal G
 
-" imap dd <backspace>
-" imap oo <enter>
-"  快捷插入
-" inoremap ( ()<ESC>i
-" inoremap [ []<ESC>i
-" inoremap { {}<ESC>i
-" inoremap < <><ESC>i
-" inoremap " ""<ESC>i
-" inoremap ' ''<ESC>i
+" 使用方式 :call  InsertDate
+function InsertDate()
+    $delete
+    read !date
+endfunction
+
+
+
+
