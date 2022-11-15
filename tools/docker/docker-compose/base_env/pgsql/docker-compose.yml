@@ -9,7 +9,6 @@ services:
       POSTGRES_DB: pgsql
     volumes:
       - ./data/pg_data:/var/lib/postgresql/data
-      - ./configs/pedestal/:/pedestal/
     restart: always
     ports:
       - "5432:5432"
