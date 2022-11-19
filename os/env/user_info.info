@@ -9,3 +9,7 @@ ssh_dev 登录到开发机
 
 # 常见的复杂命令提示
 kubectl get pods | grep 搜索查看 k8s 节点信息
+
+# 浏览器不能复制问题 复制代码到浏览器 F12 -> 控制台 输入
+javascript:document.body.contentEditable='true'; document.designMode='on'; void 0
+

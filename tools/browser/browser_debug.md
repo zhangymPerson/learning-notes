@@ -33,3 +33,7 @@
   **选择 XHR 异步请求资源，则我们可以分析相关的请求信息**
 
   **点击 preserve log 保存历史请求 不然页面跳转后 旧请求没有了**
+
+- 浏览器不能复制内容
+
+  `javascript:document.body.contentEditable='true'; document.designMode='on'; void 0`
