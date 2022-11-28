@@ -139,3 +139,11 @@
     { "layer": "", "name": "8.0.4-rc" }
   ]
   ```
+
+## docker 查看所有本地镜像
+
+- `docker images | grep -v TAG | awk '{print $1":"$2}'`
+
+## docker 导出保存镜像
+
+- `docker save $image_name -o ${dir}/${tar_name}.tar`
