@@ -1,5 +1,7 @@
 package main
 
+// 可以使用 go get github.com/huandu/xstrings 库处理字符串中的问题
+
 import (
 	"encoding/json"
 	"fmt"
@@ -85,7 +87,7 @@ func replace() {
 	fmt.Println(str)
 }
 
-// 字符串包含字符判断
+// 字符串变 byte
 func toByte() {
 	// string与byte转化
 	str := "hello word"

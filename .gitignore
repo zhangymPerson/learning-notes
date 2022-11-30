@@ -53,7 +53,7 @@ install_manifest.txt
 *.dylib
 
 # Fortran module files
-*.mod
+*.sum
 
 # Compiled Static libraries
 *.lai
