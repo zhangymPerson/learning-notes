@@ -58,6 +58,15 @@
       User apollo
   ```
 
+- github 配置模板
+
+  ```
+  Host *.github.com
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/id_ed25519
+  ```
+
 ## 错误处理
 
 - 常见错误 Bad owner or permissions on .ssh/config 的解决

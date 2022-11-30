@@ -136,3 +136,29 @@
   解决方式
   删除旧的 IP `vi ~/.ssh/known_hosts`
   删除对应 ip 的相关 rsa 信息（本例可知删除 12 行信息即可）
+
+### ssh-keygen 命令简单介绍
+
+- 通过 ssh-keygen 命令，key 生成所需的秘钥，这里总结了 ssh-key 的使用方法，
+
+  -t 加/解密算法
+
+  -b 秘钥长度,rsa 默认秘钥长度的为 2048
+
+  -C 注释，一般是填写用户名
+
+  -f 指定生成的秘钥文件名，如果不提供此参数则使用默认文件名，如 rsa 私钥默认文件名 ~/.ssh/id_rsa ，公钥默认文件名 ~/.ssh/id_rsa.pub
+
+### ssh-agent
+
+- ssh-agent 网址:https://www.ssh.com/academy/ssh/agent
+
+- 使用 ssh-add 添加私钥到代理，ssh-add 命令会将私钥加入 ssh-agent。
+
+  `ssh-add ~/.ssh/github`
+
+- 查看添加的 ssh
+  `ssh-add -l`
+
+- 启动 ssh-agent
+  eval `ssh-agent`
