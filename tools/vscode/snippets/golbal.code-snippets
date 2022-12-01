@@ -15,6 +15,13 @@
 		],
 		"description": "获取当前文件名"
 	},
+	"当前时间": {
+		"prefix": "time",
+		"body": [
+			"$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND"
+		],
+		"description": "获取当前时间"
+	},
 	"阿帕奇协议": {
 		"prefix": "apache",
 		"body": [
@@ -94,21 +101,21 @@
 		],
 		"description": "创建一个变量"
 	},
-	"self_python_function":{
+	"self_python_function": {
 		"scope": "python",
 		"prefix": "smethod",
 		"body": [
 			"def ${1:function}(self):",
-    		"    print(\"函数  ${1:function} 执行\")"
+			"    print(\"函数  ${1:function} 执行\")"
 		],
 		"description": "创建一个函数"
 	},
-	"self_python_def":{
+	"self_python_def": {
 		"scope": "python",
 		"prefix": "sfunc",
 		"body": [
 			"def ${1:function}():",
-    		"    print(\"函数  ${1:function} 执行\")"
+			"    print(\"函数  ${1:function} 执行\")"
 		],
 		"description": "创建一个函数"
 	},
