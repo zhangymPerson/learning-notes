@@ -2,23 +2,23 @@
 
 ## 目录
 
-- [Asciidoc.adoc](./Asciidoc.adoc)
+- [Asciidoc.adoc](./adoc/Asciidoc.adoc)
 
-- [asciidoc_export.adoc](./asciidoc_export.adoc)
+- [asciidoc_export.adoc](./adoc/asciidoc_export.adoc)
 
 - [LGPL.md](./LGPL.md)
 
-- [markdown.md](./markdown.md)
+- [markdown.md](./markdown/markdown.md)
 
-- [markdown导出方式.md](./markdown-export.md)
+- [markdown导出方式.md](./markdown/markdown-export.md)
 
-- [markdown_demo.md](./markdown_demo.md)
+- [markdown_demo.md](./markdown/markdown_demo.md)
 
-- [office_use_note.md](./office_use_note.md)
+- [office_use_note.md](./markdown/office_use_note.md)
 
-- [other.adoc](./other.adoc)
+- [other.adoc](./adoc/other.adoc)
 
-- [接口说明文档模板.md](./接口说明文档模板.md)
+- [接口说明文档模板.md](./dev_doc/interface_doc.md)
 
 ## 其他
 
