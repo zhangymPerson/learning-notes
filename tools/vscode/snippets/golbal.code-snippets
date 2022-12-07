@@ -101,6 +101,42 @@
 		],
 		"description": "创建一个变量"
 	},
+	"self_python_args": {
+		"scope": "python",
+		"prefix": "sargs",
+		"body": [
+			"def conf_args():",
+			"    \"\"\"函数的作用是:",
+			"    获取用户指定参数输入",
+			"    Returns:",
+			"        return res 返回用户输入的参数字典",
+			"    Raises:",
+			"        列出与接口有关的所有异常.",
+			"    \"\"\"",
+			"    name = os.path.basename(__file__)",
+			"    args = argparse.ArgumentParser(",
+			"        description=f'脚本[{name}]执行中的参数介绍', epilog='请按照以上说明执行脚本')",
+			"    # 配置参数和说明",
+			"    args.add_argument(\"-i\", \"--info\", type=str,",
+			"                      help=\"演示参数 info\", default=\"None\")",
+			"    args = args.parse_args()",
+			"    # print(f\"args = [{args}]\")",
+			"    # 使用方式  args.info 即可获取到参数值  如果有 dest 配置则读取dest 无则读取 -- 后面的属性配置",
+			"    return args",
+		],
+		"description": "创建一个参数解析函数"
+	},
+	"self_python_exception": {
+		"scope": "python",
+		"prefix": "stry",
+		"body": [
+			"try:",
+			"    ${1}",
+			"except Exception as e:",
+			"    print(f\"处理异常,e = [{e}]\")"
+		],
+		"description": "创建异常语句"
+	},
 	"self_python_function": {
 		"scope": "python",
 		"prefix": "smethod",
