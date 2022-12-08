@@ -23,7 +23,7 @@ def get_openapi_json(url, file_name):
         obj_json_str = json.dumps(
             obj, ensure_ascii=False, default=str, indent=2)
         # print(f"obj_json_str = [{obj_json_str}]")
-        with open(file=file_name, mode='a', encoding='utf-8') as f:
+        with open(file=file_name, mode='w', encoding='utf-8') as f:
             f.write(obj_json_str)
             print(f"json 写入[{file_name}]文件成功!")
     except Exception as e:
