@@ -48,8 +48,8 @@
 
 - 微信好友
 
-  ![微信号-好友](./Picture/wechat-info.png)
+  ![微信号-好友](./picture/wechat-info.png)
 
 - 请喝咖啡
 
-  ![支付宝-收款](./Picture/alipay-info.png) [LICENSE](LICENSE)
+  ![支付宝-收款](./picture/alipay-info.png) [LICENSE](LICENSE)
