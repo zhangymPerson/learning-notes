@@ -52,4 +52,6 @@
 
 - 请喝咖啡
 
-  ![支付宝-收款](./picture/alipay-info.png) [LICENSE](LICENSE)
+  ![支付宝-收款](./picture/alipay-info.png)
+
+- [LICENSE](LICENSE)
