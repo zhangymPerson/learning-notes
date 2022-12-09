@@ -1,4 +1,4 @@
-# mysql主从监控脚本
+# mysql 主从监控脚本
 
 ```sh
 #!/usr/bin/bash
@@ -20,7 +20,7 @@ keyword="Seconds_Behind_Master"
 
 date=`date +"%Y-%m-%d %H:%M:%S" `
 
-times=`mysql -h$url -u$user -p$passwd -e "${sql}"|grep $keyword` 
+times=`mysql -h$url -u$user -p$passwd -e "${sql}"|grep $keyword`
 
 
 filepath=/root/shell/mysql-cong.log
