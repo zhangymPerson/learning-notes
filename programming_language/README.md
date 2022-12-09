@@ -1,5 +1,7 @@
 # 主要记录日常开发中使用各种编程语言的笔记和问题
 
+- [返回总目录](../README.md#项目目录)
+
 ## 目录
 
 ## 其他
@@ -7,8 +9,6 @@
 - 说明
 
   工作中主要使用 java 和 python/js 等部分语言注重语言的理解 特殊设计思想的学习不是语法笔记
-
-- [返回总目录](../README.md#项目目录)
 
 ## [目录](https://github.com/zhangymPerson/learning-notes/tree/master/programming-language)
 

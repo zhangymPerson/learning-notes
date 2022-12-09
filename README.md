@@ -6,15 +6,15 @@
 
 # 项目目录
 
-## [BigData （大数据）](./BigData/README.md)
+## [BigData （大数据）](./big_data/README.md)
 
 - 这部分主要是在工作使用过的大数据组件，使用过程中问题记录，主要使用过 Hadoop 和 Hive,还有 es
 
-## [Data_Structures-Algorithm (数据结构和算法)](./Data_Structures-Algorithm/README.md)
+## [Data_Structures-Algorithm (数据结构和算法)](./data_structures_algorithm/README.md)
 
 - 日常工作中数据结构和算法相关内容的记录
 
-## [DBMS（数据库管理系统）](./DBMS/README.md)
+## [DBMS（数据库管理系统）](./database/README.md)
 
 - 主要是日常工作中，关于 mysql 的使用记录和 mongo 这两个数据库的使用记录
 
@@ -22,17 +22,17 @@
 
 - 优秀的 github 项目记录和 GitHub 使用心得等
 
-## [Internet(网络)](./Internet/README.md)
+## [Internet(网络)](./internet/README.md)
 
-## [Interview（面试相关）](./Interview/README.md)
+## [Interview（面试相关）](./interview/README.md)
 
-## [OS (操作系统)](./OS/README.md)
+## [OS (操作系统)](./os/README.md)
 
-## [Picture(配图)](./Picture/README.md)
+## [Picture(配图)](./picture/README.md)
 
-## [programming-language（编程语言）](./programming-language/README.md)
+## [programming-language（编程语言）](./programming_language/README.md)
 
-## [Tools(常用编程工具)](./Tools/README.md)
+## [Tools(常用编程工具)](./tools/README.md)
 
 ## Mainly used to record Java, DBMS, HDFS... related learning notes
 
