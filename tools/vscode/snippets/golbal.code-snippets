@@ -651,7 +651,8 @@
 		"scope": "go",
 		"prefix": "smap",
 		"body": [
-			""
+			"res := make(map[string]${1:interface{}})",
+			"res[\"key\"] = \"value\""
 		],
 		"description": "创建一个[map]结构"
 	},

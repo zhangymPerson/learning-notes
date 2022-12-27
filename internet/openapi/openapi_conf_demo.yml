@@ -1,0 +1,66 @@
+openapi: "3.0.2"
+info:
+  title: API Title
+  version: "1.0"
+servers:
+  - url: http://127.0.0.1:8080
+paths:
+  /test:
+    get:
+      responses:
+        "200":
+          description: OK
+  /post:
+    post:
+      tags:
+        - 资产相关的接口
+      summary: 添加资产
+      description: 添加一个资产
+      operationId: addUsingPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/post请求参数"
+      responses:
+        "200":
+          description: OK
+          content:
+            "*/*":
+              schema:
+                $ref: "#/components/schemas/返回结果"
+        "201":
+          description: Created
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+        "404":
+          description: Not Found
+components:
+  schemas:
+    post请求参数:
+      title: 请求参数
+      type: object
+      properties:
+        username:
+          type: string
+          description: 用户名
+        password:
+          type: string
+          description: 密码
+      description: 请求参数
+    返回结果:
+      title: 返回结果
+      type: object
+      properties:
+        code:
+          type: integer
+          description: "状态码,成功为200,其他为异常"
+          format: int32
+        data:
+          type: object
+          description: 接口响应数据
+        msg:
+          type: string
+          description: "状态信息，成功为success,其他情况显示异常信息"
