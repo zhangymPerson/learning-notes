@@ -11,7 +11,15 @@ alias updateenv='source ~/.env.sh'
 # alias 不支持参数，function 才支持。
 # 以快速运行 "grep --help" 为例, 有了以下alias运行“h grep”就可以了：
 alias h='help_fun(){ $@ --help | head -n 5 ;}; help_fun '
-alias ll='ls -al'
+
+alias ll='ls -alh'
+# ls命令按文件大小排序
+alias ll_sort_size='ls -Slh'
+alias ll_sort_size_r='ls -Slrh'
+
+# ls按时间排序
+alias ll_sort_time='ls -lth'
+alias ll_sort_time_r='ls -lrth'
 
 # Linux 下修改 .bashrc 或者 .profile , ls 日期格式展示修改
 export TIME_STYLE='+%Y-%m-%d %H:%M:%S'
@@ -31,9 +39,9 @@ export HISTIGNORE="pwd:ls:ll:ls –ltr:history:h1:h2:h3"
 # history 忽略重复命令
 export HISTCONTROL=ignoredups
 # 多个终端同时操作时，避免命令覆盖，采用追加方式
-# shopt -s histappend 
-# 设置历史命令记录数  
-export HISTSIZE=5000  
+# shopt -s histappend
+# 设置历史命令记录数
+export HISTSIZE=5000
 # 记录历史文件大小 ~/.bash_history 中保存命令的记录总数.
 export HISTFILESIZE=5000
 
@@ -134,14 +142,6 @@ alias fwordfile='findWordFromFile(){ find ./ -type f -iname \*$1\* | xargs grep 
 
 # 以树形结构递归地显示目录结构
 alias lsr="ls -R | grep :$ | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
-
-# ls命令按文件大小排序
-alias ls_sort_size='ls -Slh'
-alias ls_sort_size_r='ls -Slrh'
-
-# ls按时间排序
-alias ls_sort_time='ls -lth'
-alias ls_sort_time_r='ls -lrth'
 
 # 获取操作系统位数
 alias osbit="getconf LONG_BIT"

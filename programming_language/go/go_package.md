@@ -192,3 +192,22 @@
     // 引用变量
     a := 包名.Args
     ```
+
+### go 包管理 不同版本的包导入
+
+- 版本升级的引入方式
+  在 Go module 时代，module 版本号要遵循语义化版本规范，即版本号格式为 v<major>.<minor>.<patch>，如 v1.2.3。当有不兼容的改变时，需要增加 major 版本号，如 v2.1.0。
+
+  Go module 规定，如果 major 版本号大于 1，则 major 版本号需要显式地标记在 module 名字中，如 module github.com/my/mod/v2。这样做的好处是 Go module 会把 module github.com/my/mod/v2 和 module github.com/my/mod 视做两个 module，他们甚至可以被同时引用。
+
+- 升级包的 major
+
+  对包的作者而言，升级 major 版本号需要：
+
+  升级 module 的根路径，增加 vN
+
+  建立 vN.x.x 形式的 tag（可选，如果不打 tag，go 会在 consumer 的 go.mod 中使用伪版本号，比如：bitbucket.org/bigwhite/modules-major-branch/v2 v2.0.0-20190603050009-28a5b8da279e）
+
+  如果 modules-major-branch 内部有相互的包引用，那么在升级 major 号的时候，这些包的 import 路径也要增加 vN，否则就会存在在高 major version 的代码中引用低 major version 包代码的情况，这也是包作者最容易忽略的事情。github.com/marwan-at-work/mod 是一个为 module 作者提供的升级/降级 major version 号的工具，它可以帮助包作者方便地自动修改项目内所有源文件中的 import path。有 gopher 已经提出希望 go 官方提供 upgrade/downgrade 的支持，但目前 core team 尚未明确是否增加。
+
+  对于 consumer 而言，升级依赖包的 major 版本号，只需要在 import 包时在 import path 中增加 vN 即可，当然代码中也要针对不兼容的部分进行修改，然后 go 工具会自动下载相关包。
