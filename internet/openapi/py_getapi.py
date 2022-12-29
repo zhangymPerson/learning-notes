@@ -44,8 +44,10 @@ def conf_args():
     # 配置参数和说明
     args.add_argument("-u", "--url", type=str,
                       help="swagger 文档的 url 链接", default="http://127.0.0.1:8080/project_name/v3/api-docs")
+    path = os.getcwd()
+    file_name = f"{path}/openapi.json"
     args.add_argument("-f", "--file", type=str,
-                      help="导出json的文档地址", default="~/openapi.json")
+                      help="导出json的文档地址", default=file_name)
     args = args.parse_args()
     # print(f"args = [{args}]")
     # 使用方式  args.info 即可获取到参数值  如果有 dest 配置则读取dest 无则读取 -- 后面的属性配置
