@@ -3,17 +3,52 @@ source ~/.vimrc
 
 " Find more examples here: https://jb.gg/share-ideavimrc
 """ IdeaVim actions
+" 函数跳转
 nmap [[ <Action>(MethodUp)
 nmap ]] <Action>(MethodDown)
+
+" 返回到上一个光标位置
 nmap gb <Action>(Back)
-nmap gD <Action>(GotoTypeDeclaration)
-nmap gdd <Action>(GotoImplementation)
+" 光标前进
 nmap gf <Action>(Forward)
+
+" 跳转类型声明的位置
+nmap gD <Action>(GotoTypeDeclaration)
+" 跳转到实现类方法中
+nmap gdd <Action>(GotoImplementation)
+
+" 查看文档
 nmap gl <Action>(QuickJavaDoc)
 nmap gL <Action>(QuickImplementations)
+
+" 查看错误提示
 nmap ge <Action>(ShowErrorDescription)
-nmap ]q <Action>(GotoNextElementUnderCaretUsage)
-nmap [q <Action>(GotoPrevElementUnderCaretUsage)
-nmap <Leader>re <Action>(RenameElement)
+
+" 查找当前词在文件中其他位置
+nmap nn <Action>(GotoNextElementUnderCaretUsage)
+nmap NN <Action>(GotoPrevElementUnderCaretUsage)
+
+" 变量重命名
+nmap rn <Action>(RenameElement)
+
+" 格式化代码
+nmap ft <Action>(ReformatCode)
+
+" 快速打开全局搜索
+nmap ff <Action>(FindInPath)
+
+" 快速跳转到错误位置
+nmap ee <Action>(GotoNextError)
+
+" 定位当前文件
+nmap file <Action>(SelectInProjectView)
+
+" 打开当前文件的历史提交记录
+nmap his <Action>(Vcs.ShowTabbedFileHistory)
 
 set ideajoin
+
+" 开启输入法自动切换功能
+set keep-english-in-normal 
+" 回到insert模式时恢复输入法
+set keep-english-in-normal-and-restore-in-insert 

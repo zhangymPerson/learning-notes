@@ -5,11 +5,11 @@
   "vim.useSystemClipboard": true,
   "vim.normalModeKeyBindings": [
     {
-      "before": ["<leader>", "t"],
+      "before": ["t", "e", "r"],
       "commands": ["workbench.action.terminal.focus"]
     },
     {
-      "before": ["<leader>", "r", "e"],
+      "before": ["r", "n"],
       "commands": ["editor.action.rename"]
     },
     {
@@ -21,7 +21,7 @@
       "commands": ["workbench.action.navigateBack"]
     },
     {
-      "before": ["g", "e"],
+      "before": ["e", "e"],
       "commands": ["workbench.action.showErrorsWarnings"]
     }
   ]
