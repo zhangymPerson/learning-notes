@@ -211,3 +211,9 @@
   如果 modules-major-branch 内部有相互的包引用，那么在升级 major 号的时候，这些包的 import 路径也要增加 vN，否则就会存在在高 major version 的代码中引用低 major version 包代码的情况，这也是包作者最容易忽略的事情。github.com/marwan-at-work/mod 是一个为 module 作者提供的升级/降级 major version 号的工具，它可以帮助包作者方便地自动修改项目内所有源文件中的 import path。有 gopher 已经提出希望 go 官方提供 upgrade/downgrade 的支持，但目前 core team 尚未明确是否增加。
 
   对于 consumer 而言，升级依赖包的 major 版本号，只需要在 import 包时在 import path 中增加 vN 即可，当然代码中也要针对不兼容的部分进行修改，然后 go 工具会自动下载相关包。
+
+- go 目录规范
+
+  go 官方目录建议
+
+  https://github.com/golang-standards/project-layout

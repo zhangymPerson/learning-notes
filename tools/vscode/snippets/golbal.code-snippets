@@ -71,7 +71,7 @@
 			"import logging",
 			"# 配置日志",
 			"logging.basicConfig(level=logging.INFO,",
-			"                    format='[%(asctime)s-%(name)s-%(funcName)s-%(lineno)d-%(levelname)s]%(message)s',",
+			"                    format='[%(asctime)s-%(name)s][%(filename)s:%(lineno)d][%(funcName)s][%(levelname)s]%(message)s',",
 			"                    datefmt='%Y-%m-%d %H:%M:%S')",
 			"logger = logging.getLogger(__name__)"
 		],
@@ -200,7 +200,7 @@
 		"scope": "python",
 		"prefix": "slog",
 		"body": [
-			"logger.info(\"$1 = [%s]\", $1)"
+			"${1:logging}.info(f\"{${2:var_name}}\")"
 		],
 		"description": "创建一个日志"
 	},
@@ -211,6 +211,14 @@
 			"print(f\"$1 = [{$1}]\")"
 		],
 		"description": "创建一个打印输出"
+	},
+	"self_python_string": {
+		"scope": "python",
+		"prefix": "sstr",
+		"body": [
+			"${1:str} = f\"{${2:var}}\""
+		],
+		"description": "创建一个字符串变量替换"
 	},
 	"self_python_object": {
 		"scope": "python",
@@ -668,7 +676,7 @@
 		"scope": "go",
 		"prefix": "slog",
 		"body": [
-			"log.Printf(\"${1:var_name} is [%+v]\\n\", ${1:var_name})"
+			"log.Println(\"日志输出======>\", ${1:var_name})"
 		],
 		"description": "创建一个日志"
 	},
@@ -684,7 +692,7 @@
 		"scope": "go",
 		"prefix": "sout",
 		"body": [
-			"fmt.Printf(\"${1:var_name} is [%+v]\\n\", ${1:var_name})"
+			"fmt.Println(\"原生输出======>\", ${1:var_name})"
 		],
 		"description": "创建一个打印输出"
 	},

@@ -23,6 +23,14 @@
     {
       "before": ["e", "e"],
       "commands": ["workbench.action.showErrorsWarnings"]
+    },
+    {
+      "before": ["f", "f"],
+      "commands": ["workbench.view.search"]
+    },
+    {
+      "before": ["f", "t"],
+      "commands": ["editor.action.formatDocument"]
     }
   ]
 }
