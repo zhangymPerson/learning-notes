@@ -2,6 +2,8 @@
 
 - [返回](./README.md)
 
+- [官方文档](https://www.ssh.com/academy/ssh/config)
+
 - **ssh 配置分为客户端配置和服务端配置**(重点)
 
 ## 服务端配置
