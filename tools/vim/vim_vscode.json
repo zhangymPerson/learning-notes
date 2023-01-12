@@ -31,6 +31,10 @@
     {
       "before": ["f", "t"],
       "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["g", "D"],
+      "commands": ["editor.action.goToImplementation"]
     }
   ]
 }
