@@ -35,6 +35,10 @@
     {
       "before": ["g", "D"],
       "commands": ["editor.action.goToImplementation"]
+    },
+    {
+      "before": ["a", "d"],
+      "commands": ["editor.debug.action.toggleBreakpoint"]
     }
   ]
 }
