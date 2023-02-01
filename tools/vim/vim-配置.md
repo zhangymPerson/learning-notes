@@ -28,7 +28,7 @@
 
   - 使用自定义的配置文件进行 vim 启动
 
-    命令是 `vim -u ~/\*\*/.selfvimrc filename`
+    命令是 `vim -u ~/.selfvimrc filename`
 
     其中 -u 是指定自定义的 vim 自定义配置
 

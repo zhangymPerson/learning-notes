@@ -80,9 +80,8 @@ ab key value
 set completeopt=preview,menu
 
 " 设置 leader 键为空格
+" let mapleader=<SPACE>
 let mapleader=" "
-
-
 
 " 创建文件时 设置代码模板
 autocmd BufNewFile *.sh exec ":call SetShellTitle()"
@@ -115,4 +114,23 @@ endfunction
 
 " zz: 将当前行移动到屏幕中央。
 " zt: 将当前行移动到屏幕顶端。
-" zb: 将当前行移动到屏幕底端。
+" zb: 将当前行移动到屏幕底端o
+
+" 戒掉使用 上下左右移动文本的习惯
+nnoremap <Left>  :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up>    :echoe "Use k"<CR>
+nnoremap <Down>  :echoe "Use j"<CR>
+" ...and in insert mode
+" inoremap <Left>  <ESC>:echoe "Use h"<CR>
+" inoremap <Right> <ESC>:echoe "Use l"<CR>
+" inoremap <Up>    <ESC>:echoe "Use k"<CR>
+" inoremap <Down>  <ESC>:echoe "Use j"<CR>
+
+set hidden
+
+" 显示上下相对行数
+set relativenumber
+
+" 禁用 vim 使用过程中的铃声
+set noerrorbells visualbell t_vb=
