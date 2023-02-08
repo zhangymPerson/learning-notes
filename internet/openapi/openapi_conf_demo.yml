@@ -3,7 +3,7 @@ info:
   title: API Title
   version: "1.0"
 servers:
-  - url: http://127.0.0.1:8080
+  - url: http://127.0.0.1:9999
 paths:
   /test:
     get:
@@ -13,9 +13,9 @@ paths:
   /post:
     post:
       tags:
-        - 资产相关的接口
-      summary: 添加资产
-      description: 添加一个资产
+        - 接口所属 tag
+      summary: 添加一个用户 - summary
+      description: 添加一个用户 - description
       operationId: addUsingPOST
       requestBody:
         content:
