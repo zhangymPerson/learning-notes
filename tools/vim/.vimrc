@@ -134,3 +134,18 @@ set relativenumber
 
 " 禁用 vim 使用过程中的铃声
 set noerrorbells visualbell t_vb=
+
+" vim 中 使用 :find *a* 查找当前目录下 文件名包含 a 的文件夹
+" 递归查找子文件
+set path+=**
+" 展示match的文件列表
+set wildmenu
+
+" 使用 . 高效执行一些重复的操作
+
+" 关闭文件再重新打开时，无法撤回历史动作。以下配置可以实现持久化undo记录
+set undofile 
+
+" 配置你的undo保存路径
+set undodir=~/.vim/undodir
+" 使用:x替代:wq，使用:qa替代每个窗口执行一次:q

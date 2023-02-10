@@ -5,7 +5,7 @@
   "vim.useSystemClipboard": true,
   "vim.normalModeKeyBindings": [
     {
-      "before": ["t", "e", "r"],
+      "before": ["<leader>", "t"],
       "commands": ["workbench.action.terminal.focus"]
     },
     {

@@ -48,7 +48,16 @@ nmap his <Action>(Vcs.ShowTabbedFileHistory)
 
 set ideajoin
 
-" 开启输入法自动切换功能
-set keep-english-in-normal 
+" 为IdeaVim插件增加自动切换为英文输入法的功能,
+" idea 需要安装 IdeaVimExtension plugin
+" set keep-english-in-normal
 " 回到insert模式时恢复输入法
-set keep-english-in-normal-and-restore-in-insert 
+" set keep-english-in-normal-and-restore-in-insert 
+
+" 快速启动 debug run stop 项目
+nmap <leader>d <Action>(Debug)
+nmap <leader>s <Action>(Stop)
+nmap <leader>r <Action>(Run)
+
+" 跳转到 terminal 快捷方式
+nmap <Leader>t :action ActivateTerminalToolWindow<CR>
