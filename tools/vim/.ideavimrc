@@ -15,7 +15,7 @@ nmap gf <Action>(Forward)
 " 跳转类型声明的位置
 nmap gD <Action>(GotoTypeDeclaration)
 " 跳转到实现类方法中
-nmap gdd <Action>(GotoImplementation)
+nmap gd <Action>(GotoImplementation)
 
 " 查看文档
 nmap gl <Action>(QuickJavaDoc)
@@ -33,6 +33,7 @@ nmap rn <Action>(RenameElement)
 
 " 格式化代码
 nmap ft <Action>(ReformatCode)
+imap ft <Action>(ReformatCode)
 
 " 快速打开全局搜索
 nmap ff <Action>(FindInPath)

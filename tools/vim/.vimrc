@@ -146,6 +146,6 @@ set wildmenu
 " 关闭文件再重新打开时，无法撤回历史动作。以下配置可以实现持久化undo记录
 set undofile 
 
-" 配置你的undo保存路径
+" 配置你的undo保存路径 目录需要自己创建，并且有权限
 set undodir=~/.vim/undodir
 " 使用:x替代:wq，使用:qa替代每个窗口执行一次:q
