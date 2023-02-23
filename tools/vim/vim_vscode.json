@@ -9,35 +9,35 @@
       "commands": ["workbench.action.terminal.focus"]
     },
     {
-      "before": ["r", "n"],
+      "before": ["<leader>", "r", "n"],
       "commands": ["editor.action.rename"]
     },
     {
-      "before": ["g", "l"],
+      "before": ["<leader>", "g", "l"],
       "commands": ["editor.action.showHover"]
     },
     {
-      "before": ["g", "b"],
+      "before": ["<leader>", "g", "b"],
       "commands": ["workbench.action.navigateBack"]
     },
     {
-      "before": ["e", "e"],
+      "before": ["<leader>", "e", "e"],
       "commands": ["workbench.action.showErrorsWarnings"]
     },
     {
-      "before": ["f", "f"],
+      "before": ["<leader>", "f", "f"],
       "commands": ["workbench.view.search"]
     },
     {
-      "before": ["f", "t"],
+      "before": ["<leader>", "f", "t"],
       "commands": ["editor.action.formatDocument"]
     },
     {
-      "before": ["g", "D"],
+      "before": ["<leader>", "g", "D"],
       "commands": ["editor.action.goToImplementation"]
     },
     {
-      "before": ["a", "d"],
+      "before": ["<leader>", "a", "d"],
       "commands": ["editor.debug.action.toggleBreakpoint"]
     }
   ]
