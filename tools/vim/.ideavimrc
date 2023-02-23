@@ -4,48 +4,48 @@ source ~/.vimrc
 " Find more examples here: https://jb.gg/share-ideavimrc
 """ IdeaVim actions
 " 函数跳转
-nmap [[ <Action>(MethodUp)
-nmap ]] <Action>(MethodDown)
+nmap <leader>[[ <Action>(MethodUp)
+nmap <leader>]] <Action>(MethodDown)
 
 " 返回到上一个光标位置
-nmap gb <Action>(Back)
+nmap <leader>gb <Action>(Back)
 " 光标前进
-nmap gf <Action>(Forward)
+nmap <leader>gf <Action>(Forward)
 
 " 跳转类型声明的位置
-nmap gD <Action>(GotoTypeDeclaration)
+nmap <leader>gD <Action>(GotoTypeDeclaration)
 " 跳转到实现类方法中
-nmap gd <Action>(GotoImplementation)
+nmap <leader>gd <Action>(GotoImplementation)
 
 " 查看文档
-nmap gl <Action>(QuickJavaDoc)
-nmap gL <Action>(QuickImplementations)
+nmap <leader>gl <Action>(QuickJavaDoc)
+nmap <leader>gL <Action>(QuickImplementations)
 
 " 查看错误提示
-nmap ge <Action>(ShowErrorDescription)
+nmap <leader>ge <Action>(ShowErrorDescription)
 
 " 查找当前词在文件中其他位置
-nmap nn <Action>(GotoNextElementUnderCaretUsage)
-nmap NN <Action>(GotoPrevElementUnderCaretUsage)
+nmap <leader>nn <Action>(GotoNextElementUnderCaretUsage)
+nmap <leader>NN <Action>(GotoPrevElementUnderCaretUsage)
 
 " 变量重命名
-nmap rn <Action>(RenameElement)
+nmap <leader>rn <Action>(RenameElement)
 
 " 格式化代码
-nmap ft <Action>(ReformatCode)
+nmap <leader>ft <Action>(ReformatCode)
 imap ft <Action>(ReformatCode)
 
 " 快速打开全局搜索
-nmap ff <Action>(FindInPath)
+nmap <leader>ff <Action>(FindInPath)
 
 " 快速跳转到错误位置
-nmap ee <Action>(GotoNextError)
+nmap <leader>ee <Action>(GotoNextError)
 
 " 定位当前文件
-nmap file <Action>(SelectInProjectView)
+nmap <leader>file <Action>(SelectInProjectView)
 
 " 打开当前文件的历史提交记录
-nmap his <Action>(Vcs.ShowTabbedFileHistory)
+nmap <leader>his <Action>(Vcs.ShowTabbedFileHistory)
 
 set ideajoin
 
@@ -53,7 +53,7 @@ set ideajoin
 " idea 需要安装 IdeaVimExtension plugin
 " set keep-english-in-normal
 " 回到insert模式时恢复输入法
-" set keep-english-in-normal-and-restore-in-insert 
+" set keep-english-in-normal-and-restore-in-insert
 
 " 快速启动 debug run stop 项目
 nmap <leader>d <Action>(Debug)
@@ -61,4 +61,9 @@ nmap <leader>s <Action>(Stop)
 nmap <leader>r <Action>(Run)
 
 " 跳转到 terminal 快捷方式
-nmap <Leader>t :action ActivateTerminalToolWindow<CR>
+nmap <leader>t :action ActivateTerminalToolWindow<CR>
+
+" 查看所有的 action 动作
+nmap <leader>help :actionlist<CR>
+
+" Alt + enter 键

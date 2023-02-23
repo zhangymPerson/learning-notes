@@ -184,6 +184,11 @@ alias watch-cpu="watch -n1 'ps aux | grep -v PID | sort -nrk +3 | head -25'"
 # 监控最占用的 MEM 的进程，Mac 兼容
 alias watch-mem="watch -d -n1 'ps aux | grep -v PID | sort -nrk +4 | head -25'"
 
+# 文件夹大小排序
+alias ll_sort_file="du -sh * |sort -rh"
+# 隐藏文件排序
+alias ll_sort_file_hidden="du -hl --max-depth=1 |sort -rh"
+
 # echo "配置完成"
 # alias
 
