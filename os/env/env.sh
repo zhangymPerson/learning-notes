@@ -13,6 +13,7 @@ alias updateenv='source ~/.env.sh'
 alias h='help_fun(){ $@ --help | head -n 5 ;}; help_fun '
 
 alias ll='ls -alh'
+alias llg='ls -alh | grep'
 # ls命令按文件大小排序
 alias ll_sort_size='ls -Slh'
 alias ll_sort_size_r='ls -Slrh'
