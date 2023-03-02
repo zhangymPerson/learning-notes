@@ -37,8 +37,10 @@ SCHEME4="\[\e[01;36m\][\[\e[01;32m\]\u\[\e[01;31m\]@\[\e[01;32m\]\h \[\e[01;36m\
 
 # 让history在存储时忽略指定指令
 export HISTIGNORE="pwd:ls:ll:ls –ltr:history:h1:h2:h3"
-# history 忽略重复命令
-export HISTCONTROL=ignoredups
+# export HISTCONTROL=ignoredups# 使用HISTCONTROL来消除命令历史中的连续重复条目
+# export HISTCONTROL=erasedups # 使用HISTCONTROL在整个历史中去除重复命令
+# export HISTCONTROL=ignorespace # 使用HISTCONTROL强制history忽略某条特定命令(这里是空格)
+export HISTCONTROL=erasedups
 # 多个终端同时操作时，避免命令覆盖，采用追加方式
 # shopt -s histappend
 # 设置历史命令记录数
@@ -59,7 +61,7 @@ alias type="type -a"
 alias which="which -a"
 
 # 搜索历史命令
-alias hisg="history | grep"
+alias hisg="history 1000 | grep $1 | uniq"
 
 # 搜索进程
 alias psg="ps aux | grep -v grep | grep"
