@@ -196,7 +196,7 @@ alias ll_sort_file="du -sh * |sort -rh"
 alias ll_sort_file_hidden="du -hl --max-depth=1 |sort -rh"
 
 
-alias help='tldr '
+alias help='tldr -c'
 alias help_update='tldr -u'
 
 # echo "配置完成"
