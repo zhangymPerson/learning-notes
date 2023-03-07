@@ -4,6 +4,9 @@
 # 配置自己开发的环境变
 # 查看系统变量 set
 
+# 设置中文
+export LANG=zh_CN.UTF-8
+
 # 当前路径 ${PWD}
 # 当前登录用户 ${LOGNAME}
 # 更新自己
@@ -191,6 +194,10 @@ alias watch-mem="watch -d -n1 'ps aux | grep -v PID | sort -nrk +4 | head -25'"
 alias ll_sort_file="du -sh * |sort -rh"
 # 隐藏文件排序
 alias ll_sort_file_hidden="du -hl --max-depth=1 |sort -rh"
+
+
+alias help='tldr '
+alias help_update='tldr -u'
 
 # echo "配置完成"
 # alias
