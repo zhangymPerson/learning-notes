@@ -273,6 +273,29 @@
 		],
 		"description": "函数注释"
 	},
+	"self_python_post_request": {
+		"scope": "python",
+		"prefix": "spost",
+		"body": [
+			"try:",
+			"    # 需要导入 requests 和 json",
+			"    url = f\"http: //localhost:8080/path\"",
+			"    # 请求数据",
+			"    data = {",
+			"        \"key\": \"value\"",
+			"    }",
+			"    payload = json.dumps(data)",
+			"    headers = {",
+			"        'Content-Type': 'application/json',",
+			"        'Accept': '*/*'",
+			"    }",
+			"    response = requests.request(\"POST\", url, headers=headers, data=payload, verify=False)",
+			"    print(response.text)",
+			"except Exception as e:",
+			"    print(e)"
+		],
+		"description": "发送post请求模板"
+	},
 	// ==============================================================================================
 	// php
 	// ==============================================================================================
@@ -597,7 +620,7 @@
 	},
 	// ==============================================================================================
 	// go
-	// ==============================================================================================	
+	// ==============================================================================================    
 	"self_go_header": {
 		"scope": "go",
 		"prefix": "sheader",
