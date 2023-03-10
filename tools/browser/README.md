@@ -61,3 +61,11 @@
   加载已解压的扩展程序 选择 zip 文件所在的文件夹即可安装成
 
   重启浏览器
+
+- AdGuard 广告拦截器
+
+  [AdGuard 广告拦截器-github](https://github.com/AdguardTeam/AdguardBrowserExtension)
+
+- Simple Allow Copy 网站复制
+
+  [github 地址](https://github.com/Simple-Allow-Copy/chrome-extension-allow-copy)
