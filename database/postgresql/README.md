@@ -79,3 +79,11 @@
     c.relname,
     a.attnum;
   ```
+
+- 删除库 需要先手动关闭连接
+
+  `drop database databasename;`
+
+  断开连接
+
+  `select pg_terminate_backend(pid) from (select pid from pg_stat_activity where datname = 'databasename' ) a;`
