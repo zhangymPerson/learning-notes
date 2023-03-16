@@ -13,9 +13,9 @@ nmap <leader>gb <Action>(Back)
 nmap <leader>gf <Action>(Forward)
 
 " 跳转类型声明的位置
-nmap <leader>gD <Action>(GotoTypeDeclaration)
+nmap <leader>gd <Action>(GotoTypeDeclaration)
 " 跳转到实现类方法中
-nmap <leader>gd <Action>(GotoImplementation)
+nmap <leader>gi <Action>(GotoImplementation)
 
 " 查看文档
 nmap <leader>gl <Action>(QuickJavaDoc)

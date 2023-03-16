@@ -21,6 +21,10 @@
       "commands": ["workbench.action.navigateBack"]
     },
     {
+      "before": ["<leader>", "g", "f"],
+      "commands": ["workbench.action.navigateForward"]
+    },
+    {
       "before": ["<leader>", "e", "e"],
       "commands": ["workbench.action.showErrorsWarnings"]
     },
@@ -33,12 +37,16 @@
       "commands": ["editor.action.formatDocument"]
     },
     {
-      "before": ["<leader>", "g", "D"],
+      "before": ["<leader>", "g", "i"],
       "commands": ["editor.action.goToImplementation"]
     },
     {
-      "before": ["<leader>", "a", "d"],
-      "commands": ["editor.debug.action.toggleBreakpoint"]
+      "before": ["<leader>", "g", "r"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    {
+      "before": ["<leader>", "g", "d"],
+      "commands": ["editor.action.goToTypeDefinition"]
     }
   ]
 }
