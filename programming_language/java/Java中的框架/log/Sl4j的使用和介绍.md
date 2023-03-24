@@ -76,7 +76,6 @@
   测试可用 使用需注意 jar 包之间的版本兼容
 
   ```xml
-
   <dependencies>
       <!--支持@Slf4j注解-->
       <dependency>
@@ -131,7 +130,7 @@
 - log4j.properties
 
   ```properties
-  #日志配置
+  # 日志配置
   log4j.rootLogger=info,consoles
   ##自定义日志输出样式
   #%p 输出优先级，即DEBUG，INFO，WARN，ERROR，FATAL
@@ -143,13 +142,13 @@
   #%l 输出日志事件的发生位置，包括类目名、发生的线程，以及在代码中的行数。举例：Testlog4.main(TestLog4.java:10)
   #%m 输出代码中指定的讯息，如log(message)中的message
   log4j.appender.consoles.Encoding=UTF-8
-  #输出等级
+  # 输出等级
   #log4j.appender.consoles.Threshold=DEBUG
-  ##输出到控制台日志配置
+  # 输出到控制台日志配置
   log4j.appender.consoles=org.apache.log4j.ConsoleAppender
-  ##设置输出样式
+  # 设置输出样式
   log4j.appender.consoles.layout=org.apache.log4j.PatternLayout
-  ##日志打印样式
+  # 日志打印样式
   log4j.appender.consoles.layout.ConversionPattern= [%p] [%-d{yyyy-MM-dd HH:mm:ss}] (%l):%m%n
   ```
 
