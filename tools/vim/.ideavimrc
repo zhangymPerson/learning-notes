@@ -1,51 +1,60 @@
-"" Source your .vimrc
+" Source your .vimrc
 source ~/.vimrc
 
 " Find more examples here: https://jb.gg/share-ideavimrc
-""" IdeaVim actions
+" IdeaVim actions
 " 函数跳转
-nmap <leader>[[ <Action>(MethodUp)
-nmap <leader>]] <Action>(MethodDown)
+nmap <leader>[[ <ESC>:action MethodUp<CR>
+nmap <leader>]] <ESC>:action MethodDown<CR>
+
+
 
 " 返回到上一个光标位置
-nmap <leader>gb <Action>(Back)
+nmap <leader>gb <ESC>:action Back<CR>
 " 光标前进
-nmap <leader>gf <Action>(Forward)
+nmap <leader>gf <ESC>:action Forward<CR>
 
 " 跳转类型声明的位置
-nmap <leader>gd <Action>(GotoTypeDeclaration)
+nmap <leader>gd <ESC>:action GotoTypeDeclaration<CR>
 " 跳转到实现类方法中
-nmap <leader>gi <Action>(GotoImplementation)
+nmap <leader>gi <ESC>:action GotoImplementation<CR>
 
 " 查看文档
-nmap <leader>gl <Action>(QuickJavaDoc)
-nmap <leader>gL <Action>(QuickImplementations)
+nmap <leader>doc <ESC>:action QuickJavaDoc<CR>
+nmap <leader>src <ESC>:action QuickImplementations<CR>
 
 " 查看错误提示
-nmap <leader>ge <Action>(ShowErrorDescription)
+nmap <leader>ge <ESC>:action ShowErrorDescription<CR>
 
 " 查找当前词在文件中其他位置
-nmap <leader>nn <Action>(GotoNextElementUnderCaretUsage)
-nmap <leader>NN <Action>(GotoPrevElementUnderCaretUsage)
+nmap <leader>nn <ESC>:action GotoNextElementUnderCaretUsage<CR>
+nmap <leader>NN <ESC>:action GotoPrevElementUnderCaretUsage<CR>
 
 " 变量重命名
-nmap <leader>rn <Action>(RenameElement)
+nmap <leader>rn <ESC>:action RenameElement<CR>
 
 " 格式化代码
-nmap <leader>ft <Action>(ReformatCode)
-imap ft <Action>(ReformatCode)
+nmap <leader>ft <ESC>:action ReformatCode<CR>
+imap ft <ESC>:action ReformatCode<CR>
 
 " 快速打开全局搜索
-nmap <leader>ff <Action>(FindInPath)
+nmap g/ <ESC>:action FindInPath<CR>
+" 快速打开全局替换
+nmap g' <ESC>:action ReplaceInPath<CR>
+
+" 查找当前文件
+" nmap / <ESC>:action Find<CR>
+" 替换当前文件
+nmap ' <ESC>:action Replace<CR>
 
 " 快速跳转到错误位置
-nmap <leader>ee <Action>(GotoNextError)
+nmap <leader>ee <ESC>:action GotoNextError<CR>
 
 " 定位当前文件
-nmap <leader>file <Action>(SelectInProjectView)
+nmap <leader>file <ESC>:action SelectInProjectView<CR>
 
 " 打开当前文件的历史提交记录
-nmap <leader>his <Action>(Vcs.ShowTabbedFileHistory)
+nmap <leader>his <ESC>:action Vcs.ShowTabbedFileHistory<CR>
 
 set ideajoin
 
@@ -56,14 +65,23 @@ set ideajoin
 " set keep-english-in-normal-and-restore-in-insert
 
 " 快速启动 debug run stop 项目
-nmap <leader>d <Action>(Debug)
-nmap <leader>s <Action>(Stop)
-nmap <leader>r <Action>(Run)
+nmap <leader>debug <ESC>:action Debug<CR>
+nmap <leader>stop <ESC>:action Stop<CR>
+nmap <leader>run <ESC>:action Run<CR>
 
 " 跳转到 terminal 快捷方式
-nmap <leader>t :action ActivateTerminalToolWindow<CR>
+nmap <leader>t <ESC>:action ActivateTerminalToolWindow<CR>
 
 " 查看所有的 action 动作
-nmap <leader>help :actionlist<CR>
+nmap <leader>help <ESC>:actionlist<CR>
 
-" Alt + enter 键
+" Alt + enter 键 快捷修复提示
+
+" 查找类 方法 工作
+nmap <leader>gc <ESC>:action GotoClass<CR>
+nmap <leader>gs <ESC>:action GotoSymbol<CR>
+nmap <leader>ga <ESC>:action GotoAction<CR>
+
+" 翻译 需要翻译插件的支持
+nmap <leader>tt <ESC>:action $EditorTranslateAction<CR>
+nmap <leader>td <ESC>:action $TranslateDocumentationAction<CR>

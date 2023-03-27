@@ -53,7 +53,7 @@ set foldmethod=syntax
 set foldlevel=3
 
 " 剪切板
-set clipboard=unnamed
+set clipboard^=unnamed,unnamedplus
 
 " 输入模式下的 快捷键配置
 imap <C-e> <END>

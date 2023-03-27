@@ -13,7 +13,7 @@
       "commands": ["editor.action.rename"]
     },
     {
-      "before": ["<leader>", "g", "l"],
+      "before": ["<leader>", "d", "o", "c"],
       "commands": ["editor.action.showHover"]
     },
     {
@@ -29,7 +29,7 @@
       "commands": ["workbench.action.showErrorsWarnings"]
     },
     {
-      "before": ["<leader>", "f", "f"],
+      "before": ["g", "/"],
       "commands": ["workbench.view.search"]
     },
     {
@@ -43,10 +43,6 @@
     {
       "before": ["<leader>", "g", "r"],
       "commands": ["editor.action.goToReferences"]
-    },
-    {
-      "before": ["<leader>", "g", "d"],
-      "commands": ["editor.action.goToTypeDefinition"]
     }
   ]
 }
