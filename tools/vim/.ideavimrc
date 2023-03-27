@@ -10,9 +10,9 @@ nmap <leader>]] <ESC>:action MethodDown<CR>
 
 
 " 返回到上一个光标位置
-nmap <leader>gb <ESC>:action Back<CR>
+nmap gb <ESC>:action Back<CR>
 " 光标前进
-nmap <leader>gf <ESC>:action Forward<CR>
+nmap gf <ESC>:action Forward<CR>
 
 " 跳转类型声明的位置
 nmap <leader>gd <ESC>:action GotoTypeDeclaration<CR>
