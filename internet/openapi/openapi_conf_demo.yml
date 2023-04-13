@@ -37,6 +37,13 @@ paths:
           description: Forbidden
         "404":
           description: Not Found
+  /newpath:
+    put:
+      description: '测试'
+      parameters: []
+      responses:
+        '200':
+          description: OK
 components:
   schemas:
     post请求参数:
