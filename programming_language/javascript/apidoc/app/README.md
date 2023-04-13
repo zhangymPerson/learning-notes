@@ -14,4 +14,3 @@
   `apidoc.cmd -i src/ -o out/ -f .js`
 
 - apidoc.json 说明
-
