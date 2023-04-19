@@ -43,3 +43,19 @@
 - 指定打开方式
 
   `r`
+
+- ranger 使用的过程中卡死
+
+  `vim ~/.config/ranger/rc.conf` 修改配置
+
+  关闭预览 `set preview_files false`
+
+- 配置项
+
+  ```sh
+  # 显示边框线
+  set draw_borders true
+  ```
+
+
+  

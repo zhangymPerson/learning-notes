@@ -4,10 +4,8 @@ source ~/.vimrc
 " Find more examples here: https://jb.gg/share-ideavimrc
 " IdeaVim actions
 " 函数跳转
-nmap <leader>[[ <ESC>:action MethodUp<CR>
-nmap <leader>]] <ESC>:action MethodDown<CR>
-
-
+nmap [[ <ESC>:action MethodUp<CR>
+nmap ]] <ESC>:action MethodDown<CR>
 
 " 返回到上一个光标位置
 nmap gb <ESC>:action Back<CR>
