@@ -45,6 +45,9 @@ nmap g' <ESC>:action ReplaceInPath<CR>
 " 替换当前文件
 nmap ' <ESC>:action Replace<CR>
 
+" 添加注释
+nmap <leader>cl :action CommentByLineComment<CR>
+
 " 快速跳转到错误位置
 nmap <leader>ee <ESC>:action GotoNextError<CR>
 

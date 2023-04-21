@@ -5,6 +5,10 @@
   "vim.useSystemClipboard": true,
   "vim.normalModeKeyBindings": [
     {
+      "before": ["<leader", "c", "l"],
+      "commands": ["editor.action.addCommentLine"]
+    },
+    {
       "before": ["<leader>", "t"],
       "commands": ["workbench.action.terminal.focus"]
     },
