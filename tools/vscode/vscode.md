@@ -257,3 +257,11 @@
   防止一行代码过长的问题
 
   配置 `"editor.rulers": [80, 120]`
+
+- vscode terminal 宽度问题 terminal 自动换行
+
+  在 VSCode 中完全禁用嵌入式终端的换行是不可能的，因为在终端窗口中运行的 shell 总是将行断开到其可见宽度。
+
+  从 VSCode 1.61（2021 年 <> 月）开始，您可以设置更宽的终端窗口虚拟宽度。这减少了底层 shell 正在执行的换行量，并在 VSCode 中为您提供了一个漂亮的滚动条。
+
+  要启用此功能，请进入 VSCode 的命令面板。`Terminal: Set Fixed Dimensions`

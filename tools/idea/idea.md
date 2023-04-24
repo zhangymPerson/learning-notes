@@ -286,3 +286,7 @@
 - idea 自定义代码片段
 
   Preferences | Editor | Live Templates | 添加自定义代码片段 |
+
+- idea 设置编辑器换行 自动换行
+
+  View -> Active Editor -> Soft-Wrap 勾选
