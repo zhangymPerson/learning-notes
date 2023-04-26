@@ -1,88 +1,141 @@
 " Source your .vimrc
 source ~/.vimrc
 
+" 插件 github vim 插件
+" https://github.com/JetBrains/ideavim
+" vim whick-key 提示
+" https://github.com/TheBlob42/idea-which-key
 " Find more examples here: https://jb.gg/share-ideavimrc
 " IdeaVim actions
 " 函数跳转
 nmap [[ <ESC>:action MethodUp<CR>
 nmap ]] <ESC>:action MethodDown<CR>
 
+nmap L <action>(NextTab)
+nmap H <action>(PreviousTab)
+
+set which-key
+set notimeout
+
+" ========================================
+" leader + g 跳转类
+let g:WhichKeyDesc_G = "<leader>g 跳转操作"
 " 返回到上一个光标位置
-nmap gb <ESC>:action Back<CR>
+let g:WhichKeyDesc_G_back = "<leader>gb 跳转到上一步"
+nmap <leader>gb <ESC>:action Back<CR>
 " 光标前进
-nmap gf <ESC>:action Forward<CR>
-
-" 跳转类型声明的位置
-nmap <leader>gd <ESC>:action GotoTypeDeclaration<CR>
+let g:WhichKeyDesc_G_foreard = "<leader>gf 前进一步"
+nmap <leader>gf <ESC>:action Forward<CR>
 " 跳转到实现类方法中
-nmap <leader>gi <ESC>:action GotoImplementation<CR>
-
-" 查看文档
-nmap <leader>doc <ESC>:action QuickJavaDoc<CR>
-nmap <leader>src <ESC>:action QuickImplementations<CR>
-
-" 查看错误提示
-nmap <leader>ge <ESC>:action ShowErrorDescription<CR>
-
-" 查找当前词在文件中其他位置
-nmap <leader>nn <ESC>:action GotoNextElementUnderCaretUsage<CR>
-nmap <leader>NN <ESC>:action GotoPrevElementUnderCaretUsage<CR>
-
-" 变量重命名
-nmap <leader>rn <ESC>:action RenameElement<CR>
-
-" 格式化代码
-nmap <leader>ft <ESC>:action ReformatCode<CR>
-imap ft <ESC>:action ReformatCode<CR>
-
-" 快速打开全局搜索
-nmap g/ <ESC>:action FindInPath<CR>
-" 快速打开全局替换
-nmap g' <ESC>:action ReplaceInPath<CR>
-
-" 查找当前文件
-" nmap / <ESC>:action Find<CR>
-" 替换当前文件
-nmap ' <ESC>:action Replace<CR>
-
-" 添加注释
-nmap <leader>cl :action CommentByLineComment<CR>
-
+let g:WhichKeyDesc_G_impl = "<leader>gd 跳转到实现位置"
+nmap <leader>gd <ESC>:action GotoImplementation<CR>
+let g:WhichKeyDesc_G_error = "<leader>ge 跳转到错误位置"
 " 快速跳转到错误位置
-nmap <leader>ee <ESC>:action GotoNextError<CR>
+nmap <leader>ge <ESC>:action GotoNextError<CR>
 
+" ========================================
+" leader + f 查找类
+let g:WhichKeyDesc_F = "<leader>f 查找操作/文件操作"
+" 快速打开全局搜索
+let g:WhichKeyDesc_F_FindInPath = "<leader>f/ 全局查找"
+nmap <leader>f/ <ESC>:action FindInPath<CR>
+" 快速打开全局替换
+let g:WhichKeyDesc_F_ReplaceInPath = "<leader>fr 全局查找并替换"
+nmap <leader>fr <ESC>:action ReplaceInPath<CR>
+" 查找类 方法 工作
+let g:WhichKeyDesc_F_class = "<leader>fc 查找-类"
+nmap <leader>fc <ESC>:action GotoClass<CR>
+let g:WhichKeyDesc_F_symbol = "<leader>fs 查找-指定属性"
+nmap <leader>fs <ESC>:action GotoSymbol<CR>
+let g:WhichKeyDesc_F_action = "<leader>fa 查找-动作"
+nmap <leader>fa <ESC>:action GotoAction<CR>
 " 定位当前文件
-nmap <leader>file <ESC>:action SelectInProjectView<CR>
-
+let g:WhichKeyDesc_F_file = "<leader>ff 文件-定位当前文件"
+nmap <leader>ff <ESC>:action SelectInProjectView<CR>
+" 格式化代码
+let g:WhichKeyDesc_F_formatCode = "<leader>ft 文件-格式化代码"
+nmap <leader>ft <ESC>:action ReformatCode<CR>
 " 打开当前文件的历史提交记录
-nmap <leader>his <ESC>:action Vcs.ShowTabbedFileHistory<CR>
+let g:WhichKeyDesc_F_formatCode = "<leader>fh 文件-文件历史改动"
+nmap <leader>fh <ESC>:action Vcs.ShowTabbedFileHistory<CR>
 
-set ideajoin
+" ========================================
+" leader + s 展示,显示
+let g:WhichKeyDesc_Show = "<leader>s 展示，显示操作"
+" 查看文档
+let g:WhichKeyDesc_S = "<leader>sd 显示函数文档"
+nmap <leader>sd <ESC>:action QuickJavaDoc<CR>
+let g:WhichKeyDesc_Ss = "<leader>sD 显示函数文档内容"
+nmap <leader>sD <ESC>:action QuickImplementations<CR>
+let g:WhichKeyDesc_Show_FileStructure = "<leader>ss ShowFileStructure"
+nmap <leader>ss <action>(FileStructurePopup)
+" let g:WhichKeyDesc_Show_Bookmarks = "<leader>sb 查看书签"
+" nmap <leader>sb <action>(ShowBookmarks)
+let g:WhichKeyDesc_Show_ParameterInfo = "<leader>sp ShowParameterInfo"
+nmap <leader>sp <action>(ParameterInfo)
 
-" 为IdeaVim插件增加自动切换为英文输入法的功能,
-" idea 需要安装 IdeaVimExtension plugin
-" set keep-english-in-normal
-" 回到insert模式时恢复输入法
-" set keep-english-in-normal-and-restore-in-insert
 
+" ======================================== 
+" leader + r 重置操作
+let g:WhichKeyDesc_R = "<leader>r 重置操作"
+" 变量重命名
+let g:WhichKeyDesc_R_rename = "<leader>rn 重命名"
+n项目相关操作map <leader>rn <ESC>:action RenameElement<CR>
+
+" ========================================
+" leader + p 项目相关的操作
+let g:WhichKeyDesc_P = "<leader>p 项目操作"
 " 快速启动 debug run stop 项目
-nmap <leader>debug <ESC>:action Debug<CR>
-nmap <leader>stop <ESC>:action Stop<CR>
-nmap <leader>run <ESC>:action Run<CR>
+let g:WhichKeyDesc_P_debug = "<leader>pd debug-项目"
+nmap <leader>pd <ESC>:action Debug<CR>
+let g:WhichKeyDesc_P_stop = "<leader>ps stop-项目"
+nmap <leader>ps <ESC>:action Stop<CR>
+let g:WhichKeyDesc_P =项目相关操作 项目相关操作"<leader>pr run-项目"
+nmap <leader>pr <ESC>:action Rerun<CR>
 
+" ========================================
+" leader + e 扩展
+let g:WhichKeyDesc_E = "<leader>e extract"
+" e: Extract
+" extract method/function
+let g:WhichKeyDesc_E_method = "<leader>em 生成-函数"
+vmap <leader>em <action>(ExtractMethod)
+" extract constant
+let g:WhichKeyDesc_E_constant = "<leader>ec 生成-常量"
+vmap <leader>ec <action>(IntroduceConstant)
+" extract field
+let g:WhichKeyDesc_E_field = "<leader>ef 生成-属性"
+vmap <leader>ef <action>(IntroduceField)
+" extract variable
+let g:WhichKeyDesc_E_var = "<leader>ev 生成变量"
+vmap <leader>ev <action>(IntroduceVariable)
+
+" ========================================
+" leader + t 扩展
+let g:WhichKeyDesc_T = "<leader>t 终端/翻译"
 " 跳转到 terminal 快捷方式
-nmap <leader>t <ESC>:action ActivateTerminalToolWindow<CR>
+let g:WhichKeyDesc_T_terminal = "<leader>to 打开终端"
+nmap <leader>to <ESC>:action ActivateTerminalToolWindow<CR>
+" 翻译 需要翻译插件的支持
+let g:WhichKeyDesc_T_translate = "<leader>tw 翻译单词"
+nmap <leader>tw <ESC>:action $EditorTranslateAction<CR>
+let g:WhichKeyDesc_T_translateDoc = "<leader>td 翻译段落"
+nmap <leader>td <ESC>:action $TranslateDocumentationAction<CR>
 
+" ========================================
+" leader + h 扩展
+let g:WhichKeyDesc_H = "<leader>h 帮助"
 " 查看所有的 action 动作
-nmap <leader>help <ESC>:actionlist<CR>
+let g:WhichKeyDesc_H_list = "<leader>hl 查看所有idea的action"
+nmap <leader>hl <ESC>:actionlist<CR>
+
+" ========================================
+" leader + c 注释
+let g:WhichKeyDesc_C = "<leader>c 注释"
+" 添加注释
+let g:WhichKeyDesc_C_line = "<leader>cl 单行注释"
+nmap <leader>cl :action CommentByLineComment<CR>
 
 " Alt + enter 键 快捷修复提示
 
-" 查找类 方法 工作
-nmap <leader>gc <ESC>:action GotoClass<CR>
-nmap <leader>gs <ESC>:action GotoSymbol<CR>
-nmap <leader>ga <ESC>:action GotoAction<CR>
-
-" 翻译 需要翻译插件的支持
-nmap <leader>tt <ESC>:action $EditorTranslateAction<CR>
-nmap <leader>td <ESC>:action $TranslateDocumentationAction<CR>
+set ideajoin
