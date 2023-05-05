@@ -56,7 +56,7 @@ nmap <leader>ff <ESC>:action SelectInProjectView<CR>
 let g:WhichKeyDesc_F_formatCode = "<leader>ft 文件-格式化代码"
 nmap <leader>ft <ESC>:action ReformatCode<CR>
 " 打开当前文件的历史提交记录
-let g:WhichKeyDesc_F_formatCode = "<leader>fh 文件-文件历史改动"
+let g:WhichKeyDesc_F_history = "<leader>fh 文件-文件历史改动"
 nmap <leader>fh <ESC>:action Vcs.ShowTabbedFileHistory<CR>
 
 " ========================================
@@ -65,13 +65,13 @@ let g:WhichKeyDesc_Show = "<leader>s 展示，显示操作"
 " 查看文档
 let g:WhichKeyDesc_S = "<leader>sd 显示函数文档"
 nmap <leader>sd <ESC>:action QuickJavaDoc<CR>
-let g:WhichKeyDesc_Ss = "<leader>sD 显示函数文档内容"
+let g:WhichKeyDesc_S_s = "<leader>sD 显示函数文档内容"
 nmap <leader>sD <ESC>:action QuickImplementations<CR>
-let g:WhichKeyDesc_Show_FileStructure = "<leader>ss ShowFileStructure"
+let g:WhichKeyDesc_S_Show_FileStructure = "<leader>ss 查看文件中的属性函数"
 nmap <leader>ss <action>(FileStructurePopup)
-" let g:WhichKeyDesc_Show_Bookmarks = "<leader>sb 查看书签"
+" let g:WhichKeyDesc_S_Show_Bookmarks = "<leader>sb 查看书签"
 " nmap <leader>sb <action>(ShowBookmarks)
-let g:WhichKeyDesc_Show_ParameterInfo = "<leader>sp ShowParameterInfo"
+let g:WhichKeyDesc_S_Show_ParameterInfo = "<leader>sp 查看函数变量"
 nmap <leader>sp <action>(ParameterInfo)
 
 
@@ -80,7 +80,7 @@ nmap <leader>sp <action>(ParameterInfo)
 let g:WhichKeyDesc_R = "<leader>r 重置操作"
 " 变量重命名
 let g:WhichKeyDesc_R_rename = "<leader>rn 重命名"
-n项目相关操作map <leader>rn <ESC>:action RenameElement<CR>
+nma <leader>rn <ESC>:action RenameElement<CR>
 
 " ========================================
 " leader + p 项目相关的操作
@@ -90,7 +90,7 @@ let g:WhichKeyDesc_P_debug = "<leader>pd debug-项目"
 nmap <leader>pd <ESC>:action Debug<CR>
 let g:WhichKeyDesc_P_stop = "<leader>ps stop-项目"
 nmap <leader>ps <ESC>:action Stop<CR>
-let g:WhichKeyDesc_P =项目相关操作 项目相关操作"<leader>pr run-项目"
+let g:WhichKeyDesc_P_run = "<leader>pr run-项目"
 nmap <leader>pr <ESC>:action Rerun<CR>
 
 " ========================================
