@@ -205,5 +205,11 @@ alias help_update='tldr -u'
 #  查找命令别名
 alias aliasg='alias | grep'
 
+# 删除命令
+# github https://github.com/andreafrancia/trash-cli 
+alias rm='echo "删除操作危险,使用trash-put进行删除"'
+alias rmr='trash-put'
+alias rml='trash-list'
+
 # 取消别名
 # unalias name
