@@ -160,3 +160,7 @@
 - 恢复文件，显示文件修改
 
   `git update-index --no-skip-worktree filename`
+
+- git 多个秘钥需要使用代理 git 代理
+
+  [需要使用 ssh 代理添加多个秘钥](../openssh/README.md#ssh-agent)
