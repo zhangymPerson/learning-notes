@@ -207,9 +207,10 @@ alias aliasg='alias | grep'
 
 # 删除命令
 # github https://github.com/andreafrancia/trash-cli 
-alias rm='echo "删除操作危险,使用trash-put进行删除"'
+alias rm='echo " rmr 删除 rml 查看所有删除的文件 rmd 删除几天内的文件 rm删除操作危险,使用trash-put进行删除"'
 alias rmr='trash-put'
 alias rml='trash-list'
+alias rmd='trash-empty '
 
 # 取消别名
 # unalias name
