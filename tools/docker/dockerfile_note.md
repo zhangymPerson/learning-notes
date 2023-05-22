@@ -55,9 +55,9 @@
   格式：
       MAINTAINER <name>
   示例：
-      MAINTAINER Jasper Xu
-      MAINTAINER sorex@163.com
-      MAINTAINER Jasper Xu <sorex@163.com>
+      MAINTAINER danao
+      MAINTAINER danao@163.com
+      MAINTAINER danao <danao@163.com>
   ```
 
 - RUN
