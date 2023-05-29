@@ -263,11 +263,11 @@
 
   `idea` 默认在用户调试之前先执行 `toString` 方法，然后回显数据，也就是“预知”功能。但有时候会影响判断，但可以设置那些类中 `toString` 方法是是可以做“预知”。
 
-- idea 配置单行注释格式化 Java/kotlin 注释靠边的问题 无空格的问题 注释格式
+- idea 注释问题 配置单行注释格式化 Java/kotlin 注释靠边的问题 无空格的问题 注释格式
 
   idea 默认的注释都是按行顶格注释,不显示在行首，需要配置，配置方式
 
-  File | Settings | Editor | Code Style | C/C++ | Code Generation | General -> **Line comment at first clolumn** / **Block comment at first column** 这两项不要选中
+  File | Settings | Editor | Code Style | Java | Code Generation | General -> **Line comment at first clolumn** / **Block comment at first column** 这两项不要选中
 
   同时需要在注释//和代码加添加一个空格选中 **add a space at comment start**
 
