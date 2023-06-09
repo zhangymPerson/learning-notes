@@ -15,8 +15,8 @@ alias updateenv='source ~/.env.sh'
 # 以快速运行 "grep --help" 为例, 有了以下alias运行“h grep”就可以了：
 alias h='help_fun(){ $@ --help | head -n 5 ;}; help_fun '
 
-alias ll='ls -alh'
-alias llg='ls -alh | grep'
+alias ll='ls -alth'
+alias llg='ls -alth | grep'
 # ls命令按文件大小排序
 alias ll_sort_size='ls -Slh'
 alias ll_sort_size_r='ls -Slrh'
@@ -79,52 +79,6 @@ alias tailf='tail -f -n 200'
 # python3 乱码问题 编码问题
 alias python3='PYTHONIOENCODING=utf-8 python3'
 
-ncFunc() {
-    echo -e "客户端复制此命令"
-    echo -e "file为要上传的文件"
-    echo -e "nc $(hostname -i) 8889 < $1"
-    nc -l 8889 >$1
-}
-
-# 文件上传服务
-alias nc-file='ncFunc '
-
-# 文件下载服务
-alias py_httpserver='echo "浏览器打开 http://${HOSTNAME}:8889/" && python3 -m http.server  8889'
-
-# 文件传输 python3
-# 60s后关闭,防止忘记关闭
-function fileserver {
-    host=$(hostname -i)
-    port=8889
-    now=$(date +"%F %T")
-    num=60
-    echo "${now}=>服务启动,${num} 秒后结束"
-    for file in $(ls); do
-        echo "wget -N http://${host}:${port}/${file}"
-    done
-    $(
-        python3 -m http.server ${port} &
-        sleep ${num}
-        kill $! &
-    )
-}
-alias fileserver=fileserver
-
-# 文件传输 python2
-function fileserver2 {
-    host=$(hostname -i)
-    port=8889
-    num=60
-    echo "wget -N http://${host}:${port}/$1"
-    $(
-        python -m SimpleHTTPServer ${port} &
-        sleep ${num}
-        kill $! &
-    )
-}
-alias fileserver2=fileserver2
-
 # scp / ftp 等其他服务
 alias pwdftp='echo "ftp://${HOSTNAME}:${PWD}"'
 alias pwdscp='echo "${LOGNAME}@${HOSTNAME}:${PWD}"'
@@ -132,19 +86,19 @@ alias pwdscp='echo "${LOGNAME}@$(hostname -i):${PWD}"'
 
 # 查询当前目录下 文件中的某个字符
 # ack 命令可替代 查找命令
-alias fword='findWord(){ find ./ -type f | xargs grep -n "$1" --color=auto ;}; findWord'
+alias fword='findWord(){ find . -type f | xargs grep -n "$1" --color=auto ;}; findWord'
 
 # grep递归查询
-alias fword='findWordGrep(){ grep "$1" . -r -n --color=auto ;}; findWordGrep'
+alias fw='findWordGrep(){ grep -i -r -n -I --color=auto "$1" . ;}; findWordGrep'
 
 # 查询当前目录下 是否有某个文件
 # 2>/dev/null  不输出没权限查看的目录
-alias ffile='findFile(){ find ./ -type f -iname \*$1\* 2>/dev/null;}; findFile'
+alias fn='findFile(){ find . -type f -iname "*$1*" 2>/dev/null;}; findFile'
 
 # 查询指定文件名的文件是否包含某个字段
 # 查询 shell 文件中包含 haed 内容的文件
 # fwordfile sh head
-alias fwordfile='findWordFromFile(){ find ./ -type f -iname \*$1\* | xargs grep -n --color=auto "$2" ;}; findWordFromFile'
+alias fwordfile='findWordFromFile(){ find . -type f -iname "*$1*" | xargs grep -n --color=auto "$2" ;}; findWordFromFile'
 
 # 以树形结构递归地显示目录结构
 alias lsr="ls -R | grep :$ | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
@@ -195,7 +149,6 @@ alias ll_sort_file="du -sh * |sort -rh"
 # 隐藏文件排序
 alias ll_sort_file_hidden="du -hl --max-depth=1 |sort -rh"
 
-
 alias help='tldr -c'
 alias help_update='tldr -u'
 
@@ -203,14 +156,24 @@ alias help_update='tldr -u'
 # alias
 
 #  查找命令别名
-alias aliasg='alias | grep'
+alias alias='alias | grep'
 
-# 删除命令
-# github https://github.com/andreafrancia/trash-cli 
-alias rm='echo " rmr 删除 rml 查看所有删除的文件 rmd 删除几天内的文件 rm删除操作危险,使用trash-put进行删除"'
-alias rmr='trash-put'
-alias rml='trash-list'
-alias rmd='trash-empty '
+alias cls='clear'
+# 配置文件打开方式
+# 在命令行直接输入后缀为 html 的文件名，会在 Vim 中打开
+alias -s html='vim'
+alias -s py='vim'
+alias -s js='vim'
+alias -s c='vim'
+alias -s java='vim'
+alias -s txt='vim'
+alias -s go='vim'
+alias -s md='vim'
+# 在命令行直接输入后缀为 gz 的文件名，会自动解压打开
+alias -s gz='tar -xzvf'
+alias -s tgz='tar -xzvf'
+alias -s zip='unzip'
+alias -s bz2='tar -xjvf'
 
 # 取消别名
 # unalias name
