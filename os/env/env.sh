@@ -156,7 +156,7 @@ alias help_update='tldr -u'
 # alias
 
 #  查找命令别名
-alias alias='alias | grep'
+alias alias_grep='alias | grep'
 
 alias cls='clear'
 # 配置文件打开方式
