@@ -18,5 +18,4 @@
 
   ```python
   print("hello word")
-
   ```
