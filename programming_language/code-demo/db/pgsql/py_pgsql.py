@@ -190,16 +190,13 @@ def get_all_table(cur):
     return list
 
 
-def clear_table(table_name, conn):
+def clear_table(table_name, cur):
     sql = f"delete from {table_name};"
     try:
-        cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
         cur.execute(sql)
-        conn.commit()
-        logging.info("删除执行成功")
+        logging.info(f"删除表[{table_name}]中数据成功")
     except Exception as e:
-        logging.error(e)
-        conn.rollback()
+        logging.info(f"处理异常,e = [{e}]")
 
 
 def main():
@@ -211,12 +208,11 @@ def main():
     table_name = "test"
     with DB(host='127.0.0.1', user='user', passwd='123456', db_name=db_name) as db:
         cur = db.get_cur()
-        conn = db.get_conn()
         create_table(cur, table_name)
         # 获取所有表名
         # tables = get_all_table(cur=cur)
         exec_sql(cur=cur, table_name=table_name)
-        clear_table(table_name, conn)
+        clear_table(table_name, cur)
 
 
 if __name__ == "__main__":
