@@ -18,6 +18,12 @@
 
   `$ git config --list`
 
+- 配置当前项目为自己的信息
+
+  `git config user.name zhangyanming`
+
+  `git config user.email zhangyanmingjiayou@163.com`
+
 - 查看当前项目的提交用户名和邮箱
 
   `git config --list`
