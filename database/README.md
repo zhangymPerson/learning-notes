@@ -23,3 +23,7 @@
 - 阿里巴巴淘宝团队的数据库内容月报
 
   [数据库内核月报](http://mysql.taobao.org/monthly/)
+
+## 数据库命令行工具
+
+- [usql](https://github.com/xo/usql)
