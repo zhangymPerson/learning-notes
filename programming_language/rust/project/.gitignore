@@ -1,0 +1,14 @@
+# Cargo.lock
+Cargo.lock
+
+# Target directories
+target/
+
+# Mock files
+mock_files/
+
+# Derived products
+lib.rs
+
+# Build scripts
+# Cargo.toml
