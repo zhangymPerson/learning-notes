@@ -95,24 +95,29 @@ function exec_test() {
     # 传入一个 session 名称 创建
     session_name=$1
     create_session ${session_name}
-    window_name="tool"
+
+    # 开发所需命令
+    window_name="dev"
+    create_window ${session_name} ${window_name}
+    command="cd ~"
+    exec_command ${session_name} ${window_name} ${command}
+    exec_command ${session_name} ${window_name} 'cd /;echo -e "dev"'
+
+    # 日志查看命令
+    window_name="log"
     create_window ${session_name} ${window_name}
 
     command="cd ~"
     exec_command ${session_name} ${window_name} ${command}
     exec_command ${session_name} ${window_name} "ls -al"
 
+    # 其他信息
     window_name="info"
     create_window ${session_name} ${window_name}
     command="cd ~"
     exec_command ${session_name} ${window_name} ${command}
-    exec_command ${session_name} ${window_name} "cd~;echo -e "test""
+    exec_command ${session_name} ${window_name} "cd~;echo -e "info""
 
-    window_name="dev"
-    create_window ${session_name} ${window_name}
-    command="cd ~"
-    exec_command ${session_name} ${window_name} ${command}
-    exec_command ${session_name} ${window_name} 'cd /;echo -e "hello world"'
 }
 
 main() {
