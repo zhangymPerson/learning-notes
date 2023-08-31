@@ -15,7 +15,7 @@
   ```
 
   eg:
-  ![demo](./../Picture/wechat-info.png)
+  ![demo](../../Picture/wechat-info.png)
 
 - 使用 img 标签
 
@@ -25,7 +25,7 @@
 
   eg:
 
-  <img src="./../Picture/wechat-info.png" width = "300" height = "500" align = "right">
+  <img src="../../Picture/wechat-info.png" width = "300" height = "500" align = "right">
 
 - 居中
 
@@ -73,13 +73,24 @@ H~2~O is 是液体。
 
 链接: [link](https://mp.csdn.net).
 
-图片: ![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw)
+图片:
+![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw)
 
-带尺寸的图片: ![Alt](<https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw> =30x30)
+带尺寸的图片:
 
-居中的图片: ![Alt](https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw#pic_center)
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw" alt="Alt text" style="width: 30px; height: 30px;">
 
-居中并且带尺寸的图片: ![Alt](<https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw#pic_center> =30x30)
+居中的图片:
+
+<div style="text-align: center;">
+  <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw" alt="图片alt描述">
+</div>
+
+居中并且带尺寸的图片:
+
+<div style="text-align: center;">
+  <img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9hdmF0YXIuY3Nkbi5uZXQvNy83L0IvMV9yYWxmX2h4MTYzY29tLmpwZw" alt="Alt text" style="width: 30px; height: 30px;">
+</div>
 
 当然，我们为了让用户更加便捷，我们增加了图片拖拽功能。
 
