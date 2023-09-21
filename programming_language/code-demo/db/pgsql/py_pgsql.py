@@ -115,43 +115,28 @@ def exec_sql(cur, table_name):
     """
     # 游标执行返回的是数量
     sql = """
-    select
-        c.relname 表名,
-        cast(obj_description(relfilenode, 'pg_class') as varchar) 名称,
-        a.attname 字段,
-        d.description 字段备注,
-        concat_ws('', t.typname, SUBSTRING(format_type(a.atttypid, a.atttypmod) from '\(.*\)')) as 列类型
-    from
-        pg_class c,
-        pg_attribute a,
-        pg_type t,
-        pg_description d
-    where
-        a.attnum>0
-        and
-        a.attrelid = c.oid
-        and
-        a.atttypid = t.oid
-        and
-        d.objoid = a.attrelid
-        and
-        d.objsubid = a.attnum
-        and
-        c.relname in (
-            select
-            tablename
-            from
-            pg_tables
-            where
-            schemaname = 'public'
-            and
-                position('_2' in tablename)= 0
-            and
-                tablename = '%s'
-        )
-    order by
-        c.relname,
-        a.attnum;
+select
+	a.attnum,
+	a.attname as 字段,
+	t.typname as 类型,
+	a.attlen as 长度,
+	a.atttypmod as 长度变量,
+	a.attnotnull as 非空,
+	b.description as 注释
+from
+	pg_class c,
+	pg_attribute a
+left join pg_description b on
+	a.attrelid = b.objoid
+	and a.attnum = b.objsubid,
+	pg_type t
+where
+	c.relname = '%s'
+	and a.attnum > 0
+	and a.attrelid = c.oid
+	and a.atttypid = t.oid
+order by
+	a.attnum;
     """
     cur.execute(sql % (table_name))
     # 获取数据库名
@@ -159,12 +144,14 @@ def exec_sql(cur, table_name):
     results = cur.fetchall()
     if len(results) < 1:
         return
-    print(f"- **{table_name} - {results[0][1]}**")
+    print(f"- **{table_name}**")
     print("")
-    print(f"  |字段名|字段类型|字段备注|")
-    print(f"  |---|---|---|")
+    print(f"  |id|字段名|字段类型|字段备注|")
+    print(f"  |---|---|---|---|")
+    i = 1
     for row in results:
-        print(f"  |{row[2]}|{row[4]}|{row[3]}|")
+        print(f"  |{i}|{row[1]}|{row[2]}|{row[6]}|")
+        i = i+1
     print("")
 
 
@@ -208,7 +195,7 @@ def main():
     table_name = "test"
     with DB(host='127.0.0.1', user='user', passwd='123456', db_name=db_name) as db:
         cur = db.get_cur()
-        create_table(cur, table_name)
+        # create_table(cur, table_name)
         # 获取所有表名
         # tables = get_all_table(cur=cur)
         exec_sql(cur=cur, table_name=table_name)
