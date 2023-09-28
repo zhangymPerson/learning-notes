@@ -11,3 +11,15 @@
 - mac 下 樱桃键盘 Fn 失效问题
 
   MX10.0 的功能键绑定变更组合键为 `Fn + Ctrl`
+
+## mac 上需要安装的软件
+
+- iterm
+
+- sdkman
+
+- zsh oh-my-zsh
+
+- brew
+
+  安装 `fzf` `tig` `ranger` `tldr` `tmux` `coreutils`

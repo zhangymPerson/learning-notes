@@ -763,5 +763,52 @@
 			"// $1 函数的作用是:$2"
 		],
 		"description": "函数注释"
-	}
+	},
+	"self_go_flag": {
+		"scope": "go",
+		"prefix": "sflag",
+		"body": [
+		  "var (",
+		  "   // 定义一个名为 \"help\" 的布尔参数，默认值为 false",
+		  "    help    = flag.Bool(\"help\", false, \"获取帮助\")",
+		  "    version = flag.Bool(\"version\", false, \"显示版本号\")",
+		  "    input   = flag.String(\"input\", \"\", \" 输入参数\")",
+		  "    output  = flag.String(\"output\", \"\", \"输出参数\")",
+		  ")",
+		  "",
+		  "// 需要使用参数，则在 main 函数中调用此函数",
+		  "func args() {",
+		  "    // 解析命令行参数",
+		  "    flag.Parse()",
+		  "    // 根据需要使用命令行参数的值",
+		  "    if *help {",
+		  "        // 显示帮助信息",
+		  "        fmt.Println(\"用法: 此应用程序 需要输入一下参数 [参数列表]\")",
+		  "        fmt.Println(\"参数说明:\")",
+		  "        flag.PrintDefaults()",
+		  "        os.Exit(0)",
+		  "        return",
+		  "    }",
+		  "    if *version {",
+		  "        // 显示版本信息",
+		  "        fmt.Println(\"Version: 1.0\")",
+		  "        os.Exit(0)",
+		  "        return",
+		  "    }",
+		  "",
+		  "    //  此处对必填的参数进行判断，如果没赋值，则提示帮助信息",
+		  "    if *input != \"\" && *output != \"\" {",
+		  "        return",
+		  "    } else {",
+		  "        fmt.Println(\"错误: input 和 output 参数是必填的.\")",
+		  "        fmt.Println(\"用法: 此应用程序 需要输入一下参数 [参数列表]\")",
+		  "        fmt.Println(\"参数说明:\")",
+		  "        flag.PrintDefaults()",
+		  "        os.Exit(0)",
+		  "        return",
+		  "    }",
+		  "}"
+		],
+		"description": "脚本入参模板"
+	  }
 }
