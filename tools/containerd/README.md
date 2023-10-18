@@ -43,11 +43,11 @@ crictl image ls
 
 - 运行一个新的容器
 
-  `ctr run -d docker.io/library/redis:alpine3.13 redis` 需指定容器名称
+  `ctr run -t -d docker.io/library/image:tag container_name` 需指定容器名称
 
   使用宿主机网络
 
-  `ctr run -d docker.io/library/redis:alpine3.13 redis --network=host` 需指定容器名称
+  `ctr run --net-host -t -d docker.io/library/image:tag container_name ` 需指定容器名称
 
 ### 启动后 task 相关的
 
@@ -71,7 +71,9 @@ crictl image ls
 
   `ps -ef |grep pid` 查找容器对应的 pid 然后 `kill -0 pid` 掉那个进程 可以看到容器处于 stop 状态
 
-  `ctr t rm name` 移除掉运行中的容器 `ctr c rm name` 删除掉静态的容器
+  `ctr t rm name` 移除掉运行中的容器 
+  
+  `ctr c rm name` 删除掉静态的容器
 
 ## 与 docker 的比较和在 k8s 下的一些命令
 
