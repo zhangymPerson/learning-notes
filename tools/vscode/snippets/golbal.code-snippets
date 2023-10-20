@@ -530,7 +530,14 @@
   "self_shell_array": {
     "scope": "shellscript",
     "prefix": "sarr",
-    "body": [""],
+    "body": [
+      "# 创建一个字符串数组",
+      "arr=(a 'bb' \"字符串3\")",
+      "# 遍历数组并输出",
+      "for it in \"\\${arr[@]}\"; do",
+      "    echo \"\\${it}\"",
+      "done"
+    ],
     "description": "创建一个[数组]结构"
   },
   "self_shell_list": {
