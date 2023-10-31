@@ -66,4 +66,4 @@
 
 - redo log 宕机 数据恢复
 
-- big log 数据库主从
+- bin log 数据库主从
