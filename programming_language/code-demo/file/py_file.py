@@ -21,6 +21,8 @@ def get_file_path():
     logger.info("%s,%s,%s", filepath, "a", "a")
     # 当前执行文件的上级路径，如 D：\aaa\bbb
     filepath = os.path.dirname(os.path.abspath(__file__))
+    # 当前文件的名称 py_file.py
+    current_script_name = os.path.basename(__file__)
     logger.info(filepath)
     # 继续向上
     filepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

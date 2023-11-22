@@ -11,6 +11,7 @@
 
 import argparse
 import json
+import os
 import traceback
 
 import pymysql
@@ -46,7 +47,7 @@ class DB():
         self.conn.close()
 
 
-def getAllTableFromDb(db, db_name):
+def get_all_table_from_db(db, db_name):
     """
     查数据 获取当前库下的表
     """
@@ -64,7 +65,7 @@ def getAllTableFromDb(db, db_name):
     return tables
 
 
-def getCreatetable_sql(db, table_name=None):
+def get_create_table_sql(db, table_name=None):
     """获取单个表的建表语句
     Args:
         params:db 数据库连接对象
@@ -90,7 +91,7 @@ def getCreatetable_sql(db, table_name=None):
     return res
 
 
-def getTableInfo(db, db_name, table_name):
+def get_table_info(db, db_name, table_name):
     """
     获取单个表的所有字段信息
     """
@@ -131,7 +132,7 @@ ORDER BY
     return rows
 
 
-def getDocFromRow(rows):
+def get_doc_from_row(rows):
     """
     根据查询到的字段信息生成表的 markdown 文档
     返回文档数据
@@ -150,7 +151,7 @@ def getDocFromRow(rows):
     return doc_tpl
 
 
-def getInsertIntoSql(table_name, rows):
+def get_insert_into_sql(table_name, rows):
     """
     获取sql insert into 模板语句
     """
@@ -164,7 +165,7 @@ def getInsertIntoSql(table_name, rows):
     return sql
 
 
-def allTable(db, db_name):
+def all_table(db, db_name):
     """
     获取所有表的介绍和文档
     Args:
@@ -175,13 +176,13 @@ def allTable(db, db_name):
         列出与接口有关的所有异常.
     """
     # 获取所有表名
-    tables = getAllTableFromDb(db=db, db_name=db_name)
+    tables = get_all_table_from_db(db=db, db_name=db_name)
     # 获取表名创建文档
     for table_name in tables:
-        getTable(db, db_name, table_name)
+        get_table(db, db_name, table_name)
 
 
-def getTable(db, db_name, table_name):
+def get_table(db, db_name, table_name):
     """获取单个表信息
     Args:
         params:db 数据库连接对象
@@ -192,10 +193,10 @@ def getTable(db, db_name, table_name):
     Raises:
         列出与接口有关的所有异常.
     """
-    rows = getTableInfo(db, db_name, table_name)
-    doc = getDocFromRow(rows)
-    table_sql = getCreatetable_sql(db, table_name)
-    insert_sql = getInsertIntoSql(table_name, rows)
+    rows = get_table_info(db, db_name, table_name)
+    doc = get_doc_from_row(rows)
+    table_sql = get_create_table_sql(db, table_name)
+    insert_sql = get_insert_into_sql(table_name, rows)
     doc_tpl = """
 # %s 表
 
@@ -228,9 +229,10 @@ def run(conf_dict: dict):
     try:
         with DB(host=host, port=port, user=user, passwd=password, db=db_name) as db:
             if table_name == "test":
-                allTable(db=db, db_name=db_name)
+                # allTable(db=db, db_name=db_name)
+                get_table(db, db_name, table_name) 
             else:
-                getTable(db, db_name, table_name)
+                get_table(db, db_name, table_name)
     except Exception as e:
         print(e)
         traceback.print_exc()
@@ -255,8 +257,10 @@ def init_args():
 
     return parse_args.__dict__
 
-
 if __name__ == '__main__':
+    current_script_path = os.path.abspath(__file__)
+    command = f"python {current_script_path} -ip 127.0.0.1 -P 3306 -u root -p 123456 -d db_name"
+    print(f"start command = [{command}]")
     args = init_args()
     jsons = json.dumps(args, ensure_ascii=False, default=str, indent=2)
     print(jsons)
