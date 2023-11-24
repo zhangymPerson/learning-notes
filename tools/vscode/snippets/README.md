@@ -60,3 +60,19 @@
   页面无提示，使用 tab 键生成代码的配置
 
   `"editor.tabCompletion": "on"`
+
+- 单语言 snippets 不生效问题 如 `markdown` 类型的设置如下
+
+  settings 中配置如下 其他语言的可以参考
+
+  ```json
+  {
+    "[markdown]": {
+      "editor.quickSuggestions": {
+        "comments": "on",
+        "strings": "on",
+        "other": "on"
+      }
+    }
+  }
+  ```

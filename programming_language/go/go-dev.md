@@ -39,7 +39,7 @@
         "source.organizeImports": true
       },
       // Optional: Disable snippets, as they conflict with completion ranking.
-      "editor.snippetSuggestions": "none"
+      "editor.snippetSuggestions": "top"
     },
     "[go.mod]": {
       "editor.formatOnSave": true,

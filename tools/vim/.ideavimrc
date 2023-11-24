@@ -1,6 +1,9 @@
 " Source your .vimrc
 source ~/.vimrc
 
+" win 下 配置
+" source D:\\Program Files\\Vim\\_vimrc
+
 " 插件 github vim 插件
 " https://github.com/JetBrains/ideavim
 " vim whick-key 提示
