@@ -17,7 +17,7 @@
 - 编写 docker-compose.yml 文件
 
 - 检查 docker-compose 配置
-  
+
   `docker-compose config`
 
   可以在 docker-compose.yml 文件目录中配置 .env 文件夹 添加变量，然后在 docker_compose 文件中使用 `${}` 中引用
@@ -41,3 +41,23 @@
 - 关闭并删除镜像信息
 
   `docker-compose down -v`
+
+- 配置国内镜像源
+
+  配置文件位置 `~/.docker/daemon.json` 或者 `/etc/docker/daemon.json`
+
+  添加如下配置
+
+  ```json
+  {
+    "registry-mirrors": [
+      "https://docker.mirrors.ustc.edu.cn"
+      "https://hub-mirror.c.163.com",
+      "https://registry.docker-cn.com",
+    ]
+  }
+  ```
+
+  重启 docker `systemctl restart docker`
+
+  执行 `sudo docker info` 查看是否配置成功
