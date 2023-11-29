@@ -42,3 +42,10 @@
 
   说明 本地启动命令 -p 指定端口号
   `python3 -m pydoc -p 1234`
+
+## 多版本管理
+
+- pyenv
+
+  mac 安装 `pyenv` 对 python 进行多版本管理
+  

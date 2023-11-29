@@ -55,4 +55,7 @@
 - 透明度配置
 
   左上角 iTerm2 > preferences > Profile > window 选项卡，拖动 Transparency 调整。
-  
+
+- 显示 cpu 电量等信息
+
+  打开 settings 搜索 'status bar enabled' 即可定位到相应位置，然后选择，打开配置
