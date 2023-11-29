@@ -22,7 +22,7 @@
 
 - 安装
 
-  `npm install -g i5ting_toc`
+  `npm install -g i5ting_toe`
 
 - 导出
 
@@ -33,3 +33,13 @@
   或者
 
   `npx i5ting_toc -f sample.md -o`
+
+### pandoc 工具 [github](https://github.com/jgm/pandoc)
+
+- 安装
+
+  去 `github` [https://github.com/jgm/pandoc](https://github.com/jgm/pandoc) 下载安装包
+
+- 简单使用 markdown 转 word
+
+  `pandoc a.md -o a.docx`
