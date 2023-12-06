@@ -23,3 +23,11 @@
 - brew
 
   安装 `fzf` `tig` `ranger` `tldr` `tmux` `coreutils`
+
+### zsh 插件
+
+- z https://github.com/rupa/z zsh 自带的，开启后直接可用
+
+- zsh-autosuggestions 命令提示
+
+- zsh-syntax-highlighting 命令高亮

@@ -5,22 +5,26 @@ networks:
     driver: bridge
 
 services:
+
   minio:
-    image: "bitnami/minio:latest"
+    image: bitnami/minio:2023.11.20
+    restart: always
     volumes:
-      - ./data:/bitnami/minio/data
+      - ./minio/data:/bitnami/minio/data
     ports:
-      - "9000:9000"
-      - "9001:9001"
+      - 9010:9000
+      - 9011:9001
     environment:
-      - MINIO_ROOT_USER=minio-root-user
-      - MINIO_ROOT_PASSWORD=minio-root-password
-    networks:
-      - app-tier
-  # myapp:
-  #   image: "YOUR_APPLICATION_IMAGE"
-  #   networks:
-  #     - app-tier
-  #   environment:
-  #     - MINIO_SERVER_ACCESS_KEY=minio-access-key
-  #     - MINIO_SERVER_SECRET_KEY=minio-secret-key
+      - MINIO_ROOT_USER=minio
+      - MINIO_ROOT_PASSWORD=minio123.
+
+    # networks:
+    #   - app-tier
+
+    # myapp:
+    #   image: "YOUR_APPLICATION_IMAGE"
+    #   networks:
+    #     - app-tier
+    #   environment:
+    #     - MINIO_SERVER_ACCESS_KEY=minio-access-key
+    #     - MINIO_SERVER_SECRET_KEY=minio-secret-key
