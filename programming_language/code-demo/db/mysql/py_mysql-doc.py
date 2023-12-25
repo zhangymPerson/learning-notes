@@ -229,8 +229,8 @@ def run(conf_dict: dict):
     try:
         with DB(host=host, port=port, user=user, passwd=password, db=db_name) as db:
             if table_name == "test":
-                # allTable(db=db, db_name=db_name)
-                get_table(db, db_name, table_name) 
+                all_table(db=db, db_name=db_name)
+                # get_table(db, db_name, table_name) 
             else:
                 get_table(db, db_name, table_name)
     except Exception as e:
