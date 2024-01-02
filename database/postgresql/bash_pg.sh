@@ -29,7 +29,7 @@ PORT=5432
 BACKUP=backup.sql
 
 # 指定密码，不需要输入
-export PASSWORD=123456
+export PGPASSWORD=123456
 
 # 只导出表结构
 echo "只导出表结构"
