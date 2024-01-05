@@ -265,3 +265,9 @@
   从 VSCode 1.61（2021 年 <> 月）开始，您可以设置更宽的终端窗口虚拟宽度。这减少了底层 shell 正在执行的换行量，并在 VSCode 中为您提供了一个漂亮的滚动条。
 
   要启用此功能，请进入 VSCode 的命令面板。`Terminal: Set Fixed Dimensions`
+
+- vscode 查看插件进程
+
+  按 F1 ,输入 `Developer: Show Running Extensions` 即可查看插件的运行情况 可以右键复制插件的 id
+
+  配置独立进程执行插件 在 `settings.xml` 中查询 `affinity` 添加要启动独立进程的 id

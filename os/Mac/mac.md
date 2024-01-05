@@ -30,4 +30,12 @@
 
 - zsh-autosuggestions 命令提示
 
+  `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
+
 - zsh-syntax-highlighting 命令高亮
+
+  `git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting`
+
+- 常用插件
+
+  [zsh-users](https://github.com/zsh-users)
