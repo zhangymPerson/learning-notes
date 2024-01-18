@@ -133,3 +133,5 @@
   在 settings 中搜索 `code-runner.executorMap` 可以根据对应的语言修改其编译方式
 
   如在 c++ 中指定编译的标准库为 c++11 可以在 g++ 命令下添加 `-std=c++11` 参数
+
+- autopep8 插件 python 格式化插件 python 插件不带格式化功能
