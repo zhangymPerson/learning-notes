@@ -124,5 +124,3 @@
   | imap kk <Up>        | 插入模式下 kk 上移         |      |
   | imap dd <backspace> | 插入模式下 dd 回退         |      |
   | imap oo <enter>     | 插入模式下 oo 下一行       |      |
-
-

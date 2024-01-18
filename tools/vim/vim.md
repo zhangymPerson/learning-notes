@@ -220,5 +220,4 @@
 
   选中多行
 
-  ctrl + Shift + v 
-
+  `ctrl + Shift + v`

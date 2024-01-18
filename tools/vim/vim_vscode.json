@@ -1,7 +1,15 @@
 {
+  // github 地址: https://github.com/VSCodeVim/Vim
+  // vim leader 键
   "vim.leader": " ",
+  // 启用 .vimrc 文件
   "vim.vimrc.enable": true,
+  // 启用 easymotion
   "vim.easymotion": true,
+  // 启用 vim 的状态颜色变化
+  "vim.statusBarColorControl": true,
+  // vim 操作文件目录
+  "vim.foldfix": true,
   "vim.useSystemClipboard": true,
   "vim.normalModeKeyBindings": [
     {
