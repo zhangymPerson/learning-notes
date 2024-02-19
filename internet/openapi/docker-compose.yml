@@ -1,0 +1,10 @@
+version: "3"
+services:
+  mysql:
+    image: openapitools/openapi-generator-online
+    restart: always
+    container_name: openapi
+    environment:
+      GENERATOR_HOST: http://127.0.0.1:8080
+    ports:
+      - 8080:8080
