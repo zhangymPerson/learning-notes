@@ -6,7 +6,7 @@
 
   [openapi](https://www.openapis.org/)
 
-  [openapi-中文规范](https://www.openapis.org/)
+  [openapi-中文规范](https://openapi.apifox.cn/)
 
   [openapi-github](https://github.com/OAI)
 
