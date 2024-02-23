@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+    hop:
+        image: 'apache/hop-web:latest'
+        ports:
+          - 8080:8080
+        volumes:
+            - './files:/files'
+        container_name: hop-test-container
+        environment:
+            - HOP_RUN_CONFIG=local
+            - HOP_PROJECT_NAME=samples
+            - HOP_PROJECT_FOLDER=/files
+            # - HOP_FILE_PATH=
+            - HOP_LOG_LEVEL=Basic
+        tty: true
+        stdin_open: true
