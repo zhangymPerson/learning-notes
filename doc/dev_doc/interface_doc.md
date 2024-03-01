@@ -4,11 +4,12 @@
 
 - 编写人员:danao (email_name@163.com)
 
-- 版本:1.0
+- 版本:1.1
 
 | 文档编号 | 题目     | 作者/修改 | 创建/修改时间       | 最新版本号 | 摘要说明       |
 | -------- | -------- | --------- | ------------------- | ---------- | -------------- |
 | 1-1-001  | 开发文档 | danao     | 2022-12-01 09:49:17 | 1.0        | 开发文档第一版 |
+| 1-1-002  | 开发文档 | danao     | 2024-02-26 10:34:03 | 1.1        | 开发文档 修改  |
 
 ## 概述
 
@@ -38,151 +39,382 @@
 
   http:127.0.0.1:8080/
 
-#### 接口概览
+### 接口概览
 
-| 名称       | 地址          | 说明             | 备注         |
-| ---------- | ------------- | ---------------- | ------------ |
-| 测试地址 1 | /test/isstart | 检查项目是否启动 | success 成功 |
+- 版本控制
 
----
+  如果需要版本控制，则所有请求添加版本前缀
 
-接口说明格式一
+  如: `http://127.0.0.1:8080/v1/`
 
----
+- 接口权限说明
 
-## 发送手机号码
+  需要加权限访问的接口,通过结构后面的\*表示，带\*的接口说明需要添加权限访问
 
-### 1.功能说明
+- 接口列表
 
-- 功能介绍
+  | 名称                                      | 地址             | 请求方式 | 说明             | 备注         |
+  | ----------------------------------------- | ---------------- | -------- | ---------------- | ------------ |
+  | [测试项目是否启动](#get-测试项目是否启动) | /ping            | get      | 检查项目是否启动 | success 成功 |
+  | [用户注册](#post-注册接口)                | /v1/api/register | post     | 用户进行注册     |              |
+  | [用户登录](#post-登录接口)                | /v1/api/login    | post     | 用户进行登录     |              |
+  | [获取单个用户信息](#get-获取用户信息)\*   | /v1/api/user     | get      | 获取单个信息     |              |
+  | [获取用户列表](#get-获取用户列表)\*       | /v1/api/users    | get      | 获取用户列表     |              |
 
-  主要是处理
+### 权限说明
 
-### 2.输入
+### 全局错误码定义
 
-#### json 格式的数据，参数说明
+| 错误码 | 说明         | 备注 |
+| ------ | ------------ | ---- |
+| 200    | 请求成功     |      |
+| 500    | 请求失败     |      |
+| 500100 | 用户已经存在 |      |
+| 500101 | 用户不存在   |      |
 
-| 序号 | 字段名称 | 字段中文名 | 数据格式 | 输出说明 | 备注       |
-| ---- | -------- | ---------- | -------- | -------- | ---------- |
-| 1    | key      | 关键字说明 | string   |          | key 的作用 |
-| 2    | key      | 关键字说明 | string   |          | key 的作用 |
-| 3    | key      | 关键字说明 | string   |          | key 的作用 |
+### 对象结构概览
 
-### 3.输出
+| 名称 | 说明                  | 备注 |
+| ---- | --------------------- | ---- |
+| user | [用户结构](#用户结构) |      |
 
-#### json 格式的数据参数说明
+## 接口说明
 
-| 序号 | 字段名称 | 字段中文名 | 数据格式 | 输出说明                 | 备注         |
-| ---- | -------- | ---------- | -------- | ------------------------ | ------------ |
-| 1    | code     | 状态码     | int      | 200 成功，非 200 失败    | 接口调用状态 |
-| 2    | message  | 结果说明   | string   | 非 200 时有异常信息      | 接口调用说明 |
-| 3    | result   | 数据结果   | json     | 调用成功，会返回具体数据 |
+## GET 测试项目是否启动
 
-### 4.代码定义
+GET /ping
 
-#### 错误码说明
+> 请求示例
 
-| 错误码 | 说明                       | 备注 |
-| ------ | -------------------------- | ---- |
-| 200    | 请求成功                   |      |
-| 500    | 请求失败                   |      |
-| 500100 | 用户已经存在               |      |
-| 500101 | 用户不存在                 |      |
-| 500102 | 成员已经存在               |      |
-| 500103 | 成员不存在                 |      |
-| 500104 | 成员信息不完善             |      |
-| 500105 | 创建成员失败               |      |
-| 500106 | 成员已达上限               |      |
-| 500107 | 删除成员失败               |      |
-| 500201 | 发送验证码失败             |      |
-| 500202 | 验证码已经失效，请重新发送 |      |
-| 500204 | 非法手机号                 |      |
-| 500001 | 参数异常                   |      |
+```shell
+curl -X GET "http://127.0.0.1:8080/ping"
+```
 
-### 5.接口调用方式
+### 请求参数
 
-#### 调用方式
+空
 
-- 请求方式:post
+> 返回示例
+> 200 Response
 
-- Content-Type application/json
+### 返回数据
 
-- 请求参数:json
-- 请求样例
+```json
+{
+  "message": "success"
+}
+```
 
-  ```json
-  {
-    "phone_num": "17454545858",
-    "is_return": "true"
+## POST 注册接口
+
+POST /v1/api/register
+
+> 请求示例
+
+```shell
+curl -X POST "http://127.0.0.1:8080/v1/api/register" -d '{"username":"zhangsan","password":"123456"}'
+```
+
+### 请求参数
+
+> Body 请求参数示例
+
+```json
+{
+  "username": "zhangsan",
+  "password": "123456"
+}
+```
+
+| 名称       | 位置 | 类型   | 必选 | 说明   |
+| ---------- | ---- | ------ | ---- | ------ |
+| body       | body | object | 是   | none   |
+| » username | body | string | 是   | 用户名 |
+| » password | body | string | 是   | 密码   |
+
+### 返回数据
+
+> 返回示例
+
+> 200 Response
+
+```json
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "userid": "123456",
+    "token": "123456"
   }
-  ```
+}
+```
 
-- 相应样例
+状态码 **200**
 
-  ```json
-  {
-    "code": 200,
-    "message": "success",
-    "result": {
-      "verifycode": "9596",
-      "phone_num": "17454545858",
-      "status": "success"
-    }
+| 名称      | 类型    | 必选 | 约束 | 中文名  | 说明 |
+| --------- | ------- | ---- | ---- | ------- | ---- |
+| » code    | integer | true | none |         | none |
+| » msg     | string  | true | none |         | none |
+| » data    | object  | true | none |         | none |
+| »» userid | string  | true | none | 用户 id | none |
+| »» token  | string  | true | none | token   | none |
+
+## POST 登录接口
+
+POST /v1/api/register
+
+> 请求示例
+
+```shell
+curl -X POST "http://127.0.0.1:8080/v1/api/register" -d '{"username":"zhangsan","password":"123456"}'
+```
+
+### 请求参数
+
+> Body 请求参数示例
+
+```json
+{
+  "username": "string",
+  "password": "string"
+}
+```
+
+| 名称       | 位置 | 类型   | 必选 | 说明   |
+| ---------- | ---- | ------ | ---- | ------ |
+| body       | body | object | 否   | none   |
+| » username | body | string | 是   | 用户名 |
+| » password | body | string | 是   | 密码   |
+
+### 返回数据
+
+> 返回示例
+
+> 200 Response
+
+```json
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "userid": "123456",
+    "token": "123456"
   }
-  ```
+}
+```
 
-### 6.其他注意事项
+> 结构
 
-- 接口调用时需注
+状态码 **200**
 
----
+| 名称      | 类型    | 必选 | 约束 | 中文名  | 说明 |
+| --------- | ------- | ---- | ---- | ------- | ---- |
+| » code    | integer | true | none |         | none |
+| » msg     | string  | true | none |         | none |
+| » data    | object  | true | none |         | none |
+| »» userid | string  | true | none | 用户 id | none |
+| »» token  | string  | true | none | token   | none |
 
-接口说明格式二
+## GET 获取用户信息
 
----
+GET /v1/api/user
 
-## 2.接口说明
+> 请求示例
 
-### 2.1 分诊接口
+```shell
+curl -X GET "http://127.0.0.1:8080/v1/api/user?user_id=123456"
+```
 
-#### 2.1.1 功能说明
+### 请求参数
 
-该接口实现了\*\*\*服务
+| 名称    | 位置  | 类型   | 必选 | 说明    |
+| ------- | ----- | ------ | ---- | ------- |
+| user_id | query | string | No   | 用户 id |
 
-#### 2.1.2 接口输入数据格式
+### 返回结果
 
-| 序号 | 数据字段 | 字段解释 | 是否必需 | 数据格式 | 候选参数 | 备注信息 |
-| ---- | -------- | -------- | -------- | -------- | -------- | -------- |
-| 1    | main     | 请求 key | 是       | json     |          | 前端输入 |
+> 返回示例
 
-#### 2.1.3 接口输出数据格式
+> 200 Response
 
-| 序号 | 数据字段 | 字段解释 | 数据格式 | 候选参数          | 备注信息 |
-| ---- | -------- | -------- | -------- | ----------------- | -------- |
-| 1    | result   | 返回结果 | json     | {"key":"value"} } |          |
-
-#### 2.1.4 接口调用方式
-
-- 接口调用类型：HTTP POST
-
-- URL 样例：http://127.0.0.1:8080/test/test.json
-
-- post 数据样例
-
-  ```json
-  {
-    "sex_name": "女",
-    "age_value": "30",
-    "age_value_unit": "岁"
+```json
+{
+  "code": 0,
+  "msg": "string",
+  "data": {
+    "id": 0,
+    "updated_at": 0,
+    "created_at": 0,
+    "user_id": "string",
+    "username": 0,
+    "info": 0
   }
-  ```
+}
+```
 
-- 响应样例
+| 名称          | 类型    | 必选  | 约束 | 中文名 | 说明     |
+| ------------- | ------- | ----- | ---- | ------ | -------- |
+| » code        | integer | true  | none |        | none     |
+| » msg         | string  | true  | none |        | none     |
+| » data        | object  | true  | none |        | none     |
+| »» user_id    | string  | false | none |        | 用户 id  |
+| »» updated_at | integer | false | none |        | 更新时间 |
+| »» created_at | integer | false | none |        | 创建时间 |
+| »» username   | string  | false | none |        | 用户名   |
+| »» info       | string  | false | none |        | 其他信息 |
 
-  ```json
-  {
-    "result": "",
-    "status": "",
-    "code": ""
+## GET 获取用户列表
+
+GET /v1/api/users
+
+> 请求示例
+
+```shell
+curl -X GET "http://127.0.0.1:8080/v1/api/users?offset=0&limit=10&sort=desc&sort_key=id&create_time[]=1597520000&create_time[]=1597520000&update_time[]=1597520000&update_time[]=15975200"
+```
+
+### 请求参数
+
+| 名称          | 位置  | 类型          | 必选 | 说明          |
+| ------------- | ----- | ------------- | ---- | ------------- |
+| offset        | query | string        | 否   | none          |
+| limit         | query | string        | 否   | none          |
+| sort          | query | string        | 否   | 排序方式 升降 |
+| sort_key      | query | array[string] | 否   | 排序字段      |
+| create_time[] | query | array[string] | 否   | 起止时间戳    |
+| update_time[] | query | array[string] | 否   | 起止时间戳    |
+
+### 返回结果
+
+> 返回示例
+
+> 200 Response
+
+```json
+{
+  "code": 0,
+  "msg": "string",
+  "data": {
+    "total": 0,
+    "List": [
+      {
+        "id": 0,
+        "updated_at": 0,
+        "created_at": 0,
+        "user_id": "string",
+        "username": 0,
+        "info": 0
+      }
+    ]
   }
-  ```
+}
+```
+
+状态码 **200**
+
+| 名称           | 类型    | 必选  | 约束 | 中文名 | 说明     |
+| -------------- | ------- | ----- | ---- | ------ | -------- |
+| » code         | integer | true  | none |        | none     |
+| » msg          | string  | true  | none |        | none     |
+| » data         | object  | true  | none |        | none     |
+| »» total       | integer | true  | none |        | 总数     |
+| »»» user_id    | string  | false | none |        | 用户 id  |
+| »»» updated_at | integer | false | none |        | 更新时间 |
+| »»» created_at | integer | false | none |        | 创建时间 |
+| »»» username   | string  | false | none |        | 用户名   |
+| »»» info       | string  | false | none |        | 其他信息 |
+
+## 对象结构说明
+
+### 用户结构
+
+| 字段名   | 字段类型 | 字段说明 | 默认值       | 可能为空/null | 备注 |
+| -------- | -------- | -------- | ------------ | ------------- | ---- |
+| username | string   | 用户名   | admin        | no            |
+| password | string   | 密码     | \*\*\*\*\*\* | no            |
+
+## GET Get 请求示例
+
+GET /v1/api/get
+
+> 请求示例
+
+```shell
+curl -X GET "http://127.0.0.1:8080/v1/api/get?key=value"
+```
+
+### 请求参数
+
+| 名称 | 位置  | 类型   | 必选 | 说明 |
+| ---- | ----- | ------ | ---- | ---- |
+| key  | query | string | 否   |      |
+
+### 返回结果
+
+> 返回示例
+
+> 200 Response
+
+```json
+{
+  "code": 0,
+  "msg": "string",
+  "data": {
+    "info": "string"
+  }
+}
+```
+
+| 名称   | 类型    | 必选 | 约束 | 中文名 | 说明 |
+| ------ | ------- | ---- | ---- | ------ | ---- |
+| » code | integer | true | none |        | none |
+| » msg  | string  | true | none |        | none |
+| » data | object  | true | none |        | none |
+| »»info |         |      |      |        | none |
+
+## POST Post 请求示例
+
+POST /v1/api/post
+
+> 请求示例
+
+```shell
+curl -X POST "http://127.0.0.1:8080/v1/api/post" -H "Content-Type: application/json" -d '{"key":"value"}'
+```
+
+### 请求参数
+
+> 请求示例
+
+```json
+{
+  "key": "value"
+}
+```
+
+| 名称 | 位置 | 类型   | 必选 | 说明 |
+| ---- | ---- | ------ | ---- | ---- |
+| key  | body | string | 否   |      |
+
+### 返回结果
+
+> 返回示例
+
+> 200 Response
+
+```json
+{
+  "code": 0,
+  "msg": "string",
+  "data": {
+    "info": "string"
+  }
+}
+```
+
+| 名称   | 类型    | 必选 | 约束 | 中文名 | 说明 |
+| ------ | ------- | ---- | ---- | ------ | ---- |
+| » code | integer | true | none |        | none |
+| » msg  | string  | true | none |        | none |
+| » data | object  | true | none |        | none |
+| »»info |         |      |      |        | none |
