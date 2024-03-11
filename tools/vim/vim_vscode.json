@@ -12,8 +12,29 @@
   "vim.foldfix": true,
   "vim.useSystemClipboard": true,
   "vim.normalModeKeyBindings": [
+    // t 快速切换各个子页面
     {
-      "before": ["<leader", "c", "l"],
+      "before": ["t"],
+      "commands": [
+        "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+      ]
+    },
+    {
+      "before": ["<leader>", ":"],
+      "commands": ["workbench.action.showCommands"],
+      "silent": true
+    },
+    // 需要 bookmarks 插件的支持
+    {
+      "before": ["<leader>", "m"],
+      "commands": ["bookmarks.toggle"]
+    },
+    {
+      "before": ["<leader>", "b"],
+      "commands": ["bookmarks.list"]
+    },
+    {
+      "before": ["<leader>", "c", "l"],
       "commands": ["editor.action.addCommentLine"]
     },
     {
@@ -41,11 +62,11 @@
       "commands": ["workbench.action.showErrorsWarnings"]
     },
     {
-      "before": ["g", "/"],
+      "before": ["<leader>", "/"],
       "commands": ["workbench.view.search"]
     },
     {
-      "before": ["<leader>", "f", "t"],
+      "before": ["<leader>", "c", "f"],
       "commands": ["editor.action.formatDocument"]
     },
     {
@@ -55,6 +76,18 @@
     {
       "before": ["<leader>", "g", "r"],
       "commands": ["editor.action.goToReferences"]
+    },
+    {
+      "before": ["<leader>", "p", "r"],
+      "commands": ["workbench.action.debug.restart"]
+    },
+    {
+      "before": ["<leader>", "p", "s"],
+      "commands": ["workbench.action.debug.stop"]
+    },
+    {
+      "before": ["<leader>", "d"],
+      "commands": ["editor.debug.action.toggleBreakpoint"]
     }
   ]
 }

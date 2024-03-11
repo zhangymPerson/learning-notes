@@ -1,0 +1,82 @@
+// Place your key bindings in this file to override the defaults
+[
+  // --- 资源管理器中对文件或目录的操作
+  // 新建文件
+  {
+    "key": "i",
+    "command": "explorer.newFile",
+    "when": " explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
+  },
+  // 新建目录
+  {
+    "key": "o",
+    "command": "explorer.newFolder",
+    "when": " explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
+  },
+  // 刷新资源管理器
+  {
+    "key": "r",
+    "command": "workbench.files.action.refreshFilesExplorer",
+    "when": " explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
+  },
+  // 重命名文件或目录
+  {
+    "key": "a",
+    "command": "renameFile",
+    "when": " explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
+  },
+  // 删除文件或目录
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": " explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus "
+  },
+  // 剪切文件或目录
+  {
+    "key": "x",
+    "command": "filesExplorer.cut",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // 复制文件或目录
+  {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+  },
+  // 粘贴文件或目录
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  // --- 全局命令
+  // 显示命令面板
+  {
+    "key": "cmd+g c",
+    "command": "workbench.action.showCommands"
+  }, // 打开设置页面
+  {
+    "key": "cmd+g s",
+    "command": "workbench.action.openSettings"
+  },
+  // 打开热键映射
+  {
+    "key": "cmd+g k",
+    "command": "workbench.action.openGlobalKeybindings"
+  },
+  // 打开一个目录
+  {
+    "key": "cmd+g m",
+    "command": "workbench.action.files.openFolder"
+  },
+  // 打开一个文件
+  {
+    "key": "cmd+g f",
+    "command": "workbench.action.files.openFile"
+  },
+  // 打开最近记录
+  {
+    "key": "cmd+g h",
+    "command": "workbench.action.openRecent"
+  }
+]
