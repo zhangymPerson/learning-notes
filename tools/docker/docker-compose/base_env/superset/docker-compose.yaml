@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  superset:
+    image: apache/superset
+    container_name: superset
+    environment:
+      - SUPERSET_SECRET_KEY=admin
+    ports:
+      - "8080:8088"
+    # 目录映射
+    volumes:
+      - ./init.sh:/app/init.sh
+    # 执行脚本文件
+    command: "/app/init.sh"

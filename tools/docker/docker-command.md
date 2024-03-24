@@ -14,13 +14,13 @@
 
 - 常用仓库命令
 
-  | 操作   | 命令                                                  | 说明                                                                     |
+  | 操作   | 命令                                                  | 说明                                                                     | 备注                                     |
   | ------ | ----------------------------------------------------- | ------------------------------------------------------------------------ | ---------------------------------------- |
   | 检索   | docker search                                         | 关键字如：docker search redis                                            | 经常会去 docker hub 上检索镜像的详细信息 |
   | 拉取   | docker pull 镜像名:tag                                | :tag 是可选的，tag 表示标签，通常是软件的版本号，默认是 latest(即最新版) |
-  | 列表   | docker images                                         | 查看所有本地镜像                                                         |
-  | 删除   | docker rmi image-id                                   | 删除指定的本地镜像                                                       |
-  | 传文件 | docker cp /home/work/path containerid:/home/work/path | 传本地文件到 docker 容器内部                                             |
+  | 列表   | docker images                                         | 查看所有本地镜像                                                         |                                          |
+  | 删除   | docker rmi image-id                                   | 删除指定的本地镜像                                                       |                                          |
+  | 传文件 | docker cp /home/work/path containerid:/home/work/path | 传本地文件到 docker 容器内部                                             |                                          |
 
 - 常用操作
 
