@@ -12,7 +12,7 @@ superset fab create-admin \
 superset db upgrade
 
 # 加载示例数据
-superset load_examples
+# superset load_examples
 
 # superset 初始化
 superset init 
