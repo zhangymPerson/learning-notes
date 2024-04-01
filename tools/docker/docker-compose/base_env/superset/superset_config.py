@@ -1,10 +1,8 @@
 SECRET_KEY = 'superset'
 # SQLALCHEMY_DATABASE_URI = 'postgresql://superset:superset@postgres/superset'
-WTF_CSRF_ENABLED = False
-TALISMAN_ENABLED = False
 BABEL_DEFAULT_LOCALE = "en"
 LANGUAGES = {
-    "zh": {"flag": "cn", "name": "简体中文1"},
+    "zh": {"flag": "cn", "name": "简体中文"},
     "en": {"flag": "us", "name": "English"},
 }
 PUBLIC_ROLE_LIKE = "Gamma"
@@ -16,8 +14,8 @@ GUEST_TOKEN_JWT_ALGO = "HS256"
 GUEST_TOKEN_HEADER_NAME = "X-GuestToken"
 GUEST_TOKEN_JWT_EXP_SECONDS = 300
 
-# 允许跨域访问的域名
-ALLOW_ORIGINS = ['localhost:8088']
+# 允许跨域访问的域名 空 允许所有
+ALLOW_ORIGINS = ['']
 
 # CSRF Config
 WTF_CSRF_ENABLED = False
