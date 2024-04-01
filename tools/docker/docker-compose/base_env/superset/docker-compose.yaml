@@ -1,6 +1,7 @@
 version: "3.9"
 services:
   superset:
+    # 3.1.1 版本 内嵌分享 权限有 bug
     image: apache/superset:3.1.0
     container_name: superset
     environment:
