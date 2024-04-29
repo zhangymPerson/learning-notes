@@ -55,9 +55,7 @@ nmap <leader>fa <ESC>:action GotoAction<CR>
 " 定位当前文件
 let g:WhichKeyDesc_F_file = "<leader>ff 文件-定位当前文件"
 nmap <leader>ff <ESC>:action SelectInProjectView<CR>
-" 格式化代码
-let g:WhichKeyDesc_F_formatCode = "<leader>ft 文件-格式化代码"
-nmap <leader>ft <ESC>:action ReformatCode<CR>
+
 " 打开当前文件的历史提交记录
 let g:WhichKeyDesc_F_history = "<leader>fh 文件-文件历史改动"
 nmap <leader>fh <ESC>:action Vcs.ShowTabbedFileHistory<CR>
@@ -78,7 +76,7 @@ let g:WhichKeyDesc_S_Show_ParameterInfo = "<leader>sp 查看函数变量"
 nmap <leader>sp <action>(ParameterInfo)
 
 
-" ======================================== 
+" ========================================
 " leader + r 重置操作
 let g:WhichKeyDesc_R = "<leader>r 重置操作"
 " 变量重命名
@@ -115,7 +113,7 @@ vmap <leader>ev <action>(IntroduceVariable)
 
 " ========================================
 " leader + t 扩展
-let g:WhichKeyDesc_T = "<leader>t 终端/翻译"
+let g:WhichKeyDesc_T = "<leader>t  tab/终端/翻译"
 " 跳转到 terminal 快捷方式
 let g:WhichKeyDesc_T_terminal = "<leader>to 打开终端"
 nmap <leader>to <ESC>:action ActivateTerminalToolWindow<CR>
@@ -124,6 +122,8 @@ let g:WhichKeyDesc_T_translate = "<leader>tw 翻译单词"
 nmap <leader>tw <ESC>:action $EditorTranslateAction<CR>
 let g:WhichKeyDesc_T_translateDoc = "<leader>td 翻译段落"
 nmap <leader>td <ESC>:action $TranslateDocumentationAction<CR>
+let g:WhichKeyDesc_T_Switch = "<leader>tt 打开所有标签"
+nmap <leader>tt <ESC>:action Switcher<CR>
 
 " ========================================
 " leader + h 扩展
@@ -138,7 +138,9 @@ let g:WhichKeyDesc_C = "<leader>c 注释"
 " 添加注释
 let g:WhichKeyDesc_C_line = "<leader>cl 单行注释"
 nmap <leader>cl :action CommentByLineComment<CR>
-
+" 格式化代码
+let g:WhichKeyDesc_F_formatCode = "<leader>cf 文件-格式化代码"
+nmap <leader>cf <ESC>:action ReformatCode<CR>
 " Alt + enter 键 快捷修复提示
 
 set ideajoin
