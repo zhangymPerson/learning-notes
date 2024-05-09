@@ -6,7 +6,12 @@ LANGUAGES = {
     "en": {"flag": "us", "name": "English"},
 }
 PUBLIC_ROLE_LIKE = "Gamma"
-FEATURE_FLAGS = {"EMBEDDED_SUPERSET": True}
+FEATURE_FLAGS = {
+    "EMBEDDED_SUPERSET": True,
+    "DRILL_TO_DETAIL": False,
+    "DASHBOARD_CROSS_FILTERS": False,
+    "ENABLE_TEMPLATE_PROCESSING": True
+}
 # Dashboard embedding
 GUEST_ROLE_NAME = "Public"
 GUEST_TOKEN_JWT_SECRET = "test-guest-secret-change-me"
