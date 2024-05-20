@@ -21,6 +21,13 @@ set which-key
 set notimeout
 
 " ========================================
+nmap gb :action Back<CR>
+nmap gf :action Forward<CR>
+nmap gi :action GotoImplementation<CR>
+nmap ge :action GotoNextError<CR>
+nmap t :action Switcher<CR>
+
+" ========================================
 " leader + g 跳转类
 let g:WhichKeyDesc_G = "<leader>g 跳转操作"
 " 返回到上一个光标位置
