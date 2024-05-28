@@ -5,9 +5,9 @@ services:
     restart: always
     container_name: mysql
     environment:
-      # MYSQL_DATABASE: docker_test
-      # MYSQL_USER: mysql
-      # MYSQL_PASSWORD: 123456 
+      MYSQL_DATABASE: docker_test
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: 123456 
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
       TZ: Asia/Shanghai
     ports:
@@ -16,4 +16,6 @@ services:
       - ./data/mysql:/var/lib/mysql
     command:
       # 启动命令参数
-      --max_connections=1000 --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci --default-authentication-plugin=mysql_native_password
+      --max_connections=1000 --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci 
+
+# 高版本的链接时 需要添加 allowPublicKeyRetrieval=true 配置，dbeaver 等工具可以设置 allowPublicKeyRetrieval 为 true
