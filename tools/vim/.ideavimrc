@@ -128,9 +128,9 @@ let g:WhichKeyDesc_T_terminal = "<leader>to 打开终端"
 nmap <leader>to :action ActivateTerminalToolWindow<CR>
 " 翻译 需要翻译插件的支持
 let g:WhichKeyDesc_T_translate = "<leader>tw 翻译单词"
-nmap <leader>tw :action $EditorTranslateAction<CR>
+vmap <leader>tw :action $EditorTranslateAction<CR>
 let g:WhichKeyDesc_T_translateDoc = "<leader>td 翻译段落"
-nmap <leader>td :action $TranslateDocumentationAction<CR>
+vmap <leader>td :action $TranslateDocumentationAction<CR>
 let g:WhichKeyDesc_T_Switch = "<leader>tt 打开所有标签"
 nmap <leader>tt :action Switcher<CR>
 
@@ -156,9 +156,10 @@ set ideajoin
 
 " ========================================
 " 单个文件内快速跳转
+" idea easymotion 插件依赖
 set easymotion
-nmap f <Plug>(easymotion-s)
-nmap e <Plug>(easymotion-f)
+nmap <leader><leader>s <Plug>(easymotion-s)
+nmap <leader><leader>f <Plug>(easymotion-f)
 
 set NERDTree
 " 打开目录
@@ -172,3 +173,8 @@ map <leader>z <Action>(ToggleDistractionFreeMode)
 let g:WhichKeyDesc_V = "<leader>v 打开当前文件的视图"
 let g:WhichKeyDesc_V_Structure = "<leader>vf 查看函数"
 map <leader>vf <Action>(FileStructurePopup)
+
+let g:WhichKeyDesc_x = "<leader>x 关闭当前文件"
+nmap <leader>x <Action>(CloseEditor)
+let g:WhichKeyDesc_X = "<leader>X  打开刚关闭的文件"
+nmap <leader>X <Action>(ReopenClosedTab)

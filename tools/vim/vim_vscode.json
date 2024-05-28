@@ -88,6 +88,40 @@
     {
       "before": ["<leader>", "d"],
       "commands": ["editor.debug.action.toggleBreakpoint"]
+    },
+    // 快速切换编辑器 H 左 L 右
+    {
+      "before": ["H"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    {
+      "before": ["L"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    // 错误快捷提示显示
+    {
+      "before": ["<leader>", "."],
+      "commands": ["editor.action.quickFix"]
+    },
+    // 需要使用 whichkey 插件
+    {
+      "before": ["c"],
+      "commands": ["whichkey.show"]
+    },
+    // 禅模式
+    {
+      "before": ["<leader>", "z"],
+      "commands": ["workbench.action.toggleZenMode"]
+    },
+    // 关闭当前 editor
+    {
+      "before": ["<leader>", "x"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    // 重新打开刚关闭的 editor
+    {
+      "before": ["<leader>", "X"],
+      "commands": ["workbench.action.reopenClosedEditor"]
     }
   ]
 }
