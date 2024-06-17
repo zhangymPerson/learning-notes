@@ -140,6 +140,7 @@ let g:WhichKeyDesc_H = "<leader>h 帮助"
 " 查看所有的 action 动作
 let g:WhichKeyDesc_H_list = "<leader>hl 查看所有idea的action"
 nmap <leader>hl :action GotoAction<CR>
+" 在 vim 模式下输入 :actionlist 可以查看所有 actions 名称
 
 " ========================================
 " leader + c 注释
@@ -148,8 +149,11 @@ let g:WhichKeyDesc_C = "<leader>c 注释"
 let g:WhichKeyDesc_C_line = "<leader>cl 单行注释"
 nmap <leader>cl :action CommentByLineComment<CR>
 " 格式化代码
-let g:WhichKeyDesc_F_formatCode = "<leader>cf 文件-格式化代码"
+let g:WhichKeyDesc_C_F_formatCode = "<leader>cf 文件-格式化代码"
 nmap <leader>cf :action ReformatCode<CR>
+" 格式化代码
+let g:WhichKeyDesc_C_I_optimize_import = "<leader>ci 文件-去掉多余的包"
+nmap <leader>ci :action OptimizeImports<CR>
 " Alt + enter 键 快捷修复提示
 
 set ideajoin
