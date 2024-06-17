@@ -13,9 +13,11 @@
 NAME=dev
 # 项目目录
 PROJECT_PATH=~/dev
+mkdir -p ${PROJECT_PATH}
 # 判断是否已经创建
-tmux has-session -t ${NAME}
-if [ $? != 0 ]; then
+if tmux has-session -t ${NAME}; then
+	:
+else
 	tmux new-session -s ${NAME} -n code -d
 	tmux new-window -n database -t ${NAME}
 	tmux new-window -n log -t ${NAME}
@@ -24,6 +26,6 @@ if [ $? != 0 ]; then
 	tmux send-keys -t ${NAME}:database "cd ${PROJECT_PATH}; echo '执行数据库连接命令'" C-m
 	tmux send-keys -t ${NAME}:log "cd ${PROJECT_PATH}; echo '执行日志查看命令'" C-m
 	tmux send-keys -t ${NAME}:test "cd ${PROJECT_PATH}; echo '执行测试命令' " C-m
-	tmux select-window -t development:code
+	tmux select-window -t ${PROJECT_PATH}:code
 fi
 tmux a -t ${NAME}
