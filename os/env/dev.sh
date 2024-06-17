@@ -80,6 +80,8 @@ alias git_config="git config --list"
 alias git_alias="git config --list |grep alias"
 
 # kubectl
+# 命令网站 - https://kubernetes.io/zh-cn/docs/reference/kubectl/quick-reference/
+# source <(kubectl completion bash)
 alias kubectl_grep_pod="kubectl get pods | grep "
 alias kubectl_delete_pod="kubectl delete pod "
 alias kubectl_exec="kubectl exec -it"
