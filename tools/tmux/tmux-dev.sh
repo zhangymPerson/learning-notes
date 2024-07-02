@@ -18,10 +18,13 @@ mkdir -p ${PROJECT_PATH}
 if tmux has-session -t ${NAME}; then
 	:
 else
+	# 创建 tmux window
 	tmux new-session -s ${NAME} -n code -d
 	tmux new-window -n database -t ${NAME}
 	tmux new-window -n log -t ${NAME}
 	tmux new-window -n test -t ${NAME}
+
+	# 在每个 window 中执行命令
 	tmux send-keys -t ${NAME}:code "cd ${PROJECT_PATH}; echo '执行打开项目命令 如: code . vim 等' " C-m
 	tmux send-keys -t ${NAME}:database "cd ${PROJECT_PATH}; echo '执行数据库连接命令'" C-m
 	tmux send-keys -t ${NAME}:log "cd ${PROJECT_PATH}; echo '执行日志查看命令'" C-m
