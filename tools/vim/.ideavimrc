@@ -141,6 +141,8 @@ let g:WhichKeyDesc_H = "<leader>h 帮助"
 let g:WhichKeyDesc_H_list = "<leader>hl 查看所有idea的action"
 nmap <leader>hl :action GotoAction<CR>
 " 在 vim 模式下输入 :actionlist 可以查看所有 actions 名称
+let g:WhichKeyDesc_H_search = "<leader>hs 模糊查看所有idea的action"
+nmap <leader>hs :actionlist 
 
 " ========================================
 " leader + c 注释
