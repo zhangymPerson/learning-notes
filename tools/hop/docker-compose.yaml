@@ -6,6 +6,8 @@ services:
       - 8080:8080
     volumes:
       - ./hop/files:/files
+      - ./hop/files/jdbc:/files/jdbc
+      - ./hop/files/metadata:/files/metadata
       - ./hop/home/hop:/home/hop
       - ./hop/opt/hop:/opt/hop
     container_name: hop-test-container
@@ -15,5 +17,15 @@ services:
       - HOP_PROJECT_FOLDER=/files
       # - HOP_FILE_PATH=
       - HOP_LOG_LEVEL=Basic
+      - HOP_SHARED_JDBC_FOLDERS=/files/jdbc
+      - HOP_SERVER_METADATA_FOLDER=/files/metadata
+      - HOP_ENVIRONMENT_CONFIG_FILE_NAME_PATHS=/files/config/localTestConfig.json
+      - HOP_ENVIRONMENT_NAME=Local
+      - HOP_PROJECT_FOLDER=/files
+      - HOP_PROJECT_NAME=proj1
+      - HOP_SERVER_HOSTNAME=0.0.0.0
+      - HOP_SERVER_PORT=8182
+      - HOP_SERVER_PASS=admin
+      - HOP_SERVER_USER=admin
     tty: true
     stdin_open: true
