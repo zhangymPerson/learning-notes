@@ -16,6 +16,8 @@ var configFile string
 // 文本内容
 var content string
 
+var contentFile string
+
 // go run main.go -f replace.yaml -c aaaaccccccc
 func main() {
 	app := &cli.App{
@@ -25,20 +27,22 @@ func main() {
 		// 一个是 文本内容 str
 		Flags: []cli.Flag{
 			&cli.StringFlag{
-				Name:        "config",
-				Value:       "replace.yaml",
-				Usage:       "配置文件位置",
-				Required:    false,
-				Destination: &configFile,
-				Aliases:     []string{"f"},
+				Name:    "config",
+				Value:   "replace.yaml",
+				Usage:   "配置文件位置",
+				Aliases: []string{"c"},
 			},
 			&cli.StringFlag{
-				Name:        "content",
-				Value:       "",
-				Usage:       "要实现替换的文本内容",
-				Required:    false,
-				Destination: &content,
-				Aliases:     []string{"c"},
+				Name:    "content",
+				Value:   "",
+				Usage:   "要实现替换的文本内容",
+				Aliases: []string{"s"},
+			},
+			&cli.StringFlag{
+				Name:    "file",
+				Value:   "",
+				Usage:   "要替换的内容所在文件位置",
+				Aliases: []string{"f"},
 			},
 		},
 		Args:   true,
@@ -51,13 +55,19 @@ func main() {
 }
 
 func replace(c *cli.Context) error {
-	// log.Printf("configFile = [%+v]\n", configFile)
+	configFile = c.String("config")
+	content = c.String("content")
+	contentFile = c.String("file")
+	log.Printf("configFile = [%+v]\n", configFile)
 	// 获取非标志参数，即位置参数
 	if content == "" {
 		args := c.Args().Slice()
 		content = strings.Join(args, " ")
 	}
-	// log.Printf("原始文本 = [%+v]\n", content)
+	if content == "" {
+		content = getStringFromFile(contentFile)
+	}
+	log.Printf("原始文本 = [%+v]\n", content)
 	// 读取配置文件
 	config := getConfig(configFile)
 	replaces := config.Replaces
@@ -88,14 +98,14 @@ type Config struct {
 
 func getConfig(configFile string) *Config {
 	// 设置配置文件的路径和类型
-	viper.AddConfigPath("/etc/")
+	viper.AddConfigPath("/etc")
 	viper.AddConfigPath("$HOME/.config")
 	viper.SetConfigFile(configFile)
 
 	// 读取配置文件
 	err := viper.ReadInConfig()
 	if err != nil {
-		log.Fatalf("读取配置出错，配置文件为, %s", err)
+		log.Fatalf("读取配置出错，配置文件为, %s,%s", configFile, err)
 	}
 
 	var config Config
@@ -105,4 +115,13 @@ func getConfig(configFile string) *Config {
 	}
 	// log.Printf("config = [%+v]\n", config)
 	return &config
+}
+
+func getStringFromFile(filename string) string {
+	// 读取文件中的所有文本返回
+	byte, err := os.ReadFile(filename)
+	if err != nil {
+		log.Fatalf("读取文件出错，文件为, %s", err)
+	}
+	return string(byte)
 }
