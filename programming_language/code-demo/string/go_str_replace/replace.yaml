@@ -1,0 +1,6 @@
+replaces:
+  - old-text: a
+    new-text: b
+
+  - old-text: c
+    new-text: d
