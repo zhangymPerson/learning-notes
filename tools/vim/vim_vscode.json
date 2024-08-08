@@ -20,74 +20,9 @@
       ]
     },
     {
-      "before": ["<leader>", ":"],
+      "before": [":"],
       "commands": ["workbench.action.showCommands"],
       "silent": true
-    },
-    // 需要 bookmarks 插件的支持
-    {
-      "before": ["<leader>", "m"],
-      "commands": ["bookmarks.toggle"]
-    },
-    {
-      "before": ["<leader>", "b"],
-      "commands": ["bookmarks.list"]
-    },
-    {
-      "before": ["<leader>", "c", "l"],
-      "commands": ["editor.action.addCommentLine"]
-    },
-    {
-      "before": ["<leader>", "t"],
-      "commands": ["workbench.action.terminal.focus"]
-    },
-    {
-      "before": ["<leader>", "r", "n"],
-      "commands": ["editor.action.rename"]
-    },
-    {
-      "before": ["<leader>", "d", "o", "c"],
-      "commands": ["editor.action.showHover"]
-    },
-    {
-      "before": ["<leader>", "g", "b"],
-      "commands": ["workbench.action.navigateBack"]
-    },
-    {
-      "before": ["<leader>", "g", "f"],
-      "commands": ["workbench.action.navigateForward"]
-    },
-    {
-      "before": ["<leader>", "e", "e"],
-      "commands": ["workbench.action.showErrorsWarnings"]
-    },
-    {
-      "before": ["<leader>", "/"],
-      "commands": ["workbench.view.search"]
-    },
-    {
-      "before": ["<leader>", "c", "f"],
-      "commands": ["editor.action.formatDocument"]
-    },
-    {
-      "before": ["<leader>", "g", "i"],
-      "commands": ["editor.action.goToImplementation"]
-    },
-    {
-      "before": ["<leader>", "g", "r"],
-      "commands": ["editor.action.goToReferences"]
-    },
-    {
-      "before": ["<leader>", "p", "r"],
-      "commands": ["workbench.action.debug.restart"]
-    },
-    {
-      "before": ["<leader>", "p", "s"],
-      "commands": ["workbench.action.debug.stop"]
-    },
-    {
-      "before": ["<leader>", "d"],
-      "commands": ["editor.debug.action.toggleBreakpoint"]
     },
     // 快速切换编辑器 H 左 L 右
     {
@@ -98,30 +33,237 @@
       "before": ["L"],
       "commands": ["workbench.action.nextEditor"]
     },
-    // 错误快捷提示显示
-    {
-      "before": ["<leader>", "."],
-      "commands": ["editor.action.quickFix"]
-    },
     // 需要使用 whichkey 插件
     {
-      "before": ["c"],
+      "before": ["<leader>"],
       "commands": ["whichkey.show"]
-    },
-    // 禅模式
+    }
+  ],
+  "whichkey.bindings": [
+    // =c=======================================
     {
-      "before": ["<leader>", "z"],
-      "commands": ["workbench.action.toggleZenMode"]
+      "key": "c",
+      "name": "+代码",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "c",
+          "name": "代码注释",
+          "type": "command",
+          "command": "editor.action.commentLine"
+        },
+        {
+          "key": "d",
+          "name": "查看函数说明",
+          "type": "command",
+          "command": "editor.action.showHover"
+        },
+        {
+          "key": "f",
+          "name": "代码格式化",
+          "type": "command",
+          "command": "editor.action.formatDocument"
+        },
+        {
+          "key": "n",
+          "name": "代码重命名",
+          "type": "command",
+          "command": "editor.action.rename"
+        },
+        {
+          "key": "r",
+          "name": "代码重构",
+          "type": "command",
+          "command": "editor.action.refactor"
+        }
+      ]
     },
-    // 关闭当前 editor
+    // =f=======================================
     {
-      "before": ["<leader>", "x"],
-      "commands": ["workbench.action.closeActiveEditor"]
+      "key": "f",
+      "name": "+搜索/文件",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "/",
+          "name": "全局搜索",
+          "type": "command",
+          "command": "workbench.view.search"
+        },
+        {
+          "key": "f",
+          "name": "文件内搜索",
+          "type": "command",
+          "command": "actions.find"
+        },
+        {
+          "key": "o",
+          "name": "打开文件",
+          "type": "command",
+          "command": "workbench.action.files.openFile"
+        },
+        {
+          "key": "r",
+          "name": "重命名文件",
+          "type": "command",
+          "command": "workbench.action.renameFile"
+        }
+      ]
     },
-    // 重新打开刚关闭的 editor
+    // =g=======================================
     {
-      "before": ["<leader>", "X"],
-      "commands": ["workbench.action.reopenClosedEditor"]
+      "key": "g",
+      "name": "+ 跳转",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "b",
+          "name": "跳转到上一次定位",
+          "type": "command",
+          "command": "workbench.action.navigateBack"
+        },
+        {
+          "key": "d",
+          "name": "跳转到定义",
+          "type": "command",
+          "command": "editor.action.revealDefinition"
+        },
+        {
+          "key": "e",
+          "name": "跳转到错误",
+          "type": "command",
+          "command": "workbench.action.showErrorsWarnings"
+        },
+
+        {
+          "key": "i",
+          "name": "跳转到实现",
+          "type": "command",
+          "command": "editor.action.goToImplementation"
+        },
+        {
+          "key": "r",
+          "name": "跳转到引用",
+          "type": "command",
+          "command": "editor.action.goToReferences"
+        }
+      ]
+    },
+    // =m=======================================
+    {
+      "key": "m",
+      "name": "+书签",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "a",
+          "name": "添加书签",
+          "command": "bookmarks.toggle"
+        },
+        {
+          "key": "d",
+          "name": "删除书签",
+          "command": "bookmarks.clear"
+        },
+        {
+          "key": "l",
+          "name": "列出书签",
+          "command": "bookmarks.listFromAllFiles"
+        }
+      ]
+    },
+    // =p=======================================
+    {
+      "key": "p",
+      "name": "+ 项目调试",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "d",
+          "name": "添加调试debug位置",
+          "type": "command",
+          "command": "editor.debug.action.toggleBreakpoint"
+        },
+        {
+          "key": "r",
+          "name": "启动/重启",
+          "type": "command",
+          "command": "workbench.action.debug.restart"
+        },
+        {
+          "key": "s",
+          "name": "停止",
+          "type": "command",
+          "command": "workbench.action.debug.stop"
+        }
+      ]
+    },
+    // =s=======================================
+    {
+      "key": "s",
+      "name": "保存文件",
+      "type": "command",
+      "command": "workbench.action.files.save"
+    },
+    // =t=======================================
+    {
+      "key": "t",
+      "name": "+ 标签/终端",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "h",
+          "name": "切换标签",
+          "type": "command",
+          "command": "workbench.action.previousEditor"
+        },
+        {
+          "key": "l",
+          "name": "切换标签",
+          "type": "command",
+          "command": "workbench.action.nextEditor"
+        },
+        {
+          "key": "o",
+          "name": "打开所有标签",
+          "type": "command",
+          "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+        },
+        {
+          "key": "t",
+          "name": "新建终端",
+          "type": "command",
+          "command": "workbench.action.terminal.new"
+        }
+      ]
+    },
+    // =x=======================================
+    {
+      "key": "x",
+      "name": "关闭当前窗口",
+      "type": "command",
+      "command": "workbench.action.closeActiveEditor"
+    },
+    // =X=======================================
+    {
+      "key": "X",
+      "name": "打开刚关闭的窗口",
+      "type": "command",
+      "command": "workbench.action.reopenClosedEditor"
+    },
+    // =z=======================================
+    {
+      "key": "z",
+      "name": "进入禅模式",
+      "type": "command",
+      "command": "workbench.action.toggleZenMode"
+    },
+    // =.=======================================
+    {
+      "key": ".",
+      "name": "错误快捷提示",
+      "type": "command",
+      "command": "editor.action.quickFix"
     }
   ]
 }
