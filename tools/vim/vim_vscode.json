@@ -107,6 +107,12 @@
           "name": "重命名文件",
           "type": "command",
           "command": "workbench.action.renameFile"
+        },
+        {
+          "key": "x",
+          "name": "关闭其他 tabs",
+          "type": "command",
+          "command": "workbench.action.closeOtherEditors"
         }
       ]
     },

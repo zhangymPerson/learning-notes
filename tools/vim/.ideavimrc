@@ -27,25 +27,45 @@ nmap gi :action GotoImplementation<CR>
 nmap ge :action GotoNextError<CR>
 nmap t :action Switcher<CR>
 
-" ========================================
-" leader + g 跳转类
-let g:WhichKeyDesc_G = "<leader>g 跳转操作"
-" 返回到上一个光标位置
-let g:WhichKeyDesc_G_back = "<leader>gb 跳转到上一步"
-nmap <leader>gb :action Back<CR>
-" 光标前进
-let g:WhichKeyDesc_G_foreard = "<leader>gf 前进一步"
-nmap <leader>gf :action Forward<CR>
-" 跳转到实现类方法中
-let g:WhichKeyDesc_G_impl = "<leader>gd 跳转到实现位置"
-nmap <leader>gd :action GotoImplementation<CR>
-let g:WhichKeyDesc_G_error = "<leader>ge 跳转到错误位置"
-" 快速跳转到错误位置
-nmap <leader>ge :action GotoNextError<CR>
+" =c=======================================
+" leader + c 注释
+let g:WhichKeyDesc_C = "<leader>c +代码"
+" 添加注释
+let g:WhichKeyDesc_C_line = "<leader>cl 代码注释"
+nmap <leader>cl :action CommentByLineComment<CR>
+" 格式化代码
+let g:WhichKeyDesc_C_F_formatCode = "<leader>cf 文件-格式化代码"
+nmap <leader>cf :action ReformatCode<CR>
+" 格式化代码
+let g:WhichKeyDesc_C_I_optimize_import = "<leader>ci 文件-去掉多余的包"
+nmap <leader>ci :action OptimizeImports<CR>
+" Alt + enter 键 快捷修复提示
 
-" ========================================
+" =e=======================================
+" leader + E 扩展
+let g:WhichKeyDesc_E = "<leader>e +extract"
+" e: Extract
+" extract method/function
+let g:WhichKeyDesc_E_method = "<leader>em 生成-函数"
+vmap <leader>em <action>(ExtractMethod)
+" extract constant
+let g:WhichKeyDesc_E_constant = "<leader>ec 生成-常量"
+vmap <leader>ec <action>(IntroduceConstant)
+" extract field
+let g:WhichKeyDesc_E_field = "<leader>ef 生成-属性"
+vmap <leader>ef <action>(IntroduceField)
+" extract variable
+let g:WhichKeyDesc_E_var = "<leader>ev 生成变量"
+vmap <leader>ev <action>(IntroduceVariable)
+
+" =e=======================================
+" 打开目录
+let g:WhichKeyDesc_E = "<leader>e 打开目录"
+nmap <leader>e :NERDTree<CR>
+
+" =f=======================================
 " leader + f 查找类
-let g:WhichKeyDesc_F = "<leader>f 查找操作/文件操作"
+let g:WhichKeyDesc_F = "<leader>f +查找/文件"
 " 快速打开全局搜索
 let g:WhichKeyDesc_F_FindInPath = "<leader>f/ 全局查找"
 nmap <leader>f/ :action FindInPath<CR>
@@ -62,14 +82,66 @@ nmap <leader>fa :action GotoAction<CR>
 " 定位当前文件
 let g:WhichKeyDesc_F_file = "<leader>ff 文件-定位当前文件"
 nmap <leader>ff :action SelectInProjectView<CR>
-
 " 打开当前文件的历史提交记录
 let g:WhichKeyDesc_F_history = "<leader>fh 文件-文件历史改动"
 nmap <leader>fh :action Vcs.ShowTabbedFileHistory<CR>
+" 变量重命名
+let g:WhichKeyDesc_F_rename = "<leader>fn 重命名"
+nma <leader>fn :action RenameElement<CR>
+let g:WhichKeyDesc_F_close = "<leader>fx 关闭其他 tab"
+nmap <leader>fx <Action>(CloseAllEditorsButActive)
 
-" ========================================
+" =g=======================================
+" leader + g 跳转类
+let g:WhichKeyDesc_G = "<leader>g +跳转"
+" 返回到上一个光标位置
+let g:WhichKeyDesc_G_back = "<leader>gb 跳转到上一步"
+nmap <leader>gb :action Back<CR>
+" 光标前进
+let g:WhichKeyDesc_G_foreard = "<leader>gf 前进一步"
+nmap <leader>gf :action Forward<CR>
+" 跳转到实现类方法中
+let g:WhichKeyDesc_G_impl = "<leader>gd 跳转到实现位置"
+nmap <leader>gd :action GotoImplementation<CR>
+let g:WhichKeyDesc_G_error = "<leader>ge 跳转到错误位置"
+" 快速跳转到错误位置
+nmap <leader>ge :action GotoNextError<CR>
+
+" =h=======================================
+" leader + h 扩展
+let g:WhichKeyDesc_H = "<leader>h +帮助"
+" 查看所有的 action 动作
+let g:WhichKeyDesc_H_list = "<leader>hl 查看所有idea的action"
+nmap <leader>hl :action GotoAction<CR>
+" 在 vim 模式下输入 :actionlist 可以查看所有 actions 名称
+let g:WhichKeyDesc_H_search = "<leader>hs 模糊查看所有idea的action"
+nmap <leader>hs :actionlist
+
+" =m=======================================
+let g:WhichKeyDesc_m = "<leader>m +书签"
+let g:WhichKeyDesc_m_bookmarks = "<leader>mm 书签操作"
+nmap <leader>mm <Action>(Bookmarks)
+let g:WhichKeyDesc_m_bookmarks_list = "<leader>ml 书签列表"
+nmap <leader>ml <Action>(ShowBookmarks)
+
+" =p=======================================
+" leader + p 项目相关的操作
+let g:WhichKeyDesc_P = "<leader>p +项目"
+" 快速启动 debug run stop 项目
+let g:WhichKeyDesc_P_debug = "<leader>pd debug-项目"
+nmap <leader>pd :action Debug<CR>
+let g:WhichKeyDesc_P_stop = "<leader>ps stop-项目"
+nmap <leader>ps :action Stop<CR>
+let g:WhichKeyDesc_P_run = "<leader>pr run-项目"
+nmap <leader>pr :action Rerun<CR>
+let g:WhichKeyDesc_P_View = "<leader>pv debug-视图"
+map <leader>pv :action ActivateDebugToolWindow<CR>
+let g:WhichKeyDesc_P_p_run = "<leader>pp run-项目"
+nmap <leader>pp :action Run<CR>
+
+" =s=======================================
 " leader + s 展示,显示
-let g:WhichKeyDesc_Show = "<leader>s 展示，显示操作"
+let g:WhichKeyDesc_Show = "<leader>s +展示/显示"
 " 查看文档
 let g:WhichKeyDesc_S = "<leader>sd 显示函数文档"
 nmap <leader>sd :action QuickJavaDoc<CR>
@@ -82,81 +154,34 @@ nmap <leader>ss <action>(FileStructurePopup)
 let g:WhichKeyDesc_S_Show_ParameterInfo = "<leader>sp 查看函数变量"
 nmap <leader>sp <action>(ParameterInfo)
 
-
-" ========================================
-" leader + r 重置操作
-let g:WhichKeyDesc_R = "<leader>r 重置操作"
-" 变量重命名
-let g:WhichKeyDesc_R_rename = "<leader>rn 重命名"
-nma <leader>rn :action RenameElement<CR>
-
-" ========================================
-" leader + p 项目相关的操作
-let g:WhichKeyDesc_P = "<leader>p 项目操作"
-" 快速启动 debug run stop 项目
-let g:WhichKeyDesc_P_debug = "<leader>pd debug-项目"
-nmap <leader>pd :action Debug<CR>
-let g:WhichKeyDesc_P_stop = "<leader>ps stop-项目"
-nmap <leader>ps :action Stop<CR>
-let g:WhichKeyDesc_P_run = "<leader>pr run-项目"
-nmap <leader>pr :action Rerun<CR>
-let g:WhichKeyDesc_P_View = "<leader>pv debug-视图"
-map <leader>pv :action ActivateDebugToolWindow<CR>
-
-" ========================================
-" leader + e 扩展
-let g:WhichKeyDesc_E = "<leader>e extract"
-" e: Extract
-" extract method/function
-let g:WhichKeyDesc_E_method = "<leader>em 生成-函数"
-vmap <leader>em <action>(ExtractMethod)
-" extract constant
-let g:WhichKeyDesc_E_constant = "<leader>ec 生成-常量"
-vmap <leader>ec <action>(IntroduceConstant)
-" extract field
-let g:WhichKeyDesc_E_field = "<leader>ef 生成-属性"
-vmap <leader>ef <action>(IntroduceField)
-" extract variable
-let g:WhichKeyDesc_E_var = "<leader>ev 生成变量"
-vmap <leader>ev <action>(IntroduceVariable)
-
-" ========================================
+" =t=======================================
 " leader + t 扩展
-let g:WhichKeyDesc_T = "<leader>t  tab/终端/翻译"
+let g:WhichKeyDesc_T = "<leader>t  +tab/终端/翻译"
 " 跳转到 terminal 快捷方式
-let g:WhichKeyDesc_T_terminal = "<leader>to 打开终端"
-nmap <leader>to :action ActivateTerminalToolWindow<CR>
+let g:WhichKeyDesc_T_terminal = "<leader>tt 打开终端"
+nmap <leader>tt :action ActivateTerminalToolWindow<CR>
 " 翻译 需要翻译插件的支持
 let g:WhichKeyDesc_T_translate = "<leader>tw 翻译单词"
 vmap <leader>tw :action $EditorTranslateAction<CR>
 let g:WhichKeyDesc_T_translateDoc = "<leader>td 翻译段落"
 vmap <leader>td :action $TranslateDocumentationAction<CR>
-let g:WhichKeyDesc_T_Switch = "<leader>tt 打开所有标签"
-nmap <leader>tt :action Switcher<CR>
+let g:WhichKeyDesc_T_Switch = "<leader>to 打开所有标签"
+nmap <leader>to :action Switcher<CR>
 
-" ========================================
-" leader + h 扩展
-let g:WhichKeyDesc_H = "<leader>h 帮助"
-" 查看所有的 action 动作
-let g:WhichKeyDesc_H_list = "<leader>hl 查看所有idea的action"
-nmap <leader>hl :action GotoAction<CR>
-" 在 vim 模式下输入 :actionlist 可以查看所有 actions 名称
-let g:WhichKeyDesc_H_search = "<leader>hs 模糊查看所有idea的action"
-nmap <leader>hs :actionlist 
+" =v=======================================
+let g:WhichKeyDesc_V = "<leader>v 打开当前文件的视图"
+let g:WhichKeyDesc_V_Structure = "<leader>vf 查看函数"
+map <leader>vf <Action>(FileStructurePopup)
 
-" ========================================
-" leader + c 注释
-let g:WhichKeyDesc_C = "<leader>c 注释"
-" 添加注释
-let g:WhichKeyDesc_C_line = "<leader>cl 单行注释"
-nmap <leader>cl :action CommentByLineComment<CR>
-" 格式化代码
-let g:WhichKeyDesc_C_F_formatCode = "<leader>cf 文件-格式化代码"
-nmap <leader>cf :action ReformatCode<CR>
-" 格式化代码
-let g:WhichKeyDesc_C_I_optimize_import = "<leader>ci 文件-去掉多余的包"
-nmap <leader>ci :action OptimizeImports<CR>
-" Alt + enter 键 快捷修复提示
+" =x=======================================
+let g:WhichKeyDesc_x = "<leader>x 关闭当前文件"
+nmap <leader>x <Action>(CloseEditor)
+let g:WhichKeyDesc_X = "<leader>X  打开刚关闭的文件"
+nmap <leader>X <Action>(ReopenClosedTab)
+
+" =z=======================================
+let g:WhichKeyDesc_Z = "<leader>z  进入/退出 全屏模式"
+map <leader>z <Action>(ToggleDistractionFreeMode)
 
 set ideajoin
 
@@ -168,19 +193,3 @@ nmap <leader><leader>s <Plug>(easymotion-s)
 nmap <leader><leader>f <Plug>(easymotion-f)
 
 set NERDTree
-" 打开目录
-" let g:WhichKeyDesc_E_echo = "打开目录"
-let g:WhichKeyDesc_E = "<leader>e 打开目录"
-nmap <leader>e :NERDTree<CR>
-
-let g:WhichKeyDesc_Z = "<leader>z  进入/退出 全屏模式"
-map <leader>z <Action>(ToggleDistractionFreeMode)
-
-let g:WhichKeyDesc_V = "<leader>v 打开当前文件的视图"
-let g:WhichKeyDesc_V_Structure = "<leader>vf 查看函数"
-map <leader>vf <Action>(FileStructurePopup)
-
-let g:WhichKeyDesc_x = "<leader>x 关闭当前文件"
-nmap <leader>x <Action>(CloseEditor)
-let g:WhichKeyDesc_X = "<leader>X  打开刚关闭的文件"
-nmap <leader>X <Action>(ReopenClosedTab)
