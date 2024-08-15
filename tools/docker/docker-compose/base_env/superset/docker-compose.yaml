@@ -14,3 +14,21 @@ services:
       - ./init.sh:/app/init.sh
     # 执行脚本文件
     command: "/app/init.sh"
+
+  mysql:
+    image: mysql
+    restart: always
+    container_name: mysql
+    environment:
+      MYSQL_DATABASE: docker_test
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: 123456
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      TZ: Asia/Shanghai
+    ports:
+      - 3306:3306
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+    command:
+      # 启动命令参数
+      --max_connections=1000 --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci

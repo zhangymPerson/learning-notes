@@ -7,7 +7,10 @@ LANGUAGES = {
 }
 PUBLIC_ROLE_LIKE = "Gamma"
 FEATURE_FLAGS = {
+    # 允许嵌入 Superset
     "EMBEDDED_SUPERSET": True,
+    # 允许导出
+    "ALLOW_FULL_CSV_EXPORT": True,
     "DRILL_TO_DETAIL": False,
     "DASHBOARD_CROSS_FILTERS": False,
     "ENABLE_TEMPLATE_PROCESSING": True
@@ -27,7 +30,8 @@ WTF_CSRF_ENABLED = False
 # WTF_CSRF_TIME_LIMIT = 300
 
 # Talisman Config
-TALISMAN_ENABLED = True
+# 允许不同的 ip 访问
+TALISMAN_ENABLED = False
 TALISMAN_CONFIG = {
     "content_security_policy": {
         "frame-ancestors": ALLOW_ORIGINS
