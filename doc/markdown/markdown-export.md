@@ -18,22 +18,6 @@
 
   官网直接下载安装,然后在 word 中打开原生 markdown 文件 ,然后另存为 word 文件即可
 
-### i5ting_doc 导出 markdown 带目录导航
-
-- 安装
-
-  `npm install -g i5ting_toe`
-
-- 导出
-
-  cmd 执行
-
-  `i5ting_toc -f sample.md -o`
-
-  或者
-
-  `npx i5ting_toc -f sample.md -o`
-
 ### pandoc 工具 [github](https://github.com/jgm/pandoc)
 
 - 安装
@@ -43,3 +27,31 @@
 - 简单使用 markdown 转 word
 
   `pandoc a.md -o a.docx`
+
+- 支持的 pdf 引擎 
+  
+  `wkhtmltopdf`
+
+  [weasyprint](https://github.com/Kozea/WeasyPrint) 引擎支持的种类多，能导出各种复杂的文档需要安装 `python` `pip install weasyprint` 
+
+  `pagedjs-cli`
+
+  `prince`
+
+  `pdflatex`
+
+  `lualatex`
+
+  `xelatex`
+
+  `latexmk`
+
+  `tectonic`
+
+  `pdfroff`
+
+  [typst](https://github.com/typst/typst) 引擎
+
+  `context`
+
+  `pandoc -o test.pdf --pdf-engine=xelatex`
