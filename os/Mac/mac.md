@@ -39,3 +39,16 @@
 - 常用插件
 
   [zsh-users](https://github.com/zsh-users)
+
+- espanso
+  
+  [espanso-github](https://github.com/espanso/espanso) 
+
+  它指的是一个使用 Rust 编程语言编写的文本扩展器（Text Expander）
+
+- mac 下的 vim 操作模式
+  
+  [vimac-github](https://github.com/nchudleigh/vimac)
+
+  [homerow](https://www.homerow.app/)
+
