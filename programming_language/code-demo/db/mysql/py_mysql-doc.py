@@ -6,10 +6,12 @@
         脚本说明:获取数据库指定表的表结构文档
 @date : 2022-08-03 14:34:43
 @auth : danao
-@version : 1.0
+@version : 1.1
+@update : 2024-09-04 
 """
 
 import argparse
+import datetime
 import json
 import os
 import traceback
@@ -47,22 +49,33 @@ class DB():
         self.conn.close()
 
 
+def get_mysql_version(db):
+    db.execute("SELECT VERSION()")
+    rows = db.fetchall()
+    for row in rows:
+        return row.get('VERSION()')
+
+
 def get_all_table_from_db(db, db_name):
     """
     查数据 获取当前库下的表
     """
     # 游标执行返回的是数量
-    db.execute("show tables;")
-    # 获取数据库名
-    print(db_name)
-    tables = []
+    sql = f"""
+    SELECT
+        TABLE_NAME AS table_name,
+        TABLE_COMMENT AS table_comment
+    FROM
+        information_schema.TABLES
+    WHERE
+        TABLE_SCHEMA = '{db_name}'
+    ORDER BY
+        TABLE_NAME;
+    """
+    db.execute(sql)
     # 需要调用 fetchall() 函数获取结果
     results = db.fetchall()
-    for row in results:
-        for table in row:
-            tables.append(row.get(table))
-    print("数据库[%s]中有[%s]张表,\n分别是%s" % (db_name, len(tables), tables))
-    return tables
+    return results
 
 
 def get_create_table_sql(db, table_name=None):
@@ -83,11 +96,11 @@ def get_create_table_sql(db, table_name=None):
     res = ""
     createTableSql = ""
     for row in results:
-        print(row.get('Table'))
+        # print(row.get('Table'))
         createTableSql = row.get('Create Table')
     strs = createTableSql.split("\n")
     for line in strs:
-        res = res + "    %s\n" % (line)
+        res = res + "%s\n" % (line)
     return res
 
 
@@ -138,12 +151,12 @@ def get_doc_from_row(rows):
     返回文档数据
     """
     doc_tpl = """
-    | 序号 | 字段名      | 数据类型            | 非空 | 键类型   | 默认值 | 注释                     |
-    | ---- | ----------- | ------------------- | ---- | -------- | ------ | ------------------------ |
+| 序号 | 字段名      | 数据类型            | 非空 | 键类型   | 默认值 | 注释                     |
+| ---- | ----------- | ------------------- | ---- | -------- | ------ | ------------------------ |
 """
     num = 1
     for row in rows:
-        rowStr = "    |%s|%s|%s|%s|%s|%s|%s|\n" % (num, row.get('列名'), row.get(
+        rowStr = "|%s|%s|%s|%s|%s|%s|%s|\n" % (num, row.get('列名'), row.get(
             '数据类型'), row.get('是否为空'), row.get('KEY'), row.get('默认值'), row.get('注释'))
         doc_tpl = doc_tpl + rowStr
         num = num + 1
@@ -175,10 +188,40 @@ def all_table(db, db_name):
     Raises:
         列出与接口有关的所有异常.
     """
+    doc_version = '0.0.1'
+    author = 'danao'
+    version = get_mysql_version(db)
+    print(f"""
+# 数据库 **{db_name}** 说明文档
+
+- 文档创建日期: {datetime.datetime.now().strftime('%Y-%m-%d')}
+
+- 数据库版本: {version}
+
+- 文档版本号: {doc_version}
+
+- 文档编写者: {author}
+
+## 目录
+
+|编号|表名|备注|
+|----|----|----|""")
     # 获取所有表名
-    tables = get_all_table_from_db(db=db, db_name=db_name)
+    results = get_all_table_from_db(db=db, db_name=db_name)
+    i = 1
+    tables = {}
+    for row in results:
+        tables[row.get('table_name')] = row.get('table_comment')
+        # 去掉换行符
+        name = row.get('table_name').replace("\r\n", "\n").replace("\n", "")
+        comment = row.get('table_comment').replace(
+            "\r\n", "\n").replace("\n", "")
+        print(f"|{i}|[{name}](#{name})|{comment}|")
+        i = i + 1
+    print()
+    print(f"## 单个表结构说明")
     # 获取表名创建文档
-    for table_name in tables:
+    for table_name in tables.keys():
         get_table(db, db_name, table_name)
 
 
@@ -198,25 +241,21 @@ def get_table(db, db_name, table_name):
     table_sql = get_create_table_sql(db, table_name)
     insert_sql = get_insert_into_sql(table_name, rows)
     doc_tpl = """
-# %s 表
+### %s
 
-- %s 表-结构说明
+#### %s 表-结构说明
 
 %s
 
-- %s 表-建表语句
+#### %s 表-建表语句
 
-    ```sql
+```sql
 %s
-    ```
-- %s 表插入一条测试数据
+```
 
-    ```sql
-    %s
-    ```
 """
     print(doc_tpl % (table_name, table_name, doc,
-                     table_name, table_sql, table_name, insert_sql))
+                     table_name, table_sql))
 
 
 def run(conf_dict: dict):
@@ -230,7 +269,7 @@ def run(conf_dict: dict):
         with DB(host=host, port=port, user=user, passwd=password, db=db_name) as db:
             if table_name == "test":
                 all_table(db=db, db_name=db_name)
-                # get_table(db, db_name, table_name) 
+                # get_table(db, db_name, table_name)
             else:
                 get_table(db, db_name, table_name)
     except Exception as e:
@@ -240,7 +279,10 @@ def run(conf_dict: dict):
 
 def init_args():
     argp = argparse.ArgumentParser(
-        description='获取mysql数据库表的一个说明文档', epilog='结束')
+        description=f"""
+        获取mysql数据库表的一个说明文档,执行如下命令
+        python {os.path.basename(__file__)} -ip 127.0.0.1 -P 3306 -u root -p 123456 -d db_name 
+        """, epilog='结束')
     argp.add_argument("-ip", "--host", type=str, dest="host",
                       default="127.0.0.1", help="host")
     argp.add_argument("-P", "--port", type=int,
@@ -257,11 +299,12 @@ def init_args():
 
     return parse_args.__dict__
 
+
 if __name__ == '__main__':
     current_script_path = os.path.abspath(__file__)
     command = f"python {current_script_path} -ip 127.0.0.1 -P 3306 -u root -p 123456 -d db_name"
-    print(f"start command = [{command}]")
+    # print(f"start command = [{command}]")
     args = init_args()
     jsons = json.dumps(args, ensure_ascii=False, default=str, indent=2)
-    print(jsons)
+    # print(jsons)
     run(args)
