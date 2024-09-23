@@ -75,6 +75,12 @@
           "name": "代码重构",
           "type": "command",
           "command": "editor.action.refactor"
+        },
+        {
+          "key": "t",
+          "name": "选择文件所属的代码类型",
+          "type": "command",
+          "command": "workbench.action.editor.changeLanguageMode"
         }
       ]
     },
