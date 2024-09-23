@@ -46,6 +46,10 @@
 
   它指的是一个使用 Rust 编程语言编写的文本扩展器（Text Expander）
 
+  配置: mac 下 `/Library/Application Support/espanso/` 目录，
+
+  配置自定义 `search-bar` 快捷键 `search_shortcut: "ALT+SPACE+SHIFT"` 默认的和 `iterm` 冲突
+
 - mac 下的 vim 操作模式
   
   [vimac-github](https://github.com/nchudleigh/vimac)
