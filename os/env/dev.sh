@@ -97,3 +97,8 @@ alias rm='echo " rmr 删除 rml 查看所有删除的文件 rmd 删除几天内�
 alias rmr='trash-put'
 alias rml='trash-list'
 alias rmd='trash-empty'
+
+# rg 和 fzf 组成的查询命令 根据文本内容和文件名查找并用 nvim 打开
+rfz() {
+    rg -l "$@" | fzf --preview "rg -p -C3 $@ {}" | xargs nvim
+}
