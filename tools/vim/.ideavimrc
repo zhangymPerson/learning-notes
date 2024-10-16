@@ -11,6 +11,7 @@ source ~/.vimrc
 " Find more examples here: https://jb.gg/share-ideavimrc
 " IdeaVim actions
 " 函数跳转
+
 nmap [[ :action MethodUp<CR>
 nmap ]] :action MethodDown<CR>
 
@@ -22,7 +23,8 @@ set notimeout
 
 " ========================================
 nmap gb :action Back<CR>
-nmap gf :action Forward<CR>
+" 跳转到文件所在目录位置
+nmap gf :action SelectInProjectView<CR>
 nmap gi :action GotoImplementation<CR>
 nmap ge :action GotoNextError<CR>
 nmap t :action Switcher<CR>
@@ -34,12 +36,23 @@ let g:WhichKeyDesc_C = "<leader>c +代码"
 let g:WhichKeyDesc_C_line = "<leader>cl 代码注释"
 nmap <leader>cl :action CommentByLineComment<CR>
 " 格式化代码
-let g:WhichKeyDesc_C_F_formatCode = "<leader>cf 文件-格式化代码"
+let g:WhichKeyDesc_C_F_formatCode = "<leader>cf 代码-格式化代码"
 nmap <leader>cf :action ReformatCode<CR>
 " 格式化代码
-let g:WhichKeyDesc_C_I_optimize_import = "<leader>ci 文件-去掉多余的包"
+let g:WhichKeyDesc_C_I_optimize_import = "<leader>ci 代码-去掉多余的包"
 nmap <leader>ci :action OptimizeImports<CR>
-" Alt + enter 键 快捷修复提示
+" 变量重命名
+let g:WhichKeyDesc_C_N_rename = "<leader>cn 代码-变量重命名"
+nmap <leader>cn :action RenameElement<CR>
+" 查看文档
+let g:WhichKeyDesc_C_d = "<leader>cd 显示函数文档"
+nmap <leader>cd :action QuickJavaDoc<CR>
+let g:WhichKeyDesc_C_D = "<leader>cD 显示函数文档内容"
+nmap <leader>cD :action QuickImplementations<CR>
+let g:WhichKeyDesc_C_s = "<leader>cs 查看文件中的属性函数"
+nmap <leader>cs <action>(FileStructurePopup)
+let g:WhichKeyDesc_C_p = "<leader>cp 查看函数变量"
+nmap <leader>cp <action>(ParameterInfo)
 
 " =e=======================================
 " leader + E 扩展
@@ -85,9 +98,7 @@ nmap <leader>ff :action SelectInProjectView<CR>
 " 打开当前文件的历史提交记录
 let g:WhichKeyDesc_F_history = "<leader>fh 文件-文件历史改动"
 nmap <leader>fh :action Vcs.ShowTabbedFileHistory<CR>
-" 变量重命名
-let g:WhichKeyDesc_F_rename = "<leader>fn 重命名"
-nma <leader>fn :action RenameElement<CR>
+
 let g:WhichKeyDesc_F_close = "<leader>fx 关闭其他 tab"
 nmap <leader>fx <Action>(CloseAllEditorsButActive)
 
@@ -128,8 +139,8 @@ nmap <leader>ml <Action>(ShowBookmarks)
 " leader + p 项目相关的操作
 let g:WhichKeyDesc_P = "<leader>p +项目"
 " 快速启动 debug run stop 项目
-let g:WhichKeyDesc_P_debug = "<leader>pd debug-项目"
-nmap <leader>pd :action Debug<CR>
+let g:WhichKeyDesc_P_debug = "<leader>pd 添加调试 debug 位置"
+nmap <leader>pd :action ToggleLineBreakpoint<CR>
 let g:WhichKeyDesc_P_stop = "<leader>ps stop-项目"
 nmap <leader>ps :action Stop<CR>
 let g:WhichKeyDesc_P_run = "<leader>pr run-项目"
@@ -141,18 +152,7 @@ nmap <leader>pp :action Run<CR>
 
 " =s=======================================
 " leader + s 展示,显示
-let g:WhichKeyDesc_Show = "<leader>s +展示/显示"
-" 查看文档
-let g:WhichKeyDesc_S = "<leader>sd 显示函数文档"
-nmap <leader>sd :action QuickJavaDoc<CR>
-let g:WhichKeyDesc_S_s = "<leader>sD 显示函数文档内容"
-nmap <leader>sD :action QuickImplementations<CR>
-let g:WhichKeyDesc_S_Show_FileStructure = "<leader>ss 查看文件中的属性函数"
-nmap <leader>ss <action>(FileStructurePopup)
-" let g:WhichKeyDesc_S_Show_Bookmarks = "<leader>sb 查看书签"
-" nmap <leader>sb <action>(ShowBookmarks)
-let g:WhichKeyDesc_S_Show_ParameterInfo = "<leader>sp 查看函数变量"
-nmap <leader>sp <action>(ParameterInfo)
+" let g:WhichKeyDesc_Show = "<leader>s +展示/显示"
 
 " =t=======================================
 " leader + t 扩展
@@ -193,3 +193,5 @@ nmap <leader><leader>s <Plug>(easymotion-s)
 nmap <leader><leader>f <Plug>(easymotion-f)
 
 set NERDTree
+
+" Alt + enter 键 快捷修复提示
