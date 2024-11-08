@@ -102,3 +102,13 @@ alias rmd='trash-empty'
 rfz() {
     rg -l "$@" | fzf --preview "rg -p -C3 $@ {}" | xargs nvim
 }
+
+# 查询目录下的字符
+ss() {
+    rg -l "$@" | fzf --preview "rg -p -C3 $@ {}"
+}
+
+#  从 java 类型的文件 中查询字符
+sj(){
+    rg -tjava -l "$@" | fzf --preview "rg -p -C3 $@ {}" 
+}
