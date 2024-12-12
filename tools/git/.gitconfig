@@ -1,13 +1,19 @@
 [user]
 	name = username
 	email = username@gmail.com
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
 [core]
 	ignorecase = false
+	# 配置 diff 为 delta
+	pager = delta 
+	editor = nvim
+
 [alias]
 	st = status
 	l = log --color --graph --decorate --pretty=oneline --abbrev-commit
@@ -27,3 +33,34 @@
 	tr = checkout --track
 	s = status --short
 	last = log -1 HEAD
+
+# diff 相关的配置
+# delta https://github.com/dandavison/delta
+[interactive]	
+	diffFilter = delta --color-only
+
+[merge]
+	conflictStyle = zdiff3
+
+[delta]
+  ; 使用分页
+  paging = always
+  ; 启用 n 跳转到下一个
+  navigate = true
+  ; 行号
+  line-numbers = true 
+  ; 并排对比视图
+  side-by-side = true 
+  ; 主题 
+  syntax-theme = Dracula
+  ; 背景颜色
+  dark = true
+  ; light = true
+  ; auto-detection = true
+
+[diff]
+	colorMoved = default
+
+; tig 配置  
+[tig "bind"] 
+  generic = d >git show %(commit)
