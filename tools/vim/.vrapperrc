@@ -1,0 +1,13 @@
+" eclips vim 插件 vrapper 配置
+" mac/linux ~/.vrapperrc
+" windows $HOME/_vrapperrc 
+
+" 查询高亮
+set hlsearch
+" 退出时候取消高亮
+nnoremap <esc> :noh<return><esc>
+" 查询智能大小写，只有查询中包含大写字母才区分大小写
+set smartcase
+" 查询动态匹配 而不是输入完整个词后才匹配
+set incsearch
+set spell
