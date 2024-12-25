@@ -193,5 +193,11 @@ nmap <leader><leader>s <Plug>(easymotion-s)
 nmap <leader><leader>f <Plug>(easymotion-f)
 
 set NERDTree
+" 可以使用 s 实现类似 f 单行查找的效果，可以查找2个字符的内容
+" https://github.com/justinmk/vim-sneak
+set sneak
+" vim-surround 插件
+" https://github.com/tpope/vim-surround
+set vim-surround
 
 " Alt + enter 键 快捷修复提示

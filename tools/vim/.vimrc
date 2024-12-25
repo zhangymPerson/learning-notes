@@ -84,10 +84,10 @@ set clipboard^=unnamed,unnamedplus
 " 输入模式下的 快捷键配置
 imap <C-e> <END>
 imap <C-a> <HOME>
-imap ll <Right>
-imap hh <Left>
-imap jj <Down>
-imap kk <Up>
+" imap ll <Right>
+" imap hh <Left>
+" imap jj <Down>
+" imap kk <Up>
 
 " 代码联想 输入 sout + tab键 => System.out.println("")
 ab sout System.out.println("")
@@ -138,7 +138,7 @@ nnoremap <Down>  :echoe "Use j"<CR>
 set hidden
 
 " 显示上下相对行数
-set relativenumber
+" set relativenumber
 
 " 行的配置
 set nu
@@ -194,3 +194,19 @@ set undodir=~/.vim/undodir
 " inoremap < <><ESC>i
 " inoremap " ""<ESC>i
 " inoremap ' ''<ESC>i
+
+
+" 插件安装
+call plug#begin()
+
+" List your plugins here
+Plug 'tpope/vim-sensible'
+Plug 'easymotion/vim-easymotion'
+Plug 'justinmk/vim-sneak'
+Plug 'preservim/nerdtree'
+Plug 'tpope/vim-surround'
+
+call plug#end()
+
+map <F3> :NERDTreeMirror<CR>
+map <F3> :NERDTreeToggle<CR>
