@@ -12,6 +12,9 @@ source ~/.vimrc
 " IdeaVim actions
 " 函数跳转
 
+" 可以令屏幕滚动时在光标上下方保留5行预览代码（也就是光标会在第5行触发向上滚动，或者在倒数第5行触发向下滚动）。
+set so=5
+
 nmap [[ :action MethodUp<CR>
 nmap ]] :action MethodDown<CR>
 
@@ -88,8 +91,12 @@ nmap <leader>fr :action ReplaceInPath<CR>
 " 查找类 方法 工作
 let g:WhichKeyDesc_F_class = "<leader>fc 查找-类"
 nmap <leader>fc :action GotoClass<CR>
-let g:WhichKeyDesc_F_symbol = "<leader>fs 查找-指定属性"
-nmap <leader>fs :action GotoSymbol<CR>
+let g:WhichKeyDesc_F_usages = "<leader>fu 查找-引用"
+nmap <leader>fu <Action>(FindUsages)
+let g:WhichKeyDesc_F_usages_show = "<leader>fs 查看-引用"
+nmap <leader>fs <Action>(ShowUsages)
+let g:WhichKeyDesc_F_symbol = "<leader>fS 查找-指定属性"
+nmap <leader>fS :action GotoSymbol<CR>
 let g:WhichKeyDesc_F_action = "<leader>fa 查找-动作"
 nmap <leader>fa :action GotoAction<CR>
 " 定位当前文件

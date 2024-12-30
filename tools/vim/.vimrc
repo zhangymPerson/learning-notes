@@ -33,6 +33,9 @@ set ttimeout ttimeoutlen=10
 " 位置标识记录 | 关闭文件后再次打开, 光标会回到你上一次离开的位置
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+" 可以令屏幕滚动时在光标上下方保留5行预览代码（也就是光标会在第5行触发向上滚动，或者在倒数第5行触发向下滚动）。
+set so=5
+
 " 设置不自动换行
 set nowrap
 
@@ -197,6 +200,7 @@ set undodir=~/.vim/undodir
 
 
 " 插件安装
+" 插件地址 https://github.com/junegunn/vim-plug
 call plug#begin()
 
 " List your plugins here
