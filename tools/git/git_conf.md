@@ -41,11 +41,28 @@
   git config --list
   ```
 
-- git alias 配置 
+- git alias 配置
 
   这样设置以后，直接运行 `git ck` 就和 `git checkout` 有一样的效果~
   `git config --global alias.ck checkout`
 
-- git alias 开源项目 
-  
+  常见的 alias 配置
+
+  ```sh
+  git config --global alias.co   checkout
+  git config --global alias.ci   commit
+  git config --global alias.st   status
+  git config --global alias.sts  "status -s"
+  git config --global alias.br   branch
+  git config --global alias.re   remote
+  git config --global alias.di   diff
+  git config --global alias.type "cat-file -t"
+  git config --global alias.dump "cat-file -p"
+  git config --global alias.lo   "log --oneline"
+  git config --global alias.ll "log --pretty=format:'%h %ad | %s%d [%Cgreen%an%Creset]' --graph --date=short"
+  git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset %ad |%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset [%Cgreen%an%Creset]' --abbrev-commit --date=short"
+  ```
+
+- git alias 开源项目
+
   [gitalias](https://github.com/GitAlias/gitalias)
