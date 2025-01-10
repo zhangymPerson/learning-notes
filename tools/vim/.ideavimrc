@@ -99,6 +99,8 @@ let g:WhichKeyDesc_F_symbol = "<leader>fS 查找-指定属性"
 nmap <leader>fS :action GotoSymbol<CR>
 let g:WhichKeyDesc_F_action = "<leader>fa 查找-动作"
 nmap <leader>fa :action GotoAction<CR>
+let g:WhichKeyDesc_F_newFile = "<leader>fn 新建文件"
+nmap <leader>fn :action NewFile<CR>
 " 定位当前文件
 let g:WhichKeyDesc_F_file = "<leader>ff 文件-定位当前文件"
 nmap <leader>ff :action SelectInProjectView<CR>
@@ -156,17 +158,16 @@ let g:WhichKeyDesc_P_View = "<leader>pv debug-视图"
 map <leader>pv :action ActivateDebugToolWindow<CR>
 let g:WhichKeyDesc_P_p_run = "<leader>pp run-项目"
 nmap <leader>pp :action Run<CR>
-
+" 需要安装 ApiFox 插件
+let g:WhichKeyDesc_P_search = "<leader>p/ 查询接口"
+nmap <leader>p/ :action ApiFoxSearch<CR>
 " =s=======================================
 " leader + s 展示,显示
 " let g:WhichKeyDesc_Show = "<leader>s +展示/显示"
 
 " =t=======================================
 " leader + t 扩展
-let g:WhichKeyDesc_T = "<leader>t  +tab/终端/翻译"
-" 跳转到 terminal 快捷方式
-let g:WhichKeyDesc_T_terminal = "<leader>tt 打开终端"
-nmap <leader>tt :action ActivateTerminalToolWindow<CR>
+let g:WhichKeyDesc_T = "<leader>t  +tab/翻译"
 " 翻译 需要翻译插件的支持
 let g:WhichKeyDesc_T_translate = "<leader>tw 翻译单词"
 vmap <leader>tw :action $EditorTranslateAction<CR>
@@ -190,6 +191,10 @@ nmap <leader>X <Action>(ReopenClosedTab)
 let g:WhichKeyDesc_Z = "<leader>z  进入/退出 全屏模式"
 map <leader>z <Action>(ToggleDistractionFreeMode)
 
+" ========================================
+" 跳转到 terminal 快捷方式
+nmap <leader>! :action ActivateTerminalToolWindow<CR>
+
 set ideajoin
 
 " ========================================
@@ -206,5 +211,23 @@ set sneak
 " vim-surround 插件
 " https://github.com/tpope/vim-surround
 set vim-surround
+
+" ========================================
+" 通义灵码 插件
+let g:WhichKeyDesc_A = "通义灵码 插件"
+map <leader>a <Action>(CloseEditor)
+" 打开通义灵码
+let g:WhichKeyDesc_A_open = "<leader>ao 打开通义灵码"
+nmap <leader>ao :action TriggerCosySelectionChatAction<CR>
+let g:WhichKeyDesc_A_code = "<leader>aa 代码补全"
+nmap <leader>aa :action TriggerInlayCompletionAction<CR>
+let g:WhichKeyDesc_A_test = "<leader>at 测试代码"
+vmap <leader>at :action TriggerCosyTestcaseGenerationAction<CR>
+let g:WhichKeyDesc_A_comment = "<leader>ac 生成注释"
+vmap <leader>ac :action TriggerCosyCodeGenerateCommentGenerationAction<CR>
+let g:WhichKeyDesc_A_explain = "<leader>ae 解释代码"
+vmap <leader>ae :action TriggerCosyExplainCodeGenerationAction<CR>
+let g:WhichKeyDesc_A_optimize = "<leader>an 优化代码"
+vmap <leader>an :action TriggerCosyOptimizeCodeGenerationAction<CR>
 
 " Alt + enter 键 快捷修复提示
