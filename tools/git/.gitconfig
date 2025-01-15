@@ -14,6 +14,7 @@
 	pager = delta 
 	editor = nvim
 
+; 可以使用开源项目 https://github.com/GitAlias/gitalias 中的相关配置
 [alias]
 	st = status
 	l = log --color --graph --decorate --pretty=oneline --abbrev-commit
