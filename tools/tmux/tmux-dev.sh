@@ -13,22 +13,37 @@
 NAME=dev
 # 项目目录
 PROJECT_PATH=~/dev
-mkdir -p ${PROJECT_PATH}
-# 判断是否已经创建
-if tmux has-session -t ${NAME}; then
-	:
-else
-	# 创建 tmux window
-	tmux new-session -s ${NAME} -n code -d
-	tmux new-window -n database -t ${NAME}
-	tmux new-window -n log -t ${NAME}
-	tmux new-window -n test -t ${NAME}
 
-	# 在每个 window 中执行命令
-	tmux send-keys -t ${NAME}:code "cd ${PROJECT_PATH}; echo '执行打开项目命令 如: code . vim 等' " C-m
-	tmux send-keys -t ${NAME}:database "cd ${PROJECT_PATH}; echo '执行数据库连接命令'" C-m
-	tmux send-keys -t ${NAME}:log "cd ${PROJECT_PATH}; echo '执行日志查看命令'" C-m
-	tmux send-keys -t ${NAME}:test "cd ${PROJECT_PATH}; echo '执行测试命令' " C-m
-	tmux select-window -t ${PROJECT_PATH}:code
+mkdir -p "${PROJECT_PATH}"
+
+# 判断是否已经创建tmux会话
+if tmux has-session -t "${NAME}"; then
+    echo "Tmux session ${NAME} already exists."
+else
+    # 创建 tmux 会话
+    tmux new-session -s "${NAME}" -n default -d
 fi
-tmux a -t ${NAME}
+
+# 创建 tmux 中的窗口并执行命令
+# 参数1: window_name 窗口名
+# 参数2: command 要执行的命令
+function create_window() {
+    local window_name=$1
+    local command=$2
+    # 创建窗口
+    tmux new-window -n "${window_name}" -t "${NAME}" -c "${PROJECT_PATH}"
+    # 在窗口中执行命令
+    tmux send-keys -t "${NAME}:${window_name}" "${command}" C-m
+}
+
+# 创建窗口并执行命令
+create_window code "echo '执行打开项目命令 如: code . 或 vim .'"
+create_window database "echo '执行数据库连接命令'"
+create_window log "echo '执行日志查看命令'"
+create_window test "echo '执行测试命令'"
+
+# 选择项目代码所在的窗口
+tmux select-window -t "${NAME}:code"
+
+# 连接到tmux会话
+tmux attach -t "${NAME}"

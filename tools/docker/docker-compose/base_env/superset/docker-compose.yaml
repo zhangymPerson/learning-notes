@@ -1,4 +1,3 @@
-version: "3.9"
 services:
   superset:
     # 3.1.1 版本 内嵌分享 权限有 bug

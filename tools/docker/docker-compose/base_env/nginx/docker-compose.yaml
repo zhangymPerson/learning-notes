@@ -1,5 +1,3 @@
-version: '3'  # 或更高版本
-
 services:
   nginx:
     image: nginx
