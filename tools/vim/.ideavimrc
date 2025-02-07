@@ -182,6 +182,9 @@ nmap <leader>to :action Switcher<CR>
 let g:WhichKeyDesc_V = "<leader>v 打开当前文件的视图"
 let g:WhichKeyDesc_V_Structure = "<leader>vf 查看函数"
 map <leader>vf :action FileStructurePopup<CR>
+let g:WhichKeyDesc_V_Structure_show = "<leader>vd 代码注释用渲染的方式展示"
+" 配置 setting -> editor -> general -> appearance -> Render documentation comments
+map <leader>vd :action ToggleRenderedDocPresentationForAll<CR>
 
 " =x=======================================
 let g:WhichKeyDesc_x = "<leader>x 关闭当前文件"
@@ -224,8 +227,8 @@ let g:WhichKeyDesc_A = "通义灵码 插件"
 " 打开通义灵码
 let g:WhichKeyDesc_A_open = "<leader>ao 打开通义灵码"
 nmap <leader>ao :action TriggerCosySelectionChatAction<CR>
-let g:WhichKeyDesc_A_code = "<leader>aa 代码补全"
-nmap <leader>aa :action TriggerInlayCompletionAction<CR>
+let g:WhichKeyDesc_A_code = "`` 代码补全"
+imap `` :action TriggerInlayCompletionAction<CR>
 let g:WhichKeyDesc_A_test = "<leader>at 测试代码"
 vmap <leader>at :action TriggerCosyTestcaseGenerationAction<CR>
 let g:WhichKeyDesc_A_comment = "<leader>ac 生成注释"

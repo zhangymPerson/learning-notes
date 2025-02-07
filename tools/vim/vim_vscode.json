@@ -1,4 +1,5 @@
 {
+  // vim 插件配置 =======================================================================
   // github 地址: https://github.com/VSCodeVim/Vim
   // vim leader 键
   "vim.leader": " ",
@@ -7,7 +8,7 @@
   // 启用 easymotion
   "vim.easymotion": true,
   // 启用 vim 的状态颜色变化
-  "vim.statusBarColorControl": true,
+  // "vim.statusBarColorControl": true,
   // vim 操作文件目录
   "vim.foldfix": true,
   "vim.useSystemClipboard": true,
@@ -39,10 +40,13 @@
       "commands": ["whichkey.show"]
     }
   ],
-  "whichkey.bindings": [
+  // 结合 VspaceCode 的 Whick Key 插件
+  // github: https://github.com/VSpaceCode/VSpaceCode
+  // github: https://github.com/VSpaceCode/vscode-which-key
+  "whichkey.bindingOverrides": [
     // =c=======================================
     {
-      "key": "c",
+      "keys": "c",
       "name": "+代码",
       "type": "bindings",
       "bindings": [
@@ -86,7 +90,7 @@
     },
     // =f=======================================
     {
-      "key": "f",
+      "keys": "f",
       "name": "+搜索/文件",
       "type": "bindings",
       "bindings": [
@@ -124,7 +128,7 @@
     },
     // =g=======================================
     {
-      "key": "g",
+      "keys": "g",
       "name": "+ 跳转",
       "type": "bindings",
       "bindings": [
@@ -146,7 +150,6 @@
           "type": "command",
           "command": "workbench.action.showErrorsWarnings"
         },
-
         {
           "key": "i",
           "name": "跳转到实现",
@@ -163,7 +166,7 @@
     },
     // =m=======================================
     {
-      "key": "m",
+      "keys": "m",
       "name": "+书签",
       "type": "bindings",
       "bindings": [
@@ -186,7 +189,7 @@
     },
     // =p=======================================
     {
-      "key": "p",
+      "keys": "p",
       "name": "+ 项目调试",
       "type": "bindings",
       "bindings": [
@@ -212,14 +215,14 @@
     },
     // =s=======================================
     {
-      "key": "s",
+      "keys": "s",
       "name": "保存文件",
       "type": "command",
       "command": "workbench.action.files.save"
     },
     // =t=======================================
     {
-      "key": "t",
+      "keys": "t",
       "name": "+ 标签/终端",
       "type": "bindings",
       "bindings": [
@@ -251,31 +254,32 @@
     },
     // =x=======================================
     {
-      "key": "x",
+      "keys": "x",
       "name": "关闭当前窗口",
       "type": "command",
       "command": "workbench.action.closeActiveEditor"
     },
     // =X=======================================
     {
-      "key": "X",
+      "keys": "X",
       "name": "打开刚关闭的窗口",
       "type": "command",
       "command": "workbench.action.reopenClosedEditor"
     },
     // =z=======================================
     {
-      "key": "z",
+      "keys": "z",
       "name": "进入禅模式",
       "type": "command",
       "command": "workbench.action.toggleZenMode"
     },
     // =.=======================================
     {
-      "key": ".",
+      "keys": ".",
       "name": "错误快捷提示",
       "type": "command",
       "command": "editor.action.quickFix"
     }
   ]
+  // vim 插件配置 =======================================================================
 }
