@@ -19,6 +19,9 @@ mkdir -p "${PROJECT_PATH}"
 # 判断是否已经创建tmux会话
 if tmux has-session -t "${NAME}"; then
     echo "Tmux session ${NAME} already exists."
+    # 连接到tmux会话
+    tmux attach -t "${NAME}"
+    exit 0
 else
     # 创建 tmux 会话
     tmux new-session -s "${NAME}" -n default -d
