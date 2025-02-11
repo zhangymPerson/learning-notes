@@ -104,6 +104,31 @@ def send_message_api(message: str):
     content = chat_completion.choices[0].message.content
     return content
 
+def send_message_api_stream(message: str):
+    client = OpenAI(
+        base_url='https://qianfan.baidubce.com/v2',
+        api_key='百度云获取的apiKey'
+    )
+    stream = client.chat.completions.create(
+        # 模型名称 可以去百度模型列表查看
+        model="deepseek-r1",
+        messages=[
+            {
+                "role": "user",
+                "content": f"{message}"
+            }
+        ],
+        stream=True,
+        temperature=0.7,
+        max_tokens=1000
+    )
+    content = ""
+    for chunk in stream:
+        # 试试输出流式响应并合并到content
+        if chunk.choices[0].delta.content is not None:
+            content += chunk.choices[0].delta.content
+            print(chunk.choices[0].delta.content, end='', flush=True)
+    return content
 
 def main():
     """
@@ -131,7 +156,7 @@ def main():
             for row in rows:
                 print(row)
             continue
-        if message == "exit" or message == "quit":
+        if message == "" or message == "exit" or message == "quit":
             break
         # 发送的消息是 message
         # 计算耗时
@@ -139,14 +164,18 @@ def main():
         print(f"用户输入：{message}")
         id = insert_message_info(dbpath, 0, message, '', 0)
         try:
-            content = send_message_api(message)
+            # 使用流式输出，避免响应等待时间过长
+            content = send_message_api_stream(message)
         except Exception as e:
             print(f"获取ai结果异常: {e}")
             content = str(e)
         end_time = time.time()
         # 耗时取整数
         time_cost = int(end_time - start_time)
-        print(f"耗时:{time_cost}s \nAI 回复：{content}")
+        print()
+        print(f"耗时:{time_cost}s")
+        print()
+        # print(f"耗时:{time_cost}s \nAI 回复：{content}")
         insert_message_info(dbpath, id, message, content, time_cost)
 
 
