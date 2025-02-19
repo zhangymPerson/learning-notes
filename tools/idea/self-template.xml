@@ -1,0 +1,38 @@
+<templateSet group="self-template">
+    <template name="stry"
+        value="try {&#10;    JSONObject res = new JSONObject();&#10;    return R.ok(res);&#10;} catch (Exception e) {&#10;    log.error(&quot;接口处理异常：{}&quot;, e.getMessage());&#10;    return R.failed(e.getMessage());&#10;}"
+        description="定义接口返回异常处理" toReformat="false" toShortenFQNames="true">
+        <context>
+            <option name="JAVA_CODE" value="true" />
+        </context>
+    </template>
+    <template name="slog" value="log.info(&quot;$VAR$ = [{}]&quot;, $VAR$);" description="日志打印"
+        toReformat="false" toShortenFQNames="true">
+        <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+        <context>
+            <option name="JAVA_CODE" value="true" />
+        </context>
+    </template>
+    <template name="sccc" value="log.info(&quot;$VAR$ = [{}]&quot;, $VAR$);" description="日志打印"
+        toReformat="false" toShortenFQNames="true">
+        <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+        <context>
+            <option name="JAVA_CODE" value="true" />
+        </context>
+    </template>
+    <template name="demo"
+        value="log.info(&quot;VAR = [{}]&quot;, $VAR$);&#10;log.info(&quot;user() = $user$&quot;);&#10;log.info(&quot;className() = $classname$&quot;);&#10;log.info(&quot;date() = $date$&quot;);&#10;log.info(&quot;lineNumber() = $line$&quot;);&#10;log.info(&quot;methodName() = $mName$&quot;);&#10;log.info(&quot;methodParameterTypes() = $mpt$&quot;);&#10;log.info(&quot;methodParameters() = $mps$&quot;);&#10;"
+        description="live templates" toReformat="false" toShortenFQNames="true">
+        <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+        <variable name="user" expression="user()" defaultValue="" alwaysStopAt="true" />
+        <variable name="classname" expression="className()" defaultValue="" alwaysStopAt="true" />
+        <variable name="date" expression="date()" defaultValue="" alwaysStopAt="true" />
+        <variable name="line" expression="lineNumber()" defaultValue="" alwaysStopAt="true" />
+        <variable name="mName" expression="methodName()" defaultValue="" alwaysStopAt="true" />
+        <variable name="mpt" expression="methodParameterTypes()" defaultValue="" alwaysStopAt="true" />
+        <variable name="mps" expression="methodParameters()" defaultValue="" alwaysStopAt="true" />
+        <context>
+            <option name="JAVA_CODE" value="true" />
+        </context>
+    </template>
+</templateSet>
