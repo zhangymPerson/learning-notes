@@ -7,6 +7,8 @@ services:
       - "discovery.type=single-node" #以单一节点模式启动
       - "ES_JAVA_OPTS=-Xms512m -Xmx1096m" #设置使用jvm内存大小
       - bootstrap.memory_lock=true
+      - "xpack.security.enabled=true" # 启用 Elasticsearch 安全功能
+      - "bootstrap.system_call_filter=false" # 禁用系统调用过滤器
     volumes:
       - ./es/plugins:/usr/local/dockercompose/elasticsearch/plugins #插件文件挂载
       - ./es/data:/usr/local/dockercompose/elasticsearch/data:rw #数据文件挂载

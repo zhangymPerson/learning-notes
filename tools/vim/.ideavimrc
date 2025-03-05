@@ -77,7 +77,7 @@ vmap <leader>ev :action IntroduceVariable<CR>
 " =e=======================================
 " 打开目录
 let g:WhichKeyDesc_E = "<leader>e 打开目录"
-nmap <leader>e :NERDTree<CR>
+nmap <leader>e :NERDTreeToggle<CR>
 
 " =f=======================================
 " leader + f 查找类
@@ -103,7 +103,8 @@ let g:WhichKeyDesc_F_newFile = "<leader>fn 新建文件"
 nmap <leader>fn :action NewFile<CR>
 " 定位当前文件
 let g:WhichKeyDesc_F_file = "<leader>ff 文件-定位当前文件"
-nmap <leader>ff :action SelectInProjectView<CR>
+" nmap <leader>ff :action SelectInProjectView<CR>
+nmap <leader>ff :action GotoFile<CR>
 " 打开当前文件的历史提交记录
 let g:WhichKeyDesc_F_history = "<leader>fh 文件-文件历史改动"
 nmap <leader>fh :action Vcs.ShowTabbedFileHistory<CR>
@@ -118,16 +119,23 @@ let g:WhichKeyDesc_G = "<leader>g +跳转/git"
 let g:WhichKeyDesc_G_back = "<leader>gb 跳转到上一步"
 nmap <leader>gb :action Back<CR>
 " 光标前进
-let g:WhichKeyDesc_G_foreard = "<leader>gf 前进一步"
-nmap <leader>gf :action Forward<CR>
+let g:WhichKeyDesc_G_foreard = "<leader>gn 前进一步"
+nmap <leader>gn :action Forward<CR>
+" 跳转到当前文件所在位置
+let g:WhichKeyDesc_G_file = "<leader>gf 跳转到当前文件所在位置"
+nmap <leader>gf :action SelectInProjectView<CR>
 " 跳转到实现类方法中
 let g:WhichKeyDesc_G_impl = "<leader>gd 跳转到实现位置"
 nmap <leader>gd :action GotoImplementation<CR>
-let g:WhichKeyDesc_G_error = "<leader>ge 跳转到错误位置"
 " 快速跳转到错误位置
+let g:WhichKeyDesc_G_error = "<leader>ge 跳转到错误位置"
 nmap <leader>ge :action GotoNextError<CR>
-let g:WhichKeyDesc_G_commit = "<leader>gg 打开提交窗口"
-nmap <leader>gg :action ActivateCommitToolWindow<CR>
+" 快速提交窗口
+let g:WhichKeyDesc_G_commit = "<leader>gc 打开提交窗口"
+nmap <leader>gc :action ActivateCommitToolWindow<CR>
+" 快速打开git标签
+let g:WhichKeyDesc_G_tag = "<leader>gg 快速跳转到当前文件的 git 记录"
+nmap <leader>gg :action Vcs.ShowTabbedFileHistory<CR>
 
 " =h=======================================
 " leader + h 扩展

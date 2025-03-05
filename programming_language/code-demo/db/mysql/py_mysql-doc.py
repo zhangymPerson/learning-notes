@@ -274,7 +274,8 @@ def run(conf_dict: dict):
                 get_table(db, db_name, table_name)
     except Exception as e:
         print(e)
-        traceback.print_exc()
+        error_info()
+        # traceback.print_exc()
 
 
 def init_args():
@@ -300,10 +301,13 @@ def init_args():
     return parse_args.__dict__
 
 
-if __name__ == '__main__':
+def error_info():
     current_script_path = os.path.abspath(__file__)
     command = f"python {current_script_path} -ip 127.0.0.1 -P 3306 -u root -p 123456 -d db_name"
-    # print(f"start command = [{command}]")
+    print(f"start command = [{command}]")
+
+
+if __name__ == '__main__':
     args = init_args()
     jsons = json.dumps(args, ensure_ascii=False, default=str, indent=2)
     # print(jsons)

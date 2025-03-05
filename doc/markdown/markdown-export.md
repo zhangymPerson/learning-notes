@@ -55,3 +55,9 @@
   `context`
 
   `pandoc -o test.pdf --pdf-engine=xelatex`
+
+- 查看 pandoc 自带的代码高亮样式
+  
+  `pandoc  --list-highlight-styles`
+
+  指定主题导出 `pandoc -s -o test.pdf --pdf-engine=weasyprint --highlight-style=tango test.md`

@@ -66,46 +66,13 @@
 
   **注意：修改 vim 配置要生效，需要重启 idea**
 
-  ```vim
-  " 下面的配置只能在idea系列中生效
-  " Leader默认的键盘位置是 \
-  " 使用 \ r 相当于 idea ctrl + r
-  nnoremap <Leader>r :action Replace<CR>
-  " 使用 \ / 相当于 idea ctrl + f
-  vnoremap <Leader>/ :action Find<CR>
-  nnoremap <Leader>/ :action Find<CR>
-  " 使用 \ . / 相当于 ctrl + shift + f
-  vnoremap <Leader>./ :action FindInPath<CR>
-  nnoremap <Leader>./ :action FindInPath<CR>
-  ```
+### lombok plug 安装 (idea 自带)
 
-### lombok plug 安装
-
-- idea 使用 lombok
-
-  在插件中查找该插件并安装 lombok
-
-  重启 idea
-
-  安装完成后需要配置,在配置 setting 中查找
-
-  **Annotation Processors** -> **Enable annotation processing** 是否勾选 为勾选需要勾选
-
-  **Obtain processors from project classpath option is selected** 也需要选择
-
-  idea 升级如果引起 lombok 不生效,则可以去[idea-github](https://github.com/JetBrains/intellij-community) 和 [lombok-intellij-plugin-github](https://github.com/mplushnikov/lombok-intellij-plugin)查找解决方案
-
-### 查看 controller 中 RequestMapping 的插件 Request mapper
+### 查看 controller 中 RequestMapping 的插件 apifox
 
 - idea 插件地址
 
-  快速查看项目中后台路由 如 "/boot/hello/word"
-
-  <https://plugins.jetbrains.com/plugin/9567-request-mapper>
-
-- 插件安装后使用快捷键为
-
-  `ctrl + shift + \`
+  <https://plugins.jetbrains.com/plugin/20549-apifox-helper>
 
 ### idea 代码缩略图的插件 idea 代码查看插件
 
@@ -148,3 +115,7 @@
   在插件中查找安装
 
   在日志输出区域点击右键进行相关操作和查看
+
+### MyBatisCodeHelper Pro
+
+- mybatis 插件,免费版本够用了
