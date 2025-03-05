@@ -108,6 +108,31 @@ def send_message_api(message: str):
     content = chat_completion.choices[0].message.content
     return content
 
+def send_message_api_stream(message: str):
+    client = OpenAI(
+        base_url='https://qianfan.baidubce.com/v2',
+        api_key='百度云获取的apiKey'
+    )
+    stream = client.chat.completions.create(
+        # 模型名称 可以去百度模型列表查看
+        model="deepseek-r1",
+        messages=[
+            {
+                "role": "user",
+                "content": f"{message}"
+            }
+        ],
+        stream=True,
+        temperature=0.7,
+        max_tokens=1000
+    )
+    content = ""
+    for chunk in stream:
+        # 试试输出流式响应并合并到content
+        if chunk.choices[0].delta.content is not None:
+            content += chunk.choices[0].delta.content
+            print(chunk.choices[0].delta.content, end='', flush=True)
+    return content
 
 def send_message_api_stream(message: str):
     client = OpenAI(
