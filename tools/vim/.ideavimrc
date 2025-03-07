@@ -103,8 +103,7 @@ let g:WhichKeyDesc_F_newFile = "<leader>fn 新建文件"
 nmap <leader>fn :action NewFile<CR>
 " 定位当前文件
 let g:WhichKeyDesc_F_file = "<leader>ff 文件-定位当前文件"
-" nmap <leader>ff :action SelectInProjectView<CR>
-nmap <leader>ff :action GotoFile<CR>
+nmap <leader>ff :action SelectInProjectView<CR>
 " 打开当前文件的历史提交记录
 let g:WhichKeyDesc_F_history = "<leader>fh 文件-文件历史改动"
 nmap <leader>fh :action Vcs.ShowTabbedFileHistory<CR>
@@ -156,7 +155,7 @@ nmap <leader>ml :action ShowBookmarks<CR>
 
 " =p=======================================
 " leader + p 项目相关的操作
-let g:WhichKeyDesc_P = "<leader>p +项目"
+let g:WhichKeyDesc_P = "<leader>p +项目/插件"
 " 快速启动 debug run stop 项目
 let g:WhichKeyDesc_P_debug = "<leader>pd 添加调试 debug 位置"
 nmap <leader>pd :action ToggleLineBreakpoint<CR>
@@ -166,24 +165,28 @@ let g:WhichKeyDesc_P_run = "<leader>pr run-项目"
 nmap <leader>pr :action Rerun<CR>
 let g:WhichKeyDesc_P_View = "<leader>pv debug-视图"
 map <leader>pv :action ActivateDebugToolWindow<CR>
-let g:WhichKeyDesc_P_p_run = "<leader>pp run-项目"
-nmap <leader>pp :action Run<CR>
 " 需要安装 ApiFox 插件
-let g:WhichKeyDesc_P_search = "<leader>p/ 查询接口"
+let g:WhichKeyDesc_P_search = "<leader>p/ 查询项目接口"
 nmap <leader>p/ :action ApiFoxSearch<CR>
-" =s=======================================
-" leader + s 展示,显示
-" let g:WhichKeyDesc_Show = "<leader>s +展示/显示"
+" 插件操作入口
+let g:WhichKeyDesc_P_plugin = "<leader>pp +插件操作"
+let g:WhichKeyDesc_P_plugin_tongyi = "<leader>ppt 通义灵码"
+nmap <leader>ppt :action TriggerCosySelectionChatAction<CR>
+let g:WhichKeyDesc_P_plugin_ApiFox = "<leader>ppa 通义灵码"
+nmap <leader>ppa :action ActivateApifoxToolWindow<CR>
+let g:WhichKeyDesc_P_plugin_mybatis = "<leader>ppm mybatis"
+nmap <leader>ppm :action ActivateMybatisSqlToolWindow<CR>
 
 " =t=======================================
 " leader + t 扩展
 let g:WhichKeyDesc_T = "<leader>t  +tab/翻译"
 " 翻译 需要翻译插件的支持
 let g:WhichKeyDesc_T_translate = "<leader>tw 翻译单词"
-vmap <leader>tw :action $EditorTranslateAction<CR>
+map <leader>tw :action Translation.EditorTranslateAction<CR>
 let g:WhichKeyDesc_T_translateDoc = "<leader>td 翻译段落"
-vmap <leader>td :action $TranslateDocumentationAction<CR>
-let g:WhichKeyDesc_T_Switch = "<leader>to 打开所有标签"
+map <leader>td :action Translation.EditorTranslateAction<CR>
+let g:WhichKeyDesc_T_translate_show = "<leader>ts 显示对话框"
+map <leader>ts :action Translation.ShowTranslationDialogAction<CR>
 nmap <leader>to :action Switcher<CR>
 
 " =v=======================================
@@ -206,6 +209,8 @@ let g:WhichKeyDesc_W_Z = "<leader>wz  进入/退出 全屏模式"
 map <leader>wz :action ToggleDistractionFreeMode<CR>
 let g:WhichKeyDesc_W_H = "<leader>wa  编辑区最大化"
 map <leader>wa :action HideAllWindows<CR>
+let g:WhichKeyDesc_W_n = "<leader>wn 跳转到下一个分屏"
+map <leader>wn :action NextSplitter<CR>
 
 " ========================================
 " 跳转到 terminal 快捷方式
