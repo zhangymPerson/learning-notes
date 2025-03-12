@@ -1,0 +1,8 @@
+ignore:
+  prefixes:
+    - "target"
+    - "tmp_"
+  suffixes:
+    - ".class"
+    - ".tar"
+    - ".bak"
