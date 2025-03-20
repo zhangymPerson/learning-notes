@@ -172,7 +172,7 @@ nmap <leader>p/ :action ApiFoxSearch<CR>
 let g:WhichKeyDesc_P_plugin = "<leader>pp +插件操作"
 let g:WhichKeyDesc_P_plugin_tongyi = "<leader>ppt 通义灵码"
 nmap <leader>ppt :action TriggerCosySelectionChatAction<CR>
-let g:WhichKeyDesc_P_plugin_ApiFox = "<leader>ppa 通义灵码"
+let g:WhichKeyDesc_P_plugin_ApiFox = "<leader>ppa apifox"
 nmap <leader>ppa :action ActivateApifoxToolWindow<CR>
 let g:WhichKeyDesc_P_plugin_mybatis = "<leader>ppm mybatis"
 nmap <leader>ppm :action ActivateMybatisSqlToolWindow<CR>
@@ -252,5 +252,9 @@ let g:WhichKeyDesc_A_optimize = "<leader>an 优化代码"
 vmap <leader>an :action TriggerCosyOptimizeCodeGenerationAction<CR>
 let g:WhichKeyDesc_A_git = "<leader>ag 生成 git commit"
 nmap <leader>ag :action TriggerCosyCommitMessageGenerationAction<CR>
+
+" 保持英文输入法在正常模式
+" 需要下载插件 https://github.com/hadix-lin/ideavim_extension
+set keep-english-in-normal-and-restore-in-insert
 
 " Alt + enter 键 快捷修复提示
