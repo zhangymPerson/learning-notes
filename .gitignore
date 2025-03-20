@@ -72,3 +72,19 @@ install_manifest.txt
 
 .tags
 
+# 忽略 Python 缓存文件
+__pycache__/
+*.py[cod]
+
+# 忽略 mypy 缓存
+.mypy_cache/
+
+# 忽略 pytest 缓存
+.pytest_cache/
+
+# 忽略虚拟环境文件
+venv/
+env/
+
+# 如果 uv 工具生成了特定缓存文件，请添加规则
+.cache/
