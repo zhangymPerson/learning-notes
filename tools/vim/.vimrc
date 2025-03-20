@@ -138,6 +138,9 @@ nnoremap <Down>  :echoe "Use j"<CR>
 " inoremap <Up>    <ESC>:echoe "Use k"<CR>
 " inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
+" nmap 模式下 使用 leader + ! 激活 terminal
+nmap <leader>! :botright terminal<CR>
+
 set hidden
 
 " 显示上下相对行数
@@ -180,6 +183,35 @@ set undodir=~/.vim/undodir
 " zz: 将当前行移动到屏幕中央。
 " zt: 将当前行移动到屏幕顶端。
 " zb: 将当前行移动到屏幕底端o
+
+" Normal + Visual
+noremap # #zz
+noremap * *zz
+noremap w wzz
+noremap W Wzz
+noremap e ezz
+noremap E Ezz
+noremap b bzz
+noremap B Bzz
+" noremap H Hzz
+" noremap L Lzz
+noremap 0 0zz
+noremap $ $zz
+noremap ^ ^zz
+noremap j jzz
+noremap k kzz
+noremap G Gzz
+noremap u uzz
+noremap ( (zz
+noremap ) )zz
+noremap { {zz
+noremap } }zz
+noremap [{ [{zz
+noremap ]} ]}zz
+noremap gd gdzz
+" J 跳转半个页面
+noremap J  <C-d>zz
+noremap K  <C-u>zz
 
 " zc 折叠当前行 zo 打开当前折叠 zC 折叠代码段 zo 打开代码段
 " zM 折叠整个文件 
