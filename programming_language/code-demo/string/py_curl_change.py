@@ -58,6 +58,16 @@ def read_and_modify_clipboard(array: list) -> str:
                 logger.debug(f"item = {item}")
                 clipboard_content = clipboard_content.replace(
                     item.get('old-text'), item.get('new-text'))
+
+        if clipboard_content.startswith("curl"):
+            # 是否包含 -sS 字符
+            if clipboard_content.find('-sS') == -1:
+                # -S 选项允许显示错误信息，而 -s 选项则隐藏其他信息
+                clipboard_content = clipboard_content.replace(
+                    'curl', 'curl -sS').replace("\\", "").replace("\n", " ")
+                clipboard_content = clipboard_content+" | python -m json.tool"
+                logger.debug(f"clipboard_content = {clipboard_content}")
+
         # 将修改后的内容写回剪切板
         pyperclip.copy(clipboard_content)
         logger.debug(f"剪切板内容已更新为:\n{clipboard_content}")
@@ -77,6 +87,7 @@ def main(run: bool):
         logging.debug(f"config_name = {config_name}")
         arr = get_yaml_from_file(config_name)
         command_str = read_and_modify_clipboard(arr)
+        print(command_str)
         if run:
             logger.info(f"curl = \n{command_str}")
             print("")
@@ -91,6 +102,13 @@ def main(run: bool):
 
 if __name__ == "__main__":
     run = False
+    # 如果 -h 参数，则打印帮助信息
+    if len(sys.argv) > 1 and sys.argv[1] == "-h":
+        print("Usage: python3 py_clipboard_text_replacement.py [-h] [-d] [-r]")
+        print("-h: 打印帮助信息.")
+        print("-d: 打印 debug 信息.")
+        print("-r: 直接运行修改后的信息")
+        sys.exit(0)
     #  如果后面加 -d 参数，则打印调试信息
     if len(sys.argv) > 1 and sys.argv[1] == "-d":
         logging.getLogger().setLevel(logging.DEBUG)
