@@ -157,8 +157,14 @@ nmap <leader>ml :action ShowBookmarks<CR>
 " leader + p 项目相关的操作
 let g:WhichKeyDesc_P = "<leader>p +项目/插件"
 " 快速启动 debug run stop 项目
-let g:WhichKeyDesc_P_debug = "<leader>pd 添加调试 debug 位置"
-nmap <leader>pd :action ToggleLineBreakpoint<CR>
+let g:WhichKeyDesc_P_debug = "<leader>pd +debug"
+let g:WhichKeyDesc_P_P_debug = "<leader>pdd debug-添加断点"
+nmap <leader>pdd :action ToggleLineBreakpoint<CR>
+let g:WhichKeyDesc_P_P_debug_list = "<leader>pdl debug-断点列表"
+nmap <leader>pdl :action ViewBreakpoints<CR>
+let g:WhichKeyDesc_P_P_debug_run = "<leader>pde debug-设置debug表达式"
+nmap <leader>pde :action EvaluateExpression<CR>
+
 let g:WhichKeyDesc_P_stop = "<leader>ps stop-项目"
 nmap <leader>ps :action Stop<CR>
 let g:WhichKeyDesc_P_run = "<leader>pr run-项目"
