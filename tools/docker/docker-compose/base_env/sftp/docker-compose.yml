@@ -1,0 +1,14 @@
+version: "3"
+services:
+  sftp:
+    image: atmoz/sftp
+    container_name: sftp_server
+    ports:
+      - "2222:22" # 将容器的 22 端口映射到主机的 2222 端口
+    volumes:
+      - user.conf:/etc/sftp/users.conf:ro # 将主机的配置文件挂载到容器的 /etc/sftp/users.conf 目录
+      - ./data:/home/sftpuser # 将主机的目录挂载到容器的 /home/sftpuser 目录
+    environment:
+      - SFTP_USER=sftpuser # 设置 SFTP 用户名
+      - SFTP_PASSWORD=password # 设置 SFTP 密码
+      - SFTP_CHROOT_DIR=/home/sftpuser # 设置 SFTP 用户的根目录
