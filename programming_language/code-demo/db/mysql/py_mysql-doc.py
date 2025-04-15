@@ -204,25 +204,37 @@ def all_table(db, db_name):
 
 ## 目录
 
-|编号|表名|备注|
-|----|----|----|""")
+|编号|表名|表注释|备注|
+|----|----|----|----|""")
     # 获取所有表名
     results = get_all_table_from_db(db=db, db_name=db_name)
     i = 1
     tables = {}
     for row in results:
-        tables[row.get('table_name')] = row.get('table_comment')
+        table_name = row.get('table_name')
+        tables[table_name] = row.get('table_comment')
         # 去掉换行符
-        name = row.get('table_name').replace("\r\n", "\n").replace("\n", "")
+        name = table_name.replace("\r\n", "\n").replace("\n", "")
         comment = row.get('table_comment').replace(
             "\r\n", "\n").replace("\n", "")
-        print(f"|{i}|[{name}](#{name})|{comment}|")
+        remark = ""
+        # 是否展示表的总数
+        if False:
+            remark = get_table_rows(db, db_name, table_name)
+        print(f"|{i}|[{name}](#{name})|{comment}|{remark}|")
         i = i + 1
     print()
     print(f"## 单个表结构说明")
     # 获取表名创建文档
     for table_name in tables.keys():
         get_table(db, db_name, table_name)
+
+
+def get_table_rows(db, db_name, table_name):
+    sql = "select count(*) as sum from %s" % (table_name)
+    db.execute(sql)
+    result = db.fetchone()
+    return result.get('sum')
 
 
 def get_table(db, db_name, table_name):
