@@ -23,7 +23,7 @@ def parse_config(config_file):
 
 def connect_to_redis(host, port, db, password):
     redis_client = Redis(host=host, port=port, db=db,
-                         password=password, decode_responses=True)
+                         password=password, decode_responses=False)
     return redis_client
 
 
