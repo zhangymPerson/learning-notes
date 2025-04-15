@@ -1,0 +1,9 @@
+redis_services:
+  - host: localhost
+    port: 6379
+    db: 0
+    password: null
+  - host: another_host
+    port: 6380
+    db: 1
+    password: secure_password
