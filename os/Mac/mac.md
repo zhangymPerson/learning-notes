@@ -16,6 +16,10 @@
 
   `Fn+F9` 关闭/开启 command 按键
 
+  第二种方案:
+
+  先 `Ctrl+Fn` 解锁 `Fn`,再按 `Fn+F9`
+
 ## mac 上需要安装的软件
 
 - iterm
