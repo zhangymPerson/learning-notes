@@ -74,10 +74,18 @@
     "scope": "python",
     "prefix": "imlog",
     "body": [
-      "from loguru import logger",
       "import os",
+      "import sys",
       "",
-      "logger.add(f\"{os.path.splitext(os.path.basename(__file__))[0]}.log\")"
+      "from loguru import logger",
+      "",
+      "# 日志级别，DEBUG或INFO",
+      "level = os.getenv(\"DEBUG\", \"\").lower() in (\"true\", \"1\", \"t\") and \"DEBUG\" or \"INFO\"",
+      "# 移除默认的handler",
+      "logger.remove()",
+      "# 输出到控制台和文件",
+      "logger.add(sys.stderr, level=level)",
+      "logger.add(f\"{os.path.splitext(os.path.basename(__file__))[0]}.log\", level=level)"
     ],
     "description": "导入 logging 模块"
   },
