@@ -1,0 +1,23 @@
+version: '3.3'
+
+services:
+  registry:
+    image: registry:2
+    ports:
+      - "5000:5000"
+    environment:
+      - REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY=/var/lib/registry
+      - REGISTRY_STORAGE_FILESYSTEM_CHUNKSIZE=10485760  # 增大到 10MB（原值的 10 倍）
+      - REGISTRY_STORAGE_CACHE_BLOBDESCRIPTOR=inmemory  # 启用内存缓存
+      # - REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY=/var/lib/registry
+      # - REGISTRY_STORAGE_FILESYSTEM_CHUNKSIZE=1048576
+    volumes:
+      - type: bind
+        # 挂载自定义磁盘路径
+        source: /data/docker/registry
+        target: /var/lib/registry
+        # volumes:
+        # - registry-data:/var/lib/registry
+
+volumes:
+  registry-data:

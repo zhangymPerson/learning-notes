@@ -1,6 +1,13 @@
 " Source your .vimrc
 source ~/.vimrc
 
+" vim action 查找
+" 双击 shift + shift 快速跳转
+" 打开 Action 页面
+" 输入 IdeaVim: Track Action IDs 打开此项配置
+" 当有需要的快捷键 或者执行 Action 时，会弹窗提示 vim 中的 Action ID 值
+" 然后在 ideavim 中 配置成自己需要的快捷键
+
 " win 下 配置
 " source D:\\Program Files\\Vim\\_vimrc
 
@@ -13,6 +20,7 @@ source ~/.vimrc
 " 函数跳转
 
 " 可以令屏幕滚动时在光标上下方保留5行预览代码（也就是光标会在第5行触发向上滚动，或者在倒数第5行触发向下滚动）。
+let mapleader=" "
 set so=5
 
 nmap [[ :action MethodUp<CR>
@@ -157,12 +165,18 @@ nmap <leader>ml :action ShowBookmarks<CR>
 " leader + p 项目相关的操作
 let g:WhichKeyDesc_P = "<leader>p +项目/插件"
 " 快速启动 debug run stop 项目
-let g:WhichKeyDesc_P_debug = "<leader>pd 添加调试 debug 位置"
-nmap <leader>pd :action ToggleLineBreakpoint<CR>
+let g:WhichKeyDesc_P_debug = "<leader>pd +debug"
+let g:WhichKeyDesc_P_P_debug = "<leader>pdd debug-添加断点"
+nmap <leader>pdd :action ToggleLineBreakpoint<CR>
+let g:WhichKeyDesc_P_P_debug_list = "<leader>pdl debug-断点列表"
+nmap <leader>pdl :action ViewBreakpoints<CR>
+let g:WhichKeyDesc_P_P_debug_run = "<leader>pde debug-设置debug表达式"
+nmap <leader>pde :action EvaluateExpression<CR>
+
 let g:WhichKeyDesc_P_stop = "<leader>ps stop-项目"
 nmap <leader>ps :action Stop<CR>
 let g:WhichKeyDesc_P_run = "<leader>pr run-项目"
-nmap <leader>pr :action Rerun<CR>
+nmap <leader>pr :action Debug<CR>
 let g:WhichKeyDesc_P_View = "<leader>pv debug-视图"
 map <leader>pv :action ActivateDebugToolWindow<CR>
 " 需要安装 ApiFox 插件
@@ -176,6 +190,18 @@ let g:WhichKeyDesc_P_plugin_ApiFox = "<leader>ppa apifox"
 nmap <leader>ppa :action ActivateApifoxToolWindow<CR>
 let g:WhichKeyDesc_P_plugin_mybatis = "<leader>ppm mybatis"
 nmap <leader>ppm :action ActivateMybatisSqlToolWindow<CR>
+let g:WhichKeyDesc_P_plugin_view = "<leader>ppp view"
+nmap <leader>ppp :action WelcomeScreen.Plugins<CR>
+
+" =q=======================================
+let g:WhichKeyDesc_Q = "<leader>q +快速操作"
+let g:WhichKeyDesc_Q_quickfix = "<leader>qf 快速打开错误"
+nmap <leader>qf :action ShowIntentionActions<CR>
+
+" =s=======================================
+let g:WhichKeyDesc_S = "<leader>s +setting"
+let g:WhichKeyDesc_S_setting = "<leader>ss 打开配置页面"
+nmap <leader>ss :action ShowSettings<CR>
 
 " =t=======================================
 " leader + t 扩展
@@ -188,6 +214,8 @@ map <leader>td :action Translation.EditorTranslateAction<CR>
 let g:WhichKeyDesc_T_translate_show = "<leader>ts 显示对话框"
 map <leader>ts :action Translation.ShowTranslationDialogAction<CR>
 nmap <leader>to :action Switcher<CR>
+let g:WhichKeyDesc_T_next_tab = "<leader>tn 跳转tab"
+nmap <leader>tn :action NextSplitter<CR>
 
 " =v=======================================
 let g:WhichKeyDesc_V = "<leader>v 打开当前文件的视图"
@@ -211,6 +239,8 @@ let g:WhichKeyDesc_W_H = "<leader>wa  编辑区最大化"
 map <leader>wa :action HideAllWindows<CR>
 let g:WhichKeyDesc_W_n = "<leader>wn 跳转到下一个分屏"
 map <leader>wn :action NextSplitter<CR>
+let g:WhichKeyDesc_W_b = "<leader>wb 最大化当前分屏"
+map <leader>wm :action MaximizeEditorInSplit<CR>
 
 " ========================================
 " 跳转到 terminal 快捷方式
@@ -219,20 +249,6 @@ nmap <leader>! :action ActivateTerminalToolWindow<CR>
 
 set ideajoin
 
-" ========================================
-" 单个文件内快速跳转
-" idea easymotion 插件依赖
-set easymotion
-nmap <leader><leader>s <Plug>(easymotion-s)
-nmap <leader><leader>f <Plug>(easymotion-f)
-
-set NERDTree
-" 可以使用 s 实现类似 f 单行查找的效果，可以查找2个字符的内容
-" https://github.com/justinmk/vim-sneak
-set sneak
-" vim-surround 插件
-" https://github.com/tpope/vim-surround
-set vim-surround
 
 " ========================================
 " 通义灵码 插件
@@ -253,8 +269,52 @@ vmap <leader>an :action TriggerCosyOptimizeCodeGenerationAction<CR>
 let g:WhichKeyDesc_A_git = "<leader>ag 生成 git commit"
 nmap <leader>ag :action TriggerCosyCommitMessageGenerationAction<CR>
 
-" 保持英文输入法在正常模式
-" 需要下载插件 https://github.com/hadix-lin/ideavim_extension
-set keep-english-in-normal-and-restore-in-insert
 
-" Alt + enter 键 快捷修复提示
+" ========================================
+" 单个文件内快速跳转
+" idea easymotion 插件依赖
+set easymotion
+let g:WhichKeyDesc_s = "跳转到当前文件内"
+nmap s <Plug>(easymotion-s)
+let g:WhichKeyDesc_f = "跳转到当前文件内"
+nmap f <Plug>(easymotion-f)
+
+" https://github.com/JetBrains/ideavim/wiki/NERDTree-support
+set NERDTree
+
+" 可以使用 s 实现类似 f 单行查找的效果，可以查找2个字符的内容
+" https://github.com/justinmk/vim-sneak
+set sneak
+
+" vim-surround 插件
+" https://github.com/tpope/vim-surround
+set vim-surround
+
+" 参数文本对象插件：提供 'a'（around）和 'i'（inside）文本对象，用于快速选择函数参数
+Plug 'vim-scripts/argtextobj.vim'
+
+" 增强文本对象选择：扩展 a/i 操作符的上下文识别能力（如识别更复杂的文本边界）
+set mini-ai
+
+" 启用增强型匹配插件：支持 % 键在不同语言中跳转匹配标签（HTML/XML标签、控制结构等）
+packadd matchit
+
+" 高亮显示复制/粘贴的内容，持续时间为5000毫秒（5秒）
+let g:highlightedyank_highlight_duration = 5000
+" 启用 vim-highlightedyank 插件，用于高亮显示最近操作的文本
+Plug 'machakann/vim-highlightedyank'
+" Alt + Enter 快捷键用于触发 IntelliJ IDEA 的快速修复功能
+
+# AceJump 插件
+" 按 `f` 激活 AceJump
+map f :action AceAction<CR>
+" 按 `F` 激活目标模式
+map F :action AceTargetAction<CR>
+" 按 `g` 激活行模式
+" map g :action AceLineAction<CR>
+
+" 在正常模式下按 `S` 在光标前激活 AceJump 模式
+nmap S :action AceBackwardAction<CR>
+
+" 在正常模式下按 `s` 在光标后激活 AceJump 模式
+nmap s :action AceForwardAction<CR>

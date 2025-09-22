@@ -10,9 +10,9 @@ services:
       - "xpack.security.enabled=true" # 启用 Elasticsearch 安全功能
       - "bootstrap.system_call_filter=false" # 禁用系统调用过滤器
     volumes:
-      - ./es/plugins:/usr/local/dockercompose/elasticsearch/plugins #插件文件挂载
-      - ./es/data:/usr/local/dockercompose/elasticsearch/data:rw #数据文件挂载
-      - ./es/logs:/usr/local/dockercompose/elasticsearch/logs:rw
+      - ./data/plugins:/usr/local/dockercompose/elasticsearch/plugins #插件文件挂载
+      - ./data/data:/usr/local/dockercompose/elasticsearch/data:rw #数据文件挂载
+      - ./data/logs:/usr/local/dockercompose/elasticsearch/logs:rw
     ports:
       - 9200:9200
       - 9300:9300

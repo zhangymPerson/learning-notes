@@ -28,11 +28,20 @@
 
   `pandoc a.md -o a.docx`
 
-- 支持的 pdf 引擎 
-  
+- 导出 word 时指定样式
+
+  ```bash
+  # 生成一个默认的DOCX参考文档
+  pandoc -o reference.docx --print-default-data-file reference.docx
+  # 使用自定义的DOCX参考文档
+  pandoc a.md -o a.docx --reference-doc=reference.docx
+  ```
+
+- 支持的 pdf 引擎
+
   `wkhtmltopdf`
 
-  [weasyprint](https://github.com/Kozea/WeasyPrint) 引擎支持的种类多，能导出各种复杂的文档需要安装 `python` `pip install weasyprint` 
+  [weasyprint](https://github.com/Kozea/WeasyPrint) 引擎支持的种类多，能导出各种复杂的文档需要安装 `python` `pip install weasyprint`
 
   `pagedjs-cli`
 
@@ -57,7 +66,7 @@
   `pandoc -o test.pdf --pdf-engine=xelatex`
 
 - 查看 pandoc 自带的代码高亮样式
-  
+
   `pandoc  --list-highlight-styles`
 
   指定主题导出 `pandoc -s -o test.pdf --pdf-engine=weasyprint --highlight-style=tango test.md`

@@ -139,7 +139,7 @@ nnoremap <Down>  :echoe "Use j"<CR>
 " inoremap <Down>  <ESC>:echoe "Use j"<CR>
 
 " nmap 模式下 使用 leader + ! 激活 terminal
-nmap <leader>! :botright terminal<CR>
+" nmap <leader>! :botright terminal<CR>
 
 set hidden
 
