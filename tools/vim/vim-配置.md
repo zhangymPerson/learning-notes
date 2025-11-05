@@ -124,3 +124,33 @@
   | imap kk <Up>        | 插入模式下 kk 上移         |      |
   | imap dd <backspace> | 插入模式下 dd 回退         |      |
   | imap oo <enter>     | 插入模式下 oo 下一行       |      |
+
+- 列式选择
+
+  尝试替代快捷键 `Ctrl+q`
+
+  Vim 支持将 `Ctrl+q` 映射为 Visual Block 模式（尤其在终端环境下推荐）：
+
+  临时测试：
+  在 Vim 中执行：
+
+  ```vim
+  :map <C-q> <C-v>
+  ```
+
+  然后按 `Ctrl+q`，看是否进入列选择。
+
+- vim 测试最小配置
+
+  排除 `.vimrc` 干扰：
+
+  ```bash
+  vim -u NONE
+  ```
+
+  然后按 `Ctrl+v`：
+
+  - 如果能进入 → 说明你的 `.vimrc` 有冲突配置
+  - 如果仍不能 → 100% 是终端问题
+    " 启用状态行以便观察模式
+    set laststatus=2
