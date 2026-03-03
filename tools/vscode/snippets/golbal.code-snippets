@@ -222,15 +222,15 @@
     "scope": "python",
     "prefix": "smain",
     "body": [
-      "def main():",
-      "\t\"\"\"",
-      "\t${1:主要是处理}",
-      "\t\"\"\"",
-      "\tprint(\"hello world!\")",
-      "\t$0",
+      "import typer",
+      "",
+      "def main(name: str):",
+      "    print(f\"Hello, {name}!\")",
       "",
       "if __name__ == \"__main__\":",
-      "\tmain()"
+      "    # typer.run() 会自动解析命令行参数并调用 main 函数",
+      "    # 运行命令: python script.py --name Alice",
+      "    typer.run(main)"
     ],
     "description": "创建一个[main]函数"
   },
