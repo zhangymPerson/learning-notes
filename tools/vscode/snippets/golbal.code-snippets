@@ -106,7 +106,7 @@
       "    数据库连接类",
       "    \"\"\"",
       "",
-      "    def __init__(self, host=\"localhost\", port=3306, db=None, user=\"root\", passwd=\"\", charset=\"utf8mb4\"):",
+      "    def __init__(self, host, port, db, user, passwd, charset):",
       "        self.conn = None",
       "        self.cur = None",
       "        self.connect(host, port, db, user, passwd, charset)",
@@ -357,9 +357,7 @@
   "self_python_log": {
     "scope": "python",
     "prefix": "slog",
-    "body": [
-      "${1:logger}.info(f\"${2:var_name} = {${2:var_name}}\")"
-    ],
+    "body": ["${1:logger}.info(f\"${2:var_name} = {${2:var_name}}\")"],
     "description": "创建一个日志"
   },
   "self_python_print": {
@@ -779,9 +777,7 @@
   "self_shell_log": {
     "scope": "shellscript",
     "prefix": "slog",
-    "body": [
-      "log INFO \"$1\""
-    ],
+    "body": ["log INFO \"$1\""],
     "description": "创建一个日志"
   },
   "self_shell_logs": {
@@ -826,9 +822,9 @@
       "    # 设置日志阈值 (兼容旧版 Bash)",
       "    local log_threshold=1",
       "    # 检查 DEBUG 环境变量 (不区分大小写)",
-      "    if [ -n \"\\${DEBUG:-}\" ]; then",
+      "    if [ -n \"\\$DEBUG\" ]; then",
       "        local debug_lower",
-      "        debug_lower=\\$(echo \"\\${DEBUG:-}\" | tr '[:upper:]' '[:lower:]')",
+      "        debug_lower=\\$(echo \"\\$DEBUG\" | tr '[:upper:]' '[:lower:]')",
       "        if [ \"\\$debug_lower\" = \"true\" ] || [ \"\\$debug_lower\" = \"1\" ]; then",
       "            log_threshold=0",
       "        fi",
