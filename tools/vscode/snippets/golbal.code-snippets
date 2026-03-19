@@ -3,22 +3,30 @@
   // ==============================================================================================
   "获取当前目录": {
     "prefix": "pwd",
-    "body": ["$TM_DIRECTORY"],
+    "body": [
+      "$TM_DIRECTORY"
+    ],
     "description": "获取当前目录"
   },
   "获取当前文件名": {
     "prefix": "filename",
-    "body": ["$TM_FILENAME"],
+    "body": [
+      "$TM_FILENAME"
+    ],
     "description": "获取当前文件名"
   },
   "当前时间": {
     "prefix": "time",
-    "body": ["$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND"],
+    "body": [
+      "$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND"
+    ],
     "description": "获取当前时间"
   },
   "当前时间1": {
     "prefix": "date",
-    "body": ["$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE "],
+    "body": [
+      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE "
+    ],
     "description": "获取当前时间"
   },
   "当前时间2": {
@@ -222,22 +230,33 @@
     "scope": "python",
     "prefix": "smain",
     "body": [
-      "def main():",
-      "\t\"\"\"",
-      "\t${1:主要是处理}",
-      "\t\"\"\"",
-      "\tprint(\"hello world!\")",
-      "\t$0",
+      "# /// script",
+      "# dependencies = [",
+      "#   \"typer\"",
+      "# ]",
+      "# ///",
+      "",
+      "# uv run scrpit.py",
+      "import typer",
+      "",
+      "",
+      "def main(name: str):",
+      "    print(f\"Hello, {name}!\")",
+      "",
       "",
       "if __name__ == \"__main__\":",
-      "\tmain()"
+      "    # typer.run() 会自动解析命令行参数并调用 main 函数",
+      "    # 运行命令: python script.py --name Alice",
+      "    typer.run(main)",
     ],
     "description": "创建一个[main]函数"
   },
   "self_python_var": {
     "scope": "python",
     "prefix": "svar",
-    "body": ["${1:var_name} = ${2:\"\"}"],
+    "body": [
+      "${1:var_name} = ${2:\"\"}"
+    ],
     "description": "创建一个变量"
   },
   "self_python_args": {
@@ -288,37 +307,51 @@
   "self_python_def": {
     "scope": "python",
     "prefix": "sfunc",
-    "body": ["def ${1:function}():", "    print(\"函数  ${1:function} 执行\")"],
+    "body": [
+      "def ${1:function}():",
+      "    print(\"函数  ${1:function} 执行\")"
+    ],
     "description": "创建一个函数"
   },
   "self_python_array": {
     "scope": "python",
     "prefix": "sarr",
-    "body": ["arr = [$1]"],
+    "body": [
+      "arr = [$1]"
+    ],
     "description": "创建一个[数组]结构"
   },
   "self_python_list": {
     "scope": "python",
     "prefix": "slist",
-    "body": ["list = [$1]"],
+    "body": [
+      "list = [$1]"
+    ],
     "description": "创建一个[list]结构"
   },
   "self_python_set": {
     "scope": "python",
     "prefix": "sset",
-    "body": ["set = set()", "set.add($1)"],
+    "body": [
+      "set = set()",
+      "set.add($1)"
+    ],
     "description": "创建一个[set]结构"
   },
   "self_python_map": {
     "scope": "python",
     "prefix": "smap",
-    "body": ["map = {'key':'value',$1:$2}"],
+    "body": [
+      "map = {'key':'value',$1:$2}"
+    ],
     "description": "创建一个[map]结构"
   },
   "self_python_now": {
     "scope": "python",
     "prefix": "snow",
-    "body": ["datetime.datetime.now(None).strftime('%Y-%m-%d %H:%M:%S')"],
+    "body": [
+      "datetime.datetime.now(None).strftime('%Y-%m-%d %H:%M:%S')"
+    ],
     "description": "获取当前时间"
   },
   "self_python_log": {
@@ -330,19 +363,25 @@
   "self_python_print": {
     "scope": "python",
     "prefix": "sout",
-    "body": ["print(f\"$1 = [{$1}]\")"],
+    "body": [
+      "print(f\"$1 = [{$1}]\")"
+    ],
     "description": "创建一个打印输出"
   },
   "self_python_string": {
     "scope": "python",
     "prefix": "sstr",
-    "body": ["${1:str} = f\"{${2:var}}\""],
+    "body": [
+      "${1:str} = f\"{${2:var}}\""
+    ],
     "description": "创建一个字符串变量替换"
   },
   "self_python_object": {
     "scope": "python",
     "prefix": "sobject",
-    "body": [""],
+    "body": [
+      ""
+    ],
     "description": "创建一个[object]结构"
   },
   "self_python_tojson": {
@@ -356,7 +395,9 @@
   "self_python_toobj": {
     "scope": "python",
     "prefix": "toobj",
-    "body": ["json.loads($1)"],
+    "body": [
+      "json.loads($1)"
+    ],
     "description": "json 转 obj"
   },
   "self_python_class_note": {
@@ -446,31 +487,41 @@
   "self_php_array": {
     "scope": "php",
     "prefix": "sarr",
-    "body": ["\\$arr = array();"],
+    "body": [
+      "\\$arr = array();"
+    ],
     "description": "创建一个[数组]结构"
   },
   "self_php_list": {
     "scope": "php",
     "prefix": "slist",
-    "body": ["\\$list = array();"],
+    "body": [
+      "\\$list = array();"
+    ],
     "description": "创建一个[list]结构"
   },
   "self_php_set": {
     "scope": "php",
     "prefix": "sset",
-    "body": ["\\$set = array();"],
+    "body": [
+      "\\$set = array();"
+    ],
     "description": "创建一个[set]结构"
   },
   "self_php_map": {
     "scope": "php",
     "prefix": "smap",
-    "body": ["\\$map = array();"],
+    "body": [
+      "\\$map = array();"
+    ],
     "description": "创建一个[map]结构"
   },
   "self_php_now": {
     "scope": "php",
     "prefix": "snow",
-    "body": [""],
+    "body": [
+      ""
+    ],
     "description": "获取当前时间"
   },
   "self_php_log": {
@@ -484,13 +535,17 @@
   "self_php_print": {
     "scope": "php",
     "prefix": "sout",
-    "body": ["echo \\$$1 . PHP_EOL;"],
+    "body": [
+      "echo \\$$1 . PHP_EOL;"
+    ],
     "description": "创建一个打印输出"
   },
   "self_php_object": {
     "scope": "php",
     "prefix": "sobject",
-    "body": [""],
+    "body": [
+      ""
+    ],
     "description": "创建一个[object]结构"
   },
   "self_php_tojson": {
@@ -504,7 +559,9 @@
   "self_php_toobj": {
     "scope": "php",
     "prefix": "toobj",
-    "body": [""],
+    "body": [
+      ""
+    ],
     "description": "json 转 obj"
   },
   "self_php_class_note": {
@@ -538,7 +595,11 @@
   "self_php_field_note": {
     "scope": "php",
     "prefix": "//field",
-    "body": ["/**", " * @var ${1:type}", " */"],
+    "body": [
+      "/**",
+      " * @var ${1:type}",
+      " */"
+    ],
     "description": "类属性注释"
   },
   "self_php_constr": {
@@ -661,7 +722,13 @@
   "self_shell_fun": {
     "scope": "shellscript",
     "prefix": "sfunc",
-    "body": ["# $1", "function $1() {", "    echo \"$1() 执行...\"", "}", ""],
+    "body": [
+      "# $1",
+      "function $1() {",
+      "    echo \"$1() 执行...\"",
+      "}",
+      ""
+    ],
     "description": "创建一个[main]函数"
   },
   "self_shell_array": {
@@ -686,19 +753,25 @@
   "self_shell_set": {
     "scope": "shellscript",
     "prefix": "sset",
-    "body": [""],
+    "body": [
+      ""
+    ],
     "description": "创建一个[set]结构"
   },
   "self_shell_map": {
     "scope": "shellscript",
     "prefix": "smap",
-    "body": [""],
+    "body": [
+      ""
+    ],
     "description": "创建一个[map]结构"
   },
   "self_shell_now": {
     "scope": "shellscript",
     "prefix": "snow",
-    "body": ["now=$(date +\"%F %T\")"],
+    "body": [
+      "now=$(date +\"%F %T\")"
+    ],
     "description": "获取当前时间"
   },
   "self_shell_log": {
@@ -781,25 +854,33 @@
   "self_shell_print": {
     "scope": "shellscript",
     "prefix": "sout",
-    "body": ["echo \"${1:var} = [\\${${1:var}}]\""],
+    "body": [
+      "echo \"${1:var} = [\\${${1:var}}]\""
+    ],
     "description": "创建一个打印输出"
   },
   "self_shell_object": {
     "scope": "shellscript",
     "prefix": "sobject",
-    "body": [""],
+    "body": [
+      ""
+    ],
     "description": "创建一个[object]结构"
   },
   "self_shell_tojson": {
     "scope": "shellscript",
     "prefix": "tojson",
-    "body": [""],
+    "body": [
+      ""
+    ],
     "description": "obj 转 json"
   },
   "self_shell_toobj": {
     "scope": "shellscript",
     "prefix": "toobj",
-    "body": [""],
+    "body": [
+      ""
+    ],
     "description": "json 转 obj"
   },
   "self_shell_method_note": {
@@ -862,19 +943,29 @@
   "self_go_main": {
     "scope": "go",
     "prefix": "smain",
-    "body": ["package main", "", "func main() {", "  $0", "}"],
+    "body": [
+      "package main",
+      "",
+      "func main() {",
+      "  $0",
+      "}"
+    ],
     "description": "创建一个[main]函数"
   },
   "self_go_var": {
     "scope": "go",
     "prefix": "svar",
-    "body": ["${1:var_name} := ${2:\"\"}"],
+    "body": [
+      "${1:var_name} := ${2:\"\"}"
+    ],
     "description": "创建一个变量"
   },
   "self_go_array": {
     "scope": "go",
     "prefix": "sarr",
-    "body": ["arr = [$1]"],
+    "body": [
+      "arr = [$1]"
+    ],
     "description": "创建一个[数组]结构"
   },
   "self_go_list": {
@@ -889,7 +980,9 @@
   "self_go_set": {
     "scope": "go",
     "prefix": "sset",
-    "body": [""],
+    "body": [
+      ""
+    ],
     "description": "创建一个[set]结构"
   },
   "self_go_map": {
@@ -904,7 +997,9 @@
   "self_go_now": {
     "scope": "go",
     "prefix": "snow",
-    "body": [""],
+    "body": [
+      ""
+    ],
     "description": "获取当前时间"
   },
   "self_go_log": {
@@ -920,25 +1015,33 @@
   "self_go_error_log": {
     "scope": "go",
     "prefix": "errlog",
-    "body": ["log.Println(\"$1异常,异常信息如下:\", err)"],
+    "body": [
+      "log.Println(\"$1异常,异常信息如下:\", err)"
+    ],
     "description": "打印错误日志"
   },
   "self_go_error_log_exit": {
     "scope": "go",
     "prefix": "errlogexit",
-    "body": ["log.Fatal(\"$1异常,异常信息如下:\", err)"],
+    "body": [
+      "log.Fatal(\"$1异常,异常信息如下:\", err)"
+    ],
     "description": "打印错误日志"
   },
   "self_go_print": {
     "scope": "go",
     "prefix": "sout",
-    "body": ["fmt.Println(\"原生输出======>\", ${1:var_name})"],
+    "body": [
+      "fmt.Println(\"原生输出======>\", ${1:var_name})"
+    ],
     "description": "创建一个打印输出"
   },
   "self_go_object": {
     "scope": "go",
     "prefix": "sobject",
-    "body": [""],
+    "body": [
+      ""
+    ],
     "description": "创建一个[object]结构"
   },
   "self_go_tojson": {
@@ -957,19 +1060,25 @@
   "self_go_toobj": {
     "scope": "go",
     "prefix": "toobj",
-    "body": [""],
+    "body": [
+      ""
+    ],
     "description": "json 转 obj"
   },
   "self_go_class_note": {
     "scope": "go",
     "prefix": "//class",
-    "body": [""],
+    "body": [
+      ""
+    ],
     "description": "结构体注释"
   },
   "self_go_method_note": {
     "scope": "go",
     "prefix": "//method",
-    "body": ["// $1 函数的作用是:$2"],
+    "body": [
+      "// $1 函数的作用是:$2"
+    ],
     "description": "函数注释"
   },
   "self_go_flag": {
@@ -1022,7 +1131,9 @@
   "self_go_field": {
     "scope": "go",
     "prefix": "fjson",
-    "body": ["${1:Name} ${2:string} `json:\"${3:json}\"`"],
+    "body": [
+      "${1:Name} ${2:string} `json:\"${3:json}\"`"
+    ],
     "description": "函数注释"
   },
   // ==============================================================================================

@@ -121,7 +121,7 @@
 
   选中多行
 
-  `ctrl + Shift + v`
+  `ctrl + v`
 
 ## 各个 shell 启动 vim 模式的配置
 
