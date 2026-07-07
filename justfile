@@ -11,3 +11,8 @@ pull:
 push:
     git push origin "$(git branch --show-current)"
     git push gitee "$(git branch --show-current)"
+
+# 格式化代码
+format:
+    uvx ruff check --fix .
+    npx prettier --write .
