@@ -14,7 +14,7 @@
   生成代码
 
 - 使用 `docker` 启动 `openapi-generator-online` 服务
-  
+
   `docker compose up -d`
 
   ```shell
@@ -22,6 +22,6 @@
   curl -X GET "http://127.0.0.1:8080/api/gen/clients" -H "Accept: */*"
 
   # 根据 openapi.yaml 或者 openapi.json 生成代码
-  # 举例如下 地址为:http://localhost/api/swagger/doc.json 客户端语言为: client-language 可以设置 为 java/go/markdown 等 
+  # 举例如下 地址为:http://localhost/api/swagger/doc.json 客户端语言为: client-language 可以设置 为 java/go/markdown 等
   curl -X POST "http://127.0.0.1:8080/api/gen/clients/{client-language}" -H "Accept: */*" -H "Content-Type: application/json" -d "{ \"openAPIUrl\": \"http://localhost/api/swagger/doc.json\"}"
   ```

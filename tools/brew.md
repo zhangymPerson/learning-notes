@@ -15,11 +15,11 @@
 ## 使用
 
 - 查找软件
-  
-  `brew search java` 
+
+  `brew search java`
 
 - 安装
-  
+
   `brew insatll java`
 
 ## 配置

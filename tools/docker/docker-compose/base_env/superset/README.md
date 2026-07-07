@@ -1,7 +1,7 @@
-# 获取登录 token 
+# 获取登录 token
 
 - 获取登录 token
-  
+
   ```shell
   curl --location --request POST 'http://127.0.0.1:8080/api/v1/security/login' \
     --header 'User-Agent: Apifox/1.0.0 (https://apifox.com)' \
@@ -16,7 +16,7 @@
   ```
 
 - 获取分享图表的 token
-  
+
   ```shell
   curl --location --request POST 'http://127.0.0.1:8080/api/v1/security/guest_token/' \
     --header 'User-Agent: Apifox/1.0.0 (https://apifox.com)' \

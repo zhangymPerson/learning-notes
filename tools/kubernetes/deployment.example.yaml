@@ -13,11 +13,11 @@ spec:
         app: example-app
     spec:
       containers:
-      - name: example-container
-        image: nginx
-        # 调试容器时使用:容器启动命令 和 参数
-        command:
-          - /bin/sh
-          - -c
-        args:
-          - while true; do echo "容器正在运行"; sleep 60; done
+        - name: example-container
+          image: nginx
+          # 调试容器时使用:容器启动命令 和 参数
+          command:
+            - /bin/sh
+            - -c
+          args:
+            - while true; do echo "容器正在运行"; sleep 60; done

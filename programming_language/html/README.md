@@ -26,7 +26,11 @@
       <!--  外联样式表-->
       <link rel="stylesheet" type="text/css" href="style.css" />
       <!--  文档tag图标-->
-      <link rel="shortcut icon" type="image/x-icon" href="http://www.baidu.com/favicon.ico" />
+      <link
+        rel="shortcut icon"
+        type="image/x-icon"
+        href="http://www.baidu.com/favicon.ico"
+      />
 
       <!--  内联样式表-->
       <style></style>

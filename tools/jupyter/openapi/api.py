@@ -1,25 +1,23 @@
 # 设置变量
-import requests
-import logging
 import json
+import logging
+
+import requests
+
 # 配置日志
-logging.basicConfig(level=logging.INFO,
-                    format='[%(asctime)s-%(name)s][%(lineno)d][%(funcName)s][%(levelname)s]%(message)s',
-                    datefmt='%Y-%m-%d %H:%M:%S',
-                    encoding='utf-8')
+logging.basicConfig(
+    level=logging.INFO,
+    format="[%(asctime)s-%(name)s][%(lineno)d][%(funcName)s][%(levelname)s]%(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+    encoding="utf-8",
+)
 logger = logging.getLogger(__name__)
 
 # 环境变量配置
 env_map = {
-    "dev": {
-        "url": "https://echo.apifox.com/"
-    },
-    "prod": {
-        "url": "https://api.example.com"
-    },
-    "test": {
-        "url": "http://localhost:8000"
-    }
+    "dev": {"url": "https://echo.apifox.com/"},
+    "prod": {"url": "https://api.example.com"},
+    "test": {"url": "http://localhost:8000"},
 }
 
 # 多环境切换
@@ -55,8 +53,9 @@ def get(url):
     异常:
     - requests.exceptions.RequestException: 网络请求过程中发生的错误。
     """
+    token = get_token()
     headers = {
-        'Authorization': f'Bearer {token}',
+        "Authorization": f"Bearer {token}",
     }
     try:
         logger.info(f"发送 get 请求 ===> url:[{url}],token:[{token}]")
@@ -64,7 +63,8 @@ def get(url):
         # 转成 json 字符串并格式化打印
         data = response.json()
         logging.info(
-            f"请求结果: ===> \n{json.dumps(data, indent=4,ensure_ascii=False)}")
+            f"请求结果: ===> \n{json.dumps(data, indent=4, ensure_ascii=False)}"
+        )
         # 如果响应状态不是200，将抛出HTTPError异常
         response.raise_for_status()
         return response.json()
@@ -88,20 +88,22 @@ def post_json(url, payload):
     异常:
     - requests.exceptions.RequestException: 网络请求过程中发生的错误。
     """
+    token = get_token()
     try:
         # 使用json参数自动设置Content-Type为application/json
         headers = {
-            'Content-Type': 'application/json',
-            'Authorization': f'Bearer {token}',
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {token}",
         }
         logger.info(f"请求 url:{url},token:{token}")
-        logger.info(f"请求 json:")
+        logger.info("请求 json:")
         logging.info(payload)
         response = requests.post(url, data=payload, headers=headers)
         # 转成 json 字符串并格式化打印
         data = response.json()
         logging.info(
-            f"请求结果: ===> \n{json.dumps(data, indent=4,ensure_ascii=False)}")
+            f"请求结果: ===> \n{json.dumps(data, indent=4, ensure_ascii=False)}"
+        )
         logging.info(f"请求结果: ===> \n{json.dumps(data, indent=4)}")
         # 如果响应状态不是200，将抛出HTTPError异常
         response.raise_for_status()

@@ -4,11 +4,11 @@
 console.log("Hello Word!");
 
 function f(shouldInitialize: Boolean) {
-    if (shouldInitialize) {
-        var x = 10;
-    }
+  if (shouldInitialize) {
+    var x = 10;
+  }
 
-    return x;
+  return x;
 }
 
 // name属性在window对象上定义： 您需要为变量提供一个新名称：

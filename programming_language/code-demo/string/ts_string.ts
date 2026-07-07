@@ -1,6 +1,5 @@
-function test(key:String) {
-    console.log(key);
-    
+function test(key: String) {
+  console.log(key);
 }
 
-test("a")
+test("a");

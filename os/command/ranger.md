@@ -56,6 +56,3 @@
   # 显示边框线
   set draw_borders true
   ```
-
-
-  

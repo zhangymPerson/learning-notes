@@ -48,4 +48,3 @@
 - pyenv
 
   mac 安装 `pyenv` 对 python 进行多版本管理
-  

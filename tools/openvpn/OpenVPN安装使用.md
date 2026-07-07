@@ -6,7 +6,6 @@ yum install epel-release
 
 yum -y install openssl openssl-devel pam pam-devel
 
-
 #证书生成
 yum -y install easy-rsa
 
@@ -15,15 +14,14 @@ yum -y install openvpn
 
 - 配置文件
 
-    #模板配置文件的位置
+  #模板配置文件的位置
 
-    /usr/share/doc/openvpn-*.*.*/sample/sample-config-files/
+  /usr/share/doc/openvpn-_._.*/sample/sample-config-files/
 
-    #复制配置文件到配置位置
-    cp /usr/share/doc/openvpn-*.*.*/sample/sample-config-files/server.conf /etc/openvpn/
+  #复制配置文件到配置位置
+  cp /usr/share/doc/openvpn-_._.*/sample/sample-config-files/server.conf /etc/openvpn/
 
-
-    ./easyrsa import-req /etc/openvpn/client/easy-rsa/3.0.3/pki/reqs/dalin.req dalin
+  ./easyrsa import-req /etc/openvpn/client/easy-rsa/3.0.3/pki/reqs/dalin.req dalin
 
 **需要配合证书软件easy-rsa结合使用（参考别的笔记）**
 
@@ -61,33 +59,32 @@ ifconfig-pool-persist ipp.txt
 ;push "route 192.168.20.0 255.255.255.0"
 push "route 10.0.0.0 255.255.255.0"
 # 若客户端希望所有的流量都通过***传输,则可以使用该语句，其会自动改变客户端的网关为***服务器,推荐关闭，一旦设置，请小心服务端的DHCP设置问题，如果需要抓取所以连接***客户端的流量信息，需要开启，这就是网络上面所说的×××。
-;push "redirect-gateway def1 bypass-dhcp" 
+;push "redirect-gateway def1 bypass-dhcp"
 
 # 如果客户端都使用相同的证书和密钥连接VPN，一定要打开这个选项，否则每个证书只允许一个人连接VPN
 duplicate-cn
 
 ```
 
-
 # 客户端 下载openvpn软件
 
 - 找到相应的conf配置文件夹
 
-
 将下载下来的客户端文件填写到此处
 
-easy-rsa/easyrsa3/pki/ca.crt <制作server证书的文件夹> 
-easy-rsa/easyrsa3/pki/issued/client.crt <制作server证书的文件夹> 
+easy-rsa/easyrsa3/pki/ca.crt <制作server证书的文件夹>
+easy-rsa/easyrsa3/pki/issued/client.crt <制作server证书的文件夹>
 easy-rsa/easyrsa3/pki/private/client.key <制作client证书的文件夹>
 
 - 创建对应的 ***.ovpn文件
+
 ```
 client   #这个不能改
 proto tcp  #要与server.conf一致
 dev tun    #要与server.conf一致
 remote 主机外网IP 12306
 
-ca ca.crt   
+ca ca.crt
 cert dalin.crt
 key dalin.key      #对应所下载的证书
 

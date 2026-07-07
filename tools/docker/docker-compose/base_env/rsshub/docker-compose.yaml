@@ -3,12 +3,12 @@ services:
     image: diygod/rsshub
     restart: always
     ports:
-      - '1200:1200'
+      - "1200:1200"
     environment:
       # 可选：设置缓存时间（单位秒）
-      CACHE_EXPIRE: '3600'
+      CACHE_EXPIRE: "3600"
       # 可选：启用 Puppeteer（用于部分需要浏览器渲染的站点）
-      PUPPETEER_WS_ENDPOINT: 'ws://browserless:3000'
+      PUPPETEER_WS_ENDPOINT: "ws://browserless:3000"
     # 如果不需要 Puppeteer，可删除以下依赖
     depends_on:
       - browserless

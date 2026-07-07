@@ -75,5 +75,5 @@
 - [firefox 支持](https://support.mozilla.org/zh-CN/)
 
 - firefox 按下 esc 退出全屏的问题
-  
+
   在浏览器输入框输入 `about:config` 搜索 `fullscreen` 将 `browser.fullscreen.exit_on_escape` 设置为 `false` 即可

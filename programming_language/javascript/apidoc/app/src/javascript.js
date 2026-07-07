@@ -14,8 +14,8 @@
  * {
  *   "message": "用户名不存在"
  * }
- * 
- * 
+ *
+ *
  * @apiSuccess {String} userName 用户名
  * @apiSuccess {String} createTime 创建时间
  * @apiSuccess {String} updateTime 更新时间
@@ -26,6 +26,4 @@
  *   "updateTime": "1568901681"
  * }
  */
-function test() {
-
-}
+function test() {}

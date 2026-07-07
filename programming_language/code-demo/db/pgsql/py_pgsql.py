@@ -146,8 +146,8 @@ order by
         return
     print(f"- **{table_name}**")
     print("")
-    print(f"  |id|字段名|字段类型|字段备注|")
-    print(f"  |---|---|---|---|")
+    print("  |id|字段名|字段类型|字段备注|")
+    print("  |---|---|---|---|")
     i = 1
     for row in results:
         print(f"  |{i}|{row[1]}|{row[2]}|{row[6]}|")

@@ -1,13 +1,13 @@
 # 请安装 OpenAI SDK : pip install openai
 # apiKey 获取地址： https://console.bce.baidu.com/iam/#/iam/apikey/list
 # 支持的模型列表： https://cloud.baidu.com/doc/WENXINWORKSHOP/s/Fm2vrveyu
-import time
-from openai import OpenAI
-import readline
+import os
 
 # sqlite 读写库
 import sqlite3
-import os
+import time
+
+from openai import OpenAI
 
 
 def create_ai_history_table(db_path: str):
@@ -108,31 +108,6 @@ def send_message_api(message: str):
     content = chat_completion.choices[0].message.content
     return content
 
-def send_message_api_stream(message: str):
-    client = OpenAI(
-        base_url='https://qianfan.baidubce.com/v2',
-        api_key='百度云获取的apiKey'
-    )
-    stream = client.chat.completions.create(
-        # 模型名称 可以去百度模型列表查看
-        model="deepseek-r1",
-        messages=[
-            {
-                "role": "user",
-                "content": f"{message}"
-            }
-        ],
-        stream=True,
-        temperature=0.7,
-        max_tokens=1000
-    )
-    content = ""
-    for chunk in stream:
-        # 试试输出流式响应并合并到content
-        if chunk.choices[0].delta.content is not None:
-            content += chunk.choices[0].delta.content
-            print(chunk.choices[0].delta.content, end='', flush=True)
-    return content
 
 def send_message_api_stream(message: str):
     client = OpenAI(
@@ -177,8 +152,7 @@ def main():
                 print("请输入小于1000的数字")
                 row = 10
             cursor.execute(
-                "SELECT * FROM ai_history order by created_at desc limit ? ", (
-                    row,)
+                "SELECT * FROM ai_history order by created_at desc limit ? ", (row,)
             )
             rows = cursor.fetchall()
             for row in rows:

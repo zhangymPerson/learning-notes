@@ -6,18 +6,19 @@
 
 - 进入conf下,修改配置文件
 
-- 进入 /bin/下 
+- 进入 /bin/下
 
-    ```
-    #执行 
-    mvn -verison
-    ```
+  ```
+  #执行
+  mvn -verison
+  ```
+
 - 配置环境变量
-
 
 todo 添加可用的setting.xml (阿里云仓库)文件
 
 - setting.xml配置文件
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 
@@ -298,7 +299,7 @@ under the License.
                     </snapshots>
                 </pluginRepository>
                 -->
-                </pluginRepositories>                 
+                </pluginRepositories>
         </profile>
   </profiles>
     <activeProfiles>

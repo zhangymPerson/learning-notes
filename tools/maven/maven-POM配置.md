@@ -1,15 +1,15 @@
 # pom 文件配置说明介绍
 
+- maven中配置编码格式为utf-8
 
-- maven中配置编码格式为utf-8 
+  pom.xml中添加以下配置
 
-    pom.xml中添加以下配置
-    ```xml
-    <properties>
-        <!--添加编码格式为utf-8-->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-    ```
+  ```xml
+  <properties>
+      <!--添加编码格式为utf-8-->
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  ```
 
 - 配置demo
 
@@ -61,10 +61,8 @@
     </dependency>
 </dependencies>
 
-    
+
 ```
-
-
 
 - maven项目中单独指定maven仓库的配置
 
@@ -92,6 +90,7 @@
     </repositories>
 
 ```
+
 - maven构建时资源不全部加载的问题
 
 ```xml
@@ -130,29 +129,26 @@
             </plugin>
 ```
 
-
 - maven jar项目指定启动的类和主方法 maven 启动类的配置
-  
-    jar中没有主清单属性的时候
 
-
+  jar中没有主清单属性的时候
 
 ```xml
             <!--使用插件 问题时不能自动打包所需的maven依赖包-->
-           <plugin>  
-                <groupId>org.apache.maven.plugins</groupId>  
-                <artifactId>maven-jar-plugin</artifactId>  
-                <version>2.4</version>  
-                <configuration>  
+           <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
                     <archive>
-                        <manifest>  
-                            <addClasspath>true</addClasspath>  
-                            <classpathPrefix>lib/</classpathPrefix>  
-                            <mainClass>packname.classname</mainClass>  
-                        </manifest>  
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>packname.classname</mainClass>
+                        </manifest>
                     </archive>
-                </configuration>  
-            </plugin> 
+                </configuration>
+            </plugin>
 ```
 
 - maven 将依赖包一起打包
@@ -185,7 +181,7 @@
 
 - maven 不能clean
 
-    有文件被占用，可以关掉启动程序的客户端或者 terminate ,然后重新执行即可
+  有文件被占用，可以关掉启动程序的客户端或者 terminate ,然后重新执行即可
 
 - maven 确定jdk版本和项目编码的配置
 
@@ -207,122 +203,123 @@
 
 - mvn 发布到本地仓库的配置
 
-    **注意事项：**
-    
-    **1.配置在子pom中，packaging类型为pom的一般是父项目的pom.xml文件**
-    
-    配置文件中的含义：
-        
+  **注意事项：**
+
+  **1.配置在子pom中，packaging类型为pom的一般是父项目的pom.xml文件**
+
+  配置文件中的含义：
+
         project.basedir=pom.xml文件所在文件夹的位置
-        
+
         project.build.directory = ${project.basedir}/target
-    
+
         其他的可以在idea中根据 pom.xml 文件点击进去查看
 
-    ```xml
-    <!--配置在子pom.xml中，packaging 类型不为 pom 类型的pom.xml中-->
-    <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-install-plugin</artifactId>
-        <version>2.4</version>
-        <executions>
-            <execution>
-                <id>install-find-repo</id>
-                <goals>
-                    <goal>install-file</goal>
-                </goals>
-                <phase>install</phase>
-                <configuration>
-                    <file>
-                        ${project.build.directory}/${project.build.finalName}.jar
-                    </file>
-                    <sources>${project.build.directory}/${project.build.finalName}-sources.jar</sources>
-                    <groupId>${project.groupId}</groupId>
-                    <artifactId>${project.artifactId}</artifactId>
-                    <version>${project.version}</version>
-                    <packaging>jar</packaging>
-                </configuration>
-            </execution>
-        </executions>
-    </plugin>
-    <!--打包源码的jar配置  在有源码的位置配置，不要配置在父pom.xml中-->
-    <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <executions>
-            <execution>
-                <id>attach-sources</id>
-                <goals>
-                    <goal>jar</goal>
-                </goals>
-            </execution>
-        </executions>
-    </plugin>
-    ```
+  ```xml
+  <!--配置在子pom.xml中，packaging 类型不为 pom 类型的pom.xml中-->
+  <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-install-plugin</artifactId>
+      <version>2.4</version>
+      <executions>
+          <execution>
+              <id>install-find-repo</id>
+              <goals>
+                  <goal>install-file</goal>
+              </goals>
+              <phase>install</phase>
+              <configuration>
+                  <file>
+                      ${project.build.directory}/${project.build.finalName}.jar
+                  </file>
+                  <sources>${project.build.directory}/${project.build.finalName}-sources.jar</sources>
+                  <groupId>${project.groupId}</groupId>
+                  <artifactId>${project.artifactId}</artifactId>
+                  <version>${project.version}</version>
+                  <packaging>jar</packaging>
+              </configuration>
+          </execution>
+      </executions>
+  </plugin>
+  <!--打包源码的jar配置  在有源码的位置配置，不要配置在父pom.xml中-->
+  <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-source-plugin</artifactId>
+      <executions>
+          <execution>
+              <id>attach-sources</id>
+              <goals>
+                  <goal>jar</goal>
+              </goals>
+          </execution>
+      </executions>
+  </plugin>
+  ```
 
 - maven打包源码
 
-    插件:maven-source-plugin
-    ```xml
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-source-plugin</artifactId>
-            <executions>
-                <execution>
-                    <id>attach-sources</id>
-                    <goals>
-                        <goal>jar</goal>
-                    </goals>
-                </execution>
-            </executions>
-        </plugin>
-    ```
+  插件:maven-source-plugin
+
+  ```xml
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <executions>
+              <execution>
+                  <id>attach-sources</id>
+                  <goals>
+                      <goal>jar</goal>
+                  </goals>
+              </execution>
+          </executions>
+      </plugin>
+  ```
+
 - maven 打包生成文档插件
 
-    ```xml
-    <!-- 文档 插件 -->
-    <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.7</version>
-        <executions>
-            <execution>
-                <id>attach-javadocs</id>
-                <goals>
-                    <goal>jar</goal>
-                </goals>
-                <configuration>
-                    <additionalparam>-Xdoclint:none</additionalparam>
-                </configuration>
-            </execution>
-        </executions>
-    </plugin>
-    ```
+  ```xml
+  <!-- 文档 插件 -->
+  <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-javadoc-plugin</artifactId>
+      <version>2.7</version>
+      <executions>
+          <execution>
+              <id>attach-javadocs</id>
+              <goals>
+                  <goal>jar</goal>
+              </goals>
+              <configuration>
+                  <additionalparam>-Xdoclint:none</additionalparam>
+              </configuration>
+          </execution>
+      </executions>
+  </plugin>
+  ```
 
 - maven中jar包引入的scope范围
 
-    maven的哲学在上次技术分享的时候也提到了：约定大于配置，所以在maven中，很多内容都有默认值，scope的默认值是compile，那么scope还能有哪些选项呢？
+  maven的哲学在上次技术分享的时候也提到了：约定大于配置，所以在maven中，很多内容都有默认值，scope的默认值是compile，那么scope还能有哪些选项呢？
 
-    scope的分类
-    
-    - compile：默认值 他表示被依赖项目需要参与当前项目的编译，还有后续的测试，运行周期也参与其中，是一个比较强的依赖。打包的时候通常需要包含进去
+  scope的分类
 
-    - test：依赖项目仅仅参与测试相关的工作，包括测试代码的编译和执行，不会被打包，例如：junit
+  - compile：默认值 他表示被依赖项目需要参与当前项目的编译，还有后续的测试，运行周期也参与其中，是一个比较强的依赖。打包的时候通常需要包含进去
 
-    - runtime：表示被依赖项目无需参与项目的编译，不过后期的测试和运行周期需要其参与。与compile相比，跳过了编译而已。例如JDBC驱动，适用运行和测试阶段
+  - test：依赖项目仅仅参与测试相关的工作，包括测试代码的编译和执行，不会被打包，例如：junit
 
-    - provided：打包的时候可以不用包进去，别的设施会提供。事实上该依赖理论上可以参与编译，测试，运行等周期。相当于compile，但是打包阶段做了exclude操作
+  - runtime：表示被依赖项目无需参与项目的编译，不过后期的测试和运行周期需要其参与。与compile相比，跳过了编译而已。例如JDBC驱动，适用运行和测试阶段
 
-    - system：从参与度来说，和provided相同，不过被依赖项不会从maven仓库下载，而是从本地文件系统拿。需要添加systemPath的属性来定义路径
+  - provided：打包的时候可以不用包进去，别的设施会提供。事实上该依赖理论上可以参与编译，测试，运行等周期。相当于compile，但是打包阶段做了exclude操作
+
+  - system：从参与度来说，和provided相同，不过被依赖项不会从maven仓库下载，而是从本地文件系统拿。需要添加systemPath的属性来定义路径
 
 - scope的依赖传递
 
-    a.pom 引入 b，b依赖c。当前项目为a，只当b在a项目中的scope，那么c在a中的scope是如何得知呢？
+  a.pom 引入 b，b依赖c。当前项目为a，只当b在a项目中的scope，那么c在a中的scope是如何得知呢？
 
-    当C是test或者provided时，c直接被丢弃，a不依赖c；（排除传递依赖）
+  当C是test或者provided时，c直接被丢弃，a不依赖c；（排除传递依赖）
 
-    否则a依赖c，c的scope继承于b的scope
-
+  否则a依赖c，c的scope继承于b的scope
 
 - 错误配置分析(pom配置)
 
@@ -340,19 +337,21 @@
         <relativePath/>
     </parent>
 ```
+
 报错如下:
+
 ```
 [ERROR] [ERROR] Some problems were encountered while processing the POMs:
 [FATAL] Non-resolvable parent POM for cn.danao:springboot-jdbc:1.0-SNAPSHOT: Could not transfer artifact org.springframework.boot:spring-boot-starter-parent:pom:${springboot.version} from/to alimaven (http://maven.aliyun.com/nexus/content/groups/public/): TransferFailedException and 'parent.relativePath' points at no local POM @ line 15, column 13
- @ 
+ @
 [ERROR] The build could not read 1 project -> [Help 1]
-[ERROR]   
+[ERROR]
 [ERROR]   The project cn.danao:springboot-jdbc:1.0-SNAPSHOT (E:\work\git\github\springboot-learing\springboot-jdbc\pom.xml) has 1 error
 [ERROR]     Non-resolvable parent POM for cn.danao:springboot-jdbc:1.0-SNAPSHOT: Could not transfer artifact org.springframework.boot:spring-boot-starter-parent:pom:${springboot.version} from/to alimaven (http://maven.aliyun.com/nexus/content/groups/public/): TransferFailedException and 'parent.relativePath' points at no local POM @ line 15, column 13: ClientProtocolException: Invalid redirect URI: https://maven.aliyun.com/nexus/content/groups/public/org/springframework/boot/spring-boot-starter-parent/${springboot.version}/spring-boot-starter-parent-${springboot.version}.pom: Illegal character in path at index 106: https://maven.aliyun.com/nexus/content/groups/public/org/springframework/boot/spring-boot-starter-parent/${springboot.version}/spring-boot-starter-parent-${springboot.version}.pom -> [Help 2]
-[ERROR] 
+[ERROR]
 [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
 [ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
+[ERROR]
 [ERROR] For more information about the errors and possible solutions, please read the following articles:
 [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/ProjectBuildingException
 [ERROR] [Help 2] http://cwiki.apache.org/confluence/display/MAVEN/UnresolvableModelException
@@ -378,13 +377,13 @@
   ```sh
   # 查看依赖关系
   mvn dependency:tree
-  
+
   # 简单地用dependency:tree往往并不能查看到所有的传递依赖。
   # 查看全部的必须得加一个-Dverbose参数，才是最全的。
   mvn dependency:tree -Dverbose
-  
+
   # 查看单个包的引用关系 maven 中的<groupId>标签和<artifactId>标签中的值
-  # 如要查 
+  # 如要查
   #     <dependency>
   #           <groupId>com.belerweb</groupId>
   #           <artifactId>pinyin4j</artifactId>
@@ -405,8 +404,8 @@
       <artifactId>test</artifactId>
       <version>0.0.1-SNAPSHOT</version>
   </dependency>
-  
-  
+
+
   <!--排除指定包的配置写法 其中 * 为你指定要排除的jar包-->
   <dependency>
       <groupId>org.springboot.framework</groupId>
@@ -420,6 +419,3 @@
       </exclusions>
   </dependency>
   ```
-
-  
-

@@ -71,8 +71,8 @@ crictl image ls
 
   `ps -ef |grep pid` 查找容器对应的 pid 然后 `kill -0 pid` 掉那个进程 可以看到容器处于 stop 状态
 
-  `ctr t rm name` 移除掉运行中的容器 
-  
+  `ctr t rm name` 移除掉运行中的容器
+
   `ctr c rm name` 删除掉静态的容器
 
 ## 与 docker 的比较和在 k8s 下的一些命令

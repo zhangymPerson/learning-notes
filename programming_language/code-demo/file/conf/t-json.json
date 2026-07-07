@@ -1,22 +1,14 @@
 {
+  "key": "value",
+  "int": 1,
+  "double": 1.1,
+  "bool": true,
+  "arr": [1, "a", true],
+  "map": {
     "key": "value",
     "int": 1,
     "double": 1.1,
     "bool": true,
-    "arr": [
-        1,
-        "a",
-        true
-    ],
-    "map": {
-        "key": "value",
-        "int": 1,
-        "double": 1.1,
-        "bool": true,
-        "arr": [
-            1,
-            "a",
-            true
-        ]
-    }
+    "arr": [1, "a", true]
+  }
 }

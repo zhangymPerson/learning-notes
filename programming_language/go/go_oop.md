@@ -16,11 +16,10 @@
 
   函数的固定格式：
 
-    `func+函数名+（参数）(可选)+返回值(可选)+{}`
-
+  `func+函数名+（参数）(可选)+返回值(可选)+{}`
 
   方法在func之后是接受着而不是函数名:
 
-    `func (p *myint/p myint) mydouble() int {}`
+  `func (p *myint/p myint) mydouble() int {}`
 
   接收者可理解为一个类，这些函数是他的成员方法
