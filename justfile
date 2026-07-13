@@ -15,4 +15,4 @@ push:
 # 格式化代码
 format:
     uvx ruff check --fix .
-    npx prettier --write .
+    npx prettier --write --list-different .
