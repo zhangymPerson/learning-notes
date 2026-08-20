@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import copy
+import json
 
 
 def run():
@@ -55,8 +56,10 @@ def analysisWords(words):
             map[word] = 1
         else:
             map[word] = map.get(word) + 1
-    print("list中word出现的次数对应关系是:\n", json.dumps(
-        map, ensure_ascii=False, indent=4))
+    print(
+        "list中word出现的次数对应关系是:\n",
+        json.dumps(map, ensure_ascii=False, indent=4),
+    )
 
 
 def sort():
@@ -68,8 +71,7 @@ def sort():
 
 
 def distinct():
-    intList = [1, 2, 2, 3, 2, 2, 2, 2, 343, 4,
-               43, 43, 4, 34, 43, 43, 43, 43, 4, 44]
+    intList = [1, 2, 2, 3, 2, 2, 2, 2, 343, 4, 43, 43, 4, 34, 43, 43, 43, 43, 4, 44]
     # 去重
     intSet = list(set(intList))
     # 恢复原来顺序
@@ -78,7 +80,7 @@ def distinct():
 
 
 def test():
-    list = ['Google', 'Runoob', 1997, 2000]
+    list = ["Google", "Runoob", 1997, 2000]
     print(list[0])
     print(list[1])
     print(list[2])
@@ -87,7 +89,7 @@ def test():
     list[2] = 2001
     print("更新后的第三个元素为 : ", list[2])
 
-    list.append('Baidu')
+    list.append("Baidu")
     print("更新后的列表 : ", list)
 
     print("原始列表 : ", list)
@@ -108,12 +110,12 @@ def test():
     b = a
     # 复制
     d = copy.copy(a)
-    b[0] = 'b'
+    b[0] = "b"
     print(a, b, d)
     print(id(a), id(b), id(d))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     """
     main 运行入口
     python3 py-string.py

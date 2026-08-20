@@ -63,4 +63,3 @@
   [vimac-github](https://github.com/nchudleigh/vimac)
 
   [homerow](https://www.homerow.app/)
-

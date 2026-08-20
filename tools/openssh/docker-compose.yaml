@@ -8,7 +8,7 @@ services:
     environment:
       FTP_USER: user
       FTP_PASS: 123456
-      PASV_ADDRESS: 127.0.0.1  # 替换为实际的主机IP
+      PASV_ADDRESS: 127.0.0.1 # 替换为实际的主机IP
       PASV_MIN_PORT: 21100
       PASV_MAX_PORT: 21110
       PASV_ENABLE: YES
@@ -19,8 +19,8 @@ services:
   sftp:
     image: atmoz/sftp
     ports:
-      - "2222:22"  # 将容器的22端口映射到主机的2222端口
+      - "2222:22" # 将容器的22端口映射到主机的2222端口
     environment:
-      SFTP_USERS: user:123456:1001  # 用户名:密码:UID
+      SFTP_USERS: user:123456:1001 # 用户名:密码:UID
     volumes:
-      - ./data/sftp/user:/home/user  # 挂载本地目录到容器内的用户主目录
+      - ./data/sftp/user:/home/user # 挂载本地目录到容器内的用户主目录

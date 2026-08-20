@@ -1,3 +1,3 @@
-# vscode keybindings config 
+# vscode keybindings config
 
 ## vscodevim 插件下

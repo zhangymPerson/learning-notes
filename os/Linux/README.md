@@ -31,7 +31,7 @@
 - 解决
 
   没有~/.bash_profile 文件就新建一个
-  
+
   `vim ~/.bash_profile`
 
   ```sh

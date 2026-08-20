@@ -13,14 +13,14 @@
 - hessian
 
   http://hessian.caucho.com/
-  
+
 - grpc
-  
-  https://github.com/protocolbuffers/protobuf 
+
+  https://github.com/protocolbuffers/protobuf
 
 - Thrift
 
-  http://thrift.apache.org 
+  http://thrift.apache.org
 
 ## 常见的实现
 

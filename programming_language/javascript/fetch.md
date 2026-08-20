@@ -1,6 +1,7 @@
 # Fetch API
 
 - [返回](./README.md)
+
 ## 简介
 
 - Fetch API 提供了一个获取资源的接口（包括跨域请求）。任何使用过 XMLHttpRequest 的人都能轻松上手，而且新的 API 提供了更强大和灵活的功能集。
@@ -92,7 +93,9 @@
       console.log(myJson);
     });
   // 异常处理
-  fetch("http://example.com/movies.json").catch((error) => console.error(error));
+  fetch("http://example.com/movies.json").catch((error) =>
+    console.error(error),
+  );
   //文本处理
   fetch("http://http://example.com/movies.json")
     .then((response) => response.text())

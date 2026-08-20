@@ -4,6 +4,6 @@
 
 - 打开字体文件存放位置
 
-    C:\Windows\Fonts
+  C:\Windows\Fonts
 
 - 将字体文件拖到字体存放位置即可

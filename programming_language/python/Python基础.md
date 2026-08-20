@@ -64,7 +64,7 @@
   ```py
   #!/usr/bin/python
   # -*- coding: UTF-8 -*-
-  
+
   # 文件名：test.py
   '''
   这是多行注释，使用单引号。
@@ -114,12 +114,12 @@
 - python 主函数
 
   ```py
-  
+
   def main():
       logging.info("start ...")
       #coding
       logging.info("end ...")
-  
+
   if __name__ == '__main__':
       main()
   ```
@@ -136,7 +136,7 @@
   #增加 list.add("");
   a.append("test")
   #增删改查 查api
-  
+
   #这是一个元组
   b=()
   ```
@@ -159,5 +159,3 @@
 - python 类型系统
 
   [文档说明](https://docs.python.org/zh-cn/3/library/stdtypes.html#)
-
-  

@@ -19,5 +19,5 @@
   github:<https://github.com/dbeaver/dbeaver>
 
   vim 插件安装
-  
+
   菜单 -> Help -> Install New Software 添加 `http://vrapper.sourceforge.net/update-site/stable` 安装 `vrapper` 插件

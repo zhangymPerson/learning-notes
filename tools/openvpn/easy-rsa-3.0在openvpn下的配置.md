@@ -1,6 +1,5 @@
-
 ```sh
-# 安装 
+# 安装
 yum -y install openvpn easy-rsa
 
 # 创建目录
@@ -12,7 +11,7 @@ cd /etc/openvpn/easy-rsa/
 cd 3.0.3/
 #创建空的pki
 ./easyrsa init-pki
-#创建新的CA，不使用密码 
+#创建新的CA，不使用密码
  ./easyrsa build-ca nopass
  #创建服务端证书
 ./easyrsa gen-req server nopass
@@ -52,14 +51,14 @@ cd /etc/openvpn/easy-rsa/easy-rsa/3.0.3/
 -rw-------. 1 root root 4431 4月  11 10:08 boyi_new.crt
 -rw-------. 1 root root 1704 4月  11 10:08 boyi_new.key
 
-openvpn server端需要的是 
-easyrsa3/pki/ca.crt   <制作server证书的文件夹> 
-easyrsa3/pki/private/server.key <制作server证书的文件夹> 
-easyrsa3/pki/issued/server.crt <制作server证书的文件夹> 
-easyrsa3/pki/dh.pem 
+openvpn server端需要的是
+easyrsa3/pki/ca.crt   <制作server证书的文件夹>
+easyrsa3/pki/private/server.key <制作server证书的文件夹>
+easyrsa3/pki/issued/server.crt <制作server证书的文件夹>
+easyrsa3/pki/dh.pem
 
-openvpn client端需要的是 
-easy-rsa/easyrsa3/pki/ca.crt <制作server证书的文件夹> 
-easy-rsa/easyrsa3/pki/issued/client.crt <制作server证书的文件夹> 
+openvpn client端需要的是
+easy-rsa/easyrsa3/pki/ca.crt <制作server证书的文件夹>
+easy-rsa/easyrsa3/pki/issued/client.crt <制作server证书的文件夹>
 easy-rsa/easyrsa3/pki/private/client.key <制作client证书的文件夹>
 ```

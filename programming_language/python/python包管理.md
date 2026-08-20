@@ -109,5 +109,3 @@
   使用 `pipreqs . --encoding=utf8 --force` 命令生成该文件
 
   `pip install -r requirements.txt`
-
-  

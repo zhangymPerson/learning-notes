@@ -3,7 +3,6 @@ networks:
     driver: bridge
 
 services:
-
   minio:
     image: bitnami/minio:2023.11.20
     restart: always

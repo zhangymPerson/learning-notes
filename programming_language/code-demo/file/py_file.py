@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
 
 
-import os
 import csv
+import logging
+import os
 
 # 读取excel工具包
 # 安装方式 pip install openpyxl
 from openpyxl import load_workbook
-import logging
+
 # 配置日志
-logging.basicConfig(level=logging.INFO,
-                    format='[%(asctime)s-%(name)s-%(funcName)s-%(lineno)d-%(levelname)s]%(message)s',
-                    datefmt='%Y-%m-%d %H:%M:%S')
+logging.basicConfig(
+    level=logging.INFO,
+    format="[%(asctime)s-%(name)s-%(funcName)s-%(lineno)d-%(levelname)s]%(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)
 logger = logging.getLogger(__name__)
 
 
@@ -21,8 +24,6 @@ def get_file_path():
     logger.info("%s,%s,%s", filepath, "a", "a")
     # 当前执行文件的上级路径，如 D：\aaa\bbb
     filepath = os.path.dirname(os.path.abspath(__file__))
-    # 当前文件的名称 py_file.py
-    current_script_name = os.path.basename(__file__)
     logger.info(filepath)
     # 继续向上
     filepath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -44,7 +45,7 @@ def write_to_file(msg, file_name):
     写文件
     """
     # 写 w 写 w+ 读写 会删除原有内容  a 追加
-    with open(file=file_name, mode='a', encoding='utf-8') as f:
+    with open(file=file_name, mode="a", encoding="utf-8") as f:
         f.write(msg)
 
 
@@ -53,7 +54,7 @@ def read_all_file(file_name):
     读取整个文件
     """
     # 读
-    with open(file=file_name, mode='r', encoding='utf-8') as f:
+    with open(file=file_name, mode="r", encoding="utf-8") as f:
         content = f.read()
         logger.info(content)
 
@@ -63,7 +64,7 @@ def read_file(file_name):
     按行读文件
     """
     # 读
-    with open(file=file_name, mode='r', encoding='utf-8') as f:
+    with open(file=file_name, mode="r", encoding="utf-8") as f:
         lines = f.readlines()
         for line in lines:
             # 去掉空字符
@@ -73,7 +74,7 @@ def read_file(file_name):
 
 def get_file_word(file_name):
     """
-    获取一个文件的内容 
+    获取一个文件的内容
     Args:
         params:fileName 文件名
     Returns:
@@ -81,7 +82,7 @@ def get_file_word(file_name):
     Raises:
         列出与接口有关的所有异常.
     """
-    with open(file_name, 'r', encoding='utf-8') as f:
+    with open(file_name, "r", encoding="utf-8") as f:
         lines = f.readlines()
         list = []
         for line in lines:
@@ -114,7 +115,7 @@ def read_excel(file_name):
     sheets = wb.worksheets
     for sheet in sheets:
         logger.info(sheet)
-    sheet = wb['Sheet1']
+    sheet = wb["Sheet1"]
     # 读取sheet中的数
     # 行
     nrows = sheet.max_row
@@ -138,15 +139,12 @@ def remove_file(file_name):
     logger.info("删除文件 file_name = [%s]", file_name)
 
 
-
 def test_read_csv_excel():
     """
     执行命令要在当前文件所在目录下
     """
-    file = '/conf/t-csv.csv'
     logger.info(os.getcwd())
-    # readCsv(os.getcwd() + file)
-    excel = '/conf/t-excel.xlsx'
+    excel = "/conf/t-excel.xlsx"
     read_excel(os.getcwd() + excel)
 
 
@@ -174,7 +172,7 @@ def run():
     logger.info("end ...")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     """
     main 运行入口
     python3 py-string.py

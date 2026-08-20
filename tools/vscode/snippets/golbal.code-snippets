@@ -3,38 +3,30 @@
   // ==============================================================================================
   "获取当前目录": {
     "prefix": "pwd",
-    "body": [
-      "$TM_DIRECTORY"
-    ],
-    "description": "获取当前目录"
+    "body": ["$TM_DIRECTORY"],
+    "description": "获取当前目录",
   },
   "获取当前文件名": {
     "prefix": "filename",
-    "body": [
-      "$TM_FILENAME"
-    ],
-    "description": "获取当前文件名"
+    "body": ["$TM_FILENAME"],
+    "description": "获取当前文件名",
   },
   "当前时间": {
     "prefix": "time",
-    "body": [
-      "$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND"
-    ],
-    "description": "获取当前时间"
+    "body": ["$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND"],
+    "description": "获取当前时间",
   },
   "当前时间1": {
     "prefix": "date",
-    "body": [
-      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE "
-    ],
-    "description": "获取当前时间"
+    "body": ["$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE "],
+    "description": "获取当前时间",
   },
   "当前时间2": {
     "prefix": "sdate",
     "body": [
-      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND"
+      "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
     ],
-    "description": "获取当前时间"
+    "description": "获取当前时间",
   },
   "阿帕奇协议": {
     "prefix": "apache",
@@ -54,8 +46,8 @@
       " * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.",
       " * See the License for the specific language governing permissions and",
       " * limitations under the License.",
-      " */"
-    ]
+      " */",
+    ],
   },
   // ==============================================================================================
   // python
@@ -74,9 +66,9 @@
       "@auth : danao",
       "@version : 1.0",
       "\"\"\"",
-      ""
+      "",
     ],
-    "description": "创建一个[main]函数"
+    "description": "创建一个[main]函数",
   },
   "self_python_logging": {
     "scope": "python",
@@ -93,9 +85,9 @@
       "logger.remove()",
       "# 输出到控制台和文件",
       "logger.add(sys.stderr, level=level)",
-      "logger.add(f\"{os.path.splitext(os.path.basename(__file__))[0]}.log\", level=level)"
+      "logger.add(f\"{os.path.splitext(os.path.basename(__file__))[0]}.log\", level=level)",
     ],
-    "description": "导入 logging 模块"
+    "description": "导入 logging 模块",
   },
   "self_python_mysql": {
     "scope": "python",
@@ -160,9 +152,9 @@
       "        result = cur.fetchone()",
       "        logger.info(result)",
       "    except Exception as e:",
-      "        logger.error(e)"
+      "        logger.error(e)",
     ],
-    "description": "创建一个 mysql 连接类"
+    "description": "创建一个 mysql 连接类",
   },
   "self_python_sqlite": {
     "scope": "python",
@@ -222,9 +214,9 @@
       "        result = cur.fetchone()",
       "        logger.info(f\"SQLite 版本: {result[0]}\")",
       "    except Exception as e:",
-      "        logger.error(e)"
+      "        logger.error(e)",
     ],
-    "description": "创建一个 sqlite 连接类"
+    "description": "创建一个 sqlite 连接类",
   },
   "self_python_main": {
     "scope": "python",
@@ -249,15 +241,13 @@
       "    # 运行命令: python script.py --name Alice",
       "    typer.run(main)",
     ],
-    "description": "创建一个[main]函数"
+    "description": "创建一个[main]函数",
   },
   "self_python_var": {
     "scope": "python",
     "prefix": "svar",
-    "body": [
-      "${1:var_name} = ${2:\"\"}"
-    ],
-    "description": "创建一个变量"
+    "body": ["${1:var_name} = ${2:\"\"}"],
+    "description": "创建一个变量",
   },
   "self_python_args": {
     "scope": "python",
@@ -280,9 +270,9 @@
       "    args = args.parse_args()",
       "    # print(f\"args = [{args}]\")",
       "    # 使用方式  args.info 即可获取到参数值  如果有 dest 配置则读取dest 无则读取 -- 后面的属性配置",
-      "    return args"
+      "    return args",
     ],
-    "description": "创建一个参数解析函数"
+    "description": "创建一个参数解析函数",
   },
   "self_python_exception": {
     "scope": "python",
@@ -291,114 +281,92 @@
       "try:",
       "    ${1}",
       "except Exception as e:",
-      "    print(f\"处理异常,e = [{e}]\")"
+      "    print(f\"处理异常,e = [{e}]\")",
     ],
-    "description": "创建异常语句"
+    "description": "创建异常语句",
   },
   "self_python_function": {
     "scope": "python",
     "prefix": "smethod",
     "body": [
       "def ${1:function}(self):",
-      "    print(\"函数  ${1:function} 执行\")"
+      "    print(\"函数  ${1:function} 执行\")",
     ],
-    "description": "创建一个函数"
+    "description": "创建一个函数",
   },
   "self_python_def": {
     "scope": "python",
     "prefix": "sfunc",
-    "body": [
-      "def ${1:function}():",
-      "    print(\"函数  ${1:function} 执行\")"
-    ],
-    "description": "创建一个函数"
+    "body": ["def ${1:function}():", "    print(\"函数  ${1:function} 执行\")"],
+    "description": "创建一个函数",
   },
   "self_python_array": {
     "scope": "python",
     "prefix": "sarr",
-    "body": [
-      "arr = [$1]"
-    ],
-    "description": "创建一个[数组]结构"
+    "body": ["arr = [$1]"],
+    "description": "创建一个[数组]结构",
   },
   "self_python_list": {
     "scope": "python",
     "prefix": "slist",
-    "body": [
-      "list = [$1]"
-    ],
-    "description": "创建一个[list]结构"
+    "body": ["list = [$1]"],
+    "description": "创建一个[list]结构",
   },
   "self_python_set": {
     "scope": "python",
     "prefix": "sset",
-    "body": [
-      "set = set()",
-      "set.add($1)"
-    ],
-    "description": "创建一个[set]结构"
+    "body": ["set = set()", "set.add($1)"],
+    "description": "创建一个[set]结构",
   },
   "self_python_map": {
     "scope": "python",
     "prefix": "smap",
-    "body": [
-      "map = {'key':'value',$1:$2}"
-    ],
-    "description": "创建一个[map]结构"
+    "body": ["map = {'key':'value',$1:$2}"],
+    "description": "创建一个[map]结构",
   },
   "self_python_now": {
     "scope": "python",
     "prefix": "snow",
-    "body": [
-      "datetime.datetime.now(None).strftime('%Y-%m-%d %H:%M:%S')"
-    ],
-    "description": "获取当前时间"
+    "body": ["datetime.datetime.now(None).strftime('%Y-%m-%d %H:%M:%S')"],
+    "description": "获取当前时间",
   },
   "self_python_log": {
     "scope": "python",
     "prefix": "slog",
     "body": ["${1:logger}.info(f\"${2:var_name} = {${2:var_name}}\")"],
-    "description": "创建一个日志"
+    "description": "创建一个日志",
   },
   "self_python_print": {
     "scope": "python",
     "prefix": "sout",
-    "body": [
-      "print(f\"$1 = [{$1}]\")"
-    ],
-    "description": "创建一个打印输出"
+    "body": ["print(f\"$1 = [{$1}]\")"],
+    "description": "创建一个打印输出",
   },
   "self_python_string": {
     "scope": "python",
     "prefix": "sstr",
-    "body": [
-      "${1:str} = f\"{${2:var}}\""
-    ],
-    "description": "创建一个字符串变量替换"
+    "body": ["${1:str} = f\"{${2:var}}\""],
+    "description": "创建一个字符串变量替换",
   },
   "self_python_object": {
     "scope": "python",
     "prefix": "sobject",
-    "body": [
-      ""
-    ],
-    "description": "创建一个[object]结构"
+    "body": [""],
+    "description": "创建一个[object]结构",
   },
   "self_python_tojson": {
     "scope": "python",
     "prefix": "tojson",
     "body": [
-      "$1_json_str = json.dumps($1, ensure_ascii=False, default=str, indent=2)"
+      "$1_json_str = json.dumps($1, ensure_ascii=False, default=str, indent=2)",
     ],
-    "description": "obj 转 json"
+    "description": "obj 转 json",
   },
   "self_python_toobj": {
     "scope": "python",
     "prefix": "toobj",
-    "body": [
-      "json.loads($1)"
-    ],
-    "description": "json 转 obj"
+    "body": ["json.loads($1)"],
+    "description": "json 转 obj",
   },
   "self_python_class_note": {
     "scope": "python",
@@ -410,9 +378,9 @@
       "    ",
       "Attributes:",
       "    ${3:params}: ${4:type}",
-      "\"\"\""
+      "\"\"\"",
     ],
-    "description": "类注释"
+    "description": "类注释",
   },
   "self_python_method_note": {
     "scope": "python",
@@ -425,9 +393,9 @@
       "    return ${4:res}",
       "Raises:",
       "    列出与接口有关的所有异常.",
-      "\"\"\""
+      "\"\"\"",
     ],
-    "description": "函数注释"
+    "description": "函数注释",
   },
   "self_python_post_request": {
     "scope": "python",
@@ -448,9 +416,9 @@
       "    response = requests.request(\"POST\", url, headers=headers, data=payload, verify=False)",
       "    print(response.text)",
       "except Exception as e:",
-      "    print(e)"
+      "    print(e)",
     ],
-    "description": "发送post请求模板"
+    "description": "发送post请求模板",
   },
   // ==============================================================================================
   // php
@@ -467,9 +435,9 @@
       " * @auth : test",
       " * @version : 1.0",
       " */",
-      ""
+      "",
     ],
-    "description": "创建一个[main]函数"
+    "description": "创建一个[main]函数",
   },
   "self_php_main": {
     "scope": "php",
@@ -480,89 +448,73 @@
       "\techo \"hello world!\" . PHP_EOL;",
       "}",
       "",
-      "main();"
+      "main();",
     ],
-    "description": "创建一个[main]函数"
+    "description": "创建一个[main]函数",
   },
   "self_php_array": {
     "scope": "php",
     "prefix": "sarr",
-    "body": [
-      "\\$arr = array();"
-    ],
-    "description": "创建一个[数组]结构"
+    "body": ["\\$arr = array();"],
+    "description": "创建一个[数组]结构",
   },
   "self_php_list": {
     "scope": "php",
     "prefix": "slist",
-    "body": [
-      "\\$list = array();"
-    ],
-    "description": "创建一个[list]结构"
+    "body": ["\\$list = array();"],
+    "description": "创建一个[list]结构",
   },
   "self_php_set": {
     "scope": "php",
     "prefix": "sset",
-    "body": [
-      "\\$set = array();"
-    ],
-    "description": "创建一个[set]结构"
+    "body": ["\\$set = array();"],
+    "description": "创建一个[set]结构",
   },
   "self_php_map": {
     "scope": "php",
     "prefix": "smap",
-    "body": [
-      "\\$map = array();"
-    ],
-    "description": "创建一个[map]结构"
+    "body": ["\\$map = array();"],
+    "description": "创建一个[map]结构",
   },
   "self_php_now": {
     "scope": "php",
     "prefix": "snow",
-    "body": [
-      ""
-    ],
-    "description": "获取当前时间"
+    "body": [""],
+    "description": "获取当前时间",
   },
   "self_php_log": {
     "scope": "php",
     "prefix": "slog",
     "body": [
-      "error_log(\"[\" . __FILE__ . \" :\" . __CLASS__ . \":\" . __METHOD__ . \":\" . __LINE__ . \"] ===> \" . \"[\\$$1]\");"
+      "error_log(\"[\" . __FILE__ . \" :\" . __CLASS__ . \":\" . __METHOD__ . \":\" . __LINE__ . \"] ===> \" . \"[\\$$1]\");",
     ],
-    "description": "创建一个日志"
+    "description": "创建一个日志",
   },
   "self_php_print": {
     "scope": "php",
     "prefix": "sout",
-    "body": [
-      "echo \\$$1 . PHP_EOL;"
-    ],
-    "description": "创建一个打印输出"
+    "body": ["echo \\$$1 . PHP_EOL;"],
+    "description": "创建一个打印输出",
   },
   "self_php_object": {
     "scope": "php",
     "prefix": "sobject",
-    "body": [
-      ""
-    ],
-    "description": "创建一个[object]结构"
+    "body": [""],
+    "description": "创建一个[object]结构",
   },
   "self_php_tojson": {
     "scope": "php",
     "prefix": "tojson",
     "body": [
-      "\\$json = json_encode(\\$${1:params},JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);"
+      "\\$json = json_encode(\\$${1:params},JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);",
     ],
-    "description": "obj 转 json"
+    "description": "obj 转 json",
   },
   "self_php_toobj": {
     "scope": "php",
     "prefix": "toobj",
-    "body": [
-      ""
-    ],
-    "description": "json 转 obj"
+    "body": [""],
+    "description": "json 转 obj",
   },
   "self_php_class_note": {
     "scope": "php",
@@ -574,9 +526,9 @@
       " * @author danao",
       " * @version 1.0",
       " * @since 1.0",
-      " */"
+      " */",
     ],
-    "description": "类注释"
+    "description": "类注释",
   },
   "self_php_method_note": {
     "scope": "php",
@@ -588,19 +540,15 @@
       " * @param  ${2:void} ",
       " * @return ${3:void}",
       " * @throws ${4:null}",
-      " */"
+      " */",
     ],
-    "description": "函数注释"
+    "description": "函数注释",
   },
   "self_php_field_note": {
     "scope": "php",
     "prefix": "//field",
-    "body": [
-      "/**",
-      " * @var ${1:type}",
-      " */"
-    ],
-    "description": "类属性注释"
+    "body": ["/**", " * @var ${1:type}", " */"],
+    "description": "类属性注释",
   },
   "self_php_constr": {
     "scope": "php",
@@ -614,9 +562,9 @@
       " */",
       "public function __construct() {",
       "    // 各种初始化",
-      "}"
+      "}",
     ],
-    "description": "类属性注释"
+    "description": "类属性注释",
   },
   // ==============================================================================================
   // shellscrript
@@ -649,9 +597,9 @@
       "# 调试时建议开启以下配置（生产环境应注释掉）",
       "# exec >>\"${0}.log\" 2>&1    # 将标准输出(stdout)和标准错误(stderr)",
       "# 重定向到与脚本同名的日志文件（追加模式）",
-      "# 注意：${0}表示当前执行的脚本文件名"
+      "# 注意：${0}表示当前执行的脚本文件名",
     ],
-    "description": "创建一个[main]函数"
+    "description": "创建一个[main]函数",
   },
   "self_shell_main": {
     "scope": "shellscript",
@@ -661,9 +609,9 @@
       "    echo \"hello world\"",
       "    exit 0",
       "}",
-      "main \"$@\""
+      "main \"$@\"",
     ],
-    "description": "创建一个[main]函数"
+    "description": "创建一个[main]函数",
   },
   "self_shell_args": {
     "scope": "shellscript",
@@ -702,9 +650,9 @@
       "            ;;",
       "        esac",
       "    done",
-      "}"
+      "}",
     ],
-    "description": "创建一个获取用户输入[args]函数"
+    "description": "创建一个获取用户输入[args]函数",
   },
   "self_shell_path": {
     "scope": "shellscript",
@@ -715,21 +663,15 @@
       "    cd $(dirname \\${BASH_SOURCE[0]})",
       "    pwd",
       ")",
-      "echo \"当前脚本所在的文件目录是[\\${path}]\""
+      "echo \"当前脚本所在的文件目录是[\\${path}]\"",
     ],
-    "description": "获取当前脚本执行的 path"
+    "description": "获取当前脚本执行的 path",
   },
   "self_shell_fun": {
     "scope": "shellscript",
     "prefix": "sfunc",
-    "body": [
-      "# $1",
-      "function $1() {",
-      "    echo \"$1() 执行...\"",
-      "}",
-      ""
-    ],
-    "description": "创建一个[main]函数"
+    "body": ["# $1", "function $1() {", "    echo \"$1() 执行...\"", "}", ""],
+    "description": "创建一个[main]函数",
   },
   "self_shell_array": {
     "scope": "shellscript",
@@ -740,45 +682,39 @@
       "# 遍历数组并输出",
       "for it in \"\\${arr[@]}\"; do",
       "    echo \"\\${it}\"",
-      "done"
+      "done",
     ],
-    "description": "创建一个[数组]结构"
+    "description": "创建一个[数组]结构",
   },
   "self_shell_list": {
     "scope": "shellscript",
     "prefix": "slist",
     "body": [],
-    "description": "创建一个[list]结构"
+    "description": "创建一个[list]结构",
   },
   "self_shell_set": {
     "scope": "shellscript",
     "prefix": "sset",
-    "body": [
-      ""
-    ],
-    "description": "创建一个[set]结构"
+    "body": [""],
+    "description": "创建一个[set]结构",
   },
   "self_shell_map": {
     "scope": "shellscript",
     "prefix": "smap",
-    "body": [
-      ""
-    ],
-    "description": "创建一个[map]结构"
+    "body": [""],
+    "description": "创建一个[map]结构",
   },
   "self_shell_now": {
     "scope": "shellscript",
     "prefix": "snow",
-    "body": [
-      "now=$(date +\"%F %T\")"
-    ],
-    "description": "获取当前时间"
+    "body": ["now=$(date +\"%F %T\")"],
+    "description": "获取当前时间",
   },
   "self_shell_log": {
     "scope": "shellscript",
     "prefix": "slog",
     "body": ["log INFO \"$1\""],
-    "description": "创建一个日志"
+    "description": "创建一个日志",
   },
   "self_shell_logs": {
     "scope": "shellscript",
@@ -847,41 +783,33 @@
       "log INFO \"标准信息日志\"",
       "log warn \"警告日志\"",
       "log error \"错误日志\"",
-      ""
+      "",
     ],
-    "description": "创建一个日志"
+    "description": "创建一个日志",
   },
   "self_shell_print": {
     "scope": "shellscript",
     "prefix": "sout",
-    "body": [
-      "echo \"${1:var} = [\\${${1:var}}]\""
-    ],
-    "description": "创建一个打印输出"
+    "body": ["echo \"${1:var} = [\\${${1:var}}]\""],
+    "description": "创建一个打印输出",
   },
   "self_shell_object": {
     "scope": "shellscript",
     "prefix": "sobject",
-    "body": [
-      ""
-    ],
-    "description": "创建一个[object]结构"
+    "body": [""],
+    "description": "创建一个[object]结构",
   },
   "self_shell_tojson": {
     "scope": "shellscript",
     "prefix": "tojson",
-    "body": [
-      ""
-    ],
-    "description": "obj 转 json"
+    "body": [""],
+    "description": "obj 转 json",
   },
   "self_shell_toobj": {
     "scope": "shellscript",
     "prefix": "toobj",
-    "body": [
-      ""
-    ],
-    "description": "json 转 obj"
+    "body": [""],
+    "description": "json 转 obj",
   },
   "self_shell_method_note": {
     "scope": "shellscript",
@@ -895,9 +823,9 @@
       "#   ${3:函数参数说明}",
       "# Returns:",
       "#   ${4:返回值为空}",
-      "#######################################"
+      "#######################################",
     ],
-    "description": "函数注释"
+    "description": "函数注释",
   },
   // ==============================================================================================
   // go
@@ -911,9 +839,9 @@
       "// date : $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND",
       "// auth : danao",
       "// version : 0.1",
-      ""
+      "",
     ],
-    "description": "创建一个[main]函数"
+    "description": "创建一个[main]函数",
   },
   "self_go_logging": {
     "scope": "go",
@@ -936,71 +864,57 @@
       "    // log.Println(\"这是一个标准日志信息\")",
       "    // log.Printf(\"这是一个带参数的日志信息：%s\", \"参数值\")",
       "    // log.Panic(\"发生了一个致命错误\")",
-      "}"
+      "}",
     ],
-    "description": "导入 log 模块并配置"
+    "description": "导入 log 模块并配置",
   },
   "self_go_main": {
     "scope": "go",
     "prefix": "smain",
-    "body": [
-      "package main",
-      "",
-      "func main() {",
-      "  $0",
-      "}"
-    ],
-    "description": "创建一个[main]函数"
+    "body": ["package main", "", "func main() {", "  $0", "}"],
+    "description": "创建一个[main]函数",
   },
   "self_go_var": {
     "scope": "go",
     "prefix": "svar",
-    "body": [
-      "${1:var_name} := ${2:\"\"}"
-    ],
-    "description": "创建一个变量"
+    "body": ["${1:var_name} := ${2:\"\"}"],
+    "description": "创建一个变量",
   },
   "self_go_array": {
     "scope": "go",
     "prefix": "sarr",
-    "body": [
-      "arr = [$1]"
-    ],
-    "description": "创建一个[数组]结构"
+    "body": ["arr = [$1]"],
+    "description": "创建一个[数组]结构",
   },
   "self_go_list": {
     "scope": "go",
     "prefix": "slist",
     "body": [
       "list := make([]string, 0)",
-      "log.Printf(\"list = [%+v]\\n\", list)"
+      "log.Printf(\"list = [%+v]\\n\", list)",
     ],
-    "description": "创建一个[list]结构"
+    "description": "创建一个[list]结构",
   },
   "self_go_set": {
     "scope": "go",
     "prefix": "sset",
-    "body": [
-      ""
-    ],
-    "description": "创建一个[set]结构"
+    "body": [""],
+    "description": "创建一个[set]结构",
   },
   "self_go_map": {
     "scope": "go",
     "prefix": "smap",
     "body": [
       "res := make(map[string]${1:interface{}})",
-      "res[\"key\"] = \"value\""
+      "res[\"key\"] = \"value\"",
     ],
-    "description": "创建一个[map]结构"
+    "description": "创建一个[map]结构",
   },
   "self_go_now": {
     "scope": "go",
     "prefix": "snow",
-    "body": [
-      ""
-    ],
-    "description": "获取当前时间"
+    "body": [""],
+    "description": "获取当前时间",
   },
   "self_go_log": {
     "scope": "go",
@@ -1008,41 +922,33 @@
     "body": [
       "log.Printf(\"${1:var_name} = [%+v]\\n\", ${1:var_name})",
       "// 特殊字符需要使用 string() 函数",
-      "// log.Printf(\"${1:var_name} = [%+v]\\n\", string(${1:var_name}))"
+      "// log.Printf(\"${1:var_name} = [%+v]\\n\", string(${1:var_name}))",
     ],
-    "description": "创建一个日志"
+    "description": "创建一个日志",
   },
   "self_go_error_log": {
     "scope": "go",
     "prefix": "errlog",
-    "body": [
-      "log.Println(\"$1异常,异常信息如下:\", err)"
-    ],
-    "description": "打印错误日志"
+    "body": ["log.Println(\"$1异常,异常信息如下:\", err)"],
+    "description": "打印错误日志",
   },
   "self_go_error_log_exit": {
     "scope": "go",
     "prefix": "errlogexit",
-    "body": [
-      "log.Fatal(\"$1异常,异常信息如下:\", err)"
-    ],
-    "description": "打印错误日志"
+    "body": ["log.Fatal(\"$1异常,异常信息如下:\", err)"],
+    "description": "打印错误日志",
   },
   "self_go_print": {
     "scope": "go",
     "prefix": "sout",
-    "body": [
-      "fmt.Println(\"原生输出======>\", ${1:var_name})"
-    ],
-    "description": "创建一个打印输出"
+    "body": ["fmt.Println(\"原生输出======>\", ${1:var_name})"],
+    "description": "创建一个打印输出",
   },
   "self_go_object": {
     "scope": "go",
     "prefix": "sobject",
-    "body": [
-      ""
-    ],
-    "description": "创建一个[object]结构"
+    "body": [""],
+    "description": "创建一个[object]结构",
   },
   "self_go_tojson": {
     "scope": "go",
@@ -1053,33 +959,27 @@
       "json.Unmarshal([]byte(str), &res)",
       "// 对象转json格式化 则替换 res",
       "jsonBytes, _ := json.MarshalIndent(res, \"\", \"    \")",
-      "log.Printf(\"json格式化如下:\\n%+v\\n\", string(jsonBytes))"
+      "log.Printf(\"json格式化如下:\\n%+v\\n\", string(jsonBytes))",
     ],
-    "description": "obj 转 json"
+    "description": "obj 转 json",
   },
   "self_go_toobj": {
     "scope": "go",
     "prefix": "toobj",
-    "body": [
-      ""
-    ],
-    "description": "json 转 obj"
+    "body": [""],
+    "description": "json 转 obj",
   },
   "self_go_class_note": {
     "scope": "go",
     "prefix": "//class",
-    "body": [
-      ""
-    ],
-    "description": "结构体注释"
+    "body": [""],
+    "description": "结构体注释",
   },
   "self_go_method_note": {
     "scope": "go",
     "prefix": "//method",
-    "body": [
-      "// $1 函数的作用是:$2"
-    ],
-    "description": "函数注释"
+    "body": ["// $1 函数的作用是:$2"],
+    "description": "函数注释",
   },
   "self_go_flag": {
     "scope": "go",
@@ -1124,17 +1024,15 @@
       "        os.Exit(0)",
       "        return",
       "    }",
-      "}"
+      "}",
     ],
-    "description": "脚本入参模板"
+    "description": "脚本入参模板",
   },
   "self_go_field": {
     "scope": "go",
     "prefix": "fjson",
-    "body": [
-      "${1:Name} ${2:string} `json:\"${3:json}\"`"
-    ],
-    "description": "函数注释"
+    "body": ["${1:Name} ${2:string} `json:\"${3:json}\"`"],
+    "description": "函数注释",
   },
   // ==============================================================================================
   // markdown
@@ -1186,8 +1084,8 @@
       "    \"msg\": \"操作成功\",",
       "    \"data\": {}",
       "  }",
-      "  ```"
+      "  ```",
     ],
-    "description": "接口文档模板"
-  }
+    "description": "接口文档模板",
+  },
 }

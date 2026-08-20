@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   vsftpd:
     image: fauria/vsftpd
@@ -10,7 +10,7 @@ services:
       - "21100-21110:21100-21110"
     environment:
       FTP_USER: user
-      FTP_PASS: password 
+      FTP_PASS: password
       PASV_ADDRESS: 127.0.0.1
       PASV_MIN_PORT: 21100
       PASV_MAX_PORT: 21110
